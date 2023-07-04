@@ -38,7 +38,7 @@ class Agent(object):
 
     def initialize(self, open_ai_key):
         self.open_ai_key = open_ai_key
-        self.llm = ChatOpenAI(model = 'gpt-3.5-turbo', openai_api_key = open_ai_key)
+        self.llm = ChatOpenAI(model = 'gpt-3.5-turbo', openai_api_key = open_ai_key, temperature=0)
 
     def load_documentation(self):
         # Walk through the folder and its subfolders
