@@ -1,0 +1,85 @@
+-----------------
+vrdVRDeviceSignal
+-----------------
+
+
+.. _vredvrdVRDeviceSignal:
+.. py:class:: vrdVRDeviceSignal
+
+(Inherits :py:class:`vrdObjectSignal`)
+
+Signal object containing actual signals that are sent by the     :any:`vrdVRDevice <vredvrdVRDevice>`.
+
+
+
+
+
+
+
+Summary
+=======
+
+Signals:
+    * :ref:`collisionStarted(otherNode, device) <vredvrdVRDeviceSignal.collisionStarted(otherNode, device)>`
+    * :ref:`collisionStopped(otherNode, device) <vredvrdVRDeviceSignal.collisionStopped(otherNode, device)>`
+    * :ref:`moved(device) <vredvrdVRDeviceSignal.moved(device)>`
+
+
+
+
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrdVRDeviceSignal.collisionStarted(otherNode, device):
+.. py:method:: vrdVRDeviceSignal.collisionStarted(otherNode, device)
+
+    Signal is emitted when the collision sensor of the device touches a collision sensitive node.
+
+
+
+    :param otherNode: The node with which the device collides
+    :type otherNode: vrdNode
+
+    :param device: The device that is colliding
+    :type device: vrdVRDevice
+
+    
+    
+
+.. _vredvrdVRDeviceSignal.collisionStopped(otherNode, device):
+.. py:method:: vrdVRDeviceSignal.collisionStopped(otherNode, device)
+
+    Signal is emitted when the collision sensor of the device stops touching a collision sensitive node.
+
+
+
+    :param otherNode: The node with which the device stops colliding
+    :type otherNode: vrdNode
+
+    :param device: The device that stops colliding
+    :type device: vrdVRDevice
+
+    
+    
+
+.. _vredvrdVRDeviceSignal.moved(device):
+.. py:method:: vrdVRDeviceSignal.moved(device)
+
+    Signal is emitted when the         :any:`vrdVRDevice <vredvrdVRDevice>` moves.
+
+
+
+    :param device: The :any:`vrdVRDevice <vredvrdVRDevice>` that triggered the signal
+    :type device: vrdVRDevice
+
+    
+    
+
+

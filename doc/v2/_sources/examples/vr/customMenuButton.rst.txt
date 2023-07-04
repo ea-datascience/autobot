@@ -1,0 +1,9 @@
+Adding buttons to the VR menu
+=============================
+
+You can add your own functions to the VR menu. Tools must be defined for this. A tool can be a simple button that triggers a function or an on/off switch with two functions or a button that opens a new submenu.
+
+.. literalinclude:: ../../python_examples/vr/customMenuButton.py
+   :language: python
+   :linenos:
+   :caption: vr/customMenuButton.py

@@ -1,0 +1,7 @@
+Simple ambient occlusion demo
+=============================
+
+.. literalinclude:: ../python_examples/ambientOcclusion.py
+   :language: python
+   :linenos:
+   :caption: ambientOcclusion.py

@@ -1,0 +1,25 @@
+.. _print-touchpad-position:
+
+Print the current finger position on the touchpad 
+=================================================
+
+Shows how a device interaction can be implemented, that uses the touchpad of a VR controller. Further information
+on how a custom interaction can be implemented is shown in the ":ref:`custom-interaction`" example.
+
+This device interaction creates two device actions, which are triggered when the touchpad is touched, or when
+the touch ends. When the touch starts, the moved signal of the controller is connected to a method that
+prints the position of the finger on the touchpad. The information about the position is part of the
+button state and can be queried from the device.
+
+.. code-block:: python
+  :linenos:
+  :lineno-start: 25  
+
+  padPosition = device.getButtonState("Touchpad").getPosition()
+
+The moved signal is disconnectd, when the touchpad is not touched anymore, which ends the printing of the position.
+
+.. literalinclude:: ../../python_examples/vr/printTouchpadPosition.py
+   :language: python
+   :linenos:
+   :caption: vr/printTouchpadPosition.py

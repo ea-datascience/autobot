@@ -1,0 +1,153 @@
+---------------------
+vrdLineChromeMaterial
+---------------------
+
+
+.. _vredvrdLineChromeMaterial:
+.. py:class:: vrdLineChromeMaterial
+
+(Inherits :py:class:`vrdBRDFMaterial`)
+
+This class is used to handle all chrome material properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getDisplacementTexture() → vrdDisplacementTexture<vredvrdLineChromeMaterial.getDisplacementTexture()>`
+    * :ref:`getLineWidth() → float<vredvrdLineChromeMaterial.getLineWidth()>`
+    * :ref:`getReflectionColor() → QVector3D<vredvrdLineChromeMaterial.getReflectionColor()>`
+    * :ref:`getRoughness() → float<vredvrdLineChromeMaterial.getRoughness()>`
+    * :ref:`getUseRoughness() → bool<vredvrdLineChromeMaterial.getUseRoughness()>`
+    * :ref:`setLineWidth(width) <vredvrdLineChromeMaterial.setLineWidth(width)>`
+    * :ref:`setReflectionColor(color) <vredvrdLineChromeMaterial.setReflectionColor(color)>`
+    * :ref:`setRoughness(roughness) <vredvrdLineChromeMaterial.setRoughness(roughness)>`
+    * :ref:`setUseRoughness(use) <vredvrdLineChromeMaterial.setUseRoughness(use)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdLineChromeMaterial.getDisplacementTexture():
+.. py:method:: vrdLineChromeMaterial.getDisplacementTexture()
+
+    Gets access to all properties of         :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>`.
+
+
+
+
+    :return: An :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>` object, to read and write access of alls properties.
+    :rtype: vrdDisplacementTexture
+
+.. _vredvrdLineChromeMaterial.getLineWidth():
+.. py:method:: vrdLineChromeMaterial.getLineWidth()
+
+    Gets the thickness of the lines drawn.
+
+
+
+
+    :return: The current used thickness of the lines drawn.
+    :rtype: float
+
+.. _vredvrdLineChromeMaterial.getReflectionColor():
+.. py:method:: vrdLineChromeMaterial.getReflectionColor()
+
+    Get the currently used chrome reflection color.
+
+
+
+
+    :return: The currently used chrome reflection color.
+    :rtype: QVector3D
+
+.. _vredvrdLineChromeMaterial.getRoughness():
+.. py:method:: vrdLineChromeMaterial.getRoughness()
+
+    
+
+
+
+
+    :return: The current value of roughness for this material.
+    :rtype: float
+
+.. _vredvrdLineChromeMaterial.getUseRoughness():
+.. py:method:: vrdLineChromeMaterial.getUseRoughness()
+
+    Gets if glossy reflections controlled by roughness value are enabled for this material.
+
+
+
+
+    :return: The current enable or disable roughness state.
+    :rtype: bool
+
+.. _vredvrdLineChromeMaterial.setLineWidth(width):
+.. py:method:: vrdLineChromeMaterial.setLineWidth(width)
+
+    Sets the thickness of the lines drawn.
+
+
+
+    :param width: The new thickness of the lines drawn.
+    :type width: float
+
+    
+    
+
+.. _vredvrdLineChromeMaterial.setReflectionColor(color):
+.. py:method:: vrdLineChromeMaterial.setReflectionColor(color)
+
+    Sets the chrome reflection color. When the chrome reflection is colored, reflected objects are also colored.
+
+
+
+    :param color: New chrome reflection color.
+    :type color: QVector3D
+
+    
+    
+
+.. _vredvrdLineChromeMaterial.setRoughness(roughness):
+.. py:method:: vrdLineChromeMaterial.setRoughness(roughness)
+
+    Sets the roughness of the material. The higher the roughness value, the blurrier the reflection. Use Roughness must be enabled.
+
+
+
+    :param roughness: New value of roughness for this material.
+    :type roughness: float
+
+    
+    
+
+.. _vredvrdLineChromeMaterial.setUseRoughness(use):
+.. py:method:: vrdLineChromeMaterial.setUseRoughness(use)
+
+    Enable or disable the use glossy reflections controlled by roughness value for this material. When disabled, specular reflections are used.
+
+
+
+    :param use: Set the new enable or disable state.
+    :type use: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,361 @@
+----------
+vrdRayFile
+----------
+
+
+.. _vredvrdRayFile:
+.. py:class:: vrdRayFile
+
+(Inherits :py:class:`vrdSceneObject`)
+
+Interface to ray files.
+
+Ray light files contain the simulated spatial and angular distribution, as well as photometric or spectral information of emitted light from a complex light source.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`clear() <vredvrdRayFile.clear()>`
+    * :ref:`getDirectEvaluationConeAngle() → float<vredvrdRayFile.getDirectEvaluationConeAngle()>`
+    * :ref:`getDirectEvaluationOffset() → float<vredvrdRayFile.getDirectEvaluationOffset()>`
+    * :ref:`getDirectEvaluationRadius() → float<vredvrdRayFile.getDirectEvaluationRadius()>`
+    * :ref:`getEmitterConeAngle() → float<vredvrdRayFile.getEmitterConeAngle()>`
+    * :ref:`getFileName() → string<vredvrdRayFile.getFileName()>`
+    * :ref:`getRayFileInfo() → vrdRayFileInfo<vredvrdRayFile.getRayFileInfo()>`
+    * :ref:`getUseLightSpectrum() → bool<vredvrdRayFile.getUseLightSpectrum()>`
+    * :ref:`getUsePhotonsForDirectLighting() → bool<vredvrdRayFile.getUsePhotonsForDirectLighting()>`
+    * :ref:`getUseRandomSampling() → bool<vredvrdRayFile.getUseRandomSampling()>`
+    * :ref:`getVisualizationRayCount() → integer<vredvrdRayFile.getVisualizationRayCount()>`
+    * :ref:`getVisualizationRayLength() → float<vredvrdRayFile.getVisualizationRayLength()>`
+    * :ref:`load(filename) <vredvrdRayFile.load(filename)>`
+    * :ref:`reload() <vredvrdRayFile.reload()>`
+    * :ref:`setDirectEvaluationConeAngle(angle) <vredvrdRayFile.setDirectEvaluationConeAngle(angle)>`
+    * :ref:`setDirectEvaluationOffset(offset) <vredvrdRayFile.setDirectEvaluationOffset(offset)>`
+    * :ref:`setDirectEvaluationRadius(radius) <vredvrdRayFile.setDirectEvaluationRadius(radius)>`
+    * :ref:`setEmitterConeAngle(angle) <vredvrdRayFile.setEmitterConeAngle(angle)>`
+    * :ref:`setFileName(fileName) <vredvrdRayFile.setFileName(fileName)>`
+    * :ref:`setTo(other) <vredvrdRayFile.setTo(other)>`
+    * :ref:`setUseLightSpectrum(use) <vredvrdRayFile.setUseLightSpectrum(use)>`
+    * :ref:`setUsePhotonsForDirectLighting(use) <vredvrdRayFile.setUsePhotonsForDirectLighting(use)>`
+    * :ref:`setUseRandomSampling(use) <vredvrdRayFile.setUseRandomSampling(use)>`
+    * :ref:`setVisualizationRayCount(count) <vredvrdRayFile.setVisualizationRayCount(count)>`
+    * :ref:`setVisualizationRayLength(length) <vredvrdRayFile.setVisualizationRayLength(length)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdRayFile.clear():
+.. py:method:: vrdRayFile.clear()
+
+    Clears the loaded file.
+
+
+
+
+    
+    
+
+.. _vredvrdRayFile.getDirectEvaluationConeAngle():
+.. py:method:: vrdRayFile.getDirectEvaluationConeAngle()
+
+    Returns the cone of valid directions used when directly looking into a ray file.
+
+
+
+
+    :return: Angle
+    :rtype: float
+
+.. _vredvrdRayFile.getDirectEvaluationOffset():
+.. py:method:: vrdRayFile.getDirectEvaluationOffset()
+
+    Returns the offset along the surface normal to be used when directly looking into a ray file. Use this to fix lookup surfaces that are not exactly where the ray origins are.
+
+
+
+
+    :return: Offset along the surface normal
+    :rtype: float
+
+.. _vredvrdRayFile.getDirectEvaluationRadius():
+.. py:method:: vrdRayFile.getDirectEvaluationRadius()
+
+    Returns the radius to be used for lookup when directly looking into a ray file.
+
+
+
+
+    :return: Radius
+    :rtype: float
+
+.. _vredvrdRayFile.getEmitterConeAngle():
+.. py:method:: vrdRayFile.getEmitterConeAngle()
+
+    Returns the one around a ray direction used to generate photons.
+
+
+
+
+    :return: Angle
+    :rtype: float
+
+.. _vredvrdRayFile.getFileName():
+.. py:method:: vrdRayFile.getFileName()
+
+    Returns the file name of the ray file.
+
+
+
+
+    :return: File name
+    :rtype: string
+
+.. _vredvrdRayFile.getRayFileInfo():
+.. py:method:: vrdRayFile.getRayFileInfo()
+
+    Returns ray file information.
+
+
+
+
+    :return: Ray file information
+    :rtype: vrdRayFileInfo
+
+.. _vredvrdRayFile.getUseLightSpectrum():
+.. py:method:: vrdRayFile.getUseLightSpectrum()
+
+    Returns true if only the light spectrum is used of a ray.
+
+
+
+
+    :return: True, if only light spectrum is used
+    :rtype: bool
+
+.. _vredvrdRayFile.getUsePhotonsForDirectLighting():
+.. py:method:: vrdRayFile.getUsePhotonsForDirectLighting()
+
+    Returns whether photon mapping for direct lighting is used or not. If disabled, ray lights can be used without photon mapping but it is necessary to define surface with ray light evaluation turned on. These surfaces will then act as light sources using all the ray files that are within the given radius.
+
+
+
+
+    :return: True if photon mapping for direct lighting is used
+    :rtype: bool
+
+.. _vredvrdRayFile.getUseRandomSampling():
+.. py:method:: vrdRayFile.getUseRandomSampling()
+
+    Returns true if random sampling of the rays is used.
+
+
+
+
+    :return: True, if random sampling is used
+    :rtype: bool
+
+.. _vredvrdRayFile.getVisualizationRayCount():
+.. py:method:: vrdRayFile.getVisualizationRayCount()
+
+    Returns the number of rays used for the viewport visualization.
+
+
+
+
+    :return: Number of rays
+    :rtype: integer
+
+.. _vredvrdRayFile.getVisualizationRayLength():
+.. py:method:: vrdRayFile.getVisualizationRayLength()
+
+    Returns the length used for the viewport visualization of rays.
+
+
+
+
+    :return: Length of rays
+    :rtype: float
+
+.. _vredvrdRayFile.load(filename):
+.. py:method:: vrdRayFile.load(filename)
+
+    Loads the given file.
+
+
+
+    :param filename: path to the ray file
+    :type filename: string
+
+    
+    
+
+.. _vredvrdRayFile.reload():
+.. py:method:: vrdRayFile.reload()
+
+    Reloads the current file.
+
+
+
+
+    
+    
+
+.. _vredvrdRayFile.setDirectEvaluationConeAngle(angle):
+.. py:method:: vrdRayFile.setDirectEvaluationConeAngle(angle)
+
+    Sets the cone of valid directions to be used when directly looking into a ray file.
+
+
+
+    :param angle: Angle
+    :type angle: float
+
+    
+    
+
+.. _vredvrdRayFile.setDirectEvaluationOffset(offset):
+.. py:method:: vrdRayFile.setDirectEvaluationOffset(offset)
+
+    Sets the offset along the surface normal to be used when directly looking into a ray file. Use this to fix lookup surfaces that are not exactly where the ray origins are.
+
+
+
+    :param offset: Offset along the surface normal
+    :type offset: float
+
+    
+    
+
+.. _vredvrdRayFile.setDirectEvaluationRadius(radius):
+.. py:method:: vrdRayFile.setDirectEvaluationRadius(radius)
+
+    Sets the radius to be used for lookup when directly looking into a ray file.
+
+
+
+    :param radius: Radius
+    :type radius: float
+
+    
+    
+
+.. _vredvrdRayFile.setEmitterConeAngle(angle):
+.. py:method:: vrdRayFile.setEmitterConeAngle(angle)
+
+    Sets the cone around a ray direction used to generate photons.
+
+
+
+    :param angle: Angle
+    :type angle: float
+
+    
+    
+
+.. _vredvrdRayFile.setFileName(fileName):
+.. py:method:: vrdRayFile.setFileName(fileName)
+
+    Loads the given ray file and sets the file name.
+
+
+
+    :param fileName: File path of the ray file
+    :type fileName: string
+
+    
+    
+
+.. _vredvrdRayFile.setTo(other):
+.. py:method:: vrdRayFile.setTo(other)
+
+    Shares data of ray file in order to reduce memory consumption. Note that when a ray file is no longer used by any light it will be removed and needs to be reloaded from disk again.
+
+
+
+    :param other: Ray file to get shared data
+    :type other: vrdRayFile
+
+    
+    
+
+.. _vredvrdRayFile.setUseLightSpectrum(use):
+.. py:method:: vrdRayFile.setUseLightSpectrum(use)
+
+    Uses only the photometric value of a ray as a scaling factor for the light spectrum. Use this if you have a monochromatic ray file.
+
+
+
+    :param use: Enables use of photometric value of a ray if set to True
+    :type use: bool
+
+    
+    
+
+.. _vredvrdRayFile.setUsePhotonsForDirectLighting(use):
+.. py:method:: vrdRayFile.setUsePhotonsForDirectLighting(use)
+
+    Toggles whether to use photon mapping for direct lighting or not. If disabled, ray lights can be used without photon mapping but it is necessary to define surface with ray light evaluation turned on. These surfaces will then act as light sources using all the ray files that are within the given radius.
+
+
+
+    :param use: True to enable photon mapping for direct lighting
+    :type use: bool
+
+    
+    
+
+.. _vredvrdRayFile.setUseRandomSampling(use):
+.. py:method:: vrdRayFile.setUseRandomSampling(use)
+
+    Uses random sampling of the rays. Use this if you have more than one luminaire in your ray file.
+
+
+
+    :param use: Enables random sampling if set to True
+    :type use: bool
+
+    
+    
+
+.. _vredvrdRayFile.setVisualizationRayCount(count):
+.. py:method:: vrdRayFile.setVisualizationRayCount(count)
+
+    Sets the number of rays used for the viewport visualization.
+
+
+
+    :param count: Number of rays
+    :type count: integer
+
+    
+    
+
+.. _vredvrdRayFile.setVisualizationRayLength(length):
+.. py:method:: vrdRayFile.setVisualizationRayLength(length)
+
+    Sets the length of used for the viewport visualization of rays.
+
+
+
+    :param length: Length of rays
+    :type length: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

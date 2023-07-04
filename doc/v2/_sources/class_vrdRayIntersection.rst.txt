@@ -1,0 +1,234 @@
+------------------
+vrdRayIntersection
+------------------
+
+
+.. _vredvrdRayIntersection:
+.. py:class:: vrdRayIntersection
+
+(Inherits :py:class:`vrdData`)
+
+Represents an intersection of an ray with a node in the scene.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getNode() → vrdNode<vredvrdRayIntersection.getNode()>`
+    * :ref:`getNormal() → QVector3D<vredvrdRayIntersection.getNormal()>`
+    * :ref:`getOrigin() → QVector3D<vredvrdRayIntersection.getOrigin()>`
+    * :ref:`getPoint() → QVector3D<vredvrdRayIntersection.getPoint()>`
+    * :ref:`getUV() → QVector2D<vredvrdRayIntersection.getUV()>`
+    * :ref:`hasHit() → bool<vredvrdRayIntersection.hasHit()>`
+    * :ref:`setHit(value) <vredvrdRayIntersection.setHit(value)>`
+    * :ref:`setNode(value) <vredvrdRayIntersection.setNode(value)>`
+    * :ref:`setNormal(value) <vredvrdRayIntersection.setNormal(value)>`
+    * :ref:`setOrigin(value) <vredvrdRayIntersection.setOrigin(value)>`
+    * :ref:`setPoint(value) <vredvrdRayIntersection.setPoint(value)>`
+    * :ref:`setUV(value) <vredvrdRayIntersection.setUV(value)>`
+    * :ref:`vrdRayIntersection() <vredvrdRayIntersection.vrdRayIntersection()>`
+    * :ref:`vrdRayIntersection(hasHit, node, origin, point, normal, uv) <vredvrdRayIntersection.vrdRayIntersection(hasHit, node, origin, point, normal, uv)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdRayIntersection.getNode():
+.. py:method:: vrdRayIntersection.getNode()
+
+    Gets that node that has been hit.
+
+
+
+
+    :return: The node that has been hit.
+    :rtype: vrdNode
+
+.. _vredvrdRayIntersection.getNormal():
+.. py:method:: vrdRayIntersection.getNormal()
+
+    The hit normal.
+
+
+
+
+    :return: The hit normal. This is 0, 0, 0 if no hit occured.
+    :rtype: QVector3D
+
+.. _vredvrdRayIntersection.getOrigin():
+.. py:method:: vrdRayIntersection.getOrigin()
+
+    Gets the origin of the ray that has used for the intersection test.
+
+
+
+
+    :return: The origin of the ray.
+    :rtype: QVector3D
+
+.. _vredvrdRayIntersection.getPoint():
+.. py:method:: vrdRayIntersection.getPoint()
+
+    Gets the point that has been hit.
+
+
+
+
+    :return: The point that has been hit. This is 0, 0, 0 if no hit occured.
+    :rtype: QVector3D
+
+.. _vredvrdRayIntersection.getUV():
+.. py:method:: vrdRayIntersection.getUV()
+
+    Gets the uv coordinates of the texture where the hit occured.
+
+
+
+
+    :return: The uv coordinates.
+    :rtype: QVector2D
+
+.. _vredvrdRayIntersection.hasHit():
+.. py:method:: vrdRayIntersection.hasHit()
+
+    Returns if an actual hit occured.
+
+
+
+
+    :return: true if a hit occured, false otherwise.
+    :rtype: bool
+
+.. _vredvrdRayIntersection.setHit(value):
+.. py:method:: vrdRayIntersection.setHit(value)
+
+    Sets if a hit occured.
+
+
+
+    :param value: true if a hit occured, false otherwise.
+    :type value: bool
+
+    
+    
+
+.. _vredvrdRayIntersection.setNode(value):
+.. py:method:: vrdRayIntersection.setNode(value)
+
+    Sets the node that has been hit.
+
+
+
+    :param value: The node that has been hit. This is invalid, when not hit occured.
+    :type value: vrdNode
+
+    
+    
+
+.. _vredvrdRayIntersection.setNormal(value):
+.. py:method:: vrdRayIntersection.setNormal(value)
+
+    Sets the hit normal.
+
+
+
+    :param value: The hit normal.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdRayIntersection.setOrigin(value):
+.. py:method:: vrdRayIntersection.setOrigin(value)
+
+    Sets the origin of the ray that has been used for the intersection test.
+
+
+
+    :param value: The origin of the ray.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdRayIntersection.setPoint(value):
+.. py:method:: vrdRayIntersection.setPoint(value)
+
+    Sets the point that has been hit.
+
+
+
+    :param value: The point that has been hit.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdRayIntersection.setUV(value):
+.. py:method:: vrdRayIntersection.setUV(value)
+
+    Sets the uv coordinates of the texture where the hit occured.
+
+
+
+    :param value: The uv coordinates.
+    :type value: QVector2D
+
+    
+    
+
+.. _vredvrdRayIntersection.vrdRayIntersection():
+.. py:method:: vrdRayIntersection.vrdRayIntersection()
+
+    Default constructor.
+
+
+
+
+    
+    
+
+.. _vredvrdRayIntersection.vrdRayIntersection(hasHit, node, origin, point, normal, uv):
+.. py:method:: vrdRayIntersection.vrdRayIntersection(hasHit, node, origin, point, normal=QVector3D(1,0,0), uv=QVector2D(0,0))
+
+    Constructor.
+
+
+
+    :param hasHit: Set to true, if a hit occured
+    :type hasHit: bool
+
+    :param node: The node that has been hit by the ray.
+    :type node: vrdNode
+
+    :param origin: The origin of the ray.
+    :type origin: QVector3D
+
+    :param point: The actual point that has been hit by the ray.
+    :type point: QVector3D
+
+    :param normal: The hit normal.
+    :type normal: QVector3D
+
+    :param uv: The uv coordinates of the texture where the hit occured.
+    :type uv: QVector2D
+
+    
+    
+
+
+
+
+
+
+
+
+
+

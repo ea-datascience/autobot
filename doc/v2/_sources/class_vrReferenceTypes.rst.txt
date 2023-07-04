@@ -1,0 +1,183 @@
+----------------
+vrReferenceTypes
+----------------
+
+
+.. _vredvrReferenceTypes:
+.. py:class:: vrReferenceTypes
+
+
+
+
+
+
+
+    .. _vredvrReferenceTypes.Type:
+    .. py:class:: Type
+
+
+
+
+            
+
+            .. _vredvrReferenceTypes.Type.Smart:
+            .. py:data:: Smart
+
+
+            
+
+            .. _vredvrReferenceTypes.Type.Source:
+            .. py:data:: Source
+
+
+    .. _vredvrReferenceTypes.NotificationMode:
+    .. py:class:: NotificationMode
+
+
+
+
+            
+
+            .. _vredvrReferenceTypes.NotificationMode.Off:
+            .. py:data:: Off
+
+
+            
+
+            .. _vredvrReferenceTypes.NotificationMode.Always:
+            .. py:data:: Always
+
+
+            
+
+            .. _vredvrReferenceTypes.NotificationMode.OnLoad:
+            .. py:data:: OnLoad
+
+
+    .. _vredvrReferenceTypes.ExportLocation:
+    .. py:class:: ExportLocation
+
+
+
+
+            
+
+            .. _vredvrReferenceTypes.ExportLocation.NextToSource:
+            .. py:data:: NextToSource
+
+
+            
+
+            .. _vredvrReferenceTypes.ExportLocation.Custom:
+            .. py:data:: Custom
+
+
+    .. _vredvrReferenceTypes.State:
+    .. py:class:: State
+
+
+
+
+            
+
+            .. _vredvrReferenceTypes.State.New:
+            .. py:data:: New
+
+
+            
+
+            .. _vredvrReferenceTypes.State.Unloaded:
+            .. py:data:: Unloaded
+
+
+            
+
+            .. _vredvrReferenceTypes.State.Loaded:
+            .. py:data:: Loaded
+
+
+    .. _vredvrReferenceTypes.FileState:
+    .. py:class:: FileState
+
+
+
+
+            
+
+            .. _vredvrReferenceTypes.FileState.Current:
+            .. py:data:: Current
+
+
+            
+
+            .. _vredvrReferenceTypes.FileState.Outdated:
+            .. py:data:: Outdated
+
+
+            
+
+            .. _vredvrReferenceTypes.FileState.Missing:
+            .. py:data:: Missing
+
+
+            
+
+            .. _vredvrReferenceTypes.FileState.Unsaved:
+            .. py:data:: Unsaved
+
+
+            
+
+            .. _vredvrReferenceTypes.FileState.Unknown:
+            .. py:data:: Unknown
+
+
+    .. _vredvrReferenceTypes.LoadMode:
+    .. py:class:: LoadMode
+
+
+
+
+            
+
+            .. _vredvrReferenceTypes.LoadMode.LoadedReferences:
+            .. py:data:: LoadedReferences
+
+
+            
+
+            .. _vredvrReferenceTypes.LoadMode.AllReferences:
+            .. py:data:: AllReferences
+
+
+            
+
+            .. _vredvrReferenceTypes.LoadMode.NoReferences:
+            .. py:data:: NoReferences
+
+
+            
+
+            .. _vredvrReferenceTypes.LoadMode.LoadedSkipLeafReferences:
+            .. py:data:: LoadedSkipLeafReferences
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

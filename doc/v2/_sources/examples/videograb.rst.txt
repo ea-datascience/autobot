@@ -1,0 +1,7 @@
+video grabbing example
+======================
+
+.. literalinclude:: ../python_examples/videograb.py
+   :language: python
+   :linenos:
+   :caption: videograb.py

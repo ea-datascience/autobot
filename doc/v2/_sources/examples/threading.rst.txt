@@ -1,0 +1,7 @@
+Multithreading example
+======================
+
+.. literalinclude:: ../python_examples/threading.py
+   :language: python
+   :linenos:
+   :caption: threading.py

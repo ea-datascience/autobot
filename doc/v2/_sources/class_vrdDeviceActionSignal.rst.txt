@@ -1,0 +1,54 @@
+---------------------
+vrdDeviceActionSignal
+---------------------
+
+
+.. _vredvrdDeviceActionSignal:
+.. py:class:: vrdDeviceActionSignal
+
+(Inherits :py:class:`vrdObjectSignal`)
+
+Signal object containing an actual signal that is sent, when the action this object belongs to is triggered.
+
+
+
+
+
+
+
+Summary
+=======
+
+Signals:
+    * :ref:`triggered(action, device) <vredvrdDeviceActionSignal.triggered(action, device)>`
+
+
+
+
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrdDeviceActionSignal.triggered(action, device):
+.. py:method:: vrdDeviceActionSignal.triggered(action, device)
+
+    Signal is emitted when the corresponding device action is triggered.
+
+
+
+    :param action: The action the signal belongs to and which is triggered.
+    :type action: vrdDeviceAction
+
+    :param device: The device that triggered the action with an input.
+    :type device: vrdVRDevice
+
+    
+    
+
+

@@ -1,0 +1,9 @@
+Visualize user positions
+========================
+
+This example shows how Python can be used to query positions of all users in a collaboration session. With the help of the positions a very simple overview map with all users is generated.
+
+.. literalinclude:: ../../python_examples/vr/showVRCollabUserPositions.py
+   :language: python
+   :linenos:
+   :caption: vr/showVRCollabUserPositions.py

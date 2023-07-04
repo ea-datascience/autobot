@@ -1,0 +1,7 @@
+Menu with a WebGL demo
+======================
+
+.. literalinclude:: ../python_examples/menu_webgl.py
+   :language: python
+   :linenos:
+   :caption: menu_webgl.py

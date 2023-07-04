@@ -1,0 +1,49 @@
+---------------
+vrdRayLightNode
+---------------
+
+
+.. _vredvrdRayLightNode:
+.. py:class:: vrdRayLightNode
+
+(Inherits :py:class:`vrdBaseLightNode`)
+
+Interface for a ray light node.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getRayFile() → vrdRayFile<vredvrdRayLightNode.getRayFile()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdRayLightNode.getRayFile():
+.. py:method:: vrdRayLightNode.getRayFile()
+
+    Provides access to the ray file. Ray light files contain the simulated spatial and angular distribution, as well as photometric or spectral information of emitted light from a complex light source.
+
+
+
+
+    :return: Ray file object
+    :rtype: vrdRayFile
+
+
+
+
+
+
+
+
+
+

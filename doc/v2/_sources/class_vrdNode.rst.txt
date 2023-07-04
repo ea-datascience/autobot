@@ -1,0 +1,445 @@
+-------
+vrdNode
+-------
+
+
+.. _vredvrdNode:
+.. py:class:: vrdNode
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This is the base class for all nodes.
+
+A node instance gives access to all properties of a node such as its parent and its list of direct children. There are no functions however to modify the node's hierarchy directly.
+
+|             Hierarchy modifications have to be made by interacting with the :doc:`vrdNodeList</class_vrdNodeList>` instance obtained here :ref:`children<vredvrdNode.children>`.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`applyMaterial(material) <vredvrdNode.applyMaterial(material)>`
+    * :ref:`getBoundingBox() → vrdBoundingBox<vredvrdNode.getBoundingBox()>`
+    * :ref:`getChild(index) → vrdNode<vredvrdNode.getChild(index)>`
+    * :ref:`getChildCount() → integer<vredvrdNode.getChildCount()>`
+    * :ref:`getChildIndex(child) → integer<vredvrdNode.getChildIndex(child)>`
+    * :ref:`getChildren() → List[vrdNode]<vredvrdNode.getChildren()>`
+    * :ref:`getChildrenRecursive() → List[vrdNode]<vredvrdNode.getChildrenRecursive()>`
+    * :ref:`getIcon() → QIcon<vredvrdNode.getIcon()>`
+    * :ref:`getMaterial() → vrdMaterial<vredvrdNode.getMaterial()>`
+    * :ref:`getName() → string<vredvrdNode.getName()>`
+    * :ref:`getOrCreateTransformNode() → vrdNode<vredvrdNode.getOrCreateTransformNode()>`
+    * :ref:`getParent() → vrdNode<vredvrdNode.getParent()>`
+    * :ref:`getPath() → string<vredvrdNode.getPath()>`
+    * :ref:`getSelectableFlag() → bool<vredvrdNode.getSelectableFlag()>`
+    * :ref:`getSharedNodes() → List[vrdNode]<vredvrdNode.getSharedNodes()>`
+    * :ref:`getSynchronizedNodes() → List[vrdNode]<vredvrdNode.getSynchronizedNodes()>`
+    * :ref:`getUniquePath() → string<vredvrdNode.getUniquePath()>`
+    * :ref:`getVisibilityFlag() → bool<vredvrdNode.getVisibilityFlag()>`
+    * :ref:`getWorldBoundingBox() → vrdBoundingBox<vredvrdNode.getWorldBoundingBox()>`
+    * :ref:`getWorldTransform() → QMatrix4x4<vredvrdNode.getWorldTransform()>`
+    * :ref:`hasParent(parent) → bool<vredvrdNode.hasParent(parent)>`
+    * :ref:`isGroup() → bool<vredvrdNode.isGroup()>`
+    * :ref:`isImplicitShared() → bool<vredvrdNode.isImplicitShared()>`
+    * :ref:`isShared() → bool<vredvrdNode.isShared()>`
+    * :ref:`isSharedWith(node) → bool<vredvrdNode.isSharedWith(node)>`
+    * :ref:`isSynchronized() → bool<vredvrdNode.isSynchronized()>`
+    * :ref:`isVisible() → bool<vredvrdNode.isVisible()>`
+    * :ref:`setName(name) <vredvrdNode.setName(name)>`
+    * :ref:`setSelectableFlag(selectable) <vredvrdNode.setSelectableFlag(selectable)>`
+    * :ref:`setVisibilityFlag(visible) <vredvrdNode.setVisibilityFlag(visible)>`
+
+Instance Variables:
+    * :ref:`children → vrdNodeList<vredvrdNode.children>`
+
+
+Functions
+=========
+
+
+.. _vredvrdNode.applyMaterial(material):
+.. py:method:: vrdNode.applyMaterial(material)
+
+    Sets the material for this node.
+
+
+
+    :param material: The new material
+    :type material: vrdMaterial
+
+    
+    
+
+.. _vredvrdNode.getBoundingBox():
+.. py:method:: vrdNode.getBoundingBox()
+
+    Returns the local bounding box of the node including its children.
+
+
+
+
+    :return: Bounding box of node
+    :rtype: vrdBoundingBox
+
+.. _vredvrdNode.getChild(index):
+.. py:method:: vrdNode.getChild(index)
+
+    Gets a child node by index.
+
+
+
+    :param index: The index of the child node. The valid range is from 0 to :any:`vrdNode.getChildCount() <vredvrdNode.getChildCount()>` - 1.
+    :type index: integer
+
+    :return: The child node.
+    :rtype: vrdNode
+
+.. _vredvrdNode.getChildCount():
+.. py:method:: vrdNode.getChildCount()
+
+    Get the number of child nodes.
+
+
+
+
+    :return: The number of children.
+    :rtype: integer
+
+.. _vredvrdNode.getChildIndex(child):
+.. py:method:: vrdNode.getChildIndex(child)
+
+    Get the index of the child node in the list of children.
+
+
+
+    :param child: The child node.
+    :type child: vrdNode
+
+    :return: The index of the child.
+    :rtype: integer
+
+.. _vredvrdNode.getChildren():
+.. py:method:: vrdNode.getChildren()
+
+    Returns a list of all child nodes.
+
+    Note this is a copy of the node's children list, changing the returned list does not change the children of the node.
+
+    |            To add or remove children from the node use the member :ref:`children<vredvrdNode.children>`.
+
+
+    :return: The list of child nodes.
+    :rtype: List[vrdNode]
+
+.. _vredvrdNode.getChildrenRecursive():
+.. py:method:: vrdNode.getChildrenRecursive()
+
+    Returns a list of all child nodes recursively (including children of children).
+
+
+
+
+    :return: The list of child nodes.
+    :rtype: List[vrdNode]
+
+.. _vredvrdNode.getIcon():
+.. py:method:: vrdNode.getIcon()
+
+    Gets the icon of the node.
+
+
+
+
+    :return: The icon of the node.
+    :rtype: QIcon
+
+.. _vredvrdNode.getMaterial():
+.. py:method:: vrdNode.getMaterial()
+
+    Gets the material for this node.
+
+
+
+
+    :return: The material for this node, or an invalid material if no material was found
+    :rtype: vrdMaterial
+
+.. _vredvrdNode.getName():
+.. py:method:: vrdNode.getName()
+
+    Returns the name of the node.
+
+
+
+
+    :return: The name of the node.
+    :rtype: string
+
+.. _vredvrdNode.getOrCreateTransformNode():
+.. py:method:: vrdNode.getOrCreateTransformNode()
+
+    Get a transformation node for this node. Create one if necessary.
+
+
+
+
+    :return: A transformable node
+    :rtype: vrdNode
+
+.. _vredvrdNode.getParent():
+.. py:method:: vrdNode.getParent()
+
+    Returns the parent node.
+
+
+
+
+    :return: The parent node.
+    :rtype: vrdNode
+
+.. _vredvrdNode.getPath():
+.. py:method:: vrdNode.getPath()
+
+    Returns the path of the node.
+
+
+
+
+    :return: The path of the node.
+    :rtype: string
+
+.. _vredvrdNode.getSelectableFlag():
+.. py:method:: vrdNode.getSelectableFlag()
+
+    
+
+
+
+
+    :return: Gets the local selectable flag. True, node is selectable in the render window
+    :rtype: bool
+
+.. _vredvrdNode.getSharedNodes():
+.. py:method:: vrdNode.getSharedNodes()
+
+    Returns the nodes in the scene graph that share this node. The list does not include the node the method is called for. For cameras         :any:`vrdCameraNode.getModuleNode() <vredvrdCameraNode.getModuleNode()>` can be used to get the corresponding camera graph node. For lights :any:`vrdBaseLightNode.getModuleNode() <vredvrdBaseLightNode.getModuleNode()>` can be used to get the corresponding light graph node.
+
+
+
+
+    :return: A list of nodes
+    :rtype: List[vrdNode]
+
+.. _vredvrdNode.getSynchronizedNodes():
+.. py:method:: vrdNode.getSynchronizedNodes()
+
+    Returns scene nodes that are synchronized with this node.
+
+    Synchronized nodes share and synchronize their children but the node properties of the synchronized nodes are independent. Synchronized transform nodes are called Transformable Clones or Transformable Clone Roots in the GUI.
+
+
+    :return: A list of nodes
+    :rtype: List[vrdNode]
+
+.. _vredvrdNode.getUniquePath():
+.. py:method:: vrdNode.getUniquePath()
+
+    Returns the unique path of the node.
+
+
+
+
+    :return: The unique path of the node.
+    :rtype: string
+
+.. _vredvrdNode.getVisibilityFlag():
+.. py:method:: vrdNode.getVisibilityFlag()
+
+    Returns the local visibility flag.
+
+    The local visibility flag indicates the visibility state of the node. It does not consider the visibility state of the parent node. For that case, use :any:`vrdNode.isVisible() <vredvrdNode.isVisible()>`.
+
+
+    :return: True if the visibility flag is set, False otherwise.
+    :rtype: bool
+
+.. _vredvrdNode.getWorldBoundingBox():
+.. py:method:: vrdNode.getWorldBoundingBox()
+
+    Returns the world bounding box of the node including its children.
+
+    Example of combining multiple bounding boxes:
+
+    .. code-block:: python
+    
+         def getWorldCenter(nodes):
+             bb = vrdBoundingBox()
+             for node in nodes:
+                 bb.extendBy(node.getWorldBoundingBox())
+             return bb.getCenter()
+         
+         # Find all nodes whose name starts with "Box".
+         nodes = vrNodeService.findNodes("Box*", True)
+         # Calculate the bounding box center of these nodes
+         center = getWorldCenter(nodes)
+         # Print the result
+         print(center)
+    ..
+    
+
+
+    :return: World bounding box of node
+    :rtype: vrdBoundingBox
+
+.. _vredvrdNode.getWorldTransform():
+.. py:method:: vrdNode.getWorldTransform()
+
+    Gets the world transformation matrix of this node.
+
+
+
+
+    :return: The 4x4 world transformation matrix
+    :rtype: QMatrix4x4
+
+.. _vredvrdNode.hasParent(parent):
+.. py:method:: vrdNode.hasParent(parent)
+
+    Traverses up the tree from this node to root to find given parent node. To check only direct parent, use         :any:`vrdNode.getParent() <vredvrdNode.getParent()>` == parent instead.
+
+
+
+    :param parent: The parent node to find. Must be a valid node.
+    :type parent: vrdNode
+
+    :return: True if found.
+    :rtype: bool
+
+.. _vredvrdNode.isGroup():
+.. py:method:: vrdNode.isGroup()
+
+    Returns whether the node is a group node.
+
+
+
+
+    :return: True if the node is a group, False otherwise.
+    :rtype: bool
+
+.. _vredvrdNode.isImplicitShared():
+.. py:method:: vrdNode.isImplicitShared()
+
+    An implicit shared node is only shared because it is part of a shared graph. In the scenegraph view it is dotted underlined. A node that is shared but not implicit shared is solid underlined.
+
+
+
+
+    :return: True, if all parents of shared instances are clones of each other
+    :rtype: bool
+
+.. _vredvrdNode.isShared():
+.. py:method:: vrdNode.isShared()
+
+    Returns true, if this node has shared instances in the scene. Shared instances are also called clones or cloned nodes. Shared nodes have the same properties, e.g. same geometry or same transformation, and also the same children.
+
+
+
+
+    :return: True, if the node is shared.
+    :rtype: bool
+
+.. _vredvrdNode.isSharedWith(node):
+.. py:method:: vrdNode.isSharedWith(node)
+
+    Returns if the given node is a shared instance of this node.
+
+
+
+    :param node: Node to check
+    :type node: vrdNode
+
+    :return: True, if given node is a shared instance of this node.
+    :rtype: bool
+
+.. _vredvrdNode.isSynchronized():
+.. py:method:: vrdNode.isSynchronized()
+
+    Returns true, if this node shares its children with other nodes. See         :any:`vrdNode.getSynchronizedNodes() <vredvrdNode.getSynchronizedNodes()>`.
+
+
+
+
+    :return: true if the node is synchronized
+    :rtype: bool
+
+.. _vredvrdNode.isVisible():
+.. py:method:: vrdNode.isVisible()
+
+    Returns if the node is visible.
+
+    Returns true if the node is visible, i.e. if the node itself and all parents are visible.
+
+
+    :return: True if visible, False otherwise.
+    :rtype: bool
+
+.. _vredvrdNode.setName(name):
+.. py:method:: vrdNode.setName(name)
+
+    Sets the name of the node.
+
+
+
+    :param name: The new name of the node.
+    :type name: string
+
+    
+    
+
+.. _vredvrdNode.setSelectableFlag(selectable):
+.. py:method:: vrdNode.setSelectableFlag(selectable)
+
+    Sets the local selectable flag.
+
+
+
+    :param selectable: True if the node should be selectable in the render window
+    :type selectable: bool
+
+    
+    
+
+.. _vredvrdNode.setVisibilityFlag(visible):
+.. py:method:: vrdNode.setVisibilityFlag(visible)
+
+    Sets the local visibility flag.
+
+    This flag enables / disables rendering of the node.
+
+    :param visible: True if the node should be visible, otherwise false.
+    :type visible: bool
+
+    
+    
+
+
+Instance Variables
+==================
+
+
+.. _vredvrdNode.children:
+.. py:attribute:: children
+    :type: vrdNodeList
+
+    
+    Access to the children of this node. All changes made to this list object will immediately be executed on the node.
+
+
+
+
+
+

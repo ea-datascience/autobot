@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a child node to the node of a VR Controller &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pydoctheme.css" />
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    
+    <script src="../../_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Add a child node to the node of a VR Tracker" href="attachToTracker.html" />
+    <link rel="prev" title="Query camera and tracking information" href="showUserInfo.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="../../_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="../../index.html">VRED Python API v2  documentation</a> &#187;</li>
+          <li><a href="../examples.html" accesskey="U">VRED Python examples</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="add-a-child-node-to-the-node-of-a-vr-controller">
+<h1>Add a child node to the node of a VR Controller<a class="headerlink" href="#add-a-child-node-to-the-node-of-a-vr-controller" title="Permalink to this headline">¶</a></h1>
+<p>In this script a box is added as child to the node of the left and the right VR controller.</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">vr/attachToController.py</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="c1"># © 2023 Autodesk, Inc. All rights reserved.</span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="c1"># Get left controller</span>
+<span class="linenos"> 4</span><span class="n">leftController</span> <span class="o">=</span> <span class="n">vrDeviceService</span><span class="o">.</span><span class="n">getVRDevice</span><span class="p">(</span><span class="s2">&quot;left-controller&quot;</span><span class="p">)</span>
+<span class="linenos"> 5</span><span class="c1"># Get right controller</span>
+<span class="linenos"> 6</span><span class="n">rightController</span> <span class="o">=</span> <span class="n">vrDeviceService</span><span class="o">.</span><span class="n">getVRDevice</span><span class="p">(</span><span class="s2">&quot;right-controller&quot;</span><span class="p">)</span>
+<span class="linenos"> 7</span>
+<span class="linenos"> 8</span><span class="c1"># Create a red box</span>
+<span class="linenos"> 9</span><span class="n">leftBox</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="s2">&quot;Transform3D&quot;</span><span class="p">,</span> <span class="s2">&quot;LeftBox&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="linenos">10</span><span class="n">leftBox</span><span class="o">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">createBox</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="linenos">11</span><span class="c1"># Create a blue box</span>
+<span class="linenos">12</span><span class="n">rightBox</span> <span class="o">=</span> <span class="n">createNode</span><span class="p">(</span><span class="s2">&quot;Transform3D&quot;</span><span class="p">,</span> <span class="s2">&quot;RightBox&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="linenos">13</span><span class="n">rightBox</span><span class="o">.</span><span class="n">addChild</span><span class="p">(</span><span class="n">createBox</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">,</span> <span class="mf">0.0</span><span class="p">))</span>
+<span class="linenos">14</span>
+<span class="linenos">15</span><span class="c1"># Atttach the boxes to the controllers</span>
+<span class="linenos">16</span><span class="n">leftConstraint</span> <span class="o">=</span> <span class="n">vrConstraintService</span><span class="o">.</span><span class="n">createParentConstraint</span><span class="p">([</span><span class="n">leftController</span><span class="o">.</span><span class="n">getNode</span><span class="p">()],</span> <span class="n">leftBox</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+<span class="linenos">17</span><span class="n">rightConstraint</span> <span class="o">=</span> <span class="n">vrConstraintService</span><span class="o">.</span><span class="n">createParentConstraint</span><span class="p">([</span><span class="n">rightController</span><span class="o">.</span><span class="n">getNode</span><span class="p">()],</span> <span class="n">rightBox</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>            
+</pre></div>
+</div>
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="../../index.html">Table Of Contents</a></h3>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../examples.html">VRED Python examples</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#animations">Animations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#annotations">Annotations</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#cameras">Cameras</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#collision-detection">Collision detection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#connector">Connector</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#constraints">Constraints</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#geometry">Geometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#lightmaps">Lightmaps</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#materials">Materials</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#measurement">Measurement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#metadata">Metadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#programming">Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#rendering">Rendering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#sceneplates">Sceneplates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#scenetree">Scenetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#sound">Sound</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#user-input">User input</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#user-interface">User interface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#vrmenu">vrMenu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#virtual-reality-device-interaction">Virtual Reality Device Interaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#virtual-reality-device-handling">Virtual Reality Device Handling</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#virtual-reality-immersive-tools">Virtual Reality Immersive Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#virtual-reality-script-plugins">Virtual Reality Script Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#virtual-reality-collaboration">Virtual Reality Collaboration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#virtual-reality-hands">Virtual Reality Hands</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#deprecated-virtual-reality-examples">Deprecated Virtual Reality Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#deprecated-scenetree-examples">Deprecated Scenetree Examples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#other-script-plugins">Other Script Plugins</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#uncategorized">Uncategorized</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../examples.html#snippets">Snippets</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../examples.html#deprecated-snippets">Deprecated Snippets</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="showUserInfo.html"
+                        title="previous chapter">Query camera and tracking information</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="attachToTracker.html"
+                        title="next chapter">Add a child node to the node of a VR Tracker</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../../genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="attachToTracker.html" title="Add a child node to the node of a VR Tracker"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="showUserInfo.html" title="Query camera and tracking information"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

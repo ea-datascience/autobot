@@ -1,0 +1,61 @@
+------------
+vrGPUService
+------------
+
+
+.. _vredvrGPUService:
+.. py:class:: vrGPUService
+
+(Inherits :py:class:`vrBaseService`)
+
+A service to query GPU information.
+
+This service contains collects interfaces with information about different graphics APIs.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`openGLInfo() → vrdOpenGLInfo<vredvrGPUService.openGLInfo()>`
+    * :ref:`raytracingInfo() → vrdRaytracingInfo<vredvrGPUService.raytracingInfo()>`
+
+
+Functions
+=========
+
+
+.. _vredvrGPUService.openGLInfo():
+.. py:method:: vrGPUService.openGLInfo()
+
+    Returns an object with information about OpenGL.
+
+
+
+
+    :return: The OpenGL object
+    :rtype: vrdOpenGLInfo
+
+.. _vredvrGPUService.raytracingInfo():
+.. py:method:: vrGPUService.raytracingInfo()
+
+    Returns an object with information about Raytracing.
+
+
+
+
+    :return: The Raytracing object.
+    :rtype: vrdRaytracingInfo
+
+
+
+
+
+
+
+
+
+

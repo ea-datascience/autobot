@@ -1,0 +1,49 @@
+------------------
+vrdBsdfMeasurement
+------------------
+
+
+.. _vredvrdBsdfMeasurement:
+.. py:class:: vrdBsdfMeasurement
+
+(Inherits :py:class:`vrdSceneObject`)
+
+Class that gives access to MDL's measured bsdf.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAbsolutePath() → string<vredvrdBsdfMeasurement.getAbsolutePath()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdBsdfMeasurement.getAbsolutePath():
+.. py:method:: vrdBsdfMeasurement.getAbsolutePath()
+
+    Returns the absolute path of the measured bsdf.
+
+    This returns the absolute path of the measured bsdf including the file name.
+
+
+    :return: The absolute path.
+    :rtype: string
+
+
+
+
+
+
+
+
+
+

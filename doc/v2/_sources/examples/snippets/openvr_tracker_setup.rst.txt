@@ -1,0 +1,8 @@
+(Deprecated) openvr_tracker_setup
+=================================
+Deprecated. See ":doc:`../vr/attachToTracker`" instead.
+
+.. literalinclude:: ../../python_examples/snippets/openvr_tracker_setup.py
+   :language: python
+   :linenos:
+   :caption: snippets/openvr_tracker_setup.py

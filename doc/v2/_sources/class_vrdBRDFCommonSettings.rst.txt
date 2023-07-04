@@ -1,0 +1,302 @@
+---------------------
+vrdBRDFCommonSettings
+---------------------
+
+
+.. _vredvrdBRDFCommonSettings:
+.. py:class:: vrdBRDFCommonSettings
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This class is used for common properties for all BRDF materials.
+
+
+
+    .. _vredvrdBRDFCommonSettings.LightingMode:
+    .. py:class:: LightingMode
+
+
+
+
+            
+
+            .. _vredvrdBRDFCommonSettings.LightingMode.IBLIndirectDirect:
+            .. py:data:: IBLIndirectDirect
+
+
+            
+
+            .. _vredvrdBRDFCommonSettings.LightingMode.IBLIndirect:
+            .. py:data:: IBLIndirect
+
+
+            
+
+            .. _vredvrdBRDFCommonSettings.LightingMode.IBLDirect:
+            .. py:data:: IBLDirect
+
+
+            
+
+            .. _vredvrdBRDFCommonSettings.LightingMode.IBL:
+            .. py:data:: IBL
+
+
+            
+
+            .. _vredvrdBRDFCommonSettings.LightingMode.Direct:
+            .. py:data:: Direct
+
+
+    .. _vredvrdBRDFCommonSettings.VrsQuality:
+    .. py:class:: VrsQuality
+
+
+
+
+            
+
+            .. _vredvrdBRDFCommonSettings.VrsQuality.VrsOff:
+            .. py:data:: VrsOff
+
+
+            
+
+            .. _vredvrdBRDFCommonSettings.VrsQuality.VrsNative1x1:
+            .. py:data:: VrsNative1x1
+
+
+            
+
+            .. _vredvrdBRDFCommonSettings.VrsQuality.VrsCoarse2x2:
+            .. py:data:: VrsCoarse2x2
+
+
+            
+
+            .. _vredvrdBRDFCommonSettings.VrsQuality.VrsCoarse4x4:
+            .. py:data:: VrsCoarse4x4
+
+
+            
+
+            .. _vredvrdBRDFCommonSettings.VrsQuality.VrsSupersampling2x:
+            .. py:data:: VrsSupersampling2x
+
+
+            
+
+            .. _vredvrdBRDFCommonSettings.VrsQuality.VrsSupersampling4x:
+            .. py:data:: VrsSupersampling4x
+
+
+            
+
+            .. _vredvrdBRDFCommonSettings.VrsQuality.VrsSupersampling8x:
+            .. py:data:: VrsSupersampling8x
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getEnvironment() → vrdMaterial<vredvrdBRDFCommonSettings.getEnvironment()>`
+    * :ref:`getLightingMode() → vrdBRDFCommonSettings.LightingMode<vredvrdBRDFCommonSettings.getLightingMode()>`
+    * :ref:`getOcclusionColor() → QVector3D<vredvrdBRDFCommonSettings.getOcclusionColor()>`
+    * :ref:`getOcclusionColorSpectrum() → vrSpectrum<vredvrdBRDFCommonSettings.getOcclusionColorSpectrum()>`
+    * :ref:`getOcclusionIntensity() → float<vredvrdBRDFCommonSettings.getOcclusionIntensity()>`
+    * :ref:`getSortKey() → integer<vredvrdBRDFCommonSettings.getSortKey()>`
+    * :ref:`getVrsQuality() → vrdBRDFCommonSettings.VrsQuality<vredvrdBRDFCommonSettings.getVrsQuality()>`
+    * :ref:`setEnvironment(envMat) <vredvrdBRDFCommonSettings.setEnvironment(envMat)>`
+    * :ref:`setLightingMode(mode) <vredvrdBRDFCommonSettings.setLightingMode(mode)>`
+    * :ref:`setOcclusionColor(value) <vredvrdBRDFCommonSettings.setOcclusionColor(value)>`
+    * :ref:`setOcclusionColorSpectrum(value) <vredvrdBRDFCommonSettings.setOcclusionColorSpectrum(value)>`
+    * :ref:`setOcclusionIntensity(value) <vredvrdBRDFCommonSettings.setOcclusionIntensity(value)>`
+    * :ref:`setSortKey(value) <vredvrdBRDFCommonSettings.setSortKey(value)>`
+    * :ref:`setVrsQuality(quality) <vredvrdBRDFCommonSettings.setVrsQuality(quality)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdBRDFCommonSettings.getEnvironment():
+.. py:method:: vrdBRDFCommonSettings.getEnvironment()
+
+    Gets the environment material used for reflections on this material.
+
+
+
+
+    :return: The current environment material.
+    :rtype: vrdMaterial
+
+.. _vredvrdBRDFCommonSettings.getLightingMode():
+.. py:method:: vrdBRDFCommonSettings.getLightingMode()
+
+    Gets the light model used for the shader.
+
+
+
+
+    :return: The current used light model used for the shader.
+    :rtype: :ref:`vrdBRDFCommonSettings.LightingMode <vredvrdBRDFCommonSettings.LightingMode>`
+
+.. _vredvrdBRDFCommonSettings.getOcclusionColor():
+.. py:method:: vrdBRDFCommonSettings.getOcclusionColor()
+
+    Gets the multiplication color for the pre-calculated ambient occlusion or environment shadows.
+
+
+
+
+    :return: Current used multiplication color for the pre-calculated ambient occlusion or environment shadows.
+    :rtype: QVector3D
+
+.. _vredvrdBRDFCommonSettings.getOcclusionColorSpectrum():
+.. py:method:: vrdBRDFCommonSettings.getOcclusionColorSpectrum()
+
+    Gets the multiplication color for the pre-calculated ambient occlusion or environment shadows.
+
+
+
+
+    :return: Current used multiplication color spectrum for the pre-calculated ambient occlusion or environment shadows.
+    :rtype: vrSpectrum
+
+.. _vredvrdBRDFCommonSettings.getOcclusionIntensity():
+.. py:method:: vrdBRDFCommonSettings.getOcclusionIntensity()
+
+    Gets the intensity of shadowed areas.
+
+
+
+
+    :return: Current value of the intensity of shadowed areas.
+    :rtype: float
+
+.. _vredvrdBRDFCommonSettings.getSortKey():
+.. py:method:: vrdBRDFCommonSettings.getSortKey()
+
+    
+
+
+
+
+    :return: Current sort key value of the material for OpenGL
+    :rtype: integer
+
+.. _vredvrdBRDFCommonSettings.getVrsQuality():
+.. py:method:: vrdBRDFCommonSettings.getVrsQuality()
+
+    Gets the setting is used for content adaptive Variable Rate Shading (VRS)
+
+
+
+
+    :return: Current setting is used for content adaptive Variable Rate Shading
+    :rtype: :ref:`vrdBRDFCommonSettings.VrsQuality <vredvrdBRDFCommonSettings.VrsQuality>`
+
+.. _vredvrdBRDFCommonSettings.setEnvironment(envMat):
+.. py:method:: vrdBRDFCommonSettings.setEnvironment(envMat)
+
+    Sets the environment material used for reflections on this material. The HDR image of the assigned environment is used for diffuse, glossy, and specular reflections on this material in OpenGL rendering. Different materials can have different environments assigned to get different lighting effects. In Raytracing, the handling of the environment depends on the active illumination mode.
+
+
+
+    :param envMat: The new environment material.
+    :type envMat: vrdMaterial
+
+    
+    
+
+.. _vredvrdBRDFCommonSettings.setLightingMode(mode):
+.. py:method:: vrdBRDFCommonSettings.setLightingMode(mode)
+
+    Defines the light model used for the shader.
+
+
+
+    :param mode: The new light model used for the shader.
+    :type mode: :ref:`vrdBRDFCommonSettings.LightingMode <vredvrdBRDFCommonSettings.LightingMode>`
+
+    
+    
+
+.. _vredvrdBRDFCommonSettings.setOcclusionColor(value):
+.. py:method:: vrdBRDFCommonSettings.setOcclusionColor(value)
+
+    Sets the multiplication color for pre-calculated ambient occlusion or environment shadows.
+
+
+
+    :param value: New multiplication color for the pre-calculated ambient occlusion or environment shadows.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdBRDFCommonSettings.setOcclusionColorSpectrum(value):
+.. py:method:: vrdBRDFCommonSettings.setOcclusionColorSpectrum(value)
+
+    Sets the multiplication color spectrum for pre-calculated ambient occlusion or environment shadows.
+
+
+
+    :param value: New multiplication color spectrum for the pre-calculated ambient occlusion or environment shadows.
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdBRDFCommonSettings.setOcclusionIntensity(value):
+.. py:method:: vrdBRDFCommonSettings.setOcclusionIntensity(value)
+
+    Controls the intensity of shadowed areas.
+
+
+
+    :param value: The new value of the intensity of shadowed areas.
+    :type value: float
+
+    
+    
+
+.. _vredvrdBRDFCommonSettings.setSortKey(value):
+.. py:method:: vrdBRDFCommonSettings.setSortKey(value)
+
+    Changes the order in which transparent materials are rendered in OpenGL when the Transparency Mode is set to Object Sorting. Transparent surfaces with the same sort key are sorted back to front.
+
+
+
+    :param value: New sort key value.
+    :type value: integer
+
+    
+    
+
+.. _vredvrdBRDFCommonSettings.setVrsQuality(quality):
+.. py:method:: vrdBRDFCommonSettings.setVrsQuality(quality)
+
+    Sets the setting is used for content adaptive Variable Rate Shading (VRS)
+
+
+
+    :param quality: New setting is used for content adaptive Variable Rate Shading
+    :type quality: :ref:`vrdBRDFCommonSettings.VrsQuality <vredvrdBRDFCommonSettings.VrsQuality>`
+
+    
+    
+
+
+
+
+
+
+
+
+
+

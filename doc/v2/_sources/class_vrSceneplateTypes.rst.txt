@@ -1,0 +1,207 @@
+-----------------
+vrSceneplateTypes
+-----------------
+
+
+.. _vredvrSceneplateTypes:
+.. py:class:: vrSceneplateTypes
+
+
+
+
+
+
+
+    .. _vredvrSceneplateTypes.NodeType:
+    .. py:class:: NodeType
+
+
+
+
+            
+
+            .. _vredvrSceneplateTypes.NodeType.Frontplate:
+            .. py:data:: Frontplate
+
+
+            
+
+            .. _vredvrSceneplateTypes.NodeType.Backplate:
+            .. py:data:: Backplate
+
+
+            
+
+            .. _vredvrSceneplateTypes.NodeType.Group:
+            .. py:data:: Group
+
+
+            
+
+            .. _vredvrSceneplateTypes.NodeType.Switch:
+            .. py:data:: Switch
+
+
+            
+
+            .. _vredvrSceneplateTypes.NodeType.Depthplate:
+            .. py:data:: Depthplate
+
+
+            
+
+            .. _vredvrSceneplateTypes.NodeType.All:
+            .. py:data:: All
+
+
+    .. _vredvrSceneplateTypes.ContentType:
+    .. py:class:: ContentType
+
+
+
+
+            
+
+            .. _vredvrSceneplateTypes.ContentType.Image:
+            .. py:data:: Image
+
+
+            
+
+            .. _vredvrSceneplateTypes.ContentType.Web:
+            .. py:data:: Web
+
+
+            
+
+            .. _vredvrSceneplateTypes.ContentType.Text:
+            .. py:data:: Text
+
+
+    .. _vredvrSceneplateTypes.SizeType:
+    .. py:class:: SizeType
+
+
+
+
+            
+
+            .. _vredvrSceneplateTypes.SizeType.Absolute:
+            .. py:data:: Absolute
+
+
+            
+
+            .. _vredvrSceneplateTypes.SizeType.Relative:
+            .. py:data:: Relative
+
+
+    .. _vredvrSceneplateTypes.Position:
+    .. py:class:: Position
+
+
+
+
+            
+
+            .. _vredvrSceneplateTypes.Position.Top:
+            .. py:data:: Top
+
+
+            
+
+            .. _vredvrSceneplateTypes.Position.Bottom:
+            .. py:data:: Bottom
+
+
+            
+
+            .. _vredvrSceneplateTypes.Position.Left:
+            .. py:data:: Left
+
+
+            
+
+            .. _vredvrSceneplateTypes.Position.Right:
+            .. py:data:: Right
+
+
+            
+
+            .. _vredvrSceneplateTypes.Position.Center:
+            .. py:data:: Center
+
+
+            
+
+            .. _vredvrSceneplateTypes.Position.TopLeft:
+            .. py:data:: TopLeft
+
+
+            
+
+            .. _vredvrSceneplateTypes.Position.TopRight:
+            .. py:data:: TopRight
+
+
+            
+
+            .. _vredvrSceneplateTypes.Position.BottomLeft:
+            .. py:data:: BottomLeft
+
+
+            
+
+            .. _vredvrSceneplateTypes.Position.BottomRight:
+            .. py:data:: BottomRight
+
+
+    .. _vredvrSceneplateTypes.RepeatMode:
+    .. py:class:: RepeatMode
+
+
+
+
+            
+
+            .. _vredvrSceneplateTypes.RepeatMode.Repeat:
+            .. py:data:: Repeat
+
+
+            
+
+            .. _vredvrSceneplateTypes.RepeatMode.Mirror:
+            .. py:data:: Mirror
+
+
+            
+
+            .. _vredvrSceneplateTypes.RepeatMode.Decal:
+            .. py:data:: Decal
+
+
+            
+
+            .. _vredvrSceneplateTypes.RepeatMode.Clamp:
+            .. py:data:: Clamp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

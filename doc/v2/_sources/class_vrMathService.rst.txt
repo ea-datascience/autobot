@@ -1,0 +1,93 @@
+-------------
+vrMathService
+-------------
+
+
+.. _vredvrMathService:
+.. py:class:: vrMathService
+
+(Inherits :py:class:`vrBaseService`)
+
+Math utilities.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getRotation(matrix) → QQuaternion<vredvrMathService.getRotation(matrix)>`
+    * :ref:`getScaleFactor(matrix) → QVector3D<vredvrMathService.getScaleFactor(matrix)>`
+    * :ref:`getScaleOrientation(matrix) → QQuaternion<vredvrMathService.getScaleOrientation(matrix)>`
+    * :ref:`getTranslation(matrix) → QVector3D<vredvrMathService.getTranslation(matrix)>`
+
+
+Functions
+=========
+
+
+.. _vredvrMathService.getRotation(matrix):
+.. py:method:: vrMathService.getRotation(matrix)
+
+    
+
+
+
+    :param matrix: 
+    :type matrix: QMatrix4x4
+
+    :return: the rotation of the given matrix
+    :rtype: QQuaternion
+
+.. _vredvrMathService.getScaleFactor(matrix):
+.. py:method:: vrMathService.getScaleFactor(matrix)
+
+    
+
+
+
+    :param matrix: 
+    :type matrix: QMatrix4x4
+
+    :return: the scale factor of the given matrix
+    :rtype: QVector3D
+
+.. _vredvrMathService.getScaleOrientation(matrix):
+.. py:method:: vrMathService.getScaleOrientation(matrix)
+
+    
+
+
+
+    :param matrix: 
+    :type matrix: QMatrix4x4
+
+    :return: the scale orientation of the given matrix
+    :rtype: QQuaternion
+
+.. _vredvrMathService.getTranslation(matrix):
+.. py:method:: vrMathService.getTranslation(matrix)
+
+    
+
+
+
+    :param matrix: 
+    :type matrix: QMatrix4x4
+
+    :return: the translation of the given matrix
+    :rtype: QVector3D
+
+
+
+
+
+
+
+
+
+

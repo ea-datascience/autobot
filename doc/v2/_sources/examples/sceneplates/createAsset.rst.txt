@@ -1,0 +1,7 @@
+Create Asset
+============
+
+.. literalinclude:: ../../python_examples/sceneplates/createAsset.py
+   :language: python
+   :linenos:
+   :caption: sceneplates/createAsset.py

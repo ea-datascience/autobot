@@ -1,0 +1,7 @@
+ctypestest
+==========
+
+.. literalinclude:: ../../python_examples/snippets/ctypestest.py
+   :language: python
+   :linenos:
+   :caption: snippets/ctypestest.py

@@ -1,0 +1,217 @@
+------------------
+vrdCameraTrackNode
+------------------
+
+
+.. _vredvrdCameraTrackNode:
+.. py:class:: vrdCameraTrackNode
+
+(Inherits :py:class:`vrdNode`)
+
+This class represents a camera track node.
+
+These nodes exist only in the internal scene graph of the camera module and not in the regular scene graph. Camera track nodes are created by the camera service: :any:`vrCameraService.createCameraTrack(name, cameraNode) <vredvrCameraService.createCameraTrack(name, cameraNode)>`.
+
+Camera tracks created by the camera service are of type 'Regular' and have vrdViewpointNodes as children. vrdViewpointNodes can individually override the settings set here in the camera track.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getFadeInDuration() → float<vredvrdCameraTrackNode.getFadeInDuration()>`
+    * :ref:`getPauseDuration() → float<vredvrdCameraTrackNode.getPauseDuration()>`
+    * :ref:`getPlaying() → bool<vredvrdCameraTrackNode.getPlaying()>`
+    * :ref:`getTransitionDuration() → float<vredvrdCameraTrackNode.getTransitionDuration()>`
+    * :ref:`getType() → vrCameraTypes.CameraTrackType<vredvrdCameraTrackNode.getType()>`
+    * :ref:`getViewpoint(index) → vrdViewpointNode<vredvrdCameraTrackNode.getViewpoint(index)>`
+    * :ref:`getViewpointCount() → integer<vredvrdCameraTrackNode.getViewpointCount()>`
+    * :ref:`getViewpoints() → List[vrdViewpointNode]<vredvrdCameraTrackNode.getViewpoints()>`
+    * :ref:`isRenderQueueCameraTrack() → bool<vredvrdCameraTrackNode.isRenderQueueCameraTrack()>`
+    * :ref:`isVariantSetCameraTrack() → bool<vredvrdCameraTrackNode.isVariantSetCameraTrack()>`
+    * :ref:`setFadeInDuration(duration) <vredvrdCameraTrackNode.setFadeInDuration(duration)>`
+    * :ref:`setPauseDuration(duration) <vredvrdCameraTrackNode.setPauseDuration(duration)>`
+    * :ref:`setPlaying(playing) <vredvrdCameraTrackNode.setPlaying(playing)>`
+    * :ref:`setTransitionDuration(duration) <vredvrdCameraTrackNode.setTransitionDuration(duration)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdCameraTrackNode.getFadeInDuration():
+.. py:method:: vrdCameraTrackNode.getFadeInDuration()
+
+    Returns the fade in duration of the camera track.
+
+
+
+
+    :return: The fade in duration in seconds.
+    :rtype: float
+
+.. _vredvrdCameraTrackNode.getPauseDuration():
+.. py:method:: vrdCameraTrackNode.getPauseDuration()
+
+    Returns the pause duration of the camera track.
+
+
+
+
+    :return: The pause duration in seconds.
+    :rtype: float
+
+.. _vredvrdCameraTrackNode.getPlaying():
+.. py:method:: vrdCameraTrackNode.getPlaying()
+
+    Returns the playback state of the camera track.
+
+
+
+
+    :return: The playback state of the camera track.
+    :rtype: bool
+
+.. _vredvrdCameraTrackNode.getTransitionDuration():
+.. py:method:: vrdCameraTrackNode.getTransitionDuration()
+
+    Returns the transition duration of the camera track.
+
+
+
+
+    :return: The transition duration in seconds.
+    :rtype: float
+
+.. _vredvrdCameraTrackNode.getType():
+.. py:method:: vrdCameraTrackNode.getType()
+
+    Returns the type of the camera track.
+
+    Possible types are Regular, RenderQueue and VariantSet. RenderQueue and VariantSet tracks are internally created nodes and should not be modified. Camera tracks created by the camera service are always of type 'Regular'.
+
+
+    :return: The camera track type.
+    :rtype: :ref:`vrCameraTypes.CameraTrackType <vredvrCameraTypes.CameraTrackType>`
+
+.. _vredvrdCameraTrackNode.getViewpoint(index):
+.. py:method:: vrdCameraTrackNode.getViewpoint(index)
+
+    Returns a viewpoint node by index.
+
+
+
+    :param index: The index of the viewpoint node.
+    :type index: integer
+
+    :return: The viewpoint node. Can be Null if the index was invalid.
+    :rtype: vrdViewpointNode
+
+.. _vredvrdCameraTrackNode.getViewpointCount():
+.. py:method:: vrdCameraTrackNode.getViewpointCount()
+
+    Returns the number of viewpoints belonging to this camera track node.
+
+
+
+
+    :return: The number of viewpoints.
+    :rtype: integer
+
+.. _vredvrdCameraTrackNode.getViewpoints():
+.. py:method:: vrdCameraTrackNode.getViewpoints()
+
+    Returns all viewpoints belonging to this camera track node.
+
+    This is a convenience function that collects all viewpoint children of the camera track.
+
+
+    :return: The list of viewpoints.
+    :rtype: List[vrdViewpointNode]
+
+.. _vredvrdCameraTrackNode.isRenderQueueCameraTrack():
+.. py:method:: vrdCameraTrackNode.isRenderQueueCameraTrack()
+
+    Check if the camera track is of type RenderQueue.
+
+
+
+
+    :return: True if the type is RenderQueue, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraTrackNode.isVariantSetCameraTrack():
+.. py:method:: vrdCameraTrackNode.isVariantSetCameraTrack()
+
+    Check if the camera track is of type VariantSet.
+
+
+
+
+    :return: True if the type is VariantSet, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraTrackNode.setFadeInDuration(duration):
+.. py:method:: vrdCameraTrackNode.setFadeInDuration(duration)
+
+    Sets the fade in duration of the camera track.
+
+
+
+    :param duration: The fade in duration in seconds.
+    :type duration: float
+
+    
+    
+
+.. _vredvrdCameraTrackNode.setPauseDuration(duration):
+.. py:method:: vrdCameraTrackNode.setPauseDuration(duration)
+
+    Sets the pause duration of the camera track.
+
+
+
+    :param duration: The pause duration in seconds.
+    :type duration: float
+
+    
+    
+
+.. _vredvrdCameraTrackNode.setPlaying(playing):
+.. py:method:: vrdCameraTrackNode.setPlaying(playing)
+
+    Start / stop playback of the camera track.
+
+
+
+    :param playing: True to start playback, False to stop it.
+    :type playing: bool
+
+    
+    
+
+.. _vredvrdCameraTrackNode.setTransitionDuration(duration):
+.. py:method:: vrdCameraTrackNode.setTransitionDuration(duration)
+
+    Sets the transition duration of the camera track.
+
+
+
+    :param duration: The transition duration in seconds.
+    :type duration: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

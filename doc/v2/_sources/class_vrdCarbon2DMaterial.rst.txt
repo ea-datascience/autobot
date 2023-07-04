@@ -1,0 +1,227 @@
+-------------------
+vrdCarbon2DMaterial
+-------------------
+
+
+.. _vredvrdCarbon2DMaterial:
+.. py:class:: vrdCarbon2DMaterial
+
+(Inherits :py:class:`vrdBRDFMaterial`)
+
+This class is used to handle all carbon material properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBumpTexture() → vrdBumpTexture<vredvrdCarbon2DMaterial.getBumpTexture()>`
+    * :ref:`getCarbonPattern() → vrdCarbonPattern2D<vredvrdCarbon2DMaterial.getCarbonPattern()>`
+    * :ref:`getClearcoat() → vrdClearcoat<vredvrdCarbon2DMaterial.getClearcoat()>`
+    * :ref:`getDiffuseColor() → QVector3D<vredvrdCarbon2DMaterial.getDiffuseColor()>`
+    * :ref:`getDiffuseColorSpectrum() → vrSpectrum<vredvrdCarbon2DMaterial.getDiffuseColorSpectrum()>`
+    * :ref:`getDisplacementTexture() → vrdDisplacementTexture<vredvrdCarbon2DMaterial.getDisplacementTexture()>`
+    * :ref:`getGlossyColor() → QVector3D<vredvrdCarbon2DMaterial.getGlossyColor()>`
+    * :ref:`getGlossyColorSpectrum() → vrSpectrum<vredvrdCarbon2DMaterial.getGlossyColorSpectrum()>`
+    * :ref:`getIncandescence() → vrdIncandescence<vredvrdCarbon2DMaterial.getIncandescence()>`
+    * :ref:`getRoughness() → float<vredvrdCarbon2DMaterial.getRoughness()>`
+    * :ref:`setDiffuseColor(value) <vredvrdCarbon2DMaterial.setDiffuseColor(value)>`
+    * :ref:`setDiffuseColorSpectrum(value) <vredvrdCarbon2DMaterial.setDiffuseColorSpectrum(value)>`
+    * :ref:`setGlossyColor(value) <vredvrdCarbon2DMaterial.setGlossyColor(value)>`
+    * :ref:`setGlossyColorSpectrum(value) <vredvrdCarbon2DMaterial.setGlossyColorSpectrum(value)>`
+    * :ref:`setRoughness(roughness) <vredvrdCarbon2DMaterial.setRoughness(roughness)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdCarbon2DMaterial.getBumpTexture():
+.. py:method:: vrdCarbon2DMaterial.getBumpTexture()
+
+    Gets access to all properties of         :any:`vrdBumpTexture <vredvrdBumpTexture>`.
+
+
+
+
+    :return: An :any:`vrdBumpTexture <vredvrdBumpTexture>` object, to read and write access of alls properties.
+    :rtype: vrdBumpTexture
+
+.. _vredvrdCarbon2DMaterial.getCarbonPattern():
+.. py:method:: vrdCarbon2DMaterial.getCarbonPattern()
+
+    Gets access to all properties of         :any:`vrdCarbonPattern2D <vredvrdCarbonPattern2D>`.
+
+
+
+
+    :return: An :any:`vrdCarbonPattern2D <vredvrdCarbonPattern2D>` object, to read and write access of alls properties.
+    :rtype: vrdCarbonPattern2D
+
+.. _vredvrdCarbon2DMaterial.getClearcoat():
+.. py:method:: vrdCarbon2DMaterial.getClearcoat()
+
+    Gets access to all properties of         :any:`vrdClearcoat <vredvrdClearcoat>`.
+
+
+
+
+    :return: An :any:`vrdClearcoat <vredvrdClearcoat>` object, to read and write access of alls properties.
+    :rtype: vrdClearcoat
+
+.. _vredvrdCarbon2DMaterial.getDiffuseColor():
+.. py:method:: vrdCarbon2DMaterial.getDiffuseColor()
+
+    
+
+
+
+
+    :return: Current diffuse reflection color
+    :rtype: QVector3D
+
+.. _vredvrdCarbon2DMaterial.getDiffuseColorSpectrum():
+.. py:method:: vrdCarbon2DMaterial.getDiffuseColorSpectrum()
+
+    Gets the diffuse color spectrum.
+
+
+
+
+    :return: The current used spectrum for diffuse color
+    :rtype: vrSpectrum
+
+.. _vredvrdCarbon2DMaterial.getDisplacementTexture():
+.. py:method:: vrdCarbon2DMaterial.getDisplacementTexture()
+
+    Gets access to all properties of         :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>`.
+
+
+
+
+    :return: An :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>` object, to read and write access of alls properties.
+    :rtype: vrdDisplacementTexture
+
+.. _vredvrdCarbon2DMaterial.getGlossyColor():
+.. py:method:: vrdCarbon2DMaterial.getGlossyColor()
+
+    
+
+
+
+
+    :return: Current glossy reflection color
+    :rtype: QVector3D
+
+.. _vredvrdCarbon2DMaterial.getGlossyColorSpectrum():
+.. py:method:: vrdCarbon2DMaterial.getGlossyColorSpectrum()
+
+    
+
+
+
+
+    :return: The material's color spectrum for glossy reflections
+    :rtype: vrSpectrum
+
+.. _vredvrdCarbon2DMaterial.getIncandescence():
+.. py:method:: vrdCarbon2DMaterial.getIncandescence()
+
+    Gets access to all properties of         :any:`vrdIncandescence <vredvrdIncandescence>`.
+
+
+
+
+    :return: An :any:`vrdIncandescence <vredvrdIncandescence>` object, to read and write access of alls properties.
+    :rtype: vrdIncandescence
+
+.. _vredvrdCarbon2DMaterial.getRoughness():
+.. py:method:: vrdCarbon2DMaterial.getRoughness()
+
+    
+
+
+
+
+    :return: The current value of roughness for this material.
+    :rtype: float
+
+.. _vredvrdCarbon2DMaterial.setDiffuseColor(value):
+.. py:method:: vrdCarbon2DMaterial.setDiffuseColor(value)
+
+    Sets the diffuse reflection color of the material.
+
+
+
+    :param value: New diffuse color.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdCarbon2DMaterial.setDiffuseColorSpectrum(value):
+.. py:method:: vrdCarbon2DMaterial.setDiffuseColorSpectrum(value)
+
+    Sets the diffuse color spectrum.
+
+
+
+    :param value: New spectrum for diffuse color
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdCarbon2DMaterial.setGlossyColor(value):
+.. py:method:: vrdCarbon2DMaterial.setGlossyColor(value)
+
+    Sets the glossy reflection color of the material.
+
+
+
+    :param value: New glossy reflection color
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdCarbon2DMaterial.setGlossyColorSpectrum(value):
+.. py:method:: vrdCarbon2DMaterial.setGlossyColorSpectrum(value)
+
+    Sets the material's color spectrum for glossy reflections.
+
+
+
+    :param value: New color spectrum
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdCarbon2DMaterial.setRoughness(roughness):
+.. py:method:: vrdCarbon2DMaterial.setRoughness(roughness)
+
+    Controls the sharpness of the glossy reflections. The higher the value, the rougher the microscopic structure of the surface and more diffuse the reflections. The lower the value, the glossier the material.
+
+
+
+    :param roughness: New value of roughness for this material.
+    :type roughness: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

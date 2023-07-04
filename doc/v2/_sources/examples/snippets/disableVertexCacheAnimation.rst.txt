@@ -1,0 +1,7 @@
+disableVertexCacheAnimation
+===========================
+
+.. literalinclude:: ../../python_examples/snippets/disableVertexCacheAnimation.py
+   :language: python
+   :linenos:
+   :caption: snippets/disableVertexCacheAnimation.py

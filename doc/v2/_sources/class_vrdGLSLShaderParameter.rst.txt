@@ -1,0 +1,49 @@
+----------------------
+vrdGLSLShaderParameter
+----------------------
+
+
+.. _vredvrdGLSLShaderParameter:
+.. py:class:: vrdGLSLShaderParameter
+
+(Inherits :py:class:`vrdSceneObject`)
+
+
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getName() → string<vredvrdGLSLShaderParameter.getName()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdGLSLShaderParameter.getName():
+.. py:method:: vrdGLSLShaderParameter.getName()
+
+    
+
+
+
+
+    :return: The name of the shader parameter.
+    :rtype: string
+
+
+
+
+
+
+
+
+
+

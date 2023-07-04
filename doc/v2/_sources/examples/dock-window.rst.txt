@@ -1,0 +1,7 @@
+Manipulate docking state of render window
+=========================================
+
+.. literalinclude:: ../python_examples/dock-window.py
+   :language: python
+   :linenos:
+   :caption: dock-window.py

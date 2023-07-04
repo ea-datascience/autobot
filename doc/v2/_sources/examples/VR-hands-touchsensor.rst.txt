@@ -1,0 +1,11 @@
+Trigger touch sensors with the hands 1
+======================================
+
+Touch sensors can be used with the hands out of the box. Only the geometry containing the touch sensors needs to be made interactible.
+Open the touch sensor module to see the configuration.
+
+.. code-block:: python
+    :linenos:
+    :caption: VR-hands-touchsensor.vpb
+
+    setNodeInteractableInVR(findNode("car"), True)

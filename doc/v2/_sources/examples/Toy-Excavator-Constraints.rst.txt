@@ -1,0 +1,8 @@
+Toy Excavator Constraints demo
+==============================
+
+.. literalinclude:: ../python_examples/Toy-Excavator-Constraints.py
+   :language: python
+   :linenos:
+   :caption: Toy-Excavator-Constraints.vpb
+   

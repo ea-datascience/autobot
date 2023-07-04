@@ -1,0 +1,115 @@
+----------------
+vrdAreaLightCone
+----------------
+
+
+.. _vredvrdAreaLightCone:
+.. py:class:: vrdAreaLightCone
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This class provides control of the light cone of an area light.
+
+You can customize the cone angle of     :any:`vrdRectangularLightNode <vredvrdRectangularLightNode>` and :any:`vrdDiskLightNode <vredvrdDiskLightNode>`.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getConeAngle() → float<vredvrdAreaLightCone.getConeAngle()>`
+    * :ref:`getPenumbraAngle() → float<vredvrdAreaLightCone.getPenumbraAngle()>`
+    * :ref:`getUseConeAngle() → bool<vredvrdAreaLightCone.getUseConeAngle()>`
+    * :ref:`setConeAngle(angle) <vredvrdAreaLightCone.setConeAngle(angle)>`
+    * :ref:`setPenumbraAngle(angle) <vredvrdAreaLightCone.setPenumbraAngle(angle)>`
+    * :ref:`setUseConeAngle(use) <vredvrdAreaLightCone.setUseConeAngle(use)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdAreaLightCone.getConeAngle():
+.. py:method:: vrdAreaLightCone.getConeAngle()
+
+    Returns the light cone angle.
+
+
+
+
+    :return: The angle in degrees
+    :rtype: float
+
+.. _vredvrdAreaLightCone.getPenumbraAngle():
+.. py:method:: vrdAreaLightCone.getPenumbraAngle()
+
+    
+
+
+
+
+    :return: 
+    :rtype: float
+
+.. _vredvrdAreaLightCone.getUseConeAngle():
+.. py:method:: vrdAreaLightCone.getUseConeAngle()
+
+    Returns if custom light cone and penumbra angles are enabled.
+
+
+
+
+    :return: True if custom angles are enabled, False otherwise
+    :rtype: bool
+
+.. _vredvrdAreaLightCone.setConeAngle(angle):
+.. py:method:: vrdAreaLightCone.setConeAngle(angle)
+
+    Sets the light cone angle.
+
+    The cone angle is the light beam's angle from the middle of the beam to the outer edge, measured in degrees.
+
+    :param angle: The angle in degrees (interval: [0.01, 89.99])
+    :type angle: float
+
+    
+    
+
+.. _vredvrdAreaLightCone.setPenumbraAngle(angle):
+.. py:method:: vrdAreaLightCone.setPenumbraAngle(angle)
+
+    Sets the penumbra angle.
+
+    The penumbra angle softens the light by blurring the outside edge of the light cone.
+
+    :param angle: The penumbra angle in degrees (interval: [0.01, 89.99])
+    :type angle: float
+
+    
+    
+
+.. _vredvrdAreaLightCone.setUseConeAngle(use):
+.. py:method:: vrdAreaLightCone.setUseConeAngle(use)
+
+    Enable usage of custom light cone and penumbra angles.
+
+
+
+    :param use: True to enable custom angles, False otherwise
+    :type use: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

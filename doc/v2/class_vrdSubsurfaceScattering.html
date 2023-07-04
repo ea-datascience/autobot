@@ -1,0 +1,907 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrdSubsurfaceScattering &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrdSurfaceNode" href="class_vrdSurfaceNode.html" />
+    <link rel="prev" title="vrdSubstanceProperties" href="class_vrdSubstanceProperties.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrdsubsurfacescattering">
+<h1>vrdSubsurfaceScattering<a class="headerlink" href="#vrdsubsurfacescattering" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrdsubsurfacescattering"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrdSubsurfaceScattering</span></code><a class="headerlink" href="#vrdSubsurfaceScattering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <a class="reference internal" href="class_vrdSceneObject.html#vrdSceneObject" title="vrdSceneObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">vrdSceneObject</span></code></a>)</p>
+<p>This class is used for all subsurface scattering properties.</p>
+<blockquote>
+<div><span class="target" id="vredvrdsubsurfacescattering-mode"></span><dl class="py class">
+<dt class="sig sig-object py" id="Mode">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">Mode</span></code><a class="headerlink" href="#Mode" title="Permalink to this definition">¶</a></dt>
+<dd><span class="target" id="vredvrdsubsurfacescattering-mode-off"></span><dl class="py data">
+<dt class="sig sig-object py" id="Mode.Off">
+<code class="sig-name descname"><span class="pre">Off</span></code><a class="headerlink" href="#Mode.Off" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mode-thinwalledtranslucency"></span><dl class="py data">
+<dt class="sig sig-object py" id="Mode.ThinWalledTranslucency">
+<code class="sig-name descname"><span class="pre">ThinWalledTranslucency</span></code><a class="headerlink" href="#Mode.ThinWalledTranslucency" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mode-volumescattering"></span><dl class="py data">
+<dt class="sig sig-object py" id="Mode.VolumeScattering">
+<code class="sig-name descname"><span class="pre">VolumeScattering</span></code><a class="headerlink" href="#Mode.VolumeScattering" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype"></span><dl class="py class">
+<dt class="sig sig-object py" id="MediumType">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">MediumType</span></code><a class="headerlink" href="#MediumType" title="Permalink to this definition">¶</a></dt>
+<dd><span class="target" id="vredvrdsubsurfacescattering-mediumtype-custom"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.Custom">
+<code class="sig-name descname"><span class="pre">Custom</span></code><a class="headerlink" href="#MediumType.Custom" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-diamond"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.Diamond">
+<code class="sig-name descname"><span class="pre">Diamond</span></code><a class="headerlink" href="#MediumType.Diamond" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-polysilicon"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.Polysilicon">
+<code class="sig-name descname"><span class="pre">Polysilicon</span></code><a class="headerlink" href="#MediumType.Polysilicon" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-acrylicglass"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.AcrylicGlass">
+<code class="sig-name descname"><span class="pre">AcrylicGlass</span></code><a class="headerlink" href="#MediumType.AcrylicGlass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-plasticpolystyrene"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.PlasticPolystyrene">
+<code class="sig-name descname"><span class="pre">PlasticPolystyrene</span></code><a class="headerlink" href="#MediumType.PlasticPolystyrene" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-plasticpolycarbonates"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.PlasticPolycarbonates">
+<code class="sig-name descname"><span class="pre">PlasticPolycarbonates</span></code><a class="headerlink" href="#MediumType.PlasticPolycarbonates" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-ethanol"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.Ethanol">
+<code class="sig-name descname"><span class="pre">Ethanol</span></code><a class="headerlink" href="#MediumType.Ethanol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-methanol"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.Methanol">
+<code class="sig-name descname"><span class="pre">Methanol</span></code><a class="headerlink" href="#MediumType.Methanol" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-water19degrees"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.Water19degrees">
+<code class="sig-name descname"><span class="pre">Water19degrees</span></code><a class="headerlink" href="#MediumType.Water19degrees" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-water24degrees"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.Water24degrees">
+<code class="sig-name descname"><span class="pre">Water24degrees</span></code><a class="headerlink" href="#MediumType.Water24degrees" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-crownglassborosilicateglass"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.CrownGlassBorosilicateGlass">
+<code class="sig-name descname"><span class="pre">CrownGlassBorosilicateGlass</span></code><a class="headerlink" href="#MediumType.CrownGlassBorosilicateGlass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-glasslanthanumdenseflint"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.GlassLanthanumDenseFlint">
+<code class="sig-name descname"><span class="pre">GlassLanthanumDenseFlint</span></code><a class="headerlink" href="#MediumType.GlassLanthanumDenseFlint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-glassbariumflint"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.GlassBariumFlint">
+<code class="sig-name descname"><span class="pre">GlassBariumFlint</span></code><a class="headerlink" href="#MediumType.GlassBariumFlint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-glassdenseflint"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.GlassDenseFlint">
+<code class="sig-name descname"><span class="pre">GlassDenseFlint</span></code><a class="headerlink" href="#MediumType.GlassDenseFlint" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-quartzfusedsilica"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.QuartzFusedSilica">
+<code class="sig-name descname"><span class="pre">QuartzFusedSilica</span></code><a class="headerlink" href="#MediumType.QuartzFusedSilica" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-mediumtype-fusedgermania"></span><dl class="py data">
+<dt class="sig sig-object py" id="MediumType.FusedGermania">
+<code class="sig-name descname"><span class="pre">FusedGermania</span></code><a class="headerlink" href="#MediumType.FusedGermania" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div></blockquote>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-getasymmetry"><span class="std std-ref">getAsymmetry() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-getattenuation"><span class="std std-ref">getAttenuation() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-getcolor"><span class="std std-ref">getColor() → QVector3D</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-getcolorspectrum"><span class="std std-ref">getColorSpectrum() → vrSpectrum</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-getdepth"><span class="std std-ref">getDepth() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-getmediumtype"><span class="std std-ref">getMediumType() → vrdSubsurfaceScattering.MediumType</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-getmode"><span class="std std-ref">getMode() → vrdSubsurfaceScattering.Mode</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-getradius"><span class="std std-ref">getRadius() → QVector3D</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-getradiusspectrum"><span class="std std-ref">getRadiusSpectrum() → vrSpectrum</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-getrefractionindex"><span class="std std-ref">getRefractionIndex() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-getroughness"><span class="std std-ref">getRoughness() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-gettexture"><span class="std std-ref">getTexture() → vrdTexture</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-getweight"><span class="std std-ref">getWeight() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-setasymmetry-asymmetry"><span class="std std-ref">setAsymmetry(asymmetry)</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-setattenuation-attenuation"><span class="std std-ref">setAttenuation(attenuation)</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-setcolor-color"><span class="std std-ref">setColor(color)</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-setcolorspectrum-value"><span class="std std-ref">setColorSpectrum(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-setdepth-depth"><span class="std std-ref">setDepth(depth)</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-setmediumtype-type"><span class="std std-ref">setMediumType(type)</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-setmode-mode"><span class="std std-ref">setMode(mode)</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-setradius-radius"><span class="std std-ref">setRadius(radius)</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-setradiusspectrum-value"><span class="std std-ref">setRadiusSpectrum(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-setrefractionindex-indexofrefraction"><span class="std std-ref">setRefractionIndex(indexOfRefraction)</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-setroughness-roughness"><span class="std std-ref">setRoughness(roughness)</span></a></li>
+<li><a class="reference internal" href="#vredvrdsubsurfacescattering-setweight-weight"><span class="std std-ref">setWeight(weight)</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrdsubsurfacescattering-getasymmetry"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getAsymmetry">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getAsymmetry</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getAsymmetry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the value of the directional characteristic of scattering events.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current used value of the directional characteristic of scattering events.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-getattenuation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getAttenuation">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getAttenuation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getAttenuation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets how deep light penetrates a surface.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current value how deep light penetrates a surface.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-getcolor"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getColor">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getColor</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the color of the scattering/translucent light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current color for the scattering/translucent light.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector3D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-getcolorspectrum"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getColorSpectrum">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getColorSpectrum</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getColorSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the scatter color spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current used spectrum for scatter color.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrSpectrum.html#vrSpectrum" title="vrSpectrum">vrSpectrum</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-getdepth"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getDepth">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getDepth</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getDepth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the maximum number of scatter events that can happen before a ray leaves the volume.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current value of the maximum number of scatter events that can happen before a ray leaves the volume.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-getmediumtype"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getMediumType">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getMediumType</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getMediumType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the type of common index refraction values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current index of common index refraction values.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#vredvrdsubsurfacescattering-mediumtype"><span class="std std-ref">vrdSubsurfaceScattering.MediumType</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-getmode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getMode">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getMode</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the currently active subsurface scattering mode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current subsurface scattering mode</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#vredvrdsubsurfacescattering-mode"><span class="std std-ref">vrdSubsurfaceScattering.Mode</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-getradius"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getRadius">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getRadius</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getRadius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the maximum distance a ray can travel before hitting a particle.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current value for the maximum distance light can scatter below the surface.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector3D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-getradiusspectrum"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getRadiusSpectrum">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getRadiusSpectrum</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getRadiusSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the scatter radius spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current used spectrum for scatter radius.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrSpectrum.html#vrSpectrum" title="vrSpectrum">vrSpectrum</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-getrefractionindex"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getRefractionIndex">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getRefractionIndex</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getRefractionIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the index of refraction of the material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current value of the index of refraction.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-getroughness"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getRoughness">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getRoughness</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getRoughness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the amount of diffusion of a material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current value of roughness for this material.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-gettexture"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getTexture">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getTexture</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getTexture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets access to all properties of         <a class="reference internal" href="class_vrdTexture.html#vredvrdtexture"><span class="std std-ref">vrdTexture</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">All properties of <a class="reference internal" href="class_vrdTexture.html#vredvrdtexture"><span class="std std-ref">vrdTexture</span></a>.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdTexture.html#vrdTexture" title="vrdTexture">vrdTexture</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-getweight"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.getWeight">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">getWeight</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.getWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the blending factor between diffuse reflections and subsurface scattering.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current used factor for blending between diffuse reflections and subsurface scattering.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-setasymmetry-asymmetry"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.setAsymmetry">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">setAsymmetry</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">asymmetry</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.setAsymmetry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the directional characteristic of scattering events. The asymmetry sets the Henyey-Greenstein anisotropy coefficient between -1 (full back-scatter) and 1 (full forward-scatter). The default is 0 for an isotropic medium which scatters the light evenly in all directions, giving a uniform effect. Positive values bias the scattering effect forward, in the direction of the incoming ray while negative values bias the scattering backward toward the incoming ray.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>asymmetry</strong> (<em>float</em>) – New value of the directional characteristic of scattering events.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-setattenuation-attenuation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.setAttenuation">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">setAttenuation</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">attenuation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.setAttenuation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets how deep light penetrates a surface. It calculates a scaling factor that multiplies the Radius Color to adjust the density of particles inside the volume. The scaling factor is calculated as radius scale = (1.0 / (Attenuation*Attenuation))) A value of 0.0 will therefore make the material completely transparent while a value of 1.0 will make it completely solid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>attenuation</strong> (<em>float</em>) – New scaling value the radius to increase or decrease the density of particles in the volume.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-setcolor-color"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.setColor">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">setColor</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">color</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.setColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the color of the scattering/translucent light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>color</strong> (<em>QVector3D</em>) – New color for the scattering/translucent light.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-setcolorspectrum-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.setColorSpectrum">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">setColorSpectrum</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.setColorSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the scatter color spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<a class="reference internal" href="class_vrSpectrum.html#vrSpectrum" title="vrSpectrum"><em>vrSpectrum</em></a>) – New spectrum for scatter color</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-setdepth-depth"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.setDepth">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">setDepth</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">depth</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.setDepth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the maximum number of scatter events that can happen before a ray leaves the volume.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>depth</strong> (<em>integer</em>) – New value of the maximum number of scatter events that can happen before a ray leaves the volume.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-setmediumtype-type"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.setMediumType">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">setMediumType</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.setMediumType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Provides a large collection of common index refraction values.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference internal" href="#vredvrdsubsurfacescattering-mediumtype"><span class="std std-ref">vrdSubsurfaceScattering.MediumType</span></a>) – New index of common index refraction values.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-setmode-mode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.setMode">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">setMode</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.setMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the subsurface scattering mode to use. The subsurface scattering mode specifies the algorithm used to calculate subsurface scattering effects. Two modes are available at the moment: ThinWalledTranslucency simulates a simple translucency effect for single sided objects like a sheet of paper or leaves VolumeScattering uses random walk subsurface scattering to simulate the effects of subsurface scattering on solid objects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<a class="reference internal" href="#vredvrdsubsurfacescattering-mode"><span class="std std-ref">vrdSubsurfaceScattering.Mode</span></a>) – The subsurface scattering mode to use.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-setradius-radius"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.setRadius">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">setRadius</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">radius</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.setRadius" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the maximum distance light can travel inside the volume before hitting a particle. The higher the value the smoother the appearance of the subsurface scattering. The lower the value the more opaque the look. Increasing the radius can radically change a material’s appearance. Since subsurface scattering is scale dependent, adjust Attenuation as per the size of your model.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>radius</strong> (<em>QVector3D</em>) – New value for the maximum distance a light can travel before hitting a particle.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-setradiusspectrum-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.setRadiusSpectrum">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">setRadiusSpectrum</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.setRadiusSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the scatter radius spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<a class="reference internal" href="class_vrSpectrum.html#vrSpectrum" title="vrSpectrum"><em>vrSpectrum</em></a>) – New spectrum for scatter radius</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-setrefractionindex-indexofrefraction"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.setRefractionIndex">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">setRefractionIndex</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">indexOfRefraction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.setRefractionIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the index of refraction of the material. It defines how light is refracted when entering or leaving a volume of a different density.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>indexOfRefraction</strong> (<em>float</em>) – New value of the index of refraction.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-setroughness-roughness"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.setRoughness">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">setRoughness</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">roughness</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.setRoughness" title="Permalink to this definition">¶</a></dt>
+<dd><p>Defines the amount of diffusion that is applied to translucent light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>roughness</strong> (<em>float</em>) – New value of roughness for this material.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdsubsurfacescattering-setweight-weight"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdSubsurfaceScattering.setWeight">
+<code class="sig-prename descclassname"><span class="pre">vrdSubsurfaceScattering.</span></code><code class="sig-name descname"><span class="pre">setWeight</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">weight</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdSubsurfaceScattering.setWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the blending factor between diffuse reflections and subsurface scattering. When set to 1.0, there is only subsurface scattering, and when set to 0 it is only the normal diffuse term. In most cases, you want this to be 1.0 for full subsurface scattering. Note that the glossy or specular term are not affected by this weight but the index of refraction controls the reflectivity of the glossy or specular term in order to stay physically plausible.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>weight</strong> (<em>float</em>) – New value for the blending factor between diffuse reflections and subsurface scattering</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrdSubsurfaceScattering</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrdSubstanceProperties.html"
+                        title="previous chapter">vrdSubstanceProperties</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrdSurfaceNode.html"
+                        title="next chapter">vrdSurfaceNode</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrdSurfaceNode.html" title="vrdSurfaceNode"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrdSubstanceProperties.html" title="vrdSubstanceProperties"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

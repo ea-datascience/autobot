@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrdCameraNode &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrdCameraTrackNode" href="class_vrdCameraTrackNode.html" />
+    <link rel="prev" title="vrdCameraCollider" href="class_vrdCameraCollider.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrdcameranode">
+<h1>vrdCameraNode<a class="headerlink" href="#vrdcameranode" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrdcameranode"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrdCameraNode">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrdCameraNode</span></code><a class="headerlink" href="#vrdCameraNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <a class="reference internal" href="class_vrdCameraBaseNode.html#vrdCameraBaseNode" title="vrdCameraBaseNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">vrdCameraBaseNode</span></code></a>)</p>
+<p>This class represents a camera in VRED.</p>
+<p>For access to existing cameras and to create new cameras use <a class="reference internal" href="class_vrCameraService.html#vredvrcameraservice"><span class="std std-ref">vrCameraService</span></a>. This class holds all properties that are specific to cameras and not valid for viewpoints (<a class="reference internal" href="class_vrdViewpointNode.html#vredvrdviewpointnode"><span class="std std-ref">vrdViewpointNode</span></a>). For more properties see also <a class="reference internal" href="class_vrdCameraBaseNode.html#vredvrdcamerabasenode"><span class="std std-ref">vrdCameraBaseNode</span></a>.</p>
+<p>There are actually two different nodes for each camera in VRED: One node is in the regular scene graph, the second node is in the graph in the Camera Editor. They have different ids but internally work on the same OSG camera.</p>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrdcameranode-activate"><span class="std std-ref">activate()</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getaimconstraintsources"><span class="std std-ref">getAimConstraintSources() → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getaimvisualizationscale"><span class="std std-ref">getAimVisualizationScale() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getaimvisualizationvisible"><span class="std std-ref">getAimVisualizationVisible() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getcameracollider"><span class="std std-ref">getCameraCollider() → vrdCameraCollider</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getcameratrack-cameratrackindex"><span class="std std-ref">getCameraTrack(cameraTrackIndex) → vrdCameraTrackNode</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getcameratrackcount"><span class="std std-ref">getCameraTrackCount() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getcameratracks"><span class="std std-ref">getCameraTracks() → List[vrdCameraTrackNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getdefaultcameratrack"><span class="std std-ref">getDefaultCameraTrack() → vrdCameraTrackNode</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getdollyzoom"><span class="std std-ref">getDollyZoom() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getevaluatenavigationmode"><span class="std std-ref">getEvaluateNavigationMode() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getmodulenode"><span class="std std-ref">getModuleNode() → vrdCameraNode</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getturntable"><span class="std std-ref">getTurntable() → vrdTurntable</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getupvectorconstraintsources"><span class="std std-ref">getUpVectorConstraintSources() → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getvisualizationscale"><span class="std std-ref">getVisualizationScale() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-getvisualizationvisible"><span class="std std-ref">getVisualizationVisible() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-hasaimconstraint"><span class="std std-ref">hasAimConstraint() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-hasaimconstraintsource-sourcenode"><span class="std std-ref">hasAimConstraintSource(sourceNode) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-isactive"><span class="std std-ref">isActive() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-isdefault"><span class="std std-ref">isDefault() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-isinitialcamera"><span class="std std-ref">isInitialCamera() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-removeaimconstraintsources"><span class="std std-ref">removeAimConstraintSources() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-removeupvectorconstraintsources"><span class="std std-ref">removeUpVectorConstraintSources() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-setaimconstraintsources-nodes"><span class="std std-ref">setAimConstraintSources(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-setaimvisualizationscale-value"><span class="std std-ref">setAimVisualizationScale(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-setaimvisualizationvisible-enable"><span class="std std-ref">setAimVisualizationVisible(enable)</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-setdollyzoom-enabled"><span class="std std-ref">setDollyZoom(enabled)</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-setevaluatenavigationmode-enabled"><span class="std std-ref">setEvaluateNavigationMode(enabled)</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-setinitialcamera"><span class="std std-ref">setInitialCamera()</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-setupvectorconstraintsources-nodes"><span class="std std-ref">setUpVectorConstraintSources(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-setvisualizationscale-value"><span class="std std-ref">setVisualizationScale(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-setvisualizationvisible-enable"><span class="std std-ref">setVisualizationVisible(enable)</span></a></li>
+<li><a class="reference internal" href="#vredvrdcameranode-updatefromperspectivematch"><span class="std std-ref">updateFromPerspectiveMatch()</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrdcameranode-activate"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.activate">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">activate</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.activate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the camera to active.</p>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getaimconstraintsources"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getAimConstraintSources">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getAimConstraintSources</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getAimConstraintSources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of nodes set as aim constraint sources for the camera.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The list of aim constraint source nodes.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getaimvisualizationscale"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getAimVisualizationScale">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getAimVisualizationScale</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getAimVisualizationScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the scaling value used for the aim and up vector visualization.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The visualization scaling value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getaimvisualizationvisible"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getAimVisualizationVisible">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getAimVisualizationVisible</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getAimVisualizationVisible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries if the aim and up vector visualization is visible in the renderer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the visualization is enabled.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getcameracollider"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getCameraCollider">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getCameraCollider</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getCameraCollider" title="Permalink to this definition">¶</a></dt>
+<dd><p>This object gives access to the camera collision functionality.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The camera collider object.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdCameraCollider.html#vrdCameraCollider" title="vrdCameraCollider">vrdCameraCollider</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getcameratrack-cameratrackindex"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getCameraTrack">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getCameraTrack</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">cameraTrackIndex</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getCameraTrack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the camera track.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cameraTrackIndex</strong> (<em>integer</em>) – The camera track index</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The camera track.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdCameraTrackNode.html#vrdCameraTrackNode" title="vrdCameraTrackNode">vrdCameraTrackNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getcameratrackcount"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getCameraTrackCount">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getCameraTrackCount</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getCameraTrackCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of camera tracks in the camera.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of camera tracks.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getcameratracks"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getCameraTracks">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getCameraTracks</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getCameraTracks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of all camera track nodes of the camera.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The list of camera track nodes.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdCameraTrackNode.html#vrdCameraTrackNode" title="vrdCameraTrackNode">vrdCameraTrackNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getdefaultcameratrack"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getDefaultCameraTrack">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getDefaultCameraTrack</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getDefaultCameraTrack" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the default camera track node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The default camera track node.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdCameraTrackNode.html#vrdCameraTrackNode" title="vrdCameraTrackNode">vrdCameraTrackNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getdollyzoom"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getDollyZoom">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getDollyZoom</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getDollyZoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the state of dolly zoom mode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if dolly zoom mode is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getevaluatenavigationmode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getEvaluateNavigationMode">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getEvaluateNavigationMode</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getEvaluateNavigationMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries if evaluation of the navigation mode is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if evaluation is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getmodulenode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getModuleNode">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getModuleNode</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getModuleNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the corresponding camera graph node to this camera node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns the camera graph node</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#vrdCameraNode" title="vrdCameraNode">vrdCameraNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getturntable"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getTurntable">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getTurntable</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getTurntable" title="Permalink to this definition">¶</a></dt>
+<dd><p>This object gives access to the turntable.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The turntable object.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdTurntable.html#vrdTurntable" title="vrdTurntable">vrdTurntable</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getupvectorconstraintsources"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getUpVectorConstraintSources">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getUpVectorConstraintSources</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getUpVectorConstraintSources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of nodes set as up vector sources for the camera.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The list of up vector constraint source nodes.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getvisualizationscale"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getVisualizationScale">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getVisualizationScale</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getVisualizationScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the scaling value used for the camera visualization.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The visualization scaling value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-getvisualizationvisible"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.getVisualizationVisible">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">getVisualizationVisible</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.getVisualizationVisible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries if the visualization for the camera has been enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The visualization visible.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-hasaimconstraint"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.hasAimConstraint">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">hasAimConstraint</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.hasAimConstraint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries if the camera has an aim constraint.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if has aim constraint, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-hasaimconstraintsource-sourcenode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.hasAimConstraintSource">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">hasAimConstraintSource</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">sourceNode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.hasAimConstraintSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries if a given node is an aim constraint source for the camera.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sourceNode</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node to check.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the node is part of the aim constraint sources, False otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-isactive"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.isActive">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">isActive</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.isActive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines if the camera is active.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if active, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-isdefault"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.isDefault">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">isDefault</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.isDefault" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines if the camera is the default camera.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if default, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-isinitialcamera"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.isInitialCamera">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">isInitialCamera</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.isInitialCamera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries if this camera is the initial camera.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if initial camera, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-removeaimconstraintsources"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.removeAimConstraintSources">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">removeAimConstraintSources</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.removeAimConstraintSources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all aim constraint sources from the camera.</p>
+<p>Note that this will also remove the default ‘CameraNameAim’ node which is automatically created and added as an aim constraint source when creating a new camera with an aim constraint.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if aim constraint sources could be removed, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-removeupvectorconstraintsources"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.removeUpVectorConstraintSources">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">removeUpVectorConstraintSources</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.removeUpVectorConstraintSources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all up vector constraint sources.</p>
+<p>Note that this will also remove the default ‘CameraNameUp’ node which is automatically created and added as an up vector constraint source when creating a new camera with an aim and up constraint.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if up vector constraint sources could be removed, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-setaimconstraintsources-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.setAimConstraintSources">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">setAimConstraintSources</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.setAimConstraintSources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a list of nodes as aim constraint sources for the camera.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to set as aim constraint sources.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-setaimvisualizationscale-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.setAimVisualizationScale">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">setAimVisualizationScale</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.setAimVisualizationScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the scaling value for the aim and up vector visualization.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>float</em>) – The scaling value (minimum: 0)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-setaimvisualizationvisible-enable"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.setAimVisualizationVisible">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">setAimVisualizationVisible</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">enable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.setAimVisualizationVisible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables / disables the aim and up vector visualizations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enable</strong> (<em>bool</em>) – True to enable the visualization, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-setdollyzoom-enabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.setDollyZoom">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">setDollyZoom</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">enabled</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.setDollyZoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables / disables dolly zoom mode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enabled</strong> (<em>bool</em>) – True to enable dolly zoom mode, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-setevaluatenavigationmode-enabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.setEvaluateNavigationMode">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">setEvaluateNavigationMode</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">enabled</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.setEvaluateNavigationMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable / disable the evaluation of the navigation mode when playing camera animations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enabled</strong> (<em>bool</em>) – True enables evaluation, False disables it.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-setinitialcamera"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.setInitialCamera">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">setInitialCamera</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.setInitialCamera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets this camera to be the initial camera.</p>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-setupvectorconstraintsources-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.setUpVectorConstraintSources">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">setUpVectorConstraintSources</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.setUpVectorConstraintSources" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a list of nodes as up vector constraint sources.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to set as up vector constraint sources.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-setvisualizationscale-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.setVisualizationScale">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">setVisualizationScale</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.setVisualizationScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a scaling value for the camera visualization.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>float</em>) – The scaling value (minimum: 0)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-setvisualizationvisible-enable"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.setVisualizationVisible">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">setVisualizationVisible</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">enable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.setVisualizationVisible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables / disables the visualization of the camera.</p>
+<p>Enabling this will show a visualization of the camera in the render window.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enable</strong> (<em>bool</em>) – True to enable the visualization, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdcameranode-updatefromperspectivematch"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdCameraNode.updateFromPerspectiveMatch">
+<code class="sig-prename descclassname"><span class="pre">vrdCameraNode.</span></code><code class="sig-name descname"><span class="pre">updateFromPerspectiveMatch</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdCameraNode.updateFromPerspectiveMatch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Updates this camera’s focal length and rotation according to perspective match settings.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrdCameraNode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrdCameraCollider.html"
+                        title="previous chapter">vrdCameraCollider</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrdCameraTrackNode.html"
+                        title="next chapter">vrdCameraTrackNode</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrdCameraTrackNode.html" title="vrdCameraTrackNode"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrdCameraCollider.html" title="vrdCameraCollider"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

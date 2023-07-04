@@ -1,0 +1,7 @@
+Open a dialog window with PySide
+=================================
+
+.. literalinclude:: ../python_examples/pysideExampleDialog.py
+   :language: python
+   :linenos:
+   :caption: pysideExampleDialog.py

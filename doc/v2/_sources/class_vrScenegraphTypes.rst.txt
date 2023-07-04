@@ -1,0 +1,435 @@
+-----------------
+vrScenegraphTypes
+-----------------
+
+
+.. _vredvrScenegraphTypes:
+.. py:class:: vrScenegraphTypes
+
+
+
+
+
+
+
+    .. _vredvrScenegraphTypes.UnshareOption:
+    .. py:class:: UnshareOption
+
+        Options for unsharing cloned nodes in the Scenegraph.
+
+
+            Breaks all clone connections in the subtree.
+
+            .. _vredvrScenegraphTypes.UnshareOption.UnshareAll:
+            .. py:data:: UnshareAll
+
+
+            Breaks all clone connections from nodes in the subtree to other parts of the Scenegraph. Keeps clone connections within the subtree.
+
+            .. _vredvrScenegraphTypes.UnshareOption.KeepLocalClones:
+            .. py:data:: KeepLocalClones
+
+
+            Breaks the clone connection of the selected node and of implicitly shared children. Shared children that have explicit clone connections to other nodes (inside or outside the subtree) are not unshared.
+
+            .. _vredvrScenegraphTypes.UnshareOption.KeepGlobalClones:
+            .. py:data:: KeepGlobalClones
+
+
+    .. _vredvrScenegraphTypes.DuplicateOption:
+    .. py:class:: DuplicateOption
+
+        Options for how to handle clones nodes inside the duplicated tree.
+
+
+            Duplicate node without keeping any clone structure in its hierarchy.
+
+            .. _vredvrScenegraphTypes.DuplicateOption.DuplicateAll:
+            .. py:data:: DuplicateAll
+
+
+            Duplicate node and keep the inner clone structure in its hierarchy.
+
+            .. _vredvrScenegraphTypes.DuplicateOption.DuplicateKeepLocalClones:
+            .. py:data:: DuplicateKeepLocalClones
+
+
+            Duplicate node and in its hierarchy keep inner clone structure as well as clone connections to other parts of the Scenegraph.
+
+            .. _vredvrScenegraphTypes.DuplicateOption.DuplicateKeepClones:
+            .. py:data:: DuplicateKeepClones
+
+
+    .. _vredvrScenegraphTypes.Action:
+    .. py:class:: Action
+
+
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.Rename:
+            .. py:data:: Rename
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.Convert:
+            .. py:data:: Convert
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.ShowHide:
+            .. py:data:: ShowHide
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.SetSide:
+            .. py:data:: SetSide
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.AddSubChild:
+            .. py:data:: AddSubChild
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.MoveTo:
+            .. py:data:: MoveTo
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.ApplyMaterial:
+            .. py:data:: ApplyMaterial
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.Delete:
+            .. py:data:: Delete
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.RemoveSelected:
+            .. py:data:: RemoveSelected
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.Cut:
+            .. py:data:: Cut
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.Paste:
+            .. py:data:: Paste
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.Clone:
+            .. py:data:: Clone
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.Unshare:
+            .. py:data:: Unshare
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.ReloadFile:
+            .. py:data:: ReloadFile
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.ReplaceFile:
+            .. py:data:: ReplaceFile
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.Tessellate:
+            .. py:data:: Tessellate
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.ShellFromSelection:
+            .. py:data:: ShellFromSelection
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.EditGeometry:
+            .. py:data:: EditGeometry
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.Edit:
+            .. py:data:: Edit
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.ChangeTransformation:
+            .. py:data:: ChangeTransformation
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.ChangeSwitchChoice:
+            .. py:data:: ChangeSwitchChoice
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.ChangeAnimation:
+            .. py:data:: ChangeAnimation
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.EditLightProperties:
+            .. py:data:: EditLightProperties
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.SwitchLightOnOff:
+            .. py:data:: SwitchLightOnOff
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.ChangeGeometryNormals:
+            .. py:data:: ChangeGeometryNormals
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.ChangeGeometryAO:
+            .. py:data:: ChangeGeometryAO
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.ChangeGeometryTextureCoords:
+            .. py:data:: ChangeGeometryTextureCoords
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.CameraNavigation:
+            .. py:data:: CameraNavigation
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.EditCameraProperties:
+            .. py:data:: EditCameraProperties
+
+
+            
+
+            .. _vredvrScenegraphTypes.Action.ModifyAsset:
+            .. py:data:: ModifyAsset
+
+
+    .. _vredvrScenegraphTypes.ChangeFlag:
+    .. py:class:: ChangeFlag
+
+
+
+
+            
+
+            .. _vredvrScenegraphTypes.ChangeFlag.GraphChanged:
+            .. py:data:: GraphChanged
+
+
+            
+
+            .. _vredvrScenegraphTypes.ChangeFlag.NodeChanged:
+            .. py:data:: NodeChanged
+
+
+            
+
+            .. _vredvrScenegraphTypes.ChangeFlag.MetadataChanged:
+            .. py:data:: MetadataChanged
+
+
+            
+
+            .. _vredvrScenegraphTypes.ChangeFlag.AllChanged:
+            .. py:data:: AllChanged
+
+
+    .. _vredvrScenegraphTypes.NodeType:
+    .. py:class:: NodeType
+
+
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.BillboardNode:
+            .. py:data:: BillboardNode
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.ClipPlaneNode:
+            .. py:data:: ClipPlaneNode
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.DistanceLODNode:
+            .. py:data:: DistanceLODNode
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.TransformNode:
+            .. py:data:: TransformNode
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.HostSwitchNode:
+            .. py:data:: HostSwitchNode
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.MaterialNode:
+            .. py:data:: MaterialNode
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.MatrixTransformNode:
+            .. py:data:: MatrixTransformNode
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.ShellNode:
+            .. py:data:: ShellNode
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.SurfaceNode:
+            .. py:data:: SurfaceNode
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.SoundNode:
+            .. py:data:: SoundNode
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.SoundObstructorNode:
+            .. py:data:: SoundObstructorNode
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.StereoSwitchNode:
+            .. py:data:: StereoSwitchNode
+
+
+            
+
+            .. _vredvrScenegraphTypes.NodeType.SwitchNode:
+            .. py:data:: SwitchNode
+
+
+    .. _vredvrScenegraphTypes.MirrorMode:
+    .. py:class:: MirrorMode
+
+
+
+
+            
+
+            .. _vredvrScenegraphTypes.MirrorMode.MirrorNone:
+            .. py:data:: MirrorNone
+
+
+            
+
+            .. _vredvrScenegraphTypes.MirrorMode.MirrorX:
+            .. py:data:: MirrorX
+
+
+            
+
+            .. _vredvrScenegraphTypes.MirrorMode.MirrorY:
+            .. py:data:: MirrorY
+
+
+            
+
+            .. _vredvrScenegraphTypes.MirrorMode.MirrorZ:
+            .. py:data:: MirrorZ
+
+
+            
+
+            .. _vredvrScenegraphTypes.MirrorMode.MirrorXY:
+            .. py:data:: MirrorXY
+
+
+            
+
+            .. _vredvrScenegraphTypes.MirrorMode.MirrorXZ:
+            .. py:data:: MirrorXZ
+
+
+            
+
+            .. _vredvrScenegraphTypes.MirrorMode.MirrorYZ:
+            .. py:data:: MirrorYZ
+
+
+            
+
+            .. _vredvrScenegraphTypes.MirrorMode.MirrorXYZ:
+            .. py:data:: MirrorXYZ
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

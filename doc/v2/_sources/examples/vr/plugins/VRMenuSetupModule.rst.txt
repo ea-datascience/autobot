@@ -1,0 +1,9 @@
+Allowing to configure the VR menu
+=================================
+
+This plugin creates a new menu entry under "Scripts/VRMenu". With this menu you can configure the visible tools in the VR menu.
+
+.. literalinclude:: ../../../python_script_plugins/VRMenu/VRMenuSetupModule.py
+   :language: python
+   :linenos:
+   :caption: VRMenuSetupModule.py

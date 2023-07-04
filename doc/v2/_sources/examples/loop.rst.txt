@@ -1,0 +1,7 @@
+Insert code in the event loop
+=============================
+
+.. literalinclude:: ../python_examples/loop.py
+   :language: python
+   :linenos:
+   :caption: loop.py

@@ -1,0 +1,255 @@
+---------------
+vrMaterialTypes
+---------------
+
+
+.. _vredvrMaterialTypes:
+.. py:class:: vrMaterialTypes
+
+
+
+
+
+
+
+    .. _vredvrMaterialTypes.MaterialType:
+    .. py:class:: MaterialType
+
+        Defines the type of a material.
+
+
+            Invalid material type.
+
+            .. _vredvrMaterialTypes.MaterialType.Invalid:
+            .. py:data:: Invalid
+
+
+            Phong material.
+
+            .. _vredvrMaterialTypes.MaterialType.Phong:
+            .. py:data:: Phong
+
+
+            Plastic material.
+
+            .. _vredvrMaterialTypes.MaterialType.Plastic:
+            .. py:data:: Plastic
+
+
+            Reflective plastic material.
+
+            .. _vredvrMaterialTypes.MaterialType.ReflectivePlastic:
+            .. py:data:: ReflectivePlastic
+
+
+            Chrome material.
+
+            .. _vredvrMaterialTypes.MaterialType.Chrome:
+            .. py:data:: Chrome
+
+
+            Line chrome material.
+
+            .. _vredvrMaterialTypes.MaterialType.LineChrome:
+            .. py:data:: LineChrome
+
+
+            Brushed metal material.
+
+            .. _vredvrMaterialTypes.MaterialType.BrushedMetal:
+            .. py:data:: BrushedMetal
+
+
+            Unicolor carpaint material.
+
+            .. _vredvrMaterialTypes.MaterialType.UnicolorCarpaint:
+            .. py:data:: UnicolorCarpaint
+
+
+            Metallic carpaint material.
+
+            .. _vredvrMaterialTypes.MaterialType.MetallicCarpaint:
+            .. py:data:: MetallicCarpaint
+
+
+            Flipflop carpaint material.
+
+            .. _vredvrMaterialTypes.MaterialType.FlipflopCarpaint:
+            .. py:data:: FlipflopCarpaint
+
+
+            Glass material.
+
+            .. _vredvrMaterialTypes.MaterialType.Glass:
+            .. py:data:: Glass
+
+
+            XRay material.
+
+            .. _vredvrMaterialTypes.MaterialType.XRay:
+            .. py:data:: XRay
+
+
+            Carbon material.
+
+            .. _vredvrMaterialTypes.MaterialType.Carbon:
+            .. py:data:: Carbon
+
+
+            Carbon 2D material.
+
+            .. _vredvrMaterialTypes.MaterialType.Carbon2D:
+            .. py:data:: Carbon2D
+
+
+            Tire material.
+
+            .. _vredvrMaterialTypes.MaterialType.Tire:
+            .. py:data:: Tire
+
+
+            Velvet material.
+
+            .. _vredvrMaterialTypes.MaterialType.Velvet:
+            .. py:data:: Velvet
+
+
+            Woven cloth material.
+
+            .. _vredvrMaterialTypes.MaterialType.WovenCloth:
+            .. py:data:: WovenCloth
+
+
+            Substance material.
+
+            .. _vredvrMaterialTypes.MaterialType.Substance:
+            .. py:data:: Substance
+
+
+            X-Rite material.
+
+            .. _vredvrMaterialTypes.MaterialType.XRite:
+            .. py:data:: XRite
+
+
+            OCS material.
+
+            .. _vredvrMaterialTypes.MaterialType.OCS:
+            .. py:data:: OCS
+
+
+            Shadow material.
+
+            .. _vredvrMaterialTypes.MaterialType.Shadow:
+            .. py:data:: Shadow
+
+
+            Light portal material.
+
+            .. _vredvrMaterialTypes.MaterialType.LightPortal:
+            .. py:data:: LightPortal
+
+
+            Multipass material.
+
+            .. _vredvrMaterialTypes.MaterialType.MultiPass:
+            .. py:data:: MultiPass
+
+
+            Layered material.
+
+            .. _vredvrMaterialTypes.MaterialType.Layered:
+            .. py:data:: Layered
+
+
+            Switch material.
+
+            .. _vredvrMaterialTypes.MaterialType.Switch:
+            .. py:data:: Switch
+
+
+            Sphere environment material.
+
+            .. _vredvrMaterialTypes.MaterialType.SphereEnvironment:
+            .. py:data:: SphereEnvironment
+
+
+            Skylight material.
+
+            .. _vredvrMaterialTypes.MaterialType.Skylight:
+            .. py:data:: Skylight
+
+
+            Environment switch material.
+
+            .. _vredvrMaterialTypes.MaterialType.EnvironmentSwitch:
+            .. py:data:: EnvironmentSwitch
+
+
+            Substance panorama material.
+
+            .. _vredvrMaterialTypes.MaterialType.SubstancePanorama:
+            .. py:data:: SubstancePanorama
+
+
+            Chunk material.
+
+            .. _vredvrMaterialTypes.MaterialType.Chunk:
+            .. py:data:: Chunk
+
+
+            MDL material.
+
+            .. _vredvrMaterialTypes.MaterialType.MDL:
+            .. py:data:: MDL
+
+
+            MaterialX material.
+
+            .. _vredvrMaterialTypes.MaterialType.MaterialX:
+            .. py:data:: MaterialX
+
+
+    .. _vredvrMaterialTypes.MergeOptions:
+    .. py:class:: MergeOptions
+
+        Defines options for merging materials.
+
+
+            Default, compare name and and skip Switch and X-Rite materials.
+
+            .. _vredvrMaterialTypes.MergeOptions.Default:
+            .. py:data:: Default
+
+
+            Do not compare the name of the material, i.e., materials with different names can be considered equal.
+
+            .. _vredvrMaterialTypes.MergeOptions.IgnoreName:
+            .. py:data:: IgnoreName
+
+
+            Also merge Switch and X-Rite materials.
+
+            .. _vredvrMaterialTypes.MergeOptions.IncludeSwitchMaterials:
+            .. py:data:: IncludeSwitchMaterials
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

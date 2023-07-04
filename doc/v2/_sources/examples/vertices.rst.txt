@@ -1,0 +1,7 @@
+vertex animation
+================
+
+.. literalinclude:: ../python_examples/vertices.py
+   :language: python
+   :linenos:
+   :caption: vertices.py

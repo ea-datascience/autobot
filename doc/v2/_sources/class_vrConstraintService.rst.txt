@@ -1,0 +1,190 @@
+-------------------
+vrConstraintService
+-------------------
+
+
+.. _vredvrConstraintService:
+.. py:class:: vrConstraintService
+
+(Inherits :py:class:`vrBaseService`)
+
+Interface to manage constraints in VRED.
+
+This is the basic interface to access, create or delete constraints. These are some basic examples how to work with it:
+
+.. code-block:: python
+
+     # Get some nodes from the scene graph
+     obj1 = vrNodeService.findNode("Object1")
+     obj2 = vrNodeService.findNode("Object2")
+     obj3 = vrNodeService.findNode("Object3")
+     
+     # Create a position constraint which synchronizes the position of two objects.
+     posConstraint = vrConstraintService.createPositionConstraint([obj1], obj2, False)
+     
+     # Change the constrained node of the position constraint.
+     posConstraint.setConstrainedNode(obj3)
+     
+     # Deletes the constraint.
+     vrConstraintService.deleteConstraint(posConstraint)
+     
+     # Create another position constraint which synchronizes the position of two objects
+     # with a third one and keeps the current offsets.
+     posConstraint = vrConstraintService.createPositionConstraint([obj1, obj2], obj3, True)
+     
+     # Modify the weight of an object.
+     posConstraint.setTargetNodeWeight(obj1, 0.5)
+     
+     # Create an aim constraint which computes the target orientation by a source position.
+     # The up vector is calculated automatically.
+     aimConstraint = vrConstraintService.createAimConstraint([obj1], [], obj2)
+     
+     # Find constraints for a given constrained node.
+     constraints = vrConstraintService.findConstrainedNode(obj2)
+     
+     # Set all found constraints inactive
+     for constraint in constraints:
+         constraint.setActive(False)
+..
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`createAimConstraint(targetNodes, upTargetNodes, constrainedNode) → vrdAimConstraintNode<vredvrConstraintService.createAimConstraint(targetNodes, upTargetNodes, constrainedNode)>`
+    * :ref:`createOrientationConstraint(targetNodes, constrainedNode) → vrdOrientationConstraintNode<vredvrConstraintService.createOrientationConstraint(targetNodes, constrainedNode)>`
+    * :ref:`createParentConstraint(targetNodes, constrainedNode, maintainOffset) → vrdParentConstraintNode<vredvrConstraintService.createParentConstraint(targetNodes, constrainedNode, maintainOffset)>`
+    * :ref:`createPositionConstraint(targetNodes, constrainedNode, maintainOffset) → vrdPositionConstraintNode<vredvrConstraintService.createPositionConstraint(targetNodes, constrainedNode, maintainOffset)>`
+    * :ref:`deleteConstraint(constraintNode) → bool<vredvrConstraintService.deleteConstraint(constraintNode)>`
+    * :ref:`findConstrainedNode(constrainedNode) → List[vrdConstraintNode]<vredvrConstraintService.findConstrainedNode(constrainedNode)>`
+    * :ref:`getConstraints() → List[vrdConstraintNode]<vredvrConstraintService.getConstraints()>`
+
+
+Functions
+=========
+
+
+.. _vredvrConstraintService.createAimConstraint(targetNodes, upTargetNodes, constrainedNode):
+.. py:method:: vrConstraintService.createAimConstraint(targetNodes, upTargetNodes, constrainedNode)
+
+    Creates a new aim constraint node.
+
+
+
+    :param targetNodes: The nodes to use as constraint targets.
+    :type targetNodes: List[vrdNode]
+
+    :param upTargetNodes: The nodes to use as constraint up vector targets. Use an empty list for auto calculation.
+    :type upTargetNodes: List[vrdNode]
+
+    :param constrainedNode: The node to use as the constrained one.
+    :type constrainedNode: vrdNode
+
+    :return: The aim constraint node.
+    :rtype: vrdAimConstraintNode
+
+.. _vredvrConstraintService.createOrientationConstraint(targetNodes, constrainedNode):
+.. py:method:: vrConstraintService.createOrientationConstraint(targetNodes, constrainedNode)
+
+    Creates a new orientation constraint node.
+
+
+
+    :param targetNodes: The nodes to use as constraint targets.
+    :type targetNodes: List[vrdNode]
+
+    :param constrainedNode: The node to use as the constrained one.
+    :type constrainedNode: vrdNode
+
+    :return: The orientation constraint node.
+    :rtype: vrdOrientationConstraintNode
+
+.. _vredvrConstraintService.createParentConstraint(targetNodes, constrainedNode, maintainOffset):
+.. py:method:: vrConstraintService.createParentConstraint(targetNodes, constrainedNode, maintainOffset)
+
+    Creates a new parent constraint node.
+
+
+
+    :param targetNodes: The nodes to use as constraint targets.
+    :type targetNodes: List[vrdNode]
+
+    :param constrainedNode: The node to use as the constrained one.
+    :type constrainedNode: vrdNode
+
+    :param maintainOffset: True if the offset shall be maintained, False otherwise.
+    :type maintainOffset: bool
+
+    :return: The parent constraint node.
+    :rtype: vrdParentConstraintNode
+
+.. _vredvrConstraintService.createPositionConstraint(targetNodes, constrainedNode, maintainOffset):
+.. py:method:: vrConstraintService.createPositionConstraint(targetNodes, constrainedNode, maintainOffset)
+
+    Creates a new position constraint node.
+
+
+
+    :param targetNodes: The nodes to use as constraint targets.
+    :type targetNodes: List[vrdNode]
+
+    :param constrainedNode: The node to use as the constrained one.
+    :type constrainedNode: vrdNode
+
+    :param maintainOffset: True if the offset shall be maintained, False otherwise.
+    :type maintainOffset: bool
+
+    :return: The position constraint node.
+    :rtype: vrdPositionConstraintNode
+
+.. _vredvrConstraintService.deleteConstraint(constraintNode):
+.. py:method:: vrConstraintService.deleteConstraint(constraintNode)
+
+    Deletes a given constraint node.
+
+
+
+    :param constraintNode: The constraint node to delete.
+    :type constraintNode: vrdConstraintNode
+
+    :return: True on success, False otherwise.
+    :rtype: bool
+
+.. _vredvrConstraintService.findConstrainedNode(constrainedNode):
+.. py:method:: vrConstraintService.findConstrainedNode(constrainedNode)
+
+    Returns a list of constraint nodes for a given constrained node.
+
+
+
+    :param constrainedNode: The constrained node to get the constraint nodes for.
+    :type constrainedNode: vrdNode
+
+    :return: The list of constraint nodes.
+    :rtype: List[vrdConstraintNode]
+
+.. _vredvrConstraintService.getConstraints():
+.. py:method:: vrConstraintService.getConstraints()
+
+    Returns a list of all public constraint nodes.
+
+
+
+
+    :return: The list of constraint nodes.
+    :rtype: List[vrdConstraintNode]
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,365 @@
+--------------------
+vrImmersiveUiService
+--------------------
+
+
+.. _vredvrImmersiveUiService:
+.. py:class:: vrImmersiveUiService
+
+(Inherits :py:class:`vrBaseService`)
+
+Interface to work with interactive VR windows and tools.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`createMenu(name) → vrdImmersiveMenu<vredvrImmersiveUiService.createMenu(name)>`
+    * :ref:`createTool(name) → vrdImmersiveTool<vredvrImmersiveUiService.createTool(name)>`
+    * :ref:`deleteMenu(menu) <vredvrImmersiveUiService.deleteMenu(menu)>`
+    * :ref:`deleteMenu(name) <vredvrImmersiveUiService.deleteMenu(name)>`
+    * :ref:`deleteTool(tool) <vredvrImmersiveUiService.deleteTool(tool)>`
+    * :ref:`deleteTool(name) <vredvrImmersiveUiService.deleteTool(name)>`
+    * :ref:`findMenu(name) → vrdImmersiveMenu<vredvrImmersiveUiService.findMenu(name)>`
+    * :ref:`findTool(name) → vrdImmersiveTool<vredvrImmersiveUiService.findTool(name)>`
+    * :ref:`getHideParticipantsVRPanel() → bool<vredvrImmersiveUiService.getHideParticipantsVRPanel()>`
+    * :ref:`getHideStatusVRPanel() → bool<vredvrImmersiveUiService.getHideStatusVRPanel()>`
+    * :ref:`getTools() → List[vrdImmersiveTool]<vredvrImmersiveUiService.getTools()>`
+    * :ref:`openToolsSubMenu(content) <vredvrImmersiveUiService.openToolsSubMenu(content)>`
+    * :ref:`openToolsSubMenu(widget) <vredvrImmersiveUiService.openToolsSubMenu(widget)>`
+    * :ref:`openToolsSubMenu(tool) <vredvrImmersiveUiService.openToolsSubMenu(tool)>`
+    * :ref:`setHideParticipantsVRPanel(value) <vredvrImmersiveUiService.setHideParticipantsVRPanel(value)>`
+    * :ref:`setHideStatusVRPanel(value) <vredvrImmersiveUiService.setHideStatusVRPanel(value)>`
+    * :ref:`showToolsMenu(show, rightHand) <vredvrImmersiveUiService.showToolsMenu(show, rightHand)>`
+    * :ref:`toggleToolsMenu(rightHand) → bool<vredvrImmersiveUiService.toggleToolsMenu(rightHand)>`
+
+Signals:
+    * :ref:`toolChecked(tool) <vredvrImmersiveUiService.toolChecked(tool)>`
+    * :ref:`toolClicked(tool) <vredvrImmersiveUiService.toolClicked(tool)>`
+    * :ref:`toolSubMenuClosed(tool) <vredvrImmersiveUiService.toolSubMenuClosed(tool)>`
+    * :ref:`toolSubMenuOpened(tool) <vredvrImmersiveUiService.toolSubMenuOpened(tool)>`
+    * :ref:`toolUnchecked(tool) <vredvrImmersiveUiService.toolUnchecked(tool)>`
+
+
+Functions
+=========
+
+
+.. _vredvrImmersiveUiService.createMenu(name):
+.. py:method:: vrImmersiveUiService.createMenu(name="")
+
+    Creates a new VR menu.
+
+
+
+    :param name: Name of the menu
+    :type name: string
+
+    :return: A new menu or an existing menu with the given name
+    :rtype: vrdImmersiveMenu
+
+.. _vredvrImmersiveUiService.createTool(name):
+.. py:method:: vrImmersiveUiService.createTool(name="")
+
+    Creates a new VR tool visible on the VR tools menu.
+
+
+
+    :param name: Name of the new tool
+    :type name: string
+
+    :return: A new tool or an existing one with the given name
+    :rtype: vrdImmersiveTool
+
+.. _vredvrImmersiveUiService.deleteMenu(menu):
+.. py:method:: vrImmersiveUiService.deleteMenu(menu)
+
+    Removes a VR menu.
+
+
+
+    :param menu: Menu to be deleted
+    :type menu: vrdImmersiveMenu
+
+    
+    
+
+.. _vredvrImmersiveUiService.deleteMenu(name):
+.. py:method:: vrImmersiveUiService.deleteMenu(name)
+
+    Removes a VR menu by name.
+
+
+
+    :param name: Name of the menu to be removed
+    :type name: string
+
+    
+    
+
+.. _vredvrImmersiveUiService.deleteTool(tool):
+.. py:method:: vrImmersiveUiService.deleteTool(tool)
+
+    Removes a VR tool.
+
+    This can not be used to delete the tools created by default.
+
+    :param tool: Tool to be removed
+    :type tool: vrdImmersiveTool
+
+    
+    
+
+.. _vredvrImmersiveUiService.deleteTool(name):
+.. py:method:: vrImmersiveUiService.deleteTool(name)
+
+    Remove a VR tool by name.
+
+    This can not be used to delete the tools created by default.
+
+    :param name: Name of the tool to be removed
+    :type name: string
+
+    
+    
+
+.. _vredvrImmersiveUiService.findMenu(name):
+.. py:method:: vrImmersiveUiService.findMenu(name)
+
+    Find a VR menu by name.
+
+    To find the main VR menu panel, use:
+
+    .. code-block:: python
+    
+         vrImmersiveUiService.findMenu("ToolsMenu")
+    ..
+    
+
+    :param name: Name to search for.
+    :type name: string
+
+    :return: If found, the menu otherwise an invalid object
+    :rtype: vrdImmersiveMenu
+
+.. _vredvrImmersiveUiService.findTool(name):
+.. py:method:: vrImmersiveUiService.findTool(name)
+
+    Find a VR tool by name.
+
+
+
+    :param name: Name to search for
+    :type name: string
+
+    :return: If found, the tool otherwise an invalid object
+    :rtype: vrdImmersiveTool
+
+.. _vredvrImmersiveUiService.getHideParticipantsVRPanel():
+.. py:method:: vrImmersiveUiService.getHideParticipantsVRPanel()
+
+    Get participants hide option.
+
+
+
+
+    :return: True, if panel is hidden
+    :rtype: bool
+
+.. _vredvrImmersiveUiService.getHideStatusVRPanel():
+.. py:method:: vrImmersiveUiService.getHideStatusVRPanel()
+
+    Get status panel hide option.
+
+
+
+
+    :return: True, if panel is hidden
+    :rtype: bool
+
+.. _vredvrImmersiveUiService.getTools():
+.. py:method:: vrImmersiveUiService.getTools()
+
+    
+
+
+
+
+    :return: A list of all existing vr tools
+    :rtype: List[vrdImmersiveTool]
+
+.. _vredvrImmersiveUiService.openToolsSubMenu(content):
+.. py:method:: vrImmersiveUiService.openToolsSubMenu(content)
+
+    Opens a new tools sub menu with the given html content.
+
+
+
+    :param content: Content can be a http link, a name of a module or one of the predefined VR panels "variantSets" or "viewpoints"
+    :type content: string
+
+    
+    
+
+.. _vredvrImmersiveUiService.openToolsSubMenu(widget):
+.. py:method:: vrImmersiveUiService.openToolsSubMenu(widget)
+
+    Opens a new tools sub menu with the given widget.
+
+
+
+    :param widget: The given widget is displayed
+    :type widget: QWidget
+
+    
+    
+
+.. _vredvrImmersiveUiService.openToolsSubMenu(tool):
+.. py:method:: vrImmersiveUiService.openToolsSubMenu(tool)
+
+    Opens the tools sub menu of the given         :any:`vrdImmersiveTool <vredvrdImmersiveTool>`.
+
+    This functions is called automatically, if a tool button is pressed.
+
+    :param tool: The type of the submenu is determined by the given tool
+    :type tool: vrdImmersiveTool
+
+    
+    
+
+.. _vredvrImmersiveUiService.setHideParticipantsVRPanel(value):
+.. py:method:: vrImmersiveUiService.setHideParticipantsVRPanel(value)
+
+    Hides the participants panel in the vr menu.
+
+
+
+    :param value: True, hides the panel
+    :type value: bool
+
+    
+    
+
+.. _vredvrImmersiveUiService.setHideStatusVRPanel(value):
+.. py:method:: vrImmersiveUiService.setHideStatusVRPanel(value)
+
+    Hides the status panel with the current time in the vr menu.
+
+
+
+    :param value: True, hides the panel
+    :type value: bool
+
+    
+    
+
+.. _vredvrImmersiveUiService.showToolsMenu(show, rightHand):
+.. py:method:: vrImmersiveUiService.showToolsMenu(show, rightHand=False)
+
+    Opens or closes the VR tools menu.
+
+
+
+    :param show: True shows the menu, False hides the menu
+    :type show: bool
+
+    :param rightHand: Show it on the right (true) or left (false) hand.
+    :type rightHand: bool
+
+    
+    
+
+.. _vredvrImmersiveUiService.toggleToolsMenu(rightHand):
+.. py:method:: vrImmersiveUiService.toggleToolsMenu(rightHand=False)
+
+    Toggles show/hide VR tools menu.
+
+
+
+    :param rightHand: Show it on the right or left hand.
+    :type rightHand: bool
+
+    :return: True, if the menu has been switched on
+    :rtype: bool
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrImmersiveUiService.toolChecked(tool):
+.. py:method:: vrImmersiveUiService.toolChecked(tool)
+
+    Signal emitted, if a tool button is switched on.
+
+
+
+    :param tool: The :any:`vrdImmersiveTool <vredvrdImmersiveTool>` that triggered the signal
+    :type tool: vrdImmersiveTool
+
+    
+    
+
+.. _vredvrImmersiveUiService.toolClicked(tool):
+.. py:method:: vrImmersiveUiService.toolClicked(tool)
+
+    Signal emitted, if a tool button is clicked.
+
+
+
+    :param tool: The :any:`vrdImmersiveTool <vredvrdImmersiveTool>` that triggered the signal
+    :type tool: vrdImmersiveTool
+
+    
+    
+
+.. _vredvrImmersiveUiService.toolSubMenuClosed(tool):
+.. py:method:: vrImmersiveUiService.toolSubMenuClosed(tool)
+
+    Signal emitted, if a tool sub menu is closed.
+
+
+
+    :param tool: The :any:`vrdImmersiveTool <vredvrdImmersiveTool>` that triggered the signal
+    :type tool: vrdImmersiveTool
+
+    
+    
+
+.. _vredvrImmersiveUiService.toolSubMenuOpened(tool):
+.. py:method:: vrImmersiveUiService.toolSubMenuOpened(tool)
+
+    Signal emitted, if a tool sub menu is opened.
+
+
+
+    :param tool: The :any:`vrdImmersiveTool <vredvrdImmersiveTool>` that triggered the signal
+    :type tool: vrdImmersiveTool
+
+    
+    
+
+.. _vredvrImmersiveUiService.toolUnchecked(tool):
+.. py:method:: vrImmersiveUiService.toolUnchecked(tool)
+
+    Signal emitted, if a tool button is switched off.
+
+
+
+    :param tool: The :any:`vrdImmersiveTool <vredvrdImmersiveTool>` that triggered the signal
+    :type tool: vrdImmersiveTool
+
+    
+    
+
+

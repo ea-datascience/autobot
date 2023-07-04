@@ -1,0 +1,18 @@
+Scale geometry in VR by using controllers
+=========================================
+
+This is the script that is part of the example scene ObjectScaling.vpb. The default pointer interaction is used
+to implement the scaling. For this, the device actions of the pointer are connected to methods of the GeometryScaler
+class. Further information of the connection to default interactions can be found in the example 
+":ref:`connect-device-action-signal`".
+
+A geometry can be selected with the ray of the pointer, by pressing the trigger completely down. Then a ray 
+on the second controller is activated. Scaling is done by targeting the same object with the second controller
+and also pressing the trigger completely down. When the controllers are moved, the scale of the geometry is adjusted.
+The scaling can be stopped by releasing the trigger on one of the controllers or if one of the rays does
+not intersect with the geometry anymore.
+
+.. literalinclude:: ../../python_examples/vr/scaleGeometry.py
+   :language: python
+   :linenos:
+   :caption: vr/scaleGeometry.py

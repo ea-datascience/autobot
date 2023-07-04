@@ -1,0 +1,7 @@
+toggleNavigationMode
+====================
+
+.. literalinclude:: ../../python_examples/snippets/toggleNavigationMode.py
+   :language: python
+   :linenos:
+   :caption: snippets/toggleNavigationMode.py

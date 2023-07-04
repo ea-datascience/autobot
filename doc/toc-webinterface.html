@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Everything</title>
+  <link rel="icon" type="image/x-icon" href="v2/_static/favicon.png">
+  <link rel="stylesheet" href="epydoc.css" type="text/css"></link>
+</head>
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<center><font size="+1"><b>Web Interface</b></font></center>
+<hr>
+
+<p>There are five keywords to send python commands to the web interface:</p>
+
+<b>python (synchronous):</b><br>
+As soon as the command has finished, a blank webpage is returned.<br>
+<i>Example: http://localhost:8888/python?value=getFov()</i><br><br>
+
+<b>pythonr (synchronous):</b><br>
+Same as python, but returns a webpage with true or false depending on whether the execution was successful or not.<br>
+<i>Example: http://localhost:8888/pythonr?value=getFov()</i><br><br>
+
+<b>pythoneval (synchronous):</b><br>
+Same as python, but returns a webpage with the return value of the command.<br>
+<i>Example: http://localhost:8888/pythoneval?value=getFov()</i><br><br>
+
+<b>pythonasync (asynchronous):</b><br>
+An empty webpage is returned immediately. The command is put into a queue and will be executed as soon as possible. <br>
+<i>Example: http://localhost:8888/pythonasync?value=getFov()</i><br><br>
+
+<b>pythonasyncr (asynchronous):</b><br>
+Same as pythonasync, but returns a webpage with true.<br>
+<i>Example: http://localhost:8888/pythonasyncr?value=getFov()</i><br>
+
+</body>
+</html>

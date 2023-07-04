@@ -1,0 +1,212 @@
+--------------
+vrdNPRSettings
+--------------
+
+
+.. _vredvrdNPRSettings:
+.. py:class:: vrdNPRSettings
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This class gives access to material settings for non photorealistic rendering (NPR) mode.
+
+| NPR information:
+| 
+| 3 colors are combined:
+| 
+| Warm color
+| Cool color
+| Object color = Diffuse Color of the actual material, e.g. Plastic diffuse color; when a texture is assigned, diffuse color multiplied by the average color of that texture (e.g. dark grey diffuse color and a green texture = dark green object color in NPR)
+| 
+| 
+| How the colors are combined:
+| 
+| Alpha and Beta are used to blend warm color and cool color with the object color
+| Alpha controls how much of the warm color is used.
+| Alpha 0 = maximum warm color. Alpha 1 = no warm color.
+| Beta controls how much of the cool color is used.
+| Beta 0 = maximum cool color. Beta 1 = no cool color.
+| Examples:
+| Both 0.5 (default) = mix of cool and warm and object color
+| Both 1: neither cool nor warm but only the object color
+| Both 0: only cool/warm mix (based on viewing angle and object shape) but no object color
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAlpha() → float<vredvrdNPRSettings.getAlpha()>`
+    * :ref:`getBeta() → float<vredvrdNPRSettings.getBeta()>`
+    * :ref:`getCoolColor() → QVector3D<vredvrdNPRSettings.getCoolColor()>`
+    * :ref:`getGlossyColor() → QVector3D<vredvrdNPRSettings.getGlossyColor()>`
+    * :ref:`getShininess() → float<vredvrdNPRSettings.getShininess()>`
+    * :ref:`getWarmColor() → QVector3D<vredvrdNPRSettings.getWarmColor()>`
+    * :ref:`setAlpha(value) <vredvrdNPRSettings.setAlpha(value)>`
+    * :ref:`setBeta(value) <vredvrdNPRSettings.setBeta(value)>`
+    * :ref:`setCoolColor(value) <vredvrdNPRSettings.setCoolColor(value)>`
+    * :ref:`setGlossyColor(value) <vredvrdNPRSettings.setGlossyColor(value)>`
+    * :ref:`setShininess(value) <vredvrdNPRSettings.setShininess(value)>`
+    * :ref:`setWarmColor(value) <vredvrdNPRSettings.setWarmColor(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdNPRSettings.getAlpha():
+.. py:method:: vrdNPRSettings.getAlpha()
+
+    Gets how much warm color is used.
+
+    Range: 0 = maximum warm color, 1 = no warm color
+
+
+    :return: Current used amount of warm color.
+    :rtype: float
+
+.. _vredvrdNPRSettings.getBeta():
+.. py:method:: vrdNPRSettings.getBeta()
+
+    Gets how much cool color is used.
+
+    Range: 0 = maximum cool color, 1 = no cool color
+
+
+    :return: Current used amount of cool color.
+    :rtype: float
+
+.. _vredvrdNPRSettings.getCoolColor():
+.. py:method:: vrdNPRSettings.getCoolColor()
+
+    Gets the shading color for the surface's area that have normals pointing away from light sources.
+
+
+
+
+    :return: Current used color for the surface's area that have normals pointing away from light sources
+    :rtype: QVector3D
+
+.. _vredvrdNPRSettings.getGlossyColor():
+.. py:method:: vrdNPRSettings.getGlossyColor()
+
+    Gets the specular color.
+
+
+
+
+    :return: Current used specular color.
+    :rtype: QVector3D
+
+.. _vredvrdNPRSettings.getShininess():
+.. py:method:: vrdNPRSettings.getShininess()
+
+    Gets the specular spread.
+
+
+
+
+    :return: Current used specular spread.
+    :rtype: float
+
+.. _vredvrdNPRSettings.getWarmColor():
+.. py:method:: vrdNPRSettings.getWarmColor()
+
+    Gets the shading color for the surface's area that have normals pointing to a light source.
+
+
+
+
+    :return: Current used color for the surface's area that have normals pointing to a light source.
+    :rtype: QVector3D
+
+.. _vredvrdNPRSettings.setAlpha(value):
+.. py:method:: vrdNPRSettings.setAlpha(value)
+
+    Sets how much warm color is used.
+
+    Range: 0 = maximum warm color, 1 = no warm color
+
+    :param value: Amount of warm color to be used.
+    :type value: float
+
+    
+    
+
+.. _vredvrdNPRSettings.setBeta(value):
+.. py:method:: vrdNPRSettings.setBeta(value)
+
+    Sets how much cool color is used.
+
+    Range: 0 = maximum cool color, 1 = no cool color
+
+    :param value: Amount of cool color to be used.
+    :type value: float
+
+    
+    
+
+.. _vredvrdNPRSettings.setCoolColor(value):
+.. py:method:: vrdNPRSettings.setCoolColor(value)
+
+    Sets the shading color for the surface's area that have normals pointing away from light sources.
+
+
+
+    :param value: New color for the surface's area that have normals pointing away from light sources.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdNPRSettings.setGlossyColor(value):
+.. py:method:: vrdNPRSettings.setGlossyColor(value)
+
+    Sets the specular color.
+
+
+
+    :param value: New value for the specular color.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdNPRSettings.setShininess(value):
+.. py:method:: vrdNPRSettings.setShininess(value)
+
+    Sets the specular spread.
+
+
+
+    :param value: New value for the specular spread.
+    :type value: float
+
+    
+    
+
+.. _vredvrdNPRSettings.setWarmColor(value):
+.. py:method:: vrdNPRSettings.setWarmColor(value)
+
+    Sets the shading color for the surface's area that have normals pointing to a light source.
+
+
+
+    :param value: New color for the surface's area that have normals pointing to a light source.
+    :type value: QVector3D
+
+    
+    
+
+
+
+
+
+
+
+
+
+

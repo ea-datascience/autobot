@@ -1,0 +1,205 @@
+---------------------
+vrdVertexBakeSettings
+---------------------
+
+
+.. _vredvrdVertexBakeSettings:
+.. py:class:: vrdVertexBakeSettings
+
+(Inherits :py:class:`vrdData`)
+
+Settings for vertex baking.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getDirectIlluminationQuality() → vrBakeTypes.IlluminationQuality<vredvrdVertexBakeSettings.getDirectIlluminationQuality()>`
+    * :ref:`getIndirectIlluminationQuality() → vrBakeTypes.IlluminationQuality<vredvrdVertexBakeSettings.getIndirectIlluminationQuality()>`
+    * :ref:`getIntensityThreshold() → float<vredvrdVertexBakeSettings.getIntensityThreshold()>`
+    * :ref:`getMinimumEdgeLength() → float<vredvrdVertexBakeSettings.getMinimumEdgeLength()>`
+    * :ref:`getSubdivision() → bool<vredvrdVertexBakeSettings.getSubdivision()>`
+    * :ref:`getSubdivisionQuality() → vrBakeTypes.SubdivisionQuality<vredvrdVertexBakeSettings.getSubdivisionQuality()>`
+    * :ref:`setDirectIlluminationQuality(quality) <vredvrdVertexBakeSettings.setDirectIlluminationQuality(quality)>`
+    * :ref:`setIndirectIlluminationQuality(quality) <vredvrdVertexBakeSettings.setIndirectIlluminationQuality(quality)>`
+    * :ref:`setIntensityThreshold(value) <vredvrdVertexBakeSettings.setIntensityThreshold(value)>`
+    * :ref:`setMinimumEdgeLength(value) <vredvrdVertexBakeSettings.setMinimumEdgeLength(value)>`
+    * :ref:`setSubdivision(value) <vredvrdVertexBakeSettings.setSubdivision(value)>`
+    * :ref:`setSubdivisionQuality(quality) <vredvrdVertexBakeSettings.setSubdivisionQuality(quality)>`
+    * :ref:`vrdVertexBakeSettings() <vredvrdVertexBakeSettings.vrdVertexBakeSettings()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdVertexBakeSettings.getDirectIlluminationQuality():
+.. py:method:: vrdVertexBakeSettings.getDirectIlluminationQuality()
+
+    
+
+
+
+
+    :return: The direct illumination quality level.
+    :rtype: :ref:`vrBakeTypes.IlluminationQuality <vredvrBakeTypes.IlluminationQuality>`
+
+.. _vredvrdVertexBakeSettings.getIndirectIlluminationQuality():
+.. py:method:: vrdVertexBakeSettings.getIndirectIlluminationQuality()
+
+    
+
+
+
+
+    :return: The indirect illumination quality level.
+    :rtype: :ref:`vrBakeTypes.IlluminationQuality <vredvrBakeTypes.IlluminationQuality>`
+
+.. _vredvrdVertexBakeSettings.getIntensityThreshold():
+.. py:method:: vrdVertexBakeSettings.getIntensityThreshold()
+
+    
+
+
+
+
+    :return: The intensity threshold.
+    :rtype: float
+
+.. _vredvrdVertexBakeSettings.getMinimumEdgeLength():
+.. py:method:: vrdVertexBakeSettings.getMinimumEdgeLength()
+
+    
+
+
+
+
+    :return: The minimum edge length.
+    :rtype: float
+
+.. _vredvrdVertexBakeSettings.getSubdivision():
+.. py:method:: vrdVertexBakeSettings.getSubdivision()
+
+    
+
+
+
+
+    :return: True if subdivision is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdVertexBakeSettings.getSubdivisionQuality():
+.. py:method:: vrdVertexBakeSettings.getSubdivisionQuality()
+
+    
+
+
+
+
+    :return: The subdivision quality level.
+    :rtype: :ref:`vrBakeTypes.SubdivisionQuality <vredvrBakeTypes.SubdivisionQuality>`
+
+.. _vredvrdVertexBakeSettings.setDirectIlluminationQuality(quality):
+.. py:method:: vrdVertexBakeSettings.setDirectIlluminationQuality(quality)
+
+    Sets the direct illumination quality level.
+
+    Higher quality levels will result in higher sampling values and therefore better quality.
+
+    :param quality: The quality level.
+    :type quality: :ref:`vrBakeTypes.IlluminationQuality <vredvrBakeTypes.IlluminationQuality>`
+
+    
+    
+
+.. _vredvrdVertexBakeSettings.setIndirectIlluminationQuality(quality):
+.. py:method:: vrdVertexBakeSettings.setIndirectIlluminationQuality(quality)
+
+    Sets the indirect illumination quality level.
+
+    Higher quality levels will result in higher sampling values and therefore better quality.
+
+    :param quality: The quality level.
+    :type quality: :ref:`vrBakeTypes.IlluminationQuality <vredvrBakeTypes.IlluminationQuality>`
+
+    
+    
+
+.. _vredvrdVertexBakeSettings.setIntensityThreshold(value):
+.. py:method:: vrdVertexBakeSettings.setIntensityThreshold(value)
+
+    Sets a threshold for the difference of intensity values of two vertices.
+
+    This value is used to force a subdivision of the trianlge edge.
+
+    :param value: The intensity threshold.
+    :type value: float
+
+    
+    
+
+.. _vredvrdVertexBakeSettings.setMinimumEdgeLength(value):
+.. py:method:: vrdVertexBakeSettings.setMinimumEdgeLength(value)
+
+    Sets a minimum edge length used for subdivision.
+
+    This value will be the minimum edge length a triangle will have.
+
+    :param value: The minimum edge length.
+    :type value: float
+
+    
+    
+
+.. _vredvrdVertexBakeSettings.setSubdivision(value):
+.. py:method:: vrdVertexBakeSettings.setSubdivision(value)
+
+    Sets if subdivision should be used or not.
+
+    When enabled, the geometry is subdivided in smaller triangles which allows a better visual bake result.
+
+    :param value: True for use of subdivision, False otherwise.
+    :type value: bool
+
+    
+    
+
+.. _vredvrdVertexBakeSettings.setSubdivisionQuality(quality):
+.. py:method:: vrdVertexBakeSettings.setSubdivisionQuality(quality)
+
+    Sets the subdivision quality level.
+
+    Better quality levels will result in smaller triangle sizes.
+
+    :param quality: The quality level.
+    :type quality: :ref:`vrBakeTypes.SubdivisionQuality <vredvrBakeTypes.SubdivisionQuality>`
+
+    
+    
+
+.. _vredvrdVertexBakeSettings.vrdVertexBakeSettings():
+.. py:method:: vrdVertexBakeSettings.vrdVertexBakeSettings()
+
+    Default constructor.
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+

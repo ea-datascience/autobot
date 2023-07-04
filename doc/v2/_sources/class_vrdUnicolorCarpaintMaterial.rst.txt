@@ -1,0 +1,125 @@
+---------------------------
+vrdUnicolorCarpaintMaterial
+---------------------------
+
+
+.. _vredvrdUnicolorCarpaintMaterial:
+.. py:class:: vrdUnicolorCarpaintMaterial
+
+(Inherits :py:class:`vrdBRDFMaterial`)
+
+This class is used to handle all unicolor paint material properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBaseColor() → QVector3D<vredvrdUnicolorCarpaintMaterial.getBaseColor()>`
+    * :ref:`getBaseColorSpectrum() → vrSpectrum<vredvrdUnicolorCarpaintMaterial.getBaseColorSpectrum()>`
+    * :ref:`getClearcoat() → vrdClearcoat<vredvrdUnicolorCarpaintMaterial.getClearcoat()>`
+    * :ref:`getDisplacementTexture() → vrdDisplacementTexture<vredvrdUnicolorCarpaintMaterial.getDisplacementTexture()>`
+    * :ref:`getIncandescence() → vrdIncandescence<vredvrdUnicolorCarpaintMaterial.getIncandescence()>`
+    * :ref:`setBaseColor(color) <vredvrdUnicolorCarpaintMaterial.setBaseColor(color)>`
+    * :ref:`setBaseColorSpectrum(value) <vredvrdUnicolorCarpaintMaterial.setBaseColorSpectrum(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdUnicolorCarpaintMaterial.getBaseColor():
+.. py:method:: vrdUnicolorCarpaintMaterial.getBaseColor()
+
+    Get the the basic color.
+
+
+
+
+    :return: The current used the basic color
+    :rtype: QVector3D
+
+.. _vredvrdUnicolorCarpaintMaterial.getBaseColorSpectrum():
+.. py:method:: vrdUnicolorCarpaintMaterial.getBaseColorSpectrum()
+
+    Gets the spectrum of the base color.
+
+
+
+
+    :return: The current used spectrum for base color.
+    :rtype: vrSpectrum
+
+.. _vredvrdUnicolorCarpaintMaterial.getClearcoat():
+.. py:method:: vrdUnicolorCarpaintMaterial.getClearcoat()
+
+    Gets access to all properties of         :any:`vrdClearcoat <vredvrdClearcoat>`.
+
+
+
+
+    :return: An :any:`vrdClearcoat <vredvrdClearcoat>` object, to read and write access of alls properties.
+    :rtype: vrdClearcoat
+
+.. _vredvrdUnicolorCarpaintMaterial.getDisplacementTexture():
+.. py:method:: vrdUnicolorCarpaintMaterial.getDisplacementTexture()
+
+    Gets access to all properties of         :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>`.
+
+
+
+
+    :return: An :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>` object, to read and write access of alls properties.
+    :rtype: vrdDisplacementTexture
+
+.. _vredvrdUnicolorCarpaintMaterial.getIncandescence():
+.. py:method:: vrdUnicolorCarpaintMaterial.getIncandescence()
+
+    Gets access to all properties of         :any:`vrdIncandescence <vredvrdIncandescence>`.
+
+
+
+
+    :return: An :any:`vrdIncandescence <vredvrdIncandescence>` object, to read and write access of alls properties.
+    :rtype: vrdIncandescence
+
+.. _vredvrdUnicolorCarpaintMaterial.setBaseColor(color):
+.. py:method:: vrdUnicolorCarpaintMaterial.setBaseColor(color)
+
+    Defines the basic color, which is the main characteristic of the material.
+
+
+
+    :param color: Value for the new base color.
+    :type color: QVector3D
+
+    
+    
+
+.. _vredvrdUnicolorCarpaintMaterial.setBaseColorSpectrum(value):
+.. py:method:: vrdUnicolorCarpaintMaterial.setBaseColorSpectrum(value)
+
+    Sets the spectrum of the base color.
+
+
+
+    :param value: New spectrum for base color
+    :type value: vrSpectrum
+
+    
+    
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+createMaterial
+==============
+
+.. literalinclude:: ../../python_examples/snippets/createMaterial.py
+   :language: python
+   :linenos:
+   :caption: snippets/createMaterial.py

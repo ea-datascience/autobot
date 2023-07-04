@@ -1,0 +1,10 @@
+Example UI for listing Substance materials
+==========================================
+
+This example collects all the substance materials of the current scene
+and displays some of their basic properties.
+
+.. literalinclude:: ../../python_examples/plugins/SubstanceExample/vrSubstanceExample.py
+   :language: python
+   :linenos:
+   :caption: vrSubstanceExample.py

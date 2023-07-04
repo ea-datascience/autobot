@@ -1,0 +1,272 @@
+---------------
+vrdRoundedEdges
+---------------
+
+
+.. _vredvrdRoundedEdges:
+.. py:class:: vrdRoundedEdges
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This class is used for all rounded edges properties.
+
+
+
+    .. _vredvrdRoundedEdges.EdgeMode:
+    .. py:class:: EdgeMode
+
+
+
+
+            
+
+            .. _vredvrdRoundedEdges.EdgeMode.Off:
+            .. py:data:: Off
+
+
+            
+
+            .. _vredvrdRoundedEdges.EdgeMode.SameGeometry:
+            .. py:data:: SameGeometry
+
+
+            
+
+            .. _vredvrdRoundedEdges.EdgeMode.SameMaterial:
+            .. py:data:: SameMaterial
+
+
+            
+
+            .. _vredvrdRoundedEdges.EdgeMode.SameGroup:
+            .. py:data:: SameGroup
+
+
+    .. _vredvrdRoundedEdges.EdgeType:
+    .. py:class:: EdgeType
+
+
+
+
+            
+
+            .. _vredvrdRoundedEdges.EdgeType.ConvexAndConcave:
+            .. py:data:: ConvexAndConcave
+
+
+            
+
+            .. _vredvrdRoundedEdges.EdgeType.ConvexOnly:
+            .. py:data:: ConvexOnly
+
+
+            
+
+            .. _vredvrdRoundedEdges.EdgeType.ConcaveOnly:
+            .. py:data:: ConcaveOnly
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAngleLimit() → float<vredvrdRoundedEdges.getAngleLimit()>`
+    * :ref:`getChamfer() → float<vredvrdRoundedEdges.getChamfer()>`
+    * :ref:`getEdgeType() → vrdRoundedEdges.EdgeType<vredvrdRoundedEdges.getEdgeType()>`
+    * :ref:`getGroupId() → integer<vredvrdRoundedEdges.getGroupId()>`
+    * :ref:`getMode() → vrdRoundedEdges.EdgeMode<vredvrdRoundedEdges.getMode()>`
+    * :ref:`getQuality() → integer<vredvrdRoundedEdges.getQuality()>`
+    * :ref:`getRadius() → float<vredvrdRoundedEdges.getRadius()>`
+    * :ref:`setAngleLimit(value) <vredvrdRoundedEdges.setAngleLimit(value)>`
+    * :ref:`setChamfer(value) <vredvrdRoundedEdges.setChamfer(value)>`
+    * :ref:`setEdgeType(mode) <vredvrdRoundedEdges.setEdgeType(mode)>`
+    * :ref:`setGroupId(value) <vredvrdRoundedEdges.setGroupId(value)>`
+    * :ref:`setMode(mode) <vredvrdRoundedEdges.setMode(mode)>`
+    * :ref:`setQuality(value) <vredvrdRoundedEdges.setQuality(value)>`
+    * :ref:`setRadius(value) <vredvrdRoundedEdges.setRadius(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdRoundedEdges.getAngleLimit():
+.. py:method:: vrdRoundedEdges.getAngleLimit()
+
+    Gets the angle limit.
+
+
+
+
+    :return: Current used value for the angle limit
+    :rtype: float
+
+.. _vredvrdRoundedEdges.getChamfer():
+.. py:method:: vrdRoundedEdges.getChamfer()
+
+    Gets the chamfer.
+
+
+
+
+    :return: Current used value for the chamfer
+    :rtype: float
+
+.. _vredvrdRoundedEdges.getEdgeType():
+.. py:method:: vrdRoundedEdges.getEdgeType()
+
+    Gets the edge type.
+
+
+
+
+    :return: Current used value for the edge type
+    :rtype: :ref:`vrdRoundedEdges.EdgeType <vredvrdRoundedEdges.EdgeType>`
+
+.. _vredvrdRoundedEdges.getGroupId():
+.. py:method:: vrdRoundedEdges.getGroupId()
+
+    Gets the group id.
+
+
+
+
+    :return: Current used value for the group id
+    :rtype: integer
+
+.. _vredvrdRoundedEdges.getMode():
+.. py:method:: vrdRoundedEdges.getMode()
+
+    Gets the current edge mode.
+
+
+
+
+    :return: Current used value for the edge mode
+    :rtype: :ref:`vrdRoundedEdges.EdgeMode <vredvrdRoundedEdges.EdgeMode>`
+
+.. _vredvrdRoundedEdges.getQuality():
+.. py:method:: vrdRoundedEdges.getQuality()
+
+    Gets the quality level.
+
+
+
+
+    :return: Current used value for the quality
+    :rtype: integer
+
+.. _vredvrdRoundedEdges.getRadius():
+.. py:method:: vrdRoundedEdges.getRadius()
+
+    Gets the radius.
+
+
+
+
+    :return: Current used value for the radius
+    :rtype: float
+
+.. _vredvrdRoundedEdges.setAngleLimit(value):
+.. py:method:: vrdRoundedEdges.setAngleLimit(value)
+
+    Sets the angle limit. It limits the rounding effect to edges with an angle above the limit. If the angle between the current shading normal and the shading normal of the adjoining edge is smaller than the limit, no smoothing will be applied.
+
+
+
+    :param value: New value for the angle limit
+    :type value: float
+
+    
+    
+
+.. _vredvrdRoundedEdges.setChamfer(value):
+.. py:method:: vrdRoundedEdges.setChamfer(value)
+
+    Sets the chamfer value. It gives the edge a more chamfered appearance, instead of a perfectly round shape.
+
+
+
+    :param value: New value for the chamfer
+    :type value: float
+
+    
+    
+
+.. _vredvrdRoundedEdges.setEdgeType(mode):
+.. py:method:: vrdRoundedEdges.setEdgeType(mode)
+
+    Sets the type of edges that will be rounded. By default, convex and concave edges will be rounded. Choosing either convex or concave edges only can improve the performance of the rendering.
+
+
+
+    :param mode: New value for the edge type
+    :type mode: :ref:`vrdRoundedEdges.EdgeType <vredvrdRoundedEdges.EdgeType>`
+
+    
+    
+
+.. _vredvrdRoundedEdges.setGroupId(value):
+.. py:method:: vrdRoundedEdges.setGroupId(value)
+
+    Sets the groupID for the rounded edge effect. Only objects with the same groupID will be considered for rounded edge smoothing.
+
+
+
+    :param value: New value for the group id
+    :type value: integer
+
+    
+    
+
+.. _vredvrdRoundedEdges.setMode(mode):
+.. py:method:: vrdRoundedEdges.setMode(mode)
+
+    Sets whether edges should appear rounded in raytracing or not. Various options can be chosen: Off: Does not calculate the appearance of rounded edges. Same Geometry: Only edges between faces of the same geometry are rounded. Same Material: Only edges between faces with the same material are rounded. Same Group: Only edges between faces with materials belonging to the same edge group are rounded.
+
+
+
+    :param mode: New value for the edge mode
+    :type mode: :ref:`vrdRoundedEdges.EdgeMode <vredvrdRoundedEdges.EdgeMode>`
+
+    
+    
+
+.. _vredvrdRoundedEdges.setQuality(value):
+.. py:method:: vrdRoundedEdges.setQuality(value)
+
+    Sets the quality level used to evaluate the nearest edges. Each quality level represents a multiple of 4 samples for estimating either convex or concave edges. A quality level of 1 will trace 4 rays to estimate convex edges and 4 rays to estimate concave edges. At quality level 1, the effect is also only evaluated for non-distributed rays, not rays originating from diffuse or glossy reflections. At higher quality levels, the effect is evaluated for one additional bounce.
+
+
+
+    :param value: New value for the quality
+    :type value: integer
+
+    
+    
+
+.. _vredvrdRoundedEdges.setRadius(value):
+.. py:method:: vrdRoundedEdges.setRadius(value)
+
+    Sets the radius of rounded edge in world space.
+
+
+
+    :param value: New value for the radius
+    :type value: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

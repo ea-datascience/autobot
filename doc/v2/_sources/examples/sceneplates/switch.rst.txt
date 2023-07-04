@@ -1,0 +1,7 @@
+Switch
+======
+
+.. literalinclude:: ../../python_examples/sceneplates/switch.py
+   :language: python
+   :linenos:
+   :caption: sceneplates/switch.py

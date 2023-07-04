@@ -1,0 +1,129 @@
+--------------
+vrTextureTypes
+--------------
+
+
+.. _vredvrTextureTypes:
+.. py:class:: vrTextureTypes
+
+
+
+
+
+
+
+    .. _vredvrTextureTypes.RepeatMode:
+    .. py:class:: RepeatMode
+
+        Enum for Texture Repeat Modes.
+
+
+            Repeats the texture.
+
+            .. _vredvrTextureTypes.RepeatMode.Repeat:
+            .. py:data:: Repeat
+
+
+            Repeats and mirrors the texture.
+
+            .. _vredvrTextureTypes.RepeatMode.Mirrored:
+            .. py:data:: Mirrored
+
+
+            The texture is not repeated.
+
+            .. _vredvrTextureTypes.RepeatMode.Decal:
+            .. py:data:: Decal
+
+
+            Repeats only the last pixel of the texture.
+
+            .. _vredvrTextureTypes.RepeatMode.Clamp:
+            .. py:data:: Clamp
+
+
+    .. _vredvrTextureTypes.MappingType:
+    .. py:class:: MappingType
+
+        Determine how 2D textures are applied to objects in a scene.
+
+
+            Use UV coordinates for texture mapping.
+
+            .. _vredvrTextureTypes.MappingType.UVMapping:
+            .. py:data:: UVMapping
+
+
+            Apply planar mapping to texture.
+
+            .. _vredvrTextureTypes.MappingType.PlanarMapping:
+            .. py:data:: PlanarMapping
+
+
+            Apply triplanar mapping to texture.
+
+            .. _vredvrTextureTypes.MappingType.TriplanarMapping:
+            .. py:data:: TriplanarMapping
+
+
+    .. _vredvrTextureTypes.TriplanarBlendMode:
+    .. py:class:: TriplanarBlendMode
+
+
+
+
+            
+
+            .. _vredvrTextureTypes.TriplanarBlendMode.Curved:
+            .. py:data:: Curved
+
+
+            
+
+            .. _vredvrTextureTypes.TriplanarBlendMode.Linear:
+            .. py:data:: Linear
+
+
+    .. _vredvrTextureTypes.Axis:
+    .. py:class:: Axis
+
+
+
+
+            
+
+            .. _vredvrTextureTypes.Axis.X:
+            .. py:data:: X
+
+
+            
+
+            .. _vredvrTextureTypes.Axis.Y:
+            .. py:data:: Y
+
+
+            
+
+            .. _vredvrTextureTypes.Axis.Z:
+            .. py:data:: Z
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

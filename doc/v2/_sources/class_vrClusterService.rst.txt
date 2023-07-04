@@ -1,0 +1,504 @@
+----------------
+vrClusterService
+----------------
+
+
+.. _vredvrClusterService:
+.. py:class:: vrClusterService
+
+(Inherits :py:class:`vrBaseService`)
+
+A service to control cluster functions.
+
+For cluster rendering a VREDClusterServer process is started on each cluster PC. A raytracing cluster is created by connecting multiple Servers with the master process. The master process is VREDPro or each other VRED product that supports clustering.
+
+Starting a raytracing cluster
+
+.. code-block:: python
+
+     vrClusterService.setConfig("pc1 pc2 192.168.178.46")
+     vrClusterService.start()
+     # raytracing is done on pc1 pc2 and 192.168.178.46
+     vrClusterService.stop()
+..
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`abortProgress() <vredvrClusterService.abortProgress()>`
+    * :ref:`getAllowMultipleServers() → bool<vredvrClusterService.getAllowMultipleServers()>`
+    * :ref:`getConfig() → string<vredvrClusterService.getConfig()>`
+    * :ref:`getConsumptionBasedLicensing() → bool<vredvrClusterService.getConsumptionBasedLicensing()>`
+    * :ref:`getIgnoreNotEnoughMemory() → bool<vredvrClusterService.getIgnoreNotEnoughMemory()>`
+    * :ref:`getLocalLicenseCheckout() → bool<vredvrClusterService.getLocalLicenseCheckout()>`
+    * :ref:`getRunningNodes() → List[string]<vredvrClusterService.getRunningNodes()>`
+    * :ref:`getShowTestImage() → bool<vredvrClusterService.getShowTestImage()>`
+    * :ref:`getShowTiles() → bool<vredvrClusterService.getShowTiles()>`
+    * :ref:`hasLicense() → bool<vredvrClusterService.hasLicense()>`
+    * :ref:`hostListToConfig(hostList) → string<vredvrClusterService.hostListToConfig(hostList)>`
+    * :ref:`isRestarting() → bool<vredvrClusterService.isRestarting()>`
+    * :ref:`isRunning() → bool<vredvrClusterService.isRunning()>`
+    * :ref:`loadConfig(fileName) → bool<vredvrClusterService.loadConfig(fileName)>`
+    * :ref:`runSpeedTest() → List[string]<vredvrClusterService.runSpeedTest()>`
+    * :ref:`setAllowMultipleServers(value) <vredvrClusterService.setAllowMultipleServers(value)>`
+    * :ref:`setConfig(configuration) <vredvrClusterService.setConfig(configuration)>`
+    * :ref:`setConsumptionBasedLicensing(value) <vredvrClusterService.setConsumptionBasedLicensing(value)>`
+    * :ref:`setDefaultConfig() <vredvrClusterService.setDefaultConfig()>`
+    * :ref:`setEyeSeparation(value) <vredvrClusterService.setEyeSeparation(value)>`
+    * :ref:`setIgnoreNotEnoughMemory(value) <vredvrClusterService.setIgnoreNotEnoughMemory(value)>`
+    * :ref:`setLocalLicenseCheckout(value) <vredvrClusterService.setLocalLicenseCheckout(value)>`
+    * :ref:`setShowTestImage(value) <vredvrClusterService.setShowTestImage(value)>`
+    * :ref:`setShowTiles(value) <vredvrClusterService.setShowTiles(value)>`
+    * :ref:`setZeroParallax(value) <vredvrClusterService.setZeroParallax(value)>`
+    * :ref:`start() → bool<vredvrClusterService.start()>`
+    * :ref:`stop() <vredvrClusterService.stop()>`
+
+Signals:
+    * :ref:`configChanged(config) <vredvrClusterService.configChanged(config)>`
+    * :ref:`multipleServersFound(hosts) <vredvrClusterService.multipleServersFound(hosts)>`
+    * :ref:`notEnoughMemoryFound(hosts) <vredvrClusterService.notEnoughMemoryFound(hosts)>`
+    * :ref:`progressChanged(action, progress) <vredvrClusterService.progressChanged(action, progress)>`
+    * :ref:`progressFinished() <vredvrClusterService.progressFinished()>`
+    * :ref:`runningNodesChanged() <vredvrClusterService.runningNodesChanged()>`
+    * :ref:`started() <vredvrClusterService.started()>`
+    * :ref:`stopped() <vredvrClusterService.stopped()>`
+
+
+Functions
+=========
+
+
+.. _vredvrClusterService.abortProgress():
+.. py:method:: vrClusterService.abortProgress()
+
+    Abort a running connection process.
+
+
+
+
+    
+    
+
+.. _vredvrClusterService.getAllowMultipleServers():
+.. py:method:: vrClusterService.getAllowMultipleServers()
+
+    
+
+
+
+
+    :return: True, if starting multiple servers on the same machine is allowed
+    :rtype: bool
+
+.. _vredvrClusterService.getConfig():
+.. py:method:: vrClusterService.getConfig()
+
+    
+
+
+
+
+    :return: Returns the current cluster xml configuration
+    :rtype: string
+
+.. _vredvrClusterService.getConsumptionBasedLicensing():
+.. py:method:: vrClusterService.getConsumptionBasedLicensing()
+
+    
+
+
+
+
+    :return: True, if consumption based licensing is enabled
+    :rtype: bool
+
+.. _vredvrClusterService.getIgnoreNotEnoughMemory():
+.. py:method:: vrClusterService.getIgnoreNotEnoughMemory()
+
+    
+
+
+
+
+    :return: True, if memory consumption is not checked on the server
+    :rtype: bool
+
+.. _vredvrClusterService.getLocalLicenseCheckout():
+.. py:method:: vrClusterService.getLocalLicenseCheckout()
+
+    
+
+
+
+
+    :return: True, if all licenses are checked out locally
+    :rtype: bool
+
+.. _vredvrClusterService.getRunningNodes():
+.. py:method:: vrClusterService.getRunningNodes()
+
+    
+
+
+
+
+    :return: Returns a list of all connected cluster nodes
+    :rtype: List[string]
+
+.. _vredvrClusterService.getShowTestImage():
+.. py:method:: vrClusterService.getShowTestImage()
+
+    
+
+
+
+
+    :return: Returns the True, if test image mode is enabled
+    :rtype: bool
+
+.. _vredvrClusterService.getShowTiles():
+.. py:method:: vrClusterService.getShowTiles()
+
+    
+
+
+
+
+    :return: Returns the True, if tile visualization is enabled
+    :rtype: bool
+
+.. _vredvrClusterService.hasLicense():
+.. py:method:: vrClusterService.hasLicense()
+
+    
+
+
+
+
+    :return: Returns the True, if all nodes have a valid license
+    :rtype: bool
+
+.. _vredvrClusterService.hostListToConfig(hostList):
+.. py:method:: vrClusterService.hostListToConfig(hostList)
+
+    Converts a host list to a xml configuration.
+
+
+
+    :param hostList: A list of host names
+    :type hostList: string
+
+    :return: A xml configuraiton
+    :rtype: string
+
+.. _vredvrClusterService.isRestarting():
+.. py:method:: vrClusterService.isRestarting()
+
+    
+
+
+
+
+    :return: Returns True, if the cluster is in restarting mode
+    :rtype: bool
+
+.. _vredvrClusterService.isRunning():
+.. py:method:: vrClusterService.isRunning()
+
+    
+
+
+
+
+    :return: Returns True, if the cluster is running
+    :rtype: bool
+
+.. _vredvrClusterService.loadConfig(fileName):
+.. py:method:: vrClusterService.loadConfig(fileName)
+
+    Load a configuration from file.
+
+
+
+    :param fileName: The file name of a configuration
+    :type fileName: string
+
+    :return: True, if the file was loaded successfully
+    :rtype: bool
+
+.. _vredvrClusterService.runSpeedTest():
+.. py:method:: vrClusterService.runSpeedTest()
+
+    Perform a network speed test for the currently running cluster.
+
+
+
+
+    :return: 
+    :rtype: List[string]
+
+.. _vredvrClusterService.setAllowMultipleServers(value):
+.. py:method:: vrClusterService.setAllowMultipleServers(value)
+
+    Set behavior, if a server is already used.
+
+    Multiple servers on the same cluster pc are detected, if the same pc is used for example by two differnt VREDPro instances.
+
+    :param value: If True, allow using the server
+    :type value: bool
+
+    
+    
+
+.. _vredvrClusterService.setConfig(configuration):
+.. py:method:: vrClusterService.setConfig(configuration)
+
+    Change the cluster configuration.
+
+    The configuration can be a valid vhpc xml file or a list of host names or ip addresses separated by space or comma
+
+    :param configuration: The configuration string
+    :type configuration: string
+
+    
+    
+
+.. _vredvrClusterService.setConsumptionBasedLicensing(value):
+.. py:method:: vrClusterService.setConsumptionBasedLicensing(value)
+
+    Controls, if consumption based licensing is enabled.
+
+
+
+    :param value: If True, consumpton based licensing is used
+    :type value: bool
+
+    
+    
+
+.. _vredvrClusterService.setDefaultConfig():
+.. py:method:: vrClusterService.setDefaultConfig()
+
+    Reset the cluster configuration to its default value.
+
+
+
+
+    
+    
+
+.. _vredvrClusterService.setEyeSeparation(value):
+.. py:method:: vrClusterService.setEyeSeparation(value)
+
+    Set eye separation for display clusters.
+
+
+
+    :param value: Eye separation
+    :type value: float
+
+    
+    
+
+.. _vredvrClusterService.setIgnoreNotEnoughMemory(value):
+.. py:method:: vrClusterService.setIgnoreNotEnoughMemory(value)
+
+    Set behavior, if a server has not enough memory.
+
+    When a cluster server is started, VRED checks if the cluster server has enough memory left to load the current project. It is asumed thet the cluster PC will use the same amount of memory as the VRED host.
+
+    :param value: If True, allow using the server
+    :type value: bool
+
+    
+    
+
+.. _vredvrClusterService.setLocalLicenseCheckout(value):
+.. py:method:: vrClusterService.setLocalLicenseCheckout(value)
+
+    Controls, where licenses are checked out for clustering.
+
+
+
+    :param value: If True, licenses are checked out locally. If False, licenses are checked out by the cluster servers
+    :type value: bool
+
+    
+    
+
+.. _vredvrClusterService.setShowTestImage(value):
+.. py:method:: vrClusterService.setShowTestImage(value)
+
+    Show or hide a test image on display clusters.
+
+
+
+    :param value: If true, show the test image
+    :type value: bool
+
+    
+    
+
+.. _vredvrClusterService.setShowTiles(value):
+.. py:method:: vrClusterService.setShowTiles(value)
+
+    Show or hide cluster tiles in render window for debugging.
+
+
+
+    :param value: If true, show the tile borders
+    :type value: bool
+
+    
+    
+
+.. _vredvrClusterService.setZeroParallax(value):
+.. py:method:: vrClusterService.setZeroParallax(value)
+
+    Set zero parallax distance for display clusters.
+
+
+
+    :param value: Zero Parallax
+    :type value: float
+
+    
+    
+
+.. _vredvrClusterService.start():
+.. py:method:: vrClusterService.start()
+
+    Start cluster with current configuration.
+
+    Starts the culster with the current configuration A warning will be shown, if there are already servers running or if the estimated memory is not available on the server. This cen be ignored by calling setAllowMultipleServers and setIgnoreNotEnoughMemory
+
+
+    :return: True, if started successfully
+    :rtype: bool
+
+.. _vredvrClusterService.stop():
+.. py:method:: vrClusterService.stop()
+
+    Stop cluster.
+
+
+
+
+    
+    
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrClusterService.configChanged(config):
+.. py:method:: vrClusterService.configChanged(config)
+
+    Signal indicates a cluster configuraiton change.
+
+
+
+    :param config: The changed configuration
+    :type config: string
+
+    
+    
+
+.. _vredvrClusterService.multipleServersFound(hosts):
+.. py:method:: vrClusterService.multipleServersFound(hosts)
+
+    Signal indicates hosts already used by other users.
+
+
+
+    :param hosts: List of already used hosts
+    :type hosts: List[string]
+
+    
+    
+
+.. _vredvrClusterService.notEnoughMemoryFound(hosts):
+.. py:method:: vrClusterService.notEnoughMemoryFound(hosts)
+
+    Signal indicates hosts with insufficient memory.
+
+
+
+    :param hosts: List of hosts
+    :type hosts: List[string]
+
+    
+    
+
+.. _vredvrClusterService.progressChanged(action, progress):
+.. py:method:: vrClusterService.progressChanged(action, progress)
+
+    Signal can be used to monitor the connection progress.
+
+
+
+    :param action: A string descripting the current action
+    :type action: string
+
+    :param progress: The current progress
+    :type progress: integer
+
+    
+    
+
+.. _vredvrClusterService.progressFinished():
+.. py:method:: vrClusterService.progressFinished()
+
+    Signal indicates that the connection process is finished.
+
+
+
+
+    
+    
+
+.. _vredvrClusterService.runningNodesChanged():
+.. py:method:: vrClusterService.runningNodesChanged()
+
+    Signal is emitted when one or more cluster nodes have gone offline.
+
+
+
+
+    
+    
+
+.. _vredvrClusterService.started():
+.. py:method:: vrClusterService.started()
+
+    Signal is emitted after a cluster has been started.
+
+
+
+
+    
+    
+
+.. _vredvrClusterService.stopped():
+.. py:method:: vrClusterService.stopped()
+
+    Signal is emitted after a cluster has been stopped.
+
+
+
+
+    
+    
+
+

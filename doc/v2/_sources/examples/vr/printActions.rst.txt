@@ -1,0 +1,9 @@
+Print device actions of a device interaction
+============================================
+
+This example shows how to print the names of all device actions that are contained in the default teleport interaction.
+
+.. literalinclude:: ../../python_examples/vr/printActions.py
+   :language: python
+   :linenos:
+   :caption: vr/printActions.py

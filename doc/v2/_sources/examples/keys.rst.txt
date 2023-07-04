@@ -1,0 +1,7 @@
+Key input example
+=================
+
+.. literalinclude:: ../python_examples/keys.py
+   :language: python
+   :linenos:
+   :caption: keys.py

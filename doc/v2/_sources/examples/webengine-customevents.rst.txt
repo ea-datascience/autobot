@@ -1,0 +1,205 @@
+Custom Javascript events in Webengines
+======================================
+
+In order to trigger functionality in websites running on a web engine
+Javascript CustomEvents can be used.
+
+A description of CustomEvent() can be found  `here <https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent>`_.
+
+CustomEvents can be sent by using the sendEvent() method of vrdWebEngines. It
+takes two string parameters. The first one is the identifier of the
+CustomEvent, the second one can contain either event specific data or be an
+empty string.
+
+The Javascript code that is injected in the web page looks like this: 
+
+.. code-block:: javascript
+  :linenos:
+
+   var e = new CustomEvent( event
+       { 
+           detail: data 
+       });
+
+   document.dispatchEvent(e);
+
+Events are always sent through the DOM document. You can install an event
+handler in your Javascript code running on the web engine that listens for
+those events and triggers other functionality.
+
+Example 1: 
+----------
+
+Here is a small example that shows how to change the background color of a web
+page with a CustomEvent.
+
+.. code-block:: html
+  :linenos:
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>JavaScript Custom Event</title>
+  </head>
+  <body style="background-color:white;">
+      <div class="note">JavaScript Custom Event</div>
+      <script>
+          document.addEventListener("testEvent", function(event) {
+              document.body.style.background = event.detail.color;
+          });
+      </script>
+  </body>
+  </html>
+
+
+This creates a page with a white background and installs an event listener for
+a custom event called "testEvent". To use this in VRED create a new frontplate
+and give it the name "EventFrontPlate". The set it's content type to "web" and
+copy&paste the html code above.
+
+Now we need an instance of the underlying web engine:
+
+.. code-block:: python
+
+  we = vrWebEngineService.getWebEngine("EventFrontPlate")
+
+And now we create an event that changes the background color to red:
+
+.. code-block:: python
+
+  we.sendEvent("testEvent", "{color: 'red'}")
+
+Or we can set it to green:
+
+.. code-block:: python
+
+  we.sendEvent("testEvent", "{color: 'green'}")
+
+If you don't want to pass custom data to the event, you can use an empty
+string for the second parameter. A more elaborate example where multiple
+CustomEvents are used can be found here:  :doc:`menu-webengine`.
+
+
+Example 2: 
+----------
+
+This example shows how to access the custom data parameter and use it to call a Python function in VRED.
+As in the example above, create a frontplate called "EventFrontPlate" and use the html code below.
+
+.. code-block:: html
+  :linenos:
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>JavaScript Custom Event</title>
+  </head>
+  <body style="background-color:white;">
+      <div class="note">JavaScript Custom Event</div>
+      <script>
+          document.addEventListener("testEvent", function(event) {
+              vred.executePython("printFromJavascript('" + event.detail.custom + "')");
+          });
+      </script>
+  </body>
+  </html>
+
+In VRED the following Python function must be executed:
+
+.. code-block:: python
+
+  def printFromJavascript(data):
+    print(data)  
+
+We can then call this event in VRED:
+
+.. code-block:: python
+
+  we = vrWebEngineService.getWebEngine("EventFrontPlate")
+  we.sendEvent("testEvent", "{custom: 'test 123'}")
+
+The Javascript code for the custom event that VRED generates looks like this:
+
+.. code-block:: html
+  :linenos:
+
+  <script>
+  var e = new CustomEvent("testEvent"
+          { 
+            detail: {custom: 'test 123' } 
+          });
+  </script>
+
+API change in VRED 2021.3:
+--------------------------
+
+In VRED 2021.3 the data parameter had to be changed to allow complex events like in the above examples.
+The signature of sendToWebEngine() is this:
+
+.. code-block:: python
+
+  sendToWebEngine(name, event, data)
+
+Before VRED 2021.3 the 'data' parameter was internally quoted when injecting the Javascript code into the web page.
+So if you called it like
+
+.. code-block:: python
+
+  sendToWebEngine("EventFrontPlate", "testEvent", "test 123")
+
+the Javascript code would have been this:
+
+.. code-block:: html
+  :linenos:
+
+  <script>
+  var e = new CustomEvent("testEvent"
+          { 
+            detail: "test 123" } 
+          });
+  </script>
+
+In VRED 2021.3 and later, "test 123" would not be automatically quoted. If you want the old behvior, you need to write
+
+.. code-block:: python
+
+  sendToWebEngine("EventFrontPlate", "testEvent", "'test 123'")
+
+This change is needed so that complex events are possible. Otherwise a call like
+
+.. code-block:: python
+
+  sendToWebEngine("EventFrontPlate", "testEvent", "{custom: 'test 123'}")
+
+would have produced
+
+.. code-block:: html
+  :linenos:
+
+  <script>
+  var e = new CustomEvent("testEvent"
+          { 
+            detail: "{custom: 'test 123' }" 
+          });
+  </script>
+
+The quotes around around the dictionary are not valid and so the event would not have worked since the user has no chance of removing the quotes.
+
+Debugging CustomEvents:
+-----------------------
+
+Since VRED uses QtWebengine you can use the Qt mechanism for debugging the embedded browser.
+You need to set the environment variable QTWEBENGINE_REMOTE_DEBUGGING. The value needs to be a portnumber.
+Example:
+set QTWEBENGINE_REMOTE_DEBUGGING=9876
+
+When VRED is running and you have an instance of the web engine active, you can the start Chrome (or another Chromium based browser like Opera or Vivaldi) 
+and use their internal remote debugger to connect to the web engine in VRED.
+You do this by going to this URL in Chrome: http://localhost:9876
+
+
+

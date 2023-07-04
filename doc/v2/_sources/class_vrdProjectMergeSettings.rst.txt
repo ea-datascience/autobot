@@ -1,0 +1,257 @@
+-----------------------
+vrdProjectMergeSettings
+-----------------------
+
+
+.. _vredvrdProjectMergeSettings:
+.. py:class:: vrdProjectMergeSettings
+
+(Inherits :py:class:`vrdData`)
+
+
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getEnvironmentImportOption() → integer<vredvrdProjectMergeSettings.getEnvironmentImportOption()>`
+    * :ref:`getImportVredAnimationClips() → bool<vredvrdProjectMergeSettings.getImportVredAnimationClips()>`
+    * :ref:`getImportVredAnimationCurves() → bool<vredvrdProjectMergeSettings.getImportVredAnimationCurves()>`
+    * :ref:`getImportVredAnnotations() → bool<vredvrdProjectMergeSettings.getImportVredAnnotations()>`
+    * :ref:`getImportVredSequences() → bool<vredvrdProjectMergeSettings.getImportVredSequences()>`
+    * :ref:`getImportVredTouchSensors() → bool<vredvrdProjectMergeSettings.getImportVredTouchSensors()>`
+    * :ref:`getImportVredVariants() → bool<vredvrdProjectMergeSettings.getImportVredVariants()>`
+    * :ref:`getMergeVredMaterials() → bool<vredvrdProjectMergeSettings.getMergeVredMaterials()>`
+    * :ref:`setEnvironmentImportOption(value) <vredvrdProjectMergeSettings.setEnvironmentImportOption(value)>`
+    * :ref:`setImportVredAnimationClips(value) <vredvrdProjectMergeSettings.setImportVredAnimationClips(value)>`
+    * :ref:`setImportVredAnimationCurves(value) <vredvrdProjectMergeSettings.setImportVredAnimationCurves(value)>`
+    * :ref:`setImportVredAnnotations(value) <vredvrdProjectMergeSettings.setImportVredAnnotations(value)>`
+    * :ref:`setImportVredSequences(value) <vredvrdProjectMergeSettings.setImportVredSequences(value)>`
+    * :ref:`setImportVredTouchSensors(value) <vredvrdProjectMergeSettings.setImportVredTouchSensors(value)>`
+    * :ref:`setImportVredVariants(value) <vredvrdProjectMergeSettings.setImportVredVariants(value)>`
+    * :ref:`setMergeVredMaterials(value) <vredvrdProjectMergeSettings.setMergeVredMaterials(value)>`
+    * :ref:`vrdProjectMergeSettings() <vredvrdProjectMergeSettings.vrdProjectMergeSettings()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdProjectMergeSettings.getEnvironmentImportOption():
+.. py:method:: vrdProjectMergeSettings.getEnvironmentImportOption()
+
+    Returns the index of the environment.
+
+
+
+
+    :return: The index
+    :rtype: integer
+
+.. _vredvrdProjectMergeSettings.getImportVredAnimationClips():
+.. py:method:: vrdProjectMergeSettings.getImportVredAnimationClips()
+
+    Queries if animation clips should be merged during file import.
+
+
+
+
+    :return: True for merging, False for not merging
+    :rtype: bool
+
+.. _vredvrdProjectMergeSettings.getImportVredAnimationCurves():
+.. py:method:: vrdProjectMergeSettings.getImportVredAnimationCurves()
+
+    Queries if animation curves should be merged during file import.
+
+
+
+
+    :return: True for merging, False for not merging
+    :rtype: bool
+
+.. _vredvrdProjectMergeSettings.getImportVredAnnotations():
+.. py:method:: vrdProjectMergeSettings.getImportVredAnnotations()
+
+    Queries if annotations clips should be merged during file import.
+
+
+
+
+    :return: True for merging, False for not merging
+    :rtype: bool
+
+.. _vredvrdProjectMergeSettings.getImportVredSequences():
+.. py:method:: vrdProjectMergeSettings.getImportVredSequences()
+
+    Queries if sequences should be merged during file import.
+
+
+
+
+    :return: True for merging, False for not merging
+    :rtype: bool
+
+.. _vredvrdProjectMergeSettings.getImportVredTouchSensors():
+.. py:method:: vrdProjectMergeSettings.getImportVredTouchSensors()
+
+    Queries if touch sensors should be merged during file import.
+
+
+
+
+    :return: True for merging, False for not merging
+    :rtype: bool
+
+.. _vredvrdProjectMergeSettings.getImportVredVariants():
+.. py:method:: vrdProjectMergeSettings.getImportVredVariants()
+
+    Queries if variants should be merged during file import.
+
+
+
+
+    :return: True for merging, False for not merging
+    :rtype: bool
+
+.. _vredvrdProjectMergeSettings.getMergeVredMaterials():
+.. py:method:: vrdProjectMergeSettings.getMergeVredMaterials()
+
+    Queries if materials should be merged during file import.
+
+
+
+
+    :return: True for merging, False for not merging
+    :rtype: bool
+
+.. _vredvrdProjectMergeSettings.setEnvironmentImportOption(value):
+.. py:method:: vrdProjectMergeSettings.setEnvironmentImportOption(value)
+
+    Sets the index of the environment that should be used during file import
+
+
+
+    :param value: 
+    :type value: integer
+
+    
+    
+
+.. _vredvrdProjectMergeSettings.setImportVredAnimationClips(value):
+.. py:method:: vrdProjectMergeSettings.setImportVredAnimationClips(value)
+
+    Sets the flag indicating that animation clips should be merged during file import
+
+
+
+    :param value: True for merging, False for not merging
+    :type value: bool
+
+    
+    
+
+.. _vredvrdProjectMergeSettings.setImportVredAnimationCurves(value):
+.. py:method:: vrdProjectMergeSettings.setImportVredAnimationCurves(value)
+
+    Sets the flag indicating that animation curves should be merged during file import
+
+
+
+    :param value: True for merging, False for not merging
+    :type value: bool
+
+    
+    
+
+.. _vredvrdProjectMergeSettings.setImportVredAnnotations(value):
+.. py:method:: vrdProjectMergeSettings.setImportVredAnnotations(value)
+
+    Sets the flag indicating that annotations should be merged during file import
+
+
+
+    :param value: True for merging, False for not merging
+    :type value: bool
+
+    
+    
+
+.. _vredvrdProjectMergeSettings.setImportVredSequences(value):
+.. py:method:: vrdProjectMergeSettings.setImportVredSequences(value)
+
+    Sets the flag indicating that sequences should be merged during file import
+
+
+
+    :param value: True for merging, False for not merging
+    :type value: bool
+
+    
+    
+
+.. _vredvrdProjectMergeSettings.setImportVredTouchSensors(value):
+.. py:method:: vrdProjectMergeSettings.setImportVredTouchSensors(value)
+
+    Sets the flag indicating that touch sensors should be merged during file import
+
+
+
+    :param value: True for merging, False for not merging
+    :type value: bool
+
+    
+    
+
+.. _vredvrdProjectMergeSettings.setImportVredVariants(value):
+.. py:method:: vrdProjectMergeSettings.setImportVredVariants(value)
+
+    Sets the flag indicating that variants should be merged during file import
+
+
+
+    :param value: True for merging, False for not merging
+    :type value: bool
+
+    
+    
+
+.. _vredvrdProjectMergeSettings.setMergeVredMaterials(value):
+.. py:method:: vrdProjectMergeSettings.setMergeVredMaterials(value)
+
+    Sets the flag indicating that materials should be merged during file import
+
+
+
+    :param value: True for merging, False for not merging
+    :type value: bool
+
+    
+    
+
+.. _vredvrdProjectMergeSettings.vrdProjectMergeSettings():
+.. py:method:: vrdProjectMergeSettings.vrdProjectMergeSettings()
+
+    
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+

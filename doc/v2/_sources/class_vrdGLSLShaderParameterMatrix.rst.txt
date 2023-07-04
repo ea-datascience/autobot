@@ -1,0 +1,63 @@
+----------------------------
+vrdGLSLShaderParameterMatrix
+----------------------------
+
+
+.. _vredvrdGLSLShaderParameterMatrix:
+.. py:class:: vrdGLSLShaderParameterMatrix
+
+(Inherits :py:class:`vrdGLSLShaderParameter`)
+
+
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getValue() → QMatrix4x4<vredvrdGLSLShaderParameterMatrix.getValue()>`
+    * :ref:`setValue(value) <vredvrdGLSLShaderParameterMatrix.setValue(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdGLSLShaderParameterMatrix.getValue():
+.. py:method:: vrdGLSLShaderParameterMatrix.getValue()
+
+    
+
+
+
+
+    :return: The matrix value of the shader parameter.
+    :rtype: QMatrix4x4
+
+.. _vredvrdGLSLShaderParameterMatrix.setValue(value):
+.. py:method:: vrdGLSLShaderParameterMatrix.setValue(value)
+
+    Sets the value of the shader parameter.
+
+
+
+    :param value: New value.
+    :type value: QMatrix4x4
+
+    
+    
+
+
+
+
+
+
+
+
+
+

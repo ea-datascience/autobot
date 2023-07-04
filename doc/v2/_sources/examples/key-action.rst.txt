@@ -1,0 +1,7 @@
+Key events in the event loop
+============================
+
+.. literalinclude:: ../python_examples/key-action.py
+   :language: python
+   :linenos:
+   :caption: key-action.py

@@ -1,0 +1,11 @@
+Camera fixed object 1
+=====================
+
+To move a geometry with the camera, add the geometry as a child node to the camera node in the Scenegraph.
+
+For another way to move an object with the camera, see ":doc:`camera-fixed-object2`".
+
+.. literalinclude:: ../python_examples/camera-fixed-object.py
+   :language: python
+   :linenos:
+   :caption: camera-fixed-object.py

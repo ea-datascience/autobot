@@ -1,0 +1,165 @@
+---------------
+vrGeometryTypes
+---------------
+
+
+.. _vredvrGeometryTypes:
+.. py:class:: vrGeometryTypes
+
+
+
+
+
+
+
+    .. _vredvrGeometryTypes.PrimitiveType:
+    .. py:class:: PrimitiveType
+
+        Primitive type of         :any:`vrdGeometryNode <vredvrdGeometryNode>`.
+
+
+            
+
+            .. _vredvrGeometryTypes.PrimitiveType.Unknown:
+            .. py:data:: Unknown
+
+
+            
+
+            .. _vredvrGeometryTypes.PrimitiveType.Points:
+            .. py:data:: Points
+
+
+            
+
+            .. _vredvrGeometryTypes.PrimitiveType.Lines:
+            .. py:data:: Lines
+
+
+            
+
+            .. _vredvrGeometryTypes.PrimitiveType.LineStrip:
+            .. py:data:: LineStrip
+
+
+            
+
+            .. _vredvrGeometryTypes.PrimitiveType.Triangles:
+            .. py:data:: Triangles
+
+
+    .. _vredvrGeometryTypes.DecoreMode:
+    .. py:class:: DecoreMode
+
+        When geometry is determined to be inside another and non-visible, then one of these options are available:
+
+
+            Removes the occluded parts from the scene.
+
+            .. _vredvrGeometryTypes.DecoreMode.Remove:
+            .. py:data:: Remove
+
+
+            Sets the occluded parts to B Side and doesn't delete them.
+
+            .. _vredvrGeometryTypes.DecoreMode.SetToBSide:
+            .. py:data:: SetToBSide
+
+
+    .. _vredvrGeometryTypes.DecoreTransparentObjectMode:
+    .. py:class:: DecoreTransparentObjectMode
+
+        Defines how transparent objects are handled when decoring.
+
+
+            Transparent objects are ignored (i.e., they do not occlude other objects and they are not occluded by other objects). (Fastest mode)
+
+            .. _vredvrGeometryTypes.DecoreTransparentObjectMode.Ignore:
+            .. py:data:: Ignore
+
+
+            Transparent objects will not occlude other objects, but they can be occluded by non-transparent objects. (Slower, but most accurate mode)
+
+            .. _vredvrGeometryTypes.DecoreTransparentObjectMode.TreatAsTransparent:
+            .. py:data:: TreatAsTransparent
+
+
+            No special handling for transparent objects, they are treated as opaque.
+
+            .. _vredvrGeometryTypes.DecoreTransparentObjectMode.TreatAsOpaque:
+            .. py:data:: TreatAsOpaque
+
+
+    .. _vredvrGeometryTypes.DecoreSubObjectMode:
+    .. py:class:: DecoreSubObjectMode
+
+        Determines how sub-objects are factored in when decoring or correcting face normals.
+
+
+            No sub objects will be changed, i.e., only works on object level.
+
+            .. _vredvrGeometryTypes.DecoreSubObjectMode.None_:
+            .. py:data:: None_
+
+
+            Works on the component level for shells.
+
+            .. _vredvrGeometryTypes.DecoreSubObjectMode.Components:
+            .. py:data:: Components
+
+
+            Works on the triangle/polygon level for meshes.
+
+            .. _vredvrGeometryTypes.DecoreSubObjectMode.Triangles:
+            .. py:data:: Triangles
+
+
+            Works on the triangle and component level.
+
+            .. _vredvrGeometryTypes.DecoreSubObjectMode.ComponentsAndTriangles:
+            .. py:data:: ComponentsAndTriangles
+
+
+    .. _vredvrGeometryTypes.VisibilityMergeMode:
+    .. py:class:: VisibilityMergeMode
+
+
+
+
+            Hidden and visible geometry nodes are merged separately.
+
+            .. _vredvrGeometryTypes.VisibilityMergeMode.MergeByVisibility:
+            .. py:data:: MergeByVisibility
+
+
+            Merge all visible geometries and ignore the rest.
+
+            .. _vredvrGeometryTypes.VisibilityMergeMode.MergeOnlyVisible:
+            .. py:data:: MergeOnlyVisible
+
+
+            Shells: Merge all components into one shell and set the correct visibility; meshes: merge all visible meshes, invisible meshes are discarded.
+
+            .. _vredvrGeometryTypes.VisibilityMergeMode.MergeAllKeepVisibility:
+            .. py:data:: MergeAllKeepVisibility
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+----------------------
+vrdLightPortalMaterial
+----------------------
+
+
+.. _vredvrdLightPortalMaterial:
+.. py:class:: vrdLightPortalMaterial
+
+(Inherits :py:class:`vrdMaterial`)
+
+This class is used for all light portal material properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getVisibility() → float<vredvrdLightPortalMaterial.getVisibility()>`
+    * :ref:`setVisibility(v) <vredvrdLightPortalMaterial.setVisibility(v)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdLightPortalMaterial.getVisibility():
+.. py:method:: vrdLightPortalMaterial.getVisibility()
+
+    Gets the opacity of the material.
+
+
+
+
+    :return: The opacity of the material.
+    :rtype: float
+
+.. _vredvrdLightPortalMaterial.setVisibility(v):
+.. py:method:: vrdLightPortalMaterial.setVisibility(v)
+
+    Sets the opacity of the material. Usually a visibility of 0 is recommended.
+
+
+
+    :param v: The new opacity of the material.
+    :type v: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

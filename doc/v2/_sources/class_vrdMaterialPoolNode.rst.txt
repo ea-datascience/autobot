@@ -1,0 +1,34 @@
+-------------------
+vrdMaterialPoolNode
+-------------------
+
+
+.. _vredvrdMaterialPoolNode:
+.. py:class:: vrdMaterialPoolNode
+
+(Inherits :py:class:`vrdNode`)
+
+This class provides access to the material pool.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

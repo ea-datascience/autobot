@@ -1,0 +1,11 @@
+Camera fixed object 2
+=====================
+
+To move a geometry with the camera, set the transformation of the geometry's parent node to the camera transformation in each frame.
+
+For another way to move an object with the camera, see ":doc:`camera-fixed-object1`".
+
+.. literalinclude:: ../python_examples/camera-fixed-object2.py
+   :language: python
+   :linenos:
+   :caption: camera-fixed-object2.py

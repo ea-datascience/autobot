@@ -1,0 +1,89 @@
+------------------
+vrdDistanceLODNode
+------------------
+
+
+.. _vredvrdDistanceLODNode:
+.. py:class:: vrdDistanceLODNode
+
+(Inherits :py:class:`vrdNode`)
+
+This class provides access to a distance LOD node.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getCenter() → QVector3D<vredvrdDistanceLODNode.getCenter()>`
+    * :ref:`getRanges() → List[float]<vredvrdDistanceLODNode.getRanges()>`
+    * :ref:`setCenter(value) <vredvrdDistanceLODNode.setCenter(value)>`
+    * :ref:`setRanges(value) <vredvrdDistanceLODNode.setRanges(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdDistanceLODNode.getCenter():
+.. py:method:: vrdDistanceLODNode.getCenter()
+
+    
+
+
+
+
+    :return: The center for distance calculation
+    :rtype: QVector3D
+
+.. _vredvrdDistanceLODNode.getRanges():
+.. py:method:: vrdDistanceLODNode.getRanges()
+
+    
+
+
+
+
+    :return: The range intervals
+    :rtype: List[float]
+
+.. _vredvrdDistanceLODNode.setCenter(value):
+.. py:method:: vrdDistanceLODNode.setCenter(value)
+
+    Sets the center for distance calculation.
+
+
+
+    :param value: The new center
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdDistanceLODNode.setRanges(value):
+.. py:method:: vrdDistanceLODNode.setRanges(value)
+
+    Sets the range intervals for the child nodes.
+
+
+
+    :param value: The new ranges
+    :type value: List[float]
+
+    
+    
+
+
+
+
+
+
+
+
+
+

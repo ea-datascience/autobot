@@ -1,0 +1,99 @@
+-------------------
+vrdMeasuredMaterial
+-------------------
+
+
+.. _vredvrdMeasuredMaterial:
+.. py:class:: vrdMeasuredMaterial
+
+(Inherits :py:class:`vrdBRDFMaterial`)
+
+This class is used to handle all measured material properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getColorCorrection() → vrdColorCorrection<vredvrdMeasuredMaterial.getColorCorrection()>`
+    * :ref:`getExposure() → float<vredvrdMeasuredMaterial.getExposure()>`
+    * :ref:`getIncandescence() → vrdIncandescence<vredvrdMeasuredMaterial.getIncandescence()>`
+    * :ref:`getTextureSettings() → vrdTextureSettings<vredvrdMeasuredMaterial.getTextureSettings()>`
+    * :ref:`setExposure(exposure) <vredvrdMeasuredMaterial.setExposure(exposure)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdMeasuredMaterial.getColorCorrection():
+.. py:method:: vrdMeasuredMaterial.getColorCorrection()
+
+    Gets access to all properties of         :any:`vrdColorCorrection <vredvrdColorCorrection>`.
+
+
+
+
+    :return: An :any:`vrdColorCorrection <vredvrdColorCorrection>` object, to read and write access of alls properties.
+    :rtype: vrdColorCorrection
+
+.. _vredvrdMeasuredMaterial.getExposure():
+.. py:method:: vrdMeasuredMaterial.getExposure()
+
+    Get the current value for exposure.
+
+
+
+
+    :return: The current value for exposure.
+    :rtype: float
+
+.. _vredvrdMeasuredMaterial.getIncandescence():
+.. py:method:: vrdMeasuredMaterial.getIncandescence()
+
+    Gets access to all properties of         :any:`vrdIncandescence <vredvrdIncandescence>`.
+
+
+
+
+    :return: An :any:`vrdIncandescence <vredvrdIncandescence>` object, to read and write access of alls properties.
+    :rtype: vrdIncandescence
+
+.. _vredvrdMeasuredMaterial.getTextureSettings():
+.. py:method:: vrdMeasuredMaterial.getTextureSettings()
+
+    Gets access to all properties of vrdTextureProjectionSettings.
+
+
+
+
+    :return: An vrdTextureProjectionSettings object, to read and write access of alls properties.
+    :rtype: vrdTextureSettings
+
+.. _vredvrdMeasuredMaterial.setExposure(exposure):
+.. py:method:: vrdMeasuredMaterial.setExposure(exposure)
+
+    Controls the representation intensity of the measured material. A threshold about 1.0 gives the optimal result.
+
+
+
+    :param exposure: The new used value for exposure.
+    :type exposure: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

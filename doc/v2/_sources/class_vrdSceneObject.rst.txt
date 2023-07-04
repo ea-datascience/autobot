@@ -1,0 +1,49 @@
+--------------
+vrdSceneObject
+--------------
+
+
+.. _vredvrdSceneObject:
+.. py:class:: vrdSceneObject
+
+(Inherits :py:class:`vrdObject`)
+
+This interface represents an object that is part of the scene.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`isValid() → bool<vredvrdSceneObject.isValid()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdSceneObject.isValid():
+.. py:method:: vrdSceneObject.isValid()
+
+    Determines if the object is valid.
+
+    This call is expensive since it's a possible remote call. It checks if the referenced OSG object is still valid. In most cases calling :any:`vrdObject.isNull() <vredvrdObject.isNull()>` should be preferred since it guarantees local evaluation.
+
+
+    :return: True if valid, False otherwise.
+    :rtype: bool
+
+
+
+
+
+
+
+
+
+

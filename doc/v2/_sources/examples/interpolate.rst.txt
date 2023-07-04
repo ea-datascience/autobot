@@ -1,0 +1,7 @@
+Interpolation demo
+==================
+
+.. literalinclude:: ../python_examples/interpolate.py
+   :language: python
+   :linenos:
+   :caption: interpolate.py

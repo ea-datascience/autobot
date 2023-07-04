@@ -1,0 +1,98 @@
+----------------------
+vrdVarjoRenderSettings
+----------------------
+
+
+.. _vredvrdVarjoRenderSettings:
+.. py:class:: vrdVarjoRenderSettings
+
+(Inherits :py:class:`vrdData`)
+
+Holds render settings for Varjo HMD. Changes to these settings take effect on next activation of Varjo HMD mode.
+
+Use it like this:
+
+.. code-block:: python
+
+     varjoSettings = vrHMDService.getVarjoRenderSettings()
+     # change settings, e.g.
+     varjoSettings.setUseNativeFoveatedRendering(True)
+     vrHMDService.setVarjoRenderSettings(varjoSettings)
+..
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getUseNativeFoveatedRendering() → bool<vredvrdVarjoRenderSettings.getUseNativeFoveatedRendering()>`
+    * :ref:`setUseNativeFoveatedRendering(on) <vredvrdVarjoRenderSettings.setUseNativeFoveatedRendering(on)>`
+    * :ref:`vrdVarjoRenderSettings() <vredvrdVarjoRenderSettings.vrdVarjoRenderSettings()>`
+    * :ref:`vrdVarjoRenderSettings(state) <vredvrdVarjoRenderSettings.vrdVarjoRenderSettings(state)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdVarjoRenderSettings.getUseNativeFoveatedRendering():
+.. py:method:: vrdVarjoRenderSettings.getUseNativeFoveatedRendering()
+
+    Return if native Varjo foveated rendering is used.
+
+
+
+
+    :return: On/Off
+    :rtype: bool
+
+.. _vredvrdVarjoRenderSettings.setUseNativeFoveatedRendering(on):
+.. py:method:: vrdVarjoRenderSettings.setUseNativeFoveatedRendering(on)
+
+    Toggle native Varjo foveated rendering. In this mode the viewport that is moved by the gaze is rendered in a higher resolution than the the peripheral viewport to improve rendering performance.
+
+
+
+    :param on: On (True), Off (False)
+    :type on: bool
+
+    
+    
+
+.. _vredvrdVarjoRenderSettings.vrdVarjoRenderSettings():
+.. py:method:: vrdVarjoRenderSettings.vrdVarjoRenderSettings()
+
+    Default constructor.
+
+
+
+
+    
+    
+
+.. _vredvrdVarjoRenderSettings.vrdVarjoRenderSettings(state):
+.. py:method:: vrdVarjoRenderSettings.vrdVarjoRenderSettings(state)
+
+    Copy constructor.
+
+
+
+    :param state: 
+    :type state: vrdVarjoRenderSettings
+
+    
+    
+
+
+
+
+
+
+
+
+
+

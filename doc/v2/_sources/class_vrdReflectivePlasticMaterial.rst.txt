@@ -1,0 +1,282 @@
+----------------------------
+vrdReflectivePlasticMaterial
+----------------------------
+
+
+.. _vredvrdReflectivePlasticMaterial:
+.. py:class:: vrdReflectivePlasticMaterial
+
+(Inherits :py:class:`vrdBRDFMaterial`)
+
+This class is used to handle all reflexive plastic material properties.
+
+
+
+    .. _vredvrdReflectivePlasticMaterial.FresnelQuality:
+    .. py:class:: FresnelQuality
+
+
+
+
+            
+
+            .. _vredvrdReflectivePlasticMaterial.FresnelQuality.Fast:
+            .. py:data:: Fast
+
+
+            
+
+            .. _vredvrdReflectivePlasticMaterial.FresnelQuality.Accurate:
+            .. py:data:: Accurate
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBumpTexture() → vrdBumpTexture<vredvrdReflectivePlasticMaterial.getBumpTexture()>`
+    * :ref:`getDiffuseColor() → QVector3D<vredvrdReflectivePlasticMaterial.getDiffuseColor()>`
+    * :ref:`getDiffuseColorSpectrum() → vrSpectrum<vredvrdReflectivePlasticMaterial.getDiffuseColorSpectrum()>`
+    * :ref:`getDiffuseTexture() → vrdTexture<vredvrdReflectivePlasticMaterial.getDiffuseTexture()>`
+    * :ref:`getDisplacementTexture() → vrdDisplacementTexture<vredvrdReflectivePlasticMaterial.getDisplacementTexture()>`
+    * :ref:`getFresnelQuality() → vrdReflectivePlasticMaterial.FresnelQuality<vredvrdReflectivePlasticMaterial.getFresnelQuality()>`
+    * :ref:`getIncandescence() → vrdIncandescence<vredvrdReflectivePlasticMaterial.getIncandescence()>`
+    * :ref:`getReflectivity() → float<vredvrdReflectivePlasticMaterial.getReflectivity()>`
+    * :ref:`getSpecularColor() → QVector3D<vredvrdReflectivePlasticMaterial.getSpecularColor()>`
+    * :ref:`getSpecularColorSpectrum() → vrSpectrum<vredvrdReflectivePlasticMaterial.getSpecularColorSpectrum()>`
+    * :ref:`getSpecularTexture() → vrdTexture<vredvrdReflectivePlasticMaterial.getSpecularTexture()>`
+    * :ref:`getSubsurfaceScattering() → vrdSubsurfaceScattering<vredvrdReflectivePlasticMaterial.getSubsurfaceScattering()>`
+    * :ref:`setDiffuseColor(value) <vredvrdReflectivePlasticMaterial.setDiffuseColor(value)>`
+    * :ref:`setDiffuseColorSpectrum(value) <vredvrdReflectivePlasticMaterial.setDiffuseColorSpectrum(value)>`
+    * :ref:`setFresnelQuality(quality) <vredvrdReflectivePlasticMaterial.setFresnelQuality(quality)>`
+    * :ref:`setReflectivity(v) <vredvrdReflectivePlasticMaterial.setReflectivity(v)>`
+    * :ref:`setSpecularColor(value) <vredvrdReflectivePlasticMaterial.setSpecularColor(value)>`
+    * :ref:`setSpecularColorSpectrum(value) <vredvrdReflectivePlasticMaterial.setSpecularColorSpectrum(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdReflectivePlasticMaterial.getBumpTexture():
+.. py:method:: vrdReflectivePlasticMaterial.getBumpTexture()
+
+    Gets access to all properties of         :any:`vrdBumpTexture <vredvrdBumpTexture>`.
+
+
+
+
+    :return: An :any:`vrdBumpTexture <vredvrdBumpTexture>` object, to read and write access of alls properties.
+    :rtype: vrdBumpTexture
+
+.. _vredvrdReflectivePlasticMaterial.getDiffuseColor():
+.. py:method:: vrdReflectivePlasticMaterial.getDiffuseColor()
+
+    
+
+
+
+
+    :return: Current diffuse reflection color
+    :rtype: QVector3D
+
+.. _vredvrdReflectivePlasticMaterial.getDiffuseColorSpectrum():
+.. py:method:: vrdReflectivePlasticMaterial.getDiffuseColorSpectrum()
+
+    Gets the diffuse color spectrum.
+
+
+
+
+    :return: The current used spectrum for diffuse color
+    :rtype: vrSpectrum
+
+.. _vredvrdReflectivePlasticMaterial.getDiffuseTexture():
+.. py:method:: vrdReflectivePlasticMaterial.getDiffuseTexture()
+
+    Gets access to all properties of the diffuse texture.
+
+
+
+
+    :return: An :any:`vrdTexture <vredvrdTexture>` object, to read and write access of alls properties.
+    :rtype: vrdTexture
+
+.. _vredvrdReflectivePlasticMaterial.getDisplacementTexture():
+.. py:method:: vrdReflectivePlasticMaterial.getDisplacementTexture()
+
+    Gets access to all properties of         :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>`.
+
+
+
+
+    :return: An :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>` object, to read and write access of alls properties.
+    :rtype: vrdDisplacementTexture
+
+.. _vredvrdReflectivePlasticMaterial.getFresnelQuality():
+.. py:method:: vrdReflectivePlasticMaterial.getFresnelQuality()
+
+    Gets mode of the intensity of a reflection, based on the viewing angle.
+
+
+
+
+    :return: Current mode of the intensity of a reflection, based on the viewing angle.
+    :rtype: :ref:`vrdReflectivePlasticMaterial.FresnelQuality <vredvrdReflectivePlasticMaterial.FresnelQuality>`
+
+.. _vredvrdReflectivePlasticMaterial.getIncandescence():
+.. py:method:: vrdReflectivePlasticMaterial.getIncandescence()
+
+    Gets access to all properties of         :any:`vrdIncandescence <vredvrdIncandescence>`.
+
+
+
+
+    :return: An :any:`vrdIncandescence <vredvrdIncandescence>` object, to read and write access of alls properties.
+    :rtype: vrdIncandescence
+
+.. _vredvrdReflectivePlasticMaterial.getReflectivity():
+.. py:method:: vrdReflectivePlasticMaterial.getReflectivity()
+
+    Gets the intensity of the reflection on the surface.
+
+
+
+
+    :return: Current used intensity of the reflection on the surface.
+    :rtype: float
+
+.. _vredvrdReflectivePlasticMaterial.getSpecularColor():
+.. py:method:: vrdReflectivePlasticMaterial.getSpecularColor()
+
+    Gets the current used surfaces specular reflection color.
+
+
+
+
+    :return: Value of current used surfaces specular reflection color
+    :rtype: QVector3D
+
+.. _vredvrdReflectivePlasticMaterial.getSpecularColorSpectrum():
+.. py:method:: vrdReflectivePlasticMaterial.getSpecularColorSpectrum()
+
+    Get the current used material's color spectrum.
+
+
+
+
+    :return: Value of current used material's color spectrum
+    :rtype: vrSpectrum
+
+.. _vredvrdReflectivePlasticMaterial.getSpecularTexture():
+.. py:method:: vrdReflectivePlasticMaterial.getSpecularTexture()
+
+    Gets access to all properties of the specular texture.
+
+
+
+
+    :return: An :any:`vrdTexture <vredvrdTexture>` object, to read and write access of alls properties.
+    :rtype: vrdTexture
+
+.. _vredvrdReflectivePlasticMaterial.getSubsurfaceScattering():
+.. py:method:: vrdReflectivePlasticMaterial.getSubsurfaceScattering()
+
+    Gets access to all properties of         :any:`vrdSubsurfaceScattering <vredvrdSubsurfaceScattering>`.
+
+
+
+
+    :return: An :any:`vrdSubsurfaceScattering <vredvrdSubsurfaceScattering>` object, to read and write access of alls properties.
+    :rtype: vrdSubsurfaceScattering
+
+.. _vredvrdReflectivePlasticMaterial.setDiffuseColor(value):
+.. py:method:: vrdReflectivePlasticMaterial.setDiffuseColor(value)
+
+    Sets the diffuse reflection color of the material.
+
+
+
+    :param value: New diffuse color.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdReflectivePlasticMaterial.setDiffuseColorSpectrum(value):
+.. py:method:: vrdReflectivePlasticMaterial.setDiffuseColorSpectrum(value)
+
+    Sets the diffuse color spectrum.
+
+
+
+    :param value: New spectrum for diffuse color
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdReflectivePlasticMaterial.setFresnelQuality(quality):
+.. py:method:: vrdReflectivePlasticMaterial.setFresnelQuality(quality)
+
+    Sets the intensity of a reflection, based on the viewing angle. The material reflectivity sets its intensity at normal incidence. Fast: Uses a fast, but less accurate, approximation to the Fresnel Term. Accurate: Uses a physically accurate evaluation of the Fresnel Term.
+
+
+
+    :param quality: New mode of the intensity of a reflection, based on the viewing angle.
+    :type quality: :ref:`vrdReflectivePlasticMaterial.FresnelQuality <vredvrdReflectivePlasticMaterial.FresnelQuality>`
+
+    
+    
+
+.. _vredvrdReflectivePlasticMaterial.setReflectivity(v):
+.. py:method:: vrdReflectivePlasticMaterial.setReflectivity(v)
+
+    Controls the intensity of the reflection on the surface. The higher the value, the more the influence from the environment and objects around.
+
+
+
+    :param v: New intensity of the reflection on the surface.
+    :type v: float
+
+    
+    
+
+.. _vredvrdReflectivePlasticMaterial.setSpecularColor(value):
+.. py:method:: vrdReflectivePlasticMaterial.setSpecularColor(value)
+
+    Sets the material's color for surfaces specular reflections, serving as a multiplier for your texture.
+
+
+
+    :param value: New used surfaces specular reflection color
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdReflectivePlasticMaterial.setSpecularColorSpectrum(value):
+.. py:method:: vrdReflectivePlasticMaterial.setSpecularColorSpectrum(value)
+
+    Sets the material's color spectrum for surfaces specular reflections.
+
+
+
+    :param value: New used material's color spectrum
+    :type value: vrSpectrum
+
+    
+    
+
+
+
+
+
+
+
+
+
+

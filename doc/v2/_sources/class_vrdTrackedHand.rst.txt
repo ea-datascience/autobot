@@ -1,0 +1,178 @@
+--------------
+vrdTrackedHand
+--------------
+
+
+.. _vredvrdTrackedHand:
+.. py:class:: vrdTrackedHand
+
+(Inherits :py:class:`vrdObject`)
+
+Access to tracked hands.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getJointTransform(finger, jointId) → QMatrix4x4<vredvrdTrackedHand.getJointTransform(finger, jointId)>`
+    * :ref:`getPinchStrength() → float<vredvrdTrackedHand.getPinchStrength()>`
+    * :ref:`getRole() → vrHandTypes.HandRole<vredvrdTrackedHand.getRole()>`
+    * :ref:`getTransform() → QMatrix4x4<vredvrdTrackedHand.getTransform()>`
+    * :ref:`isTracked() → bool<vredvrdTrackedHand.isTracked()>`
+    * :ref:`setGesture(gesture) <vredvrdTrackedHand.setGesture(gesture)>`
+    * :ref:`setJointTransform(transform, finger, jointId) <vredvrdTrackedHand.setJointTransform(transform, finger, jointId)>`
+    * :ref:`setPinchStrength(value) <vredvrdTrackedHand.setPinchStrength(value)>`
+    * :ref:`setTracked(value) <vredvrdTrackedHand.setTracked(value)>`
+    * :ref:`setTransform(matrix) <vredvrdTrackedHand.setTransform(matrix)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdTrackedHand.getJointTransform(finger, jointId):
+.. py:method:: vrdTrackedHand.getJointTransform(finger, jointId)
+
+    Gets the joint transformation.
+
+
+
+    :param finger: The finger
+    :type finger: :ref:`vrHandTypes.FingerType <vredvrHandTypes.FingerType>`
+
+    :param jointId: The joint id, 0 = Metacarpel, 4 Finger Tip
+    :type jointId: integer
+
+    :return: The transformation matrix
+    :rtype: QMatrix4x4
+
+.. _vredvrdTrackedHand.getPinchStrength():
+.. py:method:: vrdTrackedHand.getPinchStrength()
+
+    
+
+
+
+
+    :return: Pinch strength 0-1. 0 not pinching
+    :rtype: float
+
+.. _vredvrdTrackedHand.getRole():
+.. py:method:: vrdTrackedHand.getRole()
+
+    
+
+
+
+
+    :return: Hand Role. Left or right
+    :rtype: :ref:`vrHandTypes.HandRole <vredvrHandTypes.HandRole>`
+
+.. _vredvrdTrackedHand.getTransform():
+.. py:method:: vrdTrackedHand.getTransform()
+
+    
+
+
+
+
+    :return: The hand position offset in world space
+    :rtype: QMatrix4x4
+
+.. _vredvrdTrackedHand.isTracked():
+.. py:method:: vrdTrackedHand.isTracked()
+
+    
+
+
+
+
+    :return: True, if the hand has been detected
+    :rtype: bool
+
+.. _vredvrdTrackedHand.setGesture(gesture):
+.. py:method:: vrdTrackedHand.setGesture(gesture)
+
+    
+
+
+
+    :param gesture: Tell the system, that a gesture has been detected
+    :type gesture: :ref:`vrHandTypes.HandTrackingGesture <vredvrHandTypes.HandTrackingGesture>`
+
+    
+    
+
+.. _vredvrdTrackedHand.setJointTransform(transform, finger, jointId):
+.. py:method:: vrdTrackedHand.setJointTransform(transform, finger, jointId)
+
+    Sets the joint transformation. The thumb has only 5 (0-4) joints.
+
+
+
+    :param transform: The transformation matrix
+    :type transform: QMatrix4x4
+
+    :param finger: The finger
+    :type finger: :ref:`vrHandTypes.FingerType <vredvrHandTypes.FingerType>`
+
+    :param jointId: The joint id, 0 = Metacarpel, 5 Finger Tip
+    :type jointId: integer
+
+    
+    
+
+.. _vredvrdTrackedHand.setPinchStrength(value):
+.. py:method:: vrdTrackedHand.setPinchStrength(value)
+
+    
+
+
+
+    :param value: Pinch strength 0-1. 0 not pinching
+    :type value: float
+
+    
+    
+
+.. _vredvrdTrackedHand.setTracked(value):
+.. py:method:: vrdTrackedHand.setTracked(value)
+
+    
+
+
+
+    :param value: If True, mark as detected
+    :type value: bool
+
+    
+    
+
+.. _vredvrdTrackedHand.setTransform(matrix):
+.. py:method:: vrdTrackedHand.setTransform(matrix)
+
+    Sets the hand position offset in world space.
+
+
+
+    :param matrix: The position
+    :type matrix: QMatrix4x4
+
+    
+    
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+Color
+=====
+
+.. literalinclude:: ../../python_examples/sceneplates/color.py
+   :language: python
+   :linenos:
+   :caption: sceneplates/color.py

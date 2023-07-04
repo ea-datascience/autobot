@@ -1,0 +1,46 @@
+Extend the default teleport to multi user teleport
+==================================================
+
+This script implements group teleport functionality. It uses the default teleport interaction
+and implements an additional group teleport interaction. How to combine default and custom interactions
+can be seen in the ":ref:`combine-default-custom-interaction`" example.
+
+When GroupTeleport is initialized, two virtual buttons are defined on the touchpad of a VR controller.
+The upper half is one button and the lower half another. How virtual buttons work is shown in the ":ref:`virtual-controller-buttons`" example.
+
+The actions of the default teleport are now mapped to the lower virtual button. Further information about
+remapping the default interactions can also be found in the ":ref:`combine-default-custom-interaction`" example.
+
+A new interaction is created for the group teleport. This handles the switching between the regular and
+the group teleport, by using the upper button. If group teleport is active, all participants in the session will also be teleported to near the
+target position.
+
+After all signals are connected to their corresponding methods, the geometry positioning is set up by using a
+parent constraint.
+
+.. code-block:: python
+  :linenos:
+  :lineno-start: 82  
+
+  self.leftConstraint = vrConstraintService.createParentConstraint([self.leftController.getNode()], self.leftDisk, True)
+  self.rightConstraint = vrConstraintService.createParentConstraint([self.rightController.getNode()], self.rightDisk, True)            
+
+This geometry is positioned on top of the touchpad of the controller. It visualizes the current state.
+The upper button will show "Single" if the regular teleport is active and "Group" if group teleport is active.
+The buttons will be highlighted, when the user presses them. The setting of which geometry is visible is handled
+in the corresponding methods.
+The actual group teleport is done by syncing the camera node with all other users.
+
+.. code-block:: python
+  :linenos:
+  :lineno-start: 129
+
+  cameraNode = vrCameraService.getActiveCamera()
+  vrSessionService.syncNode(cameraNode)
+
+For further information about syncing nodes refer to the ":ref:`collab-sync-example`" example.
+
+.. literalinclude:: ../../python_examples/vr/groupTeleport.py
+   :language: python
+   :linenos:
+   :caption: vr/groupTeleport.py

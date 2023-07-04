@@ -1,0 +1,798 @@
+-----------------------------
+vrImmersiveInteractionService
+-----------------------------
+
+
+.. _vredvrImmersiveInteractionService:
+.. py:class:: vrImmersiveInteractionService
+
+(Inherits :py:class:`vrBaseService`)
+
+This service allows the management of all immersive device interactions that are built into VRED. It contains methods to activate or deactivate these interactions and to adjust their settings.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`activateGroundCalibrationMode(rightHand) <vredvrImmersiveInteractionService.activateGroundCalibrationMode(rightHand)>`
+    * :ref:`createMultiMarker(multiMarkerName, markerNames, markerType) → vrdMultiMarker<vredvrImmersiveInteractionService.createMultiMarker(multiMarkerName, markerNames, markerType)>`
+    * :ref:`getActiveHMDSupportsHandTracking() → bool<vredvrImmersiveInteractionService.getActiveHMDSupportsHandTracking()>`
+    * :ref:`getAutoCreateCollisionObjects() → bool<vredvrImmersiveInteractionService.getAutoCreateCollisionObjects()>`
+    * :ref:`getControllerVisualizationMode() → vrVRInputDeviceTypes.VisualizationMode<vredvrImmersiveInteractionService.getControllerVisualizationMode()>`
+    * :ref:`getControlMode() → vrImmersiveInteractionTypes.ControlMode<vredvrImmersiveInteractionService.getControlMode()>`
+    * :ref:`getDetectedMarkers(markerType) → List[vrdMarker]<vredvrImmersiveInteractionService.getDetectedMarkers(markerType)>`
+    * :ref:`getHandTrackingEnabled() → bool<vredvrImmersiveInteractionService.getHandTrackingEnabled()>`
+    * :ref:`getHandTrackingOffset() → QMatrix4x4<vredvrImmersiveInteractionService.getHandTrackingOffset()>`
+    * :ref:`getHandTrackingType() → vrHandTypes.HandTrackingType<vredvrImmersiveInteractionService.getHandTrackingType()>`
+    * :ref:`getMarker(name, markerType) → vrdMarker<vredvrImmersiveInteractionService.getMarker(name, markerType)>`
+    * :ref:`getMinMarkerConfidence() → float<vredvrImmersiveInteractionService.getMinMarkerConfidence()>`
+    * :ref:`getPointerRayScaleRange() → QVector2D<vredvrImmersiveInteractionService.getPointerRayScaleRange()>`
+    * :ref:`getPointerScalingDistance() → float<vredvrImmersiveInteractionService.getPointerScalingDistance()>`
+    * :ref:`getPointerSphereScaleRange() → QVector2D<vredvrImmersiveInteractionService.getPointerSphereScaleRange()>`
+    * :ref:`getPreferredTooltipsMode() → bool<vredvrImmersiveInteractionService.getPreferredTooltipsMode()>`
+    * :ref:`getRelativeTeleportOrientation() → bool<vredvrImmersiveInteractionService.getRelativeTeleportOrientation()>`
+    * :ref:`getTeleportAvailability() → List[vrXRealityTypes.XRRenderMode]<vredvrImmersiveInteractionService.getTeleportAvailability()>`
+    * :ref:`getTeleportGroundHeight() → float<vredvrImmersiveInteractionService.getTeleportGroundHeight()>`
+    * :ref:`getTeleportGroundMode() → vrImmersiveInteractionTypes.TeleportGroundMode<vredvrImmersiveInteractionService.getTeleportGroundMode()>`
+    * :ref:`getTeleportRange() → float<vredvrImmersiveInteractionService.getTeleportRange()>`
+    * :ref:`hideControllerMessage(message) <vredvrImmersiveInteractionService.hideControllerMessage(message)>`
+    * :ref:`isHmdActive() → bool<vredvrImmersiveInteractionService.isHmdActive()>`
+    * :ref:`pickingMoved(hit) <vredvrImmersiveInteractionService.pickingMoved(hit)>`
+    * :ref:`pickingPressed(hit) <vredvrImmersiveInteractionService.pickingPressed(hit)>`
+    * :ref:`pickingReleased(hit) <vredvrImmersiveInteractionService.pickingReleased(hit)>`
+    * :ref:`setAutoCreateCollisionObjects(automatic) <vredvrImmersiveInteractionService.setAutoCreateCollisionObjects(automatic)>`
+    * :ref:`setControllerVisualizationMode(mode) <vredvrImmersiveInteractionService.setControllerVisualizationMode(mode)>`
+    * :ref:`setControlMode(mode) <vredvrImmersiveInteractionService.setControlMode(mode)>`
+    * :ref:`setDefaultInteractionsActive(active) <vredvrImmersiveInteractionService.setDefaultInteractionsActive(active)>`
+    * :ref:`setHandTrackingEnabled(value) <vredvrImmersiveInteractionService.setHandTrackingEnabled(value)>`
+    * :ref:`setHandTrackingOffset(offset) <vredvrImmersiveInteractionService.setHandTrackingOffset(offset)>`
+    * :ref:`setHandTrackingType(type) <vredvrImmersiveInteractionService.setHandTrackingType(type)>`
+    * :ref:`setInteractionActive(name, active) <vredvrImmersiveInteractionService.setInteractionActive(name, active)>`
+    * :ref:`setMarkerTrackingType(markerIds, trackingType) <vredvrImmersiveInteractionService.setMarkerTrackingType(markerIds, trackingType)>`
+    * :ref:`setMinMarkerConfidence(confidence) <vredvrImmersiveInteractionService.setMinMarkerConfidence(confidence)>`
+    * :ref:`setPointerRayScaleRange(value) <vredvrImmersiveInteractionService.setPointerRayScaleRange(value)>`
+    * :ref:`setPointerScalingDistance(value) <vredvrImmersiveInteractionService.setPointerScalingDistance(value)>`
+    * :ref:`setPointerSphereScaleRange(value) <vredvrImmersiveInteractionService.setPointerSphereScaleRange(value)>`
+    * :ref:`setPreferredControllerVisualizeMode(mode) <vredvrImmersiveInteractionService.setPreferredControllerVisualizeMode(mode)>`
+    * :ref:`setPreferredTooltipsMode(show) <vredvrImmersiveInteractionService.setPreferredTooltipsMode(show)>`
+    * :ref:`setRelativeTeleportOrientation(isRelative) <vredvrImmersiveInteractionService.setRelativeTeleportOrientation(isRelative)>`
+    * :ref:`setTeleportAvailability(modes) <vredvrImmersiveInteractionService.setTeleportAvailability(modes)>`
+    * :ref:`setTeleportGroundHeight(height) <vredvrImmersiveInteractionService.setTeleportGroundHeight(height)>`
+    * :ref:`setTeleportGroundMode(mode) <vredvrImmersiveInteractionService.setTeleportGroundMode(mode)>`
+    * :ref:`setTeleportRange(range) <vredvrImmersiveInteractionService.setTeleportRange(range)>`
+    * :ref:`setViewpointMode(adjustHeight, adjustOrientation, adjustPosition) <vredvrImmersiveInteractionService.setViewpointMode(adjustHeight, adjustOrientation, adjustPosition)>`
+    * :ref:`showControllerMessage(data, rightHand) → vrdNode<vredvrImmersiveInteractionService.showControllerMessage(data, rightHand)>`
+
+Signals:
+    * :ref:`automaticCollisionObjectCreationChanged(automatic) <vredvrImmersiveInteractionService.automaticCollisionObjectCreationChanged(automatic)>`
+    * :ref:`controllerVisualizationModeChanged(mode) <vredvrImmersiveInteractionService.controllerVisualizationModeChanged(mode)>`
+    * :ref:`hmdStatusChanged(active) <vredvrImmersiveInteractionService.hmdStatusChanged(active)>`
+    * :ref:`markersDetected(markers) <vredvrImmersiveInteractionService.markersDetected(markers)>`
+    * :ref:`markersUpdated(markers) <vredvrImmersiveInteractionService.markersUpdated(markers)>`
+    * :ref:`showTooltipsOnStartChanged(show) <vredvrImmersiveInteractionService.showTooltipsOnStartChanged(show)>`
+    * :ref:`teleportGroundModeChanged(mode) <vredvrImmersiveInteractionService.teleportGroundModeChanged(mode)>`
+
+
+Functions
+=========
+
+
+.. _vredvrImmersiveInteractionService.activateGroundCalibrationMode(rightHand):
+.. py:method:: vrImmersiveInteractionService.activateGroundCalibrationMode(rightHand)
+
+    Start ground calibration.
+
+
+
+    :param rightHand: 
+    :type rightHand: bool
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.createMultiMarker(multiMarkerName, markerNames, markerType):
+.. py:method:: vrImmersiveInteractionService.createMultiMarker(multiMarkerName, markerNames, markerType)
+
+    Creates a multi marker by averaging the pose of multiple regular markers.
+
+
+
+    :param multiMarkerName: The name the multi marker will have. Can be chosen freely
+    :type multiMarkerName: string
+
+    :param markerNames: The names of the marker the multi marker will consist of
+    :type markerNames: List[string]
+
+    :param markerType: The type of the markers the multi marker will consist of
+    :type markerType: :ref:`vrXRealityTypes.MarkerTypes <vredvrXRealityTypes.MarkerTypes>`
+
+    :return: 
+    :rtype: vrdMultiMarker
+
+.. _vredvrImmersiveInteractionService.getActiveHMDSupportsHandTracking():
+.. py:method:: vrImmersiveInteractionService.getActiveHMDSupportsHandTracking()
+
+    
+
+
+
+
+    :return: True, if hand tracking is supported
+    :rtype: bool
+
+.. _vredvrImmersiveInteractionService.getAutoCreateCollisionObjects():
+.. py:method:: vrImmersiveInteractionService.getAutoCreateCollisionObjects()
+
+    Returns whether collision objects are automatically created.
+
+
+
+
+    :return: true if collision objects are automatically created.
+    :rtype: bool
+
+.. _vredvrImmersiveInteractionService.getControllerVisualizationMode():
+.. py:method:: vrImmersiveInteractionService.getControllerVisualizationMode()
+
+    Returns the current controller visualization mode.
+
+
+
+
+    :return: Current visualization mode
+    :rtype: :ref:`vrVRInputDeviceTypes.VisualizationMode <vredvrVRInputDeviceTypes.VisualizationMode>`
+
+.. _vredvrImmersiveInteractionService.getControlMode():
+.. py:method:: vrImmersiveInteractionService.getControlMode()
+
+    Returns the current control mode.
+
+
+
+
+    :return: Current control mode
+    :rtype: :ref:`vrImmersiveInteractionTypes.ControlMode <vredvrImmersiveInteractionTypes.ControlMode>`
+
+.. _vredvrImmersiveInteractionService.getDetectedMarkers(markerType):
+.. py:method:: vrImmersiveInteractionService.getDetectedMarkers(markerType)
+
+    Gets all detected markers of a given type.
+
+
+
+    :param markerType: The type of the marker
+    :type markerType: :ref:`vrXRealityTypes.MarkerTypes <vredvrXRealityTypes.MarkerTypes>`
+
+    :return: The detected markers
+    :rtype: List[vrdMarker]
+
+.. _vredvrImmersiveInteractionService.getHandTrackingEnabled():
+.. py:method:: vrImmersiveInteractionService.getHandTrackingEnabled()
+
+    
+
+
+
+
+    :return: True, if hand tracking is enabled
+    :rtype: bool
+
+.. _vredvrImmersiveInteractionService.getHandTrackingOffset():
+.. py:method:: vrImmersiveInteractionService.getHandTrackingOffset()
+
+    
+
+
+
+
+    :return: The tracking offset from the head to the tracker
+    :rtype: QMatrix4x4
+
+.. _vredvrImmersiveInteractionService.getHandTrackingType():
+.. py:method:: vrImmersiveInteractionService.getHandTrackingType()
+
+    
+
+
+
+
+    :return: The current hand tracking type
+    :rtype: :ref:`vrHandTypes.HandTrackingType <vredvrHandTypes.HandTrackingType>`
+
+.. _vredvrImmersiveInteractionService.getMarker(name, markerType):
+.. py:method:: vrImmersiveInteractionService.getMarker(name, markerType)
+
+    Gets a marker that has already been detected.
+
+
+
+    :param name: The name of the marker
+    :type name: string
+
+    :param markerType: The type of the marker
+    :type markerType: :ref:`vrXRealityTypes.MarkerTypes <vredvrXRealityTypes.MarkerTypes>`
+
+    :return: The marker or a null marker if the name and type combination is undetected
+    :rtype: vrdMarker
+
+.. _vredvrImmersiveInteractionService.getMinMarkerConfidence():
+.. py:method:: vrImmersiveInteractionService.getMinMarkerConfidence()
+
+    See also: setMinMarkerConfidence.
+
+
+
+
+    :return: The minimum marker confidence
+    :rtype: float
+
+.. _vredvrImmersiveInteractionService.getPointerRayScaleRange():
+.. py:method:: vrImmersiveInteractionService.getPointerRayScaleRange()
+
+    
+
+
+
+
+    :return: Pointer ray scale range [min, max]. A value of 1.0 equals 100 percent scaling.
+    :rtype: QVector2D
+
+.. _vredvrImmersiveInteractionService.getPointerScalingDistance():
+.. py:method:: vrImmersiveInteractionService.getPointerScalingDistance()
+
+    
+
+
+
+
+    :return: Pointer scaling distance in scene units
+    :rtype: float
+
+.. _vredvrImmersiveInteractionService.getPointerSphereScaleRange():
+.. py:method:: vrImmersiveInteractionService.getPointerSphereScaleRange()
+
+    
+
+
+
+
+    :return: Pointer sphere scale range [min, max]. A value of 1.0 equals 100 percent scaling.
+    :rtype: QVector2D
+
+.. _vredvrImmersiveInteractionService.getPreferredTooltipsMode():
+.. py:method:: vrImmersiveInteractionService.getPreferredTooltipsMode()
+
+    Returns whether to show tooltips on start.
+
+
+
+
+    :return: true if tooltips must show
+    :rtype: bool
+
+.. _vredvrImmersiveInteractionService.getRelativeTeleportOrientation():
+.. py:method:: vrImmersiveInteractionService.getRelativeTeleportOrientation()
+
+    Returns if the angle of the orientation is taken from the wrists absolute or relative rotation.
+
+
+
+
+    :return: Flag indicating if relative rotation should be used or not
+    :rtype: bool
+
+.. _vredvrImmersiveInteractionService.getTeleportAvailability():
+.. py:method:: vrImmersiveInteractionService.getTeleportAvailability()
+
+    Gets in which render modes the teleport is available.
+
+
+
+
+    :return: The supported modes
+    :rtype: List[:ref:`vrXRealityTypes.XRRenderMode <vredvrXRealityTypes.XRRenderMode>`]
+
+.. _vredvrImmersiveInteractionService.getTeleportGroundHeight():
+.. py:method:: vrImmersiveInteractionService.getTeleportGroundHeight()
+
+    Returns the height of the ground plane used in "On Ground Plane" teleport mode.
+
+
+
+
+    :return: Ground height in scene units
+    :rtype: float
+
+.. _vredvrImmersiveInteractionService.getTeleportGroundMode():
+.. py:method:: vrImmersiveInteractionService.getTeleportGroundMode()
+
+    Returns the current teleport ground mode.
+
+
+
+
+    :return: Ground mode
+    :rtype: :ref:`vrImmersiveInteractionTypes.TeleportGroundMode <vredvrImmersiveInteractionTypes.TeleportGroundMode>`
+
+.. _vredvrImmersiveInteractionService.getTeleportRange():
+.. py:method:: vrImmersiveInteractionService.getTeleportRange()
+
+    Returns the maximum teleport distance.
+
+
+
+
+    :return: Maximum distance in scene units
+    :rtype: float
+
+.. _vredvrImmersiveInteractionService.hideControllerMessage(message):
+.. py:method:: vrImmersiveInteractionService.hideControllerMessage(message)
+
+    Hide a controller message.
+
+
+
+    :param message: The :any:`vrdNode <vredvrdNode>` of the message.
+    :type message: vrdNode
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.isHmdActive():
+.. py:method:: vrImmersiveInteractionService.isHmdActive()
+
+    Check if an HMD (VR) display mode is active.
+
+
+
+
+    :return: True, if in HMD mode
+    :rtype: bool
+
+.. _vredvrImmersiveInteractionService.pickingMoved(hit):
+.. py:method:: vrImmersiveInteractionService.pickingMoved(hit)
+
+    Triggers a pointer move event.
+
+
+
+    :param hit: ray intersection object.
+    :type hit: vrdRayIntersection
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.pickingPressed(hit):
+.. py:method:: vrImmersiveInteractionService.pickingPressed(hit)
+
+    Triggers a pointer button pressed event.
+
+
+
+    :param hit: ray intersection object.
+    :type hit: vrdRayIntersection
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.pickingReleased(hit):
+.. py:method:: vrImmersiveInteractionService.pickingReleased(hit)
+
+    Triggers a pointer button released event.
+
+
+
+    :param hit: ray intersection object.
+    :type hit: vrdRayIntersection
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setAutoCreateCollisionObjects(automatic):
+.. py:method:: vrImmersiveInteractionService.setAutoCreateCollisionObjects(automatic)
+
+    Toggles collision object creation for touch-sensors and web-engines.
+
+
+
+    :param automatic: Enable automatic creation.
+    :type automatic: bool
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setControllerVisualizationMode(mode):
+.. py:method:: vrImmersiveInteractionService.setControllerVisualizationMode(mode)
+
+    Sets the visualization mode for the HMD controllers.
+
+
+
+    :param mode: The visualization mode
+    :type mode: :ref:`vrVRInputDeviceTypes.VisualizationMode <vredvrVRInputDeviceTypes.VisualizationMode>`
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setControlMode(mode):
+.. py:method:: vrImmersiveInteractionService.setControlMode(mode)
+
+    Sets the controle mode and corresponding button mappings for the immersive interactions.
+
+
+
+    :param mode: The control mode
+    :type mode: :ref:`vrImmersiveInteractionTypes.ControlMode <vredvrImmersiveInteractionTypes.ControlMode>`
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setDefaultInteractionsActive(active):
+.. py:method:: vrImmersiveInteractionService.setDefaultInteractionsActive(active)
+
+    Activates or deactivates all built-in interaction tools (teleport, pointer).
+
+
+
+    :param active: True to activate, False to deactivate.
+    :type active: bool
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setHandTrackingEnabled(value):
+.. py:method:: vrImmersiveInteractionService.setHandTrackingEnabled(value)
+
+    Use hand tracking device instead of VR controllers.
+
+
+
+    :param value: If True, use hand tracking device
+    :type value: bool
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setHandTrackingOffset(offset):
+.. py:method:: vrImmersiveInteractionService.setHandTrackingOffset(offset)
+
+    The mounting point of the tracking device on the HMD.
+
+
+
+    :param offset: a matrix describing the transformation from HMD to tracker
+    :type offset: QMatrix4x4
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setHandTrackingType(type):
+.. py:method:: vrImmersiveInteractionService.setHandTrackingType(type)
+
+    Sets the hand tracking device type that should be used.
+
+
+
+    :param type: The tracking device to use
+    :type type: :ref:`vrHandTypes.HandTrackingType <vredvrHandTypes.HandTrackingType>`
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setInteractionActive(name, active):
+.. py:method:: vrImmersiveInteractionService.setInteractionActive(name, active)
+
+    Activates or deactivates the specified interaction tool. Built-in interactions are named "Teleport", "Pointer".
+
+
+
+    :param name: Interaction identifier
+    :type name: string
+
+    :param active: True to activate, False to deactivate.
+    :type active: bool
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setMarkerTrackingType(markerIds, trackingType):
+.. py:method:: vrImmersiveInteractionService.setMarkerTrackingType(markerIds, trackingType)
+
+    See also: vrdMarker.setTrackingType.
+
+
+
+    :param markerIds: The marker ids for which the tracking type will be set
+    :type markerIds: List[integer]
+
+    :param trackingType: The type of tracking that is used for the marker. Use predicted for markers that are moved and static for markers that stay in place.
+    :type trackingType: :ref:`vrXRealityTypes.MarkerTrackingTypes <vredvrXRealityTypes.MarkerTrackingTypes>`
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setMinMarkerConfidence(confidence):
+.. py:method:: vrImmersiveInteractionService.setMinMarkerConfidence(confidence)
+
+    Sets the minimum marker confidence. When markers are detected with a lower confidence they will be ignored. Markers that are already known to the system will not be updated, if the updated data has a lower confidence.
+
+
+
+    :param confidence: The minimum confidence
+    :type confidence: float
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setPointerRayScaleRange(value):
+.. py:method:: vrImmersiveInteractionService.setPointerRayScaleRange(value)
+
+    Sets a minimum and maximum scale value for the pointer ray. A value of 1.0 equals 100 percent scaling.
+
+
+
+    :param value: Scale range [min, max] floating point values.
+    :type value: QVector2D
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setPointerScalingDistance(value):
+.. py:method:: vrImmersiveInteractionService.setPointerScalingDistance(value)
+
+    Sets the distance at which the pointer scaling is 100 percent.
+
+
+
+    :param value: Scaling distance in scene units
+    :type value: float
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setPointerSphereScaleRange(value):
+.. py:method:: vrImmersiveInteractionService.setPointerSphereScaleRange(value)
+
+    Sets a minimum and maximum scale value for the pointer sphere. A value of 1.0 equals 100 percent scaling.
+
+
+
+    :param value: Scale range [min, max] floating point values.
+    :type value: QVector2D
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setPreferredControllerVisualizeMode(mode):
+.. py:method:: vrImmersiveInteractionService.setPreferredControllerVisualizeMode(mode)
+
+    Toggles the default visualisation style for the hands.
+
+
+
+    :param mode: Enable hands or controllers
+    :type mode: :ref:`vrVRInputDeviceTypes.VisualizationMode <vredvrVRInputDeviceTypes.VisualizationMode>`
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setPreferredTooltipsMode(show):
+.. py:method:: vrImmersiveInteractionService.setPreferredTooltipsMode(show)
+
+    Toggles whether to show tooltips when the session starts.
+
+
+
+    :param show: Show tooltips.
+    :type show: bool
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setRelativeTeleportOrientation(isRelative):
+.. py:method:: vrImmersiveInteractionService.setRelativeTeleportOrientation(isRelative)
+
+    Sets if the angle of the orientation is taken from the wrists absolute or relative rotation.
+
+
+
+    :param isRelative: indicating if relative rotation should be used or not
+    :type isRelative: bool
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setTeleportAvailability(modes):
+.. py:method:: vrImmersiveInteractionService.setTeleportAvailability(modes)
+
+    Sets in which render modes the teleport is available.
+
+
+
+    :param modes: The modes for which teleport is activated per default.
+    :type modes: List[:ref:`vrXRealityTypes.XRRenderMode <vredvrXRealityTypes.XRRenderMode>`]
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setTeleportGroundHeight(height):
+.. py:method:: vrImmersiveInteractionService.setTeleportGroundHeight(height)
+
+    Sets the height of the ground plane for the "On Ground Plane" teleport mode.
+
+
+
+    :param height: Height in scene units
+    :type height: float
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setTeleportGroundMode(mode):
+.. py:method:: vrImmersiveInteractionService.setTeleportGroundMode(mode)
+
+    Sets whether to teleport on scene geometries, or to teleport only on a virtual ground plane.
+
+
+
+    :param mode: Ground mode
+    :type mode: :ref:`vrImmersiveInteractionTypes.TeleportGroundMode <vredvrImmersiveInteractionTypes.TeleportGroundMode>`
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setTeleportRange(range):
+.. py:method:: vrImmersiveInteractionService.setTeleportRange(range)
+
+    Sets the maximum teleport distance.
+
+
+
+    :param range: Maximum distance in scene units
+    :type range: float
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.setViewpointMode(adjustHeight, adjustOrientation, adjustPosition):
+.. py:method:: vrImmersiveInteractionService.setViewpointMode(adjustHeight, adjustOrientation=True, adjustPosition=True)
+
+    Changes the default behavior for viewpoint selection. The actual camera position is the transformation of a viewpoint plus the transformation of the hmd. If adjustment is enabled, the camera position is modified in a way, that the resulting camera plus hmd position matches exaclty a viewpoint positon, height or orientation.
+
+
+
+    :param adjustHeight: If True, user is moved to the height of the viewpoint.
+    :type adjustHeight: bool
+
+    :param adjustOrientation: If True, user is orientated in the direction of the viewpoint.
+    :type adjustOrientation: bool
+
+    :param adjustPosition: If True, user is moved to the position of the viewpoint.
+    :type adjustPosition: bool
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.showControllerMessage(data, rightHand):
+.. py:method:: vrImmersiveInteractionService.showControllerMessage(data, rightHand)
+
+    Show a controller message depending on the provided data.
+
+
+
+    :param data: Message data.
+    :type data: vrdDeviceMessageData
+
+    :param rightHand: Show it on the right or left hand.
+    :type rightHand: bool
+
+    :return: :any:`vrdNode <vredvrdNode>` of the message.
+    :rtype: vrdNode
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrImmersiveInteractionService.automaticCollisionObjectCreationChanged(automatic):
+.. py:method:: vrImmersiveInteractionService.automaticCollisionObjectCreationChanged(automatic)
+
+    Notifies about changed automatic collision-object creation preference.
+
+
+
+    :param automatic: new preference
+    :type automatic: bool
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.controllerVisualizationModeChanged(mode):
+.. py:method:: vrImmersiveInteractionService.controllerVisualizationModeChanged(mode)
+
+    Notifies about changed hand visualisation style.
+
+
+
+    :param mode: New visualisation style
+    :type mode: :ref:`vrVRInputDeviceTypes.VisualizationMode <vredvrVRInputDeviceTypes.VisualizationMode>`
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.hmdStatusChanged(active):
+.. py:method:: vrImmersiveInteractionService.hmdStatusChanged(active)
+
+    This signal is triggered when HMD (VR) display mode is switched on or off.
+
+
+
+    :param active: True, if HMD mode has been switched on
+    :type active: bool
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.markersDetected(markers):
+.. py:method:: vrImmersiveInteractionService.markersDetected(markers)
+
+    This signal is triggered when new markers are detected that have a confidence that is equal or higher than minimum marker confidence.
+
+
+
+    :param markers: The detected markers
+    :type markers: List[vrdMarker]
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.markersUpdated(markers):
+.. py:method:: vrImmersiveInteractionService.markersUpdated(markers)
+
+    This signal is triggered when new markers are detected that have a confidence that is equal or higher than minimum marker confidence.
+
+
+
+    :param markers: The detected markers
+    :type markers: List[vrdMarker]
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.showTooltipsOnStartChanged(show):
+.. py:method:: vrImmersiveInteractionService.showTooltipsOnStartChanged(show)
+
+    Notifies about changed show tooltips on start.
+
+
+
+    :param show: Tooltips must show
+    :type show: bool
+
+    
+    
+
+.. _vredvrImmersiveInteractionService.teleportGroundModeChanged(mode):
+.. py:method:: vrImmersiveInteractionService.teleportGroundModeChanged(mode)
+
+    Notifies about changed teleport ground mode.
+
+
+
+    :param mode: New ground mode
+    :type mode: :ref:`vrImmersiveInteractionTypes.TeleportGroundMode <vredvrImmersiveInteractionTypes.TeleportGroundMode>`
+
+    
+    
+
+

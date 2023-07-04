@@ -1,0 +1,28 @@
+Loading and repathing lightmaps
+===============================
+
+The example **Toy_Excavator.vpb** on how to load lightmaps from a given folder or repath lightmaps to a different 
+location can be found in the *lightmaps* folder of the example directory.
+
+Repathing Lightmaps
+###################
+
+This code snippet is extracted from **Toy_Excavator.vpb** example, it shows how to find nodes with lightmaps and how 
+to use the :class:`.vrBakeService` to repath them.
+
+.. literalinclude:: ../python_examples/lightmaps/repath_snippet.py
+   :language: python
+   :linenos:
+   :caption: repath_snippet.py
+  
+Loading Lightmaps
+#################
+
+This code snippet is extracted from **Toy_Excavator.vpb** example, it shows how to use the :class:`.vrBakeService` 
+to load lightmaps.
+  
+.. literalinclude:: ../python_examples/lightmaps/load_snippet.py
+   :language: python
+   :linenos:
+   :caption: load_snippet.py
+   

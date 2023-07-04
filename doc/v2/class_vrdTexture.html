@@ -1,0 +1,1969 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrdTexture &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrdTextureBake" href="class_vrdTextureBake.html" />
+    <link rel="prev" title="vrdTessellationSettings" href="class_vrdTessellationSettings.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrdtexture">
+<h1>vrdTexture<a class="headerlink" href="#vrdtexture" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrdtexture"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrdTexture">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrdTexture</span></code><a class="headerlink" href="#vrdTexture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <a class="reference internal" href="class_vrdSceneObject.html#vrdSceneObject" title="vrdSceneObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">vrdSceneObject</span></code></a>)</p>
+<p>This class is used for all texture properties.</p>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrdtexture-getanisotropy"><span class="std std-ref">getAnisotropy() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getcomponentname"><span class="std std-ref">getComponentName() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getconnectrepeatmodes"><span class="std std-ref">getConnectRepeatModes() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getframeoffset"><span class="std std-ref">getFrameOffset() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getgamma"><span class="std std-ref">getGamma() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getimage"><span class="std std-ref">getImage() → vrdImage</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getimagenumber"><span class="std std-ref">getImageNumber() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getinfinitetilingcontrast"><span class="std std-ref">getInfiniteTilingContrast() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getinfinitetilinggridsize"><span class="std std-ref">getInfiniteTilingGridSize() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getinfinitetilinghueweight"><span class="std std-ref">getInfiniteTilingHueWeight() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getinfinitetilingmaxrotation"><span class="std std-ref">getInfiniteTilingMaxRotation() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getinfinitetilingsaturationweight"><span class="std std-ref">getInfiniteTilingSaturationWeight() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getinfinitetilingvalueweight"><span class="std std-ref">getInfiniteTilingValueWeight() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getinlineimagesequence"><span class="std std-ref">getInlineImageSequence() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getinverttexture"><span class="std std-ref">getInvertTexture() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getlinktexturesettings"><span class="std std-ref">getLinkTextureSettings() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getmanipulate"><span class="std std-ref">getManipulate() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getmappingtype"><span class="std std-ref">getMappingType() → vrTextureTypes.MappingType</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getoffset"><span class="std std-ref">getOffset() → QVector2D</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getplanarprojectioncenter"><span class="std std-ref">getPlanarProjectionCenter() → QVector3D</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getplanarprojectionkeepaspectratio"><span class="std std-ref">getPlanarProjectionKeepAspectRatio() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getplanarprojectionorientation"><span class="std std-ref">getPlanarProjectionOrientation() → QVector2D</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getplanarprojectionsinglesided"><span class="std std-ref">getPlanarProjectionSingleSided() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getplanarprojectionsize"><span class="std std-ref">getPlanarProjectionSize() → QVector3D</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getrepeat"><span class="std std-ref">getRepeat() → QVector2D</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getrepeatmodeu"><span class="std std-ref">getRepeatModeU() → vrTextureTypes.RepeatMode</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getrepeatmodev"><span class="std std-ref">getRepeatModeV() → vrTextureTypes.RepeatMode</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getrotate"><span class="std std-ref">getRotate() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-gettexturesize"><span class="std std-ref">getTextureSize() → QVector2D</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-gettriplanarblend"><span class="std std-ref">getTriplanarBlend() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-gettriplanarxoffset"><span class="std std-ref">getTriplanarXOffset() → QVector2D</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-gettriplanarxrepeat"><span class="std std-ref">getTriplanarXRepeat() → QVector2D</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-gettriplanarxrotation"><span class="std std-ref">getTriplanarXRotation() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-gettriplanaryoffset"><span class="std std-ref">getTriplanarYOffset() → QVector2D</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-gettriplanaryrepeat"><span class="std std-ref">getTriplanarYRepeat() → QVector2D</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-gettriplanaryrotation"><span class="std std-ref">getTriplanarYRotation() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-gettriplanarzoffset"><span class="std std-ref">getTriplanarZOffset() → QVector2D</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-gettriplanarzrepeat"><span class="std std-ref">getTriplanarZRepeat() → QVector2D</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-gettriplanarzrotation"><span class="std std-ref">getTriplanarZRotation() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getuniformrepeat"><span class="std std-ref">getUniformRepeat() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getusealpha"><span class="std std-ref">getUseAlpha() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getusecutout"><span class="std std-ref">getUseCutout() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getuseimagesequence"><span class="std std-ref">getUseImageSequence() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getuseinfinitetiling"><span class="std std-ref">getUseInfiniteTiling() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getusetexture"><span class="std std-ref">getUseTexture() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-getusetexturesize"><span class="std std-ref">getUseTextureSize() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setanisotropy-anisotropy"><span class="std std-ref">setAnisotropy(anisotropy)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setconnectrepeatmodes-s"><span class="std std-ref">setConnectRepeatModes(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setframeoffset-frameoffset"><span class="std std-ref">setFrameOffset(frameOffset)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setgamma-gamma"><span class="std std-ref">setGamma(gamma)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setimage-img"><span class="std std-ref">setImage(img)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setimagenumber-imagenumber"><span class="std std-ref">setImageNumber(imageNumber)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setinfinitetilingcontrast-contrast"><span class="std std-ref">setInfiniteTilingContrast(contrast)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setinfinitetilinggridsize-gridsize"><span class="std std-ref">setInfiniteTilingGridSize(gridSize)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setinfinitetilinghueweight-hueweight"><span class="std std-ref">setInfiniteTilingHueWeight(hueWeight)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setinfinitetilingmaxrotation-maxrotation"><span class="std std-ref">setInfiniteTilingMaxRotation(maxRotation)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setinfinitetilingsaturationweight-saturationweight"><span class="std std-ref">setInfiniteTilingSaturationWeight(saturationWeight)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setinfinitetilingvalueweight-valueweight"><span class="std std-ref">setInfiniteTilingValueWeight(valueWeight)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setinlineimagesequence-s"><span class="std std-ref">setInlineImageSequence(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setinverttexture-inverttexture"><span class="std std-ref">setInvertTexture(invertTexture)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setlinktexturesettings-s"><span class="std std-ref">setLinkTextureSettings(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setmanipulate-s"><span class="std std-ref">setManipulate(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setmappingtype-type"><span class="std std-ref">setMappingType(type)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setoffset-offset"><span class="std std-ref">setOffset(offset)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setplanarprojectioncenter-center"><span class="std std-ref">setPlanarProjectionCenter(center)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setplanarprojectionfitsize"><span class="std std-ref">setPlanarProjectionFitSize()</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setplanarprojectionkeepaspectratio-s"><span class="std std-ref">setPlanarProjectionKeepAspectRatio(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setplanarprojectionobjectcenter"><span class="std std-ref">setPlanarProjectionObjectCenter()</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setplanarprojectionorientation-orientation"><span class="std std-ref">setPlanarProjectionOrientation(orientation)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setplanarprojectionplane-center-direction"><span class="std std-ref">setPlanarProjectionPlane(center, direction)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setplanarprojectionsinglesided-s"><span class="std std-ref">setPlanarProjectionSingleSided(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setplanarprojectionsize-size"><span class="std std-ref">setPlanarProjectionSize(size)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setrepeat-repeat"><span class="std std-ref">setRepeat(repeat)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setrepeatmodeu-mode"><span class="std std-ref">setRepeatModeU(mode)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setrepeatmodev-mode"><span class="std std-ref">setRepeatModeV(mode)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setrotate-rotate"><span class="std std-ref">setRotate(rotate)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-settexturesize-size"><span class="std std-ref">setTextureSize(size)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-settriplanarblend-blend"><span class="std std-ref">setTriplanarBlend(blend)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-settriplanarxoffset-offset"><span class="std std-ref">setTriplanarXOffset(offset)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-settriplanarxrepeat-repeat"><span class="std std-ref">setTriplanarXRepeat(repeat)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-settriplanarxrotation-rotation"><span class="std std-ref">setTriplanarXRotation(rotation)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-settriplanaryoffset-offset"><span class="std std-ref">setTriplanarYOffset(offset)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-settriplanaryrepeat-repeat"><span class="std std-ref">setTriplanarYRepeat(repeat)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-settriplanaryrotation-rotation"><span class="std std-ref">setTriplanarYRotation(rotation)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-settriplanarzoffset-offset"><span class="std std-ref">setTriplanarZOffset(offset)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-settriplanarzrepeat-repeat"><span class="std std-ref">setTriplanarZRepeat(repeat)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-settriplanarzrotation-rotation"><span class="std std-ref">setTriplanarZRotation(rotation)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setuniformrepeat-s"><span class="std std-ref">setUniformRepeat(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setusealpha-s"><span class="std std-ref">setUseAlpha(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setusecutout-s"><span class="std std-ref">setUseCutout(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setuseimagesequence-s"><span class="std std-ref">setUseImageSequence(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setuseinfinitetiling-s"><span class="std std-ref">setUseInfiniteTiling(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setusetexture-s"><span class="std std-ref">setUseTexture(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-setusetexturesize-s"><span class="std std-ref">setUseTextureSize(s)</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-supportsgamma"><span class="std std-ref">supportsGamma() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-supportsinverttexture"><span class="std std-ref">supportsInvertTexture() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-supportsmappingtype"><span class="std std-ref">supportsMappingType() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-supportsusealpha"><span class="std std-ref">supportsUseAlpha() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdtexture-supportsusecutout"><span class="std std-ref">supportsUseCutout() → bool</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrdtexture-getanisotropy"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getAnisotropy">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getAnisotropy</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getAnisotropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current anisotropy value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Anisotropy value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getcomponentname"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getComponentName">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getComponentName</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getComponentName" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The name of the component, this texture belongs to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getconnectrepeatmodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getConnectRepeatModes">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getConnectRepeatModes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getConnectRepeatModes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the U and V repeat modes are linked.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the repeat modes are linked, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getframeoffset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getFrameOffset">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getFrameOffset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getFrameOffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current frame offset.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current frame offset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getgamma"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getGamma">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getGamma</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getGamma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the texture image gamma correction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Currently used value for the texture image gamma correction.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getimage"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getImage">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getImage</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the image used by the texture.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The image used as a texture</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdImage.html#vrdImage" title="vrdImage">vrdImage</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getimagenumber"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getImageNumber">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getImageNumber</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getImageNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current frame number of the image sequence.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current frame number</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getinfinitetilingcontrast"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getInfiniteTilingContrast">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getInfiniteTilingContrast</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getInfiniteTilingContrast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the contrast adjustment of the blending region between tiles when using infinite tiling.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Contrast value between 0 and 1</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getinfinitetilinggridsize"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getInfiniteTilingGridSize">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getInfiniteTilingGridSize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getInfiniteTilingGridSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the base grid size of the infinite tiling.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Positive integer value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getinfinitetilinghueweight"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getInfiniteTilingHueWeight">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getInfiniteTilingHueWeight</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getInfiniteTilingHueWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the weight of the random hue offset for each tile when using infinite tiling.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The weight of the random hue offset between 0 and 1</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getinfinitetilingmaxrotation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getInfiniteTilingMaxRotation">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getInfiniteTilingMaxRotation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getInfiniteTilingMaxRotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the maximum rotation applied to a single tile when using infinite tiling.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Rotation value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getinfinitetilingsaturationweight"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getInfiniteTilingSaturationWeight">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getInfiniteTilingSaturationWeight</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getInfiniteTilingSaturationWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the weight of the random saturation offset for each tile when using infinite tiling.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The weight of the random saturation offset between 0 and 1</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getinfinitetilingvalueweight"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getInfiniteTilingValueWeight">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getInfiniteTilingValueWeight</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getInfiniteTilingValueWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the weight of the random value offset for each tile when using infinite tiling.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The weight of the random value offset between 0 and 1</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getinlineimagesequence"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getInlineImageSequence">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getInlineImageSequence</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getInlineImageSequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the image sequence is embedded to the file or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the image sequence is inlined, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getinverttexture"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getInvertTexture">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getInvertTexture</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getInvertTexture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether in texture inversion is enabled or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the texture is inverted, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getlinktexturesettings"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getLinkTextureSettings">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getLinkTextureSettings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getLinkTextureSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current state of the texture link option.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the texture is linked to other textures, False if the texture uses independent settings</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getmanipulate"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getManipulate">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getManipulate</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getManipulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the texture manipulator is active or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the manipulator is active, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getmappingtype"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getMappingType">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getMappingType</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getMappingType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the texture mapping type currently used for this texture.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current mapping type</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrTextureTypes.html#vredvrtexturetypes-mappingtype"><span class="std std-ref">vrTextureTypes.MappingType</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getoffset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getOffset">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getOffset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getOffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current UV texture coordinate offset.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">UV texture coordinate offset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector2D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getplanarprojectioncenter"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getPlanarProjectionCenter">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getPlanarProjectionCenter</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getPlanarProjectionCenter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the planar projection center in object space.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">3d object space position</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector3D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getplanarprojectionkeepaspectratio"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getPlanarProjectionKeepAspectRatio">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getPlanarProjectionKeepAspectRatio</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getPlanarProjectionKeepAspectRatio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the aspect ratio of the texture is to be preserved.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if aspect ratio should be preserved, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getplanarprojectionorientation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getPlanarProjectionOrientation">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getPlanarProjectionOrientation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getPlanarProjectionOrientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the planar projection orientation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Euler angle rotation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector2D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getplanarprojectionsinglesided"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getPlanarProjectionSingleSided">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getPlanarProjectionSingleSided</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getPlanarProjectionSingleSided" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the planar projection is single sided or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the planar projection is single sided, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getplanarprojectionsize"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getPlanarProjectionSize">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getPlanarProjectionSize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getPlanarProjectionSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the planar projection size.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">3d size</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector3D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getrepeat"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getRepeat">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getRepeat</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getRepeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the UV texture repeat factor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">UV texture repeat factor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector2D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getrepeatmodeu"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getRepeatModeU">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getRepeatModeU</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getRepeatModeU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current texture repeat mode along the U axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current texture repeat mode along the U axis</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrTextureTypes.html#vredvrtexturetypes-repeatmode"><span class="std std-ref">vrTextureTypes.RepeatMode</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getrepeatmodev"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getRepeatModeV">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getRepeatModeV</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getRepeatModeV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current texture repeat mode along the V axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current texture repeat mode along the V axis</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrTextureTypes.html#vredvrtexturetypes-repeatmode"><span class="std std-ref">vrTextureTypes.RepeatMode</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getrotate"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getRotate">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getRotate</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getRotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current UV texture coordinate rotation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">UV texture coordinate rotation</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-gettexturesize"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getTextureSize">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getTextureSize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getTextureSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the size of the texture in scene units.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Size in scene units (usually mm)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector2D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-gettriplanarblend"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getTriplanarBlend">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getTriplanarBlend</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getTriplanarBlend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the edge blending factor for the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Blending factor between 0 and 1</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-gettriplanarxoffset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getTriplanarXOffset">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getTriplanarXOffset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getTriplanarXOffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the UV offset for the x-axis of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">UV offset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector2D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-gettriplanarxrepeat"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getTriplanarXRepeat">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getTriplanarXRepeat</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getTriplanarXRepeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the UV repeat factors of the x-axis of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">UV repeat factors</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector2D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-gettriplanarxrotation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getTriplanarXRotation">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getTriplanarXRotation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getTriplanarXRotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the rotation value of the x-axis texture coordinates of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Rotation value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-gettriplanaryoffset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getTriplanarYOffset">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getTriplanarYOffset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getTriplanarYOffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the UV offset for the y-axis of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">UV offset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector2D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-gettriplanaryrepeat"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getTriplanarYRepeat">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getTriplanarYRepeat</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getTriplanarYRepeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the UV repeat factors of the y-axis of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">UV repeat factors</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector2D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-gettriplanaryrotation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getTriplanarYRotation">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getTriplanarYRotation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getTriplanarYRotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the rotation value of the y-axis texture coordinates of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Rotation value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-gettriplanarzoffset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getTriplanarZOffset">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getTriplanarZOffset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getTriplanarZOffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the UV offset for the z-axis of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">UV offset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector2D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-gettriplanarzrepeat"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getTriplanarZRepeat">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getTriplanarZRepeat</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getTriplanarZRepeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the UV repeat factors of the z-axis of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">UV repeat factors</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector2D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-gettriplanarzrotation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getTriplanarZRotation">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getTriplanarZRotation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getTriplanarZRotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the rotation value of the z-axis texture coordinates of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Rotation value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getuniformrepeat"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getUniformRepeat">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getUniformRepeat</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getUniformRepeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the repeat factors for the triplanar texture projection are linked or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the repeat values are linked, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getusealpha"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getUseAlpha">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getUseAlpha</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getUseAlpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whehter the texture image’s alpha channel is use for transparency or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the alpha channel is used, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getusecutout"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getUseCutout">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getUseCutout</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getUseCutout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether cutout transparency is used or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if cutout transparency is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getuseimagesequence"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getUseImageSequence">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getUseImageSequence</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getUseImageSequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current image sequence usage state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the use of an image sequence is enabled, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getuseinfinitetiling"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getUseInfiniteTiling">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getUseInfiniteTiling</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getUseInfiniteTiling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether infinite tiling is used for the texture or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if infinite tiling is enabled, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getusetexture"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getUseTexture">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getUseTexture</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getUseTexture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the current texture usage state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if texture usage is enabled, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-getusetexturesize"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.getUseTextureSize">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">getUseTextureSize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.getUseTextureSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether real world texture size should be used or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if real world texture size is used, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setanisotropy-anisotropy"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setAnisotropy">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setAnisotropy</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">anisotropy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setAnisotropy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the anisotropy value for texture filtering. The ranges are defined as A value of 0.0 reverts to bilinear filtering A value in the (0.0, 1.0] range uses simple trilinear filtering A value above 1 uses an anisotropic filtering.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>anisotropy</strong> (<em>float</em>) – Anisotropy value to use for texture filtering</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setconnectrepeatmodes-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setConnectRepeatModes">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setConnectRepeatModes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setConnectRepeatModes" title="Permalink to this definition">¶</a></dt>
+<dd><p>If enabled the U repeat mode will be used for the V direction as well.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – Set to True if the repeat modes in U and V direction should be the same, False otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setframeoffset-frameoffset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setFrameOffset">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setFrameOffset</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">frameOffset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setFrameOffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets an offset to be added to the current frame number of the image sequence.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>frameOffset</strong> (<em>integer</em>) – Offset to be added to the frame number of the image sequence</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setgamma-gamma"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setGamma">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setGamma</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">gamma</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setGamma" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the texture image gamma correction. For a value of 0.0 an sRGB gamma is used on LDR textures. For HDR textures the gamma is ignored, these are always assumed to have a linear gamma of 1.0 Call supportsGamma to query if the texture supports gamma correction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gamma</strong> (<em>float</em>) – Value for the texture image gamma correction.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setimage-img"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setImage">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setImage</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets an image to the texture.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>img</strong> (<a class="reference internal" href="class_vrdImage.html#vrdImage" title="vrdImage"><em>vrdImage</em></a>) – The image to set as a texture</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setimagenumber-imagenumber"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setImageNumber">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setImageNumber</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">imageNumber</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setImageNumber" title="Permalink to this definition">¶</a></dt>
+<dd><p>When an image sequence is used this sets the current frame used as a texture.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>imageNumber</strong> (<em>integer</em>) – The frame number to use from the image sequence</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setinfinitetilingcontrast-contrast"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setInfiniteTilingContrast">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setInfiniteTilingContrast</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">contrast</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setInfiniteTilingContrast" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the contrast adjustment of the blending region between tiles when using infinite tiling.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>contrast</strong> (<em>float</em>) – Contrast value between 0 and 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setinfinitetilinggridsize-gridsize"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setInfiniteTilingGridSize">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setInfiniteTilingGridSize</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">gridSize</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setInfiniteTilingGridSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the base grid size to use for infinite tiling.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>gridSize</strong> (<em>integer</em>) – positive integer value</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setinfinitetilinghueweight-hueweight"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setInfiniteTilingHueWeight">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setInfiniteTilingHueWeight</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">hueWeight</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setInfiniteTilingHueWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the weight of the random hue offset for each tile when using infinite tiling.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>hueWeight</strong> (<em>float</em>) – The weight of the random hue offset between 0 and 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setinfinitetilingmaxrotation-maxrotation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setInfiniteTilingMaxRotation">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setInfiniteTilingMaxRotation</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">maxRotation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setInfiniteTilingMaxRotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the maximum rotation applied to a single tile when using infinite tiling.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>maxRotation</strong> (<em>float</em>) – Rotation value</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setinfinitetilingsaturationweight-saturationweight"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setInfiniteTilingSaturationWeight">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setInfiniteTilingSaturationWeight</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">saturationWeight</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setInfiniteTilingSaturationWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the weight of the random saturation offset for each tile when using infinite tiling.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>saturationWeight</strong> (<em>float</em>) – The weight of the random saturation offset between 0 and 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setinfinitetilingvalueweight-valueweight"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setInfiniteTilingValueWeight">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setInfiniteTilingValueWeight</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">valueWeight</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setInfiniteTilingValueWeight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the weight of the random value offset for each tile when using infinite tiling.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>valueWeight</strong> (<em>float</em>) – The weight of the random value offset between 0 and 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setinlineimagesequence-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setInlineImageSequence">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setInlineImageSequence</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setInlineImageSequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>If enabled the image sequence will be embedded in the file instead of being read from disk for each frame.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – Set to True if the image sequence should be inlined, False to remove inlined image sequence data.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setinverttexture-inverttexture"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setInvertTexture">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setInvertTexture</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">invertTexture</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setInvertTexture" title="Permalink to this definition">¶</a></dt>
+<dd><p>When enabled the values of the texture are inverted. Call supportsInvertTexture to query if texture inversion is supported for this texture.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>invertTexture</strong> (<em>bool</em>) – New enable state of the the invert texture approach</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setlinktexturesettings-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setLinkTextureSettings">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setLinkTextureSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setLinkTextureSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Links the settings for this texture to the settings of other linked textures in this material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – Set to True if the texture should use the same settings as other linked textures, set to False for independent settings</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setmanipulate-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setManipulate">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setManipulate</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setManipulate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set to True to enable the texture manipulator.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – True enables the texture manipulator, False disables it</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setmappingtype-type"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setMappingType">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setMappingType</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setMappingType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the type of the texture projection to use for this texture. Call         <a class="reference internal" href="#vredvrdtexture-supportsmappingtype"><span class="std std-ref">vrdTexture.supportsMappingType()</span></a> to check if mapping types are supported for this texture.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference internal" href="class_vrTextureTypes.html#vredvrtexturetypes-mappingtype"><span class="std std-ref">vrTextureTypes.MappingType</span></a>) – Texture mapping type to set. Available types are UVMapping, PlanarMapping or TriplanarMapping if supported.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setoffset-offset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setOffset">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setOffset</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setOffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets an offset added to the UV texture coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>offset</strong> (<em>QVector2D</em>) – The offset to use</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setplanarprojectioncenter-center"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setPlanarProjectionCenter">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setPlanarProjectionCenter</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">center</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setPlanarProjectionCenter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the projection center for planar texture projection in object space.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>center</strong> (<em>QVector3D</em>) – 3d objects space position</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setplanarprojectionfitsize"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setPlanarProjectionFitSize">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setPlanarProjectionFitSize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setPlanarProjectionFitSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically adjusts the size of the planar projection based on the selected geometries.</p>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setplanarprojectionkeepaspectratio-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setPlanarProjectionKeepAspectRatio">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setPlanarProjectionKeepAspectRatio</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setPlanarProjectionKeepAspectRatio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether the aspect ratio of the texture should be preserved for the projection or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – True for aspect ratio to be preserved for the projection, False otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setplanarprojectionobjectcenter"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setPlanarProjectionObjectCenter">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setPlanarProjectionObjectCenter</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setPlanarProjectionObjectCenter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Automatically adjusts the planar projection center based on the selected geometries.</p>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setplanarprojectionorientation-orientation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setPlanarProjectionOrientation">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setPlanarProjectionOrientation</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">orientation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setPlanarProjectionOrientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the projection orientation for planar texture projection in object space.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>orientation</strong> (<em>QVector2D</em>) – Euler angle rotation</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setplanarprojectionplane-center-direction"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setPlanarProjectionPlane">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setPlanarProjectionPlane</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">center</span></span></em>, <em><span class="n"><span class="pre">direction</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setPlanarProjectionPlane" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the center and orientation of the planar projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>center</strong> (<em>QVector3D</em>) – Local center coordinates</li>
+<li><strong>direction</strong> (<em>QVector3D</em>) – Local direction of the plane</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setplanarprojectionsinglesided-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setPlanarProjectionSingleSided">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setPlanarProjectionSingleSided</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setPlanarProjectionSingleSided" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether the planar projection should be for one side of the geometry or both. Only available with repeat mode Decal.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – If True, the projection is only applied if the surface normal faces the projection, otherwise the texture will be visible on both sides</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setplanarprojectionsize-size"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setPlanarProjectionSize">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setPlanarProjectionSize</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setPlanarProjectionSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the size of the planar texture projection in object space. The z-Coordinate of the size can be used limit the projection to depth range.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>size</strong> (<em>QVector3D</em>) – 3d size</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setrepeat-repeat"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setRepeat">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setRepeat</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">repeat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setRepeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the UV texture repeat factor.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>repeat</strong> (<em>QVector2D</em>) – UV texture repeat factor to set</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setrepeatmodeu-mode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setRepeatModeU">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setRepeatModeU</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setRepeatModeU" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the texture repeat mode along the U axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<a class="reference internal" href="class_vrTextureTypes.html#vredvrtexturetypes-repeatmode"><span class="std std-ref">vrTextureTypes.RepeatMode</span></a>) – Texture repeat mode to set. Available modes are Repeat, Mirrored, Decal and Clamp</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setrepeatmodev-mode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setRepeatModeV">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setRepeatModeV</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setRepeatModeV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the texture repeat mode along the V axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<a class="reference internal" href="class_vrTextureTypes.html#vredvrtexturetypes-repeatmode"><span class="std std-ref">vrTextureTypes.RepeatMode</span></a>) – Texture repeat mode to set. Available modes are Repeat, Mirrored, Decal and Clamp</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setrotate-rotate"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setRotate">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setRotate</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">rotate</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setRotate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets a rotation value for the UV-texture coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rotate</strong> (<em>float</em>) – The rotation value to use</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-settexturesize-size"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setTextureSize">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setTextureSize</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setTextureSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the size of the texture in scene units.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>size</strong> (<em>QVector2D</em>) – Size in scene units (usually mm)</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-settriplanarblend-blend"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setTriplanarBlend">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setTriplanarBlend</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">blend</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setTriplanarBlend" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the edge blending factor for the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>blend</strong> (<em>float</em>) – Blending factor between 0 and 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-settriplanarxoffset-offset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setTriplanarXOffset">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setTriplanarXOffset</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setTriplanarXOffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the UV offset for the x-axis of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>offset</strong> (<em>QVector2D</em>) – UV offset</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-settriplanarxrepeat-repeat"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setTriplanarXRepeat">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setTriplanarXRepeat</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">repeat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setTriplanarXRepeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the UV repeat factors for the x-axis of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>repeat</strong> (<em>QVector2D</em>) – UV repeat factors</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-settriplanarxrotation-rotation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setTriplanarXRotation">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setTriplanarXRotation</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">rotation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setTriplanarXRotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the rotation value for the x-axis texture coordinates of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rotation</strong> (<em>float</em>) – Rotation value</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-settriplanaryoffset-offset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setTriplanarYOffset">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setTriplanarYOffset</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setTriplanarYOffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the UV offset for the y-axis of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>offset</strong> (<em>QVector2D</em>) – UV offset</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-settriplanaryrepeat-repeat"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setTriplanarYRepeat">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setTriplanarYRepeat</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">repeat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setTriplanarYRepeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the UV repeat factors for the y-axis of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>repeat</strong> (<em>QVector2D</em>) – UV repeat factor</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-settriplanaryrotation-rotation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setTriplanarYRotation">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setTriplanarYRotation</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">rotation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setTriplanarYRotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the rotation value for the y-axis texture coordinates of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rotation</strong> (<em>float</em>) – Rotation value</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-settriplanarzoffset-offset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setTriplanarZOffset">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setTriplanarZOffset</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setTriplanarZOffset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the UV offset for the z-axis of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>offset</strong> (<em>QVector2D</em>) – UV offset</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-settriplanarzrepeat-repeat"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setTriplanarZRepeat">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setTriplanarZRepeat</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">repeat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setTriplanarZRepeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the UV repeat factors for the z-axis of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>repeat</strong> (<em>QVector2D</em>) – UV repeat factor</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-settriplanarzrotation-rotation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setTriplanarZRotation">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setTriplanarZRotation</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">rotation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setTriplanarZRotation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the rotation value for the z-axis texture coordinates of the triplanar texture projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rotation</strong> (<em>float</em>) – Rotation value</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setuniformrepeat-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setUniformRepeat">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setUniformRepeat</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setUniformRepeat" title="Permalink to this definition">¶</a></dt>
+<dd><p>If set to True the repeat factors of the xyz axes of the triplanar texture projection are linked.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – True if the axes should be linked, False otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setusealpha-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setUseAlpha">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setUseAlpha</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setUseAlpha" title="Permalink to this definition">¶</a></dt>
+<dd><p>When set to True and the texture image has an alpha channel embedded it is used to make parts of the texture transparent. Call supportsUseAlpha to query if the texture supports an alpha channel.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – True if the alpha channel should be used, False otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setusecutout-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setUseCutout">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setUseCutout</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setUseCutout" title="Permalink to this definition">¶</a></dt>
+<dd><p>When set to True the transparency if interpreted as either True or False. Values below 0.5 are considered to be transparent while values above 0.5 are opaque. Enabling Cutout allows transparent objects to cast shadows in the rasterizer and can improve performance in raytracing when rendering foliage or similar scenes. This is a per material setting. Call supportsUseCutout to query if the texture supports cutout transparency.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – True to enable cutout transparency, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setuseimagesequence-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setUseImageSequence">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setUseImageSequence</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setUseImageSequence" title="Permalink to this definition">¶</a></dt>
+<dd><p>When set to True an image sequence can be used as a texture.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – Set to True if an image sequence should be used as a texture, False otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setuseinfinitetiling-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setUseInfiniteTiling">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setUseInfiniteTiling</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setUseInfiniteTiling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether to use infinite tiling on the texture to hide visible repeats.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – True to enable infinite tiling, False otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setusetexture-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setUseTexture">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setUseTexture</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setUseTexture" title="Permalink to this definition">¶</a></dt>
+<dd><p>When set to True an image can be used as a texture.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – New state for the usage of an image as a texture</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-setusetexturesize-s"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.setUseTextureSize">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">setUseTextureSize</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">s</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.setUseTextureSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>If enabled, the texture size property is used instead of repeat values when using UV mapping, see         <a class="reference internal" href="#vredvrdtexture-gettexturesize"><span class="std std-ref">vrdTexture.getTextureSize()</span></a>, <a class="reference internal" href="#vredvrdtexture-settexturesize-size"><span class="std std-ref">vrdTexture.setTextureSize(size)</span></a>.</p>
+<p>The UV coordinates of the geometry must be properly scaled as well for this option to work correctly, see <a class="reference internal" href="class_vrUVService.html#vredvruvservice-applyworldscale-nodes-uvset"><span class="std std-ref">vrUVService.applyWorldScale(nodes, uvSet)</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>s</strong> (<em>bool</em>) – True if the real world texture size is used, False otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-supportsgamma"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.supportsGamma">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">supportsGamma</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.supportsGamma" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if gamma correction is supported, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-supportsinverttexture"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.supportsInvertTexture">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">supportsInvertTexture</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.supportsInvertTexture" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if texture inversion is supported, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-supportsmappingtype"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.supportsMappingType">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">supportsMappingType</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.supportsMappingType" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if mapping type can be changed for this texture, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-supportsusealpha"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.supportsUseAlpha">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">supportsUseAlpha</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.supportsUseAlpha" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if alpha channel of this texture can be used, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdtexture-supportsusecutout"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdTexture.supportsUseCutout">
+<code class="sig-prename descclassname"><span class="pre">vrdTexture.</span></code><code class="sig-name descname"><span class="pre">supportsUseCutout</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdTexture.supportsUseCutout" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if cutout transparency is supported, False otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrdTexture</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrdTessellationSettings.html"
+                        title="previous chapter">vrdTessellationSettings</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrdTextureBake.html"
+                        title="next chapter">vrdTextureBake</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrdTextureBake.html" title="vrdTextureBake"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrdTessellationSettings.html" title="vrdTessellationSettings"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

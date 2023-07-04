@@ -1,0 +1,16 @@
+.. _virtual-controller-buttons:
+
+Define and use virtual buttons on the touchpad of a VR controller 
+=================================================================
+
+This shows how to add five virtual buttons to a touchpad of a VR controller. One button will be in the
+center and four buttons of same size will be placed around the center button. This example implements
+a device interaction that contains five device actions for the press of each button. The connected methods
+will print out which button has been pressed. Here, only the left controller is used. Note that
+the interaction is part of an interaction group that only contains this interaction, which means that other
+interactions are not available, when this interaction group is active.
+
+.. literalinclude:: ../../python_examples/vr/virtualControllerButtons.py
+   :language: python
+   :linenos:
+   :caption: vr/virtualControllerButtons.py

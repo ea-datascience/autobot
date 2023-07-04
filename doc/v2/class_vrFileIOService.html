@@ -1,0 +1,1918 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrFileIOService &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrFileTypes" href="class_vrFileTypes.html" />
+    <link rel="prev" title="vrDeviceService" href="class_vrDeviceService.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrfileioservice">
+<h1>vrFileIOService<a class="headerlink" href="#vrfileioservice" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrfileioservice"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrFileIOService">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrFileIOService</span></code><a class="headerlink" href="#vrFileIOService" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <code class="xref py py-class docutils literal notranslate"><span class="pre">vrBaseService</span></code>)</p>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrfileioservice-abortimport-importid"><span class="std std-ref">abortImport(importId)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-checkcadtype-file"><span class="std std-ref">checkCadType(file)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getbasefilesuffix-file"><span class="std std-ref">getBaseFileSuffix(file) → string</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getfilename"><span class="std std-ref">getFileName() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getfiletypebyfilename-file"><span class="std std-ref">getFileTypeByFileName(file) → vrCADFileTypes.FileType</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getimagereadfilter"><span class="std std-ref">getImageReadFilter() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getimagewritefilter"><span class="std std-ref">getImageWriteFilter() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getimportsettings-filetype"><span class="std std-ref">getImportSettings(fileType) → vrdAtfSettings</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getimportsettingsfrompreferences-filetype"><span class="std std-ref">getImportSettingsFromPreferences(fileType) → vrdAtfSettings</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getmaxnumimportprocesses"><span class="std std-ref">getMaxNumImportProcesses() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getmergeprojectannotations"><span class="std std-ref">getMergeProjectAnnotations() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getprojectmergesettings"><span class="std std-ref">getProjectMergeSettings() → vrdProjectMergeSettings</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getreadfiletypesfilter-mode"><span class="std std-ref">getReadFileTypesFilter(mode) → string</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getsceneimportsettings"><span class="std std-ref">getSceneImportSettings() → vrdSceneImportSettings</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getstreamname"><span class="std std-ref">getStreamName() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getvreddatadir"><span class="std std-ref">getVREDDataDir() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getvreddir"><span class="std std-ref">getVREDDir() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getvredexamplesdir"><span class="std std-ref">getVREDExamplesDir() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getvredfiletypesfilter"><span class="std std-ref">getVREDFileTypesFilter() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-getwritefiletypesfilter-filename-includeexportformats"><span class="std std-ref">getWriteFileTypesFilter(filename, includeExportFormats) → string</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-hasimportsettings-file"><span class="std std-ref">hasImportSettings(file) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-hasimportsettings-filetype"><span class="std std-ref">hasImportSettings(fileType) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-hassmartreferences-file"><span class="std std-ref">hasSmartReferences(file) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-importatffile-file-parent"><span class="std std-ref">importAtfFile(file, parent) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-importfiles-files-parent-atfconversionoutputdir-loadconvertedatffiles-removeconvertedatffiles-loadbehavior"><span class="std std-ref">importFiles(files, parent, atfConversionOutputDir, loadConvertedAtfFiles, removeConvertedAtfFiles, loadBehavior) → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-importmissingfiles-node-removeconvertedatffiles"><span class="std std-ref">importMissingFiles(node, removeConvertedAtfFiles) → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-importplmxmlfile-file-parent"><span class="std std-ref">importPLMXMLFile(file, parent) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-inlineimagesequences"><span class="std std-ref">inlineImageSequences()</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-isatffile-file"><span class="std std-ref">isAtfFile(file) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-isconvertedatftree-root"><span class="std std-ref">isConvertedAtfTree(root) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-isreadonly"><span class="std std-ref">isReadOnly() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-issupportedfile-file"><span class="std std-ref">isSupportedFile(file) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-isvredproject-file"><span class="std std-ref">isVredProject(file) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-jobbelongstoimport-jobid-importid"><span class="std std-ref">jobBelongsToImport(jobId, importId) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-loadfile-file"><span class="std std-ref">loadFile(file) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-newfile"><span class="std std-ref">newFile()</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-reimportnodes-nodes"><span class="std std-ref">reimportNodes(nodes) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-savefile-file"><span class="std std-ref">saveFile(file) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-savenodes-file-nodes-includeenvironmentgeometries-filterbsides"><span class="std std-ref">saveNodes(file, nodes, includeEnvironmentGeometries, filterBSides) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-setimportsettings-filetype-settings"><span class="std std-ref">setImportSettings(fileType, settings)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-setmaxnumimportprocesses-value"><span class="std std-ref">setMaxNumImportProcesses(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-setprojectmergesettings-settings"><span class="std std-ref">setProjectMergeSettings(settings)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-setsceneimportsettings-settings"><span class="std std-ref">setSceneImportSettings(settings)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-undoinlineimagesequences"><span class="std std-ref">undoInlineImageSequences()</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-validateatftree-file-root-parent"><span class="std std-ref">validateAtfTree(file, root, parent)</span></a></li>
+</ul>
+</dd>
+<dt>Signals:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrfileioservice-addedgeometry-nodeid-preloading"><span class="std std-ref">addedGeometry(nodeid, preLoading)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-addloadedmaterial"><span class="std std-ref">addLoadedMaterial()</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-childfileimportadded-jobid-parentfile-childfile"><span class="std std-ref">childFileImportAdded(jobId, parentFile, childFile)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-childfileimportfinished-jobid-parentfile-childfile"><span class="std std-ref">childFileImportFinished(jobId, parentFile, childFile)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-childrenfileconversionfinished-jobid-parentfile-durationinseconds"><span class="std std-ref">childrenFileConversionFinished(jobId, parentFile, durationInSeconds)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-conversionfinished-importid-durationinseconds"><span class="std std-ref">conversionFinished(importId, durationInSeconds)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-conversionprogresschanged-importid-percent-status"><span class="std std-ref">conversionProgressChanged(importId, percent, status)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-exportedfile-filename"><span class="std std-ref">exportedFile(filename)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-fileaddedtoloadqueue-jobid-file"><span class="std std-ref">fileAddedToLoadQueue(jobId, file)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-fileaddedtoscene-jobid-file-node"><span class="std std-ref">fileAddedToScene(jobId, file, node)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-fileconversionaborted-jobid-file"><span class="std std-ref">fileConversionAborted(jobId, file)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-fileconversionfailed-jobid-file-description"><span class="std std-ref">fileConversionFailed(jobId, file, description)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-fileconversionfinished-jobid-file-state-durationinseconds"><span class="std std-ref">fileConversionFinished(jobId, file, state, durationInSeconds)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-fileconversionprogresschanged-jobid-file-percent-status"><span class="std std-ref">fileConversionProgressChanged(jobId, file, percent, status)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-fileconversionstarted-jobid-file"><span class="std std-ref">fileConversionStarted(jobId, file)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-fileconversionsucceded-jobid-file"><span class="std std-ref">fileConversionSucceded(jobId, file)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-fileloadingfailed-jobid-file-description"><span class="std std-ref">fileLoadingFailed(jobId, file, description)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-fileloadingfinished-jobid-file-state"><span class="std std-ref">fileLoadingFinished(jobId, file, state)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-fileloadingprogresschanged-jobid-file-percent-status"><span class="std std-ref">fileLoadingProgressChanged(jobId, file, percent, status)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-fileloadingstarted-jobid-file"><span class="std std-ref">fileLoadingStarted(jobId, file)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-filetypereceived-file-filetype"><span class="std std-ref">fileTypeReceived(file, fileType)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-importedfile-filename"><span class="std std-ref">importedFile(filename)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-importfinished-importid-durationinseconds"><span class="std std-ref">importFinished(importId, durationInSeconds)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-importprogresschanged-importid-percent"><span class="std std-ref">importProgressChanged(importId, percent)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-loadedgeometry-filename-nodeid"><span class="std std-ref">loadedGeometry(filename, nodeid)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-newscene"><span class="std std-ref">newScene()</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-preexportgeometry-nodeid-addactionattachment"><span class="std std-ref">preExportGeometry(nodeid, addActionAttachment)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-prenewscene"><span class="std std-ref">preNewScene()</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-prequit"><span class="std std-ref">preQuit()</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-progress-p"><span class="std std-ref">progress(p)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-project-loading"><span class="std std-ref">project(loading)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-projectload-filename"><span class="std std-ref">projectLoad(filename)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-projectloaded-filename"><span class="std std-ref">projectLoaded(filename)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-projectloadfinished-filename-success"><span class="std std-ref">projectLoadFinished(filename, success)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-projectmerged"><span class="std std-ref">projectMerged()</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-projectsave-filename"><span class="std std-ref">projectSave(filename)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-projectsaved-filename"><span class="std std-ref">projectSaved(filename)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-savedgeometry-filename"><span class="std std-ref">savedGeometry(filename)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-sequences-xml-merge"><span class="std std-ref">sequences(xml, merge)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-startingconversion-importid-filecount"><span class="std std-ref">startingConversion(importId, fileCount)</span></a></li>
+<li><a class="reference internal" href="#vredvrfileioservice-startingimport-importid-filecount"><span class="std std-ref">startingImport(importId, fileCount)</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrfileioservice-abortimport-importid"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.abortImport">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">abortImport</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">importId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.abortImport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aborts an import job.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>importId</strong> (<em>integer</em>) – The identifier for the import job</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-checkcadtype-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.checkCadType">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">checkCadType</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.checkCadType" title="Permalink to this definition">¶</a></dt>
+<dd><p>Asynchronously starts querying the CAD file type of a file with the given file path. After succesfully querying the type or looking it up in a cache a fileTypeReceived signal is emited. This might be needed since some file extensions, i.E. .prt, can’t be clearly associated to a single file type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>string</em>) – The filename of the CAD file</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getbasefilesuffix-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getBaseFileSuffix">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getBaseFileSuffix</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getBaseFileSuffix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the file extension.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>string</em>) – The filename</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The file extension.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getfilename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getFileName">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getFileName</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getFileName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the current file name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The file name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getfiletypebyfilename-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getFileTypeByFileName">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getFileTypeByFileName</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getFileTypeByFileName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the file type by file name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>string</em>) – The filename</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The file type for file name.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrCADFileTypes.html#vredvrcadfiletypes-filetype"><span class="std std-ref">vrCADFileTypes.FileType</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getimagereadfilter"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getImageReadFilter">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getImageReadFilter</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getImageReadFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>This returns a space separated list of the the supported image file types that can be loaded.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The supported image file types for loading</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getimagewritefilter"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getImageWriteFilter">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getImageWriteFilter</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getImageWriteFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>This returns a space separated list of the the supported image file types that can be saved.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The supported image file types for saving</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getimportsettings-filetype"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getImportSettings">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getImportSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">fileType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getImportSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the current import settings for a given CAD file type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fileType</strong> (<a class="reference internal" href="class_vrCADFileTypes.html#vredvrcadfiletypes-filetype"><span class="std std-ref">vrCADFileTypes.FileType</span></a>) – The file type for which the import settings should be returned.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The import settings.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdAtfSettings.html#vrdAtfSettings" title="vrdAtfSettings">vrdAtfSettings</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getimportsettingsfrompreferences-filetype"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getImportSettingsFromPreferences">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getImportSettingsFromPreferences</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">fileType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getImportSettingsFromPreferences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the import settings from preferences.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fileType</strong> (<a class="reference internal" href="class_vrCADFileTypes.html#vredvrcadfiletypes-filetype"><span class="std std-ref">vrCADFileTypes.FileType</span></a>) – The file type for which the import settings should be returned.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The import settings from preferences.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdAtfSettings.html#vrdAtfSettings" title="vrdAtfSettings">vrdAtfSettings</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getmaxnumimportprocesses"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getMaxNumImportProcesses">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getMaxNumImportProcesses</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getMaxNumImportProcesses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the maximum number import processes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The maximum number import processes.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getmergeprojectannotations"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getMergeProjectAnnotations">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getMergeProjectAnnotations</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getMergeProjectAnnotations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flag indicates if annotations contained in a project file should be merged after loading.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The merge annotations flag</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getprojectmergesettings"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getProjectMergeSettings">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getProjectMergeSettings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getProjectMergeSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the project merge settings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The current project merge settings.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdProjectMergeSettings.html#vrdProjectMergeSettings" title="vrdProjectMergeSettings">vrdProjectMergeSettings</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getreadfiletypesfilter-mode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getReadFileTypesFilter">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getReadFileTypesFilter</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getReadFileTypesFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the filter for readable file types.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<a class="reference internal" href="class_vrFileTypes.html#vredvrfiletypes-fileextensionfiltermode"><span class="std std-ref">vrFileTypes.FileExtensionFilterMode</span></a>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The readable file types filter.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getsceneimportsettings"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getSceneImportSettings">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getSceneImportSettings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getSceneImportSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the scene current scene import settings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The scene import settings.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdSceneImportSettings.html#vrdSceneImportSettings" title="vrdSceneImportSettings">vrdSceneImportSettings</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getstreamname"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getStreamName">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getStreamName</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getStreamName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the current stream name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The stream name.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getvreddatadir"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getVREDDataDir">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getVREDDataDir</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getVREDDataDir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the VRED data dir. This is the ‘data’ subfolder of the base directory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The VRED data dir.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getvreddir"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getVREDDir">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getVREDDir</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getVREDDir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the base application directory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The base application directory.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getvredexamplesdir"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getVREDExamplesDir">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getVREDExamplesDir</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getVREDExamplesDir" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the VRED examples dir. This is the ‘examples’ subfolder of the base directory.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The VRED examples dir.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getvredfiletypesfilter"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getVREDFileTypesFilter">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getVREDFileTypesFilter</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getVREDFileTypesFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the VRED file types filter.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The VRED file types filter.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-getwritefiletypesfilter-filename-includeexportformats"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.getWriteFileTypesFilter">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">getWriteFileTypesFilter</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filename</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em><span class="n"><span class="pre">includeExportFormats</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.getWriteFileTypesFilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the filter for writable file types.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>filename</strong> (<em>string</em>) – An optional current file name with a file extension</li>
+<li><strong>includeExportFormats</strong> (<em>bool</em>) – If true, add export types</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The writable file types filter.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-hasimportsettings-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.hasImportSettings">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">hasImportSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.hasImportSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines if there are import settings for a given file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>string</em>) – The filename</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if there are import settings, False otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-hasimportsettings-filetype"></span><dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">hasImportSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">fileType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines if there are import settings for a given file type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fileType</strong> (<a class="reference internal" href="class_vrCADFileTypes.html#vredvrcadfiletypes-filetype"><span class="std std-ref">vrCADFileTypes.FileType</span></a>) – The file type</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if there are import settings, False otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-hassmartreferences-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.hasSmartReferences">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">hasSmartReferences</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.hasSmartReferences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Queries for a OSB or VPB file if it contains smart references.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>string</em>) – The filename of the VPB or OSB file</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if file contains smart references</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-importatffile-file-parent"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.importAtfFile">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">importAtfFile</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em>, <em><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.importAtfFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports a file with the ATF loader.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+<li><strong>parent</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The parent scene node where the imported file will be attached</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The converted scene node</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-importfiles-files-parent-atfconversionoutputdir-loadconvertedatffiles-removeconvertedatffiles-loadbehavior"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.importFiles">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">importFiles</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">files</span></span></em>, <em><span class="n"><span class="pre">parent</span></span></em>, <em><span class="n"><span class="pre">atfConversionOutputDir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em><span class="n"><span class="pre">loadConvertedAtfFiles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em><span class="n"><span class="pre">removeConvertedAtfFiles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em><span class="n"><span class="pre">loadBehavior</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.importFiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports a list of files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>files</strong> (<em>List</em><em>[</em><em>string</em><em>]</em>) – The files to import</li>
+<li><strong>parent</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The parent node in the scene tree where these files should be added.</li>
+<li><strong>atfConversionOutputDir</strong> (<em>string</em>) – The atf conversion output dir</li>
+<li><strong>loadConvertedAtfFiles</strong> (<em>bool</em>) – True if converted Atf files should be loaded</li>
+<li><strong>removeConvertedAtfFiles</strong> (<em>bool</em>) – True if converted Atf files should be deleted</li>
+<li><strong>loadBehavior</strong> (<em>bool</em>) – If True and root node of imported vpb file is a reference, mark root node in scenegraph as reference.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The identifier of the import job</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">integer</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-importmissingfiles-node-removeconvertedatffiles"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.importMissingFiles">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">importMissingFiles</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em>, <em><span class="n"><span class="pre">removeConvertedAtfFiles</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.importMissingFiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports missing files from a scene node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The scene node with unloaded parts</li>
+<li><strong>removeConvertedAtfFiles</strong> (<em>bool</em>) – Remove already converted ATF files</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The import id of the new import job for the missing files</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">integer</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-importplmxmlfile-file-parent"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.importPLMXMLFile">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">importPLMXMLFile</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em>, <em><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.importPLMXMLFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Imports a PLMXML file and the files it references.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+<li><strong>parent</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The parent scene node where the imported file will be attached</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The converted scene node</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-inlineimagesequences"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.inlineImageSequences">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">inlineImageSequences</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.inlineImageSequences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inlines all image sequences.</p>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-isatffile-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.isAtfFile">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">isAtfFile</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.isAtfFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the given file can be imported with ATF.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>string</em>) – The filename to check</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the file can be imported, False otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-isconvertedatftree-root"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.isConvertedAtfTree">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">isConvertedAtfTree</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">root</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.isConvertedAtfTree" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a scene node is a converted ATF tree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>root</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The root node of the tree</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if converted ATF tree, False otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-isreadonly"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.isReadOnly">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">isReadOnly</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.isReadOnly" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the current project is read only</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-issupportedfile-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.isSupportedFile">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">isSupportedFile</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.isSupportedFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a given file can be imported.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>string</em>) – The filename to check</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if supported file, False otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-isvredproject-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.isVredProject">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">isVredProject</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.isVredProject" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the given file is a VRED project.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>string</em>) – The filename to check</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if it’s a VRED project, False otherwise.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-jobbelongstoimport-jobid-importid"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.jobBelongsToImport">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">jobBelongsToImport</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">importId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.jobBelongsToImport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if an import identifier belongs to a given job.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The job identifier</li>
+<li><strong>importId</strong> (<em>integer</em>) – The import identifier</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the import id belongs to the job, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-loadfile-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.loadFile">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">loadFile</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.loadFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>string</em>) – The file to load</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if loading succeeded, false otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-newfile"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.newFile">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">newFile</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.newFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Destroy the current scene and create a new scene with an empty file name.</p>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-reimportnodes-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.reimportNodes">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">reimportNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.reimportNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reimports a list of nodes with referenced source files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The scene nodes to reimport</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List of imported nodes</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-savefile-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.saveFile">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">saveFile</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.saveFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>file</strong> (<em>string</em>) – The file to save</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if saving succeeded, false otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-savenodes-file-nodes-includeenvironmentgeometries-filterbsides"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.saveNodes">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">saveNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em>, <em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">includeEnvironmentGeometries</span></span></em>, <em><span class="n"><span class="pre">filterBSides</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.saveNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves a number of nodes to a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>file</strong> (<em>string</em>) – The file path</li>
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be saved</li>
+<li><strong>includeEnvironmentGeometries</strong> (<em>bool</em>) – If True, add environment geometry</li>
+<li><strong>filterBSides</strong> (<em>bool</em>) – If True, B-Sides will not be exported</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if saving succeeded, false otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-setimportsettings-filetype-settings"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.setImportSettings">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">setImportSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">fileType</span></span></em>, <em><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.setImportSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the import settings for a given file type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fileType</strong> (<a class="reference internal" href="class_vrCADFileTypes.html#vredvrcadfiletypes-filetype"><span class="std std-ref">vrCADFileTypes.FileType</span></a>) – The file type</li>
+<li><strong>settings</strong> (<a class="reference internal" href="class_vrdAtfSettings.html#vrdAtfSettings" title="vrdAtfSettings"><em>vrdAtfSettings</em></a>) – The settings instance.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-setmaxnumimportprocesses-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.setMaxNumImportProcesses">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">setMaxNumImportProcesses</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.setMaxNumImportProcesses" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the maximum number of import processes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>integer</em>) – The number of import processes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-setprojectmergesettings-settings"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.setProjectMergeSettings">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">setProjectMergeSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.setProjectMergeSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the project merge settings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>settings</strong> (<a class="reference internal" href="class_vrdProjectMergeSettings.html#vrdProjectMergeSettings" title="vrdProjectMergeSettings"><em>vrdProjectMergeSettings</em></a>) – The project merge settings instance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-setsceneimportsettings-settings"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.setSceneImportSettings">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">setSceneImportSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.setSceneImportSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the scene import settings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>settings</strong> (<a class="reference internal" href="class_vrdSceneImportSettings.html#vrdSceneImportSettings" title="vrdSceneImportSettings"><em>vrdSceneImportSettings</em></a>) – The scene import settings instance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-undoinlineimagesequences"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.undoInlineImageSequences">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">undoInlineImageSequences</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.undoInlineImageSequences" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all inlined image sequences.</p>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-validateatftree-file-root-parent"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.validateAtfTree">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">validateAtfTree</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em>, <em><span class="n"><span class="pre">root</span></span></em>, <em><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.validateAtfTree" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file</strong> (<em>string</em>) – </li>
+<li><strong>root</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – </li>
+<li><strong>parent</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrfileioservice-addedgeometry-nodeid-preloading"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.addedGeometry">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">addedGeometry</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodeid</span></span></em>, <em><span class="n"><span class="pre">preLoading</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.addedGeometry" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodeid</strong> (<em>integer</em>) – </li>
+<li><strong>preLoading</strong> (<em>bool</em>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-addloadedmaterial"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.addLoadedMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">addLoadedMaterial</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.addLoadedMaterial" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrfileioservice-childfileimportadded-jobid-parentfile-childfile"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.childFileImportAdded">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">childFileImportAdded</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">parentFile</span></span></em>, <em><span class="n"><span class="pre">childFile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.childFileImportAdded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a child cad file import was added.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>parentFile</strong> (<em>string</em>) – The parent file name</li>
+<li><strong>childFile</strong> (<em>string</em>) – The child file name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-childfileimportfinished-jobid-parentfile-childfile"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.childFileImportFinished">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">childFileImportFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">parentFile</span></span></em>, <em><span class="n"><span class="pre">childFile</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.childFileImportFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a child cad file import has finished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>parentFile</strong> (<em>string</em>) – The parent file name</li>
+<li><strong>childFile</strong> (<em>string</em>) – The child file name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-childrenfileconversionfinished-jobid-parentfile-durationinseconds"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.childrenFileConversionFinished">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">childrenFileConversionFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">parentFile</span></span></em>, <em><span class="n"><span class="pre">durationInSeconds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.childrenFileConversionFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the conversion of all child cad files has finsished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>parentFile</strong> (<em>string</em>) – The parent file name</li>
+<li><strong>durationInSeconds</strong> (<em>float</em>) – The import duration in seconds</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-conversionfinished-importid-durationinseconds"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.conversionFinished">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">conversionFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">importId</span></span></em>, <em><span class="n"><span class="pre">durationInSeconds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.conversionFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a file conversion job has finished.</p>
+<p>To get notifications for individual files you can use the fileConversionFinished signal.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>importId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>durationInSeconds</strong> (<em>float</em>) – The conversion duration in seconds</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-conversionprogresschanged-importid-percent-status"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.conversionProgressChanged">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">conversionProgressChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">importId</span></span></em>, <em><span class="n"><span class="pre">percent</span></span></em>, <em><span class="n"><span class="pre">status</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.conversionProgressChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the progress of the file conversion changes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>importId</strong> (<em>integer</em>) – The identifier for the current import</li>
+<li><strong>percent</strong> (<em>integer</em>) – The conversion progress in percent</li>
+<li><strong>status</strong> (<em>string</em>) – The conversion status (“Reading”, “Converting”, Processing”…)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-exportedfile-filename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.exportedFile">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">exportedFile</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.exportedFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted after a file has been exported.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em>) – The filename that was exported</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-fileaddedtoloadqueue-jobid-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileAddedToLoadQueue">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileAddedToLoadQueue</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileAddedToLoadQueue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a new cad file has been added to the load queue.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-fileaddedtoscene-jobid-file-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileAddedToScene">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileAddedToScene</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">file</span></span></em>, <em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileAddedToScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a cad file has been added to the current scene.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+<li><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The scene node of the added file</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-fileconversionaborted-jobid-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileConversionAborted">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileConversionAborted</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileConversionAborted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a cad file conversion has been aborted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-fileconversionfailed-jobid-file-description"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileConversionFailed">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileConversionFailed</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">file</span></span></em>, <em><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileConversionFailed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a cad file conversion has failed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+<li><strong>description</strong> (<em>string</em>) – Description of the error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-fileconversionfinished-jobid-file-state-durationinseconds"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileConversionFinished">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileConversionFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">file</span></span></em>, <em><span class="n"><span class="pre">state</span></span></em>, <em><span class="n"><span class="pre">durationInSeconds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileConversionFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the conversion of a cad file has finished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+<li><strong>state</strong> (<a class="reference internal" href="class_vrCADFileTypes.html#vredvrcadfiletypes-jobstate"><span class="std std-ref">vrCADFileTypes.JobState</span></a>) – The status of the job</li>
+<li><strong>durationInSeconds</strong> (<em>float</em>) – The loading duration in seconds</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-fileconversionprogresschanged-jobid-file-percent-status"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileConversionProgressChanged">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileConversionProgressChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">file</span></span></em>, <em><span class="n"><span class="pre">percent</span></span></em>, <em><span class="n"><span class="pre">status</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileConversionProgressChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the progress of a cad file conversion has changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+<li><strong>percent</strong> (<em>integer</em>) – The conversion progress in percent</li>
+<li><strong>status</strong> (<em>string</em>) – status message</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-fileconversionstarted-jobid-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileConversionStarted">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileConversionStarted</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileConversionStarted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emiited when the conversion of a cad file has started.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-fileconversionsucceded-jobid-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileConversionSucceded">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileConversionSucceded</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileConversionSucceded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a cad file conversion has succeded.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-fileloadingfailed-jobid-file-description"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileLoadingFailed">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileLoadingFailed</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">file</span></span></em>, <em><span class="n"><span class="pre">description</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileLoadingFailed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when loading of an imported cad file has failed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+<li><strong>description</strong> (<em>string</em>) – Description of the error</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-fileloadingfinished-jobid-file-state"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileLoadingFinished">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileLoadingFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">file</span></span></em>, <em><span class="n"><span class="pre">state</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileLoadingFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when loading of an imported cad file has finished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+<li><strong>state</strong> (<a class="reference internal" href="class_vrCADFileTypes.html#vredvrcadfiletypes-jobstate"><span class="std std-ref">vrCADFileTypes.JobState</span></a>) – The status of the job</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-fileloadingprogresschanged-jobid-file-percent-status"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileLoadingProgressChanged">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileLoadingProgressChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">file</span></span></em>, <em><span class="n"><span class="pre">percent</span></span></em>, <em><span class="n"><span class="pre">status</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileLoadingProgressChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the loading progress of an imported cad file changes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+<li><strong>percent</strong> (<em>integer</em>) – The loading progress in percent</li>
+<li><strong>status</strong> (<em>string</em>) – status message</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-fileloadingstarted-jobid-file"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileLoadingStarted">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileLoadingStarted</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">jobId</span></span></em>, <em><span class="n"><span class="pre">file</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileLoadingStarted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when loading of an imported cad file starts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>jobId</strong> (<em>integer</em>) – The identifier for the import job</li>
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-filetypereceived-file-filetype"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.fileTypeReceived">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">fileTypeReceived</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">file</span></span></em>, <em><span class="n"><span class="pre">fileType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.fileTypeReceived" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a new cad file type has been received.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>file</strong> (<em>string</em>) – The file name</li>
+<li><strong>fileType</strong> (<a class="reference internal" href="class_vrCADFileTypes.html#vredvrcadfiletypes-filetype"><span class="std std-ref">vrCADFileTypes.FileType</span></a>) – The file type</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-importedfile-filename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.importedFile">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">importedFile</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.importedFile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted after a file has been imported.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em>) – The filename that was imported</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-importfinished-importid-durationinseconds"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.importFinished">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">importFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">importId</span></span></em>, <em><span class="n"><span class="pre">durationInSeconds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.importFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when an import job has finished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>importId</strong> (<em>integer</em>) – The identifier for the current import</li>
+<li><strong>durationInSeconds</strong> (<em>float</em>) – The import duration in seconds</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-importprogresschanged-importid-percent"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.importProgressChanged">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">importProgressChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">importId</span></span></em>, <em><span class="n"><span class="pre">percent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.importProgressChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when the import progress is updated.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>importId</strong> (<em>integer</em>) – The identifier for the current import</li>
+<li><strong>percent</strong> (<em>integer</em>) – The import progress percent</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-loadedgeometry-filename-nodeid"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.loadedGeometry">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">loadedGeometry</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filename</span></span></em>, <em><span class="n"><span class="pre">nodeid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.loadedGeometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted after a geometry has been loaded.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<em>string</em>) – The filename of the geometry</li>
+<li><strong>nodeid</strong> (<em>integer</em>) – The node id of the geometry</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-newscene"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.newScene">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">newScene</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.newScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted after a new scene is created.</p>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-preexportgeometry-nodeid-addactionattachment"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.preExportGeometry">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">preExportGeometry</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodeid</span></span></em>, <em><span class="n"><span class="pre">addActionAttachment</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.preExportGeometry" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodeid</strong> (<em>integer</em>) – </li>
+<li><strong>addActionAttachment</strong> (<em>bool</em>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-prenewscene"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.preNewScene">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">preNewScene</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.preNewScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted before a new scene is created.</p>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-prequit"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.preQuit">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">preQuit</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.preQuit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted before vred is closed.</p>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-progress-p"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.progress">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">progress</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.progress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Periodically emitted to provide a percentage value of how much of the file has been loaded.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>p</strong> (<em>integer</em>) – Loading progress in percent</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-project-loading"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.project">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">project</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">loading</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.project" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>loading</strong> (<em>bool</em>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-projectload-filename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.projectLoad">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">projectLoad</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.projectLoad" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when project loading starts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em>) – The filename of the loaded project</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-projectloaded-filename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.projectLoaded">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">projectLoaded</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.projectLoaded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted after a project has been successfully loaded. This signal is not sent if loading aborted with an error.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em>) – The filename of the loaded project</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-projectloadfinished-filename-success"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.projectLoadFinished">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">projectLoadFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filename</span></span></em>, <em><span class="n"><span class="pre">success</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.projectLoadFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted after a project has been loaded The signal will always be sent whether loading succeeded or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>filename</strong> (<em>string</em>) – The filename of the loaded project</li>
+<li><strong>success</strong> (<em>bool</em>) – Indicates if loading was successful or not</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-projectmerged"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.projectMerged">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">projectMerged</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.projectMerged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted after a project has been merged.</p>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-projectsave-filename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.projectSave">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">projectSave</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.projectSave" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal is emitted when a project is about to be saved.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em>) – The filename of the project</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-projectsaved-filename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.projectSaved">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">projectSaved</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.projectSaved" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal is emitted when a project has finished saving.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em>) – The filename of the project.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-savedgeometry-filename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.savedGeometry">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">savedGeometry</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.savedGeometry" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted after a geometry has been saved.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em>) – The filename of the geometry</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-sequences-xml-merge"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.sequences">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">sequences</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">xml</span></span></em>, <em><span class="n"><span class="pre">merge</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.sequences" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>xml</strong> (<em>string</em>) – </li>
+<li><strong>merge</strong> (<em>bool</em>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-startingconversion-importid-filecount"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.startingConversion">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">startingConversion</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">importId</span></span></em>, <em><span class="n"><span class="pre">fileCount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.startingConversion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when file conversion starts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>importId</strong> (<em>integer</em>) – The identifier for the current import</li>
+<li><strong>fileCount</strong> (<em>integer</em>) – The file count</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrfileioservice-startingimport-importid-filecount"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrFileIOService.startingImport">
+<code class="sig-prename descclassname"><span class="pre">vrFileIOService.</span></code><code class="sig-name descname"><span class="pre">startingImport</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">importId</span></span></em>, <em><span class="n"><span class="pre">fileCount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrFileIOService.startingImport" title="Permalink to this definition">¶</a></dt>
+<dd><p>Emitted when a file import job is started.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>importId</strong> (<em>integer</em>) – The identifier for the current import</li>
+<li><strong>fileCount</strong> (<em>integer</em>) – The number of files to be imported</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrFileIOService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals">Signals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrDeviceService.html"
+                        title="previous chapter">vrDeviceService</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrFileTypes.html"
+                        title="next chapter">vrFileTypes</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrFileTypes.html" title="vrFileTypes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrDeviceService.html" title="vrDeviceService"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

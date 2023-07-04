@@ -1,0 +1,7 @@
+Menu with buttons and checkboxes example 2
+==========================================
+
+.. literalinclude:: ../python_examples/menu_2D.py
+   :language: python
+   :linenos:
+   :caption: menu_2D.py

@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrQueryService &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrReferenceService" href="class_vrReferenceService.html" />
+    <link rel="prev" title="vrProgressService" href="class_vrProgressService.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrqueryservice">
+<h1>vrQueryService<a class="headerlink" href="#vrqueryservice" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrqueryservice"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrQueryService">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrQueryService</span></code><a class="headerlink" href="#vrQueryService" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <code class="xref py py-class docutils literal notranslate"><span class="pre">vrBaseService</span></code>)</p>
+<p>The query service provides functions for advanced search with expressions.</p>
+<p>The service allows queries for objects from different modules.</p>
+<p>The search expression is based on Python syntax and must evaluate to a boolean (True or False). Each object is checked against that expression and added to the resulting list if it matches. In that expression you have access to predefined variables to access the object’s attributes:</p>
+<div class="line-block">
+<div class="line">name (query providing comparison operators and wildcard string matching)</div>
+<div class="line">metadata (vrdMetadata)</div>
+<div class="line">metadata.key (query on keys)</div>
+<div class="line">metadata.value (query on entry values )</div>
+<div class="line">metadata.set (query on set names)</div>
+<div class="line">metadata.type (query on entry value types)</div>
+<div class="line"><br /></div>
+<div class="line">metadata[“keystring”] (query on all values found for this key)</div>
+<div class="line"><br /></div>
+<div class="line">node (vrdNode)</div>
+<div class="line">material (vrdMaterial)</div>
+<div class="line">light (vrdBaseLightNode)</div>
+<div class="line">camera (vrdCameraNode)</div>
+<div class="line">sceneplate (vrdSceneplateNode)</div>
+</div>
+<p>Two types of queries are provided: synchronous and asynchronous. Synchronous queries block the GUI while the query is evaluated. For large scenes, this may take too long. With asynchronous queries, the GUI continues to process events while the query is running. Note, both functions return after the query is finished. Asynchronous queries can be cancelled. The results of an asynchronous query are communicated in a signal after the query is complete.</p>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrqueryservice-asynccameraquery-expression"><span class="std std-ref">asyncCameraQuery(expression)</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asynclightquery-expression"><span class="std std-ref">asyncLightQuery(expression)</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asyncmaterialquery-expression"><span class="std std-ref">asyncMaterialQuery(expression)</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asyncmetadataquery-expression"><span class="std std-ref">asyncMetadataQuery(expression)</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asyncsceneplatequery-expression"><span class="std std-ref">asyncSceneplateQuery(expression)</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asyncscenequery-expression"><span class="std std-ref">asyncSceneQuery(expression)</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-cameraquery-expression"><span class="std std-ref">cameraQuery(expression) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-cancelquery"><span class="std std-ref">cancelQuery()</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-iscanceling"><span class="std std-ref">isCanceling() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-islivesearchenabled"><span class="std std-ref">isLiveSearchEnabled() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-isrunning"><span class="std std-ref">isRunning() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-lightquery-expression"><span class="std std-ref">lightQuery(expression) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-materialquery-expression"><span class="std std-ref">materialQuery(expression) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-metadataquery-expression"><span class="std std-ref">metadataQuery(expression) → List[vrdMetadataSet]</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-sceneplatequery-expression"><span class="std std-ref">sceneplateQuery(expression) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-scenequery-expression"><span class="std std-ref">sceneQuery(expression) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-setlivesearchenabled-value"><span class="std std-ref">setLiveSearchEnabled(value)</span></a></li>
+</ul>
+</dd>
+<dt>Signals:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrqueryservice-asynccameraqueryfinished-success-results"><span class="std std-ref">asyncCameraQueryFinished(success, results)</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asynccameraquerystarted"><span class="std std-ref">asyncCameraQueryStarted()</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asynclightqueryfinished-success-results"><span class="std std-ref">asyncLightQueryFinished(success, results)</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asynclightquerystarted"><span class="std std-ref">asyncLightQueryStarted()</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asyncmaterialqueryfinished-success-results"><span class="std std-ref">asyncMaterialQueryFinished(success, results)</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asyncmaterialquerystarted"><span class="std std-ref">asyncMaterialQueryStarted()</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asyncmetadataqueryfinished-success-results"><span class="std std-ref">asyncMetadataQueryFinished(success, results)</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asyncmetadataquerystarted"><span class="std std-ref">asyncMetadataQueryStarted()</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asyncsceneplatequeryfinished-success-results"><span class="std std-ref">asyncSceneplateQueryFinished(success, results)</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asyncsceneplatequerystarted"><span class="std std-ref">asyncSceneplateQueryStarted()</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asyncscenequeryfinished-success-results"><span class="std std-ref">asyncSceneQueryFinished(success, results)</span></a></li>
+<li><a class="reference internal" href="#vredvrqueryservice-asyncscenequerystarted"><span class="std std-ref">asyncSceneQueryStarted()</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrqueryservice-asynccameraquery-expression"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncCameraQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncCameraQuery</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncCameraQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a asynchronous query for cameras.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expression</strong> (<em>string</em>) – A Python expression that returns a boolean value.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asynclightquery-expression"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncLightQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncLightQuery</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncLightQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a asynchronous query for lights.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expression</strong> (<em>string</em>) – A Python expression that returns a boolean value.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asyncmaterialquery-expression"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncMaterialQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncMaterialQuery</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncMaterialQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a asynchronous query for materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expression</strong> (<em>string</em>) – A Python expression that returns a boolean value.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asyncmetadataquery-expression"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncMetadataQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncMetadataQuery</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncMetadataQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a asynchronous query for metadata sets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expression</strong> (<em>string</em>) – A Python expression that returns a boolean value.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asyncsceneplatequery-expression"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncSceneplateQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncSceneplateQuery</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncSceneplateQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a asynchronous query for scene plates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expression</strong> (<em>string</em>) – A Python expression that returns a boolean value.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asyncscenequery-expression"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncSceneQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncSceneQuery</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncSceneQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a asynchronous query for Scenegraph nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expression</strong> (<em>string</em>) – A Python expression that returns a boolean value.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-cameraquery-expression"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.cameraQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">cameraQuery</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.cameraQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a synchronous query for cameras.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expression</strong> (<em>string</em>) – A Python expression that returns a boolean value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of all results of this query</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-cancelquery"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.cancelQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">cancelQuery</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.cancelQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Cancels an asynchronous query that is running.</p>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-iscanceling"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.isCanceling">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">isCanceling</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.isCanceling" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if an asynchronous query was canceled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-islivesearchenabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.isLiveSearchEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">isLiveSearchEnabled</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.isLiveSearchEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets if live search is enabled or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-isrunning"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.isRunning">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">isRunning</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.isRunning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if an asynchronous query is running.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-lightquery-expression"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.lightQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">lightQuery</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.lightQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a synchronous query for lights.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expression</strong> (<em>string</em>) – A Python expression that returns a boolean value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of all results of this query.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-materialquery-expression"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.materialQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">materialQuery</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.materialQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a synchronous query for materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expression</strong> (<em>string</em>) – A Python expression that returns a boolean value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of all results of this query. Items can be of type <a class="reference internal" href="class_vrdMaterialNode.html#vredvrdmaterialnode"><span class="std std-ref">vrdMaterialNode</span></a> for materials or <a class="reference internal" href="class_vrdNode.html#vredvrdnode"><span class="std std-ref">vrdNode</span></a> for groups.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-metadataquery-expression"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.metadataQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">metadataQuery</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.metadataQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a synchronous query for metadata sets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expression</strong> (<em>string</em>) – A Python expression that returns a boolean value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of all results of this query</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdMetadataSet.html#vrdMetadataSet" title="vrdMetadataSet">vrdMetadataSet</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-sceneplatequery-expression"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.sceneplateQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">sceneplateQuery</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.sceneplateQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a synchronous query for scene plates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expression</strong> (<em>string</em>) – A Python expression that returns a boolean value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of all results of this query</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-scenequery-expression"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.sceneQuery">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">sceneQuery</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">expression</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.sceneQuery" title="Permalink to this definition">¶</a></dt>
+<dd><p>Starts a synchronous query for Scenegraph nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>expression</strong> (<em>string</em>) – A Python expression that returns a boolean value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of all results of this query</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-setlivesearchenabled-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.setLiveSearchEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">setLiveSearchEnabled</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.setLiveSearchEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether live search is enabled or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – True if enabled, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrqueryservice-asynccameraqueryfinished-success-results"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncCameraQueryFinished">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncCameraQueryFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">success</span></span></em>, <em><span class="n"><span class="pre">results</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncCameraQueryFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is sent when an asynchronous query for cameras is finished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>success</strong> (<em>bool</em>) – True if the expression could be evaluated.</li>
+<li><strong>results</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of all results of this query</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asynccameraquerystarted"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncCameraQueryStarted">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncCameraQueryStarted</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncCameraQueryStarted" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is sent when an asynchronous query for cameras is started.</p>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asynclightqueryfinished-success-results"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncLightQueryFinished">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncLightQueryFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">success</span></span></em>, <em><span class="n"><span class="pre">results</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncLightQueryFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is sent when an asynchronous query for lights is finished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>success</strong> (<em>bool</em>) – True if the expression could be evaluated.</li>
+<li><strong>results</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of all results of this query</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asynclightquerystarted"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncLightQueryStarted">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncLightQueryStarted</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncLightQueryStarted" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is sent when an asynchronous query for lights is started.</p>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asyncmaterialqueryfinished-success-results"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncMaterialQueryFinished">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncMaterialQueryFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">success</span></span></em>, <em><span class="n"><span class="pre">results</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncMaterialQueryFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is sent when an asynchronous query for materials is finished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>success</strong> (<em>bool</em>) – True if the expression could be evaluated.</li>
+<li><strong>results</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of all results of this query. Items can be of type <a class="reference internal" href="class_vrdMaterialNode.html#vredvrdmaterialnode"><span class="std std-ref">vrdMaterialNode</span></a> for materials or <a class="reference internal" href="class_vrdNode.html#vredvrdnode"><span class="std std-ref">vrdNode</span></a> for groups.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asyncmaterialquerystarted"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncMaterialQueryStarted">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncMaterialQueryStarted</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncMaterialQueryStarted" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is sent when an asynchronous query for materials is started.</p>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asyncmetadataqueryfinished-success-results"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncMetadataQueryFinished">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncMetadataQueryFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">success</span></span></em>, <em><span class="n"><span class="pre">results</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncMetadataQueryFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is sent when an asynchronous query for metadata is finished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>success</strong> (<em>bool</em>) – True if the expression could be evaluated.</li>
+<li><strong>results</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMetadataSet.html#vrdMetadataSet" title="vrdMetadataSet"><em>vrdMetadataSet</em></a><em>]</em>) – A list of all results of this query</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asyncmetadataquerystarted"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncMetadataQueryStarted">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncMetadataQueryStarted</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncMetadataQueryStarted" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is sent when an asynchronous query for metadata is started.</p>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asyncsceneplatequeryfinished-success-results"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncSceneplateQueryFinished">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncSceneplateQueryFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">success</span></span></em>, <em><span class="n"><span class="pre">results</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncSceneplateQueryFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is sent when an asynchronous query for scene plates is finished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>success</strong> (<em>bool</em>) – True if the expression could be evaluated.</li>
+<li><strong>results</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of all results of this query</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asyncsceneplatequerystarted"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncSceneplateQueryStarted">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncSceneplateQueryStarted</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncSceneplateQueryStarted" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is sent when an asynchronous query for scene plates is started.</p>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asyncscenequeryfinished-success-results"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncSceneQueryFinished">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncSceneQueryFinished</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">success</span></span></em>, <em><span class="n"><span class="pre">results</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncSceneQueryFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is sent when an asynchronous query for Scenegraph nodes is finished.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>success</strong> (<em>bool</em>) – True if the expression could be evaluated.</li>
+<li><strong>results</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of all results of this query</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrqueryservice-asyncscenequerystarted"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrQueryService.asyncSceneQueryStarted">
+<code class="sig-prename descclassname"><span class="pre">vrQueryService.</span></code><code class="sig-name descname"><span class="pre">asyncSceneQueryStarted</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrQueryService.asyncSceneQueryStarted" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is sent when an asynchronous query for Scenegraph nodes is started.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrQueryService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals">Signals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrProgressService.html"
+                        title="previous chapter">vrProgressService</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrReferenceService.html"
+                        title="next chapter">vrReferenceService</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrReferenceService.html" title="vrReferenceService"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrProgressService.html" title="vrProgressService"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

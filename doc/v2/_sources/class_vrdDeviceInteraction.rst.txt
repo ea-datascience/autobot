@@ -1,0 +1,184 @@
+--------------------
+vrdDeviceInteraction
+--------------------
+
+
+.. _vredvrdDeviceInteraction:
+.. py:class:: vrdDeviceInteraction
+
+(Inherits :py:class:`vrdObject`)
+
+Represents an interaction that can contain several     :any:`vrdDeviceAction <vredvrdDeviceAction>` which are triggered by controller events.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`addSupportedInteractionGroup(name) <vredvrdDeviceInteraction.addSupportedInteractionGroup(name)>`
+    * :ref:`createControllerAction(mapping) → vrdDeviceAction<vredvrdDeviceInteraction.createControllerAction(mapping)>`
+    * :ref:`getControllerAction(name) → vrdDeviceAction<vredvrdDeviceInteraction.getControllerAction(name)>`
+    * :ref:`getControllerActions() → List[vrdDeviceAction]<vredvrdDeviceInteraction.getControllerActions()>`
+    * :ref:`getName() → string<vredvrdDeviceInteraction.getName()>`
+    * :ref:`getSupportedInteractionGroups() → List[string]<vredvrdDeviceInteraction.getSupportedInteractionGroups()>`
+    * :ref:`removeControllerAction(action) <vredvrdDeviceInteraction.removeControllerAction(action)>`
+    * :ref:`removeSupportedInteractionGroup(name) <vredvrdDeviceInteraction.removeSupportedInteractionGroup(name)>`
+    * :ref:`setControllerActionMapping(actionName, mapping) <vredvrdDeviceInteraction.setControllerActionMapping(actionName, mapping)>`
+    * :ref:`setSupportedInteractionGroups(names) <vredvrdDeviceInteraction.setSupportedInteractionGroups(names)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdDeviceInteraction.addSupportedInteractionGroup(name):
+.. py:method:: vrdDeviceInteraction.addSupportedInteractionGroup(name)
+
+    Adds an interaction group to the supported interaction groups.
+
+
+
+    :param name: Name of the group tthat is added to be supported. If a group does not exist yet, it will be created.
+    :type name: string
+
+    
+    
+
+.. _vredvrdDeviceInteraction.createControllerAction(mapping):
+.. py:method:: vrdDeviceInteraction.createControllerAction(mapping)
+
+    Creates an action for this interaction.
+
+    The mapping string is build up like this: side-button-event e.g. left-trigger-pressed.
+
+    | Possible values for the parts are:
+    | side: left, right, any
+    | button (Oculus): xa, yb, thumb, trigger, grip
+    | button (OpenVR): touchpad, trigger, customtrigger, grip, menu
+    | event: pressed, released, touched, untouched
+    | Remarks: On the OpenVR controller only the "touchpad" and the "customtrigger" support "touched" and "untouched" events.
+    | The "customtrigger" and the "trigger" are the same physical button, but the custom version is extended in VRED to support the touched and untouched event.
+    | The "thumb" button refers to the thumbstick of the oculus touch controller and its position can be queried from its buttonstate (see vrdVRDevice.getButtonState(button)).
+    | In OpenVR mode, button can also be every name of a previously defined virtual touchpad button (see vrdDevice.addVirtualButton(button, physicalButton)).
+
+    :param mapping: Describes which controller input executes the action.
+    :type mapping: string
+
+    :return: Action associated with this interaction.
+    :rtype: vrdDeviceAction
+
+.. _vredvrdDeviceInteraction.getControllerAction(name):
+.. py:method:: vrdDeviceInteraction.getControllerAction(name)
+
+    Gets an already existing action related to the interaction.
+
+
+
+    :param name: The name of the action
+    :type name: string
+
+    :return: The action object or an invalid action object if there is no action with that name.
+    :rtype: vrdDeviceAction
+
+.. _vredvrdDeviceInteraction.getControllerActions():
+.. py:method:: vrdDeviceInteraction.getControllerActions()
+
+    Gets a list of all action objects related to the interaction.
+
+
+
+
+    :return: List of all actions related to this interaction.
+    :rtype: List[vrdDeviceAction]
+
+.. _vredvrdDeviceInteraction.getName():
+.. py:method:: vrdDeviceInteraction.getName()
+
+    
+
+
+
+
+    :return: The name of the interaction
+    :rtype: string
+
+.. _vredvrdDeviceInteraction.getSupportedInteractionGroups():
+.. py:method:: vrdDeviceInteraction.getSupportedInteractionGroups()
+
+    
+
+
+
+
+    :return: A list of modes to which this interaction is limited
+    :rtype: List[string]
+
+.. _vredvrdDeviceInteraction.removeControllerAction(action):
+.. py:method:: vrdDeviceInteraction.removeControllerAction(action)
+
+    Removes an action from the interaction.
+
+
+
+    :param action: The action that is removed.
+    :type action: vrdDeviceAction
+
+    
+    
+
+.. _vredvrdDeviceInteraction.removeSupportedInteractionGroup(name):
+.. py:method:: vrdDeviceInteraction.removeSupportedInteractionGroup(name)
+
+    Removes an interaction group from being supported by the interaction.
+
+
+
+    :param name: The name of the interaction group.
+    :type name: string
+
+    
+    
+
+.. _vredvrdDeviceInteraction.setControllerActionMapping(actionName, mapping):
+.. py:method:: vrdDeviceInteraction.setControllerActionMapping(actionName, mapping)
+
+    Sets the mapping of an already existing action related to this interaction.
+
+
+
+    :param actionName: The name of the action. If the action cannot be found nothing will be mapped.
+    :type actionName: string
+
+    :param mapping: The mapping that should be set for the action. If the mapping string is incorrect, nothing will be mapped.
+    :type mapping: string
+
+    
+    
+
+.. _vredvrdDeviceInteraction.setSupportedInteractionGroups(names):
+.. py:method:: vrdDeviceInteraction.setSupportedInteractionGroups(names)
+
+    Sets the interaction groups the interaction will be part of. Setting no groups will activate this interaction for all interaction groups.
+
+
+
+    :param names: Names of the supported interaction groups. If a group does not exist yet, it will be created.
+    :type names: List[string]
+
+    
+    
+
+
+
+
+
+
+
+
+
+

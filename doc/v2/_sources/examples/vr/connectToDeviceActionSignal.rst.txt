@@ -1,0 +1,11 @@
+.. _connect-device-action-signal:
+
+Connect to signals of device actions
+====================================
+
+This example shows how to connect a function to a signal that is triggered, when a device action is triggered.
+
+.. literalinclude:: ../../python_examples/vr/connectToDeviceActionSignal.py
+   :language: python
+   :linenos:
+   :caption: vr/connectToDeviceActionSignal.py

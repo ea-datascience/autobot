@@ -1,0 +1,127 @@
+-----------------
+vrdDeltaLightNode
+-----------------
+
+
+.. _vredvrdDeltaLightNode:
+.. py:class:: vrdDeltaLightNode
+
+(Inherits :py:class:`vrdBaseLightNode`)
+
+This is the base class for all delta light types.
+
+Derived light types are     :any:`vrdPointLightNode <vredvrdPointLightNode>`, :any:`vrdSpotLightNode <vredvrdSpotLightNode>` and :any:`vrdDirectionalLightNode <vredvrdDirectionalLightNode>`.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getIlluminateScene() → bool<vredvrdDeltaLightNode.getIlluminateScene()>`
+    * :ref:`getLocalLight() → bool<vredvrdDeltaLightNode.getLocalLight()>`
+    * :ref:`getShadowMap() → vrdShadowMap<vredvrdDeltaLightNode.getShadowMap()>`
+    * :ref:`getVisualizationScale() → float<vredvrdDeltaLightNode.getVisualizationScale()>`
+    * :ref:`setIlluminateScene(illuminateScene) <vredvrdDeltaLightNode.setIlluminateScene(illuminateScene)>`
+    * :ref:`setLocalLight(isLocalLight) <vredvrdDeltaLightNode.setLocalLight(isLocalLight)>`
+    * :ref:`setVisualizationScale(scale) <vredvrdDeltaLightNode.setVisualizationScale(scale)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdDeltaLightNode.getIlluminateScene():
+.. py:method:: vrdDeltaLightNode.getIlluminateScene()
+
+    Returns whether the light illuminates the scene.
+
+    If set to false the light will add nothing to the scene. Lens flares are still active.
+
+
+    :return: True if the light illuminates the scene, False otherwise.
+    :rtype: bool
+
+.. _vredvrdDeltaLightNode.getLocalLight():
+.. py:method:: vrdDeltaLightNode.getLocalLight()
+
+    Returns if this light is a local light.
+
+    If this is enabled and the light is part of a light link set, only the nodes in the light link set will be illuminated.
+
+
+    :return: True if this light is a local light, False otherwise.
+    :rtype: bool
+
+.. _vredvrdDeltaLightNode.getShadowMap():
+.. py:method:: vrdDeltaLightNode.getShadowMap()
+
+    Returns the shadow map of the light source.
+
+
+
+
+    :return: The shadow map.
+    :rtype: vrdShadowMap
+
+.. _vredvrdDeltaLightNode.getVisualizationScale():
+.. py:method:: vrdDeltaLightNode.getVisualizationScale()
+
+    Returns the scale of the light visualization.
+
+
+
+
+    :return: The visualization scale.
+    :rtype: float
+
+.. _vredvrdDeltaLightNode.setIlluminateScene(illuminateScene):
+.. py:method:: vrdDeltaLightNode.setIlluminateScene(illuminateScene)
+
+    Sets whether the light source illuminates the scene.
+
+    If set to false the light will add nothing to the scene. Lens flares are still active.
+
+    :param illuminateScene: True to let the light illuminate the scene, False otherwise.
+    :type illuminateScene: bool
+
+    
+    
+
+.. _vredvrdDeltaLightNode.setLocalLight(isLocalLight):
+.. py:method:: vrdDeltaLightNode.setLocalLight(isLocalLight)
+
+    Sets the local light flag.
+
+    If this is enabled and the light is part of a light link set, only the nodes in the light link set will be illuminated.
+
+    :param isLocalLight: True to make this light a local light, False otherwise.
+    :type isLocalLight: bool
+
+    
+    
+
+.. _vredvrdDeltaLightNode.setVisualizationScale(scale):
+.. py:method:: vrdDeltaLightNode.setVisualizationScale(scale)
+
+    Sets the scale of the light visualization.
+
+
+
+    :param scale: The visualization scale
+    :type scale: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

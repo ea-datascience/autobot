@@ -1,0 +1,7 @@
+vrSpeech demo
+=============
+
+.. literalinclude:: ../python_examples/speech.py
+   :language: python
+   :linenos:
+   :caption: speech.py

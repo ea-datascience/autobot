@@ -1,0 +1,7 @@
+Create multiple snapshots
+=========================
+
+.. literalinclude:: ../python_examples/snapshots.py
+   :language: python
+   :linenos:
+   :caption: snapshots.py

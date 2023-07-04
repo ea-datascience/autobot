@@ -1,0 +1,9 @@
+Reacting on joining and leaving users
+=====================================
+
+This example creates a sphere above the head of each user who joins a collaboration session. A greeting message is displayed on the console for each new user.
+
+.. literalinclude:: ../../python_examples/vr/handleVRCollabUsers.py
+   :language: python
+   :linenos:
+   :caption: vr/handleVRCollabUsers.py

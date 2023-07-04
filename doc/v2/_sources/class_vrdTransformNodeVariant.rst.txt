@@ -1,0 +1,413 @@
+-----------------------
+vrdTransformNodeVariant
+-----------------------
+
+
+.. _vredvrdTransformNodeVariant:
+.. py:class:: vrdTransformNodeVariant
+
+(Inherits :py:class:`vrdSceneObject`)
+
+Transformation variant node.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`apply() <vredvrdTransformNodeVariant.apply()>`
+    * :ref:`getApplyMask() → vrTransformTypes.VariantValueBitMask<vredvrdTransformNodeVariant.getApplyMask()>`
+    * :ref:`getEulerRotationOrder() → vrTransformTypes.EulerRotationOrder<vredvrdTransformNodeVariant.getEulerRotationOrder()>`
+    * :ref:`getName() → string<vredvrdTransformNodeVariant.getName()>`
+    * :ref:`getRotatePivot() → QVector3D<vredvrdTransformNodeVariant.getRotatePivot()>`
+    * :ref:`getRotatePivotTranslation() → QVector3D<vredvrdTransformNodeVariant.getRotatePivotTranslation()>`
+    * :ref:`getRotationAsEuler() → QVector3D<vredvrdTransformNodeVariant.getRotationAsEuler()>`
+    * :ref:`getRotationOrientationAsEuler() → QVector3D<vredvrdTransformNodeVariant.getRotationOrientationAsEuler()>`
+    * :ref:`getScale() → QVector3D<vredvrdTransformNodeVariant.getScale()>`
+    * :ref:`getScalePivot() → QVector3D<vredvrdTransformNodeVariant.getScalePivot()>`
+    * :ref:`getScalePivotTranslation() → QVector3D<vredvrdTransformNodeVariant.getScalePivotTranslation()>`
+    * :ref:`getTranslation() → QVector3D<vredvrdTransformNodeVariant.getTranslation()>`
+    * :ref:`getWorldRotatePivot() → QVector3D<vredvrdTransformNodeVariant.getWorldRotatePivot()>`
+    * :ref:`getWorldScalePivot() → QVector3D<vredvrdTransformNodeVariant.getWorldScalePivot()>`
+    * :ref:`getWorldTranslation() → QVector3D<vredvrdTransformNodeVariant.getWorldTranslation()>`
+    * :ref:`setApplyMask(mask) <vredvrdTransformNodeVariant.setApplyMask(mask)>`
+    * :ref:`setEulerRotationOrder(rotationOrder) <vredvrdTransformNodeVariant.setEulerRotationOrder(rotationOrder)>`
+    * :ref:`setName(name) <vredvrdTransformNodeVariant.setName(name)>`
+    * :ref:`setRotatePivot(rotatePivot) <vredvrdTransformNodeVariant.setRotatePivot(rotatePivot)>`
+    * :ref:`setRotatePivotTranslation(rotatePivotTranslation) <vredvrdTransformNodeVariant.setRotatePivotTranslation(rotatePivotTranslation)>`
+    * :ref:`setRotationAsEuler(rotation) <vredvrdTransformNodeVariant.setRotationAsEuler(rotation)>`
+    * :ref:`setRotationOrientationAsEuler(rotationOrientation) <vredvrdTransformNodeVariant.setRotationOrientationAsEuler(rotationOrientation)>`
+    * :ref:`setScale(scale) <vredvrdTransformNodeVariant.setScale(scale)>`
+    * :ref:`setScalePivot(scalePivot) <vredvrdTransformNodeVariant.setScalePivot(scalePivot)>`
+    * :ref:`setScalePivotTranslation(scalePivotTranslation) <vredvrdTransformNodeVariant.setScalePivotTranslation(scalePivotTranslation)>`
+    * :ref:`setTranslation(translation) <vredvrdTransformNodeVariant.setTranslation(translation)>`
+    * :ref:`setWorldRotatePivot(rotatePivot) <vredvrdTransformNodeVariant.setWorldRotatePivot(rotatePivot)>`
+    * :ref:`setWorldScalePivot(scalePivot) <vredvrdTransformNodeVariant.setWorldScalePivot(scalePivot)>`
+    * :ref:`setWorldTranslation(translation) <vredvrdTransformNodeVariant.setWorldTranslation(translation)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdTransformNodeVariant.apply():
+.. py:method:: vrdTransformNodeVariant.apply()
+
+    Applies this variant to the transformation.
+
+
+
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.getApplyMask():
+.. py:method:: vrdTransformNodeVariant.getApplyMask()
+
+    
+
+
+
+
+    :return: The bit mask for fields to be applied on select
+    :rtype: :ref:`vrTransformTypes.VariantValueBitMask <vredvrTransformTypes.VariantValueBitMask>`
+
+.. _vredvrdTransformNodeVariant.getEulerRotationOrder():
+.. py:method:: vrdTransformNodeVariant.getEulerRotationOrder()
+
+    
+
+
+
+
+    :return: The euler angle rotation order
+    :rtype: :ref:`vrTransformTypes.EulerRotationOrder <vredvrTransformTypes.EulerRotationOrder>`
+
+.. _vredvrdTransformNodeVariant.getName():
+.. py:method:: vrdTransformNodeVariant.getName()
+
+    
+
+
+
+
+    :return: The name of this transform variant
+    :rtype: string
+
+.. _vredvrdTransformNodeVariant.getRotatePivot():
+.. py:method:: vrdTransformNodeVariant.getRotatePivot()
+
+    
+
+
+
+
+    :return: The rotation pivot point
+    :rtype: QVector3D
+
+.. _vredvrdTransformNodeVariant.getRotatePivotTranslation():
+.. py:method:: vrdTransformNodeVariant.getRotatePivotTranslation()
+
+    
+
+
+
+
+    :return: The rotation pivot translation
+    :rtype: QVector3D
+
+.. _vredvrdTransformNodeVariant.getRotationAsEuler():
+.. py:method:: vrdTransformNodeVariant.getRotationAsEuler()
+
+    
+
+
+
+
+    :return: The euler rotation angles
+    :rtype: QVector3D
+
+.. _vredvrdTransformNodeVariant.getRotationOrientationAsEuler():
+.. py:method:: vrdTransformNodeVariant.getRotationOrientationAsEuler()
+
+    
+
+
+
+
+    :return: The rotation orientation angles
+    :rtype: QVector3D
+
+.. _vredvrdTransformNodeVariant.getScale():
+.. py:method:: vrdTransformNodeVariant.getScale()
+
+    
+
+
+
+
+    :return: The scale vector
+    :rtype: QVector3D
+
+.. _vredvrdTransformNodeVariant.getScalePivot():
+.. py:method:: vrdTransformNodeVariant.getScalePivot()
+
+    
+
+
+
+
+    :return: The scale pivot point
+    :rtype: QVector3D
+
+.. _vredvrdTransformNodeVariant.getScalePivotTranslation():
+.. py:method:: vrdTransformNodeVariant.getScalePivotTranslation()
+
+    
+
+
+
+
+    :return: The scale pivot translation
+    :rtype: QVector3D
+
+.. _vredvrdTransformNodeVariant.getTranslation():
+.. py:method:: vrdTransformNodeVariant.getTranslation()
+
+    
+
+
+
+
+    :return: The local translation vector
+    :rtype: QVector3D
+
+.. _vredvrdTransformNodeVariant.getWorldRotatePivot():
+.. py:method:: vrdTransformNodeVariant.getWorldRotatePivot()
+
+    
+
+
+
+
+    :return: The rotation pivot in world space
+    :rtype: QVector3D
+
+.. _vredvrdTransformNodeVariant.getWorldScalePivot():
+.. py:method:: vrdTransformNodeVariant.getWorldScalePivot()
+
+    
+
+
+
+
+    :return: The cale pivot point in world space
+    :rtype: QVector3D
+
+.. _vredvrdTransformNodeVariant.getWorldTranslation():
+.. py:method:: vrdTransformNodeVariant.getWorldTranslation()
+
+    
+
+
+
+
+    :return: The translation vector in world space
+    :rtype: QVector3D
+
+.. _vredvrdTransformNodeVariant.setApplyMask(mask):
+.. py:method:: vrdTransformNodeVariant.setApplyMask(mask)
+
+    Sets the bit mask for fields to be applied on select.
+
+
+
+    :param mask: The bit mask
+    :type mask: :ref:`vrTransformTypes.VariantValueBitMask <vredvrTransformTypes.VariantValueBitMask>`
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setEulerRotationOrder(rotationOrder):
+.. py:method:: vrdTransformNodeVariant.setEulerRotationOrder(rotationOrder)
+
+    Sets the euler rotation order.
+
+
+
+    :param rotationOrder: The rotation order
+    :type rotationOrder: :ref:`vrTransformTypes.EulerRotationOrder <vredvrTransformTypes.EulerRotationOrder>`
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setName(name):
+.. py:method:: vrdTransformNodeVariant.setName(name)
+
+    Sets the variant name.
+
+
+
+    :param name: The new name
+    :type name: string
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setRotatePivot(rotatePivot):
+.. py:method:: vrdTransformNodeVariant.setRotatePivot(rotatePivot)
+
+    Sets the rotate pivot.
+
+
+
+    :param rotatePivot: The rotate pivot
+    :type rotatePivot: QVector3D
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setRotatePivotTranslation(rotatePivotTranslation):
+.. py:method:: vrdTransformNodeVariant.setRotatePivotTranslation(rotatePivotTranslation)
+
+    Sets the rotate pivot translation.
+
+
+
+    :param rotatePivotTranslation: The rotate pivot translation
+    :type rotatePivotTranslation: QVector3D
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setRotationAsEuler(rotation):
+.. py:method:: vrdTransformNodeVariant.setRotationAsEuler(rotation)
+
+    Sets the rotation.
+
+
+
+    :param rotation: Euler rotation angles
+    :type rotation: QVector3D
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setRotationOrientationAsEuler(rotationOrientation):
+.. py:method:: vrdTransformNodeVariant.setRotationOrientationAsEuler(rotationOrientation)
+
+    Sets the rotation orientation.
+
+
+
+    :param rotationOrientation: Euler rotation orientation angles
+    :type rotationOrientation: QVector3D
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setScale(scale):
+.. py:method:: vrdTransformNodeVariant.setScale(scale)
+
+    Sets the scaling.
+
+
+
+    :param scale: Scale vector
+    :type scale: QVector3D
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setScalePivot(scalePivot):
+.. py:method:: vrdTransformNodeVariant.setScalePivot(scalePivot)
+
+    Sets the scale pivot.
+
+
+
+    :param scalePivot: The scale pivot
+    :type scalePivot: QVector3D
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setScalePivotTranslation(scalePivotTranslation):
+.. py:method:: vrdTransformNodeVariant.setScalePivotTranslation(scalePivotTranslation)
+
+    Sets the scale pivot translation.
+
+
+
+    :param scalePivotTranslation: The scale pivot translation
+    :type scalePivotTranslation: QVector3D
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setTranslation(translation):
+.. py:method:: vrdTransformNodeVariant.setTranslation(translation)
+
+    Sets the translation in local space.
+
+
+
+    :param translation: The translation vector
+    :type translation: QVector3D
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setWorldRotatePivot(rotatePivot):
+.. py:method:: vrdTransformNodeVariant.setWorldRotatePivot(rotatePivot)
+
+    Sets the rotate pivot in world space.
+
+
+
+    :param rotatePivot: The rotate pivot in world space
+    :type rotatePivot: QVector3D
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setWorldScalePivot(scalePivot):
+.. py:method:: vrdTransformNodeVariant.setWorldScalePivot(scalePivot)
+
+    Sets the scale pivot in world space.
+
+
+
+    :param scalePivot: The scale pivot in world space
+    :type scalePivot: QVector3D
+
+    
+    
+
+.. _vredvrdTransformNodeVariant.setWorldTranslation(translation):
+.. py:method:: vrdTransformNodeVariant.setWorldTranslation(translation)
+
+    Sets the translation in world space.
+
+
+
+    :param translation: Translation in world space
+    :type translation: QVector3D
+
+    
+    
+
+
+
+
+
+
+
+
+
+

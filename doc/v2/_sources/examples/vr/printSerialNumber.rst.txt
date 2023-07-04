@@ -1,0 +1,9 @@
+Print the serial number of a device
+===================================
+
+Shows how to print the serial number of a controller, when it activates the pointer interaction.
+
+.. literalinclude:: ../../python_examples/vr/printSerialNumber.py
+   :language: python
+   :linenos:
+   :caption: vr/printSerialNumber.py

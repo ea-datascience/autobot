@@ -1,0 +1,7 @@
+Gather all users in a collaboration session
+==============================================
+
+.. literalinclude:: ../../../python_script_plugins/VRMenu/VRGatherUsersModule.py
+   :language: python
+   :linenos:
+   :caption: VRGatherUsersModule.py

@@ -1,0 +1,7 @@
+Render every frame
+==================
+
+.. literalinclude:: ../python_examples/render.py
+   :language: python
+   :linenos:
+   :caption: render.py

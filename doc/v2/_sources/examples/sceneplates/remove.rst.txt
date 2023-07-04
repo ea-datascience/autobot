@@ -1,0 +1,7 @@
+Remove
+======
+
+.. literalinclude:: ../../python_examples/sceneplates/remove.py
+   :language: python
+   :linenos:
+   :caption: sceneplates/remove.py

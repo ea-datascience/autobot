@@ -1,0 +1,12 @@
+Import own Python extensions
+============================
+
+.. literalinclude:: ../python_examples/import.py
+   :language: python
+   :linenos:
+   :caption: import.py
+
+.. literalinclude:: ../python_examples/lib/myextension.py
+   :language: python
+   :linenos:
+   :caption: myextension.py

@@ -1,0 +1,2381 @@
+-----------------
+vrdCameraBaseNode
+-----------------
+
+
+.. _vredvrdCameraBaseNode:
+.. py:class:: vrdCameraBaseNode
+
+(Inherits :py:class:`vrdTransformNode`)
+
+This class serves as base class for     :any:`vrdCameraNode <vredvrdCameraNode>` and :any:`vrdViewpointNode <vredvrdViewpointNode>`.
+
+It holds all properties that are shared between cameras and viewpoints. So even if the documentation here mostly talks about cameras, it applies to viewpoints, too. Technically a viewpoint is a camera and activating a viewpoint initiates a copy of its properties to the active camera.
+
+Instances of this class can not be directly created by the user nor is there any factory that hands out vrdCameraBaseNodes.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`adjustAtPosition(root) <vredvrdCameraBaseNode.adjustAtPosition(root)>`
+    * :ref:`calculateClippingPlanes() <vredvrdCameraBaseNode.calculateClippingPlanes()>`
+    * :ref:`getApplyColorCorrectionToBackground() → bool<vredvrdCameraBaseNode.getApplyColorCorrectionToBackground()>`
+    * :ref:`getApplyColorCorrectionToForeground() → bool<vredvrdCameraBaseNode.getApplyColorCorrectionToForeground()>`
+    * :ref:`getAutofocus() → bool<vredvrdCameraBaseNode.getAutofocus()>`
+    * :ref:`getAutofocusTransitionTime() → integer<vredvrdCameraBaseNode.getAutofocusTransitionTime()>`
+    * :ref:`getBlendAmount() → float<vredvrdCameraBaseNode.getBlendAmount()>`
+    * :ref:`getBlendMapLeftEye() → vrdImage<vredvrdCameraBaseNode.getBlendMapLeftEye()>`
+    * :ref:`getBlendMapRightEye() → vrdImage<vredvrdCameraBaseNode.getBlendMapRightEye()>`
+    * :ref:`getBlendMode() → vrCameraTypes.BlendMode<vredvrdCameraBaseNode.getBlendMode()>`
+    * :ref:`getColorCorrectionBrightness() → float<vredvrdCameraBaseNode.getColorCorrectionBrightness()>`
+    * :ref:`getColorCorrectionContrast() → float<vredvrdCameraBaseNode.getColorCorrectionContrast()>`
+    * :ref:`getColorCorrectionHueOffset() → float<vredvrdCameraBaseNode.getColorCorrectionHueOffset()>`
+    * :ref:`getColorCorrectionSaturation() → float<vredvrdCameraBaseNode.getColorCorrectionSaturation()>`
+    * :ref:`getCustomFrustumEnabled() → bool<vredvrdCameraBaseNode.getCustomFrustumEnabled()>`
+    * :ref:`getCustomProjectionMatrix() → QMatrix4x4<vredvrdCameraBaseNode.getCustomProjectionMatrix()>`
+    * :ref:`getDepthOfField() → bool<vredvrdCameraBaseNode.getDepthOfField()>`
+    * :ref:`getDepthOfFieldMode() → vrCameraTypes.DepthOfFieldMode<vredvrdCameraBaseNode.getDepthOfFieldMode()>`
+    * :ref:`getDistanceFog() → bool<vredvrdCameraBaseNode.getDistanceFog()>`
+    * :ref:`getDistanceFogColor() → QColor<vredvrdCameraBaseNode.getDistanceFogColor()>`
+    * :ref:`getDistanceFogDensity() → float<vredvrdCameraBaseNode.getDistanceFogDensity()>`
+    * :ref:`getDistanceFogEnableNoiseSizeUniform() → bool<vredvrdCameraBaseNode.getDistanceFogEnableNoiseSizeUniform()>`
+    * :ref:`getDistanceFogFalloff() → vrCameraTypes.FogFalloffMode<vredvrdCameraBaseNode.getDistanceFogFalloff()>`
+    * :ref:`getDistanceFogNoise() → float<vredvrdCameraBaseNode.getDistanceFogNoise()>`
+    * :ref:`getDistanceFogNoiseOffset() → QVector3D<vredvrdCameraBaseNode.getDistanceFogNoiseOffset()>`
+    * :ref:`getDistanceFogNoiseSize() → QVector3D<vredvrdCameraBaseNode.getDistanceFogNoiseSize()>`
+    * :ref:`getDistanceFogRange() → float<vredvrdCameraBaseNode.getDistanceFogRange()>`
+    * :ref:`getDistortion() → bool<vredvrdCameraBaseNode.getDistortion()>`
+    * :ref:`getDistortionMapLeftEye() → vrdImage<vredvrdCameraBaseNode.getDistortionMapLeftEye()>`
+    * :ref:`getDistortionMapRightEye() → vrdImage<vredvrdCameraBaseNode.getDistortionMapRightEye()>`
+    * :ref:`getFarClippingDistance() → float<vredvrdCameraBaseNode.getFarClippingDistance()>`
+    * :ref:`getFocalLength() → float<vredvrdCameraBaseNode.getFocalLength()>`
+    * :ref:`getFocusDistance() → float<vredvrdCameraBaseNode.getFocusDistance()>`
+    * :ref:`getFov() → float<vredvrdCameraBaseNode.getFov()>`
+    * :ref:`getFovMode() → vrCameraTypes.FovMode<vredvrdCameraBaseNode.getFovMode()>`
+    * :ref:`getFromAtUp() → vrCameraFromAtUp<vredvrdCameraBaseNode.getFromAtUp()>`
+    * :ref:`getFromAtUpWorld() → vrCameraFromAtUp<vredvrdCameraBaseNode.getFromAtUpWorld()>`
+    * :ref:`getFrustum() → QVector4D<vredvrdCameraBaseNode.getFrustum()>`
+    * :ref:`getFrustumBottom() → float<vredvrdCameraBaseNode.getFrustumBottom()>`
+    * :ref:`getFrustumLeft() → float<vredvrdCameraBaseNode.getFrustumLeft()>`
+    * :ref:`getFrustumRight() → float<vredvrdCameraBaseNode.getFrustumRight()>`
+    * :ref:`getFrustumTop() → float<vredvrdCameraBaseNode.getFrustumTop()>`
+    * :ref:`getFStop() → float<vredvrdCameraBaseNode.getFStop()>`
+    * :ref:`getGlare() → bool<vredvrdCameraBaseNode.getGlare()>`
+    * :ref:`getGlareIntensity() → float<vredvrdCameraBaseNode.getGlareIntensity()>`
+    * :ref:`getGlareRotation() → float<vredvrdCameraBaseNode.getGlareRotation()>`
+    * :ref:`getGlareSize() → float<vredvrdCameraBaseNode.getGlareSize()>`
+    * :ref:`getGlareStreaks() → integer<vredvrdCameraBaseNode.getGlareStreaks()>`
+    * :ref:`getGlareThreshold() → float<vredvrdCameraBaseNode.getGlareThreshold()>`
+    * :ref:`getGlow() → bool<vredvrdCameraBaseNode.getGlow()>`
+    * :ref:`getGlowFalloff() → float<vredvrdCameraBaseNode.getGlowFalloff()>`
+    * :ref:`getGlowIntensity() → float<vredvrdCameraBaseNode.getGlowIntensity()>`
+    * :ref:`getGlowSize() → float<vredvrdCameraBaseNode.getGlowSize()>`
+    * :ref:`getGlowThreshold() → float<vredvrdCameraBaseNode.getGlowThreshold()>`
+    * :ref:`getHeightFog() → bool<vredvrdCameraBaseNode.getHeightFog()>`
+    * :ref:`getHeightFogBlend() → float<vredvrdCameraBaseNode.getHeightFogBlend()>`
+    * :ref:`getHeightFogColor() → QColor<vredvrdCameraBaseNode.getHeightFogColor()>`
+    * :ref:`getHeightFogDensity() → float<vredvrdCameraBaseNode.getHeightFogDensity()>`
+    * :ref:`getHeightFogEnableNoiseSizeUniform() → bool<vredvrdCameraBaseNode.getHeightFogEnableNoiseSizeUniform()>`
+    * :ref:`getHeightFogFalloff() → vrCameraTypes.FogFalloffMode<vredvrdCameraBaseNode.getHeightFogFalloff()>`
+    * :ref:`getHeightFogNoise() → float<vredvrdCameraBaseNode.getHeightFogNoise()>`
+    * :ref:`getHeightFogNoiseOffset() → QVector3D<vredvrdCameraBaseNode.getHeightFogNoiseOffset()>`
+    * :ref:`getHeightFogNoiseSize() → QVector3D<vredvrdCameraBaseNode.getHeightFogNoiseSize()>`
+    * :ref:`getHeightFogRange() → QVector2D<vredvrdCameraBaseNode.getHeightFogRange()>`
+    * :ref:`getInteractiveDofQuality() → vrCameraTypes.InteractiveDofQuality<vredvrdCameraBaseNode.getInteractiveDofQuality()>`
+    * :ref:`getLensFlare() → bool<vredvrdCameraBaseNode.getLensFlare()>`
+    * :ref:`getMotionBlur() → bool<vredvrdCameraBaseNode.getMotionBlur()>`
+    * :ref:`getNearClippingDistance() → float<vredvrdCameraBaseNode.getNearClippingDistance()>`
+    * :ref:`getOrthographicSize() → float<vredvrdCameraBaseNode.getOrthographicSize()>`
+    * :ref:`getPerspectiveMatch() → vrdPerspectiveMatch<vredvrdCameraBaseNode.getPerspectiveMatch()>`
+    * :ref:`getPrincipalPointOffset() → QVector2D<vredvrdCameraBaseNode.getPrincipalPointOffset()>`
+    * :ref:`getProjectionMode() → vrCameraTypes.CameraProjectionMode<vredvrdCameraBaseNode.getProjectionMode()>`
+    * :ref:`getRoll() → float<vredvrdCameraBaseNode.getRoll()>`
+    * :ref:`getSensorSize() → QVector2D<vredvrdCameraBaseNode.getSensorSize()>`
+    * :ref:`getShutterSpeed() → float<vredvrdCameraBaseNode.getShutterSpeed()>`
+    * :ref:`getSkew() → float<vredvrdCameraBaseNode.getSkew()>`
+    * :ref:`getStereoEyeSeparation() → float<vredvrdCameraBaseNode.getStereoEyeSeparation()>`
+    * :ref:`getStereoLayout() → vrCameraTypes.CameraStereoLayout<vredvrdCameraBaseNode.getStereoLayout()>`
+    * :ref:`getStereoPolarMergeAngle() → float<vredvrdCameraBaseNode.getStereoPolarMergeAngle()>`
+    * :ref:`getTonemapper() → vrdTonemapper<vredvrdCameraBaseNode.getTonemapper()>`
+    * :ref:`getUseHightAsVRGround() → bool<vredvrdCameraBaseNode.getUseHightAsVRGround()>`
+    * :ref:`getViewpointTransition() → bool<vredvrdCameraBaseNode.getViewpointTransition()>`
+    * :ref:`getViewpointTransitionDuration() → float<vredvrdCameraBaseNode.getViewpointTransitionDuration()>`
+    * :ref:`getVignetteFeather() → float<vredvrdCameraBaseNode.getVignetteFeather()>`
+    * :ref:`getVignetteRadius() → float<vredvrdCameraBaseNode.getVignetteRadius()>`
+    * :ref:`getVignetteRoundness() → float<vredvrdCameraBaseNode.getVignetteRoundness()>`
+    * :ref:`getWireframeRendering() → bool<vredvrdCameraBaseNode.getWireframeRendering()>`
+    * :ref:`isEditable() → bool<vredvrdCameraBaseNode.isEditable()>`
+    * :ref:`isEqual(camera) → bool<vredvrdCameraBaseNode.isEqual(camera)>`
+    * :ref:`isOrthographic() → bool<vredvrdCameraBaseNode.isOrthographic()>`
+    * :ref:`loadBlendMap(fileName, eye) → bool<vredvrdCameraBaseNode.loadBlendMap(fileName, eye)>`
+    * :ref:`loadDistortionMap(fileName, eye) → bool<vredvrdCameraBaseNode.loadDistortionMap(fileName, eye)>`
+    * :ref:`mirrorView(axis) <vredvrdCameraBaseNode.mirrorView(axis)>`
+    * :ref:`resetView() <vredvrdCameraBaseNode.resetView()>`
+    * :ref:`setApplyColorCorrectionToBackground(enabled) <vredvrdCameraBaseNode.setApplyColorCorrectionToBackground(enabled)>`
+    * :ref:`setApplyColorCorrectionToForeground(enabled) <vredvrdCameraBaseNode.setApplyColorCorrectionToForeground(enabled)>`
+    * :ref:`setAutofocus(enabled) <vredvrdCameraBaseNode.setAutofocus(enabled)>`
+    * :ref:`setAutofocusTransitionTime(value) <vredvrdCameraBaseNode.setAutofocusTransitionTime(value)>`
+    * :ref:`setBlendAmount(value) <vredvrdCameraBaseNode.setBlendAmount(value)>`
+    * :ref:`setBlendMapLeftEye(image) <vredvrdCameraBaseNode.setBlendMapLeftEye(image)>`
+    * :ref:`setBlendMapRightEye(image) <vredvrdCameraBaseNode.setBlendMapRightEye(image)>`
+    * :ref:`setBlendMode(mode) <vredvrdCameraBaseNode.setBlendMode(mode)>`
+    * :ref:`setColorCorrectionBrightness(value) <vredvrdCameraBaseNode.setColorCorrectionBrightness(value)>`
+    * :ref:`setColorCorrectionContrast(value) <vredvrdCameraBaseNode.setColorCorrectionContrast(value)>`
+    * :ref:`setColorCorrectionHueOffset(value) <vredvrdCameraBaseNode.setColorCorrectionHueOffset(value)>`
+    * :ref:`setColorCorrectionSaturation(value) <vredvrdCameraBaseNode.setColorCorrectionSaturation(value)>`
+    * :ref:`setCustomFrustumEnabled(enabled) <vredvrdCameraBaseNode.setCustomFrustumEnabled(enabled)>`
+    * :ref:`setCustomProjectionMatrix(matrix) <vredvrdCameraBaseNode.setCustomProjectionMatrix(matrix)>`
+    * :ref:`setDepthOfField(enabled) <vredvrdCameraBaseNode.setDepthOfField(enabled)>`
+    * :ref:`setDepthOfFieldMode(mode) <vredvrdCameraBaseNode.setDepthOfFieldMode(mode)>`
+    * :ref:`setDistanceFog(enable) <vredvrdCameraBaseNode.setDistanceFog(enable)>`
+    * :ref:`setDistanceFogColor(color) <vredvrdCameraBaseNode.setDistanceFogColor(color)>`
+    * :ref:`setDistanceFogDensity(density) <vredvrdCameraBaseNode.setDistanceFogDensity(density)>`
+    * :ref:`setDistanceFogEnableNoiseSizeUniform(enable) <vredvrdCameraBaseNode.setDistanceFogEnableNoiseSizeUniform(enable)>`
+    * :ref:`setDistanceFogFalloff(value) <vredvrdCameraBaseNode.setDistanceFogFalloff(value)>`
+    * :ref:`setDistanceFogNoise(intensity) <vredvrdCameraBaseNode.setDistanceFogNoise(intensity)>`
+    * :ref:`setDistanceFogNoiseOffset(offset) <vredvrdCameraBaseNode.setDistanceFogNoiseOffset(offset)>`
+    * :ref:`setDistanceFogNoiseSize(size) <vredvrdCameraBaseNode.setDistanceFogNoiseSize(size)>`
+    * :ref:`setDistanceFogRange(nearDistance) <vredvrdCameraBaseNode.setDistanceFogRange(nearDistance)>`
+    * :ref:`setDistortion(enabled) <vredvrdCameraBaseNode.setDistortion(enabled)>`
+    * :ref:`setDistortionMapLeftEye(image) <vredvrdCameraBaseNode.setDistortionMapLeftEye(image)>`
+    * :ref:`setDistortionMapRightEye(image) <vredvrdCameraBaseNode.setDistortionMapRightEye(image)>`
+    * :ref:`setFarClippingDistance(value) <vredvrdCameraBaseNode.setFarClippingDistance(value)>`
+    * :ref:`setFocalLength(value) <vredvrdCameraBaseNode.setFocalLength(value)>`
+    * :ref:`setFocusDistance(distance) <vredvrdCameraBaseNode.setFocusDistance(distance)>`
+    * :ref:`setFov(value) <vredvrdCameraBaseNode.setFov(value)>`
+    * :ref:`setFovMode(mode) <vredvrdCameraBaseNode.setFovMode(mode)>`
+    * :ref:`setFromAtUp(fromAtUp) <vredvrdCameraBaseNode.setFromAtUp(fromAtUp)>`
+    * :ref:`setFromAtUpWorld(fromAtUp) <vredvrdCameraBaseNode.setFromAtUpWorld(fromAtUp)>`
+    * :ref:`setFrustum(frustum) <vredvrdCameraBaseNode.setFrustum(frustum)>`
+    * :ref:`setFrustumBottom(value) <vredvrdCameraBaseNode.setFrustumBottom(value)>`
+    * :ref:`setFrustumLeft(value) <vredvrdCameraBaseNode.setFrustumLeft(value)>`
+    * :ref:`setFrustumRight(value) <vredvrdCameraBaseNode.setFrustumRight(value)>`
+    * :ref:`setFrustumTop(value) <vredvrdCameraBaseNode.setFrustumTop(value)>`
+    * :ref:`setFStop(value) <vredvrdCameraBaseNode.setFStop(value)>`
+    * :ref:`setGlare(enabled) <vredvrdCameraBaseNode.setGlare(enabled)>`
+    * :ref:`setGlareIntensity(value) <vredvrdCameraBaseNode.setGlareIntensity(value)>`
+    * :ref:`setGlareRotation(value) <vredvrdCameraBaseNode.setGlareRotation(value)>`
+    * :ref:`setGlareSize(value) <vredvrdCameraBaseNode.setGlareSize(value)>`
+    * :ref:`setGlareStreaks(value) <vredvrdCameraBaseNode.setGlareStreaks(value)>`
+    * :ref:`setGlareThreshold(value) <vredvrdCameraBaseNode.setGlareThreshold(value)>`
+    * :ref:`setGlow(enabled) <vredvrdCameraBaseNode.setGlow(enabled)>`
+    * :ref:`setGlowFalloff(value) <vredvrdCameraBaseNode.setGlowFalloff(value)>`
+    * :ref:`setGlowIntensity(value) <vredvrdCameraBaseNode.setGlowIntensity(value)>`
+    * :ref:`setGlowSize(value) <vredvrdCameraBaseNode.setGlowSize(value)>`
+    * :ref:`setGlowThreshold(value) <vredvrdCameraBaseNode.setGlowThreshold(value)>`
+    * :ref:`setHeightFog(enable) <vredvrdCameraBaseNode.setHeightFog(enable)>`
+    * :ref:`setHeightFogBlend(blend) <vredvrdCameraBaseNode.setHeightFogBlend(blend)>`
+    * :ref:`setHeightFogColor(color) <vredvrdCameraBaseNode.setHeightFogColor(color)>`
+    * :ref:`setHeightFogDensity(density) <vredvrdCameraBaseNode.setHeightFogDensity(density)>`
+    * :ref:`setHeightFogEnableNoiseSizeUniform(enable) <vredvrdCameraBaseNode.setHeightFogEnableNoiseSizeUniform(enable)>`
+    * :ref:`setHeightFogFalloff(value) <vredvrdCameraBaseNode.setHeightFogFalloff(value)>`
+    * :ref:`setHeightFogNoise(intensity) <vredvrdCameraBaseNode.setHeightFogNoise(intensity)>`
+    * :ref:`setHeightFogNoiseOffset(offset) <vredvrdCameraBaseNode.setHeightFogNoiseOffset(offset)>`
+    * :ref:`setHeightFogNoiseSize(size) <vredvrdCameraBaseNode.setHeightFogNoiseSize(size)>`
+    * :ref:`setHeightFogRange(range) <vredvrdCameraBaseNode.setHeightFogRange(range)>`
+    * :ref:`setInteractiveDofQuality(value) <vredvrdCameraBaseNode.setInteractiveDofQuality(value)>`
+    * :ref:`setLensFlare(enabled) <vredvrdCameraBaseNode.setLensFlare(enabled)>`
+    * :ref:`setMotionBlur(enabled) <vredvrdCameraBaseNode.setMotionBlur(enabled)>`
+    * :ref:`setNearClippingDistance(value) <vredvrdCameraBaseNode.setNearClippingDistance(value)>`
+    * :ref:`setOrthographicSize(size) <vredvrdCameraBaseNode.setOrthographicSize(size)>`
+    * :ref:`setPrincipalPointOffset(offset) <vredvrdCameraBaseNode.setPrincipalPointOffset(offset)>`
+    * :ref:`setProjectionMode(mode) <vredvrdCameraBaseNode.setProjectionMode(mode)>`
+    * :ref:`setRoll(value) <vredvrdCameraBaseNode.setRoll(value)>`
+    * :ref:`setSensorSize(size) <vredvrdCameraBaseNode.setSensorSize(size)>`
+    * :ref:`setShutterSpeed(value) <vredvrdCameraBaseNode.setShutterSpeed(value)>`
+    * :ref:`setSkew(value) <vredvrdCameraBaseNode.setSkew(value)>`
+    * :ref:`setStereoEyeSeparation(value) <vredvrdCameraBaseNode.setStereoEyeSeparation(value)>`
+    * :ref:`setStereoLayout(layout) <vredvrdCameraBaseNode.setStereoLayout(layout)>`
+    * :ref:`setStereoPolarMergeAngle(value) <vredvrdCameraBaseNode.setStereoPolarMergeAngle(value)>`
+    * :ref:`setToCurrentView() <vredvrdCameraBaseNode.setToCurrentView()>`
+    * :ref:`setUseHightAsVRGround(value) <vredvrdCameraBaseNode.setUseHightAsVRGround(value)>`
+    * :ref:`setViewpointTransition(enabled) <vredvrdCameraBaseNode.setViewpointTransition(enabled)>`
+    * :ref:`setViewpointTransitionDuration(seconds) <vredvrdCameraBaseNode.setViewpointTransitionDuration(seconds)>`
+    * :ref:`setVignetteFeather(value) <vredvrdCameraBaseNode.setVignetteFeather(value)>`
+    * :ref:`setVignetteRadius(value) <vredvrdCameraBaseNode.setVignetteRadius(value)>`
+    * :ref:`setVignetteRoundness(value) <vredvrdCameraBaseNode.setVignetteRoundness(value)>`
+    * :ref:`setWireframeRendering(enabled) <vredvrdCameraBaseNode.setWireframeRendering(enabled)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdCameraBaseNode.adjustAtPosition(root):
+.. py:method:: vrdCameraBaseNode.adjustAtPosition(root=vrdNode())
+
+    Adjust the look at point onto the surface of the closest object in the direction of viewing.
+
+
+
+    :param root: The root node that may contain the object.
+    :type root: vrdNode
+
+    
+    
+
+.. _vredvrdCameraBaseNode.calculateClippingPlanes():
+.. py:method:: vrdCameraBaseNode.calculateClippingPlanes()
+
+    Update near and far clipping plane from scene contents.
+
+
+
+
+    
+    
+
+.. _vredvrdCameraBaseNode.getApplyColorCorrectionToBackground():
+.. py:method:: vrdCameraBaseNode.getApplyColorCorrectionToBackground()
+
+    Returns if color correction should be applied to background.
+
+
+
+
+    :return: True if color correction is applied to the background, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getApplyColorCorrectionToForeground():
+.. py:method:: vrdCameraBaseNode.getApplyColorCorrectionToForeground()
+
+    Returns if color correction should be applied to foreground.
+
+
+
+
+    :return: True if color correction is applied to the foreground, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getAutofocus():
+.. py:method:: vrdCameraBaseNode.getAutofocus()
+
+    Returns the current autofocus state of the camera.
+
+
+
+
+    :return: True if autofocus is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getAutofocusTransitionTime():
+.. py:method:: vrdCameraBaseNode.getAutofocusTransitionTime()
+
+    Returns the time in frames the autofocus should use to adjust the focus distance.
+
+
+
+
+    :return: Time in frames the autofocus should use to adjust the focus distance.
+    :rtype: integer
+
+.. _vredvrdCameraBaseNode.getBlendAmount():
+.. py:method:: vrdCameraBaseNode.getBlendAmount()
+
+    Returns the amount of blending used.
+
+
+
+
+    :return: The blending value (between 0.0 and 1.0).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getBlendMapLeftEye():
+.. py:method:: vrdCameraBaseNode.getBlendMapLeftEye()
+
+    Returns the blending map for the left eye of the camera.
+
+
+
+
+    :return: The blend map for the left eye.
+    :rtype: vrdImage
+
+.. _vredvrdCameraBaseNode.getBlendMapRightEye():
+.. py:method:: vrdCameraBaseNode.getBlendMapRightEye()
+
+    Returns the blending map for the right eye of the camera.
+
+
+
+
+    :return: The blend map for the right eye.
+    :rtype: vrdImage
+
+.. _vredvrdCameraBaseNode.getBlendMode():
+.. py:method:: vrdCameraBaseNode.getBlendMode()
+
+    Returns the current blending mode.
+
+
+
+
+    :return: The current blending mode.
+    :rtype: :ref:`vrCameraTypes.BlendMode <vredvrCameraTypes.BlendMode>`
+
+.. _vredvrdCameraBaseNode.getColorCorrectionBrightness():
+.. py:method:: vrdCameraBaseNode.getColorCorrectionBrightness()
+
+    Returns the color correction brightness.
+
+
+
+
+    :return: The color correction brightness (must be >0)..
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getColorCorrectionContrast():
+.. py:method:: vrdCameraBaseNode.getColorCorrectionContrast()
+
+    Returns the color correction contrast.
+
+
+
+
+    :return: The color correction contrast (must be >0).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getColorCorrectionHueOffset():
+.. py:method:: vrdCameraBaseNode.getColorCorrectionHueOffset()
+
+    Returns the color correction hue offset.
+
+
+
+
+    :return: The color correction hue offset (must be >=0).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getColorCorrectionSaturation():
+.. py:method:: vrdCameraBaseNode.getColorCorrectionSaturation()
+
+    Returns the color correction saturation.
+
+
+
+
+    :return: The color correction saturation (must be >=0)..
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getCustomFrustumEnabled():
+.. py:method:: vrdCameraBaseNode.getCustomFrustumEnabled()
+
+    Returns the state of the custom frustum.
+
+
+
+
+    :return: True if the custom frustum is enabled, False if it's disabled.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getCustomProjectionMatrix():
+.. py:method:: vrdCameraBaseNode.getCustomProjectionMatrix()
+
+    Returns the custom 4x4 projection matrix.
+
+
+
+
+    :return: The custom projection matrix.
+    :rtype: QMatrix4x4
+
+.. _vredvrdCameraBaseNode.getDepthOfField():
+.. py:method:: vrdCameraBaseNode.getDepthOfField()
+
+    Returns the current depth of field state of the camera. For a more detailed definition please see         :any:`vrdCameraBaseNode.getDepthOfFieldMode() <vredvrdCameraBaseNode.getDepthOfFieldMode()>`.
+
+
+
+
+    :return: True if depth of field is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getDepthOfFieldMode():
+.. py:method:: vrdCameraBaseNode.getDepthOfFieldMode()
+
+    Returns the current depth of field mode of the camera.
+
+
+
+
+    :return: Current depth of field mode
+    :rtype: :ref:`vrCameraTypes.DepthOfFieldMode <vredvrCameraTypes.DepthOfFieldMode>`
+
+.. _vredvrdCameraBaseNode.getDistanceFog():
+.. py:method:: vrdCameraBaseNode.getDistanceFog()
+
+    Returns the current activation state of distance-fog.
+
+
+
+
+    :return: True if distance-fog is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getDistanceFogColor():
+.. py:method:: vrdCameraBaseNode.getDistanceFogColor()
+
+    Get the color of distance-fog.
+
+
+
+
+    :return: The RGB color of the distance-fog.
+    :rtype: QColor
+
+.. _vredvrdCameraBaseNode.getDistanceFogDensity():
+.. py:method:: vrdCameraBaseNode.getDistanceFogDensity()
+
+    Returns the density of distance-fog.
+
+
+
+
+    :return: The fog density.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getDistanceFogEnableNoiseSizeUniform():
+.. py:method:: vrdCameraBaseNode.getDistanceFogEnableNoiseSizeUniform()
+
+    Returns the uniform noise size flag for distance-fog.
+
+
+
+
+    :return: If True, uniform noise is activated.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getDistanceFogFalloff():
+.. py:method:: vrdCameraBaseNode.getDistanceFogFalloff()
+
+    Returns the falloff type of distance-fog.
+
+
+
+
+    :return: The distance-fog falloff type (Realistic or Linear).
+    :rtype: :ref:`vrCameraTypes.FogFalloffMode <vredvrCameraTypes.FogFalloffMode>`
+
+.. _vredvrdCameraBaseNode.getDistanceFogNoise():
+.. py:method:: vrdCameraBaseNode.getDistanceFogNoise()
+
+    Returns the noise intensity of distance-fog.
+
+
+
+
+    :return: The distance fog noise intensity.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getDistanceFogNoiseOffset():
+.. py:method:: vrdCameraBaseNode.getDistanceFogNoiseOffset()
+
+    Returns the noise offset of distance-fog.
+
+
+
+
+    :return: The distance-fog noise offset along x,y,z axis.
+    :rtype: QVector3D
+
+.. _vredvrdCameraBaseNode.getDistanceFogNoiseSize():
+.. py:method:: vrdCameraBaseNode.getDistanceFogNoiseSize()
+
+    Returns the noise size of distance-fog.
+
+
+
+
+    :return: The distance-fog noise size along x,y,z axis.
+    :rtype: QVector3D
+
+.. _vredvrdCameraBaseNode.getDistanceFogRange():
+.. py:method:: vrdCameraBaseNode.getDistanceFogRange()
+
+    Get the near value of distance-fog.
+
+
+
+
+    :return: Distance from camera where the fog begins.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getDistortion():
+.. py:method:: vrdCameraBaseNode.getDistortion()
+
+    Returns if distortion is enabled.
+
+
+
+
+    :return: True if distortion is enabled, False if disabled.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getDistortionMapLeftEye():
+.. py:method:: vrdCameraBaseNode.getDistortionMapLeftEye()
+
+    Returns the distortion map for the left eye of the camera.
+
+
+
+
+    :return: The distortion map for the left eye.
+    :rtype: vrdImage
+
+.. _vredvrdCameraBaseNode.getDistortionMapRightEye():
+.. py:method:: vrdCameraBaseNode.getDistortionMapRightEye()
+
+    Returns the distortion map for the left right of the camera.
+
+
+
+
+    :return: The distortion map for the right eye.
+    :rtype: vrdImage
+
+.. _vredvrdCameraBaseNode.getFarClippingDistance():
+.. py:method:: vrdCameraBaseNode.getFarClippingDistance()
+
+    Returns the distance of the far clipping plane.
+
+
+
+
+    :return: The distance of the far clipping plane.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getFocalLength():
+.. py:method:: vrdCameraBaseNode.getFocalLength()
+
+    Returns the focal length.
+
+
+
+
+    :return: The focal length.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getFocusDistance():
+.. py:method:: vrdCameraBaseNode.getFocusDistance()
+
+    Returns the focus distance.
+
+
+
+
+    :return: The focus distance.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getFov():
+.. py:method:: vrdCameraBaseNode.getFov()
+
+    Gets the field of view.
+
+
+
+
+    :return: The field of view value in degree.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getFovMode():
+.. py:method:: vrdCameraBaseNode.getFovMode()
+
+    Returns the field of view mode.
+
+
+
+
+    :return: The field of view mode (horizontal / vertical).
+    :rtype: :ref:`vrCameraTypes.FovMode <vredvrCameraTypes.FovMode>`
+
+.. _vredvrdCameraBaseNode.getFromAtUp():
+.. py:method:: vrdCameraBaseNode.getFromAtUp()
+
+    Gets the from at and up vectors in local space.
+
+
+
+
+    :return: The from at up vectors in local space.
+    :rtype: vrCameraFromAtUp
+
+.. _vredvrdCameraBaseNode.getFromAtUpWorld():
+.. py:method:: vrdCameraBaseNode.getFromAtUpWorld()
+
+    Returns from, at and up vectors in world space.
+
+
+
+
+    :return: The from, at and up vectors in world space.
+    :rtype: vrCameraFromAtUp
+
+.. _vredvrdCameraBaseNode.getFrustum():
+.. py:method:: vrdCameraBaseNode.getFrustum()
+
+    Returns the custom frustum.
+
+
+
+
+    :return: The frustum as a vector. The order is left, right, top, bottom.
+    :rtype: QVector4D
+
+.. _vredvrdCameraBaseNode.getFrustumBottom():
+.. py:method:: vrdCameraBaseNode.getFrustumBottom()
+
+    Returns the size bottom side of the frustum.
+
+
+
+
+    :return: The size of the bottom side of the frustum.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getFrustumLeft():
+.. py:method:: vrdCameraBaseNode.getFrustumLeft()
+
+    Returns the size left side of the frustum.
+
+
+
+
+    :return: The size of the left side of the frustum.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getFrustumRight():
+.. py:method:: vrdCameraBaseNode.getFrustumRight()
+
+    Returns the size right side of the frustum.
+
+
+
+
+    :return: The size of the right side of the frustum.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getFrustumTop():
+.. py:method:: vrdCameraBaseNode.getFrustumTop()
+
+    Returns the size top side of the frustum.
+
+
+
+
+    :return: The size of the top side of the frustum.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getFStop():
+.. py:method:: vrdCameraBaseNode.getFStop()
+
+    Returns the FStop of the camera,.
+
+
+
+
+    :return: The FStop in f/N where N is the value returned by this function.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getGlare():
+.. py:method:: vrdCameraBaseNode.getGlare()
+
+    Returns the current glare state of the camera.
+
+
+
+
+    :return: The current state of the glare flag.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getGlareIntensity():
+.. py:method:: vrdCameraBaseNode.getGlareIntensity()
+
+    Returns the glare intensity.
+
+
+
+
+    :return: The glare intensity (must be >=0).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getGlareRotation():
+.. py:method:: vrdCameraBaseNode.getGlareRotation()
+
+    Returns the glare rotation.
+
+
+
+
+    :return: The glare rotation in degrees (0 to 360).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getGlareSize():
+.. py:method:: vrdCameraBaseNode.getGlareSize()
+
+    Returns the glare size.
+
+
+
+
+    :return: The glare size (must be >0).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getGlareStreaks():
+.. py:method:: vrdCameraBaseNode.getGlareStreaks()
+
+    Returns the number of glare streaks.
+
+
+
+
+    :return: The number of glare streaks used.
+    :rtype: integer
+
+.. _vredvrdCameraBaseNode.getGlareThreshold():
+.. py:method:: vrdCameraBaseNode.getGlareThreshold()
+
+    Returns the glare threshold.
+
+
+
+
+    :return: The glare threshold.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getGlow():
+.. py:method:: vrdCameraBaseNode.getGlow()
+
+    Returns the current glow state of the camera.
+
+
+
+
+    :return: True if glow is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getGlowFalloff():
+.. py:method:: vrdCameraBaseNode.getGlowFalloff()
+
+    Returns the glow falloff.
+
+
+
+
+    :return: The glow falloff (must be between 0 and 2).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getGlowIntensity():
+.. py:method:: vrdCameraBaseNode.getGlowIntensity()
+
+    Returns the glow intensity.
+
+
+
+
+    :return: The glow intensity (must be >0).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getGlowSize():
+.. py:method:: vrdCameraBaseNode.getGlowSize()
+
+    Returns the glow size.
+
+
+
+
+    :return: The glow size (must be >0).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getGlowThreshold():
+.. py:method:: vrdCameraBaseNode.getGlowThreshold()
+
+    Returns the glow threshold.
+
+
+
+
+    :return: The glow threshold (must be >0).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getHeightFog():
+.. py:method:: vrdCameraBaseNode.getHeightFog()
+
+    Returns the current activation value of height-fog.
+
+
+
+
+    :return: True if height-fog is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getHeightFogBlend():
+.. py:method:: vrdCameraBaseNode.getHeightFogBlend()
+
+    Returns the blend value of height-fog.
+
+
+
+
+    :return: Returns the blend value of height-fog (between 0 and 1).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getHeightFogColor():
+.. py:method:: vrdCameraBaseNode.getHeightFogColor()
+
+    Get the color of height-fog.
+
+
+
+
+    :return: The RGB color of the height-fog.
+    :rtype: QColor
+
+.. _vredvrdCameraBaseNode.getHeightFogDensity():
+.. py:method:: vrdCameraBaseNode.getHeightFogDensity()
+
+    Returns the density of height-fog.
+
+
+
+
+    :return: The density of height-fog.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getHeightFogEnableNoiseSizeUniform():
+.. py:method:: vrdCameraBaseNode.getHeightFogEnableNoiseSizeUniform()
+
+    Returns the uniform noise size flag for height-fog.
+
+
+
+
+    :return: If True, uniform noise is activated.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getHeightFogFalloff():
+.. py:method:: vrdCameraBaseNode.getHeightFogFalloff()
+
+    Returns the falloff type of height-fog.
+
+
+
+
+    :return: The falloff type (Realistic or Linear).
+    :rtype: :ref:`vrCameraTypes.FogFalloffMode <vredvrCameraTypes.FogFalloffMode>`
+
+.. _vredvrdCameraBaseNode.getHeightFogNoise():
+.. py:method:: vrdCameraBaseNode.getHeightFogNoise()
+
+    Returns the noise intensity of height-fog.
+
+
+
+
+    :return: The height fog noise intensity.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getHeightFogNoiseOffset():
+.. py:method:: vrdCameraBaseNode.getHeightFogNoiseOffset()
+
+    Returns the noise offset of height-fog.
+
+
+
+
+    :return: The height-fog noise offset along x,y,z axis.
+    :rtype: QVector3D
+
+.. _vredvrdCameraBaseNode.getHeightFogNoiseSize():
+.. py:method:: vrdCameraBaseNode.getHeightFogNoiseSize()
+
+    Returns the noise size of height-fog.
+
+
+
+
+    :return: The height-fog noise size along x,y,z axis.
+    :rtype: QVector3D
+
+.. _vredvrdCameraBaseNode.getHeightFogRange():
+.. py:method:: vrdCameraBaseNode.getHeightFogRange()
+
+    Returns the range of height-fog.
+
+
+
+
+    :return: A vector with min, max values (see :any:`vrdCameraBaseNode.getHeightFogDensity() <vredvrdCameraBaseNode.getHeightFogDensity()>`).
+    :rtype: QVector2D
+
+.. _vredvrdCameraBaseNode.getInteractiveDofQuality():
+.. py:method:: vrdCameraBaseNode.getInteractiveDofQuality()
+
+    Returns the quality of the interactive depth of field effect.
+
+
+
+
+    :return: Value of the interactive dof quality from ultra-low to ultra-high.
+    :rtype: :ref:`vrCameraTypes.InteractiveDofQuality <vredvrCameraTypes.InteractiveDofQuality>`
+
+.. _vredvrdCameraBaseNode.getLensFlare():
+.. py:method:: vrdCameraBaseNode.getLensFlare()
+
+    Queries if lens flares are visible for this camera.
+
+
+
+
+    :return: True if visible, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getMotionBlur():
+.. py:method:: vrdCameraBaseNode.getMotionBlur()
+
+    Returns the current motion blur state of the camera.
+
+
+
+
+    :return: True if motion blur is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getNearClippingDistance():
+.. py:method:: vrdCameraBaseNode.getNearClippingDistance()
+
+    Returns the distance of the near clipping plane.
+
+
+
+
+    :return: The distance of the near clipping plane.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getOrthographicSize():
+.. py:method:: vrdCameraBaseNode.getOrthographicSize()
+
+    Returns the orthographic size.
+
+
+
+
+    :return: The orthographic size.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getPerspectiveMatch():
+.. py:method:: vrdCameraBaseNode.getPerspectiveMatch()
+
+    Gets the camera perspective match object.
+
+
+
+
+    :return: The perspective match object.
+    :rtype: vrdPerspectiveMatch
+
+.. _vredvrdCameraBaseNode.getPrincipalPointOffset():
+.. py:method:: vrdCameraBaseNode.getPrincipalPointOffset()
+
+    Returns the principal point offset.
+
+
+
+
+    :return: The principal point offset.
+    :rtype: QVector2D
+
+.. _vredvrdCameraBaseNode.getProjectionMode():
+.. py:method:: vrdCameraBaseNode.getProjectionMode()
+
+    Returns the projection mode used for the camera.
+
+
+
+
+    :return: The projection mode.
+    :rtype: :ref:`vrCameraTypes.CameraProjectionMode <vredvrCameraTypes.CameraProjectionMode>`
+
+.. _vredvrdCameraBaseNode.getRoll():
+.. py:method:: vrdCameraBaseNode.getRoll()
+
+    Returns the camera roll.
+
+
+
+
+    :return: The camera roll in degrees.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getSensorSize():
+.. py:method:: vrdCameraBaseNode.getSensorSize()
+
+    Returns the sensor size.
+
+
+
+
+    :return: The sensor size as width, height in mm.
+    :rtype: QVector2D
+
+.. _vredvrdCameraBaseNode.getShutterSpeed():
+.. py:method:: vrdCameraBaseNode.getShutterSpeed()
+
+    Returns the shutter speed.
+
+
+
+
+    :return: The shutter speed value in fractions of a second. The returned value is 1/value of a second.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getSkew():
+.. py:method:: vrdCameraBaseNode.getSkew()
+
+    Returns the skew factor of the camera.
+
+
+
+
+    :return: The skew factor.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getStereoEyeSeparation():
+.. py:method:: vrdCameraBaseNode.getStereoEyeSeparation()
+
+    Returns the stereo eye separation used during omnidirectional stereo rendering.
+
+
+
+
+    :return: The eye separation value.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getStereoLayout():
+.. py:method:: vrdCameraBaseNode.getStereoLayout()
+
+    Returns the stereo layout.
+
+
+
+
+    :return: The stero layout (top/bottom, left/right, left eye, right eye).
+    :rtype: :ref:`vrCameraTypes.CameraStereoLayout <vredvrCameraTypes.CameraStereoLayout>`
+
+.. _vredvrdCameraBaseNode.getStereoPolarMergeAngle():
+.. py:method:: vrdCameraBaseNode.getStereoPolarMergeAngle()
+
+    Returns the polar merge angle used during omnidirectional stereo rendering.
+
+
+
+
+    :return: The polar merge angle.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getTonemapper():
+.. py:method:: vrdCameraBaseNode.getTonemapper()
+
+    Returns the tone mapper.
+
+    The tone mapper gives access to the tone mapper functionality of the camera.
+
+
+    :return: The tone mapper.
+    :rtype: vrdTonemapper
+
+.. _vredvrdCameraBaseNode.getUseHightAsVRGround():
+.. py:method:: vrdCameraBaseNode.getUseHightAsVRGround()
+
+    Check, if camera height is used as gound in VR.
+
+
+
+
+    :return: True, if height is used as VR ground height.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getViewpointTransition():
+.. py:method:: vrdCameraBaseNode.getViewpointTransition()
+
+    Returns if viewpoint transitions are enabled.
+
+
+
+
+    :return: True if transitions are enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.getViewpointTransitionDuration():
+.. py:method:: vrdCameraBaseNode.getViewpointTransitionDuration()
+
+    Returns the duration of viewpoint transitions.
+
+
+
+
+    :return: The viewpoint transition duration in seconds.
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getVignetteFeather():
+.. py:method:: vrdCameraBaseNode.getVignetteFeather()
+
+    Returns the vignette feather.
+
+
+
+
+    :return: The vignette feather (between 0.0 and 1.0).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getVignetteRadius():
+.. py:method:: vrdCameraBaseNode.getVignetteRadius()
+
+    Returns the vignette radius.
+
+
+
+
+    :return: The vignette radius (between 0.0 and 1.0).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getVignetteRoundness():
+.. py:method:: vrdCameraBaseNode.getVignetteRoundness()
+
+    Returns the vignette roundness.
+
+
+
+
+    :return: The vignette roundness (between -1.0 and 1.0).
+    :rtype: float
+
+.. _vredvrdCameraBaseNode.getWireframeRendering():
+.. py:method:: vrdCameraBaseNode.getWireframeRendering()
+
+    Returns the state of wireframe rendering.
+
+
+
+
+    :return: True if wireframe rendering is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.isEditable():
+.. py:method:: vrdCameraBaseNode.isEditable()
+
+    Returns if the node is in a locked state or can be edited.
+
+
+
+
+    :return: True if editable, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.isEqual(camera):
+.. py:method:: vrdCameraBaseNode.isEqual(camera)
+
+    Determines if two camera nodes are internally using the same camera.
+
+    A camera exists in two node graphs at the same time. Once in the regular scene graph and once in the graph visible in the camera editor. You can get both nodes with :any:`vrCameraService.getCamera(name, useCameraGraph) <vredvrCameraService.getCamera(name, useCameraGraph)>`. The OSG camera is internally shared between both nodes. Usually cameras which have the same name in both graphs are identical.
+
+    This example shows that both nodes are different since they have different object ids, but are internally using the same camera.
+
+    .. code-block:: python
+    
+         root: cam1 = vrCameraService.getCamera("Perspective", useCameraGraph=True)
+         root: cam2 = vrCameraService.getCamera("Perspective", useCameraGraph=False)
+         root: print cam1.getObjectId()
+         596
+         root: print cam2.getObjectId()
+         597
+         root: print cam1.isEqual(cam2)
+         True
+    ..
+    
+
+    :param camera: The camera to compare to.
+    :type camera: vrdCameraBaseNode
+
+    :return: True if both internal cameras are equal, False otherwise. It will also return True if both cameras are null.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.isOrthographic():
+.. py:method:: vrdCameraBaseNode.isOrthographic()
+
+    Returns if the camera is using orthographic projection.
+
+
+
+
+    :return: True if the camera uses orthographic projection, False if perspective projection is used.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.loadBlendMap(fileName, eye):
+.. py:method:: vrdCameraBaseNode.loadBlendMap(fileName, eye)
+
+    Loads an image from a file and sets it as blending map for either the left or the right eye.
+
+
+
+    :param fileName: The file name of the image to load.
+    :type fileName: string
+
+    :param eye: Specifies which eye to use (CameraLeftEye or CameraRightEye).
+    :type eye: :ref:`vrCameraTypes.CameraEye <vredvrCameraTypes.CameraEye>`
+
+    :return: True if loading succeeded, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.loadDistortionMap(fileName, eye):
+.. py:method:: vrdCameraBaseNode.loadDistortionMap(fileName, eye)
+
+    Loads an image from a file and sets it as distortion map for either the left or the right eye.
+
+
+
+    :param fileName: The file name of the image to load.
+    :type fileName: string
+
+    :param eye: Specifies which eye to use (CameraLeftEye or CameraRightEye).
+    :type eye: :ref:`vrCameraTypes.CameraEye <vredvrCameraTypes.CameraEye>`
+
+    :return: True if loading succeeded, False otherwise.
+    :rtype: bool
+
+.. _vredvrdCameraBaseNode.mirrorView(axis):
+.. py:method:: vrdCameraBaseNode.mirrorView(axis)
+
+    Mirrors the camera view along one of the major axis.
+
+
+
+    :param axis: The axis on which the view will be mirrored.
+    :type axis: :ref:`vrCameraTypes.CameraAxis <vredvrCameraTypes.CameraAxis>`
+
+    
+    
+
+.. _vredvrdCameraBaseNode.resetView():
+.. py:method:: vrdCameraBaseNode.resetView()
+
+    Zeros all values in the camera viewing matrix.
+
+
+
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setApplyColorCorrectionToBackground(enabled):
+.. py:method:: vrdCameraBaseNode.setApplyColorCorrectionToBackground(enabled)
+
+    Enable / disable the color correction for the background.
+
+
+
+    :param enabled: True to enable color correction, False to disable.
+    :type enabled: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setApplyColorCorrectionToForeground(enabled):
+.. py:method:: vrdCameraBaseNode.setApplyColorCorrectionToForeground(enabled)
+
+    Enable / disable the color correction for the foreground.
+
+
+
+    :param enabled: True to enable color correction, False to disable.
+    :type enabled: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setAutofocus(enabled):
+.. py:method:: vrdCameraBaseNode.setAutofocus(enabled)
+
+    Enables / disables autofocus on screen center.
+
+
+
+    :param enabled: True to enable, False to disable autofocus.
+    :type enabled: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setAutofocusTransitionTime(value):
+.. py:method:: vrdCameraBaseNode.setAutofocusTransitionTime(value)
+
+    Sets the time in frames the autofocus should use to adjust the focus distance.
+
+
+
+    :param value: Time in frames the autofocus should use to adjust the focus distance.
+    :type value: integer
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setBlendAmount(value):
+.. py:method:: vrdCameraBaseNode.setBlendAmount(value)
+
+    Sets the amount of blending to use.
+
+    This affects both image and vignette blending.
+
+    :param value: The blending value (between 0.0 and 1.0).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setBlendMapLeftEye(image):
+.. py:method:: vrdCameraBaseNode.setBlendMapLeftEye(image)
+
+    Sets the blending map for the left eye of the camera.
+
+
+
+    :param image: The image to use as blending map.
+    :type image: vrdImage
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setBlendMapRightEye(image):
+.. py:method:: vrdCameraBaseNode.setBlendMapRightEye(image)
+
+    Sets the blending map for the right eye of the camera.
+
+
+
+    :param image: The image to use as blending map.
+    :type image: vrdImage
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setBlendMode(mode):
+.. py:method:: vrdCameraBaseNode.setBlendMode(mode)
+
+    Sets and enables / disables the blending mode.
+
+
+
+    :param mode: The blending mode to use. Use BlendOff to disable blending.
+    :type mode: :ref:`vrCameraTypes.BlendMode <vredvrCameraTypes.BlendMode>`
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setColorCorrectionBrightness(value):
+.. py:method:: vrdCameraBaseNode.setColorCorrectionBrightness(value)
+
+    Sets the color correction brightness.
+
+
+
+    :param value: The color correction brightness (must be >0).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setColorCorrectionContrast(value):
+.. py:method:: vrdCameraBaseNode.setColorCorrectionContrast(value)
+
+    Sets the color correction contrast.
+
+
+
+    :param value: The color correction contrast (must be >0).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setColorCorrectionHueOffset(value):
+.. py:method:: vrdCameraBaseNode.setColorCorrectionHueOffset(value)
+
+    Sets the color correction hue offset.
+
+
+
+    :param value: The hue offset (must be >=0),
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setColorCorrectionSaturation(value):
+.. py:method:: vrdCameraBaseNode.setColorCorrectionSaturation(value)
+
+    Sets the color correction saturation.
+
+
+
+    :param value: The saturation (must be >=0).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setCustomFrustumEnabled(enabled):
+.. py:method:: vrdCameraBaseNode.setCustomFrustumEnabled(enabled)
+
+    Enable / disable the use of a custom frustum.
+
+
+
+    :param enabled: True if the custom frustum is enabled, False if it's disabled.
+    :type enabled: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setCustomProjectionMatrix(matrix):
+.. py:method:: vrdCameraBaseNode.setCustomProjectionMatrix(matrix)
+
+    Sets a custom 4x4 projection matrix.
+
+    To use the matrix you need to also set the projection mode accordingly with :any:`vrdCameraBaseNode.setProjectionMode(mode) <vredvrdCameraBaseNode.setProjectionMode(mode)>`.
+
+    .. code-block:: python
+    
+         camera = vrCameraService.getActiveCamera()
+         camera.setProjectionMode(vrCameraTypes.ProjectionCustomMatrix)
+    ..
+    
+
+    :param matrix: The custom matrix.
+    :type matrix: QMatrix4x4
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDepthOfField(enabled):
+.. py:method:: vrdCameraBaseNode.setDepthOfField(enabled)
+
+    Enables / disables depth of field for the camera. For a more detailed definition please see         :any:`vrdCameraBaseNode.setDepthOfFieldMode(mode) <vredvrdCameraBaseNode.setDepthOfFieldMode(mode)>`.
+
+
+
+    :param enabled: True to enable, False to disable depth of field.
+    :type enabled: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDepthOfFieldMode(mode):
+.. py:method:: vrdCameraBaseNode.setDepthOfFieldMode(mode)
+
+    Sets the depth of field mode for the camera.
+
+
+
+    :param mode: Defines depth of field mode
+    :type mode: :ref:`vrCameraTypes.DepthOfFieldMode <vredvrCameraTypes.DepthOfFieldMode>`
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDistanceFog(enable):
+.. py:method:: vrdCameraBaseNode.setDistanceFog(enable)
+
+    Enables / disables distance-fog.
+
+
+
+    :param enable: True to enable, False to disable.
+    :type enable: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDistanceFogColor(color):
+.. py:method:: vrdCameraBaseNode.setDistanceFogColor(color)
+
+    Sets the color of the distance-fog.
+
+
+
+    :param color: The RGB color of the distance-fog.
+    :type color: QColor
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDistanceFogDensity(density):
+.. py:method:: vrdCameraBaseNode.setDistanceFogDensity(density)
+
+    Set the density of distance-fog.
+
+
+
+    :param density: The fog density (value >= 0).
+    :type density: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDistanceFogEnableNoiseSizeUniform(enable):
+.. py:method:: vrdCameraBaseNode.setDistanceFogEnableNoiseSizeUniform(enable)
+
+    Enables / disables uniform noise size for distance-fog.
+
+
+
+    :param enable: If True, uniform noise is activated.
+    :type enable: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDistanceFogFalloff(value):
+.. py:method:: vrdCameraBaseNode.setDistanceFogFalloff(value)
+
+    Sets the falloff type of distance-fog.
+
+
+
+    :param value: The falloff type (Realistic or Linear).
+    :type value: :ref:`vrCameraTypes.FogFalloffMode <vredvrCameraTypes.FogFalloffMode>`
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDistanceFogNoise(intensity):
+.. py:method:: vrdCameraBaseNode.setDistanceFogNoise(intensity)
+
+    Set the intensity of noise for distance-fog.
+
+
+
+    :param intensity: Multiplier of noise (value from 0 to 10).
+    :type intensity: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDistanceFogNoiseOffset(offset):
+.. py:method:: vrdCameraBaseNode.setDistanceFogNoiseOffset(offset)
+
+    Set the offset of noise for distance-fog.
+
+
+
+    :param offset: The noise offset along x,y,z axis.
+    :type offset: QVector3D
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDistanceFogNoiseSize(size):
+.. py:method:: vrdCameraBaseNode.setDistanceFogNoiseSize(size)
+
+    Set the size of noise for distance-fog.
+
+
+
+    :param size: The noise size along x,y,z axis. Every value must be >= 0.01.
+    :type size: QVector3D
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDistanceFogRange(nearDistance):
+.. py:method:: vrdCameraBaseNode.setDistanceFogRange(nearDistance)
+
+    Sets where distance-fog begins.
+
+
+
+    :param nearDistance: Distance from camera where the fog begins.
+    :type nearDistance: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDistortion(enabled):
+.. py:method:: vrdCameraBaseNode.setDistortion(enabled)
+
+    Enable / disable distortion.
+
+
+
+    :param enabled: True to enable distortion, False to disable.
+    :type enabled: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDistortionMapLeftEye(image):
+.. py:method:: vrdCameraBaseNode.setDistortionMapLeftEye(image)
+
+    Sets the distortion map for the left eye of the camera.
+
+
+
+    :param image: The image to use as distortion map.
+    :type image: vrdImage
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setDistortionMapRightEye(image):
+.. py:method:: vrdCameraBaseNode.setDistortionMapRightEye(image)
+
+    
+
+
+
+    :param image: 
+    :type image: vrdImage
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFarClippingDistance(value):
+.. py:method:: vrdCameraBaseNode.setFarClippingDistance(value)
+
+    Sets the distance of the far clipping plane.
+
+
+
+    :param value: The distance of the far clipping plane.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFocalLength(value):
+.. py:method:: vrdCameraBaseNode.setFocalLength(value)
+
+    Sets the focal length.
+
+
+
+    :param value: The focal length.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFocusDistance(distance):
+.. py:method:: vrdCameraBaseNode.setFocusDistance(distance)
+
+    Sets the focus distance.
+
+
+
+    :param distance: The focus distance
+    :type distance: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFov(value):
+.. py:method:: vrdCameraBaseNode.setFov(value)
+
+    Sets the field of view.
+
+
+
+    :param value: The field of view value in degree.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFovMode(mode):
+.. py:method:: vrdCameraBaseNode.setFovMode(mode)
+
+    Sets the field of view mode.
+
+
+
+    :param mode: The field of view mode (horizontal / vertical).
+    :type mode: :ref:`vrCameraTypes.FovMode <vredvrCameraTypes.FovMode>`
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFromAtUp(fromAtUp):
+.. py:method:: vrdCameraBaseNode.setFromAtUp(fromAtUp)
+
+    Sets the from, at and up vectors in local space.
+
+    The from at and up vector are encapsulated in a single object. The individual vectors can be extracted from this :any:`vrCameraFromAtUp <vredvrCameraFromAtUp>` instance.
+
+    :param fromAtUp: The from, at and up vectors in local space.
+    :type fromAtUp: vrCameraFromAtUp
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFromAtUpWorld(fromAtUp):
+.. py:method:: vrdCameraBaseNode.setFromAtUpWorld(fromAtUp)
+
+    Sets the from, at and up vectors in world space.
+
+    The from at and up vector are encapsulated in a single object. The individual vectors can be extracted from this :any:`vrCameraFromAtUp <vredvrCameraFromAtUp>` instance.
+
+    :param fromAtUp: The from, at and up vectors in world space.
+    :type fromAtUp: vrCameraFromAtUp
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFrustum(frustum):
+.. py:method:: vrdCameraBaseNode.setFrustum(frustum)
+
+    Sets the custom frustum.
+
+
+
+    :param frustum: The frustum as a vector. The order is left, right, top, bottom
+    :type frustum: QVector4D
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFrustumBottom(value):
+.. py:method:: vrdCameraBaseNode.setFrustumBottom(value)
+
+    Sets the size of the bottom side of the frustum.
+
+
+
+    :param value: The size of the bottom side of the frustum.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFrustumLeft(value):
+.. py:method:: vrdCameraBaseNode.setFrustumLeft(value)
+
+    Sets the size of the left side of the frustum.
+
+
+
+    :param value: The size of the left side of the frustum.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFrustumRight(value):
+.. py:method:: vrdCameraBaseNode.setFrustumRight(value)
+
+    Sets the size of the right side of the frustum.
+
+
+
+    :param value: The size of the right side of the frustum.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFrustumTop(value):
+.. py:method:: vrdCameraBaseNode.setFrustumTop(value)
+
+    Sets the size of the top side of the frustum.
+
+
+
+    :param value: The size of the top side of the frustum.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setFStop(value):
+.. py:method:: vrdCameraBaseNode.setFStop(value)
+
+    Sets the FStop of the camera.
+
+    Please note that the FStop value only takes effect if Depth of Field is activated for the camera.
+
+    :param value: The FStop in f/N where N is the value passed to this function.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setGlare(enabled):
+.. py:method:: vrdCameraBaseNode.setGlare(enabled)
+
+    Enables / disables glare for the camera.
+
+
+
+    :param enabled: True to enable glare, False to disable.
+    :type enabled: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setGlareIntensity(value):
+.. py:method:: vrdCameraBaseNode.setGlareIntensity(value)
+
+    Sets the glare intensity.
+
+
+
+    :param value: The glare intensity (must be >=0).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setGlareRotation(value):
+.. py:method:: vrdCameraBaseNode.setGlareRotation(value)
+
+    Sets the glare rotation.
+
+
+
+    :param value: The glare rotation in degrees (0 to 360).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setGlareSize(value):
+.. py:method:: vrdCameraBaseNode.setGlareSize(value)
+
+    Sets the glare size.
+
+
+
+    :param value: The glare size (must >0).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setGlareStreaks(value):
+.. py:method:: vrdCameraBaseNode.setGlareStreaks(value)
+
+    Sets the number of glare streaks.
+
+
+
+    :param value: The number of streaks to use.
+    :type value: integer
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setGlareThreshold(value):
+.. py:method:: vrdCameraBaseNode.setGlareThreshold(value)
+
+    Sets the glare threshold.
+
+
+
+    :param value: The glare threshold. Must be greater than 0.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setGlow(enabled):
+.. py:method:: vrdCameraBaseNode.setGlow(enabled)
+
+    Enables / disables glow for the camera.
+
+
+
+    :param enabled: True to enable, False to disable
+    :type enabled: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setGlowFalloff(value):
+.. py:method:: vrdCameraBaseNode.setGlowFalloff(value)
+
+    Sets the glow falloff.
+
+
+
+    :param value: The glow fallof (must be between 0 and 2).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setGlowIntensity(value):
+.. py:method:: vrdCameraBaseNode.setGlowIntensity(value)
+
+    Sets the glow intensity.
+
+
+
+    :param value: The glow intensity (must be >0).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setGlowSize(value):
+.. py:method:: vrdCameraBaseNode.setGlowSize(value)
+
+    Sets the glow size.
+
+
+
+    :param value: The glow size (must be >0).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setGlowThreshold(value):
+.. py:method:: vrdCameraBaseNode.setGlowThreshold(value)
+
+    Sets the glow threshold.
+
+
+
+    :param value: The glow threshold (must be >0),
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setHeightFog(enable):
+.. py:method:: vrdCameraBaseNode.setHeightFog(enable)
+
+    Enables / disables height-fog.
+
+
+
+    :param enable: True to enable height-fog, False to disable.
+    :type enable: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setHeightFogBlend(blend):
+.. py:method:: vrdCameraBaseNode.setHeightFogBlend(blend)
+
+    Set the transition distance between fog and no fog.
+
+
+
+    :param blend: Smooths the transition between areas with fog and areas without fog (value from 0 to 1).
+    :type blend: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setHeightFogColor(color):
+.. py:method:: vrdCameraBaseNode.setHeightFogColor(color)
+
+    Sets the color of the height-fog.
+
+
+
+    :param color: The RGB color of the height-fog.
+    :type color: QColor
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setHeightFogDensity(density):
+.. py:method:: vrdCameraBaseNode.setHeightFogDensity(density)
+
+    Set the density of height-fog.
+
+
+
+    :param density: The fog density (value >= 0).
+    :type density: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setHeightFogEnableNoiseSizeUniform(enable):
+.. py:method:: vrdCameraBaseNode.setHeightFogEnableNoiseSizeUniform(enable)
+
+    Enables / disables uniform noise size for height-fog.
+
+
+
+    :param enable: If True, uniform noise is activated.
+    :type enable: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setHeightFogFalloff(value):
+.. py:method:: vrdCameraBaseNode.setHeightFogFalloff(value)
+
+    Set the falloff of height-fog.
+
+
+
+    :param value: The falloff type (Realistic or Linear).
+    :type value: :ref:`vrCameraTypes.FogFalloffMode <vredvrCameraTypes.FogFalloffMode>`
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setHeightFogNoise(intensity):
+.. py:method:: vrdCameraBaseNode.setHeightFogNoise(intensity)
+
+    Set the intensity of noise for height-fog.
+
+
+
+    :param intensity: Multiplier of noise (value from 0 to 10).
+    :type intensity: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setHeightFogNoiseOffset(offset):
+.. py:method:: vrdCameraBaseNode.setHeightFogNoiseOffset(offset)
+
+    Set the offset of noise for height-fog.
+
+
+
+    :param offset: The noise offset along x,y,z axis.
+    :type offset: QVector3D
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setHeightFogNoiseSize(size):
+.. py:method:: vrdCameraBaseNode.setHeightFogNoiseSize(size)
+
+    Set the size of noise for height-fog.
+
+
+
+    :param size: The noise size along x,y,z axis. Every value must be >= 0.01.
+    :type size: QVector3D
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setHeightFogRange(range):
+.. py:method:: vrdCameraBaseNode.setHeightFogRange(range)
+
+    Sets where height-fog begins and where it ends.
+
+    |             Set minimum and maximum height for height-fog.
+    |             minimum: Height from ground where the fog begins.
+    |             maximum: Height from ground where the fog ends. Must be greater than minimum.
+
+    :param range: A vector with min, max values.
+    :type range: QVector2D
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setInteractiveDofQuality(value):
+.. py:method:: vrdCameraBaseNode.setInteractiveDofQuality(value)
+
+    Sets the quality of the interactive depth of field effect.
+
+
+
+    :param value: Value of the interactive dof quality from ultra-low to ultra-high.
+    :type value: :ref:`vrCameraTypes.InteractiveDofQuality <vredvrCameraTypes.InteractiveDofQuality>`
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setLensFlare(enabled):
+.. py:method:: vrdCameraBaseNode.setLensFlare(enabled)
+
+    Enables / disables the visibility of lens flares for this camera.
+
+
+
+    :param enabled: True to enable, False to disable the lens flare visibility.
+    :type enabled: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setMotionBlur(enabled):
+.. py:method:: vrdCameraBaseNode.setMotionBlur(enabled)
+
+    Enables / disables motion blur for the camera.
+
+
+
+    :param enabled: True to enable motion blur, False to disable it.
+    :type enabled: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setNearClippingDistance(value):
+.. py:method:: vrdCameraBaseNode.setNearClippingDistance(value)
+
+    Sets the distance of the near clipping plane.
+
+
+
+    :param value: The distance of the near clipping plane.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setOrthographicSize(size):
+.. py:method:: vrdCameraBaseNode.setOrthographicSize(size)
+
+    Sets the orthographic size.
+
+
+
+    :param size: The orthographic size
+    :type size: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setPrincipalPointOffset(offset):
+.. py:method:: vrdCameraBaseNode.setPrincipalPointOffset(offset)
+
+    Sets the principal point offset.
+
+
+
+    :param offset: The principal point offset.
+    :type offset: QVector2D
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setProjectionMode(mode):
+.. py:method:: vrdCameraBaseNode.setProjectionMode(mode)
+
+    Sets the projection mode for the camera.
+
+
+
+    :param mode: The projection mode.
+    :type mode: :ref:`vrCameraTypes.CameraProjectionMode <vredvrCameraTypes.CameraProjectionMode>`
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setRoll(value):
+.. py:method:: vrdCameraBaseNode.setRoll(value)
+
+    Sets the camera roll.
+
+
+
+    :param value: The camera roll in degrees.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setSensorSize(size):
+.. py:method:: vrdCameraBaseNode.setSensorSize(size)
+
+    Sets the sensor size.
+
+    The sensor size is measured as width * height mm.
+
+    :param size: The sensor size as width, height
+    :type size: QVector2D
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setShutterSpeed(value):
+.. py:method:: vrdCameraBaseNode.setShutterSpeed(value)
+
+    Sets the shutter speed used for motion blur.
+
+    The shutter speed is measured in fractions of a second. To set it to 1/250th of a second, the value to pass to this function would be 250. The shutter speed is only considered when motion blur is activated.
+
+    :param value: The shutter speed value. 1/value of a second.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setSkew(value):
+.. py:method:: vrdCameraBaseNode.setSkew(value)
+
+    Sets the skew factor of the camera.
+
+
+
+    :param value: The skew factor.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setStereoEyeSeparation(value):
+.. py:method:: vrdCameraBaseNode.setStereoEyeSeparation(value)
+
+    Sets eye separation used during omnidirectional stereo rendering.
+
+
+
+    :param value: The eye separation value.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setStereoLayout(layout):
+.. py:method:: vrdCameraBaseNode.setStereoLayout(layout)
+
+    Sets the image layout during omnidirectional stereo rendering.
+
+    Top Bottom will place the images for the left and right eye on top of each other while Left Right will place them next to each other. The render output resolution should be set to a matching width/height ratio, 1:1 for Top Bottom layout and 4:1 for Left Right Layout.
+
+    :param layout: The stero layout (top/bottom, left/right, left eye, right eye).
+    :type layout: :ref:`vrCameraTypes.CameraStereoLayout <vredvrCameraTypes.CameraStereoLayout>`
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setStereoPolarMergeAngle(value):
+.. py:method:: vrdCameraBaseNode.setStereoPolarMergeAngle(value)
+
+    Sets the polar merge angle used during omnidirectional stereo rendering.
+
+    Starting from this angle to the poles the eye separation will be reduced to avoid stereo parallax artifacts during viewing.
+
+    :param value: The polar merge angle.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setToCurrentView():
+.. py:method:: vrdCameraBaseNode.setToCurrentView()
+
+    Applies the current viewport transformation to the camera.
+
+
+
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setUseHightAsVRGround(value):
+.. py:method:: vrdCameraBaseNode.setUseHightAsVRGround(value)
+
+    Changes the camera behavior in VR.
+
+
+
+    :param value: If true, the camera height is the ground height in VR.
+    :type value: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setViewpointTransition(enabled):
+.. py:method:: vrdCameraBaseNode.setViewpointTransition(enabled)
+
+    Enables / disables a transition animation between viewpoints.
+
+
+
+    :param enabled: True if transitions should be enabled, False otherwise.
+    :type enabled: bool
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setViewpointTransitionDuration(seconds):
+.. py:method:: vrdCameraBaseNode.setViewpointTransitionDuration(seconds)
+
+    Sets the duration of viewpoint transitions.
+
+
+
+    :param seconds: The duration of viewpoint transitions in seconds.
+    :type seconds: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setVignetteFeather(value):
+.. py:method:: vrdCameraBaseNode.setVignetteFeather(value)
+
+    Sets the vignette feather.
+
+
+
+    :param value: The vignette feather (between 0.0 and 1.0).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setVignetteRadius(value):
+.. py:method:: vrdCameraBaseNode.setVignetteRadius(value)
+
+    Sets the radius of the vignette used for blending.
+
+
+
+    :param value: The vignette blend radius (between 0.0 and 1.0).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setVignetteRoundness(value):
+.. py:method:: vrdCameraBaseNode.setVignetteRoundness(value)
+
+    Sets the vignette roundness.
+
+
+
+    :param value: The vignette roundness (between -1.0 and 1.0).
+    :type value: float
+
+    
+    
+
+.. _vredvrdCameraBaseNode.setWireframeRendering(enabled):
+.. py:method:: vrdCameraBaseNode.setWireframeRendering(enabled)
+
+    Enables / disables wireframe rendering.
+
+
+
+    :param enabled: True to enable wireframe rendering, False to disable.
+    :type enabled: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

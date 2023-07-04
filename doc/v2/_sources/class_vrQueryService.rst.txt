@@ -1,0 +1,463 @@
+--------------
+vrQueryService
+--------------
+
+
+.. _vredvrQueryService:
+.. py:class:: vrQueryService
+
+(Inherits :py:class:`vrBaseService`)
+
+The query service provides functions for advanced search with expressions.
+
+The service allows queries for objects from different modules.
+
+The search expression is based on Python syntax and must evaluate to a boolean (True or False). Each object is checked against that expression and added to the resulting list if it matches. In that expression you have access to predefined variables to access the object's attributes:
+
+|    name (query providing comparison operators and wildcard string matching)
+|    metadata (vrdMetadata)
+|    metadata.key (query on keys)
+|    metadata.value (query on entry values )
+|    metadata.set (query on set names)
+|    metadata.type (query on entry value types)
+| 
+|    metadata["keystring"] (query on all values found for this key)
+| 
+|    node (vrdNode)
+|    material (vrdMaterial)
+|    light (vrdBaseLightNode)
+|    camera (vrdCameraNode)
+|    sceneplate (vrdSceneplateNode)
+
+Two types of queries are provided: synchronous and asynchronous. Synchronous queries block the GUI while the query is evaluated. For large scenes, this may take too long. With asynchronous queries, the GUI continues to process events while the query is running. Note, both functions return after the query is finished. Asynchronous queries can be cancelled. The results of an asynchronous query are communicated in a signal after the query is complete.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`asyncCameraQuery(expression) <vredvrQueryService.asyncCameraQuery(expression)>`
+    * :ref:`asyncLightQuery(expression) <vredvrQueryService.asyncLightQuery(expression)>`
+    * :ref:`asyncMaterialQuery(expression) <vredvrQueryService.asyncMaterialQuery(expression)>`
+    * :ref:`asyncMetadataQuery(expression) <vredvrQueryService.asyncMetadataQuery(expression)>`
+    * :ref:`asyncSceneplateQuery(expression) <vredvrQueryService.asyncSceneplateQuery(expression)>`
+    * :ref:`asyncSceneQuery(expression) <vredvrQueryService.asyncSceneQuery(expression)>`
+    * :ref:`cameraQuery(expression) → List[vrdNode]<vredvrQueryService.cameraQuery(expression)>`
+    * :ref:`cancelQuery() <vredvrQueryService.cancelQuery()>`
+    * :ref:`isCanceling() → bool<vredvrQueryService.isCanceling()>`
+    * :ref:`isLiveSearchEnabled() → bool<vredvrQueryService.isLiveSearchEnabled()>`
+    * :ref:`isRunning() → bool<vredvrQueryService.isRunning()>`
+    * :ref:`lightQuery(expression) → List[vrdNode]<vredvrQueryService.lightQuery(expression)>`
+    * :ref:`materialQuery(expression) → List[vrdNode]<vredvrQueryService.materialQuery(expression)>`
+    * :ref:`metadataQuery(expression) → List[vrdMetadataSet]<vredvrQueryService.metadataQuery(expression)>`
+    * :ref:`sceneplateQuery(expression) → List[vrdNode]<vredvrQueryService.sceneplateQuery(expression)>`
+    * :ref:`sceneQuery(expression) → List[vrdNode]<vredvrQueryService.sceneQuery(expression)>`
+    * :ref:`setLiveSearchEnabled(value) <vredvrQueryService.setLiveSearchEnabled(value)>`
+
+Signals:
+    * :ref:`asyncCameraQueryFinished(success, results) <vredvrQueryService.asyncCameraQueryFinished(success, results)>`
+    * :ref:`asyncCameraQueryStarted() <vredvrQueryService.asyncCameraQueryStarted()>`
+    * :ref:`asyncLightQueryFinished(success, results) <vredvrQueryService.asyncLightQueryFinished(success, results)>`
+    * :ref:`asyncLightQueryStarted() <vredvrQueryService.asyncLightQueryStarted()>`
+    * :ref:`asyncMaterialQueryFinished(success, results) <vredvrQueryService.asyncMaterialQueryFinished(success, results)>`
+    * :ref:`asyncMaterialQueryStarted() <vredvrQueryService.asyncMaterialQueryStarted()>`
+    * :ref:`asyncMetadataQueryFinished(success, results) <vredvrQueryService.asyncMetadataQueryFinished(success, results)>`
+    * :ref:`asyncMetadataQueryStarted() <vredvrQueryService.asyncMetadataQueryStarted()>`
+    * :ref:`asyncSceneplateQueryFinished(success, results) <vredvrQueryService.asyncSceneplateQueryFinished(success, results)>`
+    * :ref:`asyncSceneplateQueryStarted() <vredvrQueryService.asyncSceneplateQueryStarted()>`
+    * :ref:`asyncSceneQueryFinished(success, results) <vredvrQueryService.asyncSceneQueryFinished(success, results)>`
+    * :ref:`asyncSceneQueryStarted() <vredvrQueryService.asyncSceneQueryStarted()>`
+
+
+Functions
+=========
+
+
+.. _vredvrQueryService.asyncCameraQuery(expression):
+.. py:method:: vrQueryService.asyncCameraQuery(expression)
+
+    Starts a asynchronous query for cameras.
+
+
+
+    :param expression: A Python expression that returns a boolean value.
+    :type expression: string
+
+    
+    
+
+.. _vredvrQueryService.asyncLightQuery(expression):
+.. py:method:: vrQueryService.asyncLightQuery(expression)
+
+    Starts a asynchronous query for lights.
+
+
+
+    :param expression: A Python expression that returns a boolean value.
+    :type expression: string
+
+    
+    
+
+.. _vredvrQueryService.asyncMaterialQuery(expression):
+.. py:method:: vrQueryService.asyncMaterialQuery(expression)
+
+    Starts a asynchronous query for materials.
+
+
+
+    :param expression: A Python expression that returns a boolean value.
+    :type expression: string
+
+    
+    
+
+.. _vredvrQueryService.asyncMetadataQuery(expression):
+.. py:method:: vrQueryService.asyncMetadataQuery(expression)
+
+    Starts a asynchronous query for metadata sets.
+
+
+
+    :param expression: A Python expression that returns a boolean value.
+    :type expression: string
+
+    
+    
+
+.. _vredvrQueryService.asyncSceneplateQuery(expression):
+.. py:method:: vrQueryService.asyncSceneplateQuery(expression)
+
+    Starts a asynchronous query for scene plates.
+
+
+
+    :param expression: A Python expression that returns a boolean value.
+    :type expression: string
+
+    
+    
+
+.. _vredvrQueryService.asyncSceneQuery(expression):
+.. py:method:: vrQueryService.asyncSceneQuery(expression)
+
+    Starts a asynchronous query for Scenegraph nodes.
+
+
+
+    :param expression: A Python expression that returns a boolean value.
+    :type expression: string
+
+    
+    
+
+.. _vredvrQueryService.cameraQuery(expression):
+.. py:method:: vrQueryService.cameraQuery(expression)
+
+    Starts a synchronous query for cameras.
+
+
+
+    :param expression: A Python expression that returns a boolean value.
+    :type expression: string
+
+    :return: A list of all results of this query
+    :rtype: List[vrdNode]
+
+.. _vredvrQueryService.cancelQuery():
+.. py:method:: vrQueryService.cancelQuery()
+
+    Cancels an asynchronous query that is running.
+
+
+
+
+    
+    
+
+.. _vredvrQueryService.isCanceling():
+.. py:method:: vrQueryService.isCanceling()
+
+    Checks if an asynchronous query was canceled.
+
+
+
+
+    :return: 
+    :rtype: bool
+
+.. _vredvrQueryService.isLiveSearchEnabled():
+.. py:method:: vrQueryService.isLiveSearchEnabled()
+
+    Gets if live search is enabled or not.
+
+
+
+
+    :return: 
+    :rtype: bool
+
+.. _vredvrQueryService.isRunning():
+.. py:method:: vrQueryService.isRunning()
+
+    Checks if an asynchronous query is running.
+
+
+
+
+    :return: 
+    :rtype: bool
+
+.. _vredvrQueryService.lightQuery(expression):
+.. py:method:: vrQueryService.lightQuery(expression)
+
+    Starts a synchronous query for lights.
+
+
+
+    :param expression: A Python expression that returns a boolean value.
+    :type expression: string
+
+    :return: A list of all results of this query.
+    :rtype: List[vrdNode]
+
+.. _vredvrQueryService.materialQuery(expression):
+.. py:method:: vrQueryService.materialQuery(expression)
+
+    Starts a synchronous query for materials.
+
+
+
+    :param expression: A Python expression that returns a boolean value.
+    :type expression: string
+
+    :return: A list of all results of this query. Items can be of type :any:`vrdMaterialNode <vredvrdMaterialNode>` for materials or :any:`vrdNode <vredvrdNode>` for groups.
+    :rtype: List[vrdNode]
+
+.. _vredvrQueryService.metadataQuery(expression):
+.. py:method:: vrQueryService.metadataQuery(expression)
+
+    Starts a synchronous query for metadata sets.
+
+
+
+    :param expression: A Python expression that returns a boolean value.
+    :type expression: string
+
+    :return: A list of all results of this query
+    :rtype: List[vrdMetadataSet]
+
+.. _vredvrQueryService.sceneplateQuery(expression):
+.. py:method:: vrQueryService.sceneplateQuery(expression)
+
+    Starts a synchronous query for scene plates.
+
+
+
+    :param expression: A Python expression that returns a boolean value.
+    :type expression: string
+
+    :return: A list of all results of this query
+    :rtype: List[vrdNode]
+
+.. _vredvrQueryService.sceneQuery(expression):
+.. py:method:: vrQueryService.sceneQuery(expression)
+
+    Starts a synchronous query for Scenegraph nodes.
+
+
+
+    :param expression: A Python expression that returns a boolean value.
+    :type expression: string
+
+    :return: A list of all results of this query
+    :rtype: List[vrdNode]
+
+.. _vredvrQueryService.setLiveSearchEnabled(value):
+.. py:method:: vrQueryService.setLiveSearchEnabled(value)
+
+    Sets whether live search is enabled or not.
+
+
+
+    :param value: True if enabled, False otherwise.
+    :type value: bool
+
+    
+    
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrQueryService.asyncCameraQueryFinished(success, results):
+.. py:method:: vrQueryService.asyncCameraQueryFinished(success, results)
+
+    This signal is sent when an asynchronous query for cameras is finished.
+
+
+
+    :param success: True if the expression could be evaluated.
+    :type success: bool
+
+    :param results: A list of all results of this query
+    :type results: List[vrdNode]
+
+    
+    
+
+.. _vredvrQueryService.asyncCameraQueryStarted():
+.. py:method:: vrQueryService.asyncCameraQueryStarted()
+
+    This signal is sent when an asynchronous query for cameras is started.
+
+
+
+
+    
+    
+
+.. _vredvrQueryService.asyncLightQueryFinished(success, results):
+.. py:method:: vrQueryService.asyncLightQueryFinished(success, results)
+
+    This signal is sent when an asynchronous query for lights is finished.
+
+
+
+    :param success: True if the expression could be evaluated.
+    :type success: bool
+
+    :param results: A list of all results of this query
+    :type results: List[vrdNode]
+
+    
+    
+
+.. _vredvrQueryService.asyncLightQueryStarted():
+.. py:method:: vrQueryService.asyncLightQueryStarted()
+
+    This signal is sent when an asynchronous query for lights is started.
+
+
+
+
+    
+    
+
+.. _vredvrQueryService.asyncMaterialQueryFinished(success, results):
+.. py:method:: vrQueryService.asyncMaterialQueryFinished(success, results)
+
+    This signal is sent when an asynchronous query for materials is finished.
+
+
+
+    :param success: True if the expression could be evaluated.
+    :type success: bool
+
+    :param results: A list of all results of this query. Items can be of type :any:`vrdMaterialNode <vredvrdMaterialNode>` for materials or :any:`vrdNode <vredvrdNode>` for groups.
+    :type results: List[vrdNode]
+
+    
+    
+
+.. _vredvrQueryService.asyncMaterialQueryStarted():
+.. py:method:: vrQueryService.asyncMaterialQueryStarted()
+
+    This signal is sent when an asynchronous query for materials is started.
+
+
+
+
+    
+    
+
+.. _vredvrQueryService.asyncMetadataQueryFinished(success, results):
+.. py:method:: vrQueryService.asyncMetadataQueryFinished(success, results)
+
+    This signal is sent when an asynchronous query for metadata is finished.
+
+
+
+    :param success: True if the expression could be evaluated.
+    :type success: bool
+
+    :param results: A list of all results of this query
+    :type results: List[vrdMetadataSet]
+
+    
+    
+
+.. _vredvrQueryService.asyncMetadataQueryStarted():
+.. py:method:: vrQueryService.asyncMetadataQueryStarted()
+
+    This signal is sent when an asynchronous query for metadata is started.
+
+
+
+
+    
+    
+
+.. _vredvrQueryService.asyncSceneplateQueryFinished(success, results):
+.. py:method:: vrQueryService.asyncSceneplateQueryFinished(success, results)
+
+    This signal is sent when an asynchronous query for scene plates is finished.
+
+
+
+    :param success: True if the expression could be evaluated.
+    :type success: bool
+
+    :param results: A list of all results of this query
+    :type results: List[vrdNode]
+
+    
+    
+
+.. _vredvrQueryService.asyncSceneplateQueryStarted():
+.. py:method:: vrQueryService.asyncSceneplateQueryStarted()
+
+    This signal is sent when an asynchronous query for scene plates is started.
+
+
+
+
+    
+    
+
+.. _vredvrQueryService.asyncSceneQueryFinished(success, results):
+.. py:method:: vrQueryService.asyncSceneQueryFinished(success, results)
+
+    This signal is sent when an asynchronous query for Scenegraph nodes is finished.
+
+
+
+    :param success: True if the expression could be evaluated.
+    :type success: bool
+
+    :param results: A list of all results of this query
+    :type results: List[vrdNode]
+
+    
+    
+
+.. _vredvrQueryService.asyncSceneQueryStarted():
+.. py:method:: vrQueryService.asyncSceneQueryStarted()
+
+    This signal is sent when an asynchronous query for Scenegraph nodes is started.
+
+
+
+
+    
+    
+
+

@@ -1,0 +1,215 @@
+-------------------
+vrdPerspectiveMatch
+-------------------
+
+
+.. _vredvrdPerspectiveMatch:
+.. py:class:: vrdPerspectiveMatch
+
+(Inherits :py:class:`vrdSceneObject`)
+
+Class to access camera perspective matching functionality.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`doRotateLeft() <vredvrdPerspectiveMatch.doRotateLeft()>`
+    * :ref:`doRotateRight() <vredvrdPerspectiveMatch.doRotateRight()>`
+    * :ref:`getEnabled() → bool<vredvrdPerspectiveMatch.getEnabled()>`
+    * :ref:`getMagnifyFactor() → float<vredvrdPerspectiveMatch.getMagnifyFactor()>`
+    * :ref:`getPivot() → QVector3D<vredvrdPerspectiveMatch.getPivot()>`
+    * :ref:`getRotationStepSize() → float<vredvrdPerspectiveMatch.getRotationStepSize()>`
+    * :ref:`getVanishingLinesType() → vrCameraTypes.VanishingLinesType<vredvrdPerspectiveMatch.getVanishingLinesType()>`
+    * :ref:`setDefaultLines() <vredvrdPerspectiveMatch.setDefaultLines()>`
+    * :ref:`setEnabled(enabled) <vredvrdPerspectiveMatch.setEnabled(enabled)>`
+    * :ref:`setMagnifyFactor(factor) <vredvrdPerspectiveMatch.setMagnifyFactor(factor)>`
+    * :ref:`setPivot(pivot) <vredvrdPerspectiveMatch.setPivot(pivot)>`
+    * :ref:`setPivotFromNavigator() <vredvrdPerspectiveMatch.setPivotFromNavigator()>`
+    * :ref:`setRotationStepSize(deg) <vredvrdPerspectiveMatch.setRotationStepSize(deg)>`
+    * :ref:`setVanishingLinesType(type) <vredvrdPerspectiveMatch.setVanishingLinesType(type)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdPerspectiveMatch.doRotateLeft():
+.. py:method:: vrdPerspectiveMatch.doRotateLeft()
+
+    Rotates the camera clockwise around the pivot by the amount of degrees set with         :any:`vrdPerspectiveMatch.setRotationStepSize(deg) <vredvrdPerspectiveMatch.setRotationStepSize(deg)>`
+
+
+
+
+    
+    
+
+.. _vredvrdPerspectiveMatch.doRotateRight():
+.. py:method:: vrdPerspectiveMatch.doRotateRight()
+
+    Rotates the camera counterclockwise around the pivot by the amount of degrees set with         :any:`vrdPerspectiveMatch.setRotationStepSize(deg) <vredvrdPerspectiveMatch.setRotationStepSize(deg)>`
+
+
+
+
+    
+    
+
+.. _vredvrdPerspectiveMatch.getEnabled():
+.. py:method:: vrdPerspectiveMatch.getEnabled()
+
+    Returns if perspective matching tool is currently enabled.
+
+
+
+
+    :return: True if perspective matching tool is currently enabled
+    :rtype: bool
+
+.. _vredvrdPerspectiveMatch.getMagnifyFactor():
+.. py:method:: vrdPerspectiveMatch.getMagnifyFactor()
+
+    Returns the scale factor used for the magnifier.
+
+
+
+
+    :return: Scale factor used for magnifier
+    :rtype: float
+
+.. _vredvrdPerspectiveMatch.getPivot():
+.. py:method:: vrdPerspectiveMatch.getPivot()
+
+    Returns the pivot used for rotations with         :any:`vrdPerspectiveMatch.doRotateLeft() <vredvrdPerspectiveMatch.doRotateLeft()>` and :any:`vrdPerspectiveMatch.doRotateRight() <vredvrdPerspectiveMatch.doRotateRight()>`
+
+
+
+
+    :return: Rotation pivot
+    :rtype: QVector3D
+
+.. _vredvrdPerspectiveMatch.getRotationStepSize():
+.. py:method:: vrdPerspectiveMatch.getRotationStepSize()
+
+    Returns the rotation step size used by         :any:`vrdPerspectiveMatch.doRotateLeft() <vredvrdPerspectiveMatch.doRotateLeft()>` and :any:`vrdPerspectiveMatch.doRotateRight() <vredvrdPerspectiveMatch.doRotateRight()>`
+
+
+
+
+    :return: Angle in degrees
+    :rtype: float
+
+.. _vredvrdPerspectiveMatch.getVanishingLinesType():
+.. py:method:: vrdPerspectiveMatch.getVanishingLinesType()
+
+    Returns the vanishing lines type.
+
+
+
+
+    :return: The vanishing lines type
+    :rtype: :ref:`vrCameraTypes.VanishingLinesType <vredvrCameraTypes.VanishingLinesType>`
+
+.. _vredvrdPerspectiveMatch.setDefaultLines():
+.. py:method:: vrdPerspectiveMatch.setDefaultLines()
+
+    Resets the vanishing lines to default values.
+
+
+
+
+    
+    
+
+.. _vredvrdPerspectiveMatch.setEnabled(enabled):
+.. py:method:: vrdPerspectiveMatch.setEnabled(enabled)
+
+    Enables or disables the perspective match tool.
+
+
+
+    :param enabled: True if perspective matching tool should be enabled
+    :type enabled: bool
+
+    
+    
+
+.. _vredvrdPerspectiveMatch.setMagnifyFactor(factor):
+.. py:method:: vrdPerspectiveMatch.setMagnifyFactor(factor)
+
+    Sets the magnify factor used for the magnifier shown at the manipulator handles. This does not have an effect on the calculation.
+
+
+
+    :param factor: The magnify factor
+    :type factor: float
+
+    
+    
+
+.. _vredvrdPerspectiveMatch.setPivot(pivot):
+.. py:method:: vrdPerspectiveMatch.setPivot(pivot)
+
+    Sets the pivot used for rotations with         :any:`vrdPerspectiveMatch.doRotateLeft() <vredvrdPerspectiveMatch.doRotateLeft()>` and :any:`vrdPerspectiveMatch.doRotateRight() <vredvrdPerspectiveMatch.doRotateRight()>`
+
+
+
+    :param pivot: The rotation pivot
+    :type pivot: QVector3D
+
+    
+    
+
+.. _vredvrdPerspectiveMatch.setPivotFromNavigator():
+.. py:method:: vrdPerspectiveMatch.setPivotFromNavigator()
+
+    Applies the currently used navigation pivot as perspective match pivot.
+
+
+
+
+    
+    
+
+.. _vredvrdPerspectiveMatch.setRotationStepSize(deg):
+.. py:method:: vrdPerspectiveMatch.setRotationStepSize(deg)
+
+    Sets the rotation step size used by         :any:`vrdPerspectiveMatch.doRotateLeft() <vredvrdPerspectiveMatch.doRotateLeft()>` and :any:`vrdPerspectiveMatch.doRotateRight() <vredvrdPerspectiveMatch.doRotateRight()>`
+
+
+
+    :param deg: Angle in degrees
+    :type deg: float
+
+    
+    
+
+.. _vredvrdPerspectiveMatch.setVanishingLinesType(type):
+.. py:method:: vrdPerspectiveMatch.setVanishingLinesType(type)
+
+    Sets the vanishing lines type defining which vanishing lines should be used (and shown) for perspective matching.
+
+
+
+    :param type: The vanishing lines type
+    :type type: :ref:`vrCameraTypes.VanishingLinesType <vredvrCameraTypes.VanishingLinesType>`
+
+    
+    
+
+
+
+
+
+
+
+
+
+

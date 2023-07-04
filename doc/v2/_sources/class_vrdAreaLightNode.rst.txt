@@ -1,0 +1,324 @@
+----------------
+vrdAreaLightNode
+----------------
+
+
+.. _vredvrdAreaLightNode:
+.. py:class:: vrdAreaLightNode
+
+(Inherits :py:class:`vrdBaseLightNode`)
+
+This is the base class for all area lights. These lights emit light from an entire area in contrast to point lights, which emit light from a single point.
+
+
+
+    .. _vredvrdAreaLightNode.QualityMode:
+    .. py:class:: QualityMode
+
+        Area light evaluation method in Raytracing.
+
+
+            Accurate: An accurate sampling of the light source is used.
+
+            .. _vredvrdAreaLightNode.QualityMode.Accurate:
+            .. py:data:: Accurate
+
+
+            Approximated: An approximation based on linearly transformed cosines is used.
+
+            .. _vredvrdAreaLightNode.QualityMode.Approximated:
+            .. py:data:: Approximated
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAttenuation() → vrLightTypes.Attenuation<vredvrdAreaLightNode.getAttenuation()>`
+    * :ref:`getIlluminateScene() → bool<vredvrdAreaLightNode.getIlluminateScene()>`
+    * :ref:`getInteractiveMode() → vrdAreaLightNode.QualityMode<vredvrdAreaLightNode.getInteractiveMode()>`
+    * :ref:`getInteractiveQuality() → integer<vredvrdAreaLightNode.getInteractiveQuality()>`
+    * :ref:`getLightProfile() → vrdLightProfile<vredvrdAreaLightNode.getLightProfile()>`
+    * :ref:`getLocalLight() → bool<vredvrdAreaLightNode.getLocalLight()>`
+    * :ref:`getPrimaryVisibility() → bool<vredvrdAreaLightNode.getPrimaryVisibility()>`
+    * :ref:`getShadowMap() → vrdShadowMap<vredvrdAreaLightNode.getShadowMap()>`
+    * :ref:`getStillFrameMode() → vrdAreaLightNode.QualityMode<vredvrdAreaLightNode.getStillFrameMode()>`
+    * :ref:`getStillFrameQuality() → integer<vredvrdAreaLightNode.getStillFrameQuality()>`
+    * :ref:`getTexture() → vrdLightTexture<vredvrdAreaLightNode.getTexture()>`
+    * :ref:`getVisibleInReflections() → bool<vredvrdAreaLightNode.getVisibleInReflections()>`
+    * :ref:`setAttenuation(attenuation) <vredvrdAreaLightNode.setAttenuation(attenuation)>`
+    * :ref:`setIlluminateScene(illuminateScene) <vredvrdAreaLightNode.setIlluminateScene(illuminateScene)>`
+    * :ref:`setInteractiveMode(value) <vredvrdAreaLightNode.setInteractiveMode(value)>`
+    * :ref:`setInteractiveQuality(quality) <vredvrdAreaLightNode.setInteractiveQuality(quality)>`
+    * :ref:`setLocalLight(isLocalLight) <vredvrdAreaLightNode.setLocalLight(isLocalLight)>`
+    * :ref:`setPrimaryVisibility(visible) <vredvrdAreaLightNode.setPrimaryVisibility(visible)>`
+    * :ref:`setStillFrameMode(value) <vredvrdAreaLightNode.setStillFrameMode(value)>`
+    * :ref:`setStillFrameQuality(quality) <vredvrdAreaLightNode.setStillFrameQuality(quality)>`
+    * :ref:`setVisibleInReflections(visible) <vredvrdAreaLightNode.setVisibleInReflections(visible)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdAreaLightNode.getAttenuation():
+.. py:method:: vrdAreaLightNode.getAttenuation()
+
+    Returns the attenuation mode.
+
+
+
+
+    :return: The attenuation mode.
+    :rtype: :ref:`vrLightTypes.Attenuation <vredvrLightTypes.Attenuation>`
+
+.. _vredvrdAreaLightNode.getIlluminateScene():
+.. py:method:: vrdAreaLightNode.getIlluminateScene()
+
+    Returns the state of the illuminate scene flag..
+
+
+
+
+    :return: True if illuminate scene is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAreaLightNode.getInteractiveMode():
+.. py:method:: vrdAreaLightNode.getInteractiveMode()
+
+    Get the value of the interactive quality mode.
+
+
+
+
+    :return: Current value of the interactive quality mode.
+    :rtype: :ref:`vrdAreaLightNode.QualityMode <vredvrdAreaLightNode.QualityMode>`
+
+.. _vredvrdAreaLightNode.getInteractiveQuality():
+.. py:method:: vrdAreaLightNode.getInteractiveQuality()
+
+    Returns the raytracing quality level for the interactive mode.
+
+
+
+
+    :return: The interactive quality level in the interval [0,8].
+    :rtype: integer
+
+.. _vredvrdAreaLightNode.getLightProfile():
+.. py:method:: vrdAreaLightNode.getLightProfile()
+
+    Returns the light profile.
+
+
+
+
+    :return: The light profile.
+    :rtype: vrdLightProfile
+
+.. _vredvrdAreaLightNode.getLocalLight():
+.. py:method:: vrdAreaLightNode.getLocalLight()
+
+    Returns the state of local lighting.
+
+
+
+
+    :return: True if local light mode is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAreaLightNode.getPrimaryVisibility():
+.. py:method:: vrdAreaLightNode.getPrimaryVisibility()
+
+    Returns the state of the primary visibility.
+
+
+
+
+    :return: True if primary visibility is turned on, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAreaLightNode.getShadowMap():
+.. py:method:: vrdAreaLightNode.getShadowMap()
+
+    Returns the shadow map of the light.
+
+
+
+
+    :return: The shadow map.
+    :rtype: vrdShadowMap
+
+.. _vredvrdAreaLightNode.getStillFrameMode():
+.. py:method:: vrdAreaLightNode.getStillFrameMode()
+
+    Get the value of the still frame quality mode.
+
+
+
+
+    :return: Current value of the still frame quality mode.
+    :rtype: :ref:`vrdAreaLightNode.QualityMode <vredvrdAreaLightNode.QualityMode>`
+
+.. _vredvrdAreaLightNode.getStillFrameQuality():
+.. py:method:: vrdAreaLightNode.getStillFrameQuality()
+
+    Returns the ratracing still frame quality level.
+
+
+
+
+    :return: The still frame quality level in the interval [0,8].
+    :rtype: integer
+
+.. _vredvrdAreaLightNode.getTexture():
+.. py:method:: vrdAreaLightNode.getTexture()
+
+    Returns the currently used light texture.
+
+
+
+
+    :return: The light texture.
+    :rtype: vrdLightTexture
+
+.. _vredvrdAreaLightNode.getVisibleInReflections():
+.. py:method:: vrdAreaLightNode.getVisibleInReflections()
+
+    Returns if the light is visible in reflections (Raytracing only).
+
+
+
+
+    :return: True if the light is visible in reflections, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAreaLightNode.setAttenuation(attenuation):
+.. py:method:: vrdAreaLightNode.setAttenuation(attenuation)
+
+    Sets the attenuation mode. Attenuation is the falloff of the light intensity.
+
+
+
+    :param attenuation: The attenuation mode.
+    :type attenuation: :ref:`vrLightTypes.Attenuation <vredvrLightTypes.Attenuation>`
+
+    
+    
+
+.. _vredvrdAreaLightNode.setIlluminateScene(illuminateScene):
+.. py:method:: vrdAreaLightNode.setIlluminateScene(illuminateScene)
+
+    Toggles the illumination of objects on or off.
+
+    If switched off the light will add nothing to the scene. Lens flares are still active.
+
+    :param illuminateScene: True to illuminate the scene, otherwise False.
+    :type illuminateScene: bool
+
+    
+    
+
+.. _vredvrdAreaLightNode.setInteractiveMode(value):
+.. py:method:: vrdAreaLightNode.setInteractiveMode(value)
+
+    Defines the computation method used for evaluating the area light in interactive rendering.
+
+
+
+    :param value: New value of the interactive quality mode.
+    :type value: :ref:`vrdAreaLightNode.QualityMode <vredvrdAreaLightNode.QualityMode>`
+
+    
+    
+
+.. _vredvrdAreaLightNode.setInteractiveQuality(quality):
+.. py:method:: vrdAreaLightNode.setInteractiveQuality(quality)
+
+    Sets the raytracing quality level for the interactive mode.
+
+
+
+    :param quality: The interactive quality level in the interval [0,8].
+    :type quality: integer
+
+    
+    
+
+.. _vredvrdAreaLightNode.setLocalLight(isLocalLight):
+.. py:method:: vrdAreaLightNode.setLocalLight(isLocalLight)
+
+    Enables / disables local lighting.
+
+    If this is enabled and the light is part of a light link set then only the nodes in the light links set will be illuminated.
+
+    :param isLocalLight: True enables local lighting, False disables it.
+    :type isLocalLight: bool
+
+    
+    
+
+.. _vredvrdAreaLightNode.setPrimaryVisibility(visible):
+.. py:method:: vrdAreaLightNode.setPrimaryVisibility(visible)
+
+    Sets the primary visibility of the light.
+
+    If this is off the light will not be rendered but it will still emit light into the scene.
+
+    :param visible: True to turn the primary visibility on, False otherwise.
+    :type visible: bool
+
+    
+    
+
+.. _vredvrdAreaLightNode.setStillFrameMode(value):
+.. py:method:: vrdAreaLightNode.setStillFrameMode(value)
+
+    Defines the computation method used for evaluating the area light in still frame rendering.
+
+
+
+    :param value: New value of the still frame quality mode.
+    :type value: :ref:`vrdAreaLightNode.QualityMode <vredvrdAreaLightNode.QualityMode>`
+
+    
+    
+
+.. _vredvrdAreaLightNode.setStillFrameQuality(quality):
+.. py:method:: vrdAreaLightNode.setStillFrameQuality(quality)
+
+    Sets the raytracing quality level for still frame rendering.
+
+
+
+    :param quality: The still frame quality level in the interval [0,8].
+    :type quality: integer
+
+    
+    
+
+.. _vredvrdAreaLightNode.setVisibleInReflections(visible):
+.. py:method:: vrdAreaLightNode.setVisibleInReflections(visible)
+
+    Sets the visibility in reflections.
+
+    Note: this only works if raytracing is enabled.
+
+    :param visible: True if the light should be visible in reflections, False otherwise.
+    :type visible: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

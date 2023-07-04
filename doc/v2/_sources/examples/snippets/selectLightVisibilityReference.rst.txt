@@ -1,0 +1,7 @@
+selectLightVisibilityReference
+==============================
+
+.. literalinclude:: ../../python_examples/snippets/selectLightVisibilityReference.py
+   :language: python
+   :linenos:
+   :caption: snippets/selectLightVisibilityReference.py

@@ -1,0 +1,245 @@
+---------------------
+vrdFlipflopFlakeLayer
+---------------------
+
+
+.. _vredvrdFlipflopFlakeLayer:
+.. py:class:: vrdFlipflopFlakeLayer
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This class is used for all flip flop material layer properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBlending() → float<vredvrdFlipflopFlakeLayer.getBlending()>`
+    * :ref:`getColor1() → QVector3D<vredvrdFlipflopFlakeLayer.getColor1()>`
+    * :ref:`getColor1Spectrum() → vrSpectrum<vredvrdFlipflopFlakeLayer.getColor1Spectrum()>`
+    * :ref:`getColor2() → QVector3D<vredvrdFlipflopFlakeLayer.getColor2()>`
+    * :ref:`getColor2Spectrum() → vrSpectrum<vredvrdFlipflopFlakeLayer.getColor2Spectrum()>`
+    * :ref:`getIntensity() → float<vredvrdFlipflopFlakeLayer.getIntensity()>`
+    * :ref:`getRoughness() → float<vredvrdFlipflopFlakeLayer.getRoughness()>`
+    * :ref:`getSize() → float<vredvrdFlipflopFlakeLayer.getSize()>`
+    * :ref:`setBlending(value) <vredvrdFlipflopFlakeLayer.setBlending(value)>`
+    * :ref:`setColor1(value) <vredvrdFlipflopFlakeLayer.setColor1(value)>`
+    * :ref:`setColor1Spectrum(value) <vredvrdFlipflopFlakeLayer.setColor1Spectrum(value)>`
+    * :ref:`setColor2(value) <vredvrdFlipflopFlakeLayer.setColor2(value)>`
+    * :ref:`setColor2Spectrum(value) <vredvrdFlipflopFlakeLayer.setColor2Spectrum(value)>`
+    * :ref:`setIntensity(value) <vredvrdFlipflopFlakeLayer.setIntensity(value)>`
+    * :ref:`setRoughness(roughness) <vredvrdFlipflopFlakeLayer.setRoughness(roughness)>`
+    * :ref:`setSize(value) <vredvrdFlipflopFlakeLayer.setSize(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdFlipflopFlakeLayer.getBlending():
+.. py:method:: vrdFlipflopFlakeLayer.getBlending()
+
+    Gets the mixture ratio of two flake colors.
+
+
+
+
+    :return: Current used mixture ratio of two flake colors.
+    :rtype: float
+
+.. _vredvrdFlipflopFlakeLayer.getColor1():
+.. py:method:: vrdFlipflopFlakeLayer.getColor1()
+
+    Gets the color of the flakes when viewed at an angle.
+
+
+
+
+    :return: Current color of the flakes viewed at an angle.
+    :rtype: QVector3D
+
+.. _vredvrdFlipflopFlakeLayer.getColor1Spectrum():
+.. py:method:: vrdFlipflopFlakeLayer.getColor1Spectrum()
+
+    Gets the spectrum of the flakes viewed at an angle.
+
+
+
+
+    :return: The current used spectrum of the flakes viewed at an angle.
+    :rtype: vrSpectrum
+
+.. _vredvrdFlipflopFlakeLayer.getColor2():
+.. py:method:: vrdFlipflopFlakeLayer.getColor2()
+
+    Gets the color of the flakes when viewed at normal incidence.
+
+
+
+
+    :return: Current used color of the flakes when viewed at normal incidence.
+    :rtype: QVector3D
+
+.. _vredvrdFlipflopFlakeLayer.getColor2Spectrum():
+.. py:method:: vrdFlipflopFlakeLayer.getColor2Spectrum()
+
+    Gets the spectrum of the flakes when viewed at normal incidence.
+
+
+
+
+    :return: The current used spectrum of the flakes when viewed at normal incidence.
+    :rtype: vrSpectrum
+
+.. _vredvrdFlipflopFlakeLayer.getIntensity():
+.. py:method:: vrdFlipflopFlakeLayer.getIntensity()
+
+    Gets the amount of variation in the flake's normal directions.
+
+
+
+
+    :return: The current value of the variation in the flake's normal direcions.
+    :rtype: float
+
+.. _vredvrdFlipflopFlakeLayer.getRoughness():
+.. py:method:: vrdFlipflopFlakeLayer.getRoughness()
+
+    Gets the roughness of the flake surfaces.
+
+
+
+
+    :return: Current roughness of the flake surfaces
+    :rtype: float
+
+.. _vredvrdFlipflopFlakeLayer.getSize():
+.. py:method:: vrdFlipflopFlakeLayer.getSize()
+
+    Gets the flake's size.
+
+
+
+
+    :return: The current value of the flake's size.
+    :rtype: float
+
+.. _vredvrdFlipflopFlakeLayer.setBlending(value):
+.. py:method:: vrdFlipflopFlakeLayer.setBlending(value)
+
+    Defines the mixture ratio of two flake colors.
+
+
+
+    :param value: New used value for flake's color mixture ratio.
+    :type value: float
+
+    
+    
+
+.. _vredvrdFlipflopFlakeLayer.setColor1(value):
+.. py:method:: vrdFlipflopFlakeLayer.setColor1(value)
+
+    Sets the color of the flakes when viewed at an angle.
+
+
+
+    :param value: New color for the flakes viewed at an angle.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdFlipflopFlakeLayer.setColor1Spectrum(value):
+.. py:method:: vrdFlipflopFlakeLayer.setColor1Spectrum(value)
+
+    Sets the spectrum of the flakes when viewed at an angle.
+
+
+
+    :param value: New spectrum for the flakes viewed at an angle
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdFlipflopFlakeLayer.setColor2(value):
+.. py:method:: vrdFlipflopFlakeLayer.setColor2(value)
+
+    Sets the color of the flakes when viewed at normal incidence.
+
+
+
+    :param value: New color for the flakes when viewed at normal incidence.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdFlipflopFlakeLayer.setColor2Spectrum(value):
+.. py:method:: vrdFlipflopFlakeLayer.setColor2Spectrum(value)
+
+    Sets the spectrum of the flakes when viewed at normal incidence.
+
+
+
+    :param value: New spectrum for the flakes when viewed at normal incidence.
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdFlipflopFlakeLayer.setIntensity(value):
+.. py:method:: vrdFlipflopFlakeLayer.setIntensity(value)
+
+    Sets the amount of variation in the flake's normal directions.
+
+
+
+    :param value: New value for the variation in the flake's normal direcions.
+    :type value: float
+
+    
+    
+
+.. _vredvrdFlipflopFlakeLayer.setRoughness(roughness):
+.. py:method:: vrdFlipflopFlakeLayer.setRoughness(roughness)
+
+    Sets the roughness of the flake surfaces. A lower value represents a smoother surface resulting in more specular reflections while a higher value represents a rough surface resulting in a more diffuse reflections.
+
+
+
+    :param roughness: New value of the flake roughness
+    :type roughness: float
+
+    
+    
+
+.. _vredvrdFlipflopFlakeLayer.setSize(value):
+.. py:method:: vrdFlipflopFlakeLayer.setSize(value)
+
+    Sets the flake's size. The higher the value, the larger the flakes in the paint.
+
+
+
+    :param value: New value of flake's size.
+    :type value: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

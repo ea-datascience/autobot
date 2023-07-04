@@ -1,0 +1,254 @@
+-----------------------
+vrdStarVRRenderSettings
+-----------------------
+
+
+.. _vredvrdStarVRRenderSettings:
+.. py:class:: vrdStarVRRenderSettings
+
+(Inherits :py:class:`vrdData`)
+
+Holds render settings for StarVR HMD. Changes to these settings take effect on next activation of StarVR HMD mode.
+
+Use it like this:
+
+.. code-block:: python
+
+     starvrSettings = vrHMDService.getStarVRRenderSettings()
+     # change settings, e.g.
+     starvrSettings.setFoveatedFovFactor(0.3)
+     vrHMDService.setStarVRRenderSettings(starvrSettings)
+..
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getFoveatedFovFactor() → float<vredvrdStarVRRenderSettings.getFoveatedFovFactor()>`
+    * :ref:`getFoveatedResolutionScale() → float<vredvrdStarVRRenderSettings.getFoveatedResolutionScale()>`
+    * :ref:`getFrontViewResolutionScale() → float<vredvrdStarVRRenderSettings.getFrontViewResolutionScale()>`
+    * :ref:`getNonFoveatedResolutionScale() → float<vredvrdStarVRRenderSettings.getNonFoveatedResolutionScale()>`
+    * :ref:`getSideViewResolutionScale() → float<vredvrdStarVRRenderSettings.getSideViewResolutionScale()>`
+    * :ref:`getUseNativeFoveatedRendering() → bool<vredvrdStarVRRenderSettings.getUseNativeFoveatedRendering()>`
+    * :ref:`getUseSingleTexture() → bool<vredvrdStarVRRenderSettings.getUseSingleTexture()>`
+    * :ref:`setFoveatedFovFactor(fovFactor) <vredvrdStarVRRenderSettings.setFoveatedFovFactor(fovFactor)>`
+    * :ref:`setFoveatedResolutionScale(scale) <vredvrdStarVRRenderSettings.setFoveatedResolutionScale(scale)>`
+    * :ref:`setFrontViewResolutionScale(scale) <vredvrdStarVRRenderSettings.setFrontViewResolutionScale(scale)>`
+    * :ref:`setNonFoveatedResolutionScale(scale) <vredvrdStarVRRenderSettings.setNonFoveatedResolutionScale(scale)>`
+    * :ref:`setSideViewResolutionScale(scale) <vredvrdStarVRRenderSettings.setSideViewResolutionScale(scale)>`
+    * :ref:`setUseNativeFoveatedRendering(on) <vredvrdStarVRRenderSettings.setUseNativeFoveatedRendering(on)>`
+    * :ref:`setUseSingleTexture(on) <vredvrdStarVRRenderSettings.setUseSingleTexture(on)>`
+    * :ref:`vrdStarVRRenderSettings() <vredvrdStarVRRenderSettings.vrdStarVRRenderSettings()>`
+    * :ref:`vrdStarVRRenderSettings(state) <vredvrdStarVRRenderSettings.vrdStarVRRenderSettings(state)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdStarVRRenderSettings.getFoveatedFovFactor():
+.. py:method:: vrdStarVRRenderSettings.getFoveatedFovFactor()
+
+    Returns the FOV factor used for native foveated rendering.
+
+
+
+
+    :return: factor in [0, 1]
+    :rtype: float
+
+.. _vredvrdStarVRRenderSettings.getFoveatedResolutionScale():
+.. py:method:: vrdStarVRRenderSettings.getFoveatedResolutionScale()
+
+    Returns the resolution scale factor for the foveated area (high-resolution) used in native foveated rendering mode.
+
+
+
+
+    :return: scale factor in [0, 1]
+    :rtype: float
+
+.. _vredvrdStarVRRenderSettings.getFrontViewResolutionScale():
+.. py:method:: vrdStarVRRenderSettings.getFrontViewResolutionScale()
+
+    Returns resolution scale for front viewports.
+
+
+
+
+    :return: scale factor in [0, 1]
+    :rtype: float
+
+.. _vredvrdStarVRRenderSettings.getNonFoveatedResolutionScale():
+.. py:method:: vrdStarVRRenderSettings.getNonFoveatedResolutionScale()
+
+    Returns the resolution scale factor for the pheripheral area (low-resolution) used in native foveated rendering mode.
+
+
+
+
+    :return: scale factor in [0, 1]
+    :rtype: float
+
+.. _vredvrdStarVRRenderSettings.getSideViewResolutionScale():
+.. py:method:: vrdStarVRRenderSettings.getSideViewResolutionScale()
+
+    Returns resolution scale for side viewports.
+
+
+
+
+    :return: scale factor in [0, 1]
+    :rtype: float
+
+.. _vredvrdStarVRRenderSettings.getUseNativeFoveatedRendering():
+.. py:method:: vrdStarVRRenderSettings.getUseNativeFoveatedRendering()
+
+    Return whether native StarVR foveated rendering is used.
+
+
+
+
+    :return: On/off
+    :rtype: bool
+
+.. _vredvrdStarVRRenderSettings.getUseSingleTexture():
+.. py:method:: vrdStarVRRenderSettings.getUseSingleTexture()
+
+    Return whether only one texture per eye is rendered.
+
+
+
+
+    :return: On/off
+    :rtype: bool
+
+.. _vredvrdStarVRRenderSettings.setFoveatedFovFactor(fovFactor):
+.. py:method:: vrdStarVRRenderSettings.setFoveatedFovFactor(fovFactor)
+
+    Set field of view factor for native foveated rendering. Defines which percentage of the whole FOV per eye is used for the high-resolution area.
+
+
+
+    :param fovFactor: FOV factor in [0, 1]
+    :type fovFactor: float
+
+    
+    
+
+.. _vredvrdStarVRRenderSettings.setFoveatedResolutionScale(scale):
+.. py:method:: vrdStarVRRenderSettings.setFoveatedResolutionScale(scale)
+
+    Set resolution scale for foveated area (high-resolution) used in native foveated rendering mode. 1.0 corresponds to 100% (maximum) resolution.
+
+
+
+    :param scale: scale factor in [0, 1].
+    :type scale: float
+
+    
+    
+
+.. _vredvrdStarVRRenderSettings.setFrontViewResolutionScale(scale):
+.. py:method:: vrdStarVRRenderSettings.setFrontViewResolutionScale(scale)
+
+    Set resolution scale for front viewports.
+
+
+
+    :param scale: scale factor in [0, 1]. 1.0 is 100% of the recommended resolution.
+    :type scale: float
+
+    
+    
+
+.. _vredvrdStarVRRenderSettings.setNonFoveatedResolutionScale(scale):
+.. py:method:: vrdStarVRRenderSettings.setNonFoveatedResolutionScale(scale)
+
+    Set resolution scale for pheripheral area (low-resolution) used in native foveated rendering mode.
+
+
+
+    :param scale: scale factor in [0, 1]
+    :type scale: float
+
+    
+    
+
+.. _vredvrdStarVRRenderSettings.setSideViewResolutionScale(scale):
+.. py:method:: vrdStarVRRenderSettings.setSideViewResolutionScale(scale)
+
+    Set resolution scale for side viewports.
+
+
+
+    :param scale: scale factor in [0, 1]. 1.0 is 100% of the recommended resolution.
+    :type scale: float
+
+    
+    
+
+.. _vredvrdStarVRRenderSettings.setUseNativeFoveatedRendering(on):
+.. py:method:: vrdStarVRRenderSettings.setUseNativeFoveatedRendering(on)
+
+    Toggle native StarVR foveated rendering. In this mode, the scene is rendered 2 times per eye: once into a larger low resolution viewport for peripheral vision, and once into a smaller high resolution viewport that is moved by eye tracking to the position you're currently looking at. Change the size of the tracked viewport with         :any:`vrdStarVRRenderSettings.setFoveatedFovFactor(fovFactor) <vredvrdStarVRRenderSettings.setFoveatedFovFactor(fovFactor)>`, and its resolution with :any:`vrdStarVRRenderSettings.setFoveatedResolutionScale(scale) <vredvrdStarVRRenderSettings.setFoveatedResolutionScale(scale)>`.
+
+
+
+    :param on: On (True), off (False)
+    :type on: bool
+
+    
+    
+
+.. _vredvrdStarVRRenderSettings.setUseSingleTexture(on):
+.. py:method:: vrdStarVRRenderSettings.setUseSingleTexture(on)
+
+    Enable this option to render only one texture per eye, instead of the two 'front' and 'side' view textures. This option is only applied if native foveated rendering is off.
+
+
+
+    :param on: On (True), off (False)
+    :type on: bool
+
+    
+    
+
+.. _vredvrdStarVRRenderSettings.vrdStarVRRenderSettings():
+.. py:method:: vrdStarVRRenderSettings.vrdStarVRRenderSettings()
+
+    Default constructor.
+
+
+
+
+    
+    
+
+.. _vredvrdStarVRRenderSettings.vrdStarVRRenderSettings(state):
+.. py:method:: vrdStarVRRenderSettings.vrdStarVRRenderSettings(state)
+
+    Copy constructor.
+
+
+
+    :param state: 
+    :type state: vrdStarVRRenderSettings
+
+    
+    
+
+
+
+
+
+
+
+
+
+

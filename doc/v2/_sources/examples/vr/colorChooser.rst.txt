@@ -1,0 +1,9 @@
+Interactive color manipulation in VR
+====================================
+
+This example shows how to open a submenu in the VR menu. When the color tool is activated, a color selection appears in the VR menu. The "pointer" interaction is used to select objects.
+
+.. literalinclude:: ../../python_examples/vr/colorChooser.py
+   :language: python
+   :linenos:
+   :caption: vr/colorChooser.py

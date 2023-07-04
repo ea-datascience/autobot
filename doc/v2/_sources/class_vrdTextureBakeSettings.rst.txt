@@ -1,0 +1,367 @@
+----------------------
+vrdTextureBakeSettings
+----------------------
+
+
+.. _vredvrdTextureBakeSettings:
+.. py:class:: vrdTextureBakeSettings
+
+(Inherits :py:class:`vrdData`)
+
+Settings for texture baking with     :any:`vrBakeService.bakeToTexture(geometryNodes, illuminationSettings, textureSettings, replaceTextureBake) <vredvrBakeService.bakeToTexture(geometryNodes, illuminationSettings, textureSettings, replaceTextureBake)>`.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getDenoiserType() → vrBakeTypes.DenoiserType<vredvrdTextureBakeSettings.getDenoiserType()>`
+    * :ref:`getEdgeDilation() → integer<vredvrdTextureBakeSettings.getEdgeDilation()>`
+    * :ref:`getExternalReferenceLocation() → string<vredvrdTextureBakeSettings.getExternalReferenceLocation()>`
+    * :ref:`getHideTransparentObjects() → bool<vredvrdTextureBakeSettings.getHideTransparentObjects()>`
+    * :ref:`getMaximumResolution() → integer<vredvrdTextureBakeSettings.getMaximumResolution()>`
+    * :ref:`getMinimumResolution() → integer<vredvrdTextureBakeSettings.getMinimumResolution()>`
+    * :ref:`getRenderer() → vrBakeTypes.Renderer<vredvrdTextureBakeSettings.getRenderer()>`
+    * :ref:`getSamples() → integer<vredvrdTextureBakeSettings.getSamples()>`
+    * :ref:`getShareLightmapsForClones() → bool<vredvrdTextureBakeSettings.getShareLightmapsForClones()>`
+    * :ref:`getTexelDensity() → float<vredvrdTextureBakeSettings.getTexelDensity()>`
+    * :ref:`getUseDenoising() → bool<vredvrdTextureBakeSettings.getUseDenoising()>`
+    * :ref:`getUseExistingResolution() → bool<vredvrdTextureBakeSettings.getUseExistingResolution()>`
+    * :ref:`setDenoiserType(denoiserType) <vredvrdTextureBakeSettings.setDenoiserType(denoiserType)>`
+    * :ref:`setEdgeDilation(value) <vredvrdTextureBakeSettings.setEdgeDilation(value)>`
+    * :ref:`setExternalReferenceLocation(value) <vredvrdTextureBakeSettings.setExternalReferenceLocation(value)>`
+    * :ref:`setHideTransparentObjects(value) <vredvrdTextureBakeSettings.setHideTransparentObjects(value)>`
+    * :ref:`setMaximumResolution(value) <vredvrdTextureBakeSettings.setMaximumResolution(value)>`
+    * :ref:`setMinimumResolution(value) <vredvrdTextureBakeSettings.setMinimumResolution(value)>`
+    * :ref:`setRenderer(renderer) <vredvrdTextureBakeSettings.setRenderer(renderer)>`
+    * :ref:`setSamples(value) <vredvrdTextureBakeSettings.setSamples(value)>`
+    * :ref:`setShareLightmapsForClones(shareLightmaps) <vredvrdTextureBakeSettings.setShareLightmapsForClones(shareLightmaps)>`
+    * :ref:`setTexelDensity(value) <vredvrdTextureBakeSettings.setTexelDensity(value)>`
+    * :ref:`setUseDenoising(value) <vredvrdTextureBakeSettings.setUseDenoising(value)>`
+    * :ref:`setUseExistingResolution(value) <vredvrdTextureBakeSettings.setUseExistingResolution(value)>`
+    * :ref:`vrdTextureBakeSettings() <vredvrdTextureBakeSettings.vrdTextureBakeSettings()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdTextureBakeSettings.getDenoiserType():
+.. py:method:: vrdTextureBakeSettings.getDenoiserType()
+
+    
+
+
+
+
+    :return: The used denoiserType.
+    :rtype: :ref:`vrBakeTypes.DenoiserType <vredvrBakeTypes.DenoiserType>`
+
+.. _vredvrdTextureBakeSettings.getEdgeDilation():
+.. py:method:: vrdTextureBakeSettings.getEdgeDilation()
+
+    
+
+
+
+
+    :return: The edge dilation in pixels.
+    :rtype: integer
+
+.. _vredvrdTextureBakeSettings.getExternalReferenceLocation():
+.. py:method:: vrdTextureBakeSettings.getExternalReferenceLocation()
+
+    
+
+
+
+
+    :return: The external reference location path.
+    :rtype: string
+
+.. _vredvrdTextureBakeSettings.getHideTransparentObjects():
+.. py:method:: vrdTextureBakeSettings.getHideTransparentObjects()
+
+    
+
+
+
+
+    :return: True if transparent objects should be hidden, False otherwise.
+    :rtype: bool
+
+.. _vredvrdTextureBakeSettings.getMaximumResolution():
+.. py:method:: vrdTextureBakeSettings.getMaximumResolution()
+
+    
+
+
+
+
+    :return: The maximum resolution in pixels.
+    :rtype: integer
+
+.. _vredvrdTextureBakeSettings.getMinimumResolution():
+.. py:method:: vrdTextureBakeSettings.getMinimumResolution()
+
+    
+
+
+
+
+    :return: The minimum resolution in pixels.
+    :rtype: integer
+
+.. _vredvrdTextureBakeSettings.getRenderer():
+.. py:method:: vrdTextureBakeSettings.getRenderer()
+
+    
+
+
+
+
+    :return: The used raytracing renderer.
+    :rtype: :ref:`vrBakeTypes.Renderer <vredvrBakeTypes.Renderer>`
+
+.. _vredvrdTextureBakeSettings.getSamples():
+.. py:method:: vrdTextureBakeSettings.getSamples()
+
+    
+
+
+
+
+    :return: The number of samples.
+    :rtype: integer
+
+.. _vredvrdTextureBakeSettings.getShareLightmapsForClones():
+.. py:method:: vrdTextureBakeSettings.getShareLightmapsForClones()
+
+    
+
+
+
+
+    :return: True if lightmaps should be shared, False otherwise
+    :rtype: bool
+
+.. _vredvrdTextureBakeSettings.getTexelDensity():
+.. py:method:: vrdTextureBakeSettings.getTexelDensity()
+
+    
+
+
+
+
+    :return: The texel density.
+    :rtype: float
+
+.. _vredvrdTextureBakeSettings.getUseDenoising():
+.. py:method:: vrdTextureBakeSettings.getUseDenoising()
+
+    
+
+
+
+
+    :return: True if denoising is used, False otherwise.
+    :rtype: bool
+
+.. _vredvrdTextureBakeSettings.getUseExistingResolution():
+.. py:method:: vrdTextureBakeSettings.getUseExistingResolution()
+
+    
+
+
+
+
+    :return: True if an existing resolution should be used, False otherwise.
+    :rtype: bool
+
+.. _vredvrdTextureBakeSettings.setDenoiserType(denoiserType):
+.. py:method:: vrdTextureBakeSettings.setDenoiserType(denoiserType)
+
+    Sets which denoiser type is used to denoise the lightmaps.
+
+
+
+    :param denoiserType: The used denoiserType.
+    :type denoiserType: :ref:`vrBakeTypes.DenoiserType <vredvrBakeTypes.DenoiserType>`
+
+    
+    
+
+.. _vredvrdTextureBakeSettings.setEdgeDilation(value):
+.. py:method:: vrdTextureBakeSettings.setEdgeDilation(value)
+
+    Sets the edge dilation in pixels.
+
+    Sets the number of pixels the valid bake areas will be extended by. This is necessary to prevent the rendering of black seams at UV island borders.
+
+    :param value: Number of pixels.
+    :type value: integer
+
+    
+    
+
+.. _vredvrdTextureBakeSettings.setExternalReferenceLocation(value):
+.. py:method:: vrdTextureBakeSettings.setExternalReferenceLocation(value)
+
+    Sets an external reference location.
+
+    The external reference location is a path to a folder were the lightmap texture will be stored after the baking is done. In that case the lightmap texture is externally referenced. If no external reference location is set, the lightmap texture will exist only within the project file.
+
+    :param value: A path where the lightmap will be stored.
+    :type value: string
+
+    
+    
+
+.. _vredvrdTextureBakeSettings.setHideTransparentObjects(value):
+.. py:method:: vrdTextureBakeSettings.setHideTransparentObjects(value)
+
+    Sets if transparent objects should be hidden.
+
+    This option controls if objects with transparent materials will be hidden during the lightmap calculation process. When hidden, they do not have any effect on the light and shadow calculation.
+
+    :param value: True for hiding transparent objects, False otherwise.
+    :type value: bool
+
+    
+    
+
+.. _vredvrdTextureBakeSettings.setMaximumResolution(value):
+.. py:method:: vrdTextureBakeSettings.setMaximumResolution(value)
+
+    Sets the maximum resolution for the lightmap.
+
+    |             - Equal values for minimum and maximum resolution will
+    |               enforce a fixed resolution.
+    |             - Otherwise a resolution between minimum and maximum is
+    |               automatically calculated.
+
+    :param value: Number of pixels.
+    :type value: integer
+
+    
+    
+
+.. _vredvrdTextureBakeSettings.setMinimumResolution(value):
+.. py:method:: vrdTextureBakeSettings.setMinimumResolution(value)
+
+    Sets the minimum resolution for the lightmap.
+
+    |             - Equal values for minimum and maximum resolution will
+    |               enforce a fixed resolution.
+    |             - Otherwise a resolution between minimum and maximum is
+    |               automatically calculated.
+
+    :param value: Number of pixels.
+    :type value: integer
+
+    
+    
+
+.. _vredvrdTextureBakeSettings.setRenderer(renderer):
+.. py:method:: vrdTextureBakeSettings.setRenderer(renderer)
+
+    Sets which raytracing renderer is used to generate the lightmaps.
+
+
+
+    :param renderer: The used raytracing renderer.
+    :type renderer: :ref:`vrBakeTypes.Renderer <vredvrBakeTypes.Renderer>`
+
+    
+    
+
+.. _vredvrdTextureBakeSettings.setSamples(value):
+.. py:method:: vrdTextureBakeSettings.setSamples(value)
+
+    Sets the number of samples.
+
+    The number of samples per pixel defines the quality of the lightmap. The higher the number, the better the quality but the longer the calculation.
+
+    :param value: The number of samples.
+    :type value: integer
+
+    
+    
+
+.. _vredvrdTextureBakeSettings.setShareLightmapsForClones(shareLightmaps):
+.. py:method:: vrdTextureBakeSettings.setShareLightmapsForClones(shareLightmaps)
+
+    Sets if given clones will share the same lightmap or if separate lightmaps will be created for each clone.
+
+
+
+    :param shareLightmaps: True for sharing lightmaps, False otherwise
+    :type shareLightmaps: bool
+
+    
+    
+
+.. _vredvrdTextureBakeSettings.setTexelDensity(value):
+.. py:method:: vrdTextureBakeSettings.setTexelDensity(value)
+
+    Sets the texel density in pixels per meter.
+
+    The texel density is used for the automatic lightmap resolution calculation. The lightmap resolution will be calculated using this value and the object's size as well as the covered UV space, clamped by the minimum and maximum resolution.
+
+    :param value: The texel density.
+    :type value: float
+
+    
+    
+
+.. _vredvrdTextureBakeSettings.setUseDenoising(value):
+.. py:method:: vrdTextureBakeSettings.setUseDenoising(value)
+
+    Sets if denoising should be used or not.
+
+    Denoising is a post-process of the final lightmap texture and tries to reduce noise based on AI algorithms.
+
+    :param value: True for use of denoising, False otherwise.
+    :type value: bool
+
+    
+    
+
+.. _vredvrdTextureBakeSettings.setUseExistingResolution(value):
+.. py:method:: vrdTextureBakeSettings.setUseExistingResolution(value)
+
+    Sets if an existing lightmap resolution should be kept.
+
+    If the geometry already has a valid lightmap, its resolution is used for the new bake process.
+
+    :param value: True for using an existing resolution, False otherwise.
+    :type value: bool
+
+    
+    
+
+.. _vredvrdTextureBakeSettings.vrdTextureBakeSettings():
+.. py:method:: vrdTextureBakeSettings.vrdTextureBakeSettings()
+
+    Default constructor.
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+

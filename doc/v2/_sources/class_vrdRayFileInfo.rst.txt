@@ -1,0 +1,134 @@
+--------------
+vrdRayFileInfo
+--------------
+
+
+.. _vredvrdRayFileInfo:
+.. py:class:: vrdRayFileInfo
+
+(Inherits :py:class:`vrdData`)
+
+Interface to ray files.
+
+Holds information about a ray file.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getLuminousPower() → float<vredvrdRayFileInfo.getLuminousPower()>`
+    * :ref:`getNumberOfRays() → integer<vredvrdRayFileInfo.getNumberOfRays()>`
+    * :ref:`getScalingFactor() → float<vredvrdRayFileInfo.getScalingFactor()>`
+    * :ref:`getSpectralInformationString() → string<vredvrdRayFileInfo.getSpectralInformationString()>`
+    * :ref:`vrdRayFileInfo(luminousPower, numberOfRays, scalingFactor, spectralInformationString) <vredvrdRayFileInfo.vrdRayFileInfo(luminousPower, numberOfRays, scalingFactor, spectralInformationString)>`
+    * :ref:`vrdRayFileInfo() <vredvrdRayFileInfo.vrdRayFileInfo()>`
+    * :ref:`vrdRayFileInfo(other) <vredvrdRayFileInfo.vrdRayFileInfo(other)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdRayFileInfo.getLuminousPower():
+.. py:method:: vrdRayFileInfo.getLuminousPower()
+
+    
+
+
+
+
+    :return: Luminous power
+    :rtype: float
+
+.. _vredvrdRayFileInfo.getNumberOfRays():
+.. py:method:: vrdRayFileInfo.getNumberOfRays()
+
+    
+
+
+
+
+    :return: Number of rays
+    :rtype: integer
+
+.. _vredvrdRayFileInfo.getScalingFactor():
+.. py:method:: vrdRayFileInfo.getScalingFactor()
+
+    
+
+
+
+
+    :return: Scaling factor
+    :rtype: float
+
+.. _vredvrdRayFileInfo.getSpectralInformationString():
+.. py:method:: vrdRayFileInfo.getSpectralInformationString()
+
+    
+
+
+
+
+    :return: Spectral information string
+    :rtype: string
+
+.. _vredvrdRayFileInfo.vrdRayFileInfo(luminousPower, numberOfRays, scalingFactor, spectralInformationString):
+.. py:method:: vrdRayFileInfo.vrdRayFileInfo(luminousPower, numberOfRays, scalingFactor, spectralInformationString)
+
+    Create a ray file information object. In general this is not created by the user but returned by a         :any:`vrdRayFile <vredvrdRayFile>` to provide information about the used ray file.
+
+
+
+    :param luminousPower: 
+    :type luminousPower: float
+
+    :param numberOfRays: 
+    :type numberOfRays: integer
+
+    :param scalingFactor: 
+    :type scalingFactor: float
+
+    :param spectralInformationString: 
+    :type spectralInformationString: string
+
+    
+    
+
+.. _vredvrdRayFileInfo.vrdRayFileInfo():
+.. py:method:: vrdRayFileInfo.vrdRayFileInfo()
+
+    
+
+
+
+
+    
+    
+
+.. _vredvrdRayFileInfo.vrdRayFileInfo(other):
+.. py:method:: vrdRayFileInfo.vrdRayFileInfo(other)
+
+    
+
+
+
+    :param other: 
+    :type other: vrdRayFileInfo
+
+    
+    
+
+
+
+
+
+
+
+
+
+

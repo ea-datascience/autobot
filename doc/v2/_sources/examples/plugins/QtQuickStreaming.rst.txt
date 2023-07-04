@@ -1,0 +1,19 @@
+Manage Qt Quick applications for WebGL Streaming
+================================================
+
+This script plugin creates a convenience UI that lets you start and stop Qt Quick applications
+with WebGL streaming enabled.
+
+The script plugin is destroyed when VRED shuts down or when all script plugins 
+are reloaded. When this happens, we want to stop all created processes again, to not 
+leave orphan processes behind.
+To do this, the function ``onDestroyVREDScriptPlugin()`` has been implemented. It is 
+called automatically before the plugin is destroyed.
+
+Each script plugin can (but is not required to) implement ``onDestroyVREDScriptPlugin()`` to 
+do something just before the current instance of the plugin is destroyed.
+
+.. literalinclude:: ../../python_script_plugins/QtQuickStreaming/QtQuickStreaming.py
+   :language: python
+   :linenos:
+   :caption: QtQuickStreaming.py

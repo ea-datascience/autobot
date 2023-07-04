@@ -1,0 +1,472 @@
+-----------------------
+vrdBrushedMetalMaterial
+-----------------------
+
+
+.. _vredvrdBrushedMetalMaterial:
+.. py:class:: vrdBrushedMetalMaterial
+
+(Inherits :py:class:`vrdBRDFMaterial`)
+
+This class is used to handle all brushed metal material properties.
+
+
+
+    .. _vredvrdBrushedMetalMaterial.MetalType:
+    .. py:class:: MetalType
+
+
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.CustomReflectivity:
+            .. py:data:: CustomReflectivity
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Aluminium:
+            .. py:data:: Aluminium
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.AmorphousCarbon:
+            .. py:data:: AmorphousCarbon
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Silver:
+            .. py:data:: Silver
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Gold:
+            .. py:data:: Gold
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Cobalt:
+            .. py:data:: Cobalt
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Copper:
+            .. py:data:: Copper
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Chromium:
+            .. py:data:: Chromium
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Lithium:
+            .. py:data:: Lithium
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Mercury:
+            .. py:data:: Mercury
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Nickel:
+            .. py:data:: Nickel
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Potassium:
+            .. py:data:: Potassium
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Platinum:
+            .. py:data:: Platinum
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Iridium:
+            .. py:data:: Iridium
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Silicon:
+            .. py:data:: Silicon
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.AmorphousSilicon:
+            .. py:data:: AmorphousSilicon
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Sodium:
+            .. py:data:: Sodium
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Rhodium:
+            .. py:data:: Rhodium
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Tungsten:
+            .. py:data:: Tungsten
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Vanadium:
+            .. py:data:: Vanadium
+
+
+            
+
+            .. _vredvrdBrushedMetalMaterial.MetalType.Iron:
+            .. py:data:: Iron
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBrushOrientation() → vrdBrushOrientation<vredvrdBrushedMetalMaterial.getBrushOrientation()>`
+    * :ref:`getBumpTexture() → vrdBumpTexture<vredvrdBrushedMetalMaterial.getBumpTexture()>`
+    * :ref:`getClearcoat() → vrdClearcoat<vredvrdBrushedMetalMaterial.getClearcoat()>`
+    * :ref:`getDiffuseColor() → QVector3D<vredvrdBrushedMetalMaterial.getDiffuseColor()>`
+    * :ref:`getDiffuseColorSpectrum() → vrSpectrum<vredvrdBrushedMetalMaterial.getDiffuseColorSpectrum()>`
+    * :ref:`getDiffuseTexture() → vrdTexture<vredvrdBrushedMetalMaterial.getDiffuseTexture()>`
+    * :ref:`getDisplacementTexture() → vrdDisplacementTexture<vredvrdBrushedMetalMaterial.getDisplacementTexture()>`
+    * :ref:`getGlossyColor() → QVector3D<vredvrdBrushedMetalMaterial.getGlossyColor()>`
+    * :ref:`getGlossyColorSpectrum() → vrSpectrum<vredvrdBrushedMetalMaterial.getGlossyColorSpectrum()>`
+    * :ref:`getGlossyTexture() → vrdTexture<vredvrdBrushedMetalMaterial.getGlossyTexture()>`
+    * :ref:`getIncandescence() → vrdIncandescence<vredvrdBrushedMetalMaterial.getIncandescence()>`
+    * :ref:`getMetalType() → vrdBrushedMetalMaterial.MetalType<vredvrdBrushedMetalMaterial.getMetalType()>`
+    * :ref:`getReflectivity() → float<vredvrdBrushedMetalMaterial.getReflectivity()>`
+    * :ref:`getRoughnessTexture() → vrdRoughnessTexture<vredvrdBrushedMetalMaterial.getRoughnessTexture()>`
+    * :ref:`getRoughnessU() → float<vredvrdBrushedMetalMaterial.getRoughnessU()>`
+    * :ref:`getRoughnessV() → float<vredvrdBrushedMetalMaterial.getRoughnessV()>`
+    * :ref:`setDiffuseColor(value) <vredvrdBrushedMetalMaterial.setDiffuseColor(value)>`
+    * :ref:`setDiffuseColorSpectrum(value) <vredvrdBrushedMetalMaterial.setDiffuseColorSpectrum(value)>`
+    * :ref:`setGlossyColor(value) <vredvrdBrushedMetalMaterial.setGlossyColor(value)>`
+    * :ref:`setGlossyColorSpectrum(value) <vredvrdBrushedMetalMaterial.setGlossyColorSpectrum(value)>`
+    * :ref:`setMetalType(value) <vredvrdBrushedMetalMaterial.setMetalType(value)>`
+    * :ref:`setReflectivity(v) <vredvrdBrushedMetalMaterial.setReflectivity(v)>`
+    * :ref:`setRoughnessU(u) <vredvrdBrushedMetalMaterial.setRoughnessU(u)>`
+    * :ref:`setRoughnessV(v) <vredvrdBrushedMetalMaterial.setRoughnessV(v)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdBrushedMetalMaterial.getBrushOrientation():
+.. py:method:: vrdBrushedMetalMaterial.getBrushOrientation()
+
+    Gets access to all properties of         :any:`vrdBrushOrientation <vredvrdBrushOrientation>`.
+
+    The current vrdBrushOrientation::BrushAxis defines the texture mapping type for diffuse, glossy, bump and roughness texture of the brushed metal: UV mapping for radial and planar brush, Triplanar mapping for Triplanar brush.
+
+
+    :return: An :any:`vrdBrushOrientation <vredvrdBrushOrientation>` object, to read and write access of alls properties.
+    :rtype: vrdBrushOrientation
+
+.. _vredvrdBrushedMetalMaterial.getBumpTexture():
+.. py:method:: vrdBrushedMetalMaterial.getBumpTexture()
+
+    Gets access to all properties of         :any:`vrdBumpTexture <vredvrdBumpTexture>`.
+
+
+
+
+    :return: An :any:`vrdBumpTexture <vredvrdBumpTexture>` object, to read and write access of alls properties.
+    :rtype: vrdBumpTexture
+
+.. _vredvrdBrushedMetalMaterial.getClearcoat():
+.. py:method:: vrdBrushedMetalMaterial.getClearcoat()
+
+    Gets access to all properties of         :any:`vrdClearcoat <vredvrdClearcoat>`.
+
+
+
+
+    :return: An :any:`vrdClearcoat <vredvrdClearcoat>` object, to read and write access of alls properties.
+    :rtype: vrdClearcoat
+
+.. _vredvrdBrushedMetalMaterial.getDiffuseColor():
+.. py:method:: vrdBrushedMetalMaterial.getDiffuseColor()
+
+    
+
+
+
+
+    :return: Current diffuse reflection color
+    :rtype: QVector3D
+
+.. _vredvrdBrushedMetalMaterial.getDiffuseColorSpectrum():
+.. py:method:: vrdBrushedMetalMaterial.getDiffuseColorSpectrum()
+
+    Gets the diffuse color spectrum.
+
+
+
+
+    :return: The current used spectrum for diffuse color
+    :rtype: vrSpectrum
+
+.. _vredvrdBrushedMetalMaterial.getDiffuseTexture():
+.. py:method:: vrdBrushedMetalMaterial.getDiffuseTexture()
+
+    Gets access to all properties of the diffuse texture.
+
+
+
+
+    :return: An :any:`vrdTexture <vredvrdTexture>` object, to read and write access of alls properties.
+    :rtype: vrdTexture
+
+.. _vredvrdBrushedMetalMaterial.getDisplacementTexture():
+.. py:method:: vrdBrushedMetalMaterial.getDisplacementTexture()
+
+    Gets access to all properties of         :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>`.
+
+
+
+
+    :return: An :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>` object, to read and write access of alls properties.
+    :rtype: vrdDisplacementTexture
+
+.. _vredvrdBrushedMetalMaterial.getGlossyColor():
+.. py:method:: vrdBrushedMetalMaterial.getGlossyColor()
+
+    
+
+
+
+
+    :return: Current glossy reflection color.
+    :rtype: QVector3D
+
+.. _vredvrdBrushedMetalMaterial.getGlossyColorSpectrum():
+.. py:method:: vrdBrushedMetalMaterial.getGlossyColorSpectrum()
+
+    
+
+
+
+
+    :return: The material's color spectrum for glossy reflections
+    :rtype: vrSpectrum
+
+.. _vredvrdBrushedMetalMaterial.getGlossyTexture():
+.. py:method:: vrdBrushedMetalMaterial.getGlossyTexture()
+
+    Gets access to all properties of the glossy texture.
+
+
+
+
+    :return: An :any:`vrdTexture <vredvrdTexture>` object, to read and write access of alls properties.
+    :rtype: vrdTexture
+
+.. _vredvrdBrushedMetalMaterial.getIncandescence():
+.. py:method:: vrdBrushedMetalMaterial.getIncandescence()
+
+    Gets access to all properties of         :any:`vrdIncandescence <vredvrdIncandescence>`.
+
+
+
+
+    :return: An :any:`vrdIncandescence <vredvrdIncandescence>` object, to read and write access of alls properties.
+    :rtype: vrdIncandescence
+
+.. _vredvrdBrushedMetalMaterial.getMetalType():
+.. py:method:: vrdBrushedMetalMaterial.getMetalType()
+
+    Gets the metal types used.
+
+
+
+
+    :return: Current value of used metal types.
+    :rtype: :ref:`vrdBrushedMetalMaterial.MetalType <vredvrdBrushedMetalMaterial.MetalType>`
+
+.. _vredvrdBrushedMetalMaterial.getReflectivity():
+.. py:method:: vrdBrushedMetalMaterial.getReflectivity()
+
+    Gets the brushed metal's reflective intensity.
+
+
+
+
+    :return: Current value of brushed metal's reflective intensity.
+    :rtype: float
+
+.. _vredvrdBrushedMetalMaterial.getRoughnessTexture():
+.. py:method:: vrdBrushedMetalMaterial.getRoughnessTexture()
+
+    Gets access to all properties of         :any:`vrdRoughnessTexture <vredvrdRoughnessTexture>`.
+
+
+
+
+    :return: An :any:`vrdRoughnessTexture <vredvrdRoughnessTexture>` object, to read and write access of alls properties.
+    :rtype: vrdRoughnessTexture
+
+.. _vredvrdBrushedMetalMaterial.getRoughnessU():
+.. py:method:: vrdBrushedMetalMaterial.getRoughnessU()
+
+    Gets light reflection on top of the surface.
+
+
+
+
+    :return: Current used value for light reflection on top of the surface
+    :rtype: float
+
+.. _vredvrdBrushedMetalMaterial.getRoughnessV():
+.. py:method:: vrdBrushedMetalMaterial.getRoughnessV()
+
+    Gets light reflection on top of the surface.
+
+
+
+
+    :return: Current used value for light reflection on top of the surface
+    :rtype: float
+
+.. _vredvrdBrushedMetalMaterial.setDiffuseColor(value):
+.. py:method:: vrdBrushedMetalMaterial.setDiffuseColor(value)
+
+    Sets the diffuse reflection color of the material.
+
+    Diffuse is only evaluated with vrdBrushedMetalMaterial::MetalType::CustomReflectivity. 
+
+    :param value: New diffuse color.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdBrushedMetalMaterial.setDiffuseColorSpectrum(value):
+.. py:method:: vrdBrushedMetalMaterial.setDiffuseColorSpectrum(value)
+
+    Sets the diffuse color spectrum.
+
+
+
+    :param value: New spectrum for diffuse color
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdBrushedMetalMaterial.setGlossyColor(value):
+.. py:method:: vrdBrushedMetalMaterial.setGlossyColor(value)
+
+    Sets the glossy reflection color of the material.
+
+
+
+    :param value: New glossy reflection color
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdBrushedMetalMaterial.setGlossyColorSpectrum(value):
+.. py:method:: vrdBrushedMetalMaterial.setGlossyColorSpectrum(value)
+
+    Sets the material's color spectrum for glossy reflections.
+
+
+
+    :param value: New color spectrum
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdBrushedMetalMaterial.setMetalType(value):
+.. py:method:: vrdBrushedMetalMaterial.setMetalType(value)
+
+    Sets the metal types used, changing the characteristics of the metal.
+
+
+
+    :param value: New value for used metal type.
+    :type value: :ref:`vrdBrushedMetalMaterial.MetalType <vredvrdBrushedMetalMaterial.MetalType>`
+
+    
+    
+
+.. _vredvrdBrushedMetalMaterial.setReflectivity(v):
+.. py:method:: vrdBrushedMetalMaterial.setReflectivity(v)
+
+    Sets the brushed metal's reflective intensity. The higher the value, the more reflective.
+
+
+
+    :param v: New value of brushed metal's reflective intensity.
+    :type v: float
+
+    
+    
+
+.. _vredvrdBrushedMetalMaterial.setRoughnessU(u):
+.. py:method:: vrdBrushedMetalMaterial.setRoughnessU(u)
+
+    Sets light reflection on top of the surface. The higher the value, the rougher the microscopic structure on top of the surface and more blurred the reflections. Sets the horizontal roughness for every type of refraction behavior commonly known from metallic surfaces.
+
+
+
+    :param u: New value for light reflection on top of the surface.
+    :type u: float
+
+    
+    
+
+.. _vredvrdBrushedMetalMaterial.setRoughnessV(v):
+.. py:method:: vrdBrushedMetalMaterial.setRoughnessV(v)
+
+    Controls light reflection on top of the surface. The higher the value, the rougher the microscopic structure on top of the surface and more blurred the reflections. Sets the vertical roughness for every type of refraction behavior commonly known from metallic surfaces.
+
+
+
+    :param v: New value for light reflection on top of the surface.
+    :type v: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

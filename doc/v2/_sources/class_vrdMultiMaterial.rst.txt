@@ -1,0 +1,74 @@
+----------------
+vrdMultiMaterial
+----------------
+
+
+.. _vredvrdMultiMaterial:
+.. py:class:: vrdMultiMaterial
+
+(Inherits :py:class:`vrdMaterial`)
+
+This class is the base class for all materials with children. E.g.     :any:`vrdSwitchMaterial <vredvrdSwitchMaterial>`.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getMaterials() → List[vrdMaterial]<vredvrdMultiMaterial.getMaterials()>`
+    * :ref:`setMaterials(materials) <vredvrdMultiMaterial.setMaterials(materials)>`
+
+Instance Variables:
+    * :ref:`materials → vrdMaterialList<vredvrdMultiMaterial.materials>`
+
+
+Functions
+=========
+
+
+.. _vredvrdMultiMaterial.getMaterials():
+.. py:method:: vrdMultiMaterial.getMaterials()
+
+    Gets a list of all sub materials.
+
+
+
+
+    :return: Current list of all sub materials.
+    :rtype: List[vrdMaterial]
+
+.. _vredvrdMultiMaterial.setMaterials(materials):
+.. py:method:: vrdMultiMaterial.setMaterials(materials)
+
+    Sets a list of all sub materials.
+
+
+
+    :param materials: New list of all sub materials.
+    :type materials: List[vrdMaterial]
+
+    
+    
+
+
+Instance Variables
+==================
+
+
+.. _vredvrdMultiMaterial.materials:
+.. py:attribute:: materials
+    :type: vrdMaterialList
+
+    
+    Access to the children of this material. All changes made to this list object will immediately be executed on the material.
+
+
+
+
+
+

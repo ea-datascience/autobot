@@ -1,0 +1,7 @@
+substanceMaterialTools
+======================
+
+.. literalinclude:: ../../python_examples/snippets/substanceMaterialTools.py
+   :language: python
+   :linenos:
+   :caption: snippets/substanceMaterialTools.py

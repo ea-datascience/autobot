@@ -1,0 +1,49 @@
+-----------------------
+vrdRectangularLightNode
+-----------------------
+
+
+.. _vredvrdRectangularLightNode:
+.. py:class:: vrdRectangularLightNode
+
+(Inherits :py:class:`vrdAreaLightNode`)
+
+This class gives access to the properties of a rectangular light source.
+
+A rectangular light is an area light that emits light from a flat rectangular surface.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAreaLightCone() → vrdAreaLightCone<vredvrdRectangularLightNode.getAreaLightCone()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdRectangularLightNode.getAreaLightCone():
+.. py:method:: vrdRectangularLightNode.getAreaLightCone()
+
+    Returns the area light cone.
+
+
+
+
+    :return: The area light cone.
+    :rtype: vrdAreaLightCone
+
+
+
+
+
+
+
+
+
+

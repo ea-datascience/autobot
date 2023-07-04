@@ -1,0 +1,7 @@
+vrFade demo
+===========
+
+.. literalinclude:: ../python_examples/fade.py
+   :language: python
+   :linenos:
+   :caption: fade.py

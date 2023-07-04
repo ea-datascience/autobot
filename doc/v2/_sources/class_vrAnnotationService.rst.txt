@@ -1,0 +1,439 @@
+-------------------
+vrAnnotationService
+-------------------
+
+
+.. _vredvrAnnotationService:
+.. py:class:: vrAnnotationService
+
+(Inherits :py:class:`vrBaseService`)
+
+
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`createAnnotation(name) → vrdAnnotationNode<vredvrAnnotationService.createAnnotation(name)>`
+    * :ref:`deleteAnnotation(annotation) <vredvrAnnotationService.deleteAnnotation(annotation)>`
+    * :ref:`duplicateAnnotation(annotation) → vrdAnnotationNode<vredvrAnnotationService.duplicateAnnotation(annotation)>`
+    * :ref:`findAnnotation(name) → vrdAnnotationNode<vredvrAnnotationService.findAnnotation(name)>`
+    * :ref:`getAnnotationRoot() → vrdNode<vredvrAnnotationService.getAnnotationRoot()>`
+    * :ref:`getAnnotations() → List[vrdAnnotationNode]<vredvrAnnotationService.getAnnotations()>`
+    * :ref:`getDefaultBackgroundColor() → QColor<vredvrAnnotationService.getDefaultBackgroundColor()>`
+    * :ref:`getDefaultFontColor() → QColor<vredvrAnnotationService.getDefaultFontColor()>`
+    * :ref:`getDefaultLineColor() → QColor<vredvrAnnotationService.getDefaultLineColor()>`
+    * :ref:`getDefaultScalingMode() → vrAnnotationTypes.ScalingMode<vredvrAnnotationService.getDefaultScalingMode()>`
+    * :ref:`getDefaultSize() → float<vredvrAnnotationService.getDefaultSize()>`
+    * :ref:`getDefaultUseSceneNodeVisibility() → bool<vredvrAnnotationService.getDefaultUseSceneNodeVisibility()>`
+    * :ref:`getSelection() → List[vrdAnnotationNode]<vredvrAnnotationService.getSelection()>`
+    * :ref:`getShowAnnotations() → bool<vredvrAnnotationService.getShowAnnotations()>`
+    * :ref:`loadAnnotations(path) → List[vrdAnnotationNode]<vredvrAnnotationService.loadAnnotations(path)>`
+    * :ref:`pickAnnotation(annotation) <vredvrAnnotationService.pickAnnotation(annotation)>`
+    * :ref:`saveAnnotations(annotations, path) <vredvrAnnotationService.saveAnnotations(annotations, path)>`
+    * :ref:`setDefaultBackgroundColor(color) <vredvrAnnotationService.setDefaultBackgroundColor(color)>`
+    * :ref:`setDefaultFontColor(color) <vredvrAnnotationService.setDefaultFontColor(color)>`
+    * :ref:`setDefaultLineColor(color) <vredvrAnnotationService.setDefaultLineColor(color)>`
+    * :ref:`setDefaultScalingMode(mode) <vredvrAnnotationService.setDefaultScalingMode(mode)>`
+    * :ref:`setDefaultSize(size) <vredvrAnnotationService.setDefaultSize(size)>`
+    * :ref:`setDefaultUseSceneNodeVisibility(use) <vredvrAnnotationService.setDefaultUseSceneNodeVisibility(use)>`
+    * :ref:`setSelection(annotations) <vredvrAnnotationService.setSelection(annotations)>`
+    * :ref:`setShowAnnotations(value) <vredvrAnnotationService.setShowAnnotations(value)>`
+
+Signals:
+    * :ref:`annotationCreated(annotation) <vredvrAnnotationService.annotationCreated(annotation)>`
+    * :ref:`annotationsAdded() <vredvrAnnotationService.annotationsAdded()>`
+    * :ref:`annotationsDeleted() <vredvrAnnotationService.annotationsDeleted()>`
+    * :ref:`selectionChanged(annotations) <vredvrAnnotationService.selectionChanged(annotations)>`
+    * :ref:`showAnnotationsChanged(value) <vredvrAnnotationService.showAnnotationsChanged(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrAnnotationService.createAnnotation(name):
+.. py:method:: vrAnnotationService.createAnnotation(name)
+
+    Creates a new annotation. Each annotation is created with a unique name. If the passed name is not unique (e.g. an annotation with that name already exists), it is modified so that it is unique.
+
+
+
+    :param name: The name for the annotation.
+    :type name: string
+
+    :return: Created annotation node.
+    :rtype: vrdAnnotationNode
+
+.. _vredvrAnnotationService.deleteAnnotation(annotation):
+.. py:method:: vrAnnotationService.deleteAnnotation(annotation)
+
+    Deletes an existing annotation.
+
+
+
+    :param annotation: The annotation node which should be deleted.
+    :type annotation: vrdAnnotationNode
+
+    
+    
+
+.. _vredvrAnnotationService.duplicateAnnotation(annotation):
+.. py:method:: vrAnnotationService.duplicateAnnotation(annotation)
+
+    Duplicates an existing annotation.
+
+
+
+    :param annotation: The annotation node which should be duplicated.
+    :type annotation: vrdAnnotationNode
+
+    :return: Duplicated annotation node.
+    :rtype: vrdAnnotationNode
+
+.. _vredvrAnnotationService.findAnnotation(name):
+.. py:method:: vrAnnotationService.findAnnotation(name)
+
+    Searches for an existing annotation via name.
+
+
+
+    :param name: The name of the annotation.
+    :type name: string
+
+    :return: Found annotation node.
+    :rtype: vrdAnnotationNode
+
+.. _vredvrAnnotationService.getAnnotationRoot():
+.. py:method:: vrAnnotationService.getAnnotationRoot()
+
+    Returns the root node of the annotation hierarchy. Currently, all annotations are children of that root.
+
+
+
+
+    :return: Root node.
+    :rtype: vrdNode
+
+.. _vredvrAnnotationService.getAnnotations():
+.. py:method:: vrAnnotationService.getAnnotations()
+
+    Returns a list of all annotations.
+
+
+
+
+    :return: List of annotation nodes.
+    :rtype: List[vrdAnnotationNode]
+
+.. _vredvrAnnotationService.getDefaultBackgroundColor():
+.. py:method:: vrAnnotationService.getDefaultBackgroundColor()
+
+    Returns the default label background color of annotations.
+
+
+
+
+    :return: The color.
+    :rtype: QColor
+
+.. _vredvrAnnotationService.getDefaultFontColor():
+.. py:method:: vrAnnotationService.getDefaultFontColor()
+
+    Returns the default font color for the displayed text of annotations.
+
+
+
+
+    :return: The color.
+    :rtype: QColor
+
+.. _vredvrAnnotationService.getDefaultLineColor():
+.. py:method:: vrAnnotationService.getDefaultLineColor()
+
+    Returns the default line color for borders and leaders of annotations.
+
+
+
+
+    :return: The color.
+    :rtype: QColor
+
+.. _vredvrAnnotationService.getDefaultScalingMode():
+.. py:method:: vrAnnotationService.getDefaultScalingMode()
+
+    Returns the default scaling mode of annotations.
+
+
+
+
+    :return: The scaling mode.
+    :rtype: :ref:`vrAnnotationTypes.ScalingMode <vredvrAnnotationTypes.ScalingMode>`
+
+.. _vredvrAnnotationService.getDefaultSize():
+.. py:method:: vrAnnotationService.getDefaultSize()
+
+    Returns the default size of annotations.
+
+
+
+
+    :return: The size.
+    :rtype: float
+
+.. _vredvrAnnotationService.getDefaultUseSceneNodeVisibility():
+.. py:method:: vrAnnotationService.getDefaultUseSceneNodeVisibility()
+
+    Returns the default value for using the linked scene graph node to determine the visibility of annotations.
+
+
+
+
+    :return: True if the linked node determines the visibility, False otherwise.
+    :rtype: bool
+
+.. _vredvrAnnotationService.getSelection():
+.. py:method:: vrAnnotationService.getSelection()
+
+    Returns the current selection.
+
+
+
+
+    :return: A list of all selected annotations.
+    :rtype: List[vrdAnnotationNode]
+
+.. _vredvrAnnotationService.getShowAnnotations():
+.. py:method:: vrAnnotationService.getShowAnnotations()
+
+    Returns the global visibility of annotations.
+
+
+
+
+    :return: True if annotations are shown, False otherwise.
+    :rtype: bool
+
+.. _vredvrAnnotationService.loadAnnotations(path):
+.. py:method:: vrAnnotationService.loadAnnotations(path)
+
+    Loads annotation data from an xml file. The annotations are directly added to the scene.
+
+
+
+    :param path: The path to an xml file with annotation data.
+    :type path: string
+
+    :return: A list of annotation nodes.
+    :rtype: List[vrdAnnotationNode]
+
+.. _vredvrAnnotationService.pickAnnotation(annotation):
+.. py:method:: vrAnnotationService.pickAnnotation(annotation)
+
+    Activates the scene node picking functionality of the UI for the passed annotation.
+
+
+
+    :param annotation: The annotation node for which the picking should be started.
+    :type annotation: vrdAnnotationNode
+
+    
+    
+
+.. _vredvrAnnotationService.saveAnnotations(annotations, path):
+.. py:method:: vrAnnotationService.saveAnnotations(annotations, path)
+
+    Saves a list of annotations. The annotation data is stored in an xml file.
+
+
+
+    :param annotations: A list of annotation nodes.
+    :type annotations: List[vrdAnnotationNode]
+
+    :param path: The path for the xml file.
+    :type path: string
+
+    
+    
+
+.. _vredvrAnnotationService.setDefaultBackgroundColor(color):
+.. py:method:: vrAnnotationService.setDefaultBackgroundColor(color)
+
+    Sets the default label background color of annotations. It is used when creating a new annotation.
+
+
+
+    :param color: The color values. They can either be set as integer values (color.setRgb(..)) in range [0 .. 255] or as floating point values (color.setRgbF(..)) in range [0.0 .. 1.0].
+    :type color: QColor
+
+    
+    
+
+.. _vredvrAnnotationService.setDefaultFontColor(color):
+.. py:method:: vrAnnotationService.setDefaultFontColor(color)
+
+    Sets the default font color for the displayed text of annotations. It is used when creating a new annotation.
+
+
+
+    :param color: The color values. They can either be set as integer values (color.setRgb(..)) in range [0 .. 255] or as floating point values (color.setRgbF(..)) in range [0.0 .. 1.0].
+    :type color: QColor
+
+    
+    
+
+.. _vredvrAnnotationService.setDefaultLineColor(color):
+.. py:method:: vrAnnotationService.setDefaultLineColor(color)
+
+    Sets the default line color for borders and leaders of annotations. It is used when creating a new annotation.
+
+
+
+    :param color: The color values. They can either be set as integer values (color.setRgb(..)) in range [0 .. 255] or as floating point values (color.setRgbF(..)) in range [0.0 .. 1.0].
+    :type color: QColor
+
+    
+    
+
+.. _vredvrAnnotationService.setDefaultScalingMode(mode):
+.. py:method:: vrAnnotationService.setDefaultScalingMode(mode)
+
+    Sets the default scaling mode of annotations. It is used when creating a new annotation.
+
+
+
+    :param mode: The scaling mode value. Choose between vrAnnotationTypes::ScalingMode::Off, Near or Far.
+    :type mode: :ref:`vrAnnotationTypes.ScalingMode <vredvrAnnotationTypes.ScalingMode>`
+
+    
+    
+
+.. _vredvrAnnotationService.setDefaultSize(size):
+.. py:method:: vrAnnotationService.setDefaultSize(size)
+
+    Sets the default size of annotations. It is used when creating a new annotation.
+
+
+
+    :param size: The size value. A value of 1.0 will result in a decent predefined size. Use smaller or larger values to size appropriately.
+    :type size: float
+
+    
+    
+
+.. _vredvrAnnotationService.setDefaultUseSceneNodeVisibility(use):
+.. py:method:: vrAnnotationService.setDefaultUseSceneNodeVisibility(use)
+
+    Sets the default value for using the linked scene graph node to determine the visibility of annotations. It is used when creating a new annotation.
+
+
+
+    :param use: True if the linked node should determine the visibility, False otherwise.
+    :type use: bool
+
+    
+    
+
+.. _vredvrAnnotationService.setSelection(annotations):
+.. py:method:: vrAnnotationService.setSelection(annotations)
+
+    Select the given annotations in the annotation module.
+
+
+
+    :param annotations: Annotations to be selected.
+    :type annotations: List[vrdAnnotationNode]
+
+    
+    
+
+.. _vredvrAnnotationService.setShowAnnotations(value):
+.. py:method:: vrAnnotationService.setShowAnnotations(value)
+
+    Sets the global visibility of annotations. Individual visibility can be set in         :any:`vrdAnnotationNode <vredvrdAnnotationNode>`.
+
+
+
+    :param value: True to show annotations, False otherwise.
+    :type value: bool
+
+    
+    
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrAnnotationService.annotationCreated(annotation):
+.. py:method:: vrAnnotationService.annotationCreated(annotation)
+
+    Triggered when a new annotation was created.
+
+
+
+    :param annotation: The newly created annotation.
+    :type annotation: vrdAnnotationNode
+
+    
+    
+
+.. _vredvrAnnotationService.annotationsAdded():
+.. py:method:: vrAnnotationService.annotationsAdded()
+
+    Triggered when one or more annotations were added to the scene.
+
+
+
+
+    
+    
+
+.. _vredvrAnnotationService.annotationsDeleted():
+.. py:method:: vrAnnotationService.annotationsDeleted()
+
+    Triggered when one or more annotations were deleted from the scene.
+
+
+
+
+    
+    
+
+.. _vredvrAnnotationService.selectionChanged(annotations):
+.. py:method:: vrAnnotationService.selectionChanged(annotations)
+
+    Triggered when the selection has been changed.
+
+
+
+    :param annotations: The selected annotations.
+    :type annotations: List[vrdAnnotationNode]
+
+    
+    
+
+.. _vredvrAnnotationService.showAnnotationsChanged(value):
+.. py:method:: vrAnnotationService.showAnnotationsChanged(value)
+
+    Triggered when the global annotation visibility has changed.
+
+
+
+    :param value: True if annotations are shown, False otherwise.
+    :type value: bool
+
+    
+    
+
+

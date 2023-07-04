@@ -1,0 +1,7 @@
+Switch materials on keypress
+============================
+
+.. literalinclude:: ../python_examples/material-switch.py
+   :language: python
+   :linenos:
+   :caption: material-switch.py

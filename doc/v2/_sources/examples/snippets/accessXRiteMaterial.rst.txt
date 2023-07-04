@@ -1,0 +1,7 @@
+accessXRiteMaterial
+===================
+
+.. literalinclude:: ../../python_examples/snippets/accessXRiteMaterial.py
+   :language: python
+   :linenos:
+   :caption: snippets/accessXRiteMaterial.py

@@ -1,0 +1,167 @@
+---------------------
+vrdLensFlareFxElement
+---------------------
+
+
+.. _vredvrdLensFlareFxElement:
+.. py:class:: vrdLensFlareFxElement
+
+(Inherits :py:class:`vrdLensFlareElement`)
+
+This class is used for all common properties of     :any:`vrdLensFlareStar <vredvrdLensFlareStar>`, :any:`vrdLensFlareGhost <vredvrdLensFlareGhost>`, :any:`vrdLensFlareStreak <vredvrdLensFlareStreak>` and :any:`vrdLensFlareGlow <vredvrdLensFlareGlow>` lens flare effect classes.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getColor() → QVector3D<vredvrdLensFlareFxElement.getColor()>`
+    * :ref:`getFeather() → float<vredvrdLensFlareFxElement.getFeather()>`
+    * :ref:`getIntensity() → float<vredvrdLensFlareFxElement.getIntensity()>`
+    * :ref:`getRotation() → float<vredvrdLensFlareFxElement.getRotation()>`
+    * :ref:`getSize() → float<vredvrdLensFlareFxElement.getSize()>`
+    * :ref:`setColor(tint) <vredvrdLensFlareFxElement.setColor(tint)>`
+    * :ref:`setFeather(blurring) <vredvrdLensFlareFxElement.setFeather(blurring)>`
+    * :ref:`setIntensity(intensity) <vredvrdLensFlareFxElement.setIntensity(intensity)>`
+    * :ref:`setRotation(rotation) <vredvrdLensFlareFxElement.setRotation(rotation)>`
+    * :ref:`setSize(size) <vredvrdLensFlareFxElement.setSize(size)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdLensFlareFxElement.getColor():
+.. py:method:: vrdLensFlareFxElement.getColor()
+
+    Get the color of this effect.
+
+
+
+
+    :return: Color of this effect
+    :rtype: QVector3D
+
+.. _vredvrdLensFlareFxElement.getFeather():
+.. py:method:: vrdLensFlareFxElement.getFeather()
+
+    Get the fade out value.
+
+
+
+
+    :return: Fade out value
+    :rtype: float
+
+.. _vredvrdLensFlareFxElement.getIntensity():
+.. py:method:: vrdLensFlareFxElement.getIntensity()
+
+    Get current intensity.
+
+
+
+
+    :return: Current intensity of this effect
+    :rtype: float
+
+.. _vredvrdLensFlareFxElement.getRotation():
+.. py:method:: vrdLensFlareFxElement.getRotation()
+
+    Get current used rotation value.
+
+
+
+
+    :return: Rotation value
+    :rtype: float
+
+.. _vredvrdLensFlareFxElement.getSize():
+.. py:method:: vrdLensFlareFxElement.getSize()
+
+    Get the current used effect size.
+
+
+
+
+    :return: Current used effect size
+    :rtype: float
+
+.. _vredvrdLensFlareFxElement.setColor(tint):
+.. py:method:: vrdLensFlareFxElement.setColor(tint)
+
+    Use to change the color of the lens flare. If the light already has an assigned color, this color will be mixed with it.
+
+
+
+    :param tint: New color of this effect
+    :type tint: QVector3D
+
+    
+    
+
+.. _vredvrdLensFlareFxElement.setFeather(blurring):
+.. py:method:: vrdLensFlareFxElement.setFeather(blurring)
+
+    Lets the effect fade towards the edge. Value of 0.0 deactivates the effect.
+
+
+
+    :param blurring: 
+    :type blurring: float
+
+    
+    
+
+.. _vredvrdLensFlareFxElement.setIntensity(intensity):
+.. py:method:: vrdLensFlareFxElement.setIntensity(intensity)
+
+    Makes the effect more or less intense.
+
+
+
+    :param intensity: New intensity
+    :type intensity: float
+
+    
+    
+
+.. _vredvrdLensFlareFxElement.setRotation(rotation):
+.. py:method:: vrdLensFlareFxElement.setRotation(rotation)
+
+    Rotate the effect on light ray axis.
+
+
+
+    :param rotation: New rotation value
+    :type rotation: float
+
+    
+    
+
+.. _vredvrdLensFlareFxElement.setSize(size):
+.. py:method:: vrdLensFlareFxElement.setSize(size)
+
+    Set the effect size, must be positive.
+
+
+
+    :param size: Effect size
+    :type size: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

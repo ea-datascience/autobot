@@ -1,0 +1,49 @@
+-----------------------
+vrdDirectionalLightNode
+-----------------------
+
+
+.. _vredvrdDirectionalLightNode:
+.. py:class:: vrdDirectionalLightNode
+
+(Inherits :py:class:`vrdDeltaLightNode`)
+
+This class gives access to the properties of a directional light source.
+
+Light rays from directional light sources are parallel like sunlight. A directional light represents a distant light source and has no position. It only has a direction that affects how the scene is illuminated.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getIsHeadLight() → bool<vredvrdDirectionalLightNode.getIsHeadLight()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdDirectionalLightNode.getIsHeadLight():
+.. py:method:: vrdDirectionalLightNode.getIsHeadLight()
+
+    Returns whether this light source is the head light node.
+
+
+
+
+    :return: True if this light source is the head light, False otherwise.
+    :rtype: bool
+
+
+
+
+
+
+
+
+
+

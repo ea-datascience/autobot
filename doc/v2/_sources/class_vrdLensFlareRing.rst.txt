@@ -1,0 +1,167 @@
+----------------
+vrdLensFlareRing
+----------------
+
+
+.. _vredvrdLensFlareRing:
+.. py:class:: vrdLensFlareRing
+
+(Inherits :py:class:`vrdLensFlareFxElement`)
+
+
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getChromaticAberration() → QVector3D<vredvrdLensFlareRing.getChromaticAberration()>`
+    * :ref:`getIsChromaticAberrationActive() → bool<vredvrdLensFlareRing.getIsChromaticAberrationActive()>`
+    * :ref:`getNumberOfStreaks() → integer<vredvrdLensFlareRing.getNumberOfStreaks()>`
+    * :ref:`getStreakThickness() → float<vredvrdLensFlareRing.getStreakThickness()>`
+    * :ref:`getThickness() → float<vredvrdLensFlareRing.getThickness()>`
+    * :ref:`setChromaticAberration(chromaticAberration) <vredvrdLensFlareRing.setChromaticAberration(chromaticAberration)>`
+    * :ref:`setIsChromaticAberrationActive(isActive) <vredvrdLensFlareRing.setIsChromaticAberrationActive(isActive)>`
+    * :ref:`setNumberOfStreaks(numberOfStreaks) <vredvrdLensFlareRing.setNumberOfStreaks(numberOfStreaks)>`
+    * :ref:`setStreakThickness(streakThickness) <vredvrdLensFlareRing.setStreakThickness(streakThickness)>`
+    * :ref:`setThickness(thickness) <vredvrdLensFlareRing.setThickness(thickness)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdLensFlareRing.getChromaticAberration():
+.. py:method:: vrdLensFlareRing.getChromaticAberration()
+
+    Get used chromatic aberration values as RGB.
+
+
+
+
+    :return: Used chromatic aberration
+    :rtype: QVector3D
+
+.. _vredvrdLensFlareRing.getIsChromaticAberrationActive():
+.. py:method:: vrdLensFlareRing.getIsChromaticAberrationActive()
+
+    Get activation state the usage of chromatic aberration.
+
+
+
+
+    :return: Activation state the usage of chromatic aberration
+    :rtype: bool
+
+.. _vredvrdLensFlareRing.getNumberOfStreaks():
+.. py:method:: vrdLensFlareRing.getNumberOfStreaks()
+
+    Get how many arms a Ring element has.
+
+
+
+
+    :return: Count of arms of Ring element
+    :rtype: integer
+
+.. _vredvrdLensFlareRing.getStreakThickness():
+.. py:method:: vrdLensFlareRing.getStreakThickness()
+
+    Get the thickness of the segments.
+
+
+
+
+    :return: Thickness of the segments
+    :rtype: float
+
+.. _vredvrdLensFlareRing.getThickness():
+.. py:method:: vrdLensFlareRing.getThickness()
+
+    Get the current used thickness of the effect.
+
+
+
+
+    :return: Thickness of the effect
+    :rtype: float
+
+.. _vredvrdLensFlareRing.setChromaticAberration(chromaticAberration):
+.. py:method:: vrdLensFlareRing.setChromaticAberration(chromaticAberration)
+
+    Use chromatic aberration with the lens flare element to distort the colors.
+
+
+
+    :param chromaticAberration: New Chromatic Aberration
+    :type chromaticAberration: QVector3D
+
+    
+    
+
+.. _vredvrdLensFlareRing.setIsChromaticAberrationActive(isActive):
+.. py:method:: vrdLensFlareRing.setIsChromaticAberrationActive(isActive)
+
+    Activate the usage of chromatic aberration.
+
+
+
+    :param isActive: New activation state the usage of chromatic aberration
+    :type isActive: bool
+
+    
+    
+
+.. _vredvrdLensFlareRing.setNumberOfStreaks(numberOfStreaks):
+.. py:method:: vrdLensFlareRing.setNumberOfStreaks(numberOfStreaks)
+
+    Use to set how many arms a Ring element has.
+
+
+
+    :param numberOfStreaks: New count of arms of Ring element
+    :type numberOfStreaks: integer
+
+    
+    
+
+.. _vredvrdLensFlareRing.setStreakThickness(streakThickness):
+.. py:method:: vrdLensFlareRing.setStreakThickness(streakThickness)
+
+    Controls the thickness of the segments.
+
+
+
+    :param streakThickness: New thickness of the segments
+    :type streakThickness: float
+
+    
+    
+
+.. _vredvrdLensFlareRing.setThickness(thickness):
+.. py:method:: vrdLensFlareRing.setThickness(thickness)
+
+    Controls the thickness of the effect.
+
+
+
+    :param thickness: New thickness of the effect
+    :type thickness: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

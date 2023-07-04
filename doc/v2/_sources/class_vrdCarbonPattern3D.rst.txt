@@ -1,0 +1,115 @@
+------------------
+vrdCarbonPattern3D
+------------------
+
+
+.. _vredvrdCarbonPattern3D:
+.. py:class:: vrdCarbonPattern3D
+
+(Inherits :py:class:`vrdCarbonPattern`)
+
+This class is used for all 3D carbon pattern properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getRotationX() → float<vredvrdCarbonPattern3D.getRotationX()>`
+    * :ref:`getRotationY() → float<vredvrdCarbonPattern3D.getRotationY()>`
+    * :ref:`getRotationZ() → float<vredvrdCarbonPattern3D.getRotationZ()>`
+    * :ref:`setRotationX(value) <vredvrdCarbonPattern3D.setRotationX(value)>`
+    * :ref:`setRotationY(value) <vredvrdCarbonPattern3D.setRotationY(value)>`
+    * :ref:`setRotationZ(value) <vredvrdCarbonPattern3D.setRotationZ(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdCarbonPattern3D.getRotationX():
+.. py:method:: vrdCarbonPattern3D.getRotationX()
+
+    Gets the pattern direction on X projection direction.
+
+
+
+
+    :return: Current used angle in the pattern direction on X projection direction.
+    :rtype: float
+
+.. _vredvrdCarbonPattern3D.getRotationY():
+.. py:method:: vrdCarbonPattern3D.getRotationY()
+
+    Gets the pattern direction on Y projection direction.
+
+
+
+
+    :return: Current used angle in the pattern direction on Y projection direction.
+    :rtype: float
+
+.. _vredvrdCarbonPattern3D.getRotationZ():
+.. py:method:: vrdCarbonPattern3D.getRotationZ()
+
+    Gets the pattern direction on Z projection direction.
+
+
+
+
+    :return: Current used angle in the pattern direction on Z projection direction.
+    :rtype: float
+
+.. _vredvrdCarbonPattern3D.setRotationX(value):
+.. py:method:: vrdCarbonPattern3D.setRotationX(value)
+
+    Sets the pattern direction on X projection direction.
+
+
+
+    :param value: New angle in the pattern direction on X projection direction.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCarbonPattern3D.setRotationY(value):
+.. py:method:: vrdCarbonPattern3D.setRotationY(value)
+
+    Sets the pattern direction on Y projection direction.
+
+
+
+    :param value: New angle in the pattern direction on Y projection direction.
+    :type value: float
+
+    
+    
+
+.. _vredvrdCarbonPattern3D.setRotationZ(value):
+.. py:method:: vrdCarbonPattern3D.setRotationZ(value)
+
+    Sets the pattern direction on Z projection direction.
+
+
+
+    :param value: New angle in the pattern direction on Z projection direction.
+    :type value: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

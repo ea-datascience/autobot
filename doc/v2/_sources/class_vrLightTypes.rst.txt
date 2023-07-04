@@ -1,0 +1,135 @@
+------------
+vrLightTypes
+------------
+
+
+.. _vredvrLightTypes:
+.. py:class:: vrLightTypes
+
+
+
+
+
+
+
+    .. _vredvrLightTypes.Attenuation:
+    .. py:class:: Attenuation
+
+        Sets the falloff of the light intensity.
+
+
+            Keeps the intensity of the light constant, in relation to the distance of the light source.
+
+            .. _vredvrLightTypes.Attenuation.None_:
+            .. py:data:: None_
+
+
+            Decreases light intensity linearly, in relation to the distance of the light source.
+
+            .. _vredvrLightTypes.Attenuation.Linear:
+            .. py:data:: Linear
+
+
+            Decreases light intensity quadratically, in relation to the distance of the light source to an illuminated object.
+
+            .. _vredvrLightTypes.Attenuation.Realistic:
+            .. py:data:: Realistic
+
+
+    .. _vredvrLightTypes.LightType:
+    .. py:class:: LightType
+
+
+
+
+            
+
+            .. _vredvrLightTypes.LightType.Directional:
+            .. py:data:: Directional
+
+
+            
+
+            .. _vredvrLightTypes.LightType.Point:
+            .. py:data:: Point
+
+
+            
+
+            .. _vredvrLightTypes.LightType.Spot:
+            .. py:data:: Spot
+
+
+            
+
+            .. _vredvrLightTypes.LightType.Rectangular:
+            .. py:data:: Rectangular
+
+
+            
+
+            .. _vredvrLightTypes.LightType.Disk:
+            .. py:data:: Disk
+
+
+            
+
+            .. _vredvrLightTypes.LightType.Spherical:
+            .. py:data:: Spherical
+
+
+            
+
+            .. _vredvrLightTypes.LightType.Ray:
+            .. py:data:: Ray
+
+
+    .. _vredvrLightTypes.Unit:
+    .. py:class:: Unit
+
+
+
+
+            
+
+            .. _vredvrLightTypes.Unit.Lumen:
+            .. py:data:: Lumen
+
+
+            
+
+            .. _vredvrLightTypes.Unit.Candela:
+            .. py:data:: Candela
+
+
+            
+
+            .. _vredvrLightTypes.Unit.Lux:
+            .. py:data:: Lux
+
+
+            
+
+            .. _vredvrLightTypes.Unit.CandelaPerSquaremeter:
+            .. py:data:: CandelaPerSquaremeter
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

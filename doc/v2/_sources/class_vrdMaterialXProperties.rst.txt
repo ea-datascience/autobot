@@ -1,0 +1,67 @@
+----------------------
+vrdMaterialXProperties
+----------------------
+
+
+.. _vredvrdMaterialXProperties:
+.. py:class:: vrdMaterialXProperties
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This class is used to query information about all attributes of a materialX material.
+
+.. code-block:: python
+
+     # Query a materialX material by name
+     materialXMat = vrMaterialService.findMaterial("MaterialName")
+     
+     # Get the update class to query materialX material properties
+     properties = materialXMat.getProperties()
+     
+     # Create an empty object and fill it with dynamic properties
+     object = PySide6.QtCore.QObject()
+     properties.update(object)
+     
+     # Dump all property names. This are the names of all materialX attributes.
+     for propertyName in object.dynamicPropertyNames():
+           print(propertyName)
+..
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`update(obj) <vredvrdMaterialXProperties.update(obj)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdMaterialXProperties.update(obj):
+.. py:method:: vrdMaterialXProperties.update(obj)
+
+    Fill a QObject with dynamic properties. The dynamic properties of the object correspond to the MaterialX attributes. All property IDs can be determined via the list of names of all dynamic properties. The type and value of the MaterialX attribute can be determined by querying the property.
+
+
+
+    :param obj: Fill a QObject with dynamic properties.
+    :type obj: QObject
+
+    
+    
+
+
+
+
+
+
+
+
+
+

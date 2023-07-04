@@ -1,0 +1,7 @@
+Hide Avatars in a collaboration session
+=======================================
+
+.. literalinclude:: ../../../python_script_plugins/VRMenu/VRHideAvatarsModule.py
+   :language: python
+   :linenos:
+   :caption: VRHideAvatarsModule.py

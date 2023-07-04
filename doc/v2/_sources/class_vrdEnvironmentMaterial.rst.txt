@@ -1,0 +1,364 @@
+----------------------
+vrdEnvironmentMaterial
+----------------------
+
+
+.. _vredvrdEnvironmentMaterial:
+.. py:class:: vrdEnvironmentMaterial
+
+(Inherits :py:class:`vrdMaterial`)
+
+This is the base class for environment materials     :any:`vrdSphereEnvironmentMaterial <vredvrdSphereEnvironmentMaterial>`, :any:`vrdSkylightMaterial <vredvrdSkylightMaterial>`, :any:`vrdSubstanceEnvironmentMaterial <vredvrdSubstanceEnvironmentMaterial>`.
+
+
+
+    .. _vredvrdEnvironmentMaterial.GeometryType:
+    .. py:class:: GeometryType
+
+
+
+
+            
+
+            .. _vredvrdEnvironmentMaterial.GeometryType.Custom:
+            .. py:data:: Custom
+
+
+            
+
+            .. _vredvrdEnvironmentMaterial.GeometryType.Dome:
+            .. py:data:: Dome
+
+
+            
+
+            .. _vredvrdEnvironmentMaterial.GeometryType.Sphere:
+            .. py:data:: Sphere
+
+
+            
+
+            .. _vredvrdEnvironmentMaterial.GeometryType.Cube:
+            .. py:data:: Cube
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getColorCorrection() → vrdEnvironmentColorCorrection<vredvrdEnvironmentMaterial.getColorCorrection()>`
+    * :ref:`getEnvironment() → vrdImage<vredvrdEnvironmentMaterial.getEnvironment()>`
+    * :ref:`getExposure() → float<vredvrdEnvironmentMaterial.getExposure()>`
+    * :ref:`getFilteredEnvMapSamples() → integer<vredvrdEnvironmentMaterial.getFilteredEnvMapSamples()>`
+    * :ref:`getGeometryFile() → string<vredvrdEnvironmentMaterial.getGeometryFile()>`
+    * :ref:`getGeometryType() → vrdEnvironmentMaterial.GeometryType<vredvrdEnvironmentMaterial.getGeometryType()>`
+    * :ref:`getLuminanceMapping() → float<vredvrdEnvironmentMaterial.getLuminanceMapping()>`
+    * :ref:`getRaytracing() → vrdEnvironmentRaytracingSettings<vredvrdEnvironmentMaterial.getRaytracing()>`
+    * :ref:`getShadowsAndIllumination() → vrdEnvironmentShadowsAndIllumination<vredvrdEnvironmentMaterial.getShadowsAndIllumination()>`
+    * :ref:`getTransformation() → vrdEnvironmentTransformation<vredvrdEnvironmentMaterial.getTransformation()>`
+    * :ref:`isFlipped() → bool<vredvrdEnvironmentMaterial.isFlipped()>`
+    * :ref:`isShadowPlaneVisible() → bool<vredvrdEnvironmentMaterial.isShadowPlaneVisible()>`
+    * :ref:`isVisible() → bool<vredvrdEnvironmentMaterial.isVisible()>`
+    * :ref:`setExposure(exposure) <vredvrdEnvironmentMaterial.setExposure(exposure)>`
+    * :ref:`setFilteredEnvMapSamples(samples) <vredvrdEnvironmentMaterial.setFilteredEnvMapSamples(samples)>`
+    * :ref:`setFlipped(s) <vredvrdEnvironmentMaterial.setFlipped(s)>`
+    * :ref:`setGeometryFile(filename) <vredvrdEnvironmentMaterial.setGeometryFile(filename)>`
+    * :ref:`setGeometryType(value) <vredvrdEnvironmentMaterial.setGeometryType(value)>`
+    * :ref:`setLuminanceMapping(luminanceMapping) <vredvrdEnvironmentMaterial.setLuminanceMapping(luminanceMapping)>`
+    * :ref:`setShadowPlaneVisible(s) <vredvrdEnvironmentMaterial.setShadowPlaneVisible(s)>`
+    * :ref:`setVisible(s) <vredvrdEnvironmentMaterial.setVisible(s)>`
+    * :ref:`toSphericalQImage(width, height, toneMapped) → QImage<vredvrdEnvironmentMaterial.toSphericalQImage(width, height, toneMapped)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdEnvironmentMaterial.getColorCorrection():
+.. py:method:: vrdEnvironmentMaterial.getColorCorrection()
+
+    Gets access to all properties of         :any:`vrdEnvironmentColorCorrection <vredvrdEnvironmentColorCorrection>`.
+
+
+
+
+    :return: An :any:`vrdEnvironmentColorCorrection <vredvrdEnvironmentColorCorrection>` object, to read and write access of all properties.
+    :rtype: vrdEnvironmentColorCorrection
+
+.. _vredvrdEnvironmentMaterial.getEnvironment():
+.. py:method:: vrdEnvironmentMaterial.getEnvironment()
+
+    Gets environment image.
+
+
+
+
+    :return: The current used environment image.
+    :rtype: vrdImage
+
+.. _vredvrdEnvironmentMaterial.getExposure():
+.. py:method:: vrdEnvironmentMaterial.getExposure()
+
+    Get the current value for exposure.
+
+
+
+
+    :return: The current value for exposure.
+    :rtype: float
+
+.. _vredvrdEnvironmentMaterial.getFilteredEnvMapSamples():
+.. py:method:: vrdEnvironmentMaterial.getFilteredEnvMapSamples()
+
+    Gets the number of filtered environment map samples.
+
+    See :any:`vrdEnvironmentMaterial.setFilteredEnvMapSamples(samples) <vredvrdEnvironmentMaterial.setFilteredEnvMapSamples(samples)>` for a description.
+
+
+    :return: The number filtered environment map samples.
+    :rtype: integer
+
+.. _vredvrdEnvironmentMaterial.getGeometryFile():
+.. py:method:: vrdEnvironmentMaterial.getGeometryFile()
+
+    Gets the geometry file which is used for custom geometry type.
+
+    This value is identical for all objects. It is not stored and only valid for the current session.
+
+
+    :return: Globally used geometry file.
+    :rtype: string
+
+.. _vredvrdEnvironmentMaterial.getGeometryType():
+.. py:method:: vrdEnvironmentMaterial.getGeometryType()
+
+    Gets geometry type.
+
+
+
+
+    :return: The current used geometry type.
+    :rtype: :ref:`vrdEnvironmentMaterial.GeometryType <vredvrdEnvironmentMaterial.GeometryType>`
+
+.. _vredvrdEnvironmentMaterial.getLuminanceMapping():
+.. py:method:: vrdEnvironmentMaterial.getLuminanceMapping()
+
+    Gets the value for luminance mapping.
+
+
+
+
+    :return: The current used luminance mapping.
+    :rtype: float
+
+.. _vredvrdEnvironmentMaterial.getRaytracing():
+.. py:method:: vrdEnvironmentMaterial.getRaytracing()
+
+    Gets access to all raytracing settings of this environment.
+
+
+
+
+    :return: A :any:`vrdEnvironmentRaytracingSettings <vredvrdEnvironmentRaytracingSettings>` object, to read and write access of all properties.
+    :rtype: vrdEnvironmentRaytracingSettings
+
+.. _vredvrdEnvironmentMaterial.getShadowsAndIllumination():
+.. py:method:: vrdEnvironmentMaterial.getShadowsAndIllumination()
+
+    Gets access to all properties of         :any:`vrdEnvironmentShadowsAndIllumination <vredvrdEnvironmentShadowsAndIllumination>`.
+
+
+
+
+    :return: An :any:`vrdEnvironmentShadowsAndIllumination <vredvrdEnvironmentShadowsAndIllumination>` object, to read and write access of all properties.
+    :rtype: vrdEnvironmentShadowsAndIllumination
+
+.. _vredvrdEnvironmentMaterial.getTransformation():
+.. py:method:: vrdEnvironmentMaterial.getTransformation()
+
+    Gets access to all properties of         :any:`vrdEnvironmentTransformation <vredvrdEnvironmentTransformation>`.
+
+
+
+
+    :return: An :any:`vrdEnvironmentTransformation <vredvrdEnvironmentTransformation>` object, to read and write access of all properties.
+    :rtype: vrdEnvironmentTransformation
+
+.. _vredvrdEnvironmentMaterial.isFlipped():
+.. py:method:: vrdEnvironmentMaterial.isFlipped()
+
+    Gets flipped state. See         :any:`vrdEnvironmentMaterial.setFlipped(s) <vredvrdEnvironmentMaterial.setFlipped(s)>`.
+
+
+
+
+    :return: Current flipped state.
+    :rtype: bool
+
+.. _vredvrdEnvironmentMaterial.isShadowPlaneVisible():
+.. py:method:: vrdEnvironmentMaterial.isShadowPlaneVisible()
+
+    Gets visibility state of shadow plane.
+
+
+
+
+    :return: Current visibility state of shadow plane.
+    :rtype: bool
+
+.. _vredvrdEnvironmentMaterial.isVisible():
+.. py:method:: vrdEnvironmentMaterial.isVisible()
+
+    Gets primary visibility state of the environment.
+
+
+
+
+    :return: Current visibility state.
+    :rtype: bool
+
+.. _vredvrdEnvironmentMaterial.setExposure(exposure):
+.. py:method:: vrdEnvironmentMaterial.setExposure(exposure)
+
+    Sets the exposure value.
+
+
+
+    :param exposure: The new used value for exposure.
+    :type exposure: float
+
+    
+    
+
+.. _vredvrdEnvironmentMaterial.setFilteredEnvMapSamples(samples):
+.. py:method:: vrdEnvironmentMaterial.setFilteredEnvMapSamples(samples)
+
+    Sets the number of filtered environment map samples.
+
+    This value defines the quality for the precomputed glossy IBL. It is also used for the precomputed ray-tracing mode, but not for full global illumination. The entries are internally specifying a sample amount per pixel and correspond to the following values:
+
+    |             Low - 256 samples
+    |             Medium - 512 samples
+    |             High - 1024 samples
+    |             Ultra High - 2048 samples
+
+    The higher the value the better the visual quality. The lower the value the faster is the computation.
+
+    :param samples: The samples
+    :type samples: integer
+
+    
+    
+
+.. _vredvrdEnvironmentMaterial.setFlipped(s):
+.. py:method:: vrdEnvironmentMaterial.setFlipped(s)
+
+    Flips the normals of the environment sphere.
+
+    This changes whether the environment geometry can be viewed from the inside or outside. 
+
+    :param s: New flipped state.
+    :type s: bool
+
+    
+    
+
+.. _vredvrdEnvironmentMaterial.setGeometryFile(filename):
+.. py:method:: vrdEnvironmentMaterial.setGeometryFile(filename)
+
+    Load a globally used geometry for custom geometry type from disk.
+
+
+
+    :param filename: path of the loaded file.
+    :type filename: string
+
+    
+    
+
+.. _vredvrdEnvironmentMaterial.setGeometryType(value):
+.. py:method:: vrdEnvironmentMaterial.setGeometryType(value)
+
+    Sets geometry type. It defines the shape of the environment hull. These options are available:
+
+    |         Custom - Uses a custom geometry
+    |         Dome - Uses a dome geometry with a flat bottom.
+    |         Sphere - Uses a sphere geometry
+    |         Cube - Uses a cube geometry
+
+    :param value: The new geometry type.
+    :type value: :ref:`vrdEnvironmentMaterial.GeometryType <vredvrdEnvironmentMaterial.GeometryType>`
+
+    
+    
+
+.. _vredvrdEnvironmentMaterial.setLuminanceMapping(luminanceMapping):
+.. py:method:: vrdEnvironmentMaterial.setLuminanceMapping(luminanceMapping)
+
+    Sets the luminance value a RGB value of (1,1,1) in the HDR image is mapped to. The default value is 100 cd/m^2 but a realistic value for many HDRs is 10000 cd/m^2. This option is only available when photometric parameters are turned on.
+
+
+
+    :param luminanceMapping: The new value for luminance mapping.
+    :type luminanceMapping: float
+
+    
+    
+
+.. _vredvrdEnvironmentMaterial.setShadowPlaneVisible(s):
+.. py:method:: vrdEnvironmentMaterial.setShadowPlaneVisible(s)
+
+    Sets the shadow plane of the corresponding Environment node to be visible or hidden.
+
+
+
+    :param s: New visibility state of shadow plane.
+    :type s: bool
+
+    
+    
+
+.. _vredvrdEnvironmentMaterial.setVisible(s):
+.. py:method:: vrdEnvironmentMaterial.setVisible(s)
+
+    Sets the primary visibility of the environment.
+
+    An environment material set to not be visible can still illuminate scene objects, if it is enabled to be used as light source, and can still be used for specular reflections in Raytracing. 
+
+    :param s: New visibility state.
+    :type s: bool
+
+    
+    
+
+.. _vredvrdEnvironmentMaterial.toSphericalQImage(width, height, toneMapped):
+.. py:method:: vrdEnvironmentMaterial.toSphericalQImage(width, height, toneMapped=True)
+
+    Creates a spherical image from the current environment image.
+
+
+
+    :param width: Horizontal resolution
+    :type width: integer
+
+    :param height: Vertical resolution
+    :type height: integer
+
+    :param toneMapped: If ture, the returned image is tone mapped
+    :type toneMapped: bool
+
+    :return: An image with the given resolution
+    :rtype: QImage
+
+
+
+
+
+
+
+
+
+

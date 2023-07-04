@@ -1,0 +1,7 @@
+Switch render window to fullscreen
+==================================
+
+.. literalinclude:: ../python_examples/fullscreen.py
+   :language: python
+   :linenos:
+   :caption: fullscreen.py

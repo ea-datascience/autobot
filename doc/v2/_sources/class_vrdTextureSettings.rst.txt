@@ -1,0 +1,453 @@
+------------------
+vrdTextureSettings
+------------------
+
+
+.. _vredvrdTextureSettings:
+.. py:class:: vrdTextureSettings
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This class is used for all texture mapping properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getMappingType() → vrTextureTypes.MappingType<vredvrdTextureSettings.getMappingType()>`
+    * :ref:`getRepeat() → QVector2D<vredvrdTextureSettings.getRepeat()>`
+    * :ref:`getRotation() → float<vredvrdTextureSettings.getRotation()>`
+    * :ref:`getTextureSize() → QVector2D<vredvrdTextureSettings.getTextureSize()>`
+    * :ref:`getTriplanarBlend() → float<vredvrdTextureSettings.getTriplanarBlend()>`
+    * :ref:`getTriplanarBlendMode() → vrTextureTypes.TriplanarBlendMode<vredvrdTextureSettings.getTriplanarBlendMode()>`
+    * :ref:`getTriplanarXOffset() → QVector2D<vredvrdTextureSettings.getTriplanarXOffset()>`
+    * :ref:`getTriplanarXRepeat() → QVector2D<vredvrdTextureSettings.getTriplanarXRepeat()>`
+    * :ref:`getTriplanarXRotation() → float<vredvrdTextureSettings.getTriplanarXRotation()>`
+    * :ref:`getTriplanarYOffset() → QVector2D<vredvrdTextureSettings.getTriplanarYOffset()>`
+    * :ref:`getTriplanarYRepeat() → QVector2D<vredvrdTextureSettings.getTriplanarYRepeat()>`
+    * :ref:`getTriplanarYRotation() → float<vredvrdTextureSettings.getTriplanarYRotation()>`
+    * :ref:`getTriplanarZOffset() → QVector2D<vredvrdTextureSettings.getTriplanarZOffset()>`
+    * :ref:`getTriplanarZRepeat() → QVector2D<vredvrdTextureSettings.getTriplanarZRepeat()>`
+    * :ref:`getTriplanarZRotation() → float<vredvrdTextureSettings.getTriplanarZRotation()>`
+    * :ref:`getUniformRepeat() → bool<vredvrdTextureSettings.getUniformRepeat()>`
+    * :ref:`setMappingType(type) <vredvrdTextureSettings.setMappingType(type)>`
+    * :ref:`setRepeat(repeat) <vredvrdTextureSettings.setRepeat(repeat)>`
+    * :ref:`setRotation(rotation) <vredvrdTextureSettings.setRotation(rotation)>`
+    * :ref:`setTextureSize(size) <vredvrdTextureSettings.setTextureSize(size)>`
+    * :ref:`setTriplanarBlend(blend) <vredvrdTextureSettings.setTriplanarBlend(blend)>`
+    * :ref:`setTriplanarBlendMode(mode) <vredvrdTextureSettings.setTriplanarBlendMode(mode)>`
+    * :ref:`setTriplanarXOffset(offset) <vredvrdTextureSettings.setTriplanarXOffset(offset)>`
+    * :ref:`setTriplanarXRepeat(repeat) <vredvrdTextureSettings.setTriplanarXRepeat(repeat)>`
+    * :ref:`setTriplanarXRotation(rotation) <vredvrdTextureSettings.setTriplanarXRotation(rotation)>`
+    * :ref:`setTriplanarYOffset(offset) <vredvrdTextureSettings.setTriplanarYOffset(offset)>`
+    * :ref:`setTriplanarYRepeat(repeat) <vredvrdTextureSettings.setTriplanarYRepeat(repeat)>`
+    * :ref:`setTriplanarYRotation(rotation) <vredvrdTextureSettings.setTriplanarYRotation(rotation)>`
+    * :ref:`setTriplanarZOffset(offset) <vredvrdTextureSettings.setTriplanarZOffset(offset)>`
+    * :ref:`setTriplanarZRepeat(repeat) <vredvrdTextureSettings.setTriplanarZRepeat(repeat)>`
+    * :ref:`setTriplanarZRotation(rotation) <vredvrdTextureSettings.setTriplanarZRotation(rotation)>`
+    * :ref:`setUniformRepeat(s) <vredvrdTextureSettings.setUniformRepeat(s)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdTextureSettings.getMappingType():
+.. py:method:: vrdTextureSettings.getMappingType()
+
+    Gets mapping type.
+
+
+
+
+    :return: Current used mapping type
+    :rtype: :ref:`vrTextureTypes.MappingType <vredvrTextureTypes.MappingType>`
+
+.. _vredvrdTextureSettings.getRepeat():
+.. py:method:: vrdTextureSettings.getRepeat()
+
+    Returns the UV texture repeat factor.
+
+
+
+
+    :return: UV texture repeat factor
+    :rtype: QVector2D
+
+.. _vredvrdTextureSettings.getRotation():
+.. py:method:: vrdTextureSettings.getRotation()
+
+    Returns the current UV texture coordinate rotation.
+
+
+
+
+    :return: UV texture coordinate rotation
+    :rtype: float
+
+.. _vredvrdTextureSettings.getTextureSize():
+.. py:method:: vrdTextureSettings.getTextureSize()
+
+    Gets texture size in millimeter.
+
+
+
+
+    :return: Current texture size in millimeter.
+    :rtype: QVector2D
+
+.. _vredvrdTextureSettings.getTriplanarBlend():
+.. py:method:: vrdTextureSettings.getTriplanarBlend()
+
+    Gets the range for overlapping areas of the planar projection.
+
+
+
+
+    :return: The current used range for overlapping areas
+    :rtype: float
+
+.. _vredvrdTextureSettings.getTriplanarBlendMode():
+.. py:method:: vrdTextureSettings.getTriplanarBlendMode()
+
+    Gets blend mode.
+
+
+
+
+    :return: Current used blend mode
+    :rtype: :ref:`vrTextureTypes.TriplanarBlendMode <vredvrTextureTypes.TriplanarBlendMode>`
+
+.. _vredvrdTextureSettings.getTriplanarXOffset():
+.. py:method:: vrdTextureSettings.getTriplanarXOffset()
+
+    Gets the position of the texture's pattern by the set value in the U and V for X projection direction.
+
+
+
+
+    :return: The current used position of the texture's pattern by the set value in the U and V for X projection direction.
+    :rtype: QVector2D
+
+.. _vredvrdTextureSettings.getTriplanarXRepeat():
+.. py:method:: vrdTextureSettings.getTriplanarXRepeat()
+
+    Gets how many times the texture is repeated in U and V for the X projection direction.
+
+
+
+
+    :return: Current used value how many times the texture is repeated in U and V for the X projection direction.
+    :rtype: QVector2D
+
+.. _vredvrdTextureSettings.getTriplanarXRotation():
+.. py:method:: vrdTextureSettings.getTriplanarXRotation()
+
+    Gets the projection orientation in the U and V for X projection direction.
+
+
+
+
+    :return: Current used rotation angle in the U and V for X projection direction.
+    :rtype: float
+
+.. _vredvrdTextureSettings.getTriplanarYOffset():
+.. py:method:: vrdTextureSettings.getTriplanarYOffset()
+
+    Gets the position of the texture's pattern by the set value in the U and V for Y projection direction.
+
+
+
+
+    :return: The current used position of the texture's pattern by the set value in the U and V for Y projection direction.
+    :rtype: QVector2D
+
+.. _vredvrdTextureSettings.getTriplanarYRepeat():
+.. py:method:: vrdTextureSettings.getTriplanarYRepeat()
+
+    Gets how many times the texture is repeated in U and V for the Y projection direction.
+
+
+
+
+    :return: Current used value how many times the texture is repeated in U and V for the Y projection direction.
+    :rtype: QVector2D
+
+.. _vredvrdTextureSettings.getTriplanarYRotation():
+.. py:method:: vrdTextureSettings.getTriplanarYRotation()
+
+    Gets the projection orientation in the U and V for Y projection direction.
+
+
+
+
+    :return: Current used rotation angle in the U and V for Y projection direction.
+    :rtype: float
+
+.. _vredvrdTextureSettings.getTriplanarZOffset():
+.. py:method:: vrdTextureSettings.getTriplanarZOffset()
+
+    Gets the position of the texture's pattern by the set value in the U and V for Z projection direction.
+
+
+
+
+    :return: The current used position of the texture's pattern by the set value in the U and V for Z projection direction.
+    :rtype: QVector2D
+
+.. _vredvrdTextureSettings.getTriplanarZRepeat():
+.. py:method:: vrdTextureSettings.getTriplanarZRepeat()
+
+    Gets how many times the texture is repeated in U and V for the Z projection direction.
+
+
+
+
+    :return: Current used value how many times the texture is repeated in U and V for the Z projection direction.
+    :rtype: QVector2D
+
+.. _vredvrdTextureSettings.getTriplanarZRotation():
+.. py:method:: vrdTextureSettings.getTriplanarZRotation()
+
+    Gets the projection orientation in the U and V for Z projection direction.
+
+
+
+
+    :return: Current used rotation angle in the U and V for Z projection direction.
+    :rtype: float
+
+.. _vredvrdTextureSettings.getUniformRepeat():
+.. py:method:: vrdTextureSettings.getUniformRepeat()
+
+    Sets if the texture is repeated in U and V equal for each projection direction.
+
+
+
+
+    :return: Current state of this approach
+    :rtype: bool
+
+.. _vredvrdTextureSettings.setMappingType(type):
+.. py:method:: vrdTextureSettings.setMappingType(type)
+
+    Sets mapping type.
+
+
+
+    :param type: New mapping type
+    :type type: :ref:`vrTextureTypes.MappingType <vredvrTextureTypes.MappingType>`
+
+    
+    
+
+.. _vredvrdTextureSettings.setRepeat(repeat):
+.. py:method:: vrdTextureSettings.setRepeat(repeat)
+
+    Sets the UV texture repeat factor.
+
+
+
+    :param repeat: UV texture repeat factor to set
+    :type repeat: QVector2D
+
+    
+    
+
+.. _vredvrdTextureSettings.setRotation(rotation):
+.. py:method:: vrdTextureSettings.setRotation(rotation)
+
+    Sets a rotation value for the UV-texture coordinates.
+
+
+
+    :param rotation: The rotation value to use
+    :type rotation: float
+
+    
+    
+
+.. _vredvrdTextureSettings.setTextureSize(size):
+.. py:method:: vrdTextureSettings.setTextureSize(size)
+
+    Sets texture size in millimeter.
+
+
+
+    :param size: New texture size in millimeter.
+    :type size: QVector2D
+
+    
+    
+
+.. _vredvrdTextureSettings.setTriplanarBlend(blend):
+.. py:method:: vrdTextureSettings.setTriplanarBlend(blend)
+
+    Sets the range for overlapping areas of the planar projection.
+
+
+
+    :param blend: The new range for overlapping areas
+    :type blend: float
+
+    
+    
+
+.. _vredvrdTextureSettings.setTriplanarBlendMode(mode):
+.. py:method:: vrdTextureSettings.setTriplanarBlendMode(mode)
+
+    Sets blend mode.
+
+
+
+    :param mode: New blend mode
+    :type mode: :ref:`vrTextureTypes.TriplanarBlendMode <vredvrTextureTypes.TriplanarBlendMode>`
+
+    
+    
+
+.. _vredvrdTextureSettings.setTriplanarXOffset(offset):
+.. py:method:: vrdTextureSettings.setTriplanarXOffset(offset)
+
+    Moves the position of the texture's pattern by the set value in the U and V for X projection direction.
+
+
+
+    :param offset: The new position of the texture's pattern by the set value in the U and V for X projection direction.
+    :type offset: QVector2D
+
+    
+    
+
+.. _vredvrdTextureSettings.setTriplanarXRepeat(repeat):
+.. py:method:: vrdTextureSettings.setTriplanarXRepeat(repeat)
+
+    Sets how many times the texture is repeated in U and V for the X projection direction.
+
+
+
+    :param repeat: New value how many times the texture is repeated in U and V for the X projection direction.
+    :type repeat: QVector2D
+
+    
+    
+
+.. _vredvrdTextureSettings.setTriplanarXRotation(rotation):
+.. py:method:: vrdTextureSettings.setTriplanarXRotation(rotation)
+
+    Sets the projection orientation in the U and V for X projection direction.
+
+
+
+    :param rotation: New rotation angle in the U and V for X projection direction.
+    :type rotation: float
+
+    
+    
+
+.. _vredvrdTextureSettings.setTriplanarYOffset(offset):
+.. py:method:: vrdTextureSettings.setTriplanarYOffset(offset)
+
+    Moves the position of the texture's pattern by the set value in the U and V for Y projection direction.
+
+
+
+    :param offset: The new position of the texture's pattern by the set value in the U and V for Y projection direction.
+    :type offset: QVector2D
+
+    
+    
+
+.. _vredvrdTextureSettings.setTriplanarYRepeat(repeat):
+.. py:method:: vrdTextureSettings.setTriplanarYRepeat(repeat)
+
+    Sets how many times the texture is repeated in U and V for the Y projection direction.
+
+
+
+    :param repeat: New value how many times the texture is repeated in U and V for the Y projection direction.
+    :type repeat: QVector2D
+
+    
+    
+
+.. _vredvrdTextureSettings.setTriplanarYRotation(rotation):
+.. py:method:: vrdTextureSettings.setTriplanarYRotation(rotation)
+
+    Sets the projection orientation in the U and V for Y projection direction.
+
+
+
+    :param rotation: New rotation angle in the U and V for Y projection direction.
+    :type rotation: float
+
+    
+    
+
+.. _vredvrdTextureSettings.setTriplanarZOffset(offset):
+.. py:method:: vrdTextureSettings.setTriplanarZOffset(offset)
+
+    Moves the position of the texture's pattern by the set value in the U and V for Z projection direction.
+
+
+
+    :param offset: The new position of the texture's pattern by the set value in the U and V for Z projection direction.
+    :type offset: QVector2D
+
+    
+    
+
+.. _vredvrdTextureSettings.setTriplanarZRepeat(repeat):
+.. py:method:: vrdTextureSettings.setTriplanarZRepeat(repeat)
+
+    Sets how many times the texture is repeated in U and V for the Z projection direction.
+
+
+
+    :param repeat: New value how many times the texture is repeated in U and V for the Z projection direction.
+    :type repeat: QVector2D
+
+    
+    
+
+.. _vredvrdTextureSettings.setTriplanarZRotation(rotation):
+.. py:method:: vrdTextureSettings.setTriplanarZRotation(rotation)
+
+    Sets the projection orientation in the U and V for Z projection direction.
+
+
+
+    :param rotation: New rotation angle in the U and V for Z projection direction.
+    :type rotation: float
+
+    
+    
+
+.. _vredvrdTextureSettings.setUniformRepeat(s):
+.. py:method:: vrdTextureSettings.setUniformRepeat(s)
+
+    Sets if the texture is repeated in U and V equal for each projection direction.
+
+
+
+    :param s: Enable or disable this approach
+    :type s: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

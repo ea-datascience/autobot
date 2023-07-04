@@ -1,0 +1,1320 @@
+----------
+vrdTexture
+----------
+
+
+.. _vredvrdTexture:
+.. py:class:: vrdTexture
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This class is used for all texture properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAnisotropy() → float<vredvrdTexture.getAnisotropy()>`
+    * :ref:`getComponentName() → string<vredvrdTexture.getComponentName()>`
+    * :ref:`getConnectRepeatModes() → bool<vredvrdTexture.getConnectRepeatModes()>`
+    * :ref:`getFrameOffset() → integer<vredvrdTexture.getFrameOffset()>`
+    * :ref:`getGamma() → float<vredvrdTexture.getGamma()>`
+    * :ref:`getImage() → vrdImage<vredvrdTexture.getImage()>`
+    * :ref:`getImageNumber() → integer<vredvrdTexture.getImageNumber()>`
+    * :ref:`getInfiniteTilingContrast() → float<vredvrdTexture.getInfiniteTilingContrast()>`
+    * :ref:`getInfiniteTilingGridSize() → integer<vredvrdTexture.getInfiniteTilingGridSize()>`
+    * :ref:`getInfiniteTilingHueWeight() → float<vredvrdTexture.getInfiniteTilingHueWeight()>`
+    * :ref:`getInfiniteTilingMaxRotation() → float<vredvrdTexture.getInfiniteTilingMaxRotation()>`
+    * :ref:`getInfiniteTilingSaturationWeight() → float<vredvrdTexture.getInfiniteTilingSaturationWeight()>`
+    * :ref:`getInfiniteTilingValueWeight() → float<vredvrdTexture.getInfiniteTilingValueWeight()>`
+    * :ref:`getInlineImageSequence() → bool<vredvrdTexture.getInlineImageSequence()>`
+    * :ref:`getInvertTexture() → bool<vredvrdTexture.getInvertTexture()>`
+    * :ref:`getLinkTextureSettings() → bool<vredvrdTexture.getLinkTextureSettings()>`
+    * :ref:`getManipulate() → bool<vredvrdTexture.getManipulate()>`
+    * :ref:`getMappingType() → vrTextureTypes.MappingType<vredvrdTexture.getMappingType()>`
+    * :ref:`getOffset() → QVector2D<vredvrdTexture.getOffset()>`
+    * :ref:`getPlanarProjectionCenter() → QVector3D<vredvrdTexture.getPlanarProjectionCenter()>`
+    * :ref:`getPlanarProjectionKeepAspectRatio() → bool<vredvrdTexture.getPlanarProjectionKeepAspectRatio()>`
+    * :ref:`getPlanarProjectionOrientation() → QVector2D<vredvrdTexture.getPlanarProjectionOrientation()>`
+    * :ref:`getPlanarProjectionSingleSided() → bool<vredvrdTexture.getPlanarProjectionSingleSided()>`
+    * :ref:`getPlanarProjectionSize() → QVector3D<vredvrdTexture.getPlanarProjectionSize()>`
+    * :ref:`getRepeat() → QVector2D<vredvrdTexture.getRepeat()>`
+    * :ref:`getRepeatModeU() → vrTextureTypes.RepeatMode<vredvrdTexture.getRepeatModeU()>`
+    * :ref:`getRepeatModeV() → vrTextureTypes.RepeatMode<vredvrdTexture.getRepeatModeV()>`
+    * :ref:`getRotate() → float<vredvrdTexture.getRotate()>`
+    * :ref:`getTextureSize() → QVector2D<vredvrdTexture.getTextureSize()>`
+    * :ref:`getTriplanarBlend() → float<vredvrdTexture.getTriplanarBlend()>`
+    * :ref:`getTriplanarXOffset() → QVector2D<vredvrdTexture.getTriplanarXOffset()>`
+    * :ref:`getTriplanarXRepeat() → QVector2D<vredvrdTexture.getTriplanarXRepeat()>`
+    * :ref:`getTriplanarXRotation() → float<vredvrdTexture.getTriplanarXRotation()>`
+    * :ref:`getTriplanarYOffset() → QVector2D<vredvrdTexture.getTriplanarYOffset()>`
+    * :ref:`getTriplanarYRepeat() → QVector2D<vredvrdTexture.getTriplanarYRepeat()>`
+    * :ref:`getTriplanarYRotation() → float<vredvrdTexture.getTriplanarYRotation()>`
+    * :ref:`getTriplanarZOffset() → QVector2D<vredvrdTexture.getTriplanarZOffset()>`
+    * :ref:`getTriplanarZRepeat() → QVector2D<vredvrdTexture.getTriplanarZRepeat()>`
+    * :ref:`getTriplanarZRotation() → float<vredvrdTexture.getTriplanarZRotation()>`
+    * :ref:`getUniformRepeat() → bool<vredvrdTexture.getUniformRepeat()>`
+    * :ref:`getUseAlpha() → bool<vredvrdTexture.getUseAlpha()>`
+    * :ref:`getUseCutout() → bool<vredvrdTexture.getUseCutout()>`
+    * :ref:`getUseImageSequence() → bool<vredvrdTexture.getUseImageSequence()>`
+    * :ref:`getUseInfiniteTiling() → bool<vredvrdTexture.getUseInfiniteTiling()>`
+    * :ref:`getUseTexture() → bool<vredvrdTexture.getUseTexture()>`
+    * :ref:`getUseTextureSize() → bool<vredvrdTexture.getUseTextureSize()>`
+    * :ref:`setAnisotropy(anisotropy) <vredvrdTexture.setAnisotropy(anisotropy)>`
+    * :ref:`setConnectRepeatModes(s) <vredvrdTexture.setConnectRepeatModes(s)>`
+    * :ref:`setFrameOffset(frameOffset) <vredvrdTexture.setFrameOffset(frameOffset)>`
+    * :ref:`setGamma(gamma) <vredvrdTexture.setGamma(gamma)>`
+    * :ref:`setImage(img) <vredvrdTexture.setImage(img)>`
+    * :ref:`setImageNumber(imageNumber) <vredvrdTexture.setImageNumber(imageNumber)>`
+    * :ref:`setInfiniteTilingContrast(contrast) <vredvrdTexture.setInfiniteTilingContrast(contrast)>`
+    * :ref:`setInfiniteTilingGridSize(gridSize) <vredvrdTexture.setInfiniteTilingGridSize(gridSize)>`
+    * :ref:`setInfiniteTilingHueWeight(hueWeight) <vredvrdTexture.setInfiniteTilingHueWeight(hueWeight)>`
+    * :ref:`setInfiniteTilingMaxRotation(maxRotation) <vredvrdTexture.setInfiniteTilingMaxRotation(maxRotation)>`
+    * :ref:`setInfiniteTilingSaturationWeight(saturationWeight) <vredvrdTexture.setInfiniteTilingSaturationWeight(saturationWeight)>`
+    * :ref:`setInfiniteTilingValueWeight(valueWeight) <vredvrdTexture.setInfiniteTilingValueWeight(valueWeight)>`
+    * :ref:`setInlineImageSequence(s) <vredvrdTexture.setInlineImageSequence(s)>`
+    * :ref:`setInvertTexture(invertTexture) <vredvrdTexture.setInvertTexture(invertTexture)>`
+    * :ref:`setLinkTextureSettings(s) <vredvrdTexture.setLinkTextureSettings(s)>`
+    * :ref:`setManipulate(s) <vredvrdTexture.setManipulate(s)>`
+    * :ref:`setMappingType(type) <vredvrdTexture.setMappingType(type)>`
+    * :ref:`setOffset(offset) <vredvrdTexture.setOffset(offset)>`
+    * :ref:`setPlanarProjectionCenter(center) <vredvrdTexture.setPlanarProjectionCenter(center)>`
+    * :ref:`setPlanarProjectionFitSize() <vredvrdTexture.setPlanarProjectionFitSize()>`
+    * :ref:`setPlanarProjectionKeepAspectRatio(s) <vredvrdTexture.setPlanarProjectionKeepAspectRatio(s)>`
+    * :ref:`setPlanarProjectionObjectCenter() <vredvrdTexture.setPlanarProjectionObjectCenter()>`
+    * :ref:`setPlanarProjectionOrientation(orientation) <vredvrdTexture.setPlanarProjectionOrientation(orientation)>`
+    * :ref:`setPlanarProjectionPlane(center, direction) <vredvrdTexture.setPlanarProjectionPlane(center, direction)>`
+    * :ref:`setPlanarProjectionSingleSided(s) <vredvrdTexture.setPlanarProjectionSingleSided(s)>`
+    * :ref:`setPlanarProjectionSize(size) <vredvrdTexture.setPlanarProjectionSize(size)>`
+    * :ref:`setRepeat(repeat) <vredvrdTexture.setRepeat(repeat)>`
+    * :ref:`setRepeatModeU(mode) <vredvrdTexture.setRepeatModeU(mode)>`
+    * :ref:`setRepeatModeV(mode) <vredvrdTexture.setRepeatModeV(mode)>`
+    * :ref:`setRotate(rotate) <vredvrdTexture.setRotate(rotate)>`
+    * :ref:`setTextureSize(size) <vredvrdTexture.setTextureSize(size)>`
+    * :ref:`setTriplanarBlend(blend) <vredvrdTexture.setTriplanarBlend(blend)>`
+    * :ref:`setTriplanarXOffset(offset) <vredvrdTexture.setTriplanarXOffset(offset)>`
+    * :ref:`setTriplanarXRepeat(repeat) <vredvrdTexture.setTriplanarXRepeat(repeat)>`
+    * :ref:`setTriplanarXRotation(rotation) <vredvrdTexture.setTriplanarXRotation(rotation)>`
+    * :ref:`setTriplanarYOffset(offset) <vredvrdTexture.setTriplanarYOffset(offset)>`
+    * :ref:`setTriplanarYRepeat(repeat) <vredvrdTexture.setTriplanarYRepeat(repeat)>`
+    * :ref:`setTriplanarYRotation(rotation) <vredvrdTexture.setTriplanarYRotation(rotation)>`
+    * :ref:`setTriplanarZOffset(offset) <vredvrdTexture.setTriplanarZOffset(offset)>`
+    * :ref:`setTriplanarZRepeat(repeat) <vredvrdTexture.setTriplanarZRepeat(repeat)>`
+    * :ref:`setTriplanarZRotation(rotation) <vredvrdTexture.setTriplanarZRotation(rotation)>`
+    * :ref:`setUniformRepeat(s) <vredvrdTexture.setUniformRepeat(s)>`
+    * :ref:`setUseAlpha(s) <vredvrdTexture.setUseAlpha(s)>`
+    * :ref:`setUseCutout(s) <vredvrdTexture.setUseCutout(s)>`
+    * :ref:`setUseImageSequence(s) <vredvrdTexture.setUseImageSequence(s)>`
+    * :ref:`setUseInfiniteTiling(s) <vredvrdTexture.setUseInfiniteTiling(s)>`
+    * :ref:`setUseTexture(s) <vredvrdTexture.setUseTexture(s)>`
+    * :ref:`setUseTextureSize(s) <vredvrdTexture.setUseTextureSize(s)>`
+    * :ref:`supportsGamma() → bool<vredvrdTexture.supportsGamma()>`
+    * :ref:`supportsInvertTexture() → bool<vredvrdTexture.supportsInvertTexture()>`
+    * :ref:`supportsMappingType() → bool<vredvrdTexture.supportsMappingType()>`
+    * :ref:`supportsUseAlpha() → bool<vredvrdTexture.supportsUseAlpha()>`
+    * :ref:`supportsUseCutout() → bool<vredvrdTexture.supportsUseCutout()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdTexture.getAnisotropy():
+.. py:method:: vrdTexture.getAnisotropy()
+
+    Returns the current anisotropy value.
+
+
+
+
+    :return: Anisotropy value
+    :rtype: float
+
+.. _vredvrdTexture.getComponentName():
+.. py:method:: vrdTexture.getComponentName()
+
+    
+
+
+
+
+    :return: The name of the component, this texture belongs to
+    :rtype: string
+
+.. _vredvrdTexture.getConnectRepeatModes():
+.. py:method:: vrdTexture.getConnectRepeatModes()
+
+    Returns whether the U and V repeat modes are linked.
+
+
+
+
+    :return: True if the repeat modes are linked, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.getFrameOffset():
+.. py:method:: vrdTexture.getFrameOffset()
+
+    Returns the current frame offset.
+
+
+
+
+    :return: The current frame offset
+    :rtype: integer
+
+.. _vredvrdTexture.getGamma():
+.. py:method:: vrdTexture.getGamma()
+
+    Returns the texture image gamma correction.
+
+
+
+
+    :return: Currently used value for the texture image gamma correction.
+    :rtype: float
+
+.. _vredvrdTexture.getImage():
+.. py:method:: vrdTexture.getImage()
+
+    Returns the image used by the texture.
+
+
+
+
+    :return: The image used as a texture
+    :rtype: vrdImage
+
+.. _vredvrdTexture.getImageNumber():
+.. py:method:: vrdTexture.getImageNumber()
+
+    Returns the current frame number of the image sequence.
+
+
+
+
+    :return: The current frame number
+    :rtype: integer
+
+.. _vredvrdTexture.getInfiniteTilingContrast():
+.. py:method:: vrdTexture.getInfiniteTilingContrast()
+
+    Returns the contrast adjustment of the blending region between tiles when using infinite tiling.
+
+
+
+
+    :return: Contrast value between 0 and 1
+    :rtype: float
+
+.. _vredvrdTexture.getInfiniteTilingGridSize():
+.. py:method:: vrdTexture.getInfiniteTilingGridSize()
+
+    Returns the base grid size of the infinite tiling.
+
+
+
+
+    :return: Positive integer value
+    :rtype: integer
+
+.. _vredvrdTexture.getInfiniteTilingHueWeight():
+.. py:method:: vrdTexture.getInfiniteTilingHueWeight()
+
+    Returns the weight of the random hue offset for each tile when using infinite tiling.
+
+
+
+
+    :return: The weight of the random hue offset between 0 and 1
+    :rtype: float
+
+.. _vredvrdTexture.getInfiniteTilingMaxRotation():
+.. py:method:: vrdTexture.getInfiniteTilingMaxRotation()
+
+    Returns the maximum rotation applied to a single tile when using infinite tiling.
+
+
+
+
+    :return: Rotation value
+    :rtype: float
+
+.. _vredvrdTexture.getInfiniteTilingSaturationWeight():
+.. py:method:: vrdTexture.getInfiniteTilingSaturationWeight()
+
+    Returns the weight of the random saturation offset for each tile when using infinite tiling.
+
+
+
+
+    :return: The weight of the random saturation offset between 0 and 1
+    :rtype: float
+
+.. _vredvrdTexture.getInfiniteTilingValueWeight():
+.. py:method:: vrdTexture.getInfiniteTilingValueWeight()
+
+    Returns the weight of the random value offset for each tile when using infinite tiling.
+
+
+
+
+    :return: The weight of the random value offset between 0 and 1
+    :rtype: float
+
+.. _vredvrdTexture.getInlineImageSequence():
+.. py:method:: vrdTexture.getInlineImageSequence()
+
+    Returns whether the image sequence is embedded to the file or not.
+
+
+
+
+    :return: True if the image sequence is inlined, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.getInvertTexture():
+.. py:method:: vrdTexture.getInvertTexture()
+
+    Returns whether in texture inversion is enabled or not.
+
+
+
+
+    :return: True if the texture is inverted, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.getLinkTextureSettings():
+.. py:method:: vrdTexture.getLinkTextureSettings()
+
+    Returns the current state of the texture link option.
+
+
+
+
+    :return: True if the texture is linked to other textures, False if the texture uses independent settings
+    :rtype: bool
+
+.. _vredvrdTexture.getManipulate():
+.. py:method:: vrdTexture.getManipulate()
+
+    Returns whether the texture manipulator is active or not.
+
+
+
+
+    :return: True if the manipulator is active, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.getMappingType():
+.. py:method:: vrdTexture.getMappingType()
+
+    Returns the texture mapping type currently used for this texture.
+
+
+
+
+    :return: Current mapping type
+    :rtype: :ref:`vrTextureTypes.MappingType <vredvrTextureTypes.MappingType>`
+
+.. _vredvrdTexture.getOffset():
+.. py:method:: vrdTexture.getOffset()
+
+    Returns the current UV texture coordinate offset.
+
+
+
+
+    :return: UV texture coordinate offset
+    :rtype: QVector2D
+
+.. _vredvrdTexture.getPlanarProjectionCenter():
+.. py:method:: vrdTexture.getPlanarProjectionCenter()
+
+    Returns the planar projection center in object space.
+
+
+
+
+    :return: 3d object space position
+    :rtype: QVector3D
+
+.. _vredvrdTexture.getPlanarProjectionKeepAspectRatio():
+.. py:method:: vrdTexture.getPlanarProjectionKeepAspectRatio()
+
+    Returns whether the aspect ratio of the texture is to be preserved.
+
+
+
+
+    :return: True if aspect ratio should be preserved, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.getPlanarProjectionOrientation():
+.. py:method:: vrdTexture.getPlanarProjectionOrientation()
+
+    Returns the planar projection orientation.
+
+
+
+
+    :return: Euler angle rotation
+    :rtype: QVector2D
+
+.. _vredvrdTexture.getPlanarProjectionSingleSided():
+.. py:method:: vrdTexture.getPlanarProjectionSingleSided()
+
+    Returns whether the planar projection is single sided or not.
+
+
+
+
+    :return: True if the planar projection is single sided, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.getPlanarProjectionSize():
+.. py:method:: vrdTexture.getPlanarProjectionSize()
+
+    Returns the planar projection size.
+
+
+
+
+    :return: 3d size
+    :rtype: QVector3D
+
+.. _vredvrdTexture.getRepeat():
+.. py:method:: vrdTexture.getRepeat()
+
+    Returns the UV texture repeat factor.
+
+
+
+
+    :return: UV texture repeat factor
+    :rtype: QVector2D
+
+.. _vredvrdTexture.getRepeatModeU():
+.. py:method:: vrdTexture.getRepeatModeU()
+
+    Returns the current texture repeat mode along the U axis.
+
+
+
+
+    :return: Current texture repeat mode along the U axis
+    :rtype: :ref:`vrTextureTypes.RepeatMode <vredvrTextureTypes.RepeatMode>`
+
+.. _vredvrdTexture.getRepeatModeV():
+.. py:method:: vrdTexture.getRepeatModeV()
+
+    Returns the current texture repeat mode along the V axis.
+
+
+
+
+    :return: Current texture repeat mode along the V axis
+    :rtype: :ref:`vrTextureTypes.RepeatMode <vredvrTextureTypes.RepeatMode>`
+
+.. _vredvrdTexture.getRotate():
+.. py:method:: vrdTexture.getRotate()
+
+    Returns the current UV texture coordinate rotation.
+
+
+
+
+    :return: UV texture coordinate rotation
+    :rtype: float
+
+.. _vredvrdTexture.getTextureSize():
+.. py:method:: vrdTexture.getTextureSize()
+
+    Returns the size of the texture in scene units.
+
+
+
+
+    :return: Size in scene units (usually mm)
+    :rtype: QVector2D
+
+.. _vredvrdTexture.getTriplanarBlend():
+.. py:method:: vrdTexture.getTriplanarBlend()
+
+    Returns the edge blending factor for the triplanar texture projection.
+
+
+
+
+    :return: Blending factor between 0 and 1
+    :rtype: float
+
+.. _vredvrdTexture.getTriplanarXOffset():
+.. py:method:: vrdTexture.getTriplanarXOffset()
+
+    Returns the UV offset for the x-axis of the triplanar texture projection.
+
+
+
+
+    :return: UV offset
+    :rtype: QVector2D
+
+.. _vredvrdTexture.getTriplanarXRepeat():
+.. py:method:: vrdTexture.getTriplanarXRepeat()
+
+    Returns the UV repeat factors of the x-axis of the triplanar texture projection.
+
+
+
+
+    :return: UV repeat factors
+    :rtype: QVector2D
+
+.. _vredvrdTexture.getTriplanarXRotation():
+.. py:method:: vrdTexture.getTriplanarXRotation()
+
+    Returns the rotation value of the x-axis texture coordinates of the triplanar texture projection.
+
+
+
+
+    :return: Rotation value
+    :rtype: float
+
+.. _vredvrdTexture.getTriplanarYOffset():
+.. py:method:: vrdTexture.getTriplanarYOffset()
+
+    Returns the UV offset for the y-axis of the triplanar texture projection.
+
+
+
+
+    :return: UV offset
+    :rtype: QVector2D
+
+.. _vredvrdTexture.getTriplanarYRepeat():
+.. py:method:: vrdTexture.getTriplanarYRepeat()
+
+    Returns the UV repeat factors of the y-axis of the triplanar texture projection.
+
+
+
+
+    :return: UV repeat factors
+    :rtype: QVector2D
+
+.. _vredvrdTexture.getTriplanarYRotation():
+.. py:method:: vrdTexture.getTriplanarYRotation()
+
+    Returns the rotation value of the y-axis texture coordinates of the triplanar texture projection.
+
+
+
+
+    :return: Rotation value
+    :rtype: float
+
+.. _vredvrdTexture.getTriplanarZOffset():
+.. py:method:: vrdTexture.getTriplanarZOffset()
+
+    Returns the UV offset for the z-axis of the triplanar texture projection.
+
+
+
+
+    :return: UV offset
+    :rtype: QVector2D
+
+.. _vredvrdTexture.getTriplanarZRepeat():
+.. py:method:: vrdTexture.getTriplanarZRepeat()
+
+    Returns the UV repeat factors of the z-axis of the triplanar texture projection.
+
+
+
+
+    :return: UV repeat factors
+    :rtype: QVector2D
+
+.. _vredvrdTexture.getTriplanarZRotation():
+.. py:method:: vrdTexture.getTriplanarZRotation()
+
+    Returns the rotation value of the z-axis texture coordinates of the triplanar texture projection.
+
+
+
+
+    :return: Rotation value
+    :rtype: float
+
+.. _vredvrdTexture.getUniformRepeat():
+.. py:method:: vrdTexture.getUniformRepeat()
+
+    Returns whether the repeat factors for the triplanar texture projection are linked or not.
+
+
+
+
+    :return: True if the repeat values are linked, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.getUseAlpha():
+.. py:method:: vrdTexture.getUseAlpha()
+
+    Returns whehter the texture image's alpha channel is use for transparency or not.
+
+
+
+
+    :return: True if the alpha channel is used, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.getUseCutout():
+.. py:method:: vrdTexture.getUseCutout()
+
+    Returns whether cutout transparency is used or not.
+
+
+
+
+    :return: True if cutout transparency is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdTexture.getUseImageSequence():
+.. py:method:: vrdTexture.getUseImageSequence()
+
+    Returns the current image sequence usage state.
+
+
+
+
+    :return: True if the use of an image sequence is enabled, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.getUseInfiniteTiling():
+.. py:method:: vrdTexture.getUseInfiniteTiling()
+
+    Returns whether infinite tiling is used for the texture or not.
+
+
+
+
+    :return: True if infinite tiling is enabled, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.getUseTexture():
+.. py:method:: vrdTexture.getUseTexture()
+
+    Returns the current texture usage state.
+
+
+
+
+    :return: True if texture usage is enabled, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.getUseTextureSize():
+.. py:method:: vrdTexture.getUseTextureSize()
+
+    Returns whether real world texture size should be used or not.
+
+
+
+
+    :return: True if real world texture size is used, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.setAnisotropy(anisotropy):
+.. py:method:: vrdTexture.setAnisotropy(anisotropy)
+
+    Sets the anisotropy value for texture filtering. The ranges are defined as A value of 0.0 reverts to bilinear filtering A value in the (0.0, 1.0] range uses simple trilinear filtering A value above 1 uses an anisotropic filtering.
+
+
+
+    :param anisotropy: Anisotropy value to use for texture filtering
+    :type anisotropy: float
+
+    
+    
+
+.. _vredvrdTexture.setConnectRepeatModes(s):
+.. py:method:: vrdTexture.setConnectRepeatModes(s)
+
+    If enabled the U repeat mode will be used for the V direction as well.
+
+
+
+    :param s: Set to True if the repeat modes in U and V direction should be the same, False otherwise
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.setFrameOffset(frameOffset):
+.. py:method:: vrdTexture.setFrameOffset(frameOffset)
+
+    Sets an offset to be added to the current frame number of the image sequence.
+
+
+
+    :param frameOffset: Offset to be added to the frame number of the image sequence
+    :type frameOffset: integer
+
+    
+    
+
+.. _vredvrdTexture.setGamma(gamma):
+.. py:method:: vrdTexture.setGamma(gamma)
+
+    Sets the texture image gamma correction. For a value of 0.0 an sRGB gamma is used on LDR textures. For HDR textures the gamma is ignored, these are always assumed to have a linear gamma of 1.0 Call supportsGamma to query if the texture supports gamma correction.
+
+
+
+    :param gamma: Value for the texture image gamma correction.
+    :type gamma: float
+
+    
+    
+
+.. _vredvrdTexture.setImage(img):
+.. py:method:: vrdTexture.setImage(img)
+
+    Sets an image to the texture.
+
+
+
+    :param img: The image to set as a texture
+    :type img: vrdImage
+
+    
+    
+
+.. _vredvrdTexture.setImageNumber(imageNumber):
+.. py:method:: vrdTexture.setImageNumber(imageNumber)
+
+    When an image sequence is used this sets the current frame used as a texture.
+
+
+
+    :param imageNumber: The frame number to use from the image sequence
+    :type imageNumber: integer
+
+    
+    
+
+.. _vredvrdTexture.setInfiniteTilingContrast(contrast):
+.. py:method:: vrdTexture.setInfiniteTilingContrast(contrast)
+
+    Sets the contrast adjustment of the blending region between tiles when using infinite tiling.
+
+
+
+    :param contrast: Contrast value between 0 and 1
+    :type contrast: float
+
+    
+    
+
+.. _vredvrdTexture.setInfiniteTilingGridSize(gridSize):
+.. py:method:: vrdTexture.setInfiniteTilingGridSize(gridSize)
+
+    Sets the base grid size to use for infinite tiling.
+
+
+
+    :param gridSize: positive integer value
+    :type gridSize: integer
+
+    
+    
+
+.. _vredvrdTexture.setInfiniteTilingHueWeight(hueWeight):
+.. py:method:: vrdTexture.setInfiniteTilingHueWeight(hueWeight)
+
+    Sets the weight of the random hue offset for each tile when using infinite tiling.
+
+
+
+    :param hueWeight: The weight of the random hue offset between 0 and 1
+    :type hueWeight: float
+
+    
+    
+
+.. _vredvrdTexture.setInfiniteTilingMaxRotation(maxRotation):
+.. py:method:: vrdTexture.setInfiniteTilingMaxRotation(maxRotation)
+
+    Sets the maximum rotation applied to a single tile when using infinite tiling.
+
+
+
+    :param maxRotation: Rotation value
+    :type maxRotation: float
+
+    
+    
+
+.. _vredvrdTexture.setInfiniteTilingSaturationWeight(saturationWeight):
+.. py:method:: vrdTexture.setInfiniteTilingSaturationWeight(saturationWeight)
+
+    Sets the weight of the random saturation offset for each tile when using infinite tiling.
+
+
+
+    :param saturationWeight: The weight of the random saturation offset between 0 and 1
+    :type saturationWeight: float
+
+    
+    
+
+.. _vredvrdTexture.setInfiniteTilingValueWeight(valueWeight):
+.. py:method:: vrdTexture.setInfiniteTilingValueWeight(valueWeight)
+
+    Sets the weight of the random value offset for each tile when using infinite tiling.
+
+
+
+    :param valueWeight: The weight of the random value offset between 0 and 1
+    :type valueWeight: float
+
+    
+    
+
+.. _vredvrdTexture.setInlineImageSequence(s):
+.. py:method:: vrdTexture.setInlineImageSequence(s)
+
+    If enabled the image sequence will be embedded in the file instead of being read from disk for each frame.
+
+
+
+    :param s: Set to True if the image sequence should be inlined, False to remove inlined image sequence data.
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.setInvertTexture(invertTexture):
+.. py:method:: vrdTexture.setInvertTexture(invertTexture)
+
+    When enabled the values of the texture are inverted. Call supportsInvertTexture to query if texture inversion is supported for this texture.
+
+
+
+    :param invertTexture: New enable state of the the invert texture approach
+    :type invertTexture: bool
+
+    
+    
+
+.. _vredvrdTexture.setLinkTextureSettings(s):
+.. py:method:: vrdTexture.setLinkTextureSettings(s)
+
+    Links the settings for this texture to the settings of other linked textures in this material.
+
+
+
+    :param s: Set to True if the texture should use the same settings as other linked textures, set to False for independent settings
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.setManipulate(s):
+.. py:method:: vrdTexture.setManipulate(s)
+
+    Set to True to enable the texture manipulator.
+
+
+
+    :param s: True enables the texture manipulator, False disables it
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.setMappingType(type):
+.. py:method:: vrdTexture.setMappingType(type)
+
+    Sets the type of the texture projection to use for this texture. Call         :any:`vrdTexture.supportsMappingType() <vredvrdTexture.supportsMappingType()>` to check if mapping types are supported for this texture.
+
+
+
+    :param type: Texture mapping type to set. Available types are UVMapping, PlanarMapping or TriplanarMapping if supported.
+    :type type: :ref:`vrTextureTypes.MappingType <vredvrTextureTypes.MappingType>`
+
+    
+    
+
+.. _vredvrdTexture.setOffset(offset):
+.. py:method:: vrdTexture.setOffset(offset)
+
+    Sets an offset added to the UV texture coordinates.
+
+
+
+    :param offset: The offset to use
+    :type offset: QVector2D
+
+    
+    
+
+.. _vredvrdTexture.setPlanarProjectionCenter(center):
+.. py:method:: vrdTexture.setPlanarProjectionCenter(center)
+
+    Sets the projection center for planar texture projection in object space.
+
+
+
+    :param center: 3d objects space position
+    :type center: QVector3D
+
+    
+    
+
+.. _vredvrdTexture.setPlanarProjectionFitSize():
+.. py:method:: vrdTexture.setPlanarProjectionFitSize()
+
+    Automatically adjusts the size of the planar projection based on the selected geometries.
+
+
+
+
+    
+    
+
+.. _vredvrdTexture.setPlanarProjectionKeepAspectRatio(s):
+.. py:method:: vrdTexture.setPlanarProjectionKeepAspectRatio(s)
+
+    Sets whether the aspect ratio of the texture should be preserved for the projection or not.
+
+
+
+    :param s: True for aspect ratio to be preserved for the projection, False otherwise
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.setPlanarProjectionObjectCenter():
+.. py:method:: vrdTexture.setPlanarProjectionObjectCenter()
+
+    Automatically adjusts the planar projection center based on the selected geometries.
+
+
+
+
+    
+    
+
+.. _vredvrdTexture.setPlanarProjectionOrientation(orientation):
+.. py:method:: vrdTexture.setPlanarProjectionOrientation(orientation)
+
+    Sets the projection orientation for planar texture projection in object space.
+
+
+
+    :param orientation: Euler angle rotation
+    :type orientation: QVector2D
+
+    
+    
+
+.. _vredvrdTexture.setPlanarProjectionPlane(center, direction):
+.. py:method:: vrdTexture.setPlanarProjectionPlane(center, direction)
+
+    Sets the center and orientation of the planar projection.
+
+
+
+    :param center: Local center coordinates
+    :type center: QVector3D
+
+    :param direction: Local direction of the plane
+    :type direction: QVector3D
+
+    
+    
+
+.. _vredvrdTexture.setPlanarProjectionSingleSided(s):
+.. py:method:: vrdTexture.setPlanarProjectionSingleSided(s)
+
+    Sets whether the planar projection should be for one side of the geometry or both. Only available with repeat mode Decal.
+
+
+
+    :param s: If True, the projection is only applied if the surface normal faces the projection, otherwise the texture will be visible on both sides
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.setPlanarProjectionSize(size):
+.. py:method:: vrdTexture.setPlanarProjectionSize(size)
+
+    Sets the size of the planar texture projection in object space. The z-Coordinate of the size can be used limit the projection to depth range.
+
+
+
+    :param size: 3d size
+    :type size: QVector3D
+
+    
+    
+
+.. _vredvrdTexture.setRepeat(repeat):
+.. py:method:: vrdTexture.setRepeat(repeat)
+
+    Sets the UV texture repeat factor.
+
+
+
+    :param repeat: UV texture repeat factor to set
+    :type repeat: QVector2D
+
+    
+    
+
+.. _vredvrdTexture.setRepeatModeU(mode):
+.. py:method:: vrdTexture.setRepeatModeU(mode)
+
+    Sets the texture repeat mode along the U axis.
+
+
+
+    :param mode: Texture repeat mode to set. Available modes are Repeat, Mirrored, Decal and Clamp
+    :type mode: :ref:`vrTextureTypes.RepeatMode <vredvrTextureTypes.RepeatMode>`
+
+    
+    
+
+.. _vredvrdTexture.setRepeatModeV(mode):
+.. py:method:: vrdTexture.setRepeatModeV(mode)
+
+    Sets the texture repeat mode along the V axis.
+
+
+
+    :param mode: Texture repeat mode to set. Available modes are Repeat, Mirrored, Decal and Clamp
+    :type mode: :ref:`vrTextureTypes.RepeatMode <vredvrTextureTypes.RepeatMode>`
+
+    
+    
+
+.. _vredvrdTexture.setRotate(rotate):
+.. py:method:: vrdTexture.setRotate(rotate)
+
+    Sets a rotation value for the UV-texture coordinates.
+
+
+
+    :param rotate: The rotation value to use
+    :type rotate: float
+
+    
+    
+
+.. _vredvrdTexture.setTextureSize(size):
+.. py:method:: vrdTexture.setTextureSize(size)
+
+    Sets the size of the texture in scene units.
+
+
+
+    :param size: Size in scene units (usually mm)
+    :type size: QVector2D
+
+    
+    
+
+.. _vredvrdTexture.setTriplanarBlend(blend):
+.. py:method:: vrdTexture.setTriplanarBlend(blend)
+
+    Sets the edge blending factor for the triplanar texture projection.
+
+
+
+    :param blend: Blending factor between 0 and 1
+    :type blend: float
+
+    
+    
+
+.. _vredvrdTexture.setTriplanarXOffset(offset):
+.. py:method:: vrdTexture.setTriplanarXOffset(offset)
+
+    Sets the UV offset for the x-axis of the triplanar texture projection.
+
+
+
+    :param offset: UV offset
+    :type offset: QVector2D
+
+    
+    
+
+.. _vredvrdTexture.setTriplanarXRepeat(repeat):
+.. py:method:: vrdTexture.setTriplanarXRepeat(repeat)
+
+    Sets the UV repeat factors for the x-axis of the triplanar texture projection.
+
+
+
+    :param repeat: UV repeat factors
+    :type repeat: QVector2D
+
+    
+    
+
+.. _vredvrdTexture.setTriplanarXRotation(rotation):
+.. py:method:: vrdTexture.setTriplanarXRotation(rotation)
+
+    Sets the rotation value for the x-axis texture coordinates of the triplanar texture projection.
+
+
+
+    :param rotation: Rotation value
+    :type rotation: float
+
+    
+    
+
+.. _vredvrdTexture.setTriplanarYOffset(offset):
+.. py:method:: vrdTexture.setTriplanarYOffset(offset)
+
+    Sets the UV offset for the y-axis of the triplanar texture projection.
+
+
+
+    :param offset: UV offset
+    :type offset: QVector2D
+
+    
+    
+
+.. _vredvrdTexture.setTriplanarYRepeat(repeat):
+.. py:method:: vrdTexture.setTriplanarYRepeat(repeat)
+
+    Sets the UV repeat factors for the y-axis of the triplanar texture projection.
+
+
+
+    :param repeat: UV repeat factor
+    :type repeat: QVector2D
+
+    
+    
+
+.. _vredvrdTexture.setTriplanarYRotation(rotation):
+.. py:method:: vrdTexture.setTriplanarYRotation(rotation)
+
+    Sets the rotation value for the y-axis texture coordinates of the triplanar texture projection.
+
+
+
+    :param rotation: Rotation value
+    :type rotation: float
+
+    
+    
+
+.. _vredvrdTexture.setTriplanarZOffset(offset):
+.. py:method:: vrdTexture.setTriplanarZOffset(offset)
+
+    Sets the UV offset for the z-axis of the triplanar texture projection.
+
+
+
+    :param offset: UV offset
+    :type offset: QVector2D
+
+    
+    
+
+.. _vredvrdTexture.setTriplanarZRepeat(repeat):
+.. py:method:: vrdTexture.setTriplanarZRepeat(repeat)
+
+    Sets the UV repeat factors for the z-axis of the triplanar texture projection.
+
+
+
+    :param repeat: UV repeat factor
+    :type repeat: QVector2D
+
+    
+    
+
+.. _vredvrdTexture.setTriplanarZRotation(rotation):
+.. py:method:: vrdTexture.setTriplanarZRotation(rotation)
+
+    Sets the rotation value for the z-axis texture coordinates of the triplanar texture projection.
+
+
+
+    :param rotation: Rotation value
+    :type rotation: float
+
+    
+    
+
+.. _vredvrdTexture.setUniformRepeat(s):
+.. py:method:: vrdTexture.setUniformRepeat(s)
+
+    If set to True the repeat factors of the xyz axes of the triplanar texture projection are linked.
+
+
+
+    :param s: True if the axes should be linked, False otherwise
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.setUseAlpha(s):
+.. py:method:: vrdTexture.setUseAlpha(s)
+
+    When set to True and the texture image has an alpha channel embedded it is used to make parts of the texture transparent. Call supportsUseAlpha to query if the texture supports an alpha channel.
+
+
+
+    :param s: True if the alpha channel should be used, False otherwise
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.setUseCutout(s):
+.. py:method:: vrdTexture.setUseCutout(s)
+
+    When set to True the transparency if interpreted as either True or False. Values below 0.5 are considered to be transparent while values above 0.5 are opaque. Enabling Cutout allows transparent objects to cast shadows in the rasterizer and can improve performance in raytracing when rendering foliage or similar scenes. This is a per material setting. Call supportsUseCutout to query if the texture supports cutout transparency.
+
+
+
+    :param s: True to enable cutout transparency, False otherwise.
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.setUseImageSequence(s):
+.. py:method:: vrdTexture.setUseImageSequence(s)
+
+    When set to True an image sequence can be used as a texture.
+
+
+
+    :param s: Set to True if an image sequence should be used as a texture, False otherwise
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.setUseInfiniteTiling(s):
+.. py:method:: vrdTexture.setUseInfiniteTiling(s)
+
+    Set whether to use infinite tiling on the texture to hide visible repeats.
+
+
+
+    :param s: True to enable infinite tiling, False otherwise
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.setUseTexture(s):
+.. py:method:: vrdTexture.setUseTexture(s)
+
+    When set to True an image can be used as a texture.
+
+
+
+    :param s: New state for the usage of an image as a texture
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.setUseTextureSize(s):
+.. py:method:: vrdTexture.setUseTextureSize(s)
+
+    If enabled, the texture size property is used instead of repeat values when using UV mapping, see         :any:`vrdTexture.getTextureSize() <vredvrdTexture.getTextureSize()>`, :any:`vrdTexture.setTextureSize(size) <vredvrdTexture.setTextureSize(size)>`.
+
+    The UV coordinates of the geometry must be properly scaled as well for this option to work correctly, see :any:`vrUVService.applyWorldScale(nodes, uvSet) <vredvrUVService.applyWorldScale(nodes, uvSet)>`.
+
+    :param s: True if the real world texture size is used, False otherwise
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTexture.supportsGamma():
+.. py:method:: vrdTexture.supportsGamma()
+
+    
+
+
+
+
+    :return: True if gamma correction is supported, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.supportsInvertTexture():
+.. py:method:: vrdTexture.supportsInvertTexture()
+
+    
+
+
+
+
+    :return: True if texture inversion is supported, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.supportsMappingType():
+.. py:method:: vrdTexture.supportsMappingType()
+
+    
+
+
+
+
+    :return: True if mapping type can be changed for this texture, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.supportsUseAlpha():
+.. py:method:: vrdTexture.supportsUseAlpha()
+
+    
+
+
+
+
+    :return: True if alpha channel of this texture can be used, False otherwise
+    :rtype: bool
+
+.. _vredvrdTexture.supportsUseCutout():
+.. py:method:: vrdTexture.supportsUseCutout()
+
+    
+
+
+
+
+    :return: True if cutout transparency is supported, False otherwise
+    :rtype: bool
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,4635 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>vrFieldAccess.vrFieldAccess</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >VRED Python API v1</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="vrFieldAccess-module.html">Module&nbsp;vrFieldAccess</a> ::
+        Class&nbsp;vrFieldAccess
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="vrFieldAccess.vrFieldAccess-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class vrFieldAccess</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+ <a href="object-class.html">object</a> --+    
+          |    
+??.instance --+
+              |
+             <strong class="uidshort">vrFieldAccess</strong>
+</pre>
+
+<hr />
+<p>The vrFieldAccess class offers access to any kind of data (fields) 
+  inside the scenegraph (regardless if it is a node, a geometry, material 
+  etc.). You get access to the fieldpointer within the materials or nodes 
+  via the fields()-method.</p>
+  <p>The names of the fields can be found in the node editor. The type of a
+  field is shown in a tool tip when hovering over the right side column in 
+  the table of the Node Editor.</p>
+  <p>A type beginning with 'SF...' stands for Single field, it holds a 
+  single value or object. For example, 'SFInt8' means the field holds an 8 
+  bit int value. It can be accessed with setInt8 and getInt8.</p>
+  <p>A type beginning with 'MF...' means it is a multi-field. A multi field
+  is a list of values or objects. For example, 'MFString' is a list of 
+  strings.The methods for multi fields start with getM... or setM..., for 
+  example setMString and getMString for a string multi field.</p>
+  <p>Example:</p>
+<pre class="literalblock">
+       See toggleClipPlane() in deprecated/clipPlane.py
+</pre>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">source</span>)</span><br />
+      The constructor of the FieldContainerPtr class.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#__reduce__" class="summary-sig-name">__reduce__</a>()</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#addAttachment" class="summary-sig-name">addAttachment</a>(<span class="summary-sig-arg">attachment</span>)</span><br />
+      Adds an attachment to an AttachmentContainer.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">FieldContainerPtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getAttachment" class="summary-sig-name">getAttachment</a>(<span class="summary-sig-arg">aname</span>)</span><br />
+      Returns the attachment.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getBool" class="summary-sig-name">getBool</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of a bool field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of floats (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getColor" class="summary-sig-name">getColor</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">d</span>)</span><br />
+      Returns the value of a color field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">FieldContainerPtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getFieldContainer" class="summary-sig-name">getFieldContainer</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of a field container.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">unsigned int (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getFieldContainerID" class="summary-sig-name">getFieldContainerID</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the id of a field container.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">unsigned int (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getFieldContainerId" class="summary-sig-name">getFieldContainerId</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the id of a field container.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">GLenum</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getGLenum" class="summary-sig-name">getGLenum</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of a GLenum field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">unsigned int (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getID" class="summary-sig-name">getID</a>()</span><br />
+      Returns the internal id of the field container.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int (16bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getInt16" class="summary-sig-name">getInt16</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of a short field (16bit signed).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getInt32" class="summary-sig-name">getInt32</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of an int field (32bit signed).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int (64bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getInt64" class="summary-sig-name">getInt64</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of an int field (64bit signed).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int (8bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getInt8" class="summary-sig-name">getInt8</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of a short field (8bit signed).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of booleans</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMBool" class="summary-sig-name">getMBool</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a boolean multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of Color3fs</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMColor3f" class="summary-sig-name">getMColor3f</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a Color3f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of Color4fs</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMColor4f" class="summary-sig-name">getMColor4f</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a Color4f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of FieldContainerPtrs</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMFieldContainer" class="summary-sig-name">getMFieldContainer</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns a FieldContainerPtr multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of unsigned ints (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMFieldContainerId" class="summary-sig-name">getMFieldContainerId</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the field container ids of a FieldContainerPtr multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of GLenums</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMGLenum" class="summary-sig-name">getMGLenum</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a GLenum multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of integers (signed 16 bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMInt16" class="summary-sig-name">getMInt16</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of an integer multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of integers (signed 32 bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMInt32" class="summary-sig-name">getMInt32</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of an integer multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of integers (signed 64 bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMInt64" class="summary-sig-name">getMInt64</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of an integer multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of integers (signed 8 bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMInt8" class="summary-sig-name">getMInt8</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of an integer multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of Pnt2fs</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMPnt2f" class="summary-sig-name">getMPnt2f</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a Pnt2f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of Pnt3fs</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMPnt3f" class="summary-sig-name">getMPnt3f</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a Pnt3f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of Pnt4fs</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMPnt4f" class="summary-sig-name">getMPnt4f</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a Pnt4f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of floats (32 bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMReal32" class="summary-sig-name">getMReal32</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a float multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of floats (64 bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMReal64" class="summary-sig-name">getMReal64</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a float multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of strings</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMString" class="summary-sig-name">getMString</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a string multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of unsigned ints (16 bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMUInt16" class="summary-sig-name">getMUInt16</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of an unsigned int multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of unsigned ints (32 bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMUInt32" class="summary-sig-name">getMUInt32</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of an unsigned int multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of unsigned ints (64 bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMUInt64" class="summary-sig-name">getMUInt64</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of an unsigned int multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of unsigned ints (8 bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMUInt8" class="summary-sig-name">getMUInt8</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of an unsigned int multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of Vec2fs</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMVec2f" class="summary-sig-name">getMVec2f</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a Vec2f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of Vec3fs</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMVec3f" class="summary-sig-name">getMVec3f</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a Vec3f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of Vec4fs</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMVec4f" class="summary-sig-name">getMVec4f</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the values of a Vec4f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of floats (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getMatrix" class="summary-sig-name">getMatrix</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of a matrix field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">NodePtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getNode" class="summary-sig-name">getNode</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of a node field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of floats (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getPnt" class="summary-sig-name">getPnt</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">d</span>)</span><br />
+      Returns the value of a point field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getReal32" class="summary-sig-name">getReal32</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of a float field (32bit).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float (64bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getReal64" class="summary-sig-name">getReal64</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of a double field (64bit).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getString" class="summary-sig-name">getString</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of a string field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">time (float 64bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getTime" class="summary-sig-name">getTime</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of a time field (64bit).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">unsigned int (16bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getUInt16" class="summary-sig-name">getUInt16</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of an unsigned short field (16bit unsigned).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">unsigned int (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getUInt32" class="summary-sig-name">getUInt32</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of an unsigned int field (32bit unsigned).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">unsigned int (64bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getUInt64" class="summary-sig-name">getUInt64</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of an unsigned int field (64bit unsigned).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">unsigned int (8bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getUInt8" class="summary-sig-name">getUInt8</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Returns the value of an unsigned short field (8bit unsigned).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of floats (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#getVec" class="summary-sig-name">getVec</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">d</span>)</span><br />
+      Returns the value of a vector field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#hasAttachment" class="summary-sig-name">hasAttachment</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Checks the existence of an attachment via name.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#hasField" class="summary-sig-name">hasField</a>(<span class="summary-sig-arg">fname</span>)</span><br />
+      Checks the existence of a field via name.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#isValid" class="summary-sig-name">isValid</a>()</span><br />
+      Returns true if the FieldContainer is valid.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setBool" class="summary-sig-name">setBool</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a bool field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setColor" class="summary-sig-name">setColor</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets an n-dimensional color field (n in [3,4]).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setColor4f" class="summary-sig-name">setColor4f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">r</span>,
+        <span class="summary-sig-arg">g</span>,
+        <span class="summary-sig-arg">b</span>,
+        <span class="summary-sig-arg">a</span>)</span><br />
+      Sets a 4-dimensional color field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setFieldContainer" class="summary-sig-name">setFieldContainer</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a fieldcontainer field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setFieldContainerId" class="summary-sig-name">setFieldContainerId</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a fieldcontainer field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setGLenum" class="summary-sig-name">setGLenum</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a GLenum field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setInt16" class="summary-sig-name">setInt16</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a short field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setInt32" class="summary-sig-name">setInt32</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an int field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setInt64" class="summary-sig-name">setInt64</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an int field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setInt8" class="summary-sig-name">setInt8</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a byte field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMBool" class="summary-sig-name">setMBool</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a bool multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMColor3f" class="summary-sig-name">setMColor3f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a Color3f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMColor4f" class="summary-sig-name">setMColor4f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a Color4f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMFieldContainer" class="summary-sig-name">setMFieldContainer</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a fieldcontainer multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMFieldContainerId" class="summary-sig-name">setMFieldContainerId</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a fieldcontainer multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMGLenum" class="summary-sig-name">setMGLenum</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a GLenum multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMInt16" class="summary-sig-name">setMInt16</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an int multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMInt32" class="summary-sig-name">setMInt32</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an integer multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMInt64" class="summary-sig-name">setMInt64</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an integer multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMInt8" class="summary-sig-name">setMInt8</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an int multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMPnt2f" class="summary-sig-name">setMPnt2f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a Pnt2f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMPnt3f" class="summary-sig-name">setMPnt3f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a Pnt3f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMPnt4f" class="summary-sig-name">setMPnt4f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a Pnt4f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMReal32" class="summary-sig-name">setMReal32</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a float multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMReal64" class="summary-sig-name">setMReal64</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a float multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMString" class="summary-sig-name">setMString</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a string multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMUInt16" class="summary-sig-name">setMUInt16</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an unsigned int multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMUInt32" class="summary-sig-name">setMUInt32</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a unsigned int multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMUInt64" class="summary-sig-name">setMUInt64</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a unsigned int multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMUInt8" class="summary-sig-name">setMUInt8</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an unsigned int multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMVec2f" class="summary-sig-name">setMVec2f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a Vec2f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMVec3f" class="summary-sig-name">setMVec3f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a Vec3f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMVec4f" class="summary-sig-name">setMVec4f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a Vec4f multi field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setMatrix" class="summary-sig-name">setMatrix</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>,
+        <span class="summary-sig-arg">transposed</span>)</span><br />
+      Sets an 16-dimensional matrix field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setNode" class="summary-sig-name">setNode</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a node field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setPnt" class="summary-sig-name">setPnt</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an n-dimensional point field (n in [2,4]).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setPnt2f" class="summary-sig-name">setPnt2f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>)</span><br />
+      Sets the value of a 2-dimensional point field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setPnt3f" class="summary-sig-name">setPnt3f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">z</span>)</span><br />
+      Sets the value of a 3-dimensional point field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setReal32" class="summary-sig-name">setReal32</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a float field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setReal64" class="summary-sig-name">setReal64</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a double field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setString" class="summary-sig-name">setString</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a string field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setTime" class="summary-sig-name">setTime</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of a time field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setUInt16" class="summary-sig-name">setUInt16</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an unsigned short field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setUInt32" class="summary-sig-name">setUInt32</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an unsigned int field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setUInt64" class="summary-sig-name">setUInt64</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an unsigned int field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setUInt8" class="summary-sig-name">setUInt8</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an unsigned byte field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setVec" class="summary-sig-name">setVec</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">v</span>)</span><br />
+      Sets the value of an n-dimensional vector field (n in [2,4]).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setVec2f" class="summary-sig-name">setVec2f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>)</span><br />
+      Sets the value of a 2-dimensional vector field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setVec3f" class="summary-sig-name">setVec3f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">z</span>)</span><br />
+      Sets the value of a 3-dimensional vector field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#setVec4f" class="summary-sig-name">setVec4f</a>(<span class="summary-sig-arg">fname</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">z</span>,
+        <span class="summary-sig-arg">w</span>)</span><br />
+      Sets the value of a 4-dimensional vector field.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrFieldAccess.vrFieldAccess-class.html#subAttachment" class="summary-sig-name">subAttachment</a>(<span class="summary-sig-arg">attachment</span>)</span><br />
+      Removes an attachment from the AttachmentContainer.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><i>unreachable</i>.instance</code></b>:
+      <code>__new__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__instance_size__"></a><span class="summary-name">__instance_size__</span> = <code title="40">40</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">source</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The constructor of the FieldContainerPtr class.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>source</code></strong> (FieldContainerPtr) - The source (Optional).</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="object-class.html#__init__">object.__init__</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__reduce__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__reduce__</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="object-class.html#__reduce__">object.__reduce__</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="addAttachment"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addAttachment</span>(<span class="sig-arg">attachment</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Adds an attachment to an AttachmentContainer.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>attachment</code></strong> (FieldContainerPtr) - The attachment to add.</li>
+    </ul></dd>
+    <dt>Returns: bool</dt>
+        <dd>true of false.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getAttachment"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getAttachment</span>(<span class="sig-arg">aname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the attachment.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>aname</code></strong> (string) - The name of the attachment.</li>
+    </ul></dd>
+    <dt>Returns: FieldContainerPtr</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getBool"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getBool</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a bool field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: bool</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getColor"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getColor</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">d</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a color field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>d</code></strong> (int) - The dimension of the field (d in [3,4]).</li>
+    </ul></dd>
+    <dt>Returns: list of floats (32bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getFieldContainer"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getFieldContainer</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a field container.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: FieldContainerPtr</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getFieldContainerID"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getFieldContainerID</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the id of a field container.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: unsigned int (32bit)</dt>
+        <dd>The FieldContainer id.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getFieldContainerId"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getFieldContainerId</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the id of a field container.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: unsigned int (32bit)</dt>
+        <dd>The FieldContainer id.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getGLenum"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getGLenum</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a GLenum field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: GLenum</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getID"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getID</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the internal id of the field container.</p>
+  <dl class="fields">
+    <dt>Returns: unsigned int (32bit)</dt>
+        <dd>The field container id.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getInt16"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getInt16</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a short field (16bit signed).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: int (16bit)</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getInt32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getInt32</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of an int field (32bit signed).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: int (32bit)</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getInt64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getInt64</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of an int field (64bit signed).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: int (64bit)</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getInt8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getInt8</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a short field (8bit signed).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: int (8bit)</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMBool"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMBool</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a boolean multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of booleans</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMColor3f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMColor3f</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a Color3f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of Color3fs</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMColor4f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMColor4f</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a Color4f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of Color4fs</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMFieldContainer"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMFieldContainer</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a FieldContainerPtr multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of FieldContainerPtrs</dt>
+        <dd>The FieldContainerPtrs.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMFieldContainerId"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMFieldContainerId</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the field container ids of a FieldContainerPtr multi 
+  field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of unsigned ints (32bit)</dt>
+        <dd>The FieldContainer ids.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMGLenum"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMGLenum</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a GLenum multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of GLenums</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMInt16"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMInt16</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of an integer multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of integers (signed 16 bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMInt32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMInt32</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of an integer multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of integers (signed 32 bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMInt64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMInt64</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of an integer multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of integers (signed 64 bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMInt8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMInt8</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of an integer multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of integers (signed 8 bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMPnt2f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMPnt2f</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a Pnt2f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of Pnt2fs</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMPnt3f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMPnt3f</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a Pnt3f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of Pnt3fs</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMPnt4f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMPnt4f</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a Pnt4f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of Pnt4fs</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMReal32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMReal32</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a float multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of floats (32 bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMReal64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMReal64</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a float multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of floats (64 bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMString"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMString</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a string multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of strings</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMUInt16"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMUInt16</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of an unsigned int multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of unsigned ints (16 bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMUInt32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMUInt32</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of an unsigned int multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of unsigned ints (32 bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMUInt64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMUInt64</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of an unsigned int multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of unsigned ints (64 bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMUInt8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMUInt8</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of an unsigned int multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of unsigned ints (8 bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMVec2f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMVec2f</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a Vec2f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of Vec2fs</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMVec3f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMVec3f</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a Vec3f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of Vec3fs</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMVec4f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMVec4f</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the values of a Vec4f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of Vec4fs</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMatrix"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMatrix</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a matrix field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: list of floats (32bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getNode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getNode</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a node field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: NodePtr</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getPnt"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getPnt</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">d</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a point field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>d</code></strong> (int) - The dimension of the field (d in [2,4]).</li>
+    </ul></dd>
+    <dt>Returns: list of floats (32bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getReal32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getReal32</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a float field (32bit).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: float (32bit)</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getReal64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getReal64</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a double field (64bit).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: float (64bit)</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getString"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getString</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a string field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: string</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTime"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTime</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a time field (64bit).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: time (float 64bit)</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getUInt16"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getUInt16</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of an unsigned short field (16bit unsigned).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: unsigned int (16bit)</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getUInt32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getUInt32</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of an unsigned int field (32bit unsigned).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: unsigned int (32bit)</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getUInt64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getUInt64</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of an unsigned int field (64bit unsigned).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: unsigned int (64bit)</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getUInt8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getUInt8</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of an unsigned short field (8bit unsigned).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: unsigned int (8bit)</dt>
+        <dd>The value.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getVec"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getVec</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">d</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the value of a vector field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>d</code></strong> (int) - The dimension of the field (d in [2,4]).</li>
+    </ul></dd>
+    <dt>Returns: list of floats (32bit)</dt>
+        <dd>The values.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="hasAttachment"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasAttachment</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Checks the existence of an attachment via name.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the attachment.</li>
+    </ul></dd>
+    <dt>Returns: bool</dt>
+        <dd>The existence (true or false).</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="hasField"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">hasField</span>(<span class="sig-arg">fname</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Checks the existence of a field via name.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+    </ul></dd>
+    <dt>Returns: bool</dt>
+        <dd>The existence (true or false).</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isValid"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isValid</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns true if the FieldContainer is valid.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>True if valid, false otherwise.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setBool"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setBool</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a bool field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (boolean) - The value (true or false).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setColor"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setColor</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets an n-dimensional color field (n in [3,4]).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of floats (32bit)) - The list of values e.g.[1.0, 2.0].</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setColor4f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setColor4f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">r</span>,
+        <span class="sig-arg">g</span>,
+        <span class="sig-arg">b</span>,
+        <span class="sig-arg">a</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets a 4-dimensional color field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>r</code></strong> (float (32bit)) - The red value.</li>
+        <li><strong class="pname"><code>g</code></strong> (float (32bit)) - The green value.</li>
+        <li><strong class="pname"><code>b</code></strong> (float (32bit)) - The blue value.</li>
+        <li><strong class="pname"><code>a</code></strong> (float (32bit)) - The alpha value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setFieldContainer"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setFieldContainer</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a fieldcontainer field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (FieldContainerPtr) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setFieldContainerId"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setFieldContainerId</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a fieldcontainer field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (unsigned int (32bit)) - The FieldContainer id.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setGLenum"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setGLenum</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a GLenum field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (GLenum) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setInt16"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setInt16</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a short field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (integer (signed 16bit)) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setInt32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setInt32</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an int field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (integer (signed 32bit)) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setInt64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setInt64</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an int field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (integer (signed 64bit)) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setInt8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setInt8</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a byte field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (integer (signed 8bit)) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMBool"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMBool</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a bool multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of bools (32bit)) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMColor3f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMColor3f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a Color3f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of Color3fs) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMColor4f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMColor4f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a Color4f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of Color4fs) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMFieldContainer"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMFieldContainer</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a fieldcontainer multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of FieldContainerPtr) - The FieldContainerPtrs.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMFieldContainerId"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMFieldContainerId</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a fieldcontainer multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of unsigned ints (32bit)) - The FieldContainer ids.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMGLenum"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMGLenum</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a GLenum multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of GLenums (32bit)) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMInt16"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMInt16</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an int multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of ints (16bit)) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMInt32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMInt32</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an integer multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of ints (32bit)) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMInt64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMInt64</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an integer multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of ints (64bit)) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMInt8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMInt8</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an int multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of ints (8bit)) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMPnt2f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMPnt2f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a Pnt2f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of Pnt2fs) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMPnt3f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMPnt3f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a Pnt3f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of Pnt3fs) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMPnt4f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMPnt4f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a Pnt4f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of Pnt4fs) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMReal32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMReal32</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a float multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of floats (32bit)) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMReal64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMReal64</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a float multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of floats (64bit)) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMString"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMString</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a string multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of strings) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMUInt16"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMUInt16</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an unsigned int multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of unsigned ints (16bit)) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMUInt32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMUInt32</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a unsigned int multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of unsigned ints (32bit)) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMUInt64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMUInt64</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a unsigned int multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of unsigned ints (64bit)) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMUInt8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMUInt8</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an unsigned int multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of unsigned ints (8bit)) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMVec2f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMVec2f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a Vec2f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of Vec2fs) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMVec3f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMVec3f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a Vec3f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of Vec3fs) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMVec4f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMVec4f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a Vec4f multi field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of Vec4fs) - The values.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setMatrix"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setMatrix</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>,
+        <span class="sig-arg">transposed</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets an 16-dimensional matrix field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of floats (32bit)) - The list of values.</li>
+        <li><strong class="pname"><code>transposed</code></strong> (bool) - Transposed/not transposed.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setNode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setNode</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a node field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (NodePtr) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setPnt"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setPnt</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an n-dimensional point field (n in [2,4]).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of floats (32bit)) - The list of values e.g.[1.0, 2.0].</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setPnt2f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setPnt2f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a 2-dimensional point field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>x</code></strong> (float (32bit)) - The x value.</li>
+        <li><strong class="pname"><code>y</code></strong> (float (32bit)) - The y value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setPnt3f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setPnt3f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">z</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a 3-dimensional point field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>x</code></strong> (float (32bit)) - The x value.</li>
+        <li><strong class="pname"><code>y</code></strong> (float (32bit)) - The y value.</li>
+        <li><strong class="pname"><code>z</code></strong> (float (32bit)) - The z value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setReal32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setReal32</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a float field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (float (32bit)) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setReal64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setReal64</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a double field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (float (64bit)) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setString"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setString</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a string field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (string) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTime"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTime</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a time field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (time (float 64bit)) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setUInt16"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setUInt16</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an unsigned short field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (integer (unsigned 16bit)) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setUInt32"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setUInt32</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an unsigned int field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (integer (unsigned 32bit)) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setUInt64"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setUInt64</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an unsigned int field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (integer (unsigned 64bit)) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setUInt8"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setUInt8</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an unsigned byte field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (integer (unsigned 8bit)) - The value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setVec"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setVec</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">v</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of an n-dimensional vector field (n in [2,4]).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>v</code></strong> (list of floats (32bit)) - The list of values e.g.[1.0, 2.0].</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setVec2f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setVec2f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a 2-dimensional vector field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>x</code></strong> (float (32bit)) - The x value.</li>
+        <li><strong class="pname"><code>y</code></strong> (float (32bit)) - The y value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setVec3f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setVec3f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">z</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a 3-dimensional vector field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>x</code></strong> (float (32bit)) - The x value.</li>
+        <li><strong class="pname"><code>y</code></strong> (float (32bit)) - The y value.</li>
+        <li><strong class="pname"><code>z</code></strong> (float (32bit)) - The z value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setVec4f"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setVec4f</span>(<span class="sig-arg">fname</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">z</span>,
+        <span class="sig-arg">w</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the value of a 4-dimensional vector field.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fname</code></strong> (string) - The name of the field.</li>
+        <li><strong class="pname"><code>x</code></strong> (float (32bit)) - The x value.</li>
+        <li><strong class="pname"><code>y</code></strong> (float (32bit)) - The y value.</li>
+        <li><strong class="pname"><code>z</code></strong> (float (32bit)) - The z value.</li>
+        <li><strong class="pname"><code>w</code></strong> (float (32bit)) - The w value.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="subAttachment"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">subAttachment</span>(<span class="sig-arg">attachment</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes an attachment from the AttachmentContainer.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>attachment</code></strong> (FieldContainerPtr) - The attachment to remove.</li>
+    </ul></dd>
+    <dt>Returns: bool</dt>
+        <dd>true of false.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >VRED Python API v1</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Tue Jun 20 01:13:00 2023
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

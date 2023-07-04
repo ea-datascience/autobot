@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrScenegraphService &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrScenegraphTypes" href="class_vrScenegraphTypes.html" />
+    <link rel="prev" title="vrRoughnessTextureTypes" href="class_vrRoughnessTextureTypes.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrscenegraphservice">
+<h1>vrScenegraphService<a class="headerlink" href="#vrscenegraphservice" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrscenegraphservice"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrScenegraphService">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrScenegraphService</span></code><a class="headerlink" href="#vrScenegraphService" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <code class="xref py py-class docutils literal notranslate"><span class="pre">vrBaseService</span></code>)</p>
+<p>Interface to access the scenegraph in VRED.</p>
+<p>Functions that create new nodes add the new nodes to the graph.</p>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrscenegraphservice-checkallowance-node-actions"><span class="std std-ref">checkAllowance(node, actions) → List[bool]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-clearselection"><span class="std std-ref">clearSelection()</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-clonenodes-nodes"><span class="std std-ref">cloneNodes(nodes) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-clonenodesmirroraxis-nodes-axis"><span class="std std-ref">cloneNodesMirrorAxis(nodes, axis) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-convertnode-node-type"><span class="std std-ref">convertNode(node, type) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-converttomesh-nodes"><span class="std std-ref">convertToMesh(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-copyanimations-node"><span class="std std-ref">copyAnimations(node)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-copynodes-nodes"><span class="std std-ref">copyNodes(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-copytransformations-nodes"><span class="std std-ref">copyTransformations(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-copytransformvariants-node"><span class="std std-ref">copyTransformVariants(node)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-copyuvs-node"><span class="std std-ref">copyUVs(node)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-createnode-type-parent-name-forceuniquename"><span class="std std-ref">createNode(type, parent, name, forceUniqueName) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-createshellfromsurfaces-nodes"><span class="std std-ref">createShellFromSurfaces(nodes) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-createswitchfromnodes-nodes-parent-index"><span class="std std-ref">createSwitchFromNodes(nodes, parent, index) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-cutnodes-nodes"><span class="std std-ref">cutNodes(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-deletenodes-nodes-keepchildren"><span class="std std-ref">deleteNodes(nodes, keepChildren)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-duplicatenodes-nodes-option"><span class="std std-ref">duplicateNodes(nodes, option) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-duplicatenodesmirroraxis-nodes-flushtransform-axis"><span class="std std-ref">duplicateNodesMirrorAxis(nodes, flushTransform, axis) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getallnodes-root-options"><span class="std std-ref">getAllNodes(root, options) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getenvironmentgeometryswitch"><span class="std std-ref">getEnvironmentGeometrySwitch() → vrdSwitchNode</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getinternalrootnode"><span class="std std-ref">getInternalRootNode() → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getlasthiddennodes"><span class="std std-ref">getLastHiddenNodes() → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getlivesearchenabled"><span class="std std-ref">getLiveSearchEnabled() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getmirrorednodes-node"><span class="std std-ref">getMirroredNodes(node) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getnodeinfo-nodes"><span class="std std-ref">getNodeInfo(nodes) → vrdNodeInfo</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getnodesinclipboard"><span class="std std-ref">getNodesInClipboard() → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getnodeswithalltags-tags-root"><span class="std std-ref">getNodesWithAllTags(tags, root) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getnodeswithanytag-tags-root"><span class="std std-ref">getNodesWithAnyTag(tags, root) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getrootnode"><span class="std std-ref">getRootNode() → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getselectednode"><span class="std std-ref">getSelectedNode() → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getselectednodes"><span class="std std-ref">getSelectedNodes() → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getselectedrootnodes-sorted"><span class="std std-ref">getSelectedRootNodes(sorted) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getselectedsubtreenodes"><span class="std std-ref">getSelectedSubtreeNodes() → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getshowcomponents"><span class="std std-ref">getShowComponents() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getsuperrootnode"><span class="std std-ref">getSuperRootNode() → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-getsyncshowhide"><span class="std std-ref">getSyncShowHide() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-gettransformableclonerootenabled"><span class="std std-ref">getTransformableCloneRootEnabled() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-gettransformrootnode"><span class="std std-ref">getTransformRootNode() → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-gettreeinfo"><span class="std std-ref">getTreeInfo() → List[integer]</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-gettreeiteminfo-node"><span class="std std-ref">getTreeItemInfo(node) → vrdSceneItemInfo</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-gettreeiteminfoflags-node"><span class="std std-ref">getTreeItemInfoFlags(node) → vrdSceneItemInfo.Flags</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-groupbymaterial"><span class="std std-ref">groupByMaterial()</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-groupnodes-nodes"><span class="std std-ref">groupNodes(nodes) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-growcomponentselection-componentnodes"><span class="std std-ref">growComponentSelection(componentNodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-haslasthiddennodes"><span class="std std-ref">hasLastHiddenNodes() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-invertgeometryselection"><span class="std std-ref">invertGeometrySelection()</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-invertgeometryselectioningroup-geometrynodes"><span class="std std-ref">invertGeometrySelectionInGroup(geometryNodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-isallowed-node-action"><span class="std std-ref">isAllowed(node, action) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-isisolateviewactive-renderwindowindex"><span class="std std-ref">isIsolateViewActive(renderWindowIndex) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-issceneempty"><span class="std std-ref">isSceneEmpty() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-loadanimationstonodes-filename-nodes"><span class="std std-ref">loadAnimationsToNodes(fileName, nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-pasteanimations-nodes-pasteasclone"><span class="std std-ref">pasteAnimations(nodes, pasteAsClone)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-pastenodes-targetnodes-keepworldtransformation-pasteasclone"><span class="std std-ref">pasteNodes(targetNodes, keepWorldTransformation, pasteAsClone)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-pastetransformation-targetnodes-translation-rotation-scale-rotationpivot-scalepivot"><span class="std std-ref">pasteTransformation(targetNodes, translation, rotation, scale, rotationPivot, scalePivot)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-pastetransformationasvariant-targetnodes"><span class="std std-ref">pasteTransformationAsVariant(targetNodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-pastetransformvariants-nodes"><span class="std std-ref">pasteTransformVariants(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-pasteuvs-nodes"><span class="std std-ref">pasteUVs(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-resetisolateview-renderwindowindex"><span class="std std-ref">resetIsolateView(renderWindowIndex)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-selectallclones-nodes"><span class="std std-ref">selectAllClones(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-selectallinsamehierarchylevel-node"><span class="std std-ref">selectAllInSameHierarchyLevel(node)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-selectalltransformableclones-nodes"><span class="std std-ref">selectAllTransformableClones(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-selectallwithmaterials-materials"><span class="std std-ref">selectAllWithMaterials(materials)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-selectcommonparent-nodes"><span class="std std-ref">selectCommonParent(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-selecttoplevel"><span class="std std-ref">selectTopLevel()</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-setisolateview-nodes-renderwindowindex"><span class="std std-ref">setIsolateView(nodes, renderWindowIndex)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-setlivesearchenabled-value"><span class="std std-ref">setLiveSearchEnabled(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-setnodevisibility-nodes-visible-recursive"><span class="std std-ref">setNodeVisibility(nodes, visible, recursive)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-setselection-nodes"><span class="std std-ref">setSelection(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-setshowcomponents-value"><span class="std std-ref">setShowComponents(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-setswitchchoicebyalltags-switchnode-tags"><span class="std std-ref">setSwitchChoiceByAllTags(switchNode, tags) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-setswitchchoicebyanytag-switchnode-tags"><span class="std std-ref">setSwitchChoiceByAnyTag(switchNode, tags) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-setsyncshowhide-value"><span class="std std-ref">setSyncShowHide(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-settransformableclonerootenabled-value"><span class="std std-ref">setTransformableCloneRootEnabled(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-shrinkcomponentselection-componentnodes"><span class="std std-ref">shrinkComponentSelection(componentNodes)</span></a></li>
+</ul>
+</dd>
+<dt>Signals:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrscenegraphservice-editselected"><span class="std std-ref">editSelected()</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-isolateviewchanged-renderwindowindex"><span class="std std-ref">isolateViewChanged(renderWindowIndex)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-nodeidchanged-oldid-newid"><span class="std std-ref">nodeIdChanged(oldId, newId)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-scenegraphchanged-changes"><span class="std std-ref">scenegraphChanged(changes)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-scrolltonode-node"><span class="std std-ref">scrollToNode(node)</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-scrolltoselected"><span class="std std-ref">scrollToSelected()</span></a></li>
+<li><a class="reference internal" href="#vredvrscenegraphservice-selectionchanged-selectednodes"><span class="std std-ref">selectionChanged(selectedNodes)</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrscenegraphservice-checkallowance-node-actions"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.checkAllowance">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">checkAllowance</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em>, <em><span class="n"><span class="pre">actions</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.checkAllowance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if operations are allowed on a given node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node to check</li>
+<li><strong>actions</strong> (List[<a class="reference internal" href="class_vrScenegraphTypes.html#vredvrscenegraphtypes-action"><span class="std std-ref">vrScenegraphTypes.Action</span></a>]) – A list of actions</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A list with the result for each action</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List[bool]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-clearselection"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.clearSelection">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">clearSelection</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.clearSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets an empty selection.</p>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-clonenodes-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.cloneNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">cloneNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.cloneNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clones the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be cloned</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The cloned nodes. They are located at the parents of the input nodes.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-clonenodesmirroraxis-nodes-axis"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.cloneNodesMirrorAxis">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">cloneNodesMirrorAxis</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.cloneNodesMirrorAxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clones the given nodes and mirrors them at the given axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be cloned</li>
+<li><strong>axis</strong> (<a class="reference internal" href="class_vrScenegraphTypes.html#vredvrscenegraphtypes-mirrormode"><span class="std std-ref">vrScenegraphTypes.MirrorMode</span></a>) – The mirror axis</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The cloned nodes. They are located at the parents of the input nodes.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-convertnode-node-type"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.convertNode">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">convertNode</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em>, <em><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.convertNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Tries to convert the given node into another type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node to be converted</li>
+<li><strong>type</strong> (<a class="reference internal" href="class_vrScenegraphTypes.html#vredvrscenegraphtypes-nodetype"><span class="std std-ref">vrScenegraphTypes.NodeType</span></a>) – The target type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The converted node</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-converttomesh-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.convertToMesh">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">convertToMesh</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.convertToMesh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes all NURBS and converts shell and surfaces nodes to meshes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The root nodes of the graphs to be processed. Shells and surfaces in the graphs are converted.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-copyanimations-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.copyAnimations">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">copyAnimations</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.copyAnimations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy all animations in the given node into the clipboard.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node to be copied</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-copynodes-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.copyNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">copyNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.copyNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the given nodes into the clipboard.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be copied</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-copytransformations-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.copyTransformations">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">copyTransformations</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.copyTransformations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the transformation of the given nodes into the clipboard.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be copied</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-copytransformvariants-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.copyTransformVariants">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">copyTransformVariants</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.copyTransformVariants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy all transform variants in the given nodes into the clipboard.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node to be copied</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-copyuvs-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.copyUVs">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">copyUVs</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.copyUVs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy all UVs in the given nodes into the clipboard.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node to be copied</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-createnode-type-parent-name-forceuniquename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.createNode">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">createNode</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">type</span></span></em>, <em><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em>, <em><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em><span class="n"><span class="pre">forceUniqueName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.createNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new node with the given type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>type</strong> (<a class="reference internal" href="class_vrScenegraphTypes.html#vredvrscenegraphtypes-nodetype"><span class="std std-ref">vrScenegraphTypes.NodeType</span></a>) – The node type</li>
+<li><strong>parent</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The parent node of the newly created node. By default the scenegraph root is used.</li>
+<li><strong>name</strong> (<em>string</em>) – A name for the new node. If empty, name is created from type.</li>
+<li><strong>forceUniqueName</strong> (<em>bool</em>) – Forces the name of the new node to be unique</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The new node</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-createshellfromsurfaces-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.createShellFromSurfaces">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">createShellFromSurfaces</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.createShellFromSurfaces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new shell from the given surfaces.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The surfaces to be combined</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The created shell. It is located at the common parent</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-createswitchfromnodes-nodes-parent-index"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.createSwitchFromNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">createSwitchFromNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">parent</span></span></em>, <em><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.createSwitchFromNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new switch from the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be moved into the switch.</li>
+<li><strong>parent</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node under which the switch should be located.</li>
+<li><strong>index</strong> (<em>integer</em>) – The child index at which the switch will be inserted.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The created switch.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-cutnodes-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.cutNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">cutNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.cutNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy the given nodes into the clipboard and remove them from the scenegraph.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be removed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-deletenodes-nodes-keepchildren"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.deleteNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">deleteNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">keepChildren</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.deleteNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Deletes the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be deleted</li>
+<li><strong>keepChildren</strong> (<em>bool</em>) – If true, the children of the given nodes will not be removed</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-duplicatenodes-nodes-option"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.duplicateNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">duplicateNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">option</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrScenegraphTypes.DuplicateKeepLocalClones</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.duplicateNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicates the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be duplicated</li>
+<li><strong>option</strong> (<a class="reference internal" href="class_vrScenegraphTypes.html#vredvrscenegraphtypes-duplicateoption"><span class="std std-ref">vrScenegraphTypes.DuplicateOption</span></a>) – Defines how to handle clones inside the duplicated tree</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The duplicated nodes. They are located at the parents of the input nodes.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-duplicatenodesmirroraxis-nodes-flushtransform-axis"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.duplicateNodesMirrorAxis">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">duplicateNodesMirrorAxis</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">flushTransform</span></span></em>, <em><span class="n"><span class="pre">axis</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.duplicateNodesMirrorAxis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicates the given nodes and mirrors them at the given axis.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be duplicated</li>
+<li><strong>flushTransform</strong> (<em>bool</em>) – Flush Transformation</li>
+<li><strong>axis</strong> (<a class="reference internal" href="class_vrScenegraphTypes.html#vredvrscenegraphtypes-mirrormode"><span class="std std-ref">vrScenegraphTypes.MirrorMode</span></a>) – The mirror axis</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The duplicated nodes. They are located at the parents of the input nodes.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getallnodes-root-options"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getAllNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getAllNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em>, <em><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdFindOptions()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getAllNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all nodes in the scene graph or in a given sub graph.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>root</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The graph to search. If empty, the whole scene graph is searched</li>
+<li><strong>options</strong> (<a class="reference internal" href="class_vrdFindOptions.html#vrdFindOptions" title="vrdFindOptions"><em>vrdFindOptions</em></a>) – Find options. By default, components are skipped</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">All nodes in the graph</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getenvironmentgeometryswitch"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getEnvironmentGeometrySwitch">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getEnvironmentGeometrySwitch</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getEnvironmentGeometrySwitch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the default environment geometry switch.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The environment geometry switch</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdSwitchNode.html#vrdSwitchNode" title="vrdSwitchNode">vrdSwitchNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getinternalrootnode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getInternalRootNode">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getInternalRootNode</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getInternalRootNode" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The internal root node of the scene.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getlasthiddennodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getLastHiddenNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getLastHiddenNodes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getLastHiddenNodes" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The last hidden nodes.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getlivesearchenabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getLiveSearchEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getLiveSearchEnabled</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getLiveSearchEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if live search is enabled</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getmirrorednodes-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getMirroredNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getMirroredNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getMirroredNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all nodes having a mirror transformation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The tree to be searched. By default search the whole scene graph</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of all mirrored nodes</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getnodeinfo-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getNodeInfo">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getNodeInfo</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getNodeInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get statistical information for the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be queried</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a <a class="reference internal" href="class_vrdNodeInfo.html#vredvrdnodeinfo"><span class="std std-ref">vrdNodeInfo</span></a> object containing the information</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdNodeInfo.html#vrdNodeInfo" title="vrdNodeInfo">vrdNodeInfo</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getnodesinclipboard"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getNodesInClipboard">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getNodesInClipboard</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getNodesInClipboard" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The nodes that are in the clipboard.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getnodeswithalltags-tags-root"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getNodesWithAllTags">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getNodesWithAllTags</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">tags</span></span></em>, <em><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getNodesWithAllTags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the nodes that have all the given tags.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tags</strong> (<em>List</em><em>[</em><em>string</em><em>]</em>) – The set of tags to search for.</li>
+<li><strong>root</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node which child tree is searched.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The list of nodes.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getnodeswithanytag-tags-root"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getNodesWithAnyTag">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getNodesWithAnyTag</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">tags</span></span></em>, <em><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getNodesWithAnyTag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the nodes that have any of the given tags.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>tags</strong> (<em>List</em><em>[</em><em>string</em><em>]</em>) – The set of tags to search for.</li>
+<li><strong>root</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node which child tree is searched.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The list of nodes.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getrootnode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getRootNode">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getRootNode</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getRootNode" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The root node of the scene graph</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getselectednode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getSelectedNode">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getSelectedNode</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getSelectedNode" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns the last node in the list of selected nodes. This is the node that was selected most recently.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getselectednodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getSelectedNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getSelectedNodes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getSelectedNodes" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The currently selected nodes in the scene graph view.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getselectedrootnodes-sorted"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getSelectedRootNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getSelectedRootNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">sorted</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getSelectedRootNodes" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sorted</strong> (<em>bool</em>) – If True, list is ordered by graph position.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The currently selected nodes in the scene graph view. Children of selected nodes are ignored.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getselectedsubtreenodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getSelectedSubtreeNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getSelectedSubtreeNodes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getSelectedSubtreeNodes" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The currently selected nodes in the scene graph view ordered by graph position including all their child nodes.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getshowcomponents"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getShowComponents">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getShowComponents</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getShowComponents" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if shell components are shown in the scene graph view</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getsuperrootnode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getSuperRootNode">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getSuperRootNode</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getSuperRootNode" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The super root node of the scene.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-getsyncshowhide"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getSyncShowHide">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getSyncShowHide</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getSyncShowHide" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if synchronize show and hide state for shared nodes is enabled</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-gettransformableclonerootenabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getTransformableCloneRootEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getTransformableCloneRootEnabled</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getTransformableCloneRootEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>See         <a class="reference internal" href="#vredvrscenegraphservice-settransformableclonerootenabled-value"><span class="std std-ref">vrScenegraphService.setTransformableCloneRootEnabled(value)</span></a> for a description of this option.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if clone functions should create transformable clone roots.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-gettransformrootnode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getTransformRootNode">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getTransformRootNode</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getTransformRootNode" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The transform root node of the scene.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-gettreeinfo"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getTreeInfo">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getTreeInfo</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getTreeInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get encoded scenegraph structure.</p>
+<p>The following information is stored for each node in a list. nodeId, parentId, parentIndex, childCount, children</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">An object containing additional node information</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[integer]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-gettreeiteminfo-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getTreeItemInfo">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getTreeItemInfo</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getTreeItemInfo" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get detailed node information used in the scenegraph tree view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node, information is requested for</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">An object containing additional node information</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdSceneItemInfo.html#vrdSceneItemInfo" title="vrdSceneItemInfo">vrdSceneItemInfo</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-gettreeiteminfoflags-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.getTreeItemInfoFlags">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">getTreeItemInfoFlags</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.getTreeItemInfoFlags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get node feature information used in the scenegraph tree view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node, information is requested for</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A bitvector with features used by the given node</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdSceneItemInfo.html#vredvrdsceneiteminfo-flags"><span class="std std-ref">vrdSceneItemInfo.Flags</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-groupbymaterial"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.groupByMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">groupByMaterial</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.groupByMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Groups the whole scene graph by materials.</p>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-groupnodes-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.groupNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">groupNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.groupNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Places all given nodes into a new group.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be grouped</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The new group. It is located at the common parent</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-growcomponentselection-componentnodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.growComponentSelection">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">growComponentSelection</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">componentNodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.growComponentSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the given components as well as their nearest adjacent components.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>componentNodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of <a class="reference internal" href="class_vrdNode.html#vredvrdnode"><span class="std std-ref">vrdNode</span></a> objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-haslasthiddennodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.hasLastHiddenNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">hasLastHiddenNodes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.hasLastHiddenNodes" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if there are nodes in the last hidden nodes list.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-invertgeometryselection"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.invertGeometrySelection">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">invertGeometrySelection</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.invertGeometrySelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverts selection on geometry nodes.</p>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-invertgeometryselectioningroup-geometrynodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.invertGeometrySelectionInGroup">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">invertGeometrySelectionInGroup</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">geometryNodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.invertGeometrySelectionInGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Inverts selection on geometry nodes only within their containing group and subgroups.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>geometryNodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of <a class="reference internal" href="class_vrdNode.html#vredvrdnode"><span class="std std-ref">vrdNode</span></a> objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-isallowed-node-action"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.isAllowed">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">isAllowed</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em>, <em><span class="n"><span class="pre">action</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.isAllowed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an operation is allowed on the given node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node to check</li>
+<li><strong>action</strong> (<a class="reference internal" href="class_vrScenegraphTypes.html#vredvrscenegraphtypes-action"><span class="std std-ref">vrScenegraphTypes.Action</span></a>) – The action to check</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True, if action is allowed</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-isisolateviewactive-renderwindowindex"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.isIsolateViewActive">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">isIsolateViewActive</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">renderWindowIndex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.isIsolateViewActive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check, if isolate view is active.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>renderWindowIndex</strong> (<em>integer</em>) – If -1 is given, the current window is used</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True, if isolate view is active</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-issceneempty"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.isSceneEmpty">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">isSceneEmpty</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.isSceneEmpty" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets if the scene is empty.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if there are no other nodes in the scene than the default ones.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-loadanimationstonodes-filename-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.loadAnimationsToNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">loadAnimationsToNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">fileName</span></span></em>, <em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.loadAnimationsToNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load animations from file and add them to the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>fileName</strong> (<em>string</em>) – The animation file to load</li>
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – Animations will be added to this nodes</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-pasteanimations-nodes-pasteasclone"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.pasteAnimations">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">pasteAnimations</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">pasteAsClone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.pasteAnimations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paste copied animations into the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – Target for the paste operation</li>
+<li><strong>pasteAsClone</strong> (<em>bool</em>) – If true, animation will be cloned</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-pastenodes-targetnodes-keepworldtransformation-pasteasclone"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.pasteNodes">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">pasteNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">targetNodes</span></span></em>, <em><span class="n"><span class="pre">keepWorldTransformation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em><span class="n"><span class="pre">pasteAsClone</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.pasteNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paste copied nodes into the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>targetNodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – Target for the paste operation</li>
+<li><strong>keepWorldTransformation</strong> (<em>bool</em>) – If True, keep original world transformation</li>
+<li><strong>pasteAsClone</strong> (<em>bool</em>) – If True, paste as clone. Otherwise paste as copy</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-pastetransformation-targetnodes-translation-rotation-scale-rotationpivot-scalepivot"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.pasteTransformation">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">pasteTransformation</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">targetNodes</span></span></em>, <em><span class="n"><span class="pre">translation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em><span class="n"><span class="pre">rotation</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em><span class="n"><span class="pre">scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em><span class="n"><span class="pre">rotationPivot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em><span class="n"><span class="pre">scalePivot</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.pasteTransformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paste copied transformations into the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>targetNodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – Target for the paste operation</li>
+<li><strong>translation</strong> (<em>bool</em>) – If True, copy translation</li>
+<li><strong>rotation</strong> (<em>bool</em>) – If True, copy rotation</li>
+<li><strong>scale</strong> (<em>bool</em>) – If True, copy scale</li>
+<li><strong>rotationPivot</strong> (<em>bool</em>) – If True, copy rotation pivot</li>
+<li><strong>scalePivot</strong> (<em>bool</em>) – If True, copy scale pivot</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-pastetransformationasvariant-targetnodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.pasteTransformationAsVariant">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">pasteTransformationAsVariant</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">targetNodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.pasteTransformationAsVariant" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paste copied transformations as variants into the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>targetNodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – Target for the paste operation</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-pastetransformvariants-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.pasteTransformVariants">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">pasteTransformVariants</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.pasteTransformVariants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paste copied transform variants into the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – Target for the paste operation</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-pasteuvs-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.pasteUVs">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">pasteUVs</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.pasteUVs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paste copied UVs into the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – Target for the paste operation</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-resetisolateview-renderwindowindex"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.resetIsolateView">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">resetIsolateView</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">renderWindowIndex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.resetIsolateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clear isolate view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>renderWindowIndex</strong> (<em>integer</em>) – If -1 is given, the current window is used</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-selectallclones-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.selectAllClones">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">selectAllClones</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.selectAllClones" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects all clones of given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of <a class="reference internal" href="class_vrdNode.html#vredvrdnode"><span class="std std-ref">vrdNode</span></a> objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-selectallinsamehierarchylevel-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.selectAllInSameHierarchyLevel">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">selectAllInSameHierarchyLevel</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.selectAllInSameHierarchyLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects all nodes in the same level as given node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – A <a class="reference internal" href="class_vrdNode.html#vredvrdnode"><span class="std std-ref">vrdNode</span></a> object.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-selectalltransformableclones-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.selectAllTransformableClones">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">selectAllTransformableClones</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.selectAllTransformableClones" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects all transformable clones of given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of <a class="reference internal" href="class_vrdNode.html#vredvrdnode"><span class="std std-ref">vrdNode</span></a> objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-selectallwithmaterials-materials"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.selectAllWithMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">selectAllWithMaterials</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">materials</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.selectAllWithMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects all nodes which have any of the given materials applied to them.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>materials</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – A list of <a class="reference internal" href="class_vrdMaterial.html#vredvrdmaterial"><span class="std std-ref">vrdMaterial</span></a> objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-selectcommonparent-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.selectCommonParent">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">selectCommonParent</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.selectCommonParent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the first common parent of given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of <a class="reference internal" href="class_vrdNode.html#vredvrdnode"><span class="std std-ref">vrdNode</span></a> objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-selecttoplevel"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.selectTopLevel">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">selectTopLevel</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.selectTopLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects all top-level nodes below root node.</p>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-setisolateview-nodes-renderwindowindex"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.setIsolateView">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">setIsolateView</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">renderWindowIndex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.setIsolateView" title="Permalink to this definition">¶</a></dt>
+<dd><p>Only show the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of nodes be isolated</li>
+<li><strong>renderWindowIndex</strong> (<em>integer</em>) – If -1 is given, the current window is used</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-setlivesearchenabled-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.setLiveSearchEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">setLiveSearchEnabled</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.setLiveSearchEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables or disables live search.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – If True, enable live search</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-setnodevisibility-nodes-visible-recursive"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.setNodeVisibility">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">setNodeVisibility</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">visible</span></span></em>, <em><span class="n"><span class="pre">recursive</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.setNodeVisibility" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the visibility for the given list of nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of nodes</li>
+<li><strong>visible</strong> (<em>bool</em>) – If True, node will be visible, otherwise hidden</li>
+<li><strong>recursive</strong> (<em>bool</em>) – If True, apply all changes to each child</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-setselection-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.setSelection">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">setSelection</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.setSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the node selection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of <a class="reference internal" href="class_vrdNode.html#vredvrdnode"><span class="std std-ref">vrdNode</span></a> objects</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-setshowcomponents-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.setShowComponents">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">setShowComponents</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.setShowComponents" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show or hide shell components in the scene graph view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – If True, show components</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-setswitchchoicebyalltags-switchnode-tags"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.setSwitchChoiceByAllTags">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">setSwitchChoiceByAllTags</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">switchNode</span></span></em>, <em><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.setSwitchChoiceByAllTags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the choice of a switch node to the first child with all of the given tags. If not found the choice stays unchanged.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>switchNode</strong> (<a class="reference internal" href="class_vrdSwitchNode.html#vrdSwitchNode" title="vrdSwitchNode"><em>vrdSwitchNode</em></a>) – The switch node to modify.</li>
+<li><strong>tags</strong> (<em>List</em><em>[</em><em>string</em><em>]</em>) – The set of tags determining the child node to select.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if matching child node found</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-setswitchchoicebyanytag-switchnode-tags"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.setSwitchChoiceByAnyTag">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">setSwitchChoiceByAnyTag</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">switchNode</span></span></em>, <em><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.setSwitchChoiceByAnyTag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the choice of a switch node to the first child with any of the given tags. If not found the choice stays unchanged.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>switchNode</strong> (<a class="reference internal" href="class_vrdSwitchNode.html#vrdSwitchNode" title="vrdSwitchNode"><em>vrdSwitchNode</em></a>) – The switch node to modify.</li>
+<li><strong>tags</strong> (<em>List</em><em>[</em><em>string</em><em>]</em>) – The set of tags determining the child node to select.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if matching child node found</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-setsyncshowhide-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.setSyncShowHide">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">setSyncShowHide</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.setSyncShowHide" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables synchronization of visibility when using show and hide on shared nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – If True, synchronize show, hide state for shared nodes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-settransformableclonerootenabled-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.setTransformableCloneRootEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">setTransformableCloneRootEnabled</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.setTransformableCloneRootEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>This option controls the outcome of functions that create cloned nodes, e.g. cloneNodes and cloneNodeMirrorAxis, for input root nodes that are transform nodes.</p>
+<p>If enabled, the clone root of an input transform root node is created as a transformable clone root. That means the input root and the clone root will be independently transformable but their children will be shared and synchronized.</p>
+<p>If disabled, the clone root of an input transform root node is created as a regular clone, i.e. the transformation is shared and all their children are shared and synchronized.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – True to create transformable clone roots when using clone functions. False to create clone roots with shared transformation.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-shrinkcomponentselection-componentnodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.shrinkComponentSelection">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">shrinkComponentSelection</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">componentNodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.shrinkComponentSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Selects the given components but without their outermost components.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>componentNodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of <a class="reference internal" href="class_vrdNode.html#vredvrdnode"><span class="std std-ref">vrdNode</span></a> objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrscenegraphservice-editselected"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.editSelected">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">editSelected</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.editSelected" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is emitted, to open the node name editor.</p>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-isolateviewchanged-renderwindowindex"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.isolateViewChanged">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">isolateViewChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">renderWindowIndex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">-</span> <span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.isolateViewChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is emitted, whenever isolate view changes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>renderWindowIndex</strong> (<em>integer</em>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-nodeidchanged-oldid-newid"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.nodeIdChanged">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">nodeIdChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">oldId</span></span></em>, <em><span class="n"><span class="pre">newId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.nodeIdChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Called, if the id of a node has changed. E.g. on unshare node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>oldId</strong> (<em>List</em><em>[</em><em>integer</em><em>]</em>) – </li>
+<li><strong>newId</strong> (<em>List</em><em>[</em><em>integer</em><em>]</em>) – </li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-scenegraphchanged-changes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.scenegraphChanged">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">scenegraphChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">changes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrScenegraphTypes.AllChanged</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.scenegraphChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is emitted, whenever the scenegraph changes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>changes</strong> (<a class="reference internal" href="class_vrScenegraphTypes.html#vredvrscenegraphtypes-changeflag"><span class="std std-ref">vrScenegraphTypes.ChangeFlag</span></a>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-scrolltonode-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.scrollToNode">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">scrollToNode</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.scrollToNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is emitted, to scroll to the given node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node to scroll to</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-scrolltoselected"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.scrollToSelected">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">scrollToSelected</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.scrollToSelected" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is emitted, to scroll to the first selected node.</p>
+</dd></dl>
+
+<span class="target" id="vredvrscenegraphservice-selectionchanged-selectednodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrScenegraphService.selectionChanged">
+<code class="sig-prename descclassname"><span class="pre">vrScenegraphService.</span></code><code class="sig-name descname"><span class="pre">selectionChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">selectedNodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrScenegraphService.selectionChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is emitted whenever the selection changes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>selectedNodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – A list of <a class="reference internal" href="class_vrdNode.html#vredvrdnode"><span class="std std-ref">vrdNode</span></a> objects.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrScenegraphService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals">Signals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrRoughnessTextureTypes.html"
+                        title="previous chapter">vrRoughnessTextureTypes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrScenegraphTypes.html"
+                        title="next chapter">vrScenegraphTypes</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrScenegraphTypes.html" title="vrScenegraphTypes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrRoughnessTextureTypes.html" title="vrRoughnessTextureTypes"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

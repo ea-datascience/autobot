@@ -1,0 +1,347 @@
+------------
+vrGUIService
+------------
+
+
+.. _vredvrGUIService:
+.. py:class:: vrGUIService
+
+(Inherits :py:class:`vrBaseService`)
+
+
+
+
+
+    .. _vredvrGUIService.DialogType:
+    .. py:class:: DialogType
+
+        Defines a type of file dialog, e.g. to open/save a texture.
+
+
+            Dialog for texture files.
+
+            .. _vredvrGUIService.DialogType.Texture:
+            .. py:data:: Texture
+
+
+            Dialog for measured material files, e.g. X-Rite.
+
+            .. _vredvrGUIService.DialogType.MeasuredMaterial:
+            .. py:data:: MeasuredMaterial
+
+
+            Dialog for Substance archive files.
+
+            .. _vredvrGUIService.DialogType.SubstanceArchive:
+            .. py:data:: SubstanceArchive
+
+
+            Dialog for MDL archive files.
+
+            .. _vredvrGUIService.DialogType.MDLArchive:
+            .. py:data:: MDLArchive
+
+
+            
+
+            .. _vredvrGUIService.DialogType.MaterialXArchive:
+            .. py:data:: MaterialXArchive
+
+
+    .. _vredvrGUIService.ViewCubePosition:
+    .. py:class:: ViewCubePosition
+
+        Defines the position of the view cube.
+
+
+            
+
+            .. _vredvrGUIService.ViewCubePosition.TopRight:
+            .. py:data:: TopRight
+
+
+            
+
+            .. _vredvrGUIService.ViewCubePosition.BottomRight:
+            .. py:data:: BottomRight
+
+
+            
+
+            .. _vredvrGUIService.ViewCubePosition.TopLeft:
+            .. py:data:: TopLeft
+
+
+            
+
+            .. _vredvrGUIService.ViewCubePosition.BottomLeft:
+            .. py:data:: BottomLeft
+
+
+    .. _vredvrGUIService.ViewCubeSize:
+    .. py:class:: ViewCubeSize
+
+        Defines the size of the view cube.
+
+
+            Adapts to render window size between tiny and normal.
+
+            .. _vredvrGUIService.ViewCubeSize.Automatic:
+            .. py:data:: Automatic
+
+
+            
+
+            .. _vredvrGUIService.ViewCubeSize.Tiny:
+            .. py:data:: Tiny
+
+
+            
+
+            .. _vredvrGUIService.ViewCubeSize.Small:
+            .. py:data:: Small
+
+
+            
+
+            .. _vredvrGUIService.ViewCubeSize.Normal:
+            .. py:data:: Normal
+
+
+            
+
+            .. _vredvrGUIService.ViewCubeSize.Large:
+            .. py:data:: Large
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getFileDialogPath(type) → string<vredvrGUIService.getFileDialogPath(type)>`
+    * :ref:`getViewCubeOpacity() → float<vredvrGUIService.getViewCubeOpacity()>`
+    * :ref:`getViewCubePosition() → vrGUIService.ViewCubePosition<vredvrGUIService.getViewCubePosition()>`
+    * :ref:`getViewCubeSize() → vrGUIService.ViewCubeSize<vredvrGUIService.getViewCubeSize()>`
+    * :ref:`isNavBarVisible() → bool<vredvrGUIService.isNavBarVisible()>`
+    * :ref:`isViewCubeVisible() → bool<vredvrGUIService.isViewCubeVisible()>`
+    * :ref:`openImportDialog(files, parent) <vredvrGUIService.openImportDialog(files, parent)>`
+    * :ref:`setFileDialogPath(type, path) <vredvrGUIService.setFileDialogPath(type, path)>`
+    * :ref:`setNavBarVisible(value) <vredvrGUIService.setNavBarVisible(value)>`
+    * :ref:`setViewCubeOpacity(value) <vredvrGUIService.setViewCubeOpacity(value)>`
+    * :ref:`setViewCubePosition(value) <vredvrGUIService.setViewCubePosition(value)>`
+    * :ref:`setViewCubeSize(value) <vredvrGUIService.setViewCubeSize(value)>`
+    * :ref:`setViewCubeVisible(value) <vredvrGUIService.setViewCubeVisible(value)>`
+    * :ref:`viewInNewRenderWindow(nodes) <vredvrGUIService.viewInNewRenderWindow(nodes)>`
+
+Signals:
+    * :ref:`colorThemeChanged(newTheme) <vredvrGUIService.colorThemeChanged(newTheme)>`
+
+
+Functions
+=========
+
+
+.. _vredvrGUIService.getFileDialogPath(type):
+.. py:method:: vrGUIService.getFileDialogPath(type)
+
+    Returns the path that is used as an initial path for file dialogs for the given type.
+
+
+
+    :param type: The type of dialog, e.g. :any:`vrGUIService.DialogType.Texture <vredvrGUIService.DialogType.Texture>` for the file dialog to load/save textures.
+    :type type: :ref:`vrGUIService.DialogType <vredvrGUIService.DialogType>`
+
+    :return: Path
+    :rtype: string
+
+.. _vredvrGUIService.getViewCubeOpacity():
+.. py:method:: vrGUIService.getViewCubeOpacity()
+
+    
+
+
+
+
+    :return: The view cube opacity
+    :rtype: float
+
+.. _vredvrGUIService.getViewCubePosition():
+.. py:method:: vrGUIService.getViewCubePosition()
+
+    
+
+
+
+
+    :return: The view cube position
+    :rtype: :ref:`vrGUIService.ViewCubePosition <vredvrGUIService.ViewCubePosition>`
+
+.. _vredvrGUIService.getViewCubeSize():
+.. py:method:: vrGUIService.getViewCubeSize()
+
+    
+
+
+
+
+    :return: The view cube size
+    :rtype: :ref:`vrGUIService.ViewCubeSize <vredvrGUIService.ViewCubeSize>`
+
+.. _vredvrGUIService.isNavBarVisible():
+.. py:method:: vrGUIService.isNavBarVisible()
+
+    
+
+
+
+
+    :return: True, if navigation bar is visible
+    :rtype: bool
+
+.. _vredvrGUIService.isViewCubeVisible():
+.. py:method:: vrGUIService.isViewCubeVisible()
+
+    
+
+
+
+
+    :return: True, if view cube is visible
+    :rtype: bool
+
+.. _vredvrGUIService.openImportDialog(files, parent):
+.. py:method:: vrGUIService.openImportDialog(files, parent=vrdNode())
+
+    Opens the import dialog with the given files.
+
+    No automatic import is triggered. Modifications to the import settings are still possible. 
+
+    :param files: A list of files to import
+    :type files: List[string]
+
+    :param parent: The parent node in the scene tree where these files should be added
+    :type parent: vrdNode
+
+    
+    
+
+.. _vredvrGUIService.setFileDialogPath(type, path):
+.. py:method:: vrGUIService.setFileDialogPath(type, path)
+
+    Sets the path that should be used as an initial path for file dialogs for the given type.
+
+    In case a full file path is given, e.g. "e:\\test\\myfile.abc", the file name will be automatically removed. For network paths forward slashes have to be used, e.g.: "//server/directory/". 
+
+    :param type: The type of dialog, e.g. :any:`vrGUIService.DialogType.Texture <vredvrGUIService.DialogType.Texture>` for the file dialog to load/save textures.
+    :type type: :ref:`vrGUIService.DialogType <vredvrGUIService.DialogType>`
+
+    :param path: The path that should be used as initial value.
+    :type path: string
+
+    
+    
+
+.. _vredvrGUIService.setNavBarVisible(value):
+.. py:method:: vrGUIService.setNavBarVisible(value)
+
+    Changes navigation bar visibility.
+
+
+
+    :param value: If True, navigation bar is visible
+    :type value: bool
+
+    
+    
+
+.. _vredvrGUIService.setViewCubeOpacity(value):
+.. py:method:: vrGUIService.setViewCubeOpacity(value)
+
+    Changes view cubes opacity if mouse is outside the cube area.
+
+
+
+    :param value: The new opacity
+    :type value: float
+
+    
+    
+
+.. _vredvrGUIService.setViewCubePosition(value):
+.. py:method:: vrGUIService.setViewCubePosition(value)
+
+    Changes view cube position.
+
+
+
+    :param value: The new position
+    :type value: ViewCubePosition
+
+    
+    
+
+.. _vredvrGUIService.setViewCubeSize(value):
+.. py:method:: vrGUIService.setViewCubeSize(value)
+
+    Changes view cube size.
+
+
+
+    :param value: The new view cube size
+    :type value: ViewCubeSize
+
+    
+    
+
+.. _vredvrGUIService.setViewCubeVisible(value):
+.. py:method:: vrGUIService.setViewCubeVisible(value)
+
+    Changes view cube visibility.
+
+
+
+    :param value: If True, view cube is visible
+    :type value: bool
+
+    
+    
+
+.. _vredvrGUIService.viewInNewRenderWindow(nodes):
+.. py:method:: vrGUIService.viewInNewRenderWindow(nodes)
+
+    Open a new render window for the given nodes.
+
+
+
+    :param nodes: A list of nodes be shown
+    :type nodes: List[vrdNode]
+
+    
+    
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrGUIService.colorThemeChanged(newTheme):
+.. py:method:: vrGUIService.colorThemeChanged(newTheme)
+
+    This signal is emitted, when the color theme has changed.
+
+
+
+    :param newTheme: 
+    :type newTheme: :ref:`vrStyleTypes.ColorTheme <vredvrStyleTypes.ColorTheme>`
+
+    
+    
+
+

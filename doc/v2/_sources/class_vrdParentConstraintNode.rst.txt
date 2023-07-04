@@ -1,0 +1,63 @@
+-----------------------
+vrdParentConstraintNode
+-----------------------
+
+
+.. _vredvrdParentConstraintNode:
+.. py:class:: vrdParentConstraintNode
+
+(Inherits :py:class:`vrdConstraintNode`)
+
+This class gives access to an parent constraint object in VRED. An parent constraint will synchronize the transformation of a source and a target. If there are multiple sources, the transformation is calculated as the weighted average value of it.
+
+For managing constraints and code examples see     :any:`vrConstraintService <vredvrConstraintService>`.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getMaintainOffset() → bool<vredvrdParentConstraintNode.getMaintainOffset()>`
+    * :ref:`setMaintainOffset(value) <vredvrdParentConstraintNode.setMaintainOffset(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdParentConstraintNode.getMaintainOffset():
+.. py:method:: vrdParentConstraintNode.getMaintainOffset()
+
+    Returns if the constraint maintains the offset to its sources.
+
+
+
+
+    :return: True if constraint maintains the offset, False otherwise.
+    :rtype: bool
+
+.. _vredvrdParentConstraintNode.setMaintainOffset(value):
+.. py:method:: vrdParentConstraintNode.setMaintainOffset(value)
+
+    Sets if the constraint should maintain the offset to the sources when creating it.
+
+
+
+    :param value: True if the offset shall be maintained, False otherwise.
+    :type value: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,105 @@
+-------------
+vrRenderTypes
+-------------
+
+
+.. _vredvrRenderTypes:
+.. py:class:: vrRenderTypes
+
+
+
+
+
+
+
+    .. _vredvrRenderTypes.ShadingQuality:
+    .. py:class:: ShadingQuality
+
+
+
+
+            
+
+            .. _vredvrRenderTypes.ShadingQuality.Native1x1:
+            .. py:data:: Native1x1
+
+
+            
+
+            .. _vredvrRenderTypes.ShadingQuality.Coarse2x2:
+            .. py:data:: Coarse2x2
+
+
+            
+
+            .. _vredvrRenderTypes.ShadingQuality.Coarse4x4:
+            .. py:data:: Coarse4x4
+
+
+            
+
+            .. _vredvrRenderTypes.ShadingQuality.Supersampling2x:
+            .. py:data:: Supersampling2x
+
+
+            
+
+            .. _vredvrRenderTypes.ShadingQuality.Supersampling4x:
+            .. py:data:: Supersampling4x
+
+
+            
+
+            .. _vredvrRenderTypes.ShadingQuality.Supersampling8x:
+            .. py:data:: Supersampling8x
+
+
+    .. _vredvrRenderTypes.FoveatedQualityPreset:
+    .. py:class:: FoveatedQualityPreset
+
+
+
+
+            
+
+            .. _vredvrRenderTypes.FoveatedQualityPreset.HighestPerformance:
+            .. py:data:: HighestPerformance
+
+
+            
+
+            .. _vredvrRenderTypes.FoveatedQualityPreset.Balanced:
+            .. py:data:: Balanced
+
+
+            
+
+            .. _vredvrRenderTypes.FoveatedQualityPreset.HighestQuality:
+            .. py:data:: HighestQuality
+
+
+            
+
+            .. _vredvrRenderTypes.FoveatedQualityPreset.Custom:
+            .. py:data:: Custom
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

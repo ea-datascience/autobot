@@ -1,0 +1,2482 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>vrOptimize</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >VRED Python API v1</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;vrOptimize
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="vrOptimize-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module vrOptimize</h1><p class="nomargin-top"></p>
+<pre class="literalblock">
+
+
+ The vrOptimize module allows to optimize the representation of the graphical scene to speed up rendering.
+
+Example::       
+        See also example optimize.py
+
+</pre>
+
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#cleanupGroupNodes" class="summary-sig-name">cleanupGroupNodes</a>(<span class="summary-sig-arg">root_node</span>,
+        <span class="summary-sig-arg">recursive</span>)</span><br />
+      Cleanup group nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#createMultiMaterials" class="summary-sig-name">createMultiMaterials</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Create multi-materials for a given subgraph.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#createOcTree" class="summary-sig-name">createOcTree</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Transform all geometries by an octree structure.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#flushMaterialGroups" class="summary-sig-name">flushMaterialGroups</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      The materials of a MaterialGroup will be flushed into the underlying 
+      geometries and the MaterialGroups will be transformed into group 
+      nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#flushRotations" class="summary-sig-name">flushRotations</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Moves rotation-related transform information of selected sub-tree to 
+      the geometry nodes on lowest level.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#flushScales" class="summary-sig-name">flushScales</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Moves scale-related transform information of selected subtree to the 
+      geometry nodes on lowest level.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#flushSelectedTransformation" class="summary-sig-name">flushSelectedTransformation</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Moves transformation of selected node to the geometry nodes on lowest
+      level.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#flushTexGen" class="summary-sig-name">flushTexGen</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Flush gen funcs.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#flushTexTransform" class="summary-sig-name">flushTexTransform</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Flush texture transformations.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#flushTransformations" class="summary-sig-name">flushTransformations</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Flush transformations.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#flushTransformationsKeepFaceNormals" class="summary-sig-name">flushTransformationsKeepFaceNormals</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Flush transformations.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#flushTranslations" class="summary-sig-name">flushTranslations</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Moves translation-related transform information of selected sub-tree 
+      to the geometry nodes on lowest level.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#measureCacheEfficiency" class="summary-sig-name">measureCacheEfficiency</a>(<span class="summary-sig-arg">root_node</span>,
+        <span class="summary-sig-arg">cache_size</span>)</span><br />
+      Measures the cache efficiency.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#mergeGeometry" class="summary-sig-name">mergeGeometry</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Merges geometry nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#optimizeGeometry" class="summary-sig-name">optimizeGeometry</a>(<span class="summary-sig-arg">root_node</span>,
+        <span class="summary-sig-arg">strips</span>,
+        <span class="summary-sig-arg">fans</span>,
+        <span class="summary-sig-arg">stitches</span>)</span><br />
+      Optimizes geometry to speed up rendering.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#optimizeIndices" class="summary-sig-name">optimizeIndices</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Optimize indices to improve render speed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#optimizeMaterials" class="summary-sig-name">optimizeMaterials</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Optimize the specified scenegraph by using as few materials as 
+      possible.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#optimizeTree" class="summary-sig-name">optimizeTree</a>(<span class="summary-sig-arg">root_node</span>,
+        <span class="summary-sig-arg">options</span>)</span><br />
+      Optimizes the scenegraph by applying specified optimization 
+      functions.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeAnimations" class="summary-sig-name">removeAnimations</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Removes all animations from nodes in the selected sub-tree.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeBSides" class="summary-sig-name">removeBSides</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Removes all geometries that are set to B-side from the selected 
+      sub-tree.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeDegPolys" class="summary-sig-name">removeDegPolys</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Degenerated Polygons (covering an area of size 0) will be removed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeEmptyGeometries" class="summary-sig-name">removeEmptyGeometries</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Removes empty geometry nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeEmptyShells" class="summary-sig-name">removeEmptyShells</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Removes empty shell nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeIdentityTransforms" class="summary-sig-name">removeIdentityTransforms</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Removes identity Transforms.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeInvalidTexCoords" class="summary-sig-name">removeInvalidTexCoords</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Remove invalid texture coordinates.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeLODNodes" class="summary-sig-name">removeLODNodes</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Remove LOD nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeLines" class="summary-sig-name">removeLines</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Remove line geometries from the scene representation.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeMaterialGroups" class="summary-sig-name">removeMaterialGroups</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Remove material groups.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeMetadata" class="summary-sig-name">removeMetadata</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Removes all metadata from nodes in the selected sub-tree.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeNURBS" class="summary-sig-name">removeNURBS</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Remove the NURBS information of the selected Node hierarchy.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removePoints" class="summary-sig-name">removePoints</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Remove point geometries from the scene representation.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeSwitchNodes" class="summary-sig-name">removeSwitchNodes</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Remove Switch nodes from a given subgraph.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeTransformNodesWithNoChildren" class="summary-sig-name">removeTransformNodesWithNoChildren</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Removes all transform nodes with no children.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#removeTransformVariants" class="summary-sig-name">removeTransformVariants</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Removes all transform variants from nodes in the selected sub-tree.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="removeUnusedMaterials"></a><span class="summary-sig-name">removeUnusedMaterials</span>()</span><br />
+      Removes unused materials.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#separateGeoProperties" class="summary-sig-name">separateGeoProperties</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Separate shared geometry properties.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#shareGeometries" class="summary-sig-name">shareGeometries</a>(<span class="summary-sig-arg">root_node</span>,
+        <span class="summary-sig-arg">checkWorldMatrix</span>)</span><br />
+      Shares equal geometry nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="shareImages"></a><span class="summary-sig-name">shareImages</span>()</span><br />
+      Share images.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#sharePtrs" class="summary-sig-name">sharePtrs</a>(<span class="summary-sig-arg">root_node</span>,
+        <span class="summary-sig-arg">types</span>)</span><br />
+      Share pointers.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#sortIndices" class="summary-sig-name">sortIndices</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Sort indices to improve render speed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#tipsifyIndices" class="summary-sig-name">tipsifyIndices</a>(<span class="summary-sig-arg">root_node</span>,
+        <span class="summary-sig-arg">cache_size</span>)</span><br />
+      Optimize indices to improve render speed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#triangulate" class="summary-sig-name">triangulate</a>(<span class="summary-sig-arg">root_node</span>,
+        <span class="summary-sig-arg">recreateAllProperties</span>)</span><br />
+      Triangulate the geometries.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#unflushMaterialGroups" class="summary-sig-name">unflushMaterialGroups</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      The materials within a geometry will be removed, instead a 
+      MaterialGroup with the material will be placed above.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#unifyVertices" class="summary-sig-name">unifyVertices</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Optimize the geometry by creating shared indices and removing unused 
+      and double coords, colors, and texcoords.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOptimize-module.html#verifyGeometry" class="summary-sig-name">verifyGeometry</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Verifies geometry nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== VARIABLES ==================== -->
+<a name="section-Variables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeCleanUpGroupNodes"></a><span class="summary-name">OptimizeCleanUpGroupNodes</span> = <code title="8">8</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeCreateFans"></a><span class="summary-name">OptimizeCreateFans</span> = <code title="256">256</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeCreateStitches"></a><span class="summary-name">OptimizeCreateStitches</span> = <code title="512">512</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeCreateStrips"></a><span class="summary-name">OptimizeCreateStrips</span> = <code title="128">128</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeDeepTriangulate"></a><span class="summary-name">OptimizeDeepTriangulate</span> = <code title="16384">16384</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeFlushMaterialGroupNodes"></a><span class="summary-name">OptimizeFlushMaterialGroupNodes</span> = <code title="16">16</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeFlushSelectedTransformation"></a><span class="summary-name">OptimizeFlushSelectedTransformation</span> = <code title="1152921504606846976">1152921504606846976</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeFlushTexGen"></a><span class="summary-name">OptimizeFlushTexGen</span> = <code title="131072">131072</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeFlushTexTransform"></a><span class="summary-name">OptimizeFlushTexTransform</span> = <code title="262144">262144</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeFlushTransformationNodes"></a><span class="summary-name">OptimizeFlushTransformationNodes</span> = <code title="4">4</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeFlushTransformationNodesKeepFaceNormals"></a><span class="summary-name">OptimizeFlushTransformationNodesKeepFaceNormals</span> = <code title="562949953421312">562949953421312</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeFlushTransformationRotations"></a><span class="summary-name">OptimizeFlushTransformationRotations</span> = <code title="36028797018963968">36028797018963968</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeFlushTransformationScales"></a><span class="summary-name">OptimizeFlushTransformationScales</span> = <code title="72057594037927936">72057594037927936</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeFlushTransformationTranslations"></a><span class="summary-name">OptimizeFlushTransformationTranslations</span> = <code title="18014398509481984">18014398509481984</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeIndices"></a><span class="summary-name">OptimizeIndices</span> = <code title="140737488355328">140737488355328</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeMaterials"></a><span class="summary-name">OptimizeMaterials</span> = <code title="64">64</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeMergeGeometryNodes"></a><span class="summary-name">OptimizeMergeGeometryNodes</span> = <code title="2">2</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeNothing"></a><span class="summary-name">OptimizeNothing</span> = <code title="1">1</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeOctree"></a><span class="summary-name">OptimizeOctree</span> = <code title="524288">524288</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeReduction16BitIndices"></a><span class="summary-name">OptimizeReduction16BitIndices</span> = <code title="17179869184">17179869184</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeReduction16BitLengths"></a><span class="summary-name">OptimizeReduction16BitLengths</span> = <code title="34359738368">34359738368</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeReductionByteNormals"></a><span class="summary-name">OptimizeReductionByteNormals</span> = <code title="8589934592">8589934592</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveAnimations"></a><span class="summary-name">OptimizeRemoveAnimations</span> = <code title="65536">65536</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveBSides"></a><span class="summary-name">OptimizeRemoveBSides</span> = <code title="9007199254740992">9007199254740992</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveDegPolys"></a><span class="summary-name">OptimizeRemoveDegPolys</span> = <code title="32768">32768</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveEmptyGeometries"></a><span class="summary-name">OptimizeRemoveEmptyGeometries</span> = <code title="274877906944">274877906944</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveEmptyGroupNodes"></a><span class="summary-name">OptimizeRemoveEmptyGroupNodes</span> = <code title="137438953472">137438953472</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveEmptyShells"></a><span class="summary-name">OptimizeRemoveEmptyShells</span> = <code title="549755813888">549755813888</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveFileInfo"></a><span class="summary-name">OptimizeRemoveFileInfo</span> = <code title="4503599627370496">4503599627370496</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveLODs"></a><span class="summary-name">OptimizeRemoveLODs</span> = <code title="1024">1024</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveLODsKeepWorst"></a><span class="summary-name">OptimizeRemoveLODsKeepWorst</span> = <code title="1125899906842624">1125899906842624</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveLines"></a><span class="summary-name">OptimizeRemoveLines</span> = <code title="4096">4096</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveMaterialGroupNodes"></a><span class="summary-name">OptimizeRemoveMaterialGroupNodes</span> = <code title="68719476736">68719476736</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveMetadata"></a><span class="summary-name">OptimizeRemoveMetadata</span> = <code title="2251799813685248">2251799813685248</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemovePoints"></a><span class="summary-name">OptimizeRemovePoints</span> = <code title="2048">2048</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveSwitches"></a><span class="summary-name">OptimizeRemoveSwitches</span> = <code title="4294967296">4294967296</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTexCoord1"></a><span class="summary-name">OptimizeRemoveTexCoord1</span> = <code title="8388608">8388608</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTexCoord2"></a><span class="summary-name">OptimizeRemoveTexCoord2</span> = <code title="16777216">16777216</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTexCoord3"></a><span class="summary-name">OptimizeRemoveTexCoord3</span> = <code title="33554432">33554432</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTexCoord4"></a><span class="summary-name">OptimizeRemoveTexCoord4</span> = <code title="67108864">67108864</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTextureCoordinates"></a><span class="summary-name">OptimizeRemoveTextureCoordinates</span> = <code title="8388608">8388608</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTextureCoordinates1"></a><span class="summary-name">OptimizeRemoveTextureCoordinates1</span> = <code title="16777216">16777216</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTextureCoordinates2"></a><span class="summary-name">OptimizeRemoveTextureCoordinates2</span> = <code title="33554432">33554432</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTextureCoordinates3"></a><span class="summary-name">OptimizeRemoveTextureCoordinates3</span> = <code title="67108864">67108864</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTextureCoordinates4"></a><span class="summary-name">OptimizeRemoveTextureCoordinates4</span> = <code title="4398046511104">4398046511104</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTextureCoordinates5"></a><span class="summary-name">OptimizeRemoveTextureCoordinates5</span> = <code title="8796093022208">8796093022208</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTextureCoordinates6"></a><span class="summary-name">OptimizeRemoveTextureCoordinates6</span> = <code title="17592186044416">17592186044416</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTextureCoordinates7"></a><span class="summary-name">OptimizeRemoveTextureCoordinates7</span> = <code title="35184372088832">35184372088832</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveTransformVariants"></a><span class="summary-name">OptimizeRemoveTransformVariants</span> = <code title="2305843009213693952">2305843009213693952</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveVertexColor"></a><span class="summary-name">OptimizeRemoveVertexColor</span> = <code title="2097152">2097152</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveVertexNormals"></a><span class="summary-name">OptimizeRemoveVertexNormals</span> = <code title="1048576">1048576</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeRemoveVertexSecondaryColor"></a><span class="summary-name">OptimizeRemoveVertexSecondaryColor</span> = <code title="4194304">4194304</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeShareBlendChunks"></a><span class="summary-name">OptimizeShareBlendChunks</span> = <code title="2147483648">2147483648</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeShareGeometries"></a><span class="summary-name">OptimizeShareGeometries</span> = <code title="134217728">134217728</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeShareGeometryProperties"></a><span class="summary-name">OptimizeShareGeometryProperties</span> = <code title="268435456">268435456</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeShareMaterials"></a><span class="summary-name">OptimizeShareMaterials</span> = <code title="536870912">536870912</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeShareTextures"></a><span class="summary-name">OptimizeShareTextures</span> = <code title="1073741824">1073741824</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeSortIndices"></a><span class="summary-name">OptimizeSortIndices</span> = <code title="2199023255552">2199023255552</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeTriangulate"></a><span class="summary-name">OptimizeTriangulate</span> = <code title="8192">8192</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeUnflushMaterialGroupNodes"></a><span class="summary-name">OptimizeUnflushMaterialGroupNodes</span> = <code title="1099511627776">1099511627776</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="OptimizeUnifyVertices"></a><span class="summary-name">OptimizeUnifyVertices</span> = <code title="32">32</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="RemoveIdentityTransforms"></a><span class="summary-name">RemoveIdentityTransforms</span> = <code title="70368744177664">70368744177664</code>
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="RemoveInvalidTexCoords"></a><span class="summary-name">RemoveInvalidTexCoords</span> = <code title="281474976710656">281474976710656</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="cleanupGroupNodes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">cleanupGroupNodes</span>(<span class="sig-arg">root_node</span>,
+        <span class="sig-arg">recursive</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Cleanup group nodes. Empty group nodes or group nodes with a single 
+  child will be removed. There are two functions:</p>
+  <p>cleanupGroupNodes(root_node)</p>
+  <p>cleanupGroupNodes(root_node,recursive)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+        <li><strong class="pname"><code>recursive</code></strong> (boolean) - Recursive: On/Off (Optional).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createMultiMaterials"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createMultiMaterials</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Create multi-materials for a given subgraph.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to create multi-materials for.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createOcTree"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createOcTree</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Transform all geometries by an octree structure. Not necessary on 
+  todays graphic cards.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="flushMaterialGroups"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">flushMaterialGroups</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The materials of a MaterialGroup will be flushed into the underlying 
+  geometries and the MaterialGroups will be transformed into group 
+  nodes.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="flushRotations"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">flushRotations</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Moves rotation-related transform information of selected sub-tree to 
+  the geometry nodes on lowest level.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - the root node of the sub-tree.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="flushScales"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">flushScales</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Moves scale-related transform information of selected subtree to the 
+  geometry nodes on lowest level.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - the root node of the sub-tree.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="flushSelectedTransformation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">flushSelectedTransformation</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Moves transformation of selected node to the geometry nodes on lowest 
+  level.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node to be flushed.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="flushTexGen"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">flushTexGen</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Flush gen funcs. All TexGenChunks will be removed and appropriate 
+  texture coordinates will be calculated.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="flushTexTransform"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">flushTexTransform</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Flush texture transformations. All texture transformations will be 
+  multiplied onto the texture coordinates and deleted afterwards.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="flushTransformations"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">flushTransformations</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Flush transformations. All transformations will be applied to the 
+  geometry nodes on lowest level of the selected sub-tree. Afterwards all 
+  transform nodes will be identity transforms.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="flushTransformationsKeepFaceNormals"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">flushTransformationsKeepFaceNormals</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Flush transformations. All transformations will be applied to the 
+  geometry nodes on lowest level of the selected sub-tree. Afterwards all 
+  transform nodes will be identity transforms. Doesn't change the face 
+  normals for mirror transform parents.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="flushTranslations"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">flushTranslations</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Moves translation-related transform information of selected sub-tree 
+  to the geometry nodes on lowest level.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - the root node of the sub-tree.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="measureCacheEfficiency"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">measureCacheEfficiency</span>(<span class="sig-arg">root_node</span>,
+        <span class="sig-arg">cache_size</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Measures the cache efficiency. 1.0 means one vertex calculation per 
+  triangle.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+        <li><strong class="pname"><code>cache_size</code></strong> (integer) - The cache size in [12,inf[.</li>
+    </ul></dd>
+    <dt>Returns: float (32bit)</dt>
+        <dd>The cache efficiency in [0.5,3.0].</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="mergeGeometry"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">mergeGeometry</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Merges geometry nodes.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="optimizeGeometry"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">optimizeGeometry</span>(<span class="sig-arg">root_node</span>,
+        <span class="sig-arg">strips</span>,
+        <span class="sig-arg">fans</span>,
+        <span class="sig-arg">stitches</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Optimizes geometry to speed up rendering. Stripes and fans are 
+  optimized primitives that can be rendered much faster by your graphics 
+  hardware.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+        <li><strong class="pname"><code>strips</code></strong> (boolean) - Strips: On/Off (Optional).</li>
+        <li><strong class="pname"><code>fans</code></strong> (boolean) - Fans: On/Off (Optional).</li>
+        <li><strong class="pname"><code>stitches</code></strong> (boolean) - Stitches: On/Off (Optional).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="optimizeIndices"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">optimizeIndices</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Optimize indices to improve render speed.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="optimizeMaterials"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">optimizeMaterials</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Optimize the specified scenegraph by using as few materials as 
+  possible.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="optimizeTree"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">optimizeTree</span>(<span class="sig-arg">root_node</span>,
+        <span class="sig-arg">options</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Optimizes the scenegraph by applying specified optimization functions.
+  There are two functions available:</p>
+  <p>optimizeTree(options) optimizes the complete scene or</p>
+  <p>optimizeTree(root_node,options) optimizes only a specified 
+  subgraph.</p>
+  <p>The Options parameter is to be defined by using bitwise OR of 
+  parameters of the following list:</p>
+  <p>OptimizeNothing</p>
+  <p>OptimizeMergeGeometryNodes</p>
+  <p>OptimizeFlushTransformationNodes</p>
+  <p>OptimizeFlushTransformationNodesKeepFaceNormals</p>
+  <p>OptimizeFlushTransformationTranslations</p>
+  <p>OptimizeFlushTransformationRotations</p>
+  <p>OptimizeFlushTransformationScales</p>
+  <p>OptimizeFlushSelectedTransformation</p>
+  <p>OptimizeCleanUpGroupNodes</p>
+  <p>OptimizeFlushMaterialGroupNodes</p>
+  <p>OptimizeUnflushMaterialGroupNodes</p>
+  <p>OptimizeUnifyVertices</p>
+  <p>OptimizeMaterials</p>
+  <p>OptimizeCreateStrips</p>
+  <p>OptimizeCreateFans</p>
+  <p>OptimizeRemoveLODs</p>
+  <p>OptimizeRemoveLODsKeepWorst</p>
+  <p>OptimizeRemovePoints</p>
+  <p>OptimizeRemoveLines</p>
+  <p>OptimizeTriangulate</p>
+  <p>OptimizeDeepTriangulate</p>
+  <p>OptimizeRemoveDegPolys</p>
+  <p>OptimizeFlushTexGen</p>
+  <p>OptimizeFlushTexTransform</p>
+  <p>OptimizeOctree</p>
+  <p>OptimizeRemoveVertexNormals</p>
+  <p>OptimizeRemoveVertexColor</p>
+  <p>OptimizeRemoveLines</p>
+  <p>OptimizeRemoveVertexSecondaryColor</p>
+  <p>OptimizeRemoveTextureCoordinates  (replaces deprecated option 
+  OptimizeRemoveTexCoord1)</p>
+  <p>OptimizeRemoveTextureCoordinates1 (replaces deprecated option 
+  OptimizeRemoveTexCoord2)</p>
+  <p>OptimizeRemoveTextureCoordinates2 (replaces deprecated option 
+  OptimizeRemoveTexCoord3)</p>
+  <p>OptimizeRemoveTextureCoordinates3 (replaces deprecated option 
+  OptimizeRemoveTexCoord4)</p>
+  <p>OptimizeRemoveTextureCoordinates4</p>
+  <p>OptimizeRemoveTextureCoordinates5</p>
+  <p>OptimizeRemoveTextureCoordinates6</p>
+  <p>OptimizeRemoveTextureCoordinates7</p>
+  <p>OptimizeShareGeometries</p>
+  <p>OptimizeShareGeometryProperties</p>
+  <p>OptimizeShareMaterials</p>
+  <p>OptimizeShareTextures</p>
+  <p>OptimizeShareBlendChunks</p>
+  <p>OptimizeRemoveSwitches</p>
+  <p>OptimizeReductionByteNormals</p>
+  <p>OptimizeReduction16BitIndices</p>
+  <p>OptimizeReduction16BitLengths</p>
+  <p>OptimizeRemoveMaterialGroupNodes</p>
+  <p>OptimizeRemoveEmptyGroupNodes</p>
+  <p>OptimizeRemoveEmptyGeometries</p>
+  <p>OptimizeRemoveEmptyShells</p>
+  <p>OptimizeRemoveAnimations</p>
+  <p>OptimizeRemoveMetadata</p>
+  <p>OptimizeRemoveFileInfo</p>
+  <p>OptimizeRemoveBSides</p>
+  <p>OptimizeRemoveTransformVariants</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+        <li><strong class="pname"><code>options</code></strong> (integer) - Options.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeAnimations"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeAnimations</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes all animations from nodes in the selected sub-tree.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeBSides"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeBSides</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes all geometries that are set to B-side from the selected 
+  sub-tree.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeDegPolys"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeDegPolys</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Degenerated Polygons (covering an area of size 0) will be removed.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeEmptyGeometries"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeEmptyGeometries</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes empty geometry nodes.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeEmptyShells"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeEmptyShells</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes empty shell nodes.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeIdentityTransforms"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeIdentityTransforms</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes identity Transforms. This command is deprecated and doesn't do
+  anything.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeInvalidTexCoords"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeInvalidTexCoords</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove invalid texture coordinates.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeLODNodes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeLODNodes</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove LOD nodes. Removes the lower resolution children of all LOD 
+  nodes and keeps only the highest resolution LOD within the scene. 
+  Rendering performance may drop but the model will utilize less 
+  memory.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeLines"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeLines</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove line geometries from the scene representation.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeMaterialGroups"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeMaterialGroups</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove material groups.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeMetadata"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeMetadata</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes all metadata from nodes in the selected sub-tree.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeNURBS"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeNURBS</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove the NURBS information of the selected Node hierarchy. All 
+  surfaces and shell nodes are converted to meshes.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removePoints"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removePoints</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove point geometries from the scene representation.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeSwitchNodes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeSwitchNodes</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Remove Switch nodes from a given subgraph.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeTransformNodesWithNoChildren"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeTransformNodesWithNoChildren</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes all transform nodes with no children.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeTransformVariants"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeTransformVariants</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes all transform variants from nodes in the selected 
+  sub-tree.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="separateGeoProperties"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">separateGeoProperties</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Separate shared geometry properties.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="shareGeometries"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">shareGeometries</span>(<span class="sig-arg">root_node</span>,
+        <span class="sig-arg">checkWorldMatrix</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Shares equal geometry nodes.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+        <li><strong class="pname"><code>checkWorldMatrix</code></strong> (bool) - If true, this method only shares the geometry when the world 
+          matrix of both nodes is equal (Optional).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="sharePtrs"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sharePtrs</span>(<span class="sig-arg">root_node</span>,
+        <span class="sig-arg">types</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Share pointers. Eliminates all duplicate entities from the scene and 
+  replaces them with references. Saves a lot of memory.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+        <li><strong class="pname"><code>types</code></strong> (list of strings) - The list of types e.g. TextureChunk,Image.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="sortIndices"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">sortIndices</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sort indices to improve render speed.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="tipsifyIndices"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">tipsifyIndices</span>(<span class="sig-arg">root_node</span>,
+        <span class="sig-arg">cache_size</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Optimize indices to improve render speed.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+        <li><strong class="pname"><code>cache_size</code></strong> (integer) - The cache size in [12,inf[ (Optional).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="triangulate"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">triangulate</span>(<span class="sig-arg">root_node</span>,
+        <span class="sig-arg">recreateAllProperties</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Triangulate the geometries. The resulting geometry is no longer 
+  optimized for the graphics card.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+        <li><strong class="pname"><code>recreateAllProperties</code></strong> (bool) - If true, this method recreates all properties. Otherwise, it 
+          generates only new indices, types, and lengths.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="unflushMaterialGroups"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">unflushMaterialGroups</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The materials within a geometry will be removed, instead a 
+  MaterialGroup with the material will be placed above.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="unifyVertices"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">unifyVertices</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Optimize the geometry by creating shared indices and removing unused 
+  and double coords, colors, and texcoords. Speeds up rendering and saves 
+  memory.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="verifyGeometry"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">verifyGeometry</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Verifies geometry nodes.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph to be optimized.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >VRED Python API v1</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Tue Jun 20 01:13:00 2023
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

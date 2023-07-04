@@ -1,0 +1,9 @@
+(Deprecated) countVisibleNodes
+==============================
+
+This example uses API v1. See :doc:`../collectVisibleGeometries` for an example with API v2.
+
+.. literalinclude:: ../../../python_examples/snippets/deprecated/countVisibleNodes.py
+   :language: python
+   :linenos:
+   :caption: snippets/deprecated/countVisibleNodes.py

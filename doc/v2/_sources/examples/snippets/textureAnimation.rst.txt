@@ -1,0 +1,7 @@
+textureAnimation
+================
+
+.. literalinclude:: ../../python_examples/snippets/textureAnimation.py
+   :language: python
+   :linenos:
+   :caption: snippets/textureAnimation.py

@@ -1,0 +1,143 @@
+----------------------
+vrdDisplacementTexture
+----------------------
+
+
+.. _vredvrdDisplacementTexture:
+.. py:class:: vrdDisplacementTexture
+
+(Inherits :py:class:`vrdTexture`)
+
+This class is used for all displacement texture properties.
+
+To load an image for a displacement texture, use:
+
+.. code-block:: python
+
+     image = vrImageService.loadImage(filename, vrImageTypes.LoadType.Displacement)
+     # Set as displacement texture for a material
+     plastic = vrMaterialService.findMaterial("Plastic")
+     plastic.getDisplacementTexture().setImage(image)
+     plastic.getDisplacementTexture().setUseTexture(True)
+     plastic.getDisplacementTexture().setDisplacementHeight(10.0)
+..
+
+
+    .. _vredvrdDisplacementTexture.DisplacementSilhouetteMode:
+    .. py:class:: DisplacementSilhouetteMode
+
+
+
+
+            
+
+            .. _vredvrdDisplacementTexture.DisplacementSilhouetteMode.NoOpenGLSilhouettes:
+            .. py:data:: NoOpenGLSilhouettes
+
+
+            
+
+            .. _vredvrdDisplacementTexture.DisplacementSilhouetteMode.AccurateOpenGLSilhouettes:
+            .. py:data:: AccurateOpenGLSilhouettes
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getDisplacementHeight() → float<vredvrdDisplacementTexture.getDisplacementHeight()>`
+    * :ref:`getDisplacementOffset() → float<vredvrdDisplacementTexture.getDisplacementOffset()>`
+    * :ref:`getDisplacementSilhouetteMode() → vrdDisplacementTexture.DisplacementSilhouetteMode<vredvrdDisplacementTexture.getDisplacementSilhouetteMode()>`
+    * :ref:`setDisplacementHeight(height) <vredvrdDisplacementTexture.setDisplacementHeight(height)>`
+    * :ref:`setDisplacementOffset(offset) <vredvrdDisplacementTexture.setDisplacementOffset(offset)>`
+    * :ref:`setDisplacementSilhouetteMode(mode) <vredvrdDisplacementTexture.setDisplacementSilhouetteMode(mode)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdDisplacementTexture.getDisplacementHeight():
+.. py:method:: vrdDisplacementTexture.getDisplacementHeight()
+
+    Gets height.
+
+
+
+
+    :return: Current used height
+    :rtype: float
+
+.. _vredvrdDisplacementTexture.getDisplacementOffset():
+.. py:method:: vrdDisplacementTexture.getDisplacementOffset()
+
+    Gets offset.
+
+
+
+
+    :return: Current used value for offset
+    :rtype: float
+
+.. _vredvrdDisplacementTexture.getDisplacementSilhouetteMode():
+.. py:method:: vrdDisplacementTexture.getDisplacementSilhouetteMode()
+
+    Gets silhouette mode.
+
+
+
+
+    :return: Current used silhouette mode mode
+    :rtype: :ref:`vrdDisplacementTexture.DisplacementSilhouetteMode <vredvrdDisplacementTexture.DisplacementSilhouetteMode>`
+
+.. _vredvrdDisplacementTexture.setDisplacementHeight(height):
+.. py:method:: vrdDisplacementTexture.setDisplacementHeight(height)
+
+    Sets height.
+
+
+
+    :param height: New height
+    :type height: float
+
+    
+    
+
+.. _vredvrdDisplacementTexture.setDisplacementOffset(offset):
+.. py:method:: vrdDisplacementTexture.setDisplacementOffset(offset)
+
+    Sets offset.
+
+
+
+    :param offset: New value for offset
+    :type offset: float
+
+    
+    
+
+.. _vredvrdDisplacementTexture.setDisplacementSilhouetteMode(mode):
+.. py:method:: vrdDisplacementTexture.setDisplacementSilhouetteMode(mode)
+
+    Sets silhouette mode.
+
+
+
+    :param mode: New silhouette mode mode
+    :type mode: :ref:`vrdDisplacementTexture.DisplacementSilhouetteMode <vredvrdDisplacementTexture.DisplacementSilhouetteMode>`
+
+    
+    
+
+
+
+
+
+
+
+
+
+

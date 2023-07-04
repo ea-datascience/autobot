@@ -1,0 +1,57 @@
+------------
+vrStyleTypes
+------------
+
+
+.. _vredvrStyleTypes:
+.. py:class:: vrStyleTypes
+
+
+
+
+
+
+
+    .. _vredvrStyleTypes.ColorTheme:
+    .. py:class:: ColorTheme
+
+
+
+
+            
+
+            .. _vredvrStyleTypes.ColorTheme.DarkGray:
+            .. py:data:: DarkGray
+
+
+            
+
+            .. _vredvrStyleTypes.ColorTheme.DarkBlue:
+            .. py:data:: DarkBlue
+
+
+            
+
+            .. _vredvrStyleTypes.ColorTheme.Light:
+            .. py:data:: Light
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

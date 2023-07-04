@@ -1,0 +1,218 @@
+----------------------------
+vrdSphereEnvironmentMaterial
+----------------------------
+
+
+.. _vredvrdSphereEnvironmentMaterial:
+.. py:class:: vrdSphereEnvironmentMaterial
+
+(Inherits :py:class:`vrdEnvironmentMaterial`)
+
+This class is used to handle sphere environment material properties. It is used for image based lighting (IBL) from a user-provided texture.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`boostEnvironmentBrightness(factor, threshold) → bool<vredvrdSphereEnvironmentMaterial.boostEnvironmentBrightness(factor, threshold)>`
+    * :ref:`createLightSources(lightSources) <vredvrdSphereEnvironmentMaterial.createLightSources(lightSources)>`
+    * :ref:`findLightSources(numLights) → List[vrdEnvironmentLightSource]<vredvrdSphereEnvironmentMaterial.findLightSources(numLights)>`
+    * :ref:`getFrameOffset() → integer<vredvrdSphereEnvironmentMaterial.getFrameOffset()>`
+    * :ref:`getHDRLightStudio() → vrdHDRLightStudio<vredvrdSphereEnvironmentMaterial.getHDRLightStudio()>`
+    * :ref:`getImageNumber() → integer<vredvrdSphereEnvironmentMaterial.getImageNumber()>`
+    * :ref:`getInlineImageSequence() → bool<vredvrdSphereEnvironmentMaterial.getInlineImageSequence()>`
+    * :ref:`getUseImageSequence() → bool<vredvrdSphereEnvironmentMaterial.getUseImageSequence()>`
+    * :ref:`setEnvironment(image) <vredvrdSphereEnvironmentMaterial.setEnvironment(image)>`
+    * :ref:`setFrameOffset(frameOffset) <vredvrdSphereEnvironmentMaterial.setFrameOffset(frameOffset)>`
+    * :ref:`setImageNumber(imageNumber) <vredvrdSphereEnvironmentMaterial.setImageNumber(imageNumber)>`
+    * :ref:`setInlineImageSequence(inlineImageSequence) <vredvrdSphereEnvironmentMaterial.setInlineImageSequence(inlineImageSequence)>`
+    * :ref:`setUseImageSequence(useImageSequence) <vredvrdSphereEnvironmentMaterial.setUseImageSequence(useImageSequence)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdSphereEnvironmentMaterial.boostEnvironmentBrightness(factor, threshold):
+.. py:method:: vrdSphereEnvironmentMaterial.boostEnvironmentBrightness(factor, threshold)
+
+    Boosts brightness in the environment image for all pixels with luminance brighter than the given threshold. Changes the image pixel data.
+
+
+
+    :param factor: Increase brightness by this factor
+    :type factor: float
+
+    :param threshold: Fraction (0 - 1) of maximum luminance value in the environment image
+    :type threshold: float
+
+    :return: True, if boost was successful
+    :rtype: bool
+
+.. _vredvrdSphereEnvironmentMaterial.createLightSources(lightSources):
+.. py:method:: vrdSphereEnvironmentMaterial.createLightSources(lightSources)
+
+    Creates the lights for the given list of light sources.
+
+
+
+    :param lightSources: A list of light sources
+    :type lightSources: List[vrdEnvironmentLightSource]
+
+    
+    
+
+.. _vredvrdSphereEnvironmentMaterial.findLightSources(numLights):
+.. py:method:: vrdSphereEnvironmentMaterial.findLightSources(numLights)
+
+    Calculate light sources for this environment.
+
+
+
+    :param numLights: The number of light sources to create
+    :type numLights: integer
+
+    :return: A list of light sources that based on the given environment
+    :rtype: List[vrdEnvironmentLightSource]
+
+.. _vredvrdSphereEnvironmentMaterial.getFrameOffset():
+.. py:method:: vrdSphereEnvironmentMaterial.getFrameOffset()
+
+    
+
+
+
+
+    :return: Offset to the image number when using an image sequence.
+    :rtype: integer
+
+.. _vredvrdSphereEnvironmentMaterial.getHDRLightStudio():
+.. py:method:: vrdSphereEnvironmentMaterial.getHDRLightStudio()
+
+    Gets access to HDR Light Studio connection.
+
+
+
+
+    :return: A :any:`vrdHDRLightStudio <vredvrdHDRLightStudio>` object, to read and write access of all properties.
+    :rtype: vrdHDRLightStudio
+
+.. _vredvrdSphereEnvironmentMaterial.getImageNumber():
+.. py:method:: vrdSphereEnvironmentMaterial.getImageNumber()
+
+    Returns image number in current image sequence.
+
+
+
+
+    :return: Image number
+    :rtype: integer
+
+.. _vredvrdSphereEnvironmentMaterial.getInlineImageSequence():
+.. py:method:: vrdSphereEnvironmentMaterial.getInlineImageSequence()
+
+    Returns if image sequence is inlined into the vpb file.
+
+
+
+
+    :return: True, if inlined
+    :rtype: bool
+
+.. _vredvrdSphereEnvironmentMaterial.getUseImageSequence():
+.. py:method:: vrdSphereEnvironmentMaterial.getUseImageSequence()
+
+    
+
+
+
+
+    :return: True if image sequence is used
+    :rtype: bool
+
+.. _vredvrdSphereEnvironmentMaterial.setEnvironment(image):
+.. py:method:: vrdSphereEnvironmentMaterial.setEnvironment(image)
+
+    Sets the environment image.
+
+    To load an environment image, use:
+    
+    .. code-block:: python
+    
+         envImage = vrImageService.loadImage(filename, vrImageTypes.LoadType.Environment)
+    ..
+    
+
+    :param image: The new environment image.
+    :type image: vrdImage
+
+    
+    
+
+.. _vredvrdSphereEnvironmentMaterial.setFrameOffset(frameOffset):
+.. py:method:: vrdSphereEnvironmentMaterial.setFrameOffset(frameOffset)
+
+    Sets an offset to the image number when using an image sequence.
+
+
+
+    :param frameOffset: Frame offset
+    :type frameOffset: integer
+
+    
+    
+
+.. _vredvrdSphereEnvironmentMaterial.setImageNumber(imageNumber):
+.. py:method:: vrdSphereEnvironmentMaterial.setImageNumber(imageNumber)
+
+    Sets the image number in current image sequence.
+
+
+
+    :param imageNumber: Integer number
+    :type imageNumber: integer
+
+    
+    
+
+.. _vredvrdSphereEnvironmentMaterial.setInlineImageSequence(inlineImageSequence):
+.. py:method:: vrdSphereEnvironmentMaterial.setInlineImageSequence(inlineImageSequence)
+
+    Inlines the image sequence into the vpb file.
+
+
+
+    :param inlineImageSequence: True, to inline image sequence
+    :type inlineImageSequence: bool
+
+    
+    
+
+.. _vredvrdSphereEnvironmentMaterial.setUseImageSequence(useImageSequence):
+.. py:method:: vrdSphereEnvironmentMaterial.setUseImageSequence(useImageSequence)
+
+    Use an image sequence.
+
+    Uses an image sequence as a texture. The image name for the sequence will be generated based on the filename of the environment image and the image number. Use the CurveEditor to animate the image number.
+
+    :param useImageSequence: True to use image sequence
+    :type useImageSequence: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

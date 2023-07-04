@@ -1,0 +1,36 @@
+Webengine menu demo
+===================
+
+This demo works with the mouse as well as with the hands in VR.
+
+Python code:
+
+.. code-block:: python
+  :linenos:
+  :caption: menu-webengine.vpb
+  
+  setNodeInteractableInVR(findNode("CurvedDisplay"), True)
+
+
+First webengine ("WebEngine_Display")
+
+.. literalinclude:: ../python_examples/webengine/display.html
+   :language: html
+   :linenos:
+   :caption: webengine/display.html
+
+
+Second webengine ("WebEngine_Tools")
+
+.. literalinclude:: ../python_examples/webengine/menu.html
+   :language: html
+   :linenos:
+   :caption: webengine/menu.html
+
+
+Javascript code
+
+.. literalinclude:: ../python_examples/webengine/script.js
+   :language: javascript
+   :linenos:
+   :caption: webengine/script.js

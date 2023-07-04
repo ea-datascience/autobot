@@ -1,0 +1,99 @@
+----------
+vrGPUTypes
+----------
+
+
+.. _vredvrGPUTypes:
+.. py:class:: vrGPUTypes
+
+
+
+
+
+
+
+    .. _vredvrGPUTypes.OpenGLVendor:
+    .. py:class:: OpenGLVendor
+
+
+
+
+            
+
+            .. _vredvrGPUTypes.OpenGLVendor.AMD:
+            .. py:data:: AMD
+
+
+            
+
+            .. _vredvrGPUTypes.OpenGLVendor.NVIDIA:
+            .. py:data:: NVIDIA
+
+
+            
+
+            .. _vredvrGPUTypes.OpenGLVendor.Intel:
+            .. py:data:: Intel
+
+
+            
+
+            .. _vredvrGPUTypes.OpenGLVendor.Mesa:
+            .. py:data:: Mesa
+
+
+            
+
+            .. _vredvrGPUTypes.OpenGLVendor.LLVMPipe:
+            .. py:data:: LLVMPipe
+
+
+    .. _vredvrGPUTypes.OpenGLFeature:
+    .. py:class:: OpenGLFeature
+
+
+
+
+            
+
+            .. _vredvrGPUTypes.OpenGLFeature.DoubleBufferedStereo:
+            .. py:data:: DoubleBufferedStereo
+
+
+            
+
+            .. _vredvrGPUTypes.OpenGLFeature.MulticastSLI:
+            .. py:data:: MulticastSLI
+
+
+            
+
+            .. _vredvrGPUTypes.OpenGLFeature.SinglePassStereo:
+            .. py:data:: SinglePassStereo
+
+
+            
+
+            .. _vredvrGPUTypes.OpenGLFeature.VariableRateShading:
+            .. py:data:: VariableRateShading
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

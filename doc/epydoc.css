@@ -1,0 +1,344 @@
+/*Body color*/
+BODY
+{
+	background: #FFFFFF;
+	color: #000000;
+	font: 11pt sans-serif;
+	=font-size: 11pt;
+	=font: 11pt sans-serif;
+}
+ADDRESS, CAPTION, CITE, DFN, EM, STRONG, TH, VAR
+{
+	font-style: normal;
+	font-weight: normal;
+	/*[empty]color:;*/
+}
+
+CODE
+{
+	color: #355184;
+	font-style: normal;
+	font-weight: normal;
+}
+
+PRE
+{
+	font-family: sans-serif;
+}
+
+/*Tables
+Body color*/
+BODY
+{
+	background: #FFFFFF;
+	color: #000000;
+	margin: 0px 5px;
+}
+/*Tables*/
+TABLE.summary, TABLE.details, TABLE.index
+{
+	background: #EEEEEE 0;
+	color: #000000;
+	border: 0px none #FFFFFF;
+	margin: 0px;
+	border-top: inherit;
+	border-left: inherit;
+	border-right: inherit;
+	border-bottom: inherit;
+}
+
+td.table-header             { background: #565656; color: #FFFFFF;
+                              border: 0px none #FFFFFF; }
+td.table-header table       { color: #000000; }
+td.table-header table a:link      { color: #0000ff; }
+td.table-header table a:visited   { color: #204080; }
+span.table-header           { font-size: 120%; font-weight: bold; }
+
+TR.summary, TR.details, TR.index
+{
+	background: #565656;
+	color: #FFFFFF;
+	text-align: left;
+	font-size: larger;
+	border: inherit;
+	font-weight: bold;
+}
+TR.group
+{
+	background: #E0E0E0;
+	color: #000000;
+	text-align: left;
+	font-size: initial;
+	font-style: normal;
+	border: 0px none #000000;
+}
+/*Documentation page titles*/
+H2.module
+{
+	margin-top: 0.4em;
+	font-family: sans-serif;
+}
+H2.class
+{
+	margin-top: auto;
+}
+/*Headings*/
+H1.heading
+{
+	font-size: 105%;
+	font-style: normal;
+	font-weight: initial;
+	height: auto;
+	/*[empty]background-color:;*/
+}
+H2.heading
+{
+	font-size: 105%;
+	font-style: normal;
+	font-weight: inherit;
+}
+H3.heading
+{
+	font-size: 110%;
+	font-style: normal;
+	font-weight: normal;
+}
+/*Base tree*/
+PRE.base-tree
+{
+	font-family: monospace;
+	font-size: initial;
+	margin: 0;
+}
+/*Details Sections*/
+TABLE.func-details
+{
+	background: #EEEEEE;
+	color: #000000;
+	border: 0px none #FFFFFF;
+	padding: 0 1em;
+	margin: 0px 0 5px;
+}
+H3.func-detail
+{
+	background: transparent;
+	color: #000000;
+	margin: 0 0 1em;
+}
+TABLE.var-details
+{
+	background: #EEEEEE;
+	color: #000000;
+	border: 0px groove #2EB913;
+	padding: 0 1em;
+	margin: 0.4em 0 0;
+}
+H3.var-details
+{
+	background: transparent;
+	color: #000000;
+	margin: 0 0 1em;
+}
+/*Function signatures*/
+.sig
+{
+	background: transparent;
+	color: #000000;
+	font-weight: normal;
+}
+.sig-name
+{
+	background: transparent;
+	color: #355184;
+}
+.sig-arg, .sig-kwarg, .sig-vararg
+{
+	background: transparent;
+	color: #008306;
+}
+.sig-default
+{
+	background: transparent;
+	color: #FF5906;
+}
+.summary-sig
+{
+	font-family: monospace;
+	background: transparent;
+	color: #000000;
+}
+.summary-sig-name
+{
+	background: transparent;
+	color: #415478;
+}
+.summary-sig-arg, .summary-sig-kwarg, .summary-sig-vararg
+{
+	background: transparent;
+	color: #008306;
+}
+/*Doctest blocks*/
+.py-src
+{
+	background: transparent;
+	color: #000000;
+}
+.py-prompt
+{
+	background: transparent;
+	color: #005050;
+	font-weight: bold;
+}
+.py-string
+{
+	background: transparent;
+	color: #006030;
+}
+.py-comment
+{
+	background: transparent;
+	color: #003060;
+}
+.py-keyword
+{
+	background: transparent;
+	color: #600000;
+}
+.py-output
+{
+	background: transparent;
+	color: #404040;
+}
+PRE.doctestblock
+{
+	background: #F4FAFF;
+	color: #000000;
+	padding: 0.5em;
+	margin: 1em;
+	border: 1px solid #708890;
+}
+TABLE PRE.doctestblock
+{
+	background: #DCE4EC;
+	color: #000000;
+	padding: 0.5em;
+	margin: 1em;
+	border: 0 solid #708890;
+}
+/*Variable values*/
+.variable-quote
+{
+	background: transparent;
+	color: #604000;
+}
+.re
+{
+	background: transparent;
+	color: #000000;
+}
+.re-char
+{
+	background: transparent;
+	color: #006030;
+}
+.re-op
+{
+	background: transparent;
+	color: #600000;
+}
+.re-group
+{
+	background: transparent;
+	color: #003060;
+}
+.re-ref
+{
+	background: transparent;
+	color: #404040;
+}
+/*Navigation bar*/
+TABLE.navbar
+{
+	background: #000000;
+	color: #FFFFFF;
+	margin: 0px -5px 2px;
+	font-weight: bold;
+	width: auto;
+	height: 30px;
+}
+TH.navbar
+{
+	background: #000000;
+	color: #E9E9E9;
+}
+TH.navbar-select
+{
+	background: #717171;
+	color: #F1F1F1;
+	font-weight: initial;
+}
+.nomargin
+{
+	margin: 0;
+}
+/*Links*/
+A
+{
+	color: #355184;
+	text-decoration: none;
+	font-weight: normal;
+}
+A:link
+{
+	background: transparent;
+	color: #355184;
+	margin-left: 1px;
+	font-weight: initial;
+}
+A:hover
+{
+	text-decoration: underline;
+	height: 0px;
+	color: #FFAD04;
+}
+A:visited
+{
+	background: transparent;
+	color: #355184;
+	font-family: sans-serif;
+}
+table.navbar a:link
+{
+	background: transparent;
+	color: #BDBDBD;
+	text-decoration: none;
+	font-weight: initial;
+}
+A.navbar:hover
+{
+	text-decoration: underline;
+	color: #FFFFFF;
+	font-weight: initial;
+	font-family: sans-serif;
+}
+table.navbar a:visited 
+{
+	background: transparent;
+	color: #E9E9E9;
+	text-decoration: none;
+}
+/*Lists*/
+UL
+{
+	margin-top: 0;
+}
+
+/* To render variables, classes etc. like functions */
+table.summary .summary-name { color: #355184; font-weight: bold;
+                              font-family: monospace; }
+table.summary
+     a.summary-name:link    { color: #355184; font-weight: bold;
+                              font-family: monospace; }
+table.summary
+    a.summary-name:visited  { color: #355184; font-weight: bold;
+                              font-family: monospace; }

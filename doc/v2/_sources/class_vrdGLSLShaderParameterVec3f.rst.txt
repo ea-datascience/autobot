@@ -1,0 +1,63 @@
+---------------------------
+vrdGLSLShaderParameterVec3f
+---------------------------
+
+
+.. _vredvrdGLSLShaderParameterVec3f:
+.. py:class:: vrdGLSLShaderParameterVec3f
+
+(Inherits :py:class:`vrdGLSLShaderParameter`)
+
+
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getValue() → QVector3D<vredvrdGLSLShaderParameterVec3f.getValue()>`
+    * :ref:`setValue(value) <vredvrdGLSLShaderParameterVec3f.setValue(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdGLSLShaderParameterVec3f.getValue():
+.. py:method:: vrdGLSLShaderParameterVec3f.getValue()
+
+    
+
+
+
+
+    :return: The three components vector value of the shader parameter.
+    :rtype: QVector3D
+
+.. _vredvrdGLSLShaderParameterVec3f.setValue(value):
+.. py:method:: vrdGLSLShaderParameterVec3f.setValue(value)
+
+    Sets the value of the shader parameter.
+
+
+
+    :param value: New value.
+    :type value: QVector3D
+
+    
+    
+
+
+
+
+
+
+
+
+
+

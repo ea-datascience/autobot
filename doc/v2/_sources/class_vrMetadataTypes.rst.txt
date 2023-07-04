@@ -1,0 +1,189 @@
+---------------
+vrMetadataTypes
+---------------
+
+
+.. _vredvrMetadataTypes:
+.. py:class:: vrMetadataTypes
+
+
+
+
+
+
+
+    .. _vredvrMetadataTypes.ChangeFlag:
+    .. py:class:: ChangeFlag
+
+        Enum for a description of the ways in which metadata sets have changed.
+
+
+            Sets have been added or removed.
+
+            .. _vredvrMetadataTypes.ChangeFlag.SetsChanged:
+            .. py:data:: SetsChanged
+
+
+            Tags have changed.
+
+            .. _vredvrMetadataTypes.ChangeFlag.TagsChanged:
+            .. py:data:: TagsChanged
+
+
+            The assignment of sets has changed.
+
+            .. _vredvrMetadataTypes.ChangeFlag.AssignmentsChanged:
+            .. py:data:: AssignmentsChanged
+
+
+            All reasons for changes.
+
+            .. _vredvrMetadataTypes.ChangeFlag.AllChanged:
+            .. py:data:: AllChanged
+
+
+    .. _vredvrMetadataTypes.ValueType:
+    .. py:class:: ValueType
+
+        Enum for a description of what type of data an metadata entry contains.
+
+
+            
+
+            .. _vredvrMetadataTypes.ValueType.String:
+            .. py:data:: String
+
+
+            Metadata entry contains a string.
+
+            .. _vredvrMetadataTypes.ValueType.Integer:
+            .. py:data:: Integer
+
+
+            Metadata entry contains an integer value.
+
+            .. _vredvrMetadataTypes.ValueType.Float:
+            .. py:data:: Float
+
+
+            Metadata entry contains a float value.
+
+            .. _vredvrMetadataTypes.ValueType.Boolean:
+            .. py:data:: Boolean
+
+
+            Metadata entry contains a boolean value.
+
+            .. _vredvrMetadataTypes.ValueType.Time:
+            .. py:data:: Time
+
+
+            Metadata entry contains a time.
+
+            .. _vredvrMetadataTypes.ValueType.Date:
+            .. py:data:: Date
+
+
+            Metadata entry contains a date.
+
+            .. _vredvrMetadataTypes.ValueType.DateTime:
+            .. py:data:: DateTime
+
+
+            Metadata entry contains a date and a time.
+
+            .. _vredvrMetadataTypes.ValueType.List:
+            .. py:data:: List
+
+
+            Metadata entry contains a list.
+
+            .. _vredvrMetadataTypes.ValueType.Tag:
+            .. py:data:: Tag
+
+
+            Metadata entry contains a tag (value VRED-Tag)
+
+            .. _vredvrMetadataTypes.ValueType.Unknown:
+            .. py:data:: Unknown
+
+
+    .. _vredvrMetadataTypes.ObjectType:
+    .. py:class:: ObjectType
+
+        Enum for a description of which object types can have metadata.
+
+
+            
+
+            .. _vredvrMetadataTypes.ObjectType.ScenegraphNode:
+            .. py:data:: ScenegraphNode
+
+
+            
+
+            .. _vredvrMetadataTypes.ObjectType.Material:
+            .. py:data:: Material
+
+
+            
+
+            .. _vredvrMetadataTypes.ObjectType.Camera:
+            .. py:data:: Camera
+
+
+            
+
+            .. _vredvrMetadataTypes.ObjectType.Light:
+            .. py:data:: Light
+
+
+            
+
+            .. _vredvrMetadataTypes.ObjectType.Sceneplate:
+            .. py:data:: Sceneplate
+
+
+            
+
+            .. _vredvrMetadataTypes.ObjectType.All:
+            .. py:data:: All
+
+
+    .. _vredvrMetadataTypes.MatrixOrder:
+    .. py:class:: MatrixOrder
+
+        Enum for a description of the way in which matrices are stored.
+
+
+            Iterate rows first.
+
+            .. _vredvrMetadataTypes.MatrixOrder.RowMajor:
+            .. py:data:: RowMajor
+
+
+            Iterate columns first.
+
+            .. _vredvrMetadataTypes.MatrixOrder.ColumnMajor:
+            .. py:data:: ColumnMajor
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

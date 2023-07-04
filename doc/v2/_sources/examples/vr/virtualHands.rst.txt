@@ -1,0 +1,9 @@
+Virtual VR controllers
+======================
+
+This example shows how to create virtual hands using python. This can be helpful if your hands are tracked by an external library. Keystrokes can be simulated and the position can be adjusted. The standard hand model can be replaced. With an own hand model also tracked finger positions can be adjusted.
+
+.. literalinclude:: ../../python_examples/vr/virtualHands.py
+   :language: python
+   :linenos:
+   :caption: vr/virtualHands.py

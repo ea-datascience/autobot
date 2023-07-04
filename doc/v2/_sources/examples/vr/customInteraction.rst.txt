@@ -1,0 +1,67 @@
+.. _custom-interaction:
+
+Implementation of a custom device interaction 
+=============================================
+
+This example shows how a custom device interaction can be implemented. First, it is necessary to create 
+an object for the custom interaction using the device service.
+
+.. code-block:: python
+  :linenos:
+  :lineno-start: 5  
+
+  self.customInteraction = vrDeviceService.createInteraction("CustomInteraction")  
+
+As the custom interaction should use device actions that are already in use by default interactions 
+(left-trigger-pressed, left-trigger-released), it needs to be added to another interaction group.
+
+.. code-block:: python
+  :linenos:
+  :lineno-start: 7  
+
+  self.customInteraction.setSupportedInteractionGroups(["CustomGroup"])  
+
+Interaction groups combine different interactions for a certain use case. Within one interaction group each action, like
+left-trigger-pressed, is only allowed to trigger a single function. This is to prevent unwanted side effects. In this case a new
+interaction group is used that only contains the custom interaction. 
+The device actions that reflect the button presses on a VR controller need to be created for the device interaction.
+
+.. code-block:: python
+  :linenos:
+  :lineno-start: 10  
+
+  self.grabAction = self.customInteraction.createControllerAction("left-trigger-pressed")
+  self.releaseAction = self.customInteraction.createControllerAction("left-trigger-released")        
+  
+After that, the newly created device actions can connect their signals to the corresponding methods that should be executed.
+
+.. code-block:: python
+  :linenos:
+  :lineno-start: 14
+  
+  self.grabAction.signal().triggered.connect(self.press)
+  self.releaseAction.signal().triggered.connect(self.release) 
+
+It is necessary to activate the interaction group for this interaction.
+
+.. code-block:: python
+  :linenos:
+  :lineno-start: 18  
+
+  vrDeviceService.setActiveInteractionGroup("CustomGroup")
+
+The move of a controller is a special signal that is needed by multiple interactions and for this reason it is not
+handled as a device action. Here, the moved signal is only connected when needed.
+
+.. code-block:: python
+  :linenos:
+  :lineno-start: 22
+
+  device.signal().moved.connect(self.move)
+
+When the interaction is used, it will only print out "press", "release" and "move" as long as the trigger is pressed.
+
+.. literalinclude:: ../../python_examples/vr/customInteraction.py
+   :language: python
+   :linenos:
+   :caption: vr/customInteraction.py

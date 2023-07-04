@@ -1,0 +1,89 @@
+----------------
+vrdSpotLightNode
+----------------
+
+
+.. _vredvrdSpotLightNode:
+.. py:class:: vrdSpotLightNode
+
+(Inherits :py:class:`vrdPointLightNode`)
+
+This class gives access to the properties of a spot light source.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getConeAngle() → float<vredvrdSpotLightNode.getConeAngle()>`
+    * :ref:`getPenumbraAngle() → float<vredvrdSpotLightNode.getPenumbraAngle()>`
+    * :ref:`setConeAngle(angle) <vredvrdSpotLightNode.setConeAngle(angle)>`
+    * :ref:`setPenumbraAngle(angle) <vredvrdSpotLightNode.setPenumbraAngle(angle)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdSpotLightNode.getConeAngle():
+.. py:method:: vrdSpotLightNode.getConeAngle()
+
+    Returns the light beam's angle from center to the edge, measured in degrees.
+
+
+
+
+    :return: Cone angle
+    :rtype: float
+
+.. _vredvrdSpotLightNode.getPenumbraAngle():
+.. py:method:: vrdSpotLightNode.getPenumbraAngle()
+
+    Returns the light edge's falloff in degrees.
+
+
+
+
+    :return: Penumbra angle
+    :rtype: float
+
+.. _vredvrdSpotLightNode.setConeAngle(angle):
+.. py:method:: vrdSpotLightNode.setConeAngle(angle)
+
+    Sets the light beam's angle from center to the edge, measured in degrees.
+
+
+
+    :param angle: Cone angle
+    :type angle: float
+
+    
+    
+
+.. _vredvrdSpotLightNode.setPenumbraAngle(angle):
+.. py:method:: vrdSpotLightNode.setPenumbraAngle(angle)
+
+    Sets the light edge's falloff in degrees.
+
+
+
+    :param angle: Penumbra angle
+    :type angle: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

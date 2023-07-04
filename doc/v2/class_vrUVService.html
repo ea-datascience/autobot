@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrUVService &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrUVTypes" href="class_vrUVTypes.html" />
+    <link rel="prev" title="vrTransformTypes" href="class_vrTransformTypes.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vruvservice">
+<h1>vrUVService<a class="headerlink" href="#vruvservice" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvruvservice"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrUVService">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrUVService</span></code><a class="headerlink" href="#vrUVService" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <code class="xref py py-class docutils literal notranslate"><span class="pre">vrBaseService</span></code>)</p>
+<p>Service for UV mapping related functions.</p>
+<p>New UVs can be created for a geometry by unfolding (flattening) with <a class="reference internal" href="#vredvruvservice-unfold-nodes-unfoldsettings-layoutsettings-uvset"><span class="std std-ref">vrUVService.unfold(nodes, unfoldSettings, layoutSettings, uvSet)</span></a>, or with a projection method, <a class="reference internal" href="#vredvruvservice-applyplanarprojection-nodes-settings-uvset"><span class="std std-ref">vrUVService.applyPlanarProjection(nodes, settings, uvSet)</span></a>, <a class="reference internal" href="#vredvruvservice-applycylindricalprojection-nodes-settings-uvset"><span class="std std-ref">vrUVService.applyCylindricalProjection(nodes, settings, uvSet)</span></a>, or <a class="reference internal" href="#vredvruvservice-applytriplanarprojection-nodes-settings-uvset"><span class="std std-ref">vrUVService.applyTriplanarProjection(nodes, settings, uvSet)</span></a>.</p>
+<p>To run a function on a shell geometry, pass the shell geometry node to the function, do not include its surface nodes in the list.</p>
+<p>Find a list of geometry nodes (shells and meshes) in the Scenegraph with a function like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">findGeos</span><span class="p">(</span><span class="n">root</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">vrNodeService</span><span class="o">.</span><span class="n">findNodes</span><span class="p">(</span><span class="k">lambda</span> <span class="n">node</span><span class="p">:</span> <span class="n">node</span><span class="o">.</span><span class="n">isType</span><span class="p">(</span><span class="n">vrdGeometryNode</span><span class="p">),</span> <span class="n">vrdFindOptions</span><span class="p">(),</span> <span class="n">root</span><span class="p">)</span>
+
+<span class="c1"># Example usage:</span>
+<span class="n">geos</span> <span class="o">=</span> <span class="n">findGeos</span><span class="p">(</span><span class="n">vrNodeService</span><span class="o">.</span><span class="n">findNode</span><span class="p">(</span><span class="s2">&quot;Body38&quot;</span><span class="p">))</span>
+
+<span class="c1"># unfold using default settings</span>
+<span class="n">vrUVService</span><span class="o">.</span><span class="n">unfold</span><span class="p">(</span><span class="n">geos</span><span class="p">,</span> <span class="n">vrdUVUnfoldSettings</span><span class="p">(),</span> <span class="n">vrdUVLayoutSettings</span><span class="p">())</span>
+</pre></div>
+</div>
+<p>Please note, for shell geometries, functions     <a class="reference internal" href="#vredvruvservice-unfold-nodes-unfoldsettings-layoutsettings-uvset"><span class="std std-ref">vrUVService.unfold(nodes, unfoldSettings, layoutSettings, uvSet)</span></a>, <a class="reference internal" href="#vredvruvservice-layout-nodes-settings-uvset"><span class="std std-ref">vrUVService.layout(nodes, settings, uvSet)</span></a>, <a class="reference internal" href="#vredvruvservice-optimize-nodes-settings-uvset"><span class="std std-ref">vrUVService.optimize(nodes, settings, uvSet)</span></a> and <a class="reference internal" href="#vredvruvservice-sewallislands-nodes-onlybordersbetweenislands-uvset"><span class="std std-ref">vrUVService.sewAllIslands(nodes, onlyBordersBetweenIslands, uvSet)</span></a> respect the current A/B-side render mode, as does the UV Editor module. That means those functions process only A-side surfaces of a shell in A-side render mode (default), but no B-side surfaces. Hidden surfaces of a shell are skipped when processing the shell node.</p>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvruvservice-applycylindricalprojection-nodes-settings-uvset"><span class="std std-ref">applyCylindricalProjection(nodes, settings, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-applyplanarprojection-nodes-settings-uvset"><span class="std std-ref">applyPlanarProjection(nodes, settings, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-applytriplanarprojection-nodes-settings-uvset"><span class="std std-ref">applyTriplanarProjection(nodes, settings, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-applytriplanarprojectionandlayout-nodes-settings-layoutsettings-uvset"><span class="std std-ref">applyTriplanarProjectionAndLayout(nodes, settings, layoutSettings, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-applyworldscale-nodes-uvset"><span class="std std-ref">applyWorldScale(nodes, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-cutalongseams-nodes-settings-uvset"><span class="std std-ref">cutAlongSeams(nodes, settings, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-cylindricalprojectionfitsize-nodes-settings-uvset"><span class="std std-ref">cylindricalProjectionFitSize(nodes, settings, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-getcylindricalprojectiondefaultsettings-nodes-texturewidth-textureheight"><span class="std std-ref">getCylindricalProjectionDefaultSettings(nodes, textureWidth, textureHeight) → vrdUVCylindricalProjectionSettings</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-getplanarprojectiondefaultsettings-nodes-texturewidth-textureheight"><span class="std std-ref">getPlanarProjectionDefaultSettings(nodes, textureWidth, textureHeight) → vrdUVPlanarProjectionSettings</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-getprojectionmode-node-uvset"><span class="std std-ref">getProjectionMode(node, uvSet) → vrUVTypes.UVProjectionMode</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-gettriplanarprojectiondefaultsettings-nodes-texturewidth-textureheight"><span class="std std-ref">getTriplanarProjectionDefaultSettings(nodes, textureWidth, textureHeight) → vrdUVTriplanarProjectionSettings</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-hascylindricalprojectionsettings-node-uvset"><span class="std std-ref">hasCylindricalProjectionSettings(node, uvSet) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-hasplanarprojectionsettings-node-uvset"><span class="std std-ref">hasPlanarProjectionSettings(node, uvSet) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-hastriplanarprojectionsettings-node-uvset"><span class="std std-ref">hasTriplanarProjectionSettings(node, uvSet) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-layout-nodes-settings-uvset"><span class="std std-ref">layout(nodes, settings, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-optimize-nodes-settings-uvset"><span class="std std-ref">optimize(nodes, settings, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-planarprojectionfitsize-nodes-settings-uvset"><span class="std std-ref">planarProjectionFitSize(nodes, settings, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-readcylindricalprojectionsettings-node-uvset"><span class="std std-ref">readCylindricalProjectionSettings(node, uvSet) → vrdUVCylindricalProjectionSettings</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-readplanarprojectionsettings-node-uvset"><span class="std std-ref">readPlanarProjectionSettings(node, uvSet) → vrdUVPlanarProjectionSettings</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-readtriplanarprojectionsettings-node-uvset"><span class="std std-ref">readTriplanarProjectionSettings(node, uvSet) → vrdUVTriplanarProjectionSettings</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-rotateuv-geometrynodes-center-angledegree-uvset"><span class="std std-ref">rotateUV(geometryNodes, center, angleDegree, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-saveuvsnapshot-nodes-path-width-height-uvset-style-mode-customspace"><span class="std std-ref">saveUVSnapshot(nodes, path, width, height, uvSet, style, mode, customSpace)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-scaleuv-nodes-center-uscale-vscale-uvset"><span class="std std-ref">scaleUV(nodes, center, uScale, vScale, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-sewallislands-nodes-onlybordersbetweenislands-uvset"><span class="std std-ref">sewAllIslands(nodes, onlyBordersBetweenIslands, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-translateuv-nodes-du-dv-uvset"><span class="std std-ref">translateUV(nodes, du, dv, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-triplanarprojectionfitsize-nodes-settings-uvset"><span class="std std-ref">triplanarProjectionFitSize(nodes, settings, uvSet)</span></a></li>
+<li><a class="reference internal" href="#vredvruvservice-unfold-nodes-unfoldsettings-layoutsettings-uvset"><span class="std std-ref">unfold(nodes, unfoldSettings, layoutSettings, uvSet)</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvruvservice-applycylindricalprojection-nodes-settings-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.applyCylindricalProjection">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">applyCylindricalProjection</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">settings</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.applyCylindricalProjection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a cylindrical projection to a list of geometry nodes. Existing UVs are overwritten.</p>
+<p>The settings are stored in the node and can be fetched again later with readCylindricalProjectionSettings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The nodes to apply the projection.</li>
+<li><strong>settings</strong> (<a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html#vrdUVCylindricalProjectionSettings" title="vrdUVCylindricalProjectionSettings"><em>vrdUVCylindricalProjectionSettings</em></a>) – The cylindrical projection settings to use.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-applyplanarprojection-nodes-settings-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.applyPlanarProjection">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">applyPlanarProjection</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">settings</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.applyPlanarProjection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a planar projection to a list of geometry nodes. Existing UVs are overwritten.</p>
+<p>The 3d world-space positions of the vertices are projected into UV space.</p>
+<p>The settings are stored in the node and can be fetched again later with readPlanarProjectionSettings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The nodes to apply the projection.</li>
+<li><strong>settings</strong> (<a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html#vrdUVPlanarProjectionSettings" title="vrdUVPlanarProjectionSettings"><em>vrdUVPlanarProjectionSettings</em></a>) – The planar projection settings to use.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-applytriplanarprojection-nodes-settings-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.applyTriplanarProjection">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">applyTriplanarProjection</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">settings</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.applyTriplanarProjection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a triplanar projection to a list of geometry nodes. Existing UVs are overwritten.</p>
+<p>The settings are stored in the node and can be fetched again later with readTriplanarProjectionSettings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The nodes to apply the projection.</li>
+<li><strong>settings</strong> (<a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html#vrdUVTriplanarProjectionSettings" title="vrdUVTriplanarProjectionSettings"><em>vrdUVTriplanarProjectionSettings</em></a>) – The triplanar projection settings to use.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-applytriplanarprojectionandlayout-nodes-settings-layoutsettings-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.applyTriplanarProjectionAndLayout">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">applyTriplanarProjectionAndLayout</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">settings</span></span></em>, <em><span class="n"><span class="pre">layoutSettings</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.applyTriplanarProjectionAndLayout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a triplanar projection to a list of geometry nodes and packs the UV islands into UV space according to the provided layout settings. Existing UVs are overwritten.</p>
+<p>The settings are stored in the node and can be fetched again later with readTriplanarProjectionSettings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The nodes to apply the projection.</li>
+<li><strong>settings</strong> (<a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html#vrdUVTriplanarProjectionSettings" title="vrdUVTriplanarProjectionSettings"><em>vrdUVTriplanarProjectionSettings</em></a>) – The triplanar projection settings to use.</li>
+<li><strong>layoutSettings</strong> (<a class="reference internal" href="class_vrdUVLayoutSettings.html#vrdUVLayoutSettings" title="vrdUVLayoutSettings"><em>vrdUVLayoutSettings</em></a>) – Settings used to pack the projected UV islands into UV space.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-applyworldscale-nodes-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.applyWorldScale">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">applyWorldScale</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.applyWorldScale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scales the UV coordinates according to the average triangle area in scene units. Use in combination with         <a class="reference internal" href="class_vrdTexture.html#vredvrdtexture-setusetexturesize-s"><span class="std std-ref">vrdTexture.setUseTextureSize(s)</span></a> to get a real world scaling of your textures.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The nodes to apply the UV scaling to.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-cutalongseams-nodes-settings-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.cutAlongSeams">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">cutAlongSeams</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">settings</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.cutAlongSeams" title="Permalink to this definition">¶</a></dt>
+<dd><p>Does a cut with the given seam settings on the given nodes.</p>
+<p>Example of organic cut:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometryNodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">vrNodeService</span><span class="o">.</span><span class="n">findNode</span><span class="p">(</span><span class="s2">&quot;Box&quot;</span><span class="p">)]</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="n">vrdUVSeamSettings</span><span class="p">()</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">setMode</span><span class="p">(</span><span class="n">vrUVTypes</span><span class="o">.</span><span class="n">SeamMode</span><span class="o">.</span><span class="n">Organic</span><span class="p">)</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">setOrganicUsePipesCutter</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">setOrganicSegmentationAmount</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">vrUVService</span><span class="o">.</span><span class="n">cutAlongSeams</span><span class="p">(</span><span class="n">geometryNodes</span><span class="p">,</span> <span class="n">settings</span><span class="p">,</span> <span class="n">vrUVTypes</span><span class="o">.</span><span class="n">UVSet</span><span class="o">.</span><span class="n">MaterialUVSet</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Example of manufactured cut:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometryNodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">vrNodeService</span><span class="o">.</span><span class="n">findNode</span><span class="p">(</span><span class="s2">&quot;Box&quot;</span><span class="p">)]</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="n">vrdUVSeamSettings</span><span class="p">()</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">setMode</span><span class="p">(</span><span class="n">vrUVTypes</span><span class="o">.</span><span class="n">SeamMode</span><span class="o">.</span><span class="n">Manufactured</span><span class="p">)</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">setManufacturedAngle</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">setManufacturedAreaRatio</span><span class="p">(</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">vrUVService</span><span class="o">.</span><span class="n">cutAlongSeams</span><span class="p">(</span><span class="n">geometryNodes</span><span class="p">,</span> <span class="n">settings</span><span class="p">,</span> <span class="n">vrUVTypes</span><span class="o">.</span><span class="n">UVSet</span><span class="o">.</span><span class="n">MaterialUVSet</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Example of baking cut:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometryNodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">vrNodeService</span><span class="o">.</span><span class="n">findNode</span><span class="p">(</span><span class="s2">&quot;Box&quot;</span><span class="p">)]</span>
+<span class="n">settings</span> <span class="o">=</span> <span class="n">vrdUVSeamSettings</span><span class="p">()</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">setMode</span><span class="p">(</span><span class="n">vrUVTypes</span><span class="o">.</span><span class="n">SeamMode</span><span class="o">.</span><span class="n">Baking</span><span class="p">)</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">setBakingAngle</span><span class="p">(</span><span class="mi">45</span><span class="p">)</span>
+<span class="n">settings</span><span class="o">.</span><span class="n">setBakingSizeOfMinPatch</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">vrUVService</span><span class="o">.</span><span class="n">cutAlongSeams</span><span class="p">(</span><span class="n">geometryNodes</span><span class="p">,</span> <span class="n">settings</span><span class="p">,</span> <span class="n">vrUVTypes</span><span class="o">.</span><span class="n">UVSet</span><span class="o">.</span><span class="n">MaterialUVSet</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The list of nodes</li>
+<li><strong>settings</strong> (<a class="reference internal" href="class_vrdUVSeamSettings.html#vrdUVSeamSettings" title="vrdUVSeamSettings"><em>vrdUVSeamSettings</em></a>) – Settings to use for the seaming</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The UV set to work on (MaterialUVSet for the material UVs or LightmapUVSet for the lightmap UVs).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-cylindricalprojectionfitsize-nodes-settings-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.cylindricalProjectionFitSize">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">cylindricalProjectionFitSize</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">settings</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.cylindricalProjectionFitSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a cylindrical projection and adjusts the projection size to the given list of nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The geometry nodes</li>
+<li><strong>settings</strong> (<a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html#vrdUVCylindricalProjectionSettings" title="vrdUVCylindricalProjectionSettings"><em>vrdUVCylindricalProjectionSettings</em></a>) – The cylindrical projection settings to use.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-getcylindricalprojectiondefaultsettings-nodes-texturewidth-textureheight"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.getCylindricalProjectionDefaultSettings">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">getCylindricalProjectionDefaultSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">textureWidth</span></span></em>, <em><span class="n"><span class="pre">textureHeight</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.getCylindricalProjectionDefaultSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets default settings for a cylindrical projection for a list of geometry nodes based on their overall bounding box and the specified texture resolution.</p>
+<p>The texture resolution (parameter textureWidth and textureHeight) is used to setup a projection that matches the texture aspect ratio.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The geometry nodes</li>
+<li><strong>textureWidth</strong> (<em>integer</em>) – The texture width used for aspect ratio calculation.</li>
+<li><strong>textureHeight</strong> (<em>integer</em>) – The texture height used for aspect ratio calculation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The cylindrical projection settings.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html#vrdUVCylindricalProjectionSettings" title="vrdUVCylindricalProjectionSettings">vrdUVCylindricalProjectionSettings</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-getplanarprojectiondefaultsettings-nodes-texturewidth-textureheight"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.getPlanarProjectionDefaultSettings">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">getPlanarProjectionDefaultSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">textureWidth</span></span></em>, <em><span class="n"><span class="pre">textureHeight</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.getPlanarProjectionDefaultSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets default settings for a planar projection for a given list of geometry nodes based on their overall bounding box and the specified texture resolution.</p>
+<p>The texture resolution (parameter textureWidth and textureHeight) is used to setup a projection that matches the texture aspect ratio.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The geometry nodes</li>
+<li><strong>textureWidth</strong> (<em>integer</em>) – The texture width used for aspect ratio calculation.</li>
+<li><strong>textureHeight</strong> (<em>integer</em>) – The texture height used for aspect ratio calculation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The planar projection settings.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html#vrdUVPlanarProjectionSettings" title="vrdUVPlanarProjectionSettings">vrdUVPlanarProjectionSettings</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-getprojectionmode-node-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.getProjectionMode">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">getProjectionMode</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.getProjectionMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the kind of projection that was last applied to the node to create UV coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node</strong> (<a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a>) – The node to query.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The projection mode.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvprojectionmode"><span class="std std-ref">vrUVTypes.UVProjectionMode</span></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-gettriplanarprojectiondefaultsettings-nodes-texturewidth-textureheight"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.getTriplanarProjectionDefaultSettings">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">getTriplanarProjectionDefaultSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">textureWidth</span></span></em>, <em><span class="n"><span class="pre">textureHeight</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.getTriplanarProjectionDefaultSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets default settings for a triplanar projection for a list of geometry nodes based on their bounding box center and the specified texture resolution.</p>
+<p>The texture resolution (parameter textureWidth and textureHeight) is used to setup a projection that matches the texture aspect ratio.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The geometry nodes</li>
+<li><strong>textureWidth</strong> (<em>integer</em>) – The texture width used for aspect ratio calculation.</li>
+<li><strong>textureHeight</strong> (<em>integer</em>) – The texture height used for aspect ratio calculation.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The triplanar projection settings.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html#vrdUVTriplanarProjectionSettings" title="vrdUVTriplanarProjectionSettings">vrdUVTriplanarProjectionSettings</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-hascylindricalprojectionsettings-node-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.hasCylindricalProjectionSettings">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">hasCylindricalProjectionSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.hasCylindricalProjectionSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines if a node has settings for a cylindrical projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node</strong> (<a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a>) – The node to query.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the node has settings for cylindrical projection, False otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-hasplanarprojectionsettings-node-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.hasPlanarProjectionSettings">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">hasPlanarProjectionSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.hasPlanarProjectionSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines if a node has settings for a planar projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node</strong> (<a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a>) – The node to query.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the node has settings for planar projection, False otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-hastriplanarprojectionsettings-node-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.hasTriplanarProjectionSettings">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">hasTriplanarProjectionSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.hasTriplanarProjectionSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determines if a node has settings for a triplanar projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node</strong> (<a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a>) – The node to query.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if the node has settings for triplanar projection, False otherwise.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-layout-nodes-settings-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.layout">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">layout</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">settings</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.layout" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each geometry, packs its UV islands into a box in UV space. (By default, into [0,1]x[0,1].) UV islands are scaled, rotated and moved according to the provided settings so they all fit into the box without overlapping.</p>
+<p>The packing is done separately for each geometry in the input list. This function only works on geometries that have UVs. Degenerate triangles are removed from the input geometry.</p>
+<p>To run layout on a shell geometry, pass the shell geometry node to this function, do not include the surface nodes in the list. Layout packs all islands of the shell so they do not overlap. When passing surface nodes in the list, the UVs of each surface are layouted individually and occupy maximum UV space in the specified box.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – Geometry nodes</li>
+<li><strong>settings</strong> (<a class="reference internal" href="class_vrdUVLayoutSettings.html#vrdUVLayoutSettings" title="vrdUVLayoutSettings"><em>vrdUVLayoutSettings</em></a>) – Settings used to layout the islands</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-optimize-nodes-settings-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.optimize">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">optimize</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">settings</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.optimize" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each geometry, reduces distortions in the UV layout. This function only works on geometries that have UVs.</p>
+<p>Degenerate triangles are removed from the input geometry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – Geometry nodes</li>
+<li><strong>settings</strong> (<a class="reference internal" href="class_vrdUVOptimizeSettings.html#vrdUVOptimizeSettings" title="vrdUVOptimizeSettings"><em>vrdUVOptimizeSettings</em></a>) – Settings used to optimize the UVs</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-planarprojectionfitsize-nodes-settings-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.planarProjectionFitSize">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">planarProjectionFitSize</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">settings</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.planarProjectionFitSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a planar projection and adjusts the projection size to the given list of nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The geometry nodes</li>
+<li><strong>settings</strong> (<a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html#vrdUVPlanarProjectionSettings" title="vrdUVPlanarProjectionSettings"><em>vrdUVPlanarProjectionSettings</em></a>) – The planar projection settings to use.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-readcylindricalprojectionsettings-node-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.readCylindricalProjectionSettings">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">readCylindricalProjectionSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.readCylindricalProjectionSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads settings that have been attached to the node when applying a cylindrical projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node</strong> (<a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a>) – The node to query.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The cylindrical projection settings.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html#vrdUVCylindricalProjectionSettings" title="vrdUVCylindricalProjectionSettings">vrdUVCylindricalProjectionSettings</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-readplanarprojectionsettings-node-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.readPlanarProjectionSettings">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">readPlanarProjectionSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.readPlanarProjectionSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads settings that have been attached to the node when applying a planar projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node</strong> (<a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a>) – The node to query.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The planar projection settings.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html#vrdUVPlanarProjectionSettings" title="vrdUVPlanarProjectionSettings">vrdUVPlanarProjectionSettings</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-readtriplanarprojectionsettings-node-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.readTriplanarProjectionSettings">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">readTriplanarProjectionSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.readTriplanarProjectionSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reads settings that have been attached to the node when applying a triplanar projection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>node</strong> (<a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a>) – The node to query.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The triplanar projection settings.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html#vrdUVTriplanarProjectionSettings" title="vrdUVTriplanarProjectionSettings">vrdUVTriplanarProjectionSettings</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-rotateuv-geometrynodes-center-angledegree-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.rotateUV">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">rotateUV</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">geometryNodes</span></span></em>, <em><span class="n"><span class="pre">center</span></span></em>, <em><span class="n"><span class="pre">angleDegree</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.rotateUV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Rotate the UVs of the given nodes around the given center.</p>
+<p>Example of rotating all material UVs 90 degrees:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometryNodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">vrNodeService</span><span class="o">.</span><span class="n">findNode</span><span class="p">(</span><span class="s2">&quot;Box&quot;</span><span class="p">)]</span>
+<span class="n">center</span> <span class="o">=</span> <span class="n">QVector2D</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">angle</span> <span class="o">=</span> <span class="mi">90</span>
+<span class="n">vrUVService</span><span class="o">.</span><span class="n">rotateUV</span><span class="p">(</span><span class="n">geometryNodes</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">angle</span><span class="p">,</span> <span class="n">vrUVTypes</span><span class="o">.</span><span class="n">UVSet</span><span class="o">.</span><span class="n">MaterialUVSet</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>geometryNodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The list of geometry nodes</li>
+<li><strong>center</strong> (<em>QVector2D</em>) – Center of scaling</li>
+<li><strong>angleDegree</strong> (<em>float</em>) – Rotation angle in degree</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The UV set to work on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-saveuvsnapshot-nodes-path-width-height-uvset-style-mode-customspace"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.saveUVSnapshot">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">saveUVSnapshot</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">path</span></span></em>, <em><span class="n"><span class="pre">width</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em>, <em><span class="n"><span class="pre">height</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1024</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em>, <em><span class="n"><span class="pre">style</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.ShowWireframe</span></span></em>, <em><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.SnapshotMode.ZeroToOneSpace</span></span></em>, <em><span class="n"><span class="pre">customSpace</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">QVector4D()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.saveUVSnapshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves a snapshot of the UV layout as image file.</p>
+<p>Note: If width and height are different in ZeroToOneSpace mode, then the output image will be distorted.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometryNodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">vrNodeService</span><span class="o">.</span><span class="n">findNode</span><span class="p">(</span><span class="s2">&quot;Box&quot;</span><span class="p">)]</span>
+<span class="n">vrUVService</span><span class="o">.</span><span class="n">saveUVSnapshot</span><span class="p">(</span><span class="n">geometryNodes</span><span class="p">,</span>
+                           <span class="s2">&quot;c:/vred-snapshots/uv.png&quot;</span><span class="p">,</span>
+                           <span class="mi">512</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span>
+                           <span class="n">vrUVTypes</span><span class="o">.</span><span class="n">UVSet</span><span class="o">.</span><span class="n">MaterialUVSet</span><span class="p">,</span>
+                           <span class="n">vrUVTypes</span><span class="o">.</span><span class="n">ShowBorders</span> <span class="o">|</span> <span class="n">vrUVTypes</span><span class="o">.</span><span class="n">ShowWireframe</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The list of nodes to include in the snapshot.</li>
+<li><strong>path</strong> (<em>string</em>) – The full path where the image should be saved (e.g. ‘c:/uv.png’).</li>
+<li><strong>width</strong> (<em>integer</em>) – The width of the image in pixels (default 1024).</li>
+<li><strong>height</strong> (<em>integer</em>) – The height of the image in pixels (default 1024).</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The UV set to capture (MaterialUVSet for the material UVs or LightmapUVSet for the lightmap UVs).</li>
+<li><strong>style</strong> (<em>integer</em>) – Defines the style of the exported snapshot, Bitmask created from <a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-snapshotstyle"><span class="std std-ref">vrUVTypes.SnapshotStyle</span></a>.</li>
+<li><strong>mode</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-snapshotmode"><span class="std std-ref">vrUVTypes.SnapshotMode</span></a>) – The snapshot mode defines the area to be included in the image. ‘ZeroToOneSpace’ captures the area from 0 to 1 in UV coordinates. ‘Boundingbox’ will capture the entire object.</li>
+<li><strong>customSpace</strong> (<em>QVector4D</em>) – UV space to use for shapshot (min U, max U, min V, max V). Only used if mode is set to vrUVTypes::SnapshotMode::CustomSpace.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-scaleuv-nodes-center-uscale-vscale-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.scaleUV">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">scaleUV</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">center</span></span></em>, <em><span class="n"><span class="pre">uScale</span></span></em>, <em><span class="n"><span class="pre">vScale</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.scaleUV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scale the UVs of the given nodes using the given center.</p>
+<p>Example of flipping all material UVs:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometryNodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">vrNodeService</span><span class="o">.</span><span class="n">findNode</span><span class="p">(</span><span class="s2">&quot;Box&quot;</span><span class="p">)]</span>
+<span class="n">center</span> <span class="o">=</span> <span class="n">QVector2D</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">)</span>
+<span class="n">uScale</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">vScale</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">vrUVService</span><span class="o">.</span><span class="n">scaleUV</span><span class="p">(</span><span class="n">geometryNodes</span><span class="p">,</span> <span class="n">center</span><span class="p">,</span> <span class="n">uScale</span><span class="p">,</span> <span class="n">vScale</span><span class="p">,</span> <span class="n">vrUVTypes</span><span class="o">.</span><span class="n">UVSet</span><span class="o">.</span><span class="n">MaterialUVSet</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The list of nodes</li>
+<li><strong>center</strong> (<em>QVector2D</em>) – Center of scaling</li>
+<li><strong>uScale</strong> (<em>float</em>) – Scale factor for u value</li>
+<li><strong>vScale</strong> (<em>float</em>) – Scale factor for v value</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The UV set to work on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-sewallislands-nodes-onlybordersbetweenislands-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.sewAllIslands">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">sewAllIslands</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">onlyBordersBetweenIslands</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.sewAllIslands" title="Permalink to this definition">¶</a></dt>
+<dd><p>For each geometry, sews all islands that are adjacent in 3D.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – Geometry nodes for which all islands will be sewed. The sewing will be done per node.</li>
+<li><strong>onlyBordersBetweenIslands</strong> (<em>bool</em>) – Set to True to only sew neighboring islands, but no internal cuts within an island. Set to False to additionally sew internal cuts within an island if there are any.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-translateuv-nodes-du-dv-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.translateUV">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">translateUV</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">du</span></span></em>, <em><span class="n"><span class="pre">dv</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.translateUV" title="Permalink to this definition">¶</a></dt>
+<dd><p>Translates the UVs of the given nodes.</p>
+<p>Example of translating all material UVs:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">geometryNodes</span> <span class="o">=</span> <span class="p">[</span><span class="n">vrNodeService</span><span class="o">.</span><span class="n">findNode</span><span class="p">(</span><span class="s2">&quot;Box&quot;</span><span class="p">)]</span>
+<span class="n">du</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">dv</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">vrUVService</span><span class="o">.</span><span class="n">translateUV</span><span class="p">(</span><span class="n">geometryNodes</span><span class="p">,</span> <span class="n">du</span><span class="p">,</span> <span class="n">dv</span><span class="p">,</span> <span class="n">vrUVTypes</span><span class="o">.</span><span class="n">UVSet</span><span class="o">.</span><span class="n">MaterialUVSet</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The list of nodes</li>
+<li><strong>du</strong> (<em>float</em>) – Translation along u</li>
+<li><strong>dv</strong> (<em>float</em>) – Translation along v</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The UV set to work on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-triplanarprojectionfitsize-nodes-settings-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.triplanarProjectionFitSize">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">triplanarProjectionFitSize</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">settings</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.triplanarProjectionFitSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Applies a triplanar projection and adjusts the projection size to the given list of nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – The geometry nodes</li>
+<li><strong>settings</strong> (<a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html#vrdUVTriplanarProjectionSettings" title="vrdUVTriplanarProjectionSettings"><em>vrdUVTriplanarProjectionSettings</em></a>) – The triplanar projection settings to use.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvruvservice-unfold-nodes-unfoldsettings-layoutsettings-uvset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrUVService.unfold">
+<code class="sig-prename descclassname"><span class="pre">vrUVService.</span></code><code class="sig-name descname"><span class="pre">unfold</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">unfoldSettings</span></span></em>, <em><span class="n"><span class="pre">layoutSettings</span></span></em>, <em><span class="n"><span class="pre">uvSet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrUVTypes.MaterialUVSet</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrUVService.unfold" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute unfolded UV coordinates for the given geometry nodes.</p>
+<p>For each geometry, its coordinates are unfolded and packed into UV space according to the provided layout settings. Unfolding is done with Unfold3D. Any existing UV coordinates are overwritten. The input geometry does not need to have UVs. UVs are created from scratch based on the 3D data of the geometry. Degenerate triangles are removed from the input geometry.</p>
+<p>To run unfold on a shell geometry, pass the shell geometry node to this function, do not include the surface nodes in the list. When passing surface nodes to unfold, the surfaces are unfolded individually.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdGeometryNode.html#vrdGeometryNode" title="vrdGeometryNode"><em>vrdGeometryNode</em></a><em>]</em>) – Geometry nodes</li>
+<li><strong>unfoldSettings</strong> (<a class="reference internal" href="class_vrdUVUnfoldSettings.html#vrdUVUnfoldSettings" title="vrdUVUnfoldSettings"><em>vrdUVUnfoldSettings</em></a>) – Settings used to unfold the UVs</li>
+<li><strong>layoutSettings</strong> (<a class="reference internal" href="class_vrdUVLayoutSettings.html#vrdUVLayoutSettings" title="vrdUVLayoutSettings"><em>vrdUVLayoutSettings</em></a>) – Settings used to pack the unfolded UV islands into UV space.</li>
+<li><strong>uvSet</strong> (<a class="reference internal" href="class_vrUVTypes.html#vredvruvtypes-uvset"><span class="std std-ref">vrUVTypes.UVSet</span></a>) – The uv set to work on</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrUVService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrTransformTypes.html"
+                        title="previous chapter">vrTransformTypes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrUVTypes.html"
+                        title="next chapter">vrUVTypes</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrUVTypes.html" title="vrUVTypes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrTransformTypes.html" title="vrTransformTypes"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

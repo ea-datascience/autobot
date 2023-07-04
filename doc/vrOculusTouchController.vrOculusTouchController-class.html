@@ -1,0 +1,2615 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>vrOculusTouchController.vrOculusTouchController</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >VRED Python API v1</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="vrOculusTouchController-module.html">Module&nbsp;vrOculusTouchController</a> ::
+        Class&nbsp;vrOculusTouchController
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="vrOculusTouchController.vrOculusTouchController-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class vrOculusTouchController</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+   <a href="object-class.html">object</a> --+        
+            |        
+  ??.instance --+    
+                |    
+<a href="vrAEBase.vrAEBase-class.html">vrAEBase.vrAEBase</a> --+
+                    |
+                   <strong class="uidshort">vrOculusTouchController</strong>
+</pre>
+
+<hr />
+<p><b>Deprecated</b>; use vrDeviceService, vrdVRDevice and 
+  vrdDeviceInteraction instead. Important: VRED does not support the Oculus
+  SDK anymore as of 2022.1. The API of this class is internally mapped to 
+  OpenVR. There are two key differences resulting from this change: the 
+  thumbRestTouched / thumbRestUntouched signal from the Oculus Touch 
+  Controller 1 is no longer supported. The haptics from triggerVibration 
+  with frequency and amplitude also does not work the way it used to. The 
+  parameters are ignored and the function will trigger a short haptic 
+  pulse. As a replacement there is now also triggerHapticPulse available 
+  which directly exposes the OpenVR API with the axis and duration 
+  parameters.</p>
+  <p>The vrOculusTouchController class is a proxy class for an Oculus Touch
+  Controller. You only pass the name of the Oculus Touch Controller to the 
+  constructor to connect this proxy class to a controller. The controllers 
+  are named &quot;LeftTouch&quot; for the left hand controller and 
+  &quot;RightTouch&quot; for the right hand controller. Other names are not
+  valid and will be ignored.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">name</span>)</span><br />
+      The constructor of the vrOculusTouchController class.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="button0IsPressed"></a><span class="summary-sig-name">button0IsPressed</span>()</span><br />
+      SIGNAL is emitted while the X or A button is pressed down.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="button0IsTouched"></a><span class="summary-sig-name">button0IsTouched</span>()</span><br />
+      SIGNAL is emitted while the X or A button is touched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="button0Pressed"></a><span class="summary-sig-name">button0Pressed</span>()</span><br />
+      SIGNAL is emitted when the X or A button is pressed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="button0Released"></a><span class="summary-sig-name">button0Released</span>()</span><br />
+      SIGNAL is emitted when the X or A button is released.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="button0Touched"></a><span class="summary-sig-name">button0Touched</span>()</span><br />
+      SIGNAL is emitted when the X or A button is touched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="button0Untouched"></a><span class="summary-sig-name">button0Untouched</span>()</span><br />
+      SIGNAL is emitted when the X or A button is untouched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="button1IsPressed"></a><span class="summary-sig-name">button1IsPressed</span>()</span><br />
+      SIGNAL is emitted while the Y or B button is pressed down.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="button1IsTouched"></a><span class="summary-sig-name">button1IsTouched</span>()</span><br />
+      SIGNAL is emitted while the Y or B button is touched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="button1Pressed"></a><span class="summary-sig-name">button1Pressed</span>()</span><br />
+      SIGNAL is emitted when the Y or B button is pressed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="button1Released"></a><span class="summary-sig-name">button1Released</span>()</span><br />
+      SIGNAL is emitted when the Y or B button is  is released.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="button1Touched"></a><span class="summary-sig-name">button1Touched</span>()</span><br />
+      SIGNAL is emitted when the Y or B button is touched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="button1Untouched"></a><span class="summary-sig-name">button1Untouched</span>()</span><br />
+      SIGNAL is emitted when the Y or B button is untouched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="controllerMoved"></a><span class="summary-sig-name">controllerMoved</span>()</span><br />
+      SIGNAL is called constantly when the controller moves.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">vrNodePtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#getControllerNode" class="summary-sig-name">getControllerNode</a>()</span><br />
+      Returns the controller node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#getHandRole" class="summary-sig-name">getHandRole</a>()</span><br />
+      Get whether this controller is left or right hand.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#getHandTriggerRatio" class="summary-sig-name">getHandTriggerRatio</a>()</span><br />
+      Returns the current ratio of the hand trigger (grip button).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Vec2f</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#getThumbstickPosition" class="summary-sig-name">getThumbstickPosition</a>()</span><br />
+      Returns the current position on the thumbstick.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#getTriggerRatio" class="summary-sig-name">getTriggerRatio</a>()</span><br />
+      Returns the current value of the trigger.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">int</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#getVisualizationMode" class="summary-sig-name">getVisualizationMode</a>()</span><br />
+      Get whether the controller geometry or hands are displayed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of floats (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#getWorldMatrix" class="summary-sig-name">getWorldMatrix</a>()</span><br />
+      Returns the world space transformation matrix of the controller.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#handPoseStarted" class="summary-sig-name">handPoseStarted</a>(<span class="summary-sig-arg">poseId</span>)</span><br />
+      SIGNAL is called when a hand pose is detected in Hand visualization 
+      mode.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#handPoseStopped" class="summary-sig-name">handPoseStopped</a>(<span class="summary-sig-arg">poseId</span>)</span><br />
+      SIGNAL is called when a hand pose stops in Hand visualization mode.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#handRoleChanged" class="summary-sig-name">handRoleChanged</a>(<span class="summary-sig-arg">role</span>)</span><br />
+      SIGNAL is called when the hand role has changed, after the hand model
+      has been loaded.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#handTouchContinues" class="summary-sig-name">handTouchContinues</a>(<span class="summary-sig-arg">touchedNodeId</span>,
+        <span class="summary-sig-arg">fingerId</span>)</span><br />
+      SIGNAL is called when the finger continues touching the node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#handTouchStarted" class="summary-sig-name">handTouchStarted</a>(<span class="summary-sig-arg">touchedNodeId</span>,
+        <span class="summary-sig-arg">fingerId</span>)</span><br />
+      SIGNAL is called when a finger of this controller's hand has touched 
+      a node in the scene that was made interactable with 
+      setNodeInteractableInVR(node, True).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#handTouchStopped" class="summary-sig-name">handTouchStopped</a>(<span class="summary-sig-arg">touchedNodeId</span>,
+        <span class="summary-sig-arg">fingerId</span>)</span><br />
+      SIGNAL is called when the finger stops touching the node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#handTriggerChanged" class="summary-sig-name">handTriggerChanged</a>(<span class="summary-sig-arg">value</span>)</span><br />
+      SIGNAL is called when the value of the hand trigger button (grip 
+      button) is changed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="handTriggerIsPressed"></a><span class="summary-sig-name">handTriggerIsPressed</span>()</span><br />
+      SIGNAL is emitted while the hand trigger button (grip button) is 
+      pressed down.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="handTriggerPressed"></a><span class="summary-sig-name">handTriggerPressed</span>()</span><br />
+      SIGNAL is emitted when the hand trigger button (grip button) is 
+      pressed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="handTriggerReleased"></a><span class="summary-sig-name">handTriggerReleased</span>()</span><br />
+      SIGNAL is emitted when the hand trigger button (grip button) is  
+      released.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isButton0Pressed" class="summary-sig-name">isButton0Pressed</a>()</span><br />
+      Returns the pressed state of the X or A button.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isButton0Touched" class="summary-sig-name">isButton0Touched</a>()</span><br />
+      Returns the touch state of the X or A button.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isButton1Pressed" class="summary-sig-name">isButton1Pressed</a>()</span><br />
+      Returns the pressed state of the Y or B button.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isButton1Touched" class="summary-sig-name">isButton1Touched</a>()</span><br />
+      Returns the touch state of the Y or B button.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isHandAnimationEnabled" class="summary-sig-name">isHandAnimationEnabled</a>()</span><br />
+      Get whether the finger joints are transfomed when the user pressed or
+      touches buttons in Hand visualization mode.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isHandInteractionEnabled" class="summary-sig-name">isHandInteractionEnabled</a>()</span><br />
+      Get whether the interaction with Web engines and Touch sensors is 
+      enabled in Hand visualization mode.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isHandPoseActive" class="summary-sig-name">isHandPoseActive</a>(<span class="summary-sig-arg">poseId</span>)</span><br />
+      Return whether the user performs a specific hand pose.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isHandTouchPointVisualizationEnabled" class="summary-sig-name">isHandTouchPointVisualizationEnabled</a>()</span><br />
+      Get whether the visualization of the touch point in Hand 
+      visualization mode is enabled.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isHandTriggerPressed" class="summary-sig-name">isHandTriggerPressed</a>()</span><br />
+      Returns the pressed state of the hand trigger button (grip button).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isThumbRestTouched" class="summary-sig-name">isThumbRestTouched</a>()</span><br />
+      Returns the touch state of the thumb rest.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isThumbstickPressed" class="summary-sig-name">isThumbstickPressed</a>()</span><br />
+      Returns the pressed state of the thumbstick.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isThumbstickTouched" class="summary-sig-name">isThumbstickTouched</a>()</span><br />
+      Returns the touch state of the thumbstick button.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isTriggerPressed" class="summary-sig-name">isTriggerPressed</a>()</span><br />
+      Returns the pressed state of the trigger button.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isTriggerTouched" class="summary-sig-name">isTriggerTouched</a>()</span><br />
+      Returns the touch state of the trigger button.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#isVisible" class="summary-sig-name">isVisible</a>()</span><br />
+      Gets the visibility of the visualization (geometry or hands) of this 
+      controller.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">vrNodePtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#pickNode" class="summary-sig-name">pickNode</a>()</span><br />
+      Performs a selection along the picking axis of the controller and 
+      returns the nearest node along the picking ray.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple&lt;vrNodePtr, Pnt3f, Vec3f, Pnt2f&gt;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#pickNodeEx" class="summary-sig-name">pickNodeEx</a>()</span><br />
+      Performs a selection along the picking axis of the controller and 
+      returns the nearest node along the picking ray.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">tuple&lt;vrNodePtr, Pnt3f, Vec3f, Pnt2f&gt;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#pickNodeWithFinger" class="summary-sig-name">pickNodeWithFinger</a>(<span class="summary-sig-arg">fingerId</span>)</span><br />
+      Performs a selection with a ray emenating from the finger tip and 
+      returns the nearest node along the picking ray.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#setCustomPickingDirection" class="summary-sig-name">setCustomPickingDirection</a>(<span class="summary-sig-arg">origin</span>,
+        <span class="summary-sig-arg">direction</span>,
+        <span class="summary-sig-arg">color</span>)</span><br />
+      Sets a custom axis for picking on this controller.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#setHandAnimationEnabled" class="summary-sig-name">setHandAnimationEnabled</a>(<span class="summary-sig-arg">enabled</span>)</span><br />
+      Enables or disables transformation of finger joints when the user 
+      pressed or touches buttons in Hand visualization mode.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#setHandInteractionEnabled" class="summary-sig-name">setHandInteractionEnabled</a>(<span class="summary-sig-arg">enabled</span>)</span><br />
+      Enables or disables the interaction with Web engines and Touch 
+      sensors in Hand visualization mode.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#setHandTouchPointVisualizationEnabled" class="summary-sig-name">setHandTouchPointVisualizationEnabled</a>(<span class="summary-sig-arg">enabled</span>)</span><br />
+      Enables or disables visualization of the touch point in Hand 
+      visualization mode.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#setPickingAxis" class="summary-sig-name">setPickingAxis</a>(<span class="summary-sig-arg">axis</span>)</span><br />
+      Sets the axis used for picking on this controller.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#setVisible" class="summary-sig-name">setVisible</a>(<span class="summary-sig-arg">visible</span>)</span><br />
+      Sets the visibility of the visualization (geometry or hands) of this 
+      controller.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#setVisualizationMode" class="summary-sig-name">setVisualizationMode</a>(<span class="summary-sig-arg">mode</span>)</span><br />
+      Sets how the controller should be visualized (controller geometry or 
+      hands).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#showPickingAxis" class="summary-sig-name">showPickingAxis</a>(<span class="summary-sig-arg">on</span>)</span><br />
+      Shows the picking axis on this controller.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#thumbRestIsTouched" class="summary-sig-name">thumbRestIsTouched</a>()</span><br />
+      SIGNAL is emitted while the thumb rest is touched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#thumbRestTouched" class="summary-sig-name">thumbRestTouched</a>()</span><br />
+      SIGNAL is emitted when the thumb rest is touched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#thumbRestUntouched" class="summary-sig-name">thumbRestUntouched</a>()</span><br />
+      SIGNAL is emitted when the thumb rest is untouched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#thumbstickChanged" class="summary-sig-name">thumbstickChanged</a>(<span class="summary-sig-arg">position</span>)</span><br />
+      SIGNAL is called when the position on the thumbstick changed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="thumbstickIsPressed"></a><span class="summary-sig-name">thumbstickIsPressed</span>()</span><br />
+      SIGNAL is emitted while the thumbstick is pressed down.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="thumbstickIsTouched"></a><span class="summary-sig-name">thumbstickIsTouched</span>()</span><br />
+      SIGNAL is emitted while the thumbstick button is touched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="thumbstickPressed"></a><span class="summary-sig-name">thumbstickPressed</span>()</span><br />
+      SIGNAL is emitted when the thumbstick is pressed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="thumbstickReleased"></a><span class="summary-sig-name">thumbstickReleased</span>()</span><br />
+      SIGNAL is emitted when the thumbstick is released.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="thumbstickTouched"></a><span class="summary-sig-name">thumbstickTouched</span>()</span><br />
+      SIGNAL is emitted when the thumbstick button is touched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="thumbstickUntouched"></a><span class="summary-sig-name">thumbstickUntouched</span>()</span><br />
+      SIGNAL is emitted when the thumbstick button is untouched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#triggerChanged" class="summary-sig-name">triggerChanged</a>(<span class="summary-sig-arg">value</span>)</span><br />
+      SIGNAL is called when the value of the trigger is changed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#triggerHapticPulse" class="summary-sig-name">triggerHapticPulse</a>(<span class="summary-sig-arg">axis</span>,
+        <span class="summary-sig-arg">duration</span>)</span><br />
+      Triggers a haptic pulse on the controller.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="triggerIsPressed"></a><span class="summary-sig-name">triggerIsPressed</span>()</span><br />
+      SIGNAL is emitted while the trigger button is pressed down.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="triggerIsTouched"></a><span class="summary-sig-name">triggerIsTouched</span>()</span><br />
+      SIGNAL is emitted while the trigger button is touched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="triggerPressed"></a><span class="summary-sig-name">triggerPressed</span>()</span><br />
+      SIGNAL is emitted when the trigger button is pressed.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="triggerReleased"></a><span class="summary-sig-name">triggerReleased</span>()</span><br />
+      SIGNAL is emitted when the trigger button is  released.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="triggerTouched"></a><span class="summary-sig-name">triggerTouched</span>()</span><br />
+      SIGNAL is emitted when the trigger button is touched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="triggerUntouched"></a><span class="summary-sig-name">triggerUntouched</span>()</span><br />
+      SIGNAL is emitted when the trigger button is untouched.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOculusTouchController.vrOculusTouchController-class.html#triggerVibration" class="summary-sig-name">triggerVibration</a>(<span class="summary-sig-arg">frequency</span>,
+        <span class="summary-sig-arg">amplitude</span>)</span><br />
+      Triggers a vibration on the controller.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="vrAEBase.vrAEBase-class.html">vrAEBase.vrAEBase</a></code></b>:
+      <code><a href="vrAEBase.vrAEBase-class.html#__reduce__">__reduce__</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#addLoop">addLoop</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#callAllConnected">callAllConnected</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#connect">connect</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#connectSignal">connectSignal</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#emitSignal">emitSignal</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#getModuleName">getModuleName</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#isActive">isActive</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#loop">loop</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#recEvent">recEvent</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#removeConnections">removeConnections</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#setActive">setActive</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#setUpdateGUIEnabled">setUpdateGUIEnabled</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#subLoop">subLoop</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><i>unreachable</i>.instance</code></b>:
+      <code>__new__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__instance_size__"></a><span class="summary-name">__instance_size__</span> = <code title="168">168</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">name</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The constructor of the vrOculusTouchController class.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>name</code></strong> (string) - The name of the controller (&quot;LeftTouch&quot; or 
+          &quot;RightTouch&quot;).</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="vrAEBase.vrAEBase-class.html#__init__">vrAEBase.vrAEBase.__init__</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getControllerNode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getControllerNode</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the controller node.</p>
+  <dl class="fields">
+    <dt>Returns: vrNodePtr</dt>
+        <dd>The controller node</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getHandRole"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getHandRole</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get whether this controller is left or right hand.</p>
+  <dl class="fields">
+    <dt>Returns: int</dt>
+        <dd>Hand_Left, Hand_Right or Hand_Undefined</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getHandTriggerRatio"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getHandTriggerRatio</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the current ratio of the hand trigger (grip button).</p>
+  <dl class="fields">
+    <dt>Returns: float</dt>
+        <dd>The current value of the hand trigger in the range of 0.0 - 1.0.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getThumbstickPosition"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getThumbstickPosition</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the current position on the thumbstick.</p>
+  <dl class="fields">
+    <dt>Returns: Vec2f</dt>
+        <dd>The current position on the thumbstick.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTriggerRatio"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTriggerRatio</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the current value of the trigger.</p>
+  <dl class="fields">
+    <dt>Returns: float</dt>
+        <dd>The current value of the trigger in the range of 0.0 - 1.0.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getVisualizationMode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getVisualizationMode</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get whether the controller geometry or hands are displayed. The 
+  default value is 'Hand'.</p>
+  <dl class="fields">
+    <dt>Returns: int</dt>
+        <dd>Visualization_Controller or Visualization_Hand</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getWorldMatrix"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getWorldMatrix</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the world space transformation matrix of the controller.</p>
+  <dl class="fields">
+    <dt>Returns: list of floats (32bit)</dt>
+        <dd>The 4 x 4 matrix consisting of 16 floats.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="handPoseStarted"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handPoseStarted</span>(<span class="sig-arg">poseId</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>SIGNAL is called when a hand pose is detected in Hand visualization 
+  mode.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>poseId</code></strong> (int) - Pose_Pointing, Pose_Picking, Pose_ThumbsUp or Pose_Fist</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="handPoseStopped"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handPoseStopped</span>(<span class="sig-arg">poseId</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>SIGNAL is called when a hand pose stops in Hand visualization 
+  mode.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>poseId</code></strong> (int) - Pose_Pointing, Pose_Picking, Pose_ThumbsUp or Pose_Fist</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="handRoleChanged"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handRoleChanged</span>(<span class="sig-arg">role</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>SIGNAL is called when the hand role has changed, after the hand model 
+  has been loaded.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>role</code></strong> (int) - Hand_Left, Hand_Right or Hand_Undefined</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="handTouchContinues"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handTouchContinues</span>(<span class="sig-arg">touchedNodeId</span>,
+        <span class="sig-arg">fingerId</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>SIGNAL is called when the finger continues touching the node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>touchedNodeId</code></strong> (unsigned int) - id of the touched scenegraph node.</li>
+        <li><strong class="pname"><code>fingerId</code></strong> (unsigned int) - Which finger touches the node.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="handTouchStarted"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handTouchStarted</span>(<span class="sig-arg">touchedNodeId</span>,
+        <span class="sig-arg">fingerId</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>SIGNAL is called when a finger of this controller's hand has touched a
+  node in the scene that was made interactable with 
+  setNodeInteractableInVR(node, True).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>touchedNodeId</code></strong> (unsigned int) - id of the touched scenegraph node. Create the node object with 
+          vrNodePtr(id).</li>
+        <li><strong class="pname"><code>fingerId</code></strong> (unsigned int) - Which finger touches the node. Value can be Finger_Thumb, 
+          Finger_Index, Finger_Middle, Finger_Ring, Finger_Pinky.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="handTouchStopped"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handTouchStopped</span>(<span class="sig-arg">touchedNodeId</span>,
+        <span class="sig-arg">fingerId</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>SIGNAL is called when the finger stops touching the node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>touchedNodeId</code></strong> (unsigned int) - id of the touched scenegraph node.</li>
+        <li><strong class="pname"><code>fingerId</code></strong> (unsigned int) - Which finger touched the node.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="handTriggerChanged"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">handTriggerChanged</span>(<span class="sig-arg">value</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>SIGNAL is called when the value of the hand trigger button (grip 
+  button) is changed.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> (float) - The hand trigger value in the range of 0.0 - 1.0.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isButton0Pressed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isButton0Pressed</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the pressed state of the X or A button.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>The button press state.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isButton0Touched"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isButton0Touched</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the touch state of the X or A button.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>The button touch state.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isButton1Pressed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isButton1Pressed</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the pressed state of the Y or B button.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>The button press state.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isButton1Touched"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isButton1Touched</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the touch state of the Y or B button.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>The button touch state.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isHandAnimationEnabled"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isHandAnimationEnabled</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get whether the finger joints are transfomed when the user pressed or 
+  touches buttons in Hand visualization mode. Default is 'on'.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>On (True), off (False)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isHandInteractionEnabled"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isHandInteractionEnabled</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get whether the interaction with Web engines and Touch sensors is 
+  enabled in Hand visualization mode. Default is 'on'.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>On (True), off (False)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isHandPoseActive"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isHandPoseActive</span>(<span class="sig-arg">poseId</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Return whether the user performs a specific hand pose.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>poseId</code></strong> (int) - Pose_Pointing, Pose_Picking, Pose_ThumbsUp or Pose_Fist</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isHandTouchPointVisualizationEnabled"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isHandTouchPointVisualizationEnabled</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Get whether the visualization of the touch point in Hand visualization
+  mode is enabled. Default is 'on'.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>On (True), off (False)</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isHandTriggerPressed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isHandTriggerPressed</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the pressed state of the hand trigger button (grip 
+  button).</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>The button press state.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isThumbRestTouched"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isThumbRestTouched</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the touch state of the thumb rest. IMPORTANT: this is not 
+  implemented anymore as of VRED 2022.1.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>The touch state.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isThumbstickPressed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isThumbstickPressed</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the pressed state of the thumbstick.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>The button press state.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isThumbstickTouched"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isThumbstickTouched</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the touch state of the thumbstick button.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>The button touch state.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isTriggerPressed"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isTriggerPressed</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the pressed state of the trigger button.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>The button press state.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isTriggerTouched"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isTriggerTouched</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the touch state of the trigger button.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>The button touch state.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isVisible"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isVisible</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets the visibility of the visualization (geometry or hands) of this 
+  controller. The default is 'not visible'.</p>
+  <dl class="fields">
+    <dt>Returns: bool</dt>
+        <dd>the visibility.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="pickNode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">pickNode</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Performs a selection along the picking axis of the controller and 
+  returns the nearest node along the picking ray.</p>
+  <dl class="fields">
+    <dt>Returns: vrNodePtr</dt>
+        <dd>The hit node</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="pickNodeEx"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">pickNodeEx</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Performs a selection along the picking axis of the controller and 
+  returns the nearest node along the picking ray.</p>
+  <dl class="fields">
+    <dt>Returns: tuple&lt;vrNodePtr, Pnt3f, Vec3f, Pnt2f&gt;</dt>
+        <dd>The hit node, position, normal, uv</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="pickNodeWithFinger"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">pickNodeWithFinger</span>(<span class="sig-arg">fingerId</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Performs a selection with a ray emenating from the finger tip and 
+  returns the nearest node along the picking ray.</p>
+  <p>This method can only be used in hand visualization mode.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>fingerId</code></strong> (unsigned int) - Finger to pick with. Value can be Finger_Thumb, Finger_Index, 
+          Finger_Middle, Finger_Ring, Finger_Pinky.</li>
+    </ul></dd>
+    <dt>Returns: tuple&lt;vrNodePtr, Pnt3f, Vec3f, Pnt2f&gt;</dt>
+        <dd>The hit node, position, normal, uv</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setCustomPickingDirection"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setCustomPickingDirection</span>(<span class="sig-arg">origin</span>,
+        <span class="sig-arg">direction</span>,
+        <span class="sig-arg">color</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets a custom axis for picking on this controller.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>origin</code></strong> (Pnt3f) - The origin of the picking ray.</li>
+        <li><strong class="pname"><code>direction</code></strong> (Vec3f) - The origin of the picking ray.</li>
+        <li><strong class="pname"><code>color</code></strong> (Vec3f) - The color of the picking ray visualization.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setHandAnimationEnabled"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setHandAnimationEnabled</span>(<span class="sig-arg">enabled</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Enables or disables transformation of finger joints when the user 
+  pressed or touches buttons in Hand visualization mode.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>enabled</code></strong> (bool) - On (True), off (False).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setHandInteractionEnabled"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setHandInteractionEnabled</span>(<span class="sig-arg">enabled</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Enables or disables the interaction with Web engines and Touch sensors
+  in Hand visualization mode.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>enabled</code></strong> (bool) - on (True), off (False).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setHandTouchPointVisualizationEnabled"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setHandTouchPointVisualizationEnabled</span>(<span class="sig-arg">enabled</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Enables or disables visualization of the touch point in Hand 
+  visualization mode.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>enabled</code></strong> (bool) - On (True), off (False).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setPickingAxis"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setPickingAxis</span>(<span class="sig-arg">axis</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the axis used for picking on this controller.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>axis</code></strong> (unsigned int) - The axis used for picking. Valid values are 0 for the X-Axis, 1 
+          for the Y-Axis, 2 for the Z-Axis and 3 for the custom pick 
+          direction</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setVisible"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setVisible</span>(<span class="sig-arg">visible</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the visibility of the visualization (geometry or hands) of this 
+  controller.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>visible</code></strong> (bool) - visibility state.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setVisualizationMode"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setVisualizationMode</span>(<span class="sig-arg">mode</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets how the controller should be visualized (controller geometry or 
+  hands).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>mode</code></strong> (int) - Visualization_Controller or Visualization_Hand.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="showPickingAxis"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">showPickingAxis</span>(<span class="sig-arg">on</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Shows the picking axis on this controller.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>on</code></strong> (bool) - on/off state.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="thumbRestIsTouched"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">thumbRestIsTouched</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>SIGNAL is emitted while the thumb rest is touched. IMPORTANT: this is 
+  not implemented anymore as of VRED 2022.1.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="thumbRestTouched"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">thumbRestTouched</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>SIGNAL is emitted when the thumb rest is touched. IMPORTANT: this is 
+  not implemented anymore as of VRED 2022.1.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="thumbRestUntouched"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">thumbRestUntouched</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>SIGNAL is emitted when the thumb rest is untouched. IMPORTANT: this is
+  not implemented anymore as of VRED 2022.1.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="thumbstickChanged"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">thumbstickChanged</span>(<span class="sig-arg">position</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>SIGNAL is called when the position on the thumbstick changed.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>position</code></strong> (tuple with 2 entries) - The position on the thumbstick.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="triggerChanged"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">triggerChanged</span>(<span class="sig-arg">value</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>SIGNAL is called when the value of the trigger is changed.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>value</code></strong> (float) - The trigger value in the range of 0.0 - 1.0.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="triggerHapticPulse"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">triggerHapticPulse</span>(<span class="sig-arg">axis</span>,
+        <span class="sig-arg">duration</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Triggers a haptic pulse on the controller.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>axis</code></strong> (unsigned int) - The axis to trigger the pulse on.</li>
+        <li><strong class="pname"><code>duration</code></strong> (unsigned int) - The duration of the pulse in microseconds.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="triggerVibration"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">triggerVibration</span>(<span class="sig-arg">frequency</span>,
+        <span class="sig-arg">amplitude</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Triggers a vibration on the controller. IMPORTANT: beginning with VRED
+  2022.1 OpenVR is used and the parameters won't have any effect. The 
+  function will generate a single haptic pulse regardless of it's 
+  parameters. The function triggerHapticPulse() can be used as an 
+  alternative as it maps directly to the OpenVR API.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>frequency</code></strong> (float) - The frequency of the vibration. Supported values are: 0.0 
+          (disabled), 0.5 and 1.0.</li>
+        <li><strong class="pname"><code>amplitude</code></strong> (float) - The amplitude of the vibration. Must be between 0.0 and 1.0.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >VRED Python API v1</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Tue Jun 20 01:13:00 2023
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

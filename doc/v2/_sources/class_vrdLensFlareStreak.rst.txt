@@ -1,0 +1,89 @@
+------------------
+vrdLensFlareStreak
+------------------
+
+
+.. _vredvrdLensFlareStreak:
+.. py:class:: vrdLensFlareStreak
+
+(Inherits :py:class:`vrdLensFlareFxElement`)
+
+This class is used for a streaking effect, like what you get when using an anamorphic lens. Use it for things such as street lamps at night, objects with stationary lights, or a light source that's partially obscured by an object, like a tree or building's edge. A short introduction can be found under     https://help.autodesk.com/view/VREDPRODUCTS/2020/ENU/?guid=VRED_Lights_About_Lens_Flares_and_Elements_html.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getOffset() → QVector2D<vredvrdLensFlareStreak.getOffset()>`
+    * :ref:`getThickness() → float<vredvrdLensFlareStreak.getThickness()>`
+    * :ref:`setOffset(offset) <vredvrdLensFlareStreak.setOffset(offset)>`
+    * :ref:`setThickness(thickness) <vredvrdLensFlareStreak.setThickness(thickness)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdLensFlareStreak.getOffset():
+.. py:method:: vrdLensFlareStreak.getOffset()
+
+    Get offset the streak effect from the center of the light source.
+
+
+
+
+    :return: Offset the streak effect from the center of the light source.
+    :rtype: QVector2D
+
+.. _vredvrdLensFlareStreak.getThickness():
+.. py:method:: vrdLensFlareStreak.getThickness()
+
+    Get the current used thickness of the effect.
+
+
+
+
+    :return: Thickness of the effect
+    :rtype: float
+
+.. _vredvrdLensFlareStreak.setOffset(offset):
+.. py:method:: vrdLensFlareStreak.setOffset(offset)
+
+    Use to offset the streak effect from the center of the light source. Negative values will move the streak to the left and below the light. Positive will move it to the right and above the light.
+
+
+
+    :param offset: New offset value
+    :type offset: QVector2D
+
+    
+    
+
+.. _vredvrdLensFlareStreak.setThickness(thickness):
+.. py:method:: vrdLensFlareStreak.setThickness(thickness)
+
+    Controls the thickness of the effect.
+
+
+
+    :param thickness: New thickness of the effect
+    :type thickness: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

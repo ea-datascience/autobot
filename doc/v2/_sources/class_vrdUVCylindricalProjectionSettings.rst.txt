@@ -1,0 +1,111 @@
+----------------------------------
+vrdUVCylindricalProjectionSettings
+----------------------------------
+
+
+.. _vredvrdUVCylindricalProjectionSettings:
+.. py:class:: vrdUVCylindricalProjectionSettings
+
+(Inherits :py:class:`vrdUVBaseProjectionSettings`)
+
+Class for cylindrical UV coordinate projection settings.
+
+Functions needed to setup a cylindrical projection:
+
+Set center of cylinder with :any:`vrdUVBaseProjectionSettings.setProjectionCenter(center) <vredvrdUVBaseProjectionSettings.setProjectionCenter(center)>`.
+
+Set rotation of cylinder with :any:`vrdUVBaseProjectionSettings.setProjectionRotation(rotation) <vredvrdUVBaseProjectionSettings.setProjectionRotation(rotation)>`.
+
+Set height and width of cylinder with :any:`vrdUVBaseProjectionSettings.setProjectionScale(scale) <vredvrdUVBaseProjectionSettings.setProjectionScale(scale)>`.
+
+Set how often the texture should wrap around the cylinder with :any:`vrdUVCylindricalProjectionSettings.setProjectionUAngle(uAngle) <vredvrdUVCylindricalProjectionSettings.setProjectionUAngle(uAngle)>`.
+
+Set an additional 2d rotation of the texture on the cylinder with     :any:`vrdUVCylindricalProjectionSettings.setCylindricRotation2D(angle) <vredvrdUVCylindricalProjectionSettings.setCylindricRotation2D(angle)>`.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getCylindricRotation2D() → float<vredvrdUVCylindricalProjectionSettings.getCylindricRotation2D()>`
+    * :ref:`getProjectionUAngle() → float<vredvrdUVCylindricalProjectionSettings.getProjectionUAngle()>`
+    * :ref:`print() <vredvrdUVCylindricalProjectionSettings.print()>`
+    * :ref:`setCylindricRotation2D(angle) <vredvrdUVCylindricalProjectionSettings.setCylindricRotation2D(angle)>`
+    * :ref:`setProjectionUAngle(uAngle) <vredvrdUVCylindricalProjectionSettings.setProjectionUAngle(uAngle)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdUVCylindricalProjectionSettings.getCylindricRotation2D():
+.. py:method:: vrdUVCylindricalProjectionSettings.getCylindricRotation2D()
+
+    Get additional 2d rotation of the texture on the cylinder.
+
+
+
+
+    :return: rotation angle in degrees
+    :rtype: float
+
+.. _vredvrdUVCylindricalProjectionSettings.getProjectionUAngle():
+.. py:method:: vrdUVCylindricalProjectionSettings.getProjectionUAngle()
+
+    
+
+
+
+
+    :return: Angle in degrees defining how often the texture wraps around the cylinder. See :any:`vrdUVCylindricalProjectionSettings.setProjectionUAngle(uAngle) <vredvrdUVCylindricalProjectionSettings.setProjectionUAngle(uAngle)>`.
+    :rtype: float
+
+.. _vredvrdUVCylindricalProjectionSettings.print():
+.. py:method:: vrdUVCylindricalProjectionSettings.print()
+
+    Debug print of settings.
+
+
+
+
+    
+    
+
+.. _vredvrdUVCylindricalProjectionSettings.setCylindricRotation2D(angle):
+.. py:method:: vrdUVCylindricalProjectionSettings.setCylindricRotation2D(angle)
+
+    Set an additional 2d rotation of the texture on the cylinder.
+
+
+
+    :param angle: Angle in degrees
+    :type angle: float
+
+    
+    
+
+.. _vredvrdUVCylindricalProjectionSettings.setProjectionUAngle(uAngle):
+.. py:method:: vrdUVCylindricalProjectionSettings.setProjectionUAngle(uAngle)
+
+    Use this angle value to set how often the texture should wrap around the cylinder. The angle value defines the segment on the cylinder onto which the texture is projected once, horizontally.
+
+    With 360 degrees, the texture wraps exactly once around the cylinder. With 180 degrees, the texture is projected two times, once onto each half of the cylinder, etc.
+
+    :param uAngle: Angle in degrees.
+    :type uAngle: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

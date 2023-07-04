@@ -1,0 +1,63 @@
+-------------------------
+vrdPositionConstraintNode
+-------------------------
+
+
+.. _vredvrdPositionConstraintNode:
+.. py:class:: vrdPositionConstraintNode
+
+(Inherits :py:class:`vrdConstraintNode`)
+
+This class gives access to a position constraint object in VRED. A position constraint will synchronize the position of a source and a target. If there are multiple sources, the position is calculated as the weighted average value of it.
+
+For managing constraints and code examples see     :any:`vrConstraintService <vredvrConstraintService>`.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getMaintainOffset() → bool<vredvrdPositionConstraintNode.getMaintainOffset()>`
+    * :ref:`setMaintainOffset(value) <vredvrdPositionConstraintNode.setMaintainOffset(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdPositionConstraintNode.getMaintainOffset():
+.. py:method:: vrdPositionConstraintNode.getMaintainOffset()
+
+    Returns if the constraint maintains the offset to its sources.
+
+
+
+
+    :return: True if constraint maintains the offset, False otherwise.
+    :rtype: bool
+
+.. _vredvrdPositionConstraintNode.setMaintainOffset(value):
+.. py:method:: vrdPositionConstraintNode.setMaintainOffset(value)
+
+    Sets if the constraint should maintain the offset to the sources when creating it.
+
+
+
+    :param value: True if the offset shall be maintained, False otherwise.
+    :type value: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

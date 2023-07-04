@@ -1,0 +1,7 @@
+collectVisibleGeometries
+========================
+
+.. literalinclude:: ../../python_examples/snippets/collectVisibleGeometries.py
+   :language: python
+   :linenos:
+   :caption: snippets/collectVisibleGeometries.py

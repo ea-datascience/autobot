@@ -1,0 +1,7 @@
+Movie player demo
+=================
+
+.. literalinclude:: ../python_examples/movie.py
+   :language: python
+   :linenos:
+   :caption: movie.py

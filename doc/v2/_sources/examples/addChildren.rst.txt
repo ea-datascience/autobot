@@ -1,0 +1,7 @@
+Add child nodes
+===============
+
+.. literalinclude:: ../python_examples/addChildren.py
+   :language: python
+   :linenos:
+   :caption: addChildren.py

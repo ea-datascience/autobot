@@ -1,0 +1,14 @@
+Set the default teleport to a virtual button.
+=============================================
+
+This example shows how the default teleport can be remapped to a previously defined virtual touchpad button of the
+VR controller. Further information of how virtual buttons can be added to the touchpad can be found in the
+":ref:`virtual-controller-buttons`" example. After the touchpad is set up, the virtual buttons can be used for remapping.
+
+When this example is executed, the default teleport will work as usual but only the lower quarter of the touchpad
+will actually activate and execute the teleport. This way, other parts of the touchpad can be mapped to other interactions.
+
+.. literalinclude:: ../../python_examples/vr/setTeleportToVirtualButton.py
+   :language: python
+   :linenos:
+   :caption: vr/setTeleportToVirtualButton.py

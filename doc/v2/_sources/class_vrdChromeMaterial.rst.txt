@@ -1,0 +1,424 @@
+-----------------
+vrdChromeMaterial
+-----------------
+
+
+.. _vredvrdChromeMaterial:
+.. py:class:: vrdChromeMaterial
+
+(Inherits :py:class:`vrdBRDFMaterial`)
+
+This class is used to handle all chrome material properties.
+
+
+
+    .. _vredvrdChromeMaterial.MetalType:
+    .. py:class:: MetalType
+
+
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.HighlyReflective:
+            .. py:data:: HighlyReflective
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Aluminium:
+            .. py:data:: Aluminium
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.AmorphousCarbon:
+            .. py:data:: AmorphousCarbon
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Silver:
+            .. py:data:: Silver
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Gold:
+            .. py:data:: Gold
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Cobalt:
+            .. py:data:: Cobalt
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Copper:
+            .. py:data:: Copper
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Chromium:
+            .. py:data:: Chromium
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Lithium:
+            .. py:data:: Lithium
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Mercury:
+            .. py:data:: Mercury
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Nickel:
+            .. py:data:: Nickel
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Potassium:
+            .. py:data:: Potassium
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Platinum:
+            .. py:data:: Platinum
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Iridium:
+            .. py:data:: Iridium
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Silicon:
+            .. py:data:: Silicon
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.AmorphousSilicon:
+            .. py:data:: AmorphousSilicon
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Sodium:
+            .. py:data:: Sodium
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Rhodium:
+            .. py:data:: Rhodium
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Tungsten:
+            .. py:data:: Tungsten
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Vanadium:
+            .. py:data:: Vanadium
+
+
+            
+
+            .. _vredvrdChromeMaterial.MetalType.Iron:
+            .. py:data:: Iron
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBumpTexture() → vrdBumpTexture<vredvrdChromeMaterial.getBumpTexture()>`
+    * :ref:`getContrast() → float<vredvrdChromeMaterial.getContrast()>`
+    * :ref:`getDisplacementTexture() → vrdDisplacementTexture<vredvrdChromeMaterial.getDisplacementTexture()>`
+    * :ref:`getIncandescence() → vrdIncandescence<vredvrdChromeMaterial.getIncandescence()>`
+    * :ref:`getMetalType() → vrdChromeMaterial.MetalType<vredvrdChromeMaterial.getMetalType()>`
+    * :ref:`getReflectionColor() → QVector3D<vredvrdChromeMaterial.getReflectionColor()>`
+    * :ref:`getReflectionColorSpectrum() → vrSpectrum<vredvrdChromeMaterial.getReflectionColorSpectrum()>`
+    * :ref:`getRoughness() → float<vredvrdChromeMaterial.getRoughness()>`
+    * :ref:`getRoughnessTexture() → vrdRoughnessTexture<vredvrdChromeMaterial.getRoughnessTexture()>`
+    * :ref:`getSaturation() → float<vredvrdChromeMaterial.getSaturation()>`
+    * :ref:`getSmear() → float<vredvrdChromeMaterial.getSmear()>`
+    * :ref:`getUseRoughness() → bool<vredvrdChromeMaterial.getUseRoughness()>`
+    * :ref:`setContrast(contrast) <vredvrdChromeMaterial.setContrast(contrast)>`
+    * :ref:`setMetalType(type) <vredvrdChromeMaterial.setMetalType(type)>`
+    * :ref:`setReflectionColor(color) <vredvrdChromeMaterial.setReflectionColor(color)>`
+    * :ref:`setReflectionColorSpectrum(value) <vredvrdChromeMaterial.setReflectionColorSpectrum(value)>`
+    * :ref:`setRoughness(roughness) <vredvrdChromeMaterial.setRoughness(roughness)>`
+    * :ref:`setSaturation(saturation) <vredvrdChromeMaterial.setSaturation(saturation)>`
+    * :ref:`setSmear(smear) <vredvrdChromeMaterial.setSmear(smear)>`
+    * :ref:`setUseRoughness(use) <vredvrdChromeMaterial.setUseRoughness(use)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdChromeMaterial.getBumpTexture():
+.. py:method:: vrdChromeMaterial.getBumpTexture()
+
+    Gets access to all properties of         :any:`vrdBumpTexture <vredvrdBumpTexture>`.
+
+
+
+
+    :return: An :any:`vrdBumpTexture <vredvrdBumpTexture>` object, to read and write access of alls properties.
+    :rtype: vrdBumpTexture
+
+.. _vredvrdChromeMaterial.getContrast():
+.. py:method:: vrdChromeMaterial.getContrast()
+
+    Gets the current used the sharpness of reflections.
+
+
+
+
+    :return: Current value of the sharpness of reflections.
+    :rtype: float
+
+.. _vredvrdChromeMaterial.getDisplacementTexture():
+.. py:method:: vrdChromeMaterial.getDisplacementTexture()
+
+    Gets access to all properties of         :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>`.
+
+
+
+
+    :return: An :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>` object, to read and write access of alls properties.
+    :rtype: vrdDisplacementTexture
+
+.. _vredvrdChromeMaterial.getIncandescence():
+.. py:method:: vrdChromeMaterial.getIncandescence()
+
+    Gets access to all properties of         :any:`vrdIncandescence <vredvrdIncandescence>`.
+
+
+
+
+    :return: An :any:`vrdIncandescence <vredvrdIncandescence>` object, to read and write access of alls properties.
+    :rtype: vrdIncandescence
+
+.. _vredvrdChromeMaterial.getMetalType():
+.. py:method:: vrdChromeMaterial.getMetalType()
+
+    Gets the used type of used metal.
+
+
+
+
+    :return: The used type of used metal.
+    :rtype: :ref:`vrdChromeMaterial.MetalType <vredvrdChromeMaterial.MetalType>`
+
+.. _vredvrdChromeMaterial.getReflectionColor():
+.. py:method:: vrdChromeMaterial.getReflectionColor()
+
+    Get the currently used chrome reflection color.
+
+
+
+
+    :return: The currently used chrome reflection color.
+    :rtype: QVector3D
+
+.. _vredvrdChromeMaterial.getReflectionColorSpectrum():
+.. py:method:: vrdChromeMaterial.getReflectionColorSpectrum()
+
+    Gets the reflection color spectrum.
+
+
+
+
+    :return: The current used spectrum for reflection color.
+    :rtype: vrSpectrum
+
+.. _vredvrdChromeMaterial.getRoughness():
+.. py:method:: vrdChromeMaterial.getRoughness()
+
+    
+
+
+
+
+    :return: The current value of roughness for this material.
+    :rtype: float
+
+.. _vredvrdChromeMaterial.getRoughnessTexture():
+.. py:method:: vrdChromeMaterial.getRoughnessTexture()
+
+    Gets access to all properties of         :any:`vrdRoughnessTexture <vredvrdRoughnessTexture>`.
+
+
+
+
+    :return: An :any:`vrdRoughnessTexture <vredvrdRoughnessTexture>` object, to read and write access of alls properties.
+    :rtype: vrdRoughnessTexture
+
+.. _vredvrdChromeMaterial.getSaturation():
+.. py:method:: vrdChromeMaterial.getSaturation()
+
+    Gets the current value of saturation.
+
+
+
+
+    :return: The current value of saturation.
+    :rtype: float
+
+.. _vredvrdChromeMaterial.getSmear():
+.. py:method:: vrdChromeMaterial.getSmear()
+
+    Gets the current used the reflection's blur amount.
+
+
+
+
+    :return: The current used reflection's blur amount.
+    :rtype: float
+
+.. _vredvrdChromeMaterial.getUseRoughness():
+.. py:method:: vrdChromeMaterial.getUseRoughness()
+
+    Gets if glossy reflections controlled by roughness value are enabled for this material.
+
+
+
+
+    :return: The current enable or disable roughness state.
+    :rtype: bool
+
+.. _vredvrdChromeMaterial.setContrast(contrast):
+.. py:method:: vrdChromeMaterial.setContrast(contrast)
+
+    Sets the sharpness of reflections. Increase contrast with multiple reflections to draw out more detail.
+
+
+
+    :param contrast: The sharpness of reflections.
+    :type contrast: float
+
+    
+    
+
+.. _vredvrdChromeMaterial.setMetalType(type):
+.. py:method:: vrdChromeMaterial.setMetalType(type)
+
+    Sets the metal types used, changing the characteristics of the metal.
+
+
+
+    :param type: The new type of used metal. See MetalType for all supported types.
+    :type type: :ref:`vrdChromeMaterial.MetalType <vredvrdChromeMaterial.MetalType>`
+
+    
+    
+
+.. _vredvrdChromeMaterial.setReflectionColor(color):
+.. py:method:: vrdChromeMaterial.setReflectionColor(color)
+
+    Sets the chrome reflection color. When the chrome reflection is colored, reflected objects are also colored.
+
+
+
+    :param color: New chrome reflection color.
+    :type color: QVector3D
+
+    
+    
+
+.. _vredvrdChromeMaterial.setReflectionColorSpectrum(value):
+.. py:method:: vrdChromeMaterial.setReflectionColorSpectrum(value)
+
+    Sets the reflection color spectrum.
+
+
+
+    :param value: New spectrum for reflection color
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdChromeMaterial.setRoughness(roughness):
+.. py:method:: vrdChromeMaterial.setRoughness(roughness)
+
+    Controls the sharpness of the glossy reflections. The higher the value, the rougher the microscopic structure of the surface.
+
+    The roughness value is used when Use Roughness is enabled and no roughness texture is active. 
+
+    :param roughness: New value of roughness for this material.
+    :type roughness: float
+
+    
+    
+
+.. _vredvrdChromeMaterial.setSaturation(saturation):
+.. py:method:: vrdChromeMaterial.setSaturation(saturation)
+
+    Affects the specular reflection. The higher the saturation, the less the specular reflection.
+
+
+
+    :param saturation: Set the current value of saturation.
+    :type saturation: float
+
+    
+    
+
+.. _vredvrdChromeMaterial.setSmear(smear):
+.. py:method:: vrdChromeMaterial.setSmear(smear)
+
+    Sets the reflection's blur amount. Only supported in OpenGL rendering mode.
+
+
+
+    :param smear: The reflection's blur amount.
+    :type smear: float
+
+    
+    
+
+.. _vredvrdChromeMaterial.setUseRoughness(use):
+.. py:method:: vrdChromeMaterial.setUseRoughness(use)
+
+    Enable or disable the use glossy reflections controlled by roughness value for this material. When disabled, specular reflections are used.
+
+
+
+    :param use: Set the new enable or disable state.
+    :type use: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

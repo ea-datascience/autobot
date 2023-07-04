@@ -1,0 +1,9 @@
+Print out all available device interactions 
+===========================================
+
+This examples shows how to get all interactions and prints out their name
+
+.. literalinclude:: ../../python_examples/vr/printInteractions.py
+   :language: python
+   :linenos:
+   :caption: vr/printInteractions.py

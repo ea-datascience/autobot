@@ -1,0 +1,7 @@
+Move object with keys
+=====================
+
+.. literalinclude:: ../python_examples/move.py
+   :language: python
+   :linenos:
+   :caption: move.py

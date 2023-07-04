@@ -1,0 +1,34 @@
+--------------
+vrdSurfaceNode
+--------------
+
+
+.. _vredvrdSurfaceNode:
+.. py:class:: vrdSurfaceNode
+
+(Inherits :py:class:`vrdGeometryNode`)
+
+This is currently a placeholder interface with no functionality.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

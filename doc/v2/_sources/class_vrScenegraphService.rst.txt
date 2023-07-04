@@ -1,0 +1,1223 @@
+-------------------
+vrScenegraphService
+-------------------
+
+
+.. _vredvrScenegraphService:
+.. py:class:: vrScenegraphService
+
+(Inherits :py:class:`vrBaseService`)
+
+Interface to access the scenegraph in VRED.
+
+Functions that create new nodes add the new nodes to the graph.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`checkAllowance(node, actions) → List[bool]<vredvrScenegraphService.checkAllowance(node, actions)>`
+    * :ref:`clearSelection() <vredvrScenegraphService.clearSelection()>`
+    * :ref:`cloneNodes(nodes) → List[vrdNode]<vredvrScenegraphService.cloneNodes(nodes)>`
+    * :ref:`cloneNodesMirrorAxis(nodes, axis) → List[vrdNode]<vredvrScenegraphService.cloneNodesMirrorAxis(nodes, axis)>`
+    * :ref:`convertNode(node, type) → vrdNode<vredvrScenegraphService.convertNode(node, type)>`
+    * :ref:`convertToMesh(nodes) <vredvrScenegraphService.convertToMesh(nodes)>`
+    * :ref:`copyAnimations(node) <vredvrScenegraphService.copyAnimations(node)>`
+    * :ref:`copyNodes(nodes) <vredvrScenegraphService.copyNodes(nodes)>`
+    * :ref:`copyTransformations(nodes) <vredvrScenegraphService.copyTransformations(nodes)>`
+    * :ref:`copyTransformVariants(node) <vredvrScenegraphService.copyTransformVariants(node)>`
+    * :ref:`copyUVs(node) <vredvrScenegraphService.copyUVs(node)>`
+    * :ref:`createNode(type, parent, name, forceUniqueName) → vrdNode<vredvrScenegraphService.createNode(type, parent, name, forceUniqueName)>`
+    * :ref:`createShellFromSurfaces(nodes) → vrdNode<vredvrScenegraphService.createShellFromSurfaces(nodes)>`
+    * :ref:`createSwitchFromNodes(nodes, parent, index) → vrdNode<vredvrScenegraphService.createSwitchFromNodes(nodes, parent, index)>`
+    * :ref:`cutNodes(nodes) <vredvrScenegraphService.cutNodes(nodes)>`
+    * :ref:`deleteNodes(nodes, keepChildren) <vredvrScenegraphService.deleteNodes(nodes, keepChildren)>`
+    * :ref:`duplicateNodes(nodes, option) → List[vrdNode]<vredvrScenegraphService.duplicateNodes(nodes, option)>`
+    * :ref:`duplicateNodesMirrorAxis(nodes, flushTransform, axis) → List[vrdNode]<vredvrScenegraphService.duplicateNodesMirrorAxis(nodes, flushTransform, axis)>`
+    * :ref:`getAllNodes(root, options) → List[vrdNode]<vredvrScenegraphService.getAllNodes(root, options)>`
+    * :ref:`getEnvironmentGeometrySwitch() → vrdSwitchNode<vredvrScenegraphService.getEnvironmentGeometrySwitch()>`
+    * :ref:`getInternalRootNode() → vrdNode<vredvrScenegraphService.getInternalRootNode()>`
+    * :ref:`getLastHiddenNodes() → List[vrdNode]<vredvrScenegraphService.getLastHiddenNodes()>`
+    * :ref:`getLiveSearchEnabled() → bool<vredvrScenegraphService.getLiveSearchEnabled()>`
+    * :ref:`getMirroredNodes(node) → List[vrdNode]<vredvrScenegraphService.getMirroredNodes(node)>`
+    * :ref:`getNodeInfo(nodes) → vrdNodeInfo<vredvrScenegraphService.getNodeInfo(nodes)>`
+    * :ref:`getNodesInClipboard() → List[vrdNode]<vredvrScenegraphService.getNodesInClipboard()>`
+    * :ref:`getNodesWithAllTags(tags, root) → List[vrdNode]<vredvrScenegraphService.getNodesWithAllTags(tags, root)>`
+    * :ref:`getNodesWithAnyTag(tags, root) → List[vrdNode]<vredvrScenegraphService.getNodesWithAnyTag(tags, root)>`
+    * :ref:`getRootNode() → vrdNode<vredvrScenegraphService.getRootNode()>`
+    * :ref:`getSelectedNode() → vrdNode<vredvrScenegraphService.getSelectedNode()>`
+    * :ref:`getSelectedNodes() → List[vrdNode]<vredvrScenegraphService.getSelectedNodes()>`
+    * :ref:`getSelectedRootNodes(sorted) → List[vrdNode]<vredvrScenegraphService.getSelectedRootNodes(sorted)>`
+    * :ref:`getSelectedSubtreeNodes() → List[vrdNode]<vredvrScenegraphService.getSelectedSubtreeNodes()>`
+    * :ref:`getShowComponents() → bool<vredvrScenegraphService.getShowComponents()>`
+    * :ref:`getSuperRootNode() → vrdNode<vredvrScenegraphService.getSuperRootNode()>`
+    * :ref:`getSyncShowHide() → bool<vredvrScenegraphService.getSyncShowHide()>`
+    * :ref:`getTransformableCloneRootEnabled() → bool<vredvrScenegraphService.getTransformableCloneRootEnabled()>`
+    * :ref:`getTransformRootNode() → vrdNode<vredvrScenegraphService.getTransformRootNode()>`
+    * :ref:`getTreeInfo() → List[integer]<vredvrScenegraphService.getTreeInfo()>`
+    * :ref:`getTreeItemInfo(node) → vrdSceneItemInfo<vredvrScenegraphService.getTreeItemInfo(node)>`
+    * :ref:`getTreeItemInfoFlags(node) → vrdSceneItemInfo.Flags<vredvrScenegraphService.getTreeItemInfoFlags(node)>`
+    * :ref:`groupByMaterial() <vredvrScenegraphService.groupByMaterial()>`
+    * :ref:`groupNodes(nodes) → vrdNode<vredvrScenegraphService.groupNodes(nodes)>`
+    * :ref:`growComponentSelection(componentNodes) <vredvrScenegraphService.growComponentSelection(componentNodes)>`
+    * :ref:`hasLastHiddenNodes() → bool<vredvrScenegraphService.hasLastHiddenNodes()>`
+    * :ref:`invertGeometrySelection() <vredvrScenegraphService.invertGeometrySelection()>`
+    * :ref:`invertGeometrySelectionInGroup(geometryNodes) <vredvrScenegraphService.invertGeometrySelectionInGroup(geometryNodes)>`
+    * :ref:`isAllowed(node, action) → bool<vredvrScenegraphService.isAllowed(node, action)>`
+    * :ref:`isIsolateViewActive(renderWindowIndex) → bool<vredvrScenegraphService.isIsolateViewActive(renderWindowIndex)>`
+    * :ref:`isSceneEmpty() → bool<vredvrScenegraphService.isSceneEmpty()>`
+    * :ref:`loadAnimationsToNodes(fileName, nodes) <vredvrScenegraphService.loadAnimationsToNodes(fileName, nodes)>`
+    * :ref:`pasteAnimations(nodes, pasteAsClone) <vredvrScenegraphService.pasteAnimations(nodes, pasteAsClone)>`
+    * :ref:`pasteNodes(targetNodes, keepWorldTransformation, pasteAsClone) <vredvrScenegraphService.pasteNodes(targetNodes, keepWorldTransformation, pasteAsClone)>`
+    * :ref:`pasteTransformation(targetNodes, translation, rotation, scale, rotationPivot, scalePivot) <vredvrScenegraphService.pasteTransformation(targetNodes, translation, rotation, scale, rotationPivot, scalePivot)>`
+    * :ref:`pasteTransformationAsVariant(targetNodes) <vredvrScenegraphService.pasteTransformationAsVariant(targetNodes)>`
+    * :ref:`pasteTransformVariants(nodes) <vredvrScenegraphService.pasteTransformVariants(nodes)>`
+    * :ref:`pasteUVs(nodes) <vredvrScenegraphService.pasteUVs(nodes)>`
+    * :ref:`resetIsolateView(renderWindowIndex) <vredvrScenegraphService.resetIsolateView(renderWindowIndex)>`
+    * :ref:`selectAllClones(nodes) <vredvrScenegraphService.selectAllClones(nodes)>`
+    * :ref:`selectAllInSameHierarchyLevel(node) <vredvrScenegraphService.selectAllInSameHierarchyLevel(node)>`
+    * :ref:`selectAllTransformableClones(nodes) <vredvrScenegraphService.selectAllTransformableClones(nodes)>`
+    * :ref:`selectAllWithMaterials(materials) <vredvrScenegraphService.selectAllWithMaterials(materials)>`
+    * :ref:`selectCommonParent(nodes) <vredvrScenegraphService.selectCommonParent(nodes)>`
+    * :ref:`selectTopLevel() <vredvrScenegraphService.selectTopLevel()>`
+    * :ref:`setIsolateView(nodes, renderWindowIndex) <vredvrScenegraphService.setIsolateView(nodes, renderWindowIndex)>`
+    * :ref:`setLiveSearchEnabled(value) <vredvrScenegraphService.setLiveSearchEnabled(value)>`
+    * :ref:`setNodeVisibility(nodes, visible, recursive) <vredvrScenegraphService.setNodeVisibility(nodes, visible, recursive)>`
+    * :ref:`setSelection(nodes) <vredvrScenegraphService.setSelection(nodes)>`
+    * :ref:`setShowComponents(value) <vredvrScenegraphService.setShowComponents(value)>`
+    * :ref:`setSwitchChoiceByAllTags(switchNode, tags) → bool<vredvrScenegraphService.setSwitchChoiceByAllTags(switchNode, tags)>`
+    * :ref:`setSwitchChoiceByAnyTag(switchNode, tags) → bool<vredvrScenegraphService.setSwitchChoiceByAnyTag(switchNode, tags)>`
+    * :ref:`setSyncShowHide(value) <vredvrScenegraphService.setSyncShowHide(value)>`
+    * :ref:`setTransformableCloneRootEnabled(value) <vredvrScenegraphService.setTransformableCloneRootEnabled(value)>`
+    * :ref:`shrinkComponentSelection(componentNodes) <vredvrScenegraphService.shrinkComponentSelection(componentNodes)>`
+
+Signals:
+    * :ref:`editSelected() <vredvrScenegraphService.editSelected()>`
+    * :ref:`isolateViewChanged(renderWindowIndex) <vredvrScenegraphService.isolateViewChanged(renderWindowIndex)>`
+    * :ref:`nodeIdChanged(oldId, newId) <vredvrScenegraphService.nodeIdChanged(oldId, newId)>`
+    * :ref:`scenegraphChanged(changes) <vredvrScenegraphService.scenegraphChanged(changes)>`
+    * :ref:`scrollToNode(node) <vredvrScenegraphService.scrollToNode(node)>`
+    * :ref:`scrollToSelected() <vredvrScenegraphService.scrollToSelected()>`
+    * :ref:`selectionChanged(selectedNodes) <vredvrScenegraphService.selectionChanged(selectedNodes)>`
+
+
+Functions
+=========
+
+
+.. _vredvrScenegraphService.checkAllowance(node, actions):
+.. py:method:: vrScenegraphService.checkAllowance(node, actions)
+
+    Check if operations are allowed on a given node.
+
+
+
+    :param node: The node to check
+    :type node: vrdNode
+
+    :param actions: A list of actions
+    :type actions: List[:ref:`vrScenegraphTypes.Action <vredvrScenegraphTypes.Action>`]
+
+    :return: A list with the result for each action
+    :rtype: List[bool]
+
+.. _vredvrScenegraphService.clearSelection():
+.. py:method:: vrScenegraphService.clearSelection()
+
+    Sets an empty selection.
+
+
+
+
+    
+    
+
+.. _vredvrScenegraphService.cloneNodes(nodes):
+.. py:method:: vrScenegraphService.cloneNodes(nodes)
+
+    Clones the given nodes.
+
+
+
+    :param nodes: The nodes to be cloned
+    :type nodes: List[vrdNode]
+
+    :return: The cloned nodes. They are located at the parents of the input nodes.
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.cloneNodesMirrorAxis(nodes, axis):
+.. py:method:: vrScenegraphService.cloneNodesMirrorAxis(nodes, axis)
+
+    Clones the given nodes and mirrors them at the given axis.
+
+
+
+    :param nodes: The nodes to be cloned
+    :type nodes: List[vrdNode]
+
+    :param axis: The mirror axis
+    :type axis: :ref:`vrScenegraphTypes.MirrorMode <vredvrScenegraphTypes.MirrorMode>`
+
+    :return: The cloned nodes. They are located at the parents of the input nodes.
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.convertNode(node, type):
+.. py:method:: vrScenegraphService.convertNode(node, type)
+
+    Tries to convert the given node into another type.
+
+
+
+    :param node: The node to be converted
+    :type node: vrdNode
+
+    :param type: The target type
+    :type type: :ref:`vrScenegraphTypes.NodeType <vredvrScenegraphTypes.NodeType>`
+
+    :return: The converted node
+    :rtype: vrdNode
+
+.. _vredvrScenegraphService.convertToMesh(nodes):
+.. py:method:: vrScenegraphService.convertToMesh(nodes)
+
+    Removes all NURBS and converts shell and surfaces nodes to meshes.
+
+
+
+    :param nodes: The root nodes of the graphs to be processed. Shells and surfaces in the graphs are converted.
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.copyAnimations(node):
+.. py:method:: vrScenegraphService.copyAnimations(node)
+
+    Copy all animations in the given node into the clipboard.
+
+
+
+    :param node: The node to be copied
+    :type node: vrdNode
+
+    
+    
+
+.. _vredvrScenegraphService.copyNodes(nodes):
+.. py:method:: vrScenegraphService.copyNodes(nodes)
+
+    Copy the given nodes into the clipboard.
+
+
+
+    :param nodes: The nodes to be copied
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.copyTransformations(nodes):
+.. py:method:: vrScenegraphService.copyTransformations(nodes)
+
+    Copy the transformation of the given nodes into the clipboard.
+
+
+
+    :param nodes: The nodes to be copied
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.copyTransformVariants(node):
+.. py:method:: vrScenegraphService.copyTransformVariants(node)
+
+    Copy all transform variants in the given nodes into the clipboard.
+
+
+
+    :param node: The node to be copied
+    :type node: vrdNode
+
+    
+    
+
+.. _vredvrScenegraphService.copyUVs(node):
+.. py:method:: vrScenegraphService.copyUVs(node)
+
+    Copy all UVs in the given nodes into the clipboard.
+
+
+
+    :param node: The node to be copied
+    :type node: vrdNode
+
+    
+    
+
+.. _vredvrScenegraphService.createNode(type, parent, name, forceUniqueName):
+.. py:method:: vrScenegraphService.createNode(type, parent=vrdNode(), name="", forceUniqueName=True)
+
+    Creates a new node with the given type.
+
+
+
+    :param type: The node type
+    :type type: :ref:`vrScenegraphTypes.NodeType <vredvrScenegraphTypes.NodeType>`
+
+    :param parent: The parent node of the newly created node. By default the scenegraph root is used.
+    :type parent: vrdNode
+
+    :param name: A name for the new node. If empty, name is created from type.
+    :type name: string
+
+    :param forceUniqueName: Forces the name of the new node to be unique
+    :type forceUniqueName: bool
+
+    :return: The new node
+    :rtype: vrdNode
+
+.. _vredvrScenegraphService.createShellFromSurfaces(nodes):
+.. py:method:: vrScenegraphService.createShellFromSurfaces(nodes)
+
+    Creates a new shell from the given surfaces.
+
+
+
+    :param nodes: The surfaces to be combined
+    :type nodes: List[vrdNode]
+
+    :return: The created shell. It is located at the common parent
+    :rtype: vrdNode
+
+.. _vredvrScenegraphService.createSwitchFromNodes(nodes, parent, index):
+.. py:method:: vrScenegraphService.createSwitchFromNodes(nodes, parent, index)
+
+    Creates a new switch from the given nodes.
+
+
+
+    :param nodes: The nodes to be moved into the switch.
+    :type nodes: List[vrdNode]
+
+    :param parent: The node under which the switch should be located.
+    :type parent: vrdNode
+
+    :param index: The child index at which the switch will be inserted.
+    :type index: integer
+
+    :return: The created switch.
+    :rtype: vrdNode
+
+.. _vredvrScenegraphService.cutNodes(nodes):
+.. py:method:: vrScenegraphService.cutNodes(nodes)
+
+    Copy the given nodes into the clipboard and remove them from the scenegraph.
+
+
+
+    :param nodes: The nodes to be removed
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.deleteNodes(nodes, keepChildren):
+.. py:method:: vrScenegraphService.deleteNodes(nodes, keepChildren=False)
+
+    Deletes the given nodes.
+
+
+
+    :param nodes: The nodes to be deleted
+    :type nodes: List[vrdNode]
+
+    :param keepChildren: If true, the children of the given nodes will not be removed
+    :type keepChildren: bool
+
+    
+    
+
+.. _vredvrScenegraphService.duplicateNodes(nodes, option):
+.. py:method:: vrScenegraphService.duplicateNodes(nodes, option=vrScenegraphTypes.DuplicateKeepLocalClones)
+
+    Duplicates the given nodes.
+
+
+
+    :param nodes: The nodes to be duplicated
+    :type nodes: List[vrdNode]
+
+    :param option: Defines how to handle clones inside the duplicated tree
+    :type option: :ref:`vrScenegraphTypes.DuplicateOption <vredvrScenegraphTypes.DuplicateOption>`
+
+    :return: The duplicated nodes. They are located at the parents of the input nodes.
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.duplicateNodesMirrorAxis(nodes, flushTransform, axis):
+.. py:method:: vrScenegraphService.duplicateNodesMirrorAxis(nodes, flushTransform, axis)
+
+    Duplicates the given nodes and mirrors them at the given axis.
+
+
+
+    :param nodes: The nodes to be duplicated
+    :type nodes: List[vrdNode]
+
+    :param flushTransform: Flush Transformation
+    :type flushTransform: bool
+
+    :param axis: The mirror axis
+    :type axis: :ref:`vrScenegraphTypes.MirrorMode <vredvrScenegraphTypes.MirrorMode>`
+
+    :return: The duplicated nodes. They are located at the parents of the input nodes.
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.getAllNodes(root, options):
+.. py:method:: vrScenegraphService.getAllNodes(root=vrdNode(), options=vrdFindOptions())
+
+    Get all nodes in the scene graph or in a given sub graph.
+
+
+
+    :param root: The graph to search. If empty, the whole scene graph is searched
+    :type root: vrdNode
+
+    :param options: Find options. By default, components are skipped
+    :type options: vrdFindOptions
+
+    :return: All nodes in the graph
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.getEnvironmentGeometrySwitch():
+.. py:method:: vrScenegraphService.getEnvironmentGeometrySwitch()
+
+    Get the default environment geometry switch.
+
+
+
+
+    :return: The environment geometry switch
+    :rtype: vrdSwitchNode
+
+.. _vredvrScenegraphService.getInternalRootNode():
+.. py:method:: vrScenegraphService.getInternalRootNode()
+
+    
+
+
+
+
+    :return: The internal root node of the scene.
+    :rtype: vrdNode
+
+.. _vredvrScenegraphService.getLastHiddenNodes():
+.. py:method:: vrScenegraphService.getLastHiddenNodes()
+
+    
+
+
+
+
+    :return: The last hidden nodes.
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.getLiveSearchEnabled():
+.. py:method:: vrScenegraphService.getLiveSearchEnabled()
+
+    
+
+
+
+
+    :return: True, if live search is enabled
+    :rtype: bool
+
+.. _vredvrScenegraphService.getMirroredNodes(node):
+.. py:method:: vrScenegraphService.getMirroredNodes(node=vrdNode())
+
+    Get all nodes having a mirror transformation.
+
+
+
+    :param node: The tree to be searched. By default search the whole scene graph
+    :type node: vrdNode
+
+    :return: A list of all mirrored nodes
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.getNodeInfo(nodes):
+.. py:method:: vrScenegraphService.getNodeInfo(nodes)
+
+    Get statistical information for the given nodes.
+
+
+
+    :param nodes: The nodes to be queried
+    :type nodes: List[vrdNode]
+
+    :return: a :any:`vrdNodeInfo <vredvrdNodeInfo>` object containing the information
+    :rtype: vrdNodeInfo
+
+.. _vredvrScenegraphService.getNodesInClipboard():
+.. py:method:: vrScenegraphService.getNodesInClipboard()
+
+    
+
+
+
+
+    :return: The nodes that are in the clipboard.
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.getNodesWithAllTags(tags, root):
+.. py:method:: vrScenegraphService.getNodesWithAllTags(tags, root=vrdNode())
+
+    Get the nodes that have all the given tags.
+
+
+
+    :param tags: The set of tags to search for.
+    :type tags: List[string]
+
+    :param root: The node which child tree is searched.
+    :type root: vrdNode
+
+    :return: The list of nodes.
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.getNodesWithAnyTag(tags, root):
+.. py:method:: vrScenegraphService.getNodesWithAnyTag(tags, root=vrdNode())
+
+    Get the nodes that have any of the given tags.
+
+
+
+    :param tags: The set of tags to search for.
+    :type tags: List[string]
+
+    :param root: The node which child tree is searched.
+    :type root: vrdNode
+
+    :return: The list of nodes.
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.getRootNode():
+.. py:method:: vrScenegraphService.getRootNode()
+
+    
+
+
+
+
+    :return: The root node of the scene graph
+    :rtype: vrdNode
+
+.. _vredvrScenegraphService.getSelectedNode():
+.. py:method:: vrScenegraphService.getSelectedNode()
+
+    
+
+
+
+
+    :return: Returns the last node in the list of selected nodes. This is the node that was selected most recently.
+    :rtype: vrdNode
+
+.. _vredvrScenegraphService.getSelectedNodes():
+.. py:method:: vrScenegraphService.getSelectedNodes()
+
+    
+
+
+
+
+    :return: The currently selected nodes in the scene graph view.
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.getSelectedRootNodes(sorted):
+.. py:method:: vrScenegraphService.getSelectedRootNodes(sorted=True)
+
+    
+
+
+
+    :param sorted: If True, list is ordered by graph position.
+    :type sorted: bool
+
+    :return: The currently selected nodes in the scene graph view. Children of selected nodes are ignored.
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.getSelectedSubtreeNodes():
+.. py:method:: vrScenegraphService.getSelectedSubtreeNodes()
+
+    
+
+
+
+
+    :return: The currently selected nodes in the scene graph view ordered by graph position including all their child nodes.
+    :rtype: List[vrdNode]
+
+.. _vredvrScenegraphService.getShowComponents():
+.. py:method:: vrScenegraphService.getShowComponents()
+
+    
+
+
+
+
+    :return: True, if shell components are shown in the scene graph view
+    :rtype: bool
+
+.. _vredvrScenegraphService.getSuperRootNode():
+.. py:method:: vrScenegraphService.getSuperRootNode()
+
+    
+
+
+
+
+    :return: The super root node of the scene.
+    :rtype: vrdNode
+
+.. _vredvrScenegraphService.getSyncShowHide():
+.. py:method:: vrScenegraphService.getSyncShowHide()
+
+    
+
+
+
+
+    :return: True, if synchronize show and hide state for shared nodes is enabled
+    :rtype: bool
+
+.. _vredvrScenegraphService.getTransformableCloneRootEnabled():
+.. py:method:: vrScenegraphService.getTransformableCloneRootEnabled()
+
+    See         :any:`vrScenegraphService.setTransformableCloneRootEnabled(value) <vredvrScenegraphService.setTransformableCloneRootEnabled(value)>` for a description of this option.
+
+
+
+
+    :return: True if clone functions should create transformable clone roots.
+    :rtype: bool
+
+.. _vredvrScenegraphService.getTransformRootNode():
+.. py:method:: vrScenegraphService.getTransformRootNode()
+
+    
+
+
+
+
+    :return: The transform root node of the scene.
+    :rtype: vrdNode
+
+.. _vredvrScenegraphService.getTreeInfo():
+.. py:method:: vrScenegraphService.getTreeInfo()
+
+    Get encoded scenegraph structure.
+
+    The following information is stored for each node in a list. nodeId, parentId, parentIndex, childCount, children
+
+
+    :return: An object containing additional node information
+    :rtype: List[integer]
+
+.. _vredvrScenegraphService.getTreeItemInfo(node):
+.. py:method:: vrScenegraphService.getTreeItemInfo(node)
+
+    Get detailed node information used in the scenegraph tree view.
+
+
+
+    :param node: The node, information is requested for
+    :type node: vrdNode
+
+    :return: An object containing additional node information
+    :rtype: vrdSceneItemInfo
+
+.. _vredvrScenegraphService.getTreeItemInfoFlags(node):
+.. py:method:: vrScenegraphService.getTreeItemInfoFlags(node)
+
+    Get node feature information used in the scenegraph tree view.
+
+
+
+    :param node: The node, information is requested for
+    :type node: vrdNode
+
+    :return: A bitvector with features used by the given node
+    :rtype: :ref:`vrdSceneItemInfo.Flags <vredvrdSceneItemInfo.Flags>`
+
+.. _vredvrScenegraphService.groupByMaterial():
+.. py:method:: vrScenegraphService.groupByMaterial()
+
+    Groups the whole scene graph by materials.
+
+
+
+
+    
+    
+
+.. _vredvrScenegraphService.groupNodes(nodes):
+.. py:method:: vrScenegraphService.groupNodes(nodes)
+
+    Places all given nodes into a new group.
+
+
+
+    :param nodes: The nodes to be grouped
+    :type nodes: List[vrdNode]
+
+    :return: The new group. It is located at the common parent
+    :rtype: vrdNode
+
+.. _vredvrScenegraphService.growComponentSelection(componentNodes):
+.. py:method:: vrScenegraphService.growComponentSelection(componentNodes)
+
+    Selects the given components as well as their nearest adjacent components.
+
+
+
+    :param componentNodes: A list of :any:`vrdNode <vredvrdNode>` objects.
+    :type componentNodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.hasLastHiddenNodes():
+.. py:method:: vrScenegraphService.hasLastHiddenNodes()
+
+    
+
+
+
+
+    :return: True, if there are nodes in the last hidden nodes list.
+    :rtype: bool
+
+.. _vredvrScenegraphService.invertGeometrySelection():
+.. py:method:: vrScenegraphService.invertGeometrySelection()
+
+    Inverts selection on geometry nodes.
+
+
+
+
+    
+    
+
+.. _vredvrScenegraphService.invertGeometrySelectionInGroup(geometryNodes):
+.. py:method:: vrScenegraphService.invertGeometrySelectionInGroup(geometryNodes)
+
+    Inverts selection on geometry nodes only within their containing group and subgroups.
+
+
+
+    :param geometryNodes: A list of :any:`vrdNode <vredvrdNode>` objects.
+    :type geometryNodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.isAllowed(node, action):
+.. py:method:: vrScenegraphService.isAllowed(node, action)
+
+    Check if an operation is allowed on the given node.
+
+
+
+    :param node: The node to check
+    :type node: vrdNode
+
+    :param action: The action to check
+    :type action: :ref:`vrScenegraphTypes.Action <vredvrScenegraphTypes.Action>`
+
+    :return: True, if action is allowed
+    :rtype: bool
+
+.. _vredvrScenegraphService.isIsolateViewActive(renderWindowIndex):
+.. py:method:: vrScenegraphService.isIsolateViewActive(renderWindowIndex=-1)
+
+    Check, if isolate view is active.
+
+
+
+    :param renderWindowIndex: If -1 is given, the current window is used
+    :type renderWindowIndex: integer
+
+    :return: True, if isolate view is active
+    :rtype: bool
+
+.. _vredvrScenegraphService.isSceneEmpty():
+.. py:method:: vrScenegraphService.isSceneEmpty()
+
+    Gets if the scene is empty.
+
+
+
+
+    :return: True if there are no other nodes in the scene than the default ones.
+    :rtype: bool
+
+.. _vredvrScenegraphService.loadAnimationsToNodes(fileName, nodes):
+.. py:method:: vrScenegraphService.loadAnimationsToNodes(fileName, nodes)
+
+    Load animations from file and add them to the given nodes.
+
+
+
+    :param fileName: The animation file to load
+    :type fileName: string
+
+    :param nodes: Animations will be added to this nodes
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.pasteAnimations(nodes, pasteAsClone):
+.. py:method:: vrScenegraphService.pasteAnimations(nodes, pasteAsClone=False)
+
+    Paste copied animations into the given nodes.
+
+
+
+    :param nodes: Target for the paste operation
+    :type nodes: List[vrdNode]
+
+    :param pasteAsClone: If true, animation will be cloned
+    :type pasteAsClone: bool
+
+    
+    
+
+.. _vredvrScenegraphService.pasteNodes(targetNodes, keepWorldTransformation, pasteAsClone):
+.. py:method:: vrScenegraphService.pasteNodes(targetNodes, keepWorldTransformation=False, pasteAsClone=False)
+
+    Paste copied nodes into the given nodes.
+
+
+
+    :param targetNodes: Target for the paste operation
+    :type targetNodes: List[vrdNode]
+
+    :param keepWorldTransformation: If True, keep original world transformation
+    :type keepWorldTransformation: bool
+
+    :param pasteAsClone: If True, paste as clone. Otherwise paste as copy
+    :type pasteAsClone: bool
+
+    
+    
+
+.. _vredvrScenegraphService.pasteTransformation(targetNodes, translation, rotation, scale, rotationPivot, scalePivot):
+.. py:method:: vrScenegraphService.pasteTransformation(targetNodes, translation=True, rotation=True, scale=True, rotationPivot=True, scalePivot=True)
+
+    Paste copied transformations into the given nodes.
+
+
+
+    :param targetNodes: Target for the paste operation
+    :type targetNodes: List[vrdNode]
+
+    :param translation: If True, copy translation
+    :type translation: bool
+
+    :param rotation: If True, copy rotation
+    :type rotation: bool
+
+    :param scale: If True, copy scale
+    :type scale: bool
+
+    :param rotationPivot: If True, copy rotation pivot
+    :type rotationPivot: bool
+
+    :param scalePivot: If True, copy scale pivot
+    :type scalePivot: bool
+
+    
+    
+
+.. _vredvrScenegraphService.pasteTransformationAsVariant(targetNodes):
+.. py:method:: vrScenegraphService.pasteTransformationAsVariant(targetNodes)
+
+    Paste copied transformations as variants into the given nodes.
+
+
+
+    :param targetNodes: Target for the paste operation
+    :type targetNodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.pasteTransformVariants(nodes):
+.. py:method:: vrScenegraphService.pasteTransformVariants(nodes)
+
+    Paste copied transform variants into the given nodes.
+
+
+
+    :param nodes: Target for the paste operation
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.pasteUVs(nodes):
+.. py:method:: vrScenegraphService.pasteUVs(nodes)
+
+    Paste copied UVs into the given nodes.
+
+
+
+    :param nodes: Target for the paste operation
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.resetIsolateView(renderWindowIndex):
+.. py:method:: vrScenegraphService.resetIsolateView(renderWindowIndex=-1)
+
+    Clear isolate view.
+
+
+
+    :param renderWindowIndex: If -1 is given, the current window is used
+    :type renderWindowIndex: integer
+
+    
+    
+
+.. _vredvrScenegraphService.selectAllClones(nodes):
+.. py:method:: vrScenegraphService.selectAllClones(nodes)
+
+    Selects all clones of given nodes.
+
+
+
+    :param nodes: A list of :any:`vrdNode <vredvrdNode>` objects.
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.selectAllInSameHierarchyLevel(node):
+.. py:method:: vrScenegraphService.selectAllInSameHierarchyLevel(node)
+
+    Selects all nodes in the same level as given node.
+
+
+
+    :param node: A :any:`vrdNode <vredvrdNode>` object.
+    :type node: vrdNode
+
+    
+    
+
+.. _vredvrScenegraphService.selectAllTransformableClones(nodes):
+.. py:method:: vrScenegraphService.selectAllTransformableClones(nodes)
+
+    Selects all transformable clones of given nodes.
+
+
+
+    :param nodes: A list of :any:`vrdNode <vredvrdNode>` objects.
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.selectAllWithMaterials(materials):
+.. py:method:: vrScenegraphService.selectAllWithMaterials(materials)
+
+    Selects all nodes which have any of the given materials applied to them.
+
+
+
+    :param materials: A list of :any:`vrdMaterial <vredvrdMaterial>` objects.
+    :type materials: List[vrdMaterial]
+
+    
+    
+
+.. _vredvrScenegraphService.selectCommonParent(nodes):
+.. py:method:: vrScenegraphService.selectCommonParent(nodes)
+
+    Selects the first common parent of given nodes.
+
+
+
+    :param nodes: A list of :any:`vrdNode <vredvrdNode>` objects.
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.selectTopLevel():
+.. py:method:: vrScenegraphService.selectTopLevel()
+
+    Selects all top-level nodes below root node.
+
+
+
+
+    
+    
+
+.. _vredvrScenegraphService.setIsolateView(nodes, renderWindowIndex):
+.. py:method:: vrScenegraphService.setIsolateView(nodes, renderWindowIndex=-1)
+
+    Only show the given nodes.
+
+
+
+    :param nodes: A list of nodes be isolated
+    :type nodes: List[vrdNode]
+
+    :param renderWindowIndex: If -1 is given, the current window is used
+    :type renderWindowIndex: integer
+
+    
+    
+
+.. _vredvrScenegraphService.setLiveSearchEnabled(value):
+.. py:method:: vrScenegraphService.setLiveSearchEnabled(value)
+
+    Enables or disables live search.
+
+
+
+    :param value: If True, enable live search
+    :type value: bool
+
+    
+    
+
+.. _vredvrScenegraphService.setNodeVisibility(nodes, visible, recursive):
+.. py:method:: vrScenegraphService.setNodeVisibility(nodes, visible, recursive=False)
+
+    Changes the visibility for the given list of nodes.
+
+
+
+    :param nodes: A list of nodes
+    :type nodes: List[vrdNode]
+
+    :param visible: If True, node will be visible, otherwise hidden
+    :type visible: bool
+
+    :param recursive: If True, apply all changes to each child
+    :type recursive: bool
+
+    
+    
+
+.. _vredvrScenegraphService.setSelection(nodes):
+.. py:method:: vrScenegraphService.setSelection(nodes)
+
+    Changes the node selection.
+
+
+
+    :param nodes: A list of :any:`vrdNode <vredvrdNode>` objects
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrScenegraphService.setShowComponents(value):
+.. py:method:: vrScenegraphService.setShowComponents(value)
+
+    Show or hide shell components in the scene graph view.
+
+
+
+    :param value: If True, show components
+    :type value: bool
+
+    
+    
+
+.. _vredvrScenegraphService.setSwitchChoiceByAllTags(switchNode, tags):
+.. py:method:: vrScenegraphService.setSwitchChoiceByAllTags(switchNode, tags)
+
+    Sets the choice of a switch node to the first child with all of the given tags. If not found the choice stays unchanged.
+
+
+
+    :param switchNode: The switch node to modify.
+    :type switchNode: vrdSwitchNode
+
+    :param tags: The set of tags determining the child node to select.
+    :type tags: List[string]
+
+    :return: True if matching child node found
+    :rtype: bool
+
+.. _vredvrScenegraphService.setSwitchChoiceByAnyTag(switchNode, tags):
+.. py:method:: vrScenegraphService.setSwitchChoiceByAnyTag(switchNode, tags)
+
+    Sets the choice of a switch node to the first child with any of the given tags. If not found the choice stays unchanged.
+
+
+
+    :param switchNode: The switch node to modify.
+    :type switchNode: vrdSwitchNode
+
+    :param tags: The set of tags determining the child node to select.
+    :type tags: List[string]
+
+    :return: True if matching child node found
+    :rtype: bool
+
+.. _vredvrScenegraphService.setSyncShowHide(value):
+.. py:method:: vrScenegraphService.setSyncShowHide(value)
+
+    Enables synchronization of visibility when using show and hide on shared nodes.
+
+
+
+    :param value: If True, synchronize show, hide state for shared nodes
+    :type value: bool
+
+    
+    
+
+.. _vredvrScenegraphService.setTransformableCloneRootEnabled(value):
+.. py:method:: vrScenegraphService.setTransformableCloneRootEnabled(value)
+
+    This option controls the outcome of functions that create cloned nodes, e.g. cloneNodes and cloneNodeMirrorAxis, for input root nodes that are transform nodes.
+
+    If enabled, the clone root of an input transform root node is created as a transformable clone root. That means the input root and the clone root will be independently transformable but their children will be shared and synchronized.
+
+    If disabled, the clone root of an input transform root node is created as a regular clone, i.e. the transformation is shared and all their children are shared and synchronized. 
+
+    :param value: True to create transformable clone roots when using clone functions. False to create clone roots with shared transformation.
+    :type value: bool
+
+    
+    
+
+.. _vredvrScenegraphService.shrinkComponentSelection(componentNodes):
+.. py:method:: vrScenegraphService.shrinkComponentSelection(componentNodes)
+
+    Selects the given components but without their outermost components.
+
+
+
+    :param componentNodes: A list of :any:`vrdNode <vredvrdNode>` objects.
+    :type componentNodes: List[vrdNode]
+
+    
+    
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrScenegraphService.editSelected():
+.. py:method:: vrScenegraphService.editSelected()
+
+    This signal is emitted, to open the node name editor.
+
+
+
+
+    
+    
+
+.. _vredvrScenegraphService.isolateViewChanged(renderWindowIndex):
+.. py:method:: vrScenegraphService.isolateViewChanged(renderWindowIndex=-1)
+
+    This signal is emitted, whenever isolate view changes.
+
+
+
+    :param renderWindowIndex: 
+    :type renderWindowIndex: integer
+
+    
+    
+
+.. _vredvrScenegraphService.nodeIdChanged(oldId, newId):
+.. py:method:: vrScenegraphService.nodeIdChanged(oldId, newId)
+
+    Called, if the id of a node has changed. E.g. on unshare node.
+
+
+
+    :param oldId: 
+    :type oldId: List[integer]
+
+    :param newId: 
+    :type newId: List[integer]
+
+    
+    
+
+.. _vredvrScenegraphService.scenegraphChanged(changes):
+.. py:method:: vrScenegraphService.scenegraphChanged(changes=vrScenegraphTypes.AllChanged)
+
+    This signal is emitted, whenever the scenegraph changes.
+
+
+
+    :param changes: 
+    :type changes: :ref:`vrScenegraphTypes.ChangeFlag <vredvrScenegraphTypes.ChangeFlag>`
+
+    
+    
+
+.. _vredvrScenegraphService.scrollToNode(node):
+.. py:method:: vrScenegraphService.scrollToNode(node)
+
+    This signal is emitted, to scroll to the given node.
+
+
+
+    :param node: The node to scroll to
+    :type node: vrdNode
+
+    
+    
+
+.. _vredvrScenegraphService.scrollToSelected():
+.. py:method:: vrScenegraphService.scrollToSelected()
+
+    This signal is emitted, to scroll to the first selected node.
+
+
+
+
+    
+    
+
+.. _vredvrScenegraphService.selectionChanged(selectedNodes):
+.. py:method:: vrScenegraphService.selectionChanged(selectedNodes)
+
+    This signal is emitted whenever the selection changes.
+
+
+
+    :param selectedNodes: A list of :any:`vrdNode <vredvrdNode>` objects.
+    :type selectedNodes: List[vrdNode]
+
+    
+    
+
+

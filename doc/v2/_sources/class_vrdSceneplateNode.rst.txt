@@ -1,0 +1,869 @@
+-----------------
+vrdSceneplateNode
+-----------------
+
+
+.. _vredvrdSceneplateNode:
+.. py:class:: vrdSceneplateNode
+
+(Inherits :py:class:`vrdNode`)
+
+Base class for all scene plate types.
+
+Holds all properties for front and back plates. Allow changes and queries. Query methods have get suffix, change methods have set suffix.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBackgroundColor() → QVector3D<vredvrdSceneplateNode.getBackgroundColor()>`
+    * :ref:`getBackgroundTransparency() → float<vredvrdSceneplateNode.getBackgroundTransparency()>`
+    * :ref:`getBrightness() → float<vredvrdSceneplateNode.getBrightness()>`
+    * :ref:`getClickThrough() → float<vredvrdSceneplateNode.getClickThrough()>`
+    * :ref:`getContentType() → vrSceneplateTypes.ContentType<vredvrdSceneplateNode.getContentType()>`
+    * :ref:`getContrast() → float<vredvrdSceneplateNode.getContrast()>`
+    * :ref:`getFont() → string<vredvrdSceneplateNode.getFont()>`
+    * :ref:`getFontColor() → QVector3D<vredvrdSceneplateNode.getFontColor()>`
+    * :ref:`getFontHeight() → integer<vredvrdSceneplateNode.getFontHeight()>`
+    * :ref:`getFontStyle() → string<vredvrdSceneplateNode.getFontStyle()>`
+    * :ref:`getFrameOffset() → integer<vredvrdSceneplateNode.getFrameOffset()>`
+    * :ref:`getHeight() → integer<vredvrdSceneplateNode.getHeight()>`
+    * :ref:`getHueShift() → float<vredvrdSceneplateNode.getHueShift()>`
+    * :ref:`getImage() → vrdImage<vredvrdSceneplateNode.getImage()>`
+    * :ref:`getImageNumber() → integer<vredvrdSceneplateNode.getImageNumber()>`
+    * :ref:`getInlineImageSequence() → bool<vredvrdSceneplateNode.getInlineImageSequence()>`
+    * :ref:`getNodeType() → vrSceneplateTypes.NodeType<vredvrdSceneplateNode.getNodeType()>`
+    * :ref:`getOffset() → QVector2D<vredvrdSceneplateNode.getOffset()>`
+    * :ref:`getOffsetMode() → vrSceneplateTypes.SizeType<vredvrdSceneplateNode.getOffsetMode()>`
+    * :ref:`getPosition() → vrSceneplateTypes.Position<vredvrdSceneplateNode.getPosition()>`
+    * :ref:`getRepeatMode() → vrSceneplateTypes.RepeatMode<vredvrdSceneplateNode.getRepeatMode()>`
+    * :ref:`getRotation() → float<vredvrdSceneplateNode.getRotation()>`
+    * :ref:`getSaturation() → float<vredvrdSceneplateNode.getSaturation()>`
+    * :ref:`getSize() → float<vredvrdSceneplateNode.getSize()>`
+    * :ref:`getSizeMode() → vrSceneplateTypes.SizeType<vredvrdSceneplateNode.getSizeMode()>`
+    * :ref:`getText() → string<vredvrdSceneplateNode.getText()>`
+    * :ref:`getTransparency() → float<vredvrdSceneplateNode.getTransparency()>`
+    * :ref:`getUrl() → string<vredvrdSceneplateNode.getUrl()>`
+    * :ref:`getUseImageSequence() → bool<vredvrdSceneplateNode.getUseImageSequence()>`
+    * :ref:`getWebStreamActive() → bool<vredvrdSceneplateNode.getWebStreamActive()>`
+    * :ref:`getWhiteBalance() → integer<vredvrdSceneplateNode.getWhiteBalance()>`
+    * :ref:`getWidth() → integer<vredvrdSceneplateNode.getWidth()>`
+    * :ref:`setBackgroundColor(color) <vredvrdSceneplateNode.setBackgroundColor(color)>`
+    * :ref:`setBackgroundTransparency(transparency) <vredvrdSceneplateNode.setBackgroundTransparency(transparency)>`
+    * :ref:`setBrightness(brightness) <vredvrdSceneplateNode.setBrightness(brightness)>`
+    * :ref:`setClickThrough(clickThrough) <vredvrdSceneplateNode.setClickThrough(clickThrough)>`
+    * :ref:`setContentType(contentType) <vredvrdSceneplateNode.setContentType(contentType)>`
+    * :ref:`setContrast(contrast) <vredvrdSceneplateNode.setContrast(contrast)>`
+    * :ref:`setFont(fontName) <vredvrdSceneplateNode.setFont(fontName)>`
+    * :ref:`setFontColor(color) <vredvrdSceneplateNode.setFontColor(color)>`
+    * :ref:`setFontHeight(fontHeight) <vredvrdSceneplateNode.setFontHeight(fontHeight)>`
+    * :ref:`setFontStyle(style) <vredvrdSceneplateNode.setFontStyle(style)>`
+    * :ref:`setFrameOffset(frameOffset) <vredvrdSceneplateNode.setFrameOffset(frameOffset)>`
+    * :ref:`setHeight(height) <vredvrdSceneplateNode.setHeight(height)>`
+    * :ref:`setHueShift(value) <vredvrdSceneplateNode.setHueShift(value)>`
+    * :ref:`setImage(img) <vredvrdSceneplateNode.setImage(img)>`
+    * :ref:`setImageNumber(imageNumber) <vredvrdSceneplateNode.setImageNumber(imageNumber)>`
+    * :ref:`setInlineImageSequence(inlineImageSequence) <vredvrdSceneplateNode.setInlineImageSequence(inlineImageSequence)>`
+    * :ref:`setNodeType(nodeType) <vredvrdSceneplateNode.setNodeType(nodeType)>`
+    * :ref:`setOffset(offset) <vredvrdSceneplateNode.setOffset(offset)>`
+    * :ref:`setOffsetMode(offsetMode) <vredvrdSceneplateNode.setOffsetMode(offsetMode)>`
+    * :ref:`setPosition(position) <vredvrdSceneplateNode.setPosition(position)>`
+    * :ref:`setRepeatMode(repeatMode) <vredvrdSceneplateNode.setRepeatMode(repeatMode)>`
+    * :ref:`setRotation(rotation) <vredvrdSceneplateNode.setRotation(rotation)>`
+    * :ref:`setSaturation(saturation) <vredvrdSceneplateNode.setSaturation(saturation)>`
+    * :ref:`setSize(size) <vredvrdSceneplateNode.setSize(size)>`
+    * :ref:`setSizeMode(sizeMode) <vredvrdSceneplateNode.setSizeMode(sizeMode)>`
+    * :ref:`setText(text) <vredvrdSceneplateNode.setText(text)>`
+    * :ref:`setTransparency(transparency) <vredvrdSceneplateNode.setTransparency(transparency)>`
+    * :ref:`setUrl(url) <vredvrdSceneplateNode.setUrl(url)>`
+    * :ref:`setUseImageSequence(useImageSequence) <vredvrdSceneplateNode.setUseImageSequence(useImageSequence)>`
+    * :ref:`setWebStreamActive(value) <vredvrdSceneplateNode.setWebStreamActive(value)>`
+    * :ref:`setWhiteBalance(whiteBalance) <vredvrdSceneplateNode.setWhiteBalance(whiteBalance)>`
+    * :ref:`setWidth(width) <vredvrdSceneplateNode.setWidth(width)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdSceneplateNode.getBackgroundColor():
+.. py:method:: vrdSceneplateNode.getBackgroundColor()
+
+    Returns the text background color.
+
+
+
+
+    :return: 3D floating point vector for RGB value
+    :rtype: QVector3D
+
+.. _vredvrdSceneplateNode.getBackgroundTransparency():
+.. py:method:: vrdSceneplateNode.getBackgroundTransparency()
+
+    Returns the transparency of the text background.
+
+
+
+
+    :return: Background transparency
+    :rtype: float
+
+.. _vredvrdSceneplateNode.getBrightness():
+.. py:method:: vrdSceneplateNode.getBrightness()
+
+    Returns brightness from color correction.
+
+
+
+
+    :return: Brightness
+    :rtype: float
+
+.. _vredvrdSceneplateNode.getClickThrough():
+.. py:method:: vrdSceneplateNode.getClickThrough()
+
+    Returns the transparency limit for content to be unnoticeable to mouse clicks.
+
+
+
+
+    :return: Floating number between 0 and 1
+    :rtype: float
+
+.. _vredvrdSceneplateNode.getContentType():
+.. py:method:: vrdSceneplateNode.getContentType()
+
+    Returns the type of content to be displayed on the plate.
+
+
+
+
+    :return: Content type
+    :rtype: :ref:`vrSceneplateTypes.ContentType <vredvrSceneplateTypes.ContentType>`
+
+.. _vredvrdSceneplateNode.getContrast():
+.. py:method:: vrdSceneplateNode.getContrast()
+
+    Returns contrast from color correction.
+
+
+
+
+    :return: Contrast
+    :rtype: float
+
+.. _vredvrdSceneplateNode.getFont():
+.. py:method:: vrdSceneplateNode.getFont()
+
+    Returns font name.
+
+
+
+
+    :return: Font name
+    :rtype: string
+
+.. _vredvrdSceneplateNode.getFontColor():
+.. py:method:: vrdSceneplateNode.getFontColor()
+
+    Returns the font color.
+
+
+
+
+    :return: 3D floating point vector of for RGB value
+    :rtype: QVector3D
+
+.. _vredvrdSceneplateNode.getFontHeight():
+.. py:method:: vrdSceneplateNode.getFontHeight()
+
+    Returns the vertical resolution in pixels per text line.
+
+
+
+
+    :return: Font height in pixel
+    :rtype: integer
+
+.. _vredvrdSceneplateNode.getFontStyle():
+.. py:method:: vrdSceneplateNode.getFontStyle()
+
+    Returns text font style.
+
+
+
+
+    :return: Font style, e.g. "Bold", "Italic"
+    :rtype: string
+
+.. _vredvrdSceneplateNode.getFrameOffset():
+.. py:method:: vrdSceneplateNode.getFrameOffset()
+
+    Returns offset to the image number when using an image sequence.
+
+
+
+
+    :return: Frame offset
+    :rtype: integer
+
+.. _vredvrdSceneplateNode.getHeight():
+.. py:method:: vrdSceneplateNode.getHeight()
+
+    Returns the height of the canvas in pixels for HTML content.
+
+
+
+
+    :return: Height
+    :rtype: integer
+
+.. _vredvrdSceneplateNode.getHueShift():
+.. py:method:: vrdSceneplateNode.getHueShift()
+
+    Returns hue shift from color correction.
+
+
+
+
+    :return: Floating value starts on zero
+    :rtype: float
+
+.. _vredvrdSceneplateNode.getImage():
+.. py:method:: vrdSceneplateNode.getImage()
+
+    Returns the image object.
+
+
+
+
+    :return: Image
+    :rtype: vrdImage
+
+.. _vredvrdSceneplateNode.getImageNumber():
+.. py:method:: vrdSceneplateNode.getImageNumber()
+
+    Returns image number in current image sequence.
+
+
+
+
+    :return: Image number
+    :rtype: integer
+
+.. _vredvrdSceneplateNode.getInlineImageSequence():
+.. py:method:: vrdSceneplateNode.getInlineImageSequence()
+
+    Returns if image sequence is inlined into the vpb file.
+
+
+
+
+    :return: True, if inlined
+    :rtype: bool
+
+.. _vredvrdSceneplateNode.getNodeType():
+.. py:method:: vrdSceneplateNode.getNodeType()
+
+    Returns the node type.
+
+
+
+
+    :return: Node type
+    :rtype: :ref:`vrSceneplateTypes.NodeType <vredvrSceneplateTypes.NodeType>`
+
+.. _vredvrdSceneplateNode.getOffset():
+.. py:method:: vrdSceneplateNode.getOffset()
+
+    Returns the offset of the plate to its anchor point.
+
+
+
+
+    :return: Offset
+    :rtype: QVector2D
+
+.. _vredvrdSceneplateNode.getOffsetMode():
+.. py:method:: vrdSceneplateNode.getOffsetMode()
+
+    Returns how offset should be interpreted. Absolute means the offset is in pixels. Relative means the offset is given as a fraction of the viewport extents.
+
+
+
+
+    :return: Offset mode
+    :rtype: :ref:`vrSceneplateTypes.SizeType <vredvrSceneplateTypes.SizeType>`
+
+.. _vredvrdSceneplateNode.getPosition():
+.. py:method:: vrdSceneplateNode.getPosition()
+
+    Returns the anchor point of the plate within the viewport.
+
+
+
+
+    :return: Position
+    :rtype: :ref:`vrSceneplateTypes.Position <vredvrSceneplateTypes.Position>`
+
+.. _vredvrdSceneplateNode.getRepeatMode():
+.. py:method:: vrdSceneplateNode.getRepeatMode()
+
+    Returns the repeat mode of the plate image within the viewport.
+
+
+
+
+    :return: Repeat mode
+    :rtype: :ref:`vrSceneplateTypes.RepeatMode <vredvrSceneplateTypes.RepeatMode>`
+
+.. _vredvrdSceneplateNode.getRotation():
+.. py:method:: vrdSceneplateNode.getRotation()
+
+    Returns the amount the plate is rotated clockwise in degrees around its center.
+
+
+
+
+    :return: Rotation in degree
+    :rtype: float
+
+.. _vredvrdSceneplateNode.getSaturation():
+.. py:method:: vrdSceneplateNode.getSaturation()
+
+    Returns saturation from color correction.
+
+
+
+
+    :return: Saturation
+    :rtype: float
+
+.. _vredvrdSceneplateNode.getSize():
+.. py:method:: vrdSceneplateNode.getSize()
+
+    Returns the height of the plate.
+
+
+
+
+    :return: 
+    :rtype: float
+
+.. _vredvrdSceneplateNode.getSizeMode():
+.. py:method:: vrdSceneplateNode.getSizeMode()
+
+    Returns how size is interpreted. Absolute means the size is in pixels. Relative means the size is a fraction of the viewport height.
+
+
+
+
+    :return: Size mode
+    :rtype: :ref:`vrSceneplateTypes.SizeType <vredvrSceneplateTypes.SizeType>`
+
+.. _vredvrdSceneplateNode.getText():
+.. py:method:: vrdSceneplateNode.getText()
+
+    Returns the text.
+
+
+
+
+    :return: UTF-8 String
+    :rtype: string
+
+.. _vredvrdSceneplateNode.getTransparency():
+.. py:method:: vrdSceneplateNode.getTransparency()
+
+    Returns the overall transparency of the plate.
+
+
+
+
+    :return: Transparency
+    :rtype: float
+
+.. _vredvrdSceneplateNode.getUrl():
+.. py:method:: vrdSceneplateNode.getUrl()
+
+    Returns the url or the content of a web site.
+
+
+
+
+    :return: Url or html content as string
+    :rtype: string
+
+.. _vredvrdSceneplateNode.getUseImageSequence():
+.. py:method:: vrdSceneplateNode.getUseImageSequence()
+
+    Returns if image sequences is used.
+
+
+
+
+    :return: True if image sequence is use
+    :rtype: bool
+
+.. _vredvrdSceneplateNode.getWebStreamActive():
+.. py:method:: vrdSceneplateNode.getWebStreamActive()
+
+    Returns active state of the web-engine stream.
+
+
+
+
+    :return: True if On, Flase if Off
+    :rtype: bool
+
+.. _vredvrdSceneplateNode.getWhiteBalance():
+.. py:method:: vrdSceneplateNode.getWhiteBalance()
+
+    Returns white balance from color correction.
+
+
+
+
+    :return: White balance
+    :rtype: integer
+
+.. _vredvrdSceneplateNode.getWidth():
+.. py:method:: vrdSceneplateNode.getWidth()
+
+    Returns the width of the canvas in pixels for HTML content.
+
+
+
+
+    :return: Width
+    :rtype: integer
+
+.. _vredvrdSceneplateNode.setBackgroundColor(color):
+.. py:method:: vrdSceneplateNode.setBackgroundColor(color)
+
+    Sets the text background color.
+
+
+
+    :param color: 3D floating point vector of for RGB value
+    :type color: QVector3D
+
+    
+    
+
+.. _vredvrdSceneplateNode.setBackgroundTransparency(transparency):
+.. py:method:: vrdSceneplateNode.setBackgroundTransparency(transparency)
+
+    Sets the transparency of the text background.
+
+
+
+    :param transparency: Background transparency
+    :type transparency: float
+
+    
+    
+
+.. _vredvrdSceneplateNode.setBrightness(brightness):
+.. py:method:: vrdSceneplateNode.setBrightness(brightness)
+
+    Shifts the content's blacks, grays, and whites. Higher values increase the perceived luminance of the content.
+
+
+
+    :param brightness: Brightness
+    :type brightness: float
+
+    
+    
+
+.. _vredvrdSceneplateNode.setClickThrough(clickThrough):
+.. py:method:: vrdSceneplateNode.setClickThrough(clickThrough)
+
+    Sets the transparency limit for content to be unnoticeable to mouse clicks.
+
+
+
+    :param clickThrough: Floating number between 0 and 1
+    :type clickThrough: float
+
+    
+    
+
+.. _vredvrdSceneplateNode.setContentType(contentType):
+.. py:method:: vrdSceneplateNode.setContentType(contentType)
+
+    Sets the type of content to be displayed on the plate.
+
+
+
+    :param contentType: Content type
+    :type contentType: :ref:`vrSceneplateTypes.ContentType <vredvrSceneplateTypes.ContentType>`
+
+    
+    
+
+.. _vredvrdSceneplateNode.setContrast(contrast):
+.. py:method:: vrdSceneplateNode.setContrast(contrast)
+
+    Shifts the content's light and dark color values. Higher values create brighter highlights and darker shadows.
+
+
+
+    :param contrast: Contrast
+    :type contrast: float
+
+    
+    
+
+.. _vredvrdSceneplateNode.setFont(fontName):
+.. py:method:: vrdSceneplateNode.setFont(fontName)
+
+    Sets the text font.
+
+
+
+    :param fontName: Font name
+    :type fontName: string
+
+    
+    
+
+.. _vredvrdSceneplateNode.setFontColor(color):
+.. py:method:: vrdSceneplateNode.setFontColor(color)
+
+    Sets the text color.
+
+
+
+    :param color: 3D floating point vector for RGB value
+    :type color: QVector3D
+
+    
+    
+
+.. _vredvrdSceneplateNode.setFontHeight(fontHeight):
+.. py:method:: vrdSceneplateNode.setFontHeight(fontHeight)
+
+    Sets the vertical resolution in pixels per text line.
+
+
+
+    :param fontHeight: Font height in pixel
+    :type fontHeight: integer
+
+    
+    
+
+.. _vredvrdSceneplateNode.setFontStyle(style):
+.. py:method:: vrdSceneplateNode.setFontStyle(style)
+
+    Sets text font style.
+
+
+
+    :param style: Font style name, e.g. "Bold", "Italic"
+    :type style: string
+
+    
+    
+
+.. _vredvrdSceneplateNode.setFrameOffset(frameOffset):
+.. py:method:: vrdSceneplateNode.setFrameOffset(frameOffset)
+
+    Sets an offset to the image number when using an image sequence.
+
+
+
+    :param frameOffset: Frame offset
+    :type frameOffset: integer
+
+    
+    
+
+.. _vredvrdSceneplateNode.setHeight(height):
+.. py:method:: vrdSceneplateNode.setHeight(height)
+
+    Sets the height of the canvas in pixels for HTML content.
+
+
+
+    :param height: Height
+    :type height: integer
+
+    
+    
+
+.. _vredvrdSceneplateNode.setHueShift(value):
+.. py:method:: vrdSceneplateNode.setHueShift(value)
+
+    Shifts all content colors uniformly through the hue color range.
+
+
+
+    :param value: Floating value starts on zero
+    :type value: float
+
+    
+    
+
+.. _vredvrdSceneplateNode.setImage(img):
+.. py:method:: vrdSceneplateNode.setImage(img)
+
+    Sets image object.
+
+
+
+    :param img: Image
+    :type img: vrdImage
+
+    
+    
+
+.. _vredvrdSceneplateNode.setImageNumber(imageNumber):
+.. py:method:: vrdSceneplateNode.setImageNumber(imageNumber)
+
+    Sets the image number in current image sequence.
+
+
+
+    :param imageNumber: Integer number
+    :type imageNumber: integer
+
+    
+    
+
+.. _vredvrdSceneplateNode.setInlineImageSequence(inlineImageSequence):
+.. py:method:: vrdSceneplateNode.setInlineImageSequence(inlineImageSequence)
+
+    Inlines the image sequence into the vpb file.
+
+
+
+    :param inlineImageSequence: True, to inline image sequence
+    :type inlineImageSequence: bool
+
+    
+    
+
+.. _vredvrdSceneplateNode.setNodeType(nodeType):
+.. py:method:: vrdSceneplateNode.setNodeType(nodeType)
+
+    Sets the sceneplate type. Frontplates appear on top of the scene and backplates behind.
+
+
+
+    :param nodeType: Node type
+    :type nodeType: :ref:`vrSceneplateTypes.NodeType <vredvrSceneplateTypes.NodeType>`
+
+    
+    
+
+.. _vredvrdSceneplateNode.setOffset(offset):
+.. py:method:: vrdSceneplateNode.setOffset(offset)
+
+    Sets the offset of the plate to its anchor point.
+
+
+
+    :param offset: Offset
+    :type offset: QVector2D
+
+    
+    
+
+.. _vredvrdSceneplateNode.setOffsetMode(offsetMode):
+.. py:method:: vrdSceneplateNode.setOffsetMode(offsetMode)
+
+    Sets how offset should be interpreted. Absolute means the offset is in pixels. Relative means the offset is given as a fraction of the viewport extents.
+
+
+
+    :param offsetMode: Offset mode
+    :type offsetMode: :ref:`vrSceneplateTypes.SizeType <vredvrSceneplateTypes.SizeType>`
+
+    
+    
+
+.. _vredvrdSceneplateNode.setPosition(position):
+.. py:method:: vrdSceneplateNode.setPosition(position)
+
+    Sets the anchor point of the plate within the viewport.
+
+
+
+    :param position: Position
+    :type position: :ref:`vrSceneplateTypes.Position <vredvrSceneplateTypes.Position>`
+
+    
+    
+
+.. _vredvrdSceneplateNode.setRepeatMode(repeatMode):
+.. py:method:: vrdSceneplateNode.setRepeatMode(repeatMode)
+
+    Sets the repeat mode of the plate image within the viewport.
+
+
+
+    :param repeatMode: Repeat Mode
+    :type repeatMode: :ref:`vrSceneplateTypes.RepeatMode <vredvrSceneplateTypes.RepeatMode>`
+
+    
+    
+
+.. _vredvrdSceneplateNode.setRotation(rotation):
+.. py:method:: vrdSceneplateNode.setRotation(rotation)
+
+    Sets the amount the plate is rotated clockwise in degrees around its center.
+
+
+
+    :param rotation: Rotation in degree
+    :type rotation: float
+
+    
+    
+
+.. _vredvrdSceneplateNode.setSaturation(saturation):
+.. py:method:: vrdSceneplateNode.setSaturation(saturation)
+
+    Shifts the content's color intensity. Higher values produce vivid colors. Lower values produce dull grayer colors.
+
+
+
+    :param saturation: Saturation
+    :type saturation: float
+
+    
+    
+
+.. _vredvrdSceneplateNode.setSize(size):
+.. py:method:: vrdSceneplateNode.setSize(size)
+
+    Sets the height of the plate. Width is set accordingly to maintain the aspect ratio of its content.
+
+
+
+    :param size: Size
+    :type size: float
+
+    
+    
+
+.. _vredvrdSceneplateNode.setSizeMode(sizeMode):
+.. py:method:: vrdSceneplateNode.setSizeMode(sizeMode)
+
+    Sets how size is interpreted. Absolute means the size is in pixels. Relative means the size is a fraction of the viewport height.
+
+
+
+    :param sizeMode: Size mode
+    :type sizeMode: :ref:`vrSceneplateTypes.SizeType <vredvrSceneplateTypes.SizeType>`
+
+    
+    
+
+.. _vredvrdSceneplateNode.setText(text):
+.. py:method:: vrdSceneplateNode.setText(text)
+
+    Sets the text.
+
+
+
+    :param text: UTF-8 string
+    :type text: string
+
+    
+    
+
+.. _vredvrdSceneplateNode.setTransparency(transparency):
+.. py:method:: vrdSceneplateNode.setTransparency(transparency)
+
+    Sets the overall transparency of the plate.
+
+
+
+    :param transparency: Transparency
+    :type transparency: float
+
+    
+    
+
+.. _vredvrdSceneplateNode.setUrl(url):
+.. py:method:: vrdSceneplateNode.setUrl(url)
+
+    The url can contain a valid URL to a website ('        http://www.autodesk.com') or the html content of a website as a string.
+
+
+
+    :param url: A url or html content as string
+    :type url: string
+
+    
+    
+
+.. _vredvrdSceneplateNode.setUseImageSequence(useImageSequence):
+.. py:method:: vrdSceneplateNode.setUseImageSequence(useImageSequence)
+
+    Use an image sequence.
+
+    Uses an image sequence as a texture. The image name for the sequence will be generated based on the filename and the image number. Use the CurveEditor to animate the image number.
+
+    :param useImageSequence: True to use image sequence
+    :type useImageSequence: bool
+
+    
+    
+
+.. _vredvrdSceneplateNode.setWebStreamActive(value):
+.. py:method:: vrdSceneplateNode.setWebStreamActive(value)
+
+    Activates/Deactivates the stream of the web-engine.
+
+
+
+    :param value: True = On, False = Off
+    :type value: bool
+
+    
+    
+
+.. _vredvrdSceneplateNode.setWhiteBalance(whiteBalance):
+.. py:method:: vrdSceneplateNode.setWhiteBalance(whiteBalance)
+
+    Shifts the content's white balance to match the color temperature of the scene in Kelvin. Lower values produce cooler (bluish) colors. Higher values produce warmer (yellowish) colors.
+
+
+
+    :param whiteBalance: White balance between 1000 and 15000
+    :type whiteBalance: integer
+
+    
+    
+
+.. _vredvrdSceneplateNode.setWidth(width):
+.. py:method:: vrdSceneplateNode.setWidth(width)
+
+    Sets the width of the canvas in pixels for HTML content.
+
+
+
+    :param width: Width
+    :type width: integer
+
+    
+    
+
+
+
+
+
+
+
+
+
+

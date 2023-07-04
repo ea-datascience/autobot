@@ -1,0 +1,9 @@
+Moving objects in VR
+====================
+
+This example shows how to move objects interactively using a ParentContraint. The script allows you to move all objects whose names begin with "movable". The "Pointer" interaction is used to query the movement of the hands. 
+
+.. literalinclude:: ../../python_examples/vr/objectMove.py
+   :language: python
+   :linenos:
+   :caption: vr/objectMove.py

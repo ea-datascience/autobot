@@ -1,0 +1,100 @@
+---------------
+vrdMaterialNode
+---------------
+
+
+.. _vredvrdMaterialNode:
+.. py:class:: vrdMaterialNode
+
+(Inherits :py:class:`vrdNode`)
+
+Class for a node with a material.
+
+In the Scenegraph, this is a Material Group node. In the Material Editor, this node type is used to hold materials in the material graph.
+
+.. code-block:: python
+
+     # create a material group node in the Scenegraph:
+     c = vrMaterialService.createMaterial("c", vrMaterialTypes.Chrome)
+     sphere = vrGeometryService.createSphere(vrScenegraphService.getRootNode(), 100)
+     mg = vrScenegraphService.createNode(vrScenegraphTypes.NodeType.MaterialNode)
+     mg.children.append(sphere)
+     mg.setMaterial(c)
+..
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getEnabled() → bool<vredvrdMaterialNode.getEnabled()>`
+    * :ref:`getMaterial() → vrdMaterial<vredvrdMaterialNode.getMaterial()>`
+    * :ref:`setEnabled(value) <vredvrdMaterialNode.setEnabled(value)>`
+    * :ref:`setMaterial(material) <vredvrdMaterialNode.setMaterial(material)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdMaterialNode.getEnabled():
+.. py:method:: vrdMaterialNode.getEnabled()
+
+    
+
+
+
+
+    :return: True, if material override is enabled for this node
+    :rtype: bool
+
+.. _vredvrdMaterialNode.getMaterial():
+.. py:method:: vrdMaterialNode.getMaterial()
+
+    Returns the material of the node.
+
+
+
+
+    :return: The material of the node.
+    :rtype: vrdMaterial
+
+.. _vredvrdMaterialNode.setEnabled(value):
+.. py:method:: vrdMaterialNode.setEnabled(value)
+
+    Enables or disables material override for this node.
+
+    If enabled, all geometries in the sub tree of this node are rendered with the material of this node. 
+
+    :param value: If True, material override is enabled.
+    :type value: bool
+
+    
+    
+
+.. _vredvrdMaterialNode.setMaterial(material):
+.. py:method:: vrdMaterialNode.setMaterial(material)
+
+    Sets the material of the node.
+
+
+
+    :param material: The new material of the node.
+    :type material: vrdMaterial
+
+    
+    
+
+
+
+
+
+
+
+
+
+

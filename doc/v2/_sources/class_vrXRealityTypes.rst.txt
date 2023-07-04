@@ -1,0 +1,99 @@
+---------------
+vrXRealityTypes
+---------------
+
+
+.. _vredvrXRealityTypes:
+.. py:class:: vrXRealityTypes
+
+
+
+
+
+
+
+    .. _vredvrXRealityTypes.XRRenderMode:
+    .. py:class:: XRRenderMode
+
+
+
+
+            
+
+            .. _vredvrXRealityTypes.XRRenderMode.FullScene:
+            .. py:data:: FullScene
+
+
+            
+
+            .. _vredvrXRealityTypes.XRRenderMode.ModelOnly:
+            .. py:data:: ModelOnly
+
+
+            
+
+            .. _vredvrXRealityTypes.XRRenderMode.SeethroughBackground:
+            .. py:data:: SeethroughBackground
+
+
+            
+
+            .. _vredvrXRealityTypes.XRRenderMode.SeethroughOnly:
+            .. py:data:: SeethroughOnly
+
+
+    .. _vredvrXRealityTypes.MarkerTypes:
+    .. py:class:: MarkerTypes
+
+
+
+
+            
+
+            .. _vredvrXRealityTypes.MarkerTypes.Undefined:
+            .. py:data:: Undefined
+
+
+            
+
+            .. _vredvrXRealityTypes.MarkerTypes.VarjoMarker:
+            .. py:data:: VarjoMarker
+
+
+    .. _vredvrXRealityTypes.MarkerTrackingTypes:
+    .. py:class:: MarkerTrackingTypes
+
+
+
+
+            
+
+            .. _vredvrXRealityTypes.MarkerTrackingTypes.Static:
+            .. py:data:: Static
+
+
+            
+
+            .. _vredvrXRealityTypes.MarkerTrackingTypes.Predicted:
+            .. py:data:: Predicted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

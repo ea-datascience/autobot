@@ -1,0 +1,79 @@
+-----------------
+vrdLightTransform
+-----------------
+
+
+.. _vredvrdLightTransform:
+.. py:class:: vrdLightTransform
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This class is used to change or propagate the transformation of a light.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`applyToCamera(cameraNode) <vredvrdLightTransform.applyToCamera(cameraNode)>`
+    * :ref:`setFromCamera(cameraNode) <vredvrdLightTransform.setFromCamera(cameraNode)>`
+    * :ref:`setFromNodes(nodes) <vredvrdLightTransform.setFromNodes(nodes)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdLightTransform.applyToCamera(cameraNode):
+.. py:method:: vrdLightTransform.applyToCamera(cameraNode)
+
+    Set the camera to the world transformation of the light.
+
+
+
+    :param cameraNode: The camera node to which the global transformation is copied.
+    :type cameraNode: vrdCameraNode
+
+    
+    
+
+.. _vredvrdLightTransform.setFromCamera(cameraNode):
+.. py:method:: vrdLightTransform.setFromCamera(cameraNode)
+
+    Set the light to the world transformation of the camera.
+
+
+
+    :param cameraNode: The camera node from which the global transformation is copied.
+    :type cameraNode: vrdCameraNode
+
+    
+    
+
+.. _vredvrdLightTransform.setFromNodes(nodes):
+.. py:method:: vrdLightTransform.setFromNodes(nodes)
+
+    Set the light to the bounding box center of a set of nodes.
+
+
+
+    :param nodes: List of nodes from which the bounding box center is computed.
+    :type nodes: List[vrdNode]
+
+    
+    
+
+
+
+
+
+
+
+
+
+

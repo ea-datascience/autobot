@@ -1,0 +1,427 @@
+VRED Python examples
+====================
+
+Overview of the VRED Python examples. They can be found in VRED by using 'File->Open Examples'.
+
+Animations
+----------
+
+* :doc:`axisrotation`
+* :doc:`vertices`
+* :doc:`interpolate`
+* :doc:`turntable`
+* :doc:`wave`
+
+Annotations
+-----------
+
+* :doc:`annotations`
+
+Cameras
+-------
+
+* :doc:`create-cameras`
+* :doc:`camera-fixed-object1`
+* :doc:`camera-fixed-object2`
+* :doc:`snapshots`
+
+Collision detection
+-------------------
+
+* :doc:`collision1`
+* :doc:`collision2`
+* :doc:`collision3`
+* :doc:`collision4`
+
+Connector
+---------
+
+* :doc:`ConnectionClient`
+* :doc:`ConnectionServer`
+
+Constraints
+-----------
+
+* :doc:`SimpleConstraints`
+* :doc:`Toy-Excavator-Constraints`
+
+Geometry
+--------
+
+* :doc:`lineGeometry-texCoords`
+
+Lightmaps
+---------
+* :doc:`lightmap`
+
+
+Materials
+---------
+
+* :doc:`create-texture`
+* :doc:`material`
+* :doc:`material-switch`
+* :doc:`materialgroups`
+
+
+Measurement
+-----------
+
+* :doc:`measurement`
+
+Metadata
+-----------
+
+* :doc:`metadata`
+
+Programming
+-----------
+
+* :doc:`import`
+* :doc:`threading`
+* :doc:`loop`
+* :doc:`speed`
+* :doc:`node`
+* :doc:`signal-slot`
+* :doc:`analog_clock`
+
+
+Rendering
+---------
+
+* :doc:`ambientOcclusion`
+* :doc:`fade`
+* :doc:`frame`
+* :doc:`render`
+
+Sceneplates
+-----------
+
+* :doc:`sceneplates/color`
+* :doc:`sceneplates/create`
+* :doc:`sceneplates/createAsset`
+* :doc:`sceneplates/fade`
+* :doc:`sceneplates/remove`
+* :doc:`sceneplates/repeat`
+* :doc:`sceneplates/rotate`
+* :doc:`sceneplates/simple`
+* :doc:`sceneplates/switch`
+* :doc:`sceneplates/menu-sceneplate`
+
+Scenetree
+---------
+
+* :doc:`addChildren`
+* :doc:`clipPlane`
+* :doc:`find`
+* :doc:`find2`
+* :doc:`findGeos`
+
+Sound
+-----
+
+* :doc:`3dsound`
+* :doc:`speech`
+
+User input
+----------
+
+* :doc:`joystick`
+* :doc:`joystick-nav`
+* :doc:`key-action`
+* :doc:`keys`
+
+
+User interface
+--------------
+
+* :doc:`dock-window`
+* :doc:`fullscreen`
+* :doc:`pysideExampleDialog`
+* :doc:`signal-slot`
+* :doc:`menu-webengine`
+* :doc:`webengine-customevents`
+
+vrMenu
+------
+
+* :doc:`menu`
+* :doc:`menu_2D`
+* :doc:`menu_web`
+* :doc:`menu_webgl`
+* :doc:`menu3d_scene`
+* :doc:`menu3d_webgl`
+* :doc:`menu3d_scene_webgl`
+
+Virtual Reality Device Interaction
+----------------------------------
+
+* :doc:`vr/customInteraction`
+* :doc:`vr/combineCustomAndDefaultInteraction`
+* :doc:`vr/connectToDeviceActionSignal`
+* :doc:`vr/groupTeleport`
+* :doc:`vr/printActions`
+* :doc:`vr/printInteractions`
+* :doc:`vr/scaleGeometry`
+* :doc:`vr/setTeleportToVirtualButton`
+* :doc:`vr/virtualHands`
+
+Virtual Reality Device Handling
+-------------------------------
+
+* :doc:`vr/attachToController`
+* :doc:`vr/attachToTracker`
+* :doc:`vr/getVRDeviceBySerialNumber`
+* :doc:`vr/printAllDeviceSerialNumbers`
+* :doc:`vr/printSerialNumber`
+* :doc:`vr/printTouchpadPosition`
+* :doc:`vr/switchControllerVisuals`
+* :doc:`vr/virtualControllerButtons`
+* :doc:`vr/controllerVibration`
+* :doc:`vr/controllerCollision`
+
+Virtual Reality Immersive Tools
+-------------------------------
+
+* :doc:`vr/colorChooser`
+* :doc:`vr/customMenuButton`
+* :doc:`vr/objectMove`
+
+Virtual Reality Script Plugins
+------------------------------
+
+* :doc:`vr/plugins/VRFlashlightModule`
+* :doc:`vr/plugins/VRGatherUsersModule`
+* :doc:`vr/plugins/VRHideAvatarsModule`
+* :doc:`vr/plugins/VRMeasureModule`
+* :doc:`vr/plugins/VRMenuSetupModule`
+
+Virtual Reality Collaboration
+-----------------------------
+
+* :doc:`vr/handleVRCollabUsers`
+* :doc:`vr/collabSyncExample`
+* :doc:`vr/showVRCollabUserPositions`
+* :doc:`vr/showUserInfo`
+
+Virtual Reality Hands
+----------------------
+
+* :doc:`VR-hands-touchsensor`
+* :doc:`VR-hands-touchsensor-2`
+* :doc:`VR-hands-webengine`
+
+
+Deprecated Virtual Reality Examples
+-----------------------------------
+
+These examples use the deprecated vrOpenVRController / vrOculusTouchController classes. New code should make use of vrdVRDevice.
+
+* :doc:`deprecated_VR_examples/OculusTouchExample`
+* :doc:`deprecated_VR_examples/OpenVRExample`
+* :doc:`deprecated_VR_examples/OpenVRTracker`
+* :doc:`deprecated_VR_examples/VR-hands-color`
+* :doc:`deprecated_VR_examples/VR-hands-vibrate`
+* :doc:`deprecated_VR_examples/VR-hands-pointing`
+* :doc:`deprecated_VR_examples/VR-hands-webengine-buttonVibration-openvr`
+
+
+Deprecated Scenetree Examples
+-----------------------------
+
+* :doc:`deprecated/addChildren`
+* :doc:`deprecated/clipPlane`
+
+
+
+Other Script Plugins
+--------------------
+* :doc:`plugins/QtQuickStreaming`
+* :doc:`plugins/vrSubstanceExample`
+
+Uncategorized
+-------------
+
+* :doc:`move`
+* :doc:`switch`
+* :doc:`movie`
+* :doc:`cubes`
+* :doc:`videograb`
+* :doc:`virtualeye`
+* :doc:`touchsensors`
+
+
+Snippets
+--------
+
+* :doc:`snippets/accessAttachements`
+* :doc:`snippets/accessCameraBlendTexture`
+* :doc:`snippets/accessXRiteMaterial`
+* :doc:`snippets/collectVisibleGeometries`
+* :doc:`snippets/convertAllMaterialGroups`
+* :doc:`snippets/convertRoughness`
+* :doc:`snippets/createMaterial`
+* :doc:`snippets/ctypestest`
+* :doc:`snippets/disableVertexCacheAnimation`
+* :doc:`snippets/selectLightVisibilityReference`
+* :doc:`snippets/substanceMaterialTools`
+* :doc:`snippets/tagEditing`
+* :doc:`snippets/textureAnimation`
+* :doc:`snippets/toggleNavigationMode`
+
+
+Deprecated Snippets
+-------------------
+
+* :doc:`snippets/openvr_controller_setup`
+* :doc:`snippets/openvr_tracker_setup`
+* :doc:`snippets/deprecated/convertAllMaterialGroups`
+* :doc:`snippets/deprecated/countVisibleNodes`
+* :doc:`snippets/deprecated/tagEditing`
+
+
+
+.. toctree::
+    :hidden:
+
+    3dsound
+    addChildren
+    annotations
+    analog_clock
+    axisrotation
+    camera-fixed-object1
+    camera-fixed-object2
+    collision1
+    collision2
+    collision3
+    collision4
+    create-cameras
+    find
+    find2
+    findGeos
+    lightmap
+    measurement
+    metadata
+    menu
+    menu3d_scene
+    menu3d_scene_webgl
+    menu3d_webgl
+    menu_2D
+    menu_web
+    menu_webgl
+    move
+    movie
+    node
+    speech
+    speed
+    switch
+    threading
+    snapshots
+    ambientOcclusion
+    clipPlane
+    ConnectionClient
+    ConnectionServer
+    create-texture
+    cubes
+    dock-window
+    fade
+    frame
+    fullscreen
+    import
+    interpolate
+    joystick
+    joystick-nav
+    key-action
+    keys
+    lineGeometry-texCoords
+    loop
+    material
+    materialgroups
+    material-switch
+    pysideExampleDialog
+    render
+    signal-slot
+    touchsensors
+    vr/colorChooser
+    vr/customMenuButton
+    vr/objectMove
+    vr/plugins/VRFlashlightModule
+    vr/plugins/VRGatherUsersModule
+    vr/plugins/VRHideAvatarsModule
+    vr/plugins/VRMeasureModule
+    vr/plugins/VRMenuSetupModule
+    vr/handleVRCollabUsers
+    vr/collabSyncExample
+    vr/showVRCollabUserPositions
+    vr/showUserInfo
+    vr/attachToController
+    vr/attachToTracker
+    vr/getVRDeviceBySerialNumber
+    vr/printAllDeviceSerialNumbers
+    vr/printSerialNumber
+    vr/printTouchpadPosition
+    vr/switchControllerVisuals
+    vr/virtualControllerButtons
+    vr/controllerVibration
+    vr/controllerCollision
+    vr/customInteraction
+    vr/combineCustomAndDefaultInteraction
+    vr/connectToDeviceActionSignal
+    vr/groupTeleport
+    vr/printActions
+    vr/printInteractions
+    vr/scaleGeometry
+    vr/setTeleportToVirtualButton
+    vr/virtualHands
+    turntable
+    vertices
+    videograb
+    virtualeye
+    deprecated_VR_examples/VR-hands-color
+    deprecated_VR_examples/VR-hands-vibrate
+    deprecated_VR_examples/VR-hands-pointing
+    VR-hands-touchsensor
+    VR-hands-touchsensor-2
+    VR-hands-webengine
+    deprecated_VR_examples/VR-hands-webengine-buttonVibration-openvr
+    Toy-Excavator-Constraints
+    deprecated_VR_examples/OculusTouchExample
+    deprecated_VR_examples/OpenVRExample
+    deprecated_VR_examples/OpenVRTracker
+    deprecated/addChildren
+    deprecated/clipPlane
+    wave
+    SimpleConstraints
+    sceneplates/color
+    sceneplates/create
+    sceneplates/createAsset
+    sceneplates/fade
+    sceneplates/remove
+    sceneplates/repeat
+    sceneplates/rotate
+    sceneplates/simple
+    sceneplates/switch
+    sceneplates/menu-sceneplate
+    menu-webengine
+    webengine-customevents
+    plugins/QtQuickStreaming
+    plugins/vrSubstanceExample
+    snippets/accessAttachements
+    snippets/accessCameraBlendTexture
+    snippets/accessXRiteMaterial
+    snippets/collectVisibleGeometries
+    snippets/convertAllMaterialGroups
+    snippets/convertRoughness
+    snippets/createMaterial
+    snippets/ctypestest
+    snippets/disableVertexCacheAnimation
+    snippets/openvr_controller_setup
+    snippets/openvr_tracker_setup
+    snippets/selectLightVisibilityReference
+    snippets/substanceMaterialTools
+    snippets/tagEditing
+    snippets/textureAnimation
+    snippets/toggleNavigationMode
+    snippets/deprecated/convertAllMaterialGroups
+    snippets/deprecated/countVisibleNodes
+    snippets/deprecated/tagEditing

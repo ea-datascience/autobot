@@ -1,0 +1,249 @@
+-----------
+vrBakeTypes
+-----------
+
+
+.. _vredvrBakeTypes:
+.. py:class:: vrBakeTypes
+
+
+
+
+
+
+
+    .. _vredvrBakeTypes.BakeType:
+    .. py:class:: BakeType
+
+        Defines which bake data will be used for rendering.
+
+
+            No bake data used.
+
+            .. _vredvrBakeTypes.BakeType.None_:
+            .. py:data:: None_
+
+
+            Vertex bake data used.
+
+            .. _vredvrBakeTypes.BakeType.Vertex:
+            .. py:data:: Vertex
+
+
+            Texture bake data used.
+
+            .. _vredvrBakeTypes.BakeType.Texture:
+            .. py:data:: Texture
+
+
+    .. _vredvrBakeTypes.BakeState:
+    .. py:class:: BakeState
+
+        Defines the bake state of a node.
+
+
+            There is no bake data.
+
+            .. _vredvrBakeTypes.BakeState.None_:
+            .. py:data:: None_
+
+
+            There is valid bake data for rendering.
+
+            .. _vredvrBakeTypes.BakeState.Valid:
+            .. py:data:: Valid
+
+
+            Rendering bake data was cleared, but last used settings still exist.
+
+            .. _vredvrBakeTypes.BakeState.Cleared:
+            .. py:data:: Cleared
+
+
+    .. _vredvrBakeTypes.DirectIlluminationMode:
+    .. py:class:: DirectIlluminationMode
+
+        Defines the kind of bake data which is generated as well as the mode used for rendering.
+
+
+            Ambient Occlusion data is generated/used.
+
+            .. _vredvrBakeTypes.DirectIlluminationMode.AmbientOcclusion:
+            .. py:data:: AmbientOcclusion
+
+
+            Shadow data is generated/used.
+
+            .. _vredvrBakeTypes.DirectIlluminationMode.Shadows:
+            .. py:data:: Shadows
+
+
+            Light and shadow data is generated/used.
+
+            .. _vredvrBakeTypes.DirectIlluminationMode.LightAndShadows:
+            .. py:data:: LightAndShadows
+
+
+            Separate illumination data from specific light sources (excluding environment) is generated/used.
+
+            .. _vredvrBakeTypes.DirectIlluminationMode.Light:
+            .. py:data:: Light
+
+
+    .. _vredvrBakeTypes.IlluminationQuality:
+    .. py:class:: IlluminationQuality
+
+        Defines a quality level for the direct and indirect vertex bake sampling (per vertex).
+
+
+            8×8 (hemisphere) samples for both, direct and indirect illumination calculation.
+
+            .. _vredvrBakeTypes.IlluminationQuality.Preview:
+            .. py:data:: Preview
+
+
+            16×16 (hemisphere) samples for both, direct and indirect illumination calculation.
+
+            .. _vredvrBakeTypes.IlluminationQuality.Low:
+            .. py:data:: Low
+
+
+            32×32 (hemisphere) samples for direct and 24x24 samples for indirect illumination calculation.
+
+            .. _vredvrBakeTypes.IlluminationQuality.Medium:
+            .. py:data:: Medium
+
+
+            48x48 (hemisphere) samples for direct and 32x32 samples for indirect illumination calculation.
+
+            .. _vredvrBakeTypes.IlluminationQuality.High:
+            .. py:data:: High
+
+
+            64x64 (hemisphere) samples for direct and 48x48 samples for indirect illumination calculation.
+
+            .. _vredvrBakeTypes.IlluminationQuality.Highest:
+            .. py:data:: Highest
+
+
+            128×128 hemisphere samples (only valid for direct illumination calculation).
+
+            .. _vredvrBakeTypes.IlluminationQuality.UltraHigh:
+            .. py:data:: UltraHigh
+
+
+    .. _vredvrBakeTypes.AmbientOcclusionWeight:
+    .. py:class:: AmbientOcclusionWeight
+
+        Defines how the ambient occlusion samples in the hemisphere above the calculation point are weighted.
+
+
+            All ambient occlusion samples have the same weight.
+
+            .. _vredvrBakeTypes.AmbientOcclusionWeight.Uniform:
+            .. py:data:: Uniform
+
+
+            Ambient occlusion samples in the direction of the surface normal have more influence on the result.
+
+            .. _vredvrBakeTypes.AmbientOcclusionWeight.Cosine:
+            .. py:data:: Cosine
+
+
+    .. _vredvrBakeTypes.UVGeneration:
+    .. py:class:: UVGeneration
+
+        Defines the generation method used for creating Lightmap UV Sets.
+
+
+            The triplanar projection mode and settings for the UV Editor "Layout" tab (except island and tile padding) are used for creating the Lightmap UV Sets.
+
+            .. _vredvrBakeTypes.UVGeneration.TriplanarAndLayout:
+            .. py:data:: TriplanarAndLayout
+
+
+            The current settings from the UV Editor in the “Unfold” and “Layout” tabs (except island and tile padding) are used for creating the Lightmap UV Sets.
+
+            .. _vredvrBakeTypes.UVGeneration.UnfoldAndLayout:
+            .. py:data:: UnfoldAndLayout
+
+
+    .. _vredvrBakeTypes.SubdivisionQuality:
+    .. py:class:: SubdivisionQuality
+
+        Defines the quality mode which is used for the subdivision calculation. Subdivision smoothes the baking result by subdividing the mesh into smaller triangles.
+
+
+            Subdivides up to two times, if the difference in intensities between the vertices of an edge is above the intensity threshold.
+
+            .. _vredvrBakeTypes.SubdivisionQuality.Low:
+            .. py:data:: Low
+
+
+            Subdivides up to two times, if the difference in intensities between the vertices of an edge, or the edge midpoint of the triangle edge, is above the intensity threshold.
+
+            .. _vredvrBakeTypes.SubdivisionQuality.Medium:
+            .. py:data:: Medium
+
+
+            Subdivides up to four times, if the difference in intensities between the vertices of an edge, or the edge midpoint, is above the intensity threshold.
+
+            .. _vredvrBakeTypes.SubdivisionQuality.High:
+            .. py:data:: High
+
+
+    .. _vredvrBakeTypes.Renderer:
+    .. py:class:: Renderer
+
+        Defines which raytracer should be used for computing the lightmaps.
+
+
+            The CPU raytracer is used for computing the lightmaps.
+
+            .. _vredvrBakeTypes.Renderer.CPURaytracing:
+            .. py:data:: CPURaytracing
+
+
+            The GPU raytracer is used for computing the lightmaps.
+
+            .. _vredvrBakeTypes.Renderer.GPURaytracing:
+            .. py:data:: GPURaytracing
+
+
+    .. _vredvrBakeTypes.DenoiserType:
+    .. py:class:: DenoiserType
+
+        Defines which denoiser is used to denoise the lightmap.
+
+
+            GPU Denoising is used if supported.
+
+            .. _vredvrBakeTypes.DenoiserType.GPU:
+            .. py:data:: GPU
+
+
+            CPU Denoising is used.
+
+            .. _vredvrBakeTypes.DenoiserType.CPU:
+            .. py:data:: CPU
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

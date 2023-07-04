@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrdBaseLightNode &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrdBaseLightProfile" href="class_vrdBaseLightProfile.html" />
+    <link rel="prev" title="vrdBRDFMaterial" href="class_vrdBRDFMaterial.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrdbaselightnode">
+<h1>vrdBaseLightNode<a class="headerlink" href="#vrdbaselightnode" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrdbaselightnode"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrdBaseLightNode">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrdBaseLightNode</span></code><a class="headerlink" href="#vrdBaseLightNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <a class="reference internal" href="class_vrdTransformNode.html#vrdTransformNode" title="vrdTransformNode"><code class="xref py py-class docutils literal notranslate"><span class="pre">vrdTransformNode</span></code></a>)</p>
+<p>This class is the base from which all other light nodes are derived from. It contains the functionality that is shared among all lights.</p>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrdbaselightnode-getbakelayer"><span class="std std-ref">getBakeLayer() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getcastshadowonshadowmaterial"><span class="std std-ref">getCastShadowOnShadowMaterial() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getdiffusecolor"><span class="std std-ref">getDiffuseColor() → QVector3D</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getdiffusecolorspectrum"><span class="std std-ref">getDiffuseColorSpectrum() → vrSpectrum</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getglossycolor"><span class="std std-ref">getGlossyColor() → QVector3D</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getglossycolorspectrum"><span class="std std-ref">getGlossyColorSpectrum() → vrSpectrum</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getgroundshadowintensity"><span class="std std-ref">getGroundShadowIntensity() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getilluminateshadowmaterial"><span class="std std-ref">getIlluminateShadowMaterial() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getimportancemultiplier"><span class="std std-ref">getImportanceMultiplier() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getintensity"><span class="std std-ref">getIntensity() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getisphysicallybased"><span class="std std-ref">getIsPhysicallyBased() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getlighttransform"><span class="std std-ref">getLightTransform() → vrdLightTransform</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getlightunit"><span class="std std-ref">getLightUnit() → vrLightTypes.Unit</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getmaterialshadowintensity"><span class="std std-ref">getMaterialShadowIntensity() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getmodulenode"><span class="std std-ref">getModuleNode() → vrdBaseLightNode</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-geton"><span class="std std-ref">getOn() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-gettemperature"><span class="std std-ref">getTemperature() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getuselighttemperature"><span class="std std-ref">getUseLightTemperature() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-getvisualizationvisible"><span class="std std-ref">getVisualizationVisible() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setbakelayer-layer"><span class="std std-ref">setBakeLayer(layer)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setcastshadowonshadowmaterial-castshadow"><span class="std std-ref">setCastShadowOnShadowMaterial(castShadow)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setdiffusecolor-diffusecolor"><span class="std std-ref">setDiffuseColor(diffuseColor)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setdiffusecolorspectrum-spectrum"><span class="std std-ref">setDiffuseColorSpectrum(spectrum)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setglossycolor-glossycolor"><span class="std std-ref">setGlossyColor(glossyColor)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setglossycolorspectrum-spectrum"><span class="std std-ref">setGlossyColorSpectrum(spectrum)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setgroundshadowintensity-intensity"><span class="std std-ref">setGroundShadowIntensity(intensity)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setilluminateshadowmaterial-illuminateshadosmeterial"><span class="std std-ref">setIlluminateShadowMaterial(illuminateShadosMeterial)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setimportancemultiplier-importancemultiplier"><span class="std std-ref">setImportanceMultiplier(importanceMultiplier)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setintensity-intensity"><span class="std std-ref">setIntensity(intensity)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setisphysicallybased-on"><span class="std std-ref">setIsPhysicallyBased(on)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setlightunit-unit"><span class="std std-ref">setLightUnit(unit)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setmaterialshadowintensity-intensity"><span class="std std-ref">setMaterialShadowIntensity(intensity)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-seton-on"><span class="std std-ref">setOn(on)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-settemperature-kelvin"><span class="std std-ref">setTemperature(kelvin)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setuselighttemperature-use"><span class="std std-ref">setUseLightTemperature(use)</span></a></li>
+<li><a class="reference internal" href="#vredvrdbaselightnode-setvisualizationvisible-showvisualization"><span class="std std-ref">setVisualizationVisible(showVisualization)</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrdbaselightnode-getbakelayer"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getBakeLayer">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getBakeLayer</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getBakeLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns which lightmap layer the illumination from this light source is baked to with texture baking. See         <a class="reference internal" href="#vredvrdbaselightnode-setbakelayer-layer"><span class="std std-ref">vrdBaseLightNode.setBakeLayer(layer)</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The layer index.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getcastshadowonshadowmaterial"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getCastShadowOnShadowMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getCastShadowOnShadowMaterial</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getCastShadowOnShadowMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns if the light casts a shadow on the shadow material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the light casts a shadow, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getdiffusecolor"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getDiffuseColor">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getDiffuseColor</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getDiffuseColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the diffuse color of the light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The diffuse color.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector3D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getdiffusecolorspectrum"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getDiffuseColorSpectrum">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getDiffuseColorSpectrum</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getDiffuseColorSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the spectrum of the light’s diffuse color.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The diffuse spectrum.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrSpectrum.html#vrSpectrum" title="vrSpectrum">vrSpectrum</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getglossycolor"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getGlossyColor">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getGlossyColor</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getGlossyColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the light’s glossy color.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The glossy color.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector3D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getglossycolorspectrum"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getGlossyColorSpectrum">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getGlossyColorSpectrum</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getGlossyColorSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the spectrum of the light’s glossy color.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The glossy spectrum.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrSpectrum.html#vrSpectrum" title="vrSpectrum">vrSpectrum</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getgroundshadowintensity"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getGroundShadowIntensity">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getGroundShadowIntensity</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getGroundShadowIntensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the intensity of shadows on the shadow material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The ground shadow intensity (interval: [0,1])</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getilluminateshadowmaterial"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getIlluminateShadowMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getIlluminateShadowMaterial</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getIlluminateShadowMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the light illuminates the shadow material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the light illuminates the shadow material, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getimportancemultiplier"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getImportanceMultiplier">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getImportanceMultiplier</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getImportanceMultiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the importance multiplier of the light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The importance multiplier.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getintensity"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getIntensity">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getIntensity</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getIntensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the intensity of the light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The intensity value.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getisphysicallybased"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getIsPhysicallyBased">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getIsPhysicallyBased</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getIsPhysicallyBased" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the light source is physically based.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if physically based, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getlighttransform"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getLightTransform">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getLightTransform</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getLightTransform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the light transform.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The light transform.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdLightTransform.html#vrdLightTransform" title="vrdLightTransform">vrdLightTransform</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getlightunit"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getLightUnit">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getLightUnit</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getLightUnit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unit used for this light source.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The light unit.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrLightTypes.html#vredvrlighttypes-unit"><span class="std std-ref">vrLightTypes.Unit</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getmaterialshadowintensity"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getMaterialShadowIntensity">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getMaterialShadowIntensity</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getMaterialShadowIntensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the intensity of shadows of brdf based materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The material shadow intensity (interval: [0,1].</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getmodulenode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getModuleNode">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getModuleNode</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getModuleNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the corresponding light graph node to this light node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns the light graph node</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#vrdBaseLightNode" title="vrdBaseLightNode">vrdBaseLightNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-geton"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getOn">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getOn</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getOn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the state of the light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the light is on, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-gettemperature"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getTemperature">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getTemperature</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getTemperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the light temperature.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The temperature in kelvin.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getuselighttemperature"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getUseLightTemperature">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getUseLightTemperature</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getUseLightTemperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the light uses the temperature value to determine its color.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the light’s temperature is used, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-getvisualizationvisible"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.getVisualizationVisible">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">getVisualizationVisible</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.getVisualizationVisible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the light source visualization is visible.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the visualization is visible, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setbakelayer-layer"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setBakeLayer">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setBakeLayer</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">layer</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setBakeLayer" title="Permalink to this definition">¶</a></dt>
+<dd><p>For texture baking, a layer can be set with         <a class="reference internal" href="class_vrdIlluminationBakeSettings.html#vredvrdilluminationbakesettings-setlightslayer-value"><span class="std std-ref">vrdIlluminationBakeSettings.setLightsLayer(value)</span></a> to bake only illumination from lights that have this bake layer number set. Use this function to set the layer for this light source. Default is 0.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>layer</strong> (<em>integer</em>) – The layer index. Supported values are 0 (base illumination/shadows) and 1 (separate illumination).</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setcastshadowonshadowmaterial-castshadow"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setCastShadowOnShadowMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setCastShadowOnShadowMaterial</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">castShadow</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setCastShadowOnShadowMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set whether the light casts a shadow on the shadow material or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>castShadow</strong> (<em>bool</em>) – True to cast a shadow, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setdiffusecolor-diffusecolor"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setDiffuseColor">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setDiffuseColor</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">diffuseColor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setDiffuseColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the diffuse color of the light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>diffuseColor</strong> (<em>QVector3D</em>) – The diffuse color.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setdiffusecolorspectrum-spectrum"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setDiffuseColorSpectrum">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setDiffuseColorSpectrum</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">spectrum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setDiffuseColorSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the spectrum of the light’s diffuse color.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>spectrum</strong> (<a class="reference internal" href="class_vrSpectrum.html#vrSpectrum" title="vrSpectrum"><em>vrSpectrum</em></a>) – The spectrum</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setglossycolor-glossycolor"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setGlossyColor">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setGlossyColor</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">glossyColor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setGlossyColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the glossy color of the light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>glossyColor</strong> (<em>QVector3D</em>) – The glossy color</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setglossycolorspectrum-spectrum"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setGlossyColorSpectrum">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setGlossyColorSpectrum</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">spectrum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setGlossyColorSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the spectrum of the light’s glossy color.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>spectrum</strong> (<a class="reference internal" href="class_vrSpectrum.html#vrSpectrum" title="vrSpectrum"><em>vrSpectrum</em></a>) – The glossy spectrum.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setgroundshadowintensity-intensity"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setGroundShadowIntensity">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setGroundShadowIntensity</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">intensity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setGroundShadowIntensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the intensity of shadows on the shadow material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>intensity</strong> (<em>float</em>) – The intensity value (interval: [0,1])</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setilluminateshadowmaterial-illuminateshadosmeterial"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setIlluminateShadowMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setIlluminateShadowMaterial</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">illuminateShadosMeterial</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setIlluminateShadowMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether the light illuminates the shadow material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>illuminateShadosMeterial</strong> (<em>bool</em>) – True if the light illuminates the shadow material, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setimportancemultiplier-importancemultiplier"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setImportanceMultiplier">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setImportanceMultiplier</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">importanceMultiplier</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setImportanceMultiplier" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the importance multiplier of the light.</p>
+<p>A value higher than 1 increases the probability that the light source emits photons.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>importanceMultiplier</strong> (<em>float</em>) – The importance multiplier</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setintensity-intensity"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setIntensity">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setIntensity</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">intensity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setIntensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the intensity of the light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>intensity</strong> (<em>float</em>) – The intensity of the light.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setisphysicallybased-on"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setIsPhysicallyBased">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setIsPhysicallyBased</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">on</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setIsPhysicallyBased" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether the light source is physically based.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>on</strong> (<em>bool</em>) – True to enable, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setlightunit-unit"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setLightUnit">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setLightUnit</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">unit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setLightUnit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the unit used for this light source.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>unit</strong> (<a class="reference internal" href="class_vrLightTypes.html#vredvrlighttypes-unit"><span class="std std-ref">vrLightTypes.Unit</span></a>) – The unit.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setmaterialshadowintensity-intensity"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setMaterialShadowIntensity">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setMaterialShadowIntensity</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">intensity</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setMaterialShadowIntensity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the intensity of shadows of brdf based materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>intensity</strong> (<em>float</em>) – The intensity value (interval: [0,1])</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-seton-on"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setOn">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setOn</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">on</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setOn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switch the light on / off.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>on</strong> (<em>bool</em>) – True to switch the light on, False to switch it off.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-settemperature-kelvin"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setTemperature">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setTemperature</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">kelvin</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setTemperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the light temperature.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>kelvin</strong> (<em>integer</em>) – The temperature in kelvin.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setuselighttemperature-use"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setUseLightTemperature">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setUseLightTemperature</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">use</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setUseLightTemperature" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether the light uses the temperature value to determine its color.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>use</strong> (<em>bool</em>) – True to use the light’s temperature, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdbaselightnode-setvisualizationvisible-showvisualization"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdBaseLightNode.setVisualizationVisible">
+<code class="sig-prename descclassname"><span class="pre">vrdBaseLightNode.</span></code><code class="sig-name descname"><span class="pre">setVisualizationVisible</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">showVisualization</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdBaseLightNode.setVisualizationVisible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether the light source visualization is visible.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>showVisualization</strong> (<em>bool</em>) – True to show the light’s visualization, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrdBaseLightNode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrdBRDFMaterial.html"
+                        title="previous chapter">vrdBRDFMaterial</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrdBaseLightProfile.html"
+                        title="next chapter">vrdBaseLightProfile</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrdBaseLightProfile.html" title="vrdBaseLightProfile"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrdBRDFMaterial.html" title="vrdBRDFMaterial"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

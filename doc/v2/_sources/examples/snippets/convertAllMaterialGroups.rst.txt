@@ -1,0 +1,7 @@
+convertAllMaterialGroups
+========================
+
+.. literalinclude:: ../../python_examples/snippets/convertAllMaterialGroups.py
+   :language: python
+   :linenos:
+   :caption: snippets/convertAllMaterialGroups.py

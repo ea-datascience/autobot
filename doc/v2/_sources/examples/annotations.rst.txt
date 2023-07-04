@@ -1,0 +1,7 @@
+Add and remove annotations
+==========================
+
+.. literalinclude:: ../python_examples/annotations.py
+   :language: python
+   :linenos:
+   :caption: annotations.py

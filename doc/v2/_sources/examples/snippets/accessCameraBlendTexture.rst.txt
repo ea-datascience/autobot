@@ -1,0 +1,7 @@
+accessCameraBlendTexture
+========================
+
+.. literalinclude:: ../../python_examples/snippets/accessCameraBlendTexture.py
+   :language: python
+   :linenos:
+   :caption: snippets/accessCameraBlendTexture.py

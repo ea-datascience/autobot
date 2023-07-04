@@ -1,0 +1,709 @@
+---------------
+vrdTireMaterial
+---------------
+
+
+.. _vredvrdTireMaterial:
+.. py:class:: vrdTireMaterial
+
+(Inherits :py:class:`vrdBRDFMaterial`)
+
+This class is used to handle all tire material properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBumpFlipU() → bool<vredvrdTireMaterial.getBumpFlipU()>`
+    * :ref:`getBumpFlipV() → bool<vredvrdTireMaterial.getBumpFlipV()>`
+    * :ref:`getBumpIntensity() → float<vredvrdTireMaterial.getBumpIntensity()>`
+    * :ref:`getBumpMarkings() → vrdImage<vredvrdTireMaterial.getBumpMarkings()>`
+    * :ref:`getBumpProfile() → vrdImage<vredvrdTireMaterial.getBumpProfile()>`
+    * :ref:`getDiffuseColor() → QVector3D<vredvrdTireMaterial.getDiffuseColor()>`
+    * :ref:`getDiffuseColorSpectrum() → vrSpectrum<vredvrdTireMaterial.getDiffuseColorSpectrum()>`
+    * :ref:`getDiffuseInputGamma() → float<vredvrdTireMaterial.getDiffuseInputGamma()>`
+    * :ref:`getDiffuseMarkings() → vrdImage<vredvrdTireMaterial.getDiffuseMarkings()>`
+    * :ref:`getDiffuseProfile() → vrdImage<vredvrdTireMaterial.getDiffuseProfile()>`
+    * :ref:`getDisplacementTexture() → vrdDisplacementTexture<vredvrdTireMaterial.getDisplacementTexture()>`
+    * :ref:`getGlossyColor() → QVector3D<vredvrdTireMaterial.getGlossyColor()>`
+    * :ref:`getGlossyColorSpectrum() → vrSpectrum<vredvrdTireMaterial.getGlossyColorSpectrum()>`
+    * :ref:`getGlossyInputGamma() → float<vredvrdTireMaterial.getGlossyInputGamma()>`
+    * :ref:`getGlossyMarkings() → vrdImage<vredvrdTireMaterial.getGlossyMarkings()>`
+    * :ref:`getGlossyProfile() → vrdImage<vredvrdTireMaterial.getGlossyProfile()>`
+    * :ref:`getIncandescence() → vrdIncandescence<vredvrdTireMaterial.getIncandescence()>`
+    * :ref:`getParallaxIntensity() → float<vredvrdTireMaterial.getParallaxIntensity()>`
+    * :ref:`getReflectivity() → float<vredvrdTireMaterial.getReflectivity()>`
+    * :ref:`getRoughness() → float<vredvrdTireMaterial.getRoughness()>`
+    * :ref:`getTextureSettings() → vrdTireTextureSettings<vredvrdTireMaterial.getTextureSettings()>`
+    * :ref:`getUseBumpMarkings() → bool<vredvrdTireMaterial.getUseBumpMarkings()>`
+    * :ref:`getUseBumpProfile() → bool<vredvrdTireMaterial.getUseBumpProfile()>`
+    * :ref:`getUseDiffuseMarkings() → bool<vredvrdTireMaterial.getUseDiffuseMarkings()>`
+    * :ref:`getUseDiffuseProfile() → bool<vredvrdTireMaterial.getUseDiffuseProfile()>`
+    * :ref:`getUseGlossyMarkings() → bool<vredvrdTireMaterial.getUseGlossyMarkings()>`
+    * :ref:`getUseGlossyProfile() → bool<vredvrdTireMaterial.getUseGlossyProfile()>`
+    * :ref:`setBumpFlipU(s) <vredvrdTireMaterial.setBumpFlipU(s)>`
+    * :ref:`setBumpFlipV(s) <vredvrdTireMaterial.setBumpFlipV(s)>`
+    * :ref:`setBumpIntensity(bumpIntensity) <vredvrdTireMaterial.setBumpIntensity(bumpIntensity)>`
+    * :ref:`setBumpMarkings(image) <vredvrdTireMaterial.setBumpMarkings(image)>`
+    * :ref:`setBumpProfile(image) <vredvrdTireMaterial.setBumpProfile(image)>`
+    * :ref:`setDiffuseColor(value) <vredvrdTireMaterial.setDiffuseColor(value)>`
+    * :ref:`setDiffuseColorSpectrum(value) <vredvrdTireMaterial.setDiffuseColorSpectrum(value)>`
+    * :ref:`setDiffuseInputGamma(gamma) <vredvrdTireMaterial.setDiffuseInputGamma(gamma)>`
+    * :ref:`setDiffuseMarkings(image) <vredvrdTireMaterial.setDiffuseMarkings(image)>`
+    * :ref:`setDiffuseProfile(image) <vredvrdTireMaterial.setDiffuseProfile(image)>`
+    * :ref:`setGlossyColor(value) <vredvrdTireMaterial.setGlossyColor(value)>`
+    * :ref:`setGlossyColorSpectrum(value) <vredvrdTireMaterial.setGlossyColorSpectrum(value)>`
+    * :ref:`setGlossyInputGamma(gamma) <vredvrdTireMaterial.setGlossyInputGamma(gamma)>`
+    * :ref:`setGlossyMarkings(image) <vredvrdTireMaterial.setGlossyMarkings(image)>`
+    * :ref:`setGlossyProfile(image) <vredvrdTireMaterial.setGlossyProfile(image)>`
+    * :ref:`setParallaxIntensity(parallaxIntensity) <vredvrdTireMaterial.setParallaxIntensity(parallaxIntensity)>`
+    * :ref:`setReflectivity(v) <vredvrdTireMaterial.setReflectivity(v)>`
+    * :ref:`setRoughness(roughness) <vredvrdTireMaterial.setRoughness(roughness)>`
+    * :ref:`setUseBumpMarkings(use) <vredvrdTireMaterial.setUseBumpMarkings(use)>`
+    * :ref:`setUseBumpProfile(use) <vredvrdTireMaterial.setUseBumpProfile(use)>`
+    * :ref:`setUseDiffuseMarkings(use) <vredvrdTireMaterial.setUseDiffuseMarkings(use)>`
+    * :ref:`setUseDiffuseProfile(use) <vredvrdTireMaterial.setUseDiffuseProfile(use)>`
+    * :ref:`setUseGlossyMarkings(use) <vredvrdTireMaterial.setUseGlossyMarkings(use)>`
+    * :ref:`setUseGlossyProfile(use) <vredvrdTireMaterial.setUseGlossyProfile(use)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdTireMaterial.getBumpFlipU():
+.. py:method:: vrdTireMaterial.getBumpFlipU()
+
+    Returns the U tangent direction of the bump map.
+
+
+
+
+    :return: The U tangent direction
+    :rtype: bool
+
+.. _vredvrdTireMaterial.getBumpFlipV():
+.. py:method:: vrdTireMaterial.getBumpFlipV()
+
+    Returns the V tangent direction of the bump map.
+
+
+
+
+    :return: The V tangent direction
+    :rtype: bool
+
+.. _vredvrdTireMaterial.getBumpIntensity():
+.. py:method:: vrdTireMaterial.getBumpIntensity()
+
+    Gets bump intensity value.
+
+
+
+
+    :return: The bump intensity value.
+    :rtype: float
+
+.. _vredvrdTireMaterial.getBumpMarkings():
+.. py:method:: vrdTireMaterial.getBumpMarkings()
+
+    Gets bump markings image.
+
+
+
+
+    :return: 
+    :rtype: vrdImage
+
+.. _vredvrdTireMaterial.getBumpProfile():
+.. py:method:: vrdTireMaterial.getBumpProfile()
+
+    Gets the bump profile image.
+
+
+
+
+    :return: The bump profile image.
+    :rtype: vrdImage
+
+.. _vredvrdTireMaterial.getDiffuseColor():
+.. py:method:: vrdTireMaterial.getDiffuseColor()
+
+    
+
+
+
+
+    :return: Current diffuse reflection color
+    :rtype: QVector3D
+
+.. _vredvrdTireMaterial.getDiffuseColorSpectrum():
+.. py:method:: vrdTireMaterial.getDiffuseColorSpectrum()
+
+    Gets the diffuse color spectrum.
+
+
+
+
+    :return: The current used spectrum for diffuse color
+    :rtype: vrSpectrum
+
+.. _vredvrdTireMaterial.getDiffuseInputGamma():
+.. py:method:: vrdTireMaterial.getDiffuseInputGamma()
+
+    Gets diffuse input gamma value.
+
+
+
+
+    :return: The diffuse input gamma value.
+    :rtype: float
+
+.. _vredvrdTireMaterial.getDiffuseMarkings():
+.. py:method:: vrdTireMaterial.getDiffuseMarkings()
+
+    Returns the diffuse markings image.
+
+
+
+
+    :return: Diffuse markings image
+    :rtype: vrdImage
+
+.. _vredvrdTireMaterial.getDiffuseProfile():
+.. py:method:: vrdTireMaterial.getDiffuseProfile()
+
+    Returns the diffuse profile image.
+
+
+
+
+    :return: The diffuse profile image
+    :rtype: vrdImage
+
+.. _vredvrdTireMaterial.getDisplacementTexture():
+.. py:method:: vrdTireMaterial.getDisplacementTexture()
+
+    Gets access to all properties of         :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>`.
+
+
+
+
+    :return: An :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>` object, to read and write access of alls properties.
+    :rtype: vrdDisplacementTexture
+
+.. _vredvrdTireMaterial.getGlossyColor():
+.. py:method:: vrdTireMaterial.getGlossyColor()
+
+    
+
+
+
+
+    :return: Current glossy reflection color
+    :rtype: QVector3D
+
+.. _vredvrdTireMaterial.getGlossyColorSpectrum():
+.. py:method:: vrdTireMaterial.getGlossyColorSpectrum()
+
+    
+
+
+
+
+    :return: The material's color spectrum for glossy reflections
+    :rtype: vrSpectrum
+
+.. _vredvrdTireMaterial.getGlossyInputGamma():
+.. py:method:: vrdTireMaterial.getGlossyInputGamma()
+
+    Gets glossy input gamma value.
+
+
+
+
+    :return: The glossy input gamma value.
+    :rtype: float
+
+.. _vredvrdTireMaterial.getGlossyMarkings():
+.. py:method:: vrdTireMaterial.getGlossyMarkings()
+
+    Returns the glossy markings image.
+
+
+
+
+    :return: The glossy markings image.
+    :rtype: vrdImage
+
+.. _vredvrdTireMaterial.getGlossyProfile():
+.. py:method:: vrdTireMaterial.getGlossyProfile()
+
+    Returns the glossy profile image.
+
+
+
+
+    :return: The glossy profile image.
+    :rtype: vrdImage
+
+.. _vredvrdTireMaterial.getIncandescence():
+.. py:method:: vrdTireMaterial.getIncandescence()
+
+    Gets access to all properties of         :any:`vrdIncandescence <vredvrdIncandescence>`.
+
+
+
+
+    :return: An :any:`vrdIncandescence <vredvrdIncandescence>` object, to read and write access of alls properties.
+    :rtype: vrdIncandescence
+
+.. _vredvrdTireMaterial.getParallaxIntensity():
+.. py:method:: vrdTireMaterial.getParallaxIntensity()
+
+    Gets parallax intensity value.
+
+
+
+
+    :return: The parallax intensity value.
+    :rtype: float
+
+.. _vredvrdTireMaterial.getReflectivity():
+.. py:method:: vrdTireMaterial.getReflectivity()
+
+    Gets the intensity of the reflection on the surface.
+
+
+
+
+    :return: Current used intensity of the reflection on the surface.
+    :rtype: float
+
+.. _vredvrdTireMaterial.getRoughness():
+.. py:method:: vrdTireMaterial.getRoughness()
+
+    
+
+
+
+
+    :return: The current value of roughness for this material.
+    :rtype: float
+
+.. _vredvrdTireMaterial.getTextureSettings():
+.. py:method:: vrdTireMaterial.getTextureSettings()
+
+    Get access to all         :any:`vrdTireTextureSettings <vredvrdTireTextureSettings>` properties.
+
+
+
+
+    :return: The embedded :any:`vrdTireTextureSettings <vredvrdTireTextureSettings>` object
+    :rtype: vrdTireTextureSettings
+
+.. _vredvrdTireMaterial.getUseBumpMarkings():
+.. py:method:: vrdTireMaterial.getUseBumpMarkings()
+
+    Returns whether a bump marking texture is used.
+
+
+
+
+    :return: True if a bump markings texture is used, False otherwise.
+    :rtype: bool
+
+.. _vredvrdTireMaterial.getUseBumpProfile():
+.. py:method:: vrdTireMaterial.getUseBumpProfile()
+
+    Returns whether a bump profile is used.
+
+
+
+
+    :return: True if a bump profile is used, False otherwise.
+    :rtype: bool
+
+.. _vredvrdTireMaterial.getUseDiffuseMarkings():
+.. py:method:: vrdTireMaterial.getUseDiffuseMarkings()
+
+    Return if a diffuse markings texture is used.
+
+
+
+
+    :return: True if a diffuse markings texture is used. False otherwise.
+    :rtype: bool
+
+.. _vredvrdTireMaterial.getUseDiffuseProfile():
+.. py:method:: vrdTireMaterial.getUseDiffuseProfile()
+
+    Returns if a diffuse profile texture is used.
+
+
+
+
+    :return: True if a diffuse profiltexture is used, False otherwise.
+    :rtype: bool
+
+.. _vredvrdTireMaterial.getUseGlossyMarkings():
+.. py:method:: vrdTireMaterial.getUseGlossyMarkings()
+
+    Returns if a glossy markings texture is used.
+
+
+
+
+    :return: True if a glossy markings texture is used, False otherwise.
+    :rtype: bool
+
+.. _vredvrdTireMaterial.getUseGlossyProfile():
+.. py:method:: vrdTireMaterial.getUseGlossyProfile()
+
+    Returns whether a glossy profile texture is used.
+
+
+
+
+    :return: True if a glossy profile texture is used, False otherwise.
+    :rtype: bool
+
+.. _vredvrdTireMaterial.setBumpFlipU(s):
+.. py:method:: vrdTireMaterial.setBumpFlipU(s)
+
+    Flips the U tangent direction of the normal or bump map of the markings texture. The profile texture should always be a height map and therefore flipping should not be required.
+
+
+
+    :param s: Flip U direction state
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTireMaterial.setBumpFlipV(s):
+.. py:method:: vrdTireMaterial.setBumpFlipV(s)
+
+    Flips the V tangent direction of the normal or bump map of the markings texture. The profile texture should always be a height map and therefore flipping should not be required.
+
+
+
+    :param s: Flip V direction state
+    :type s: bool
+
+    
+    
+
+.. _vredvrdTireMaterial.setBumpIntensity(bumpIntensity):
+.. py:method:: vrdTireMaterial.setBumpIntensity(bumpIntensity)
+
+    Sets bump intensity value.
+
+
+
+    :param bumpIntensity: The bump intensity value.
+    :type bumpIntensity: float
+
+    
+    
+
+.. _vredvrdTireMaterial.setBumpMarkings(image):
+.. py:method:: vrdTireMaterial.setBumpMarkings(image)
+
+    Sets bump marking image.
+
+    To load bump images, use:
+
+    .. code-block:: python
+    
+         image = vrImageService.loadImage(filename, vrImageTypes.LoadType.Bump)
+    ..
+    
+
+    :param image: Bump image
+    :type image: vrdImage
+
+    
+    
+
+.. _vredvrdTireMaterial.setBumpProfile(image):
+.. py:method:: vrdTireMaterial.setBumpProfile(image)
+
+    Sets bump profile image.
+
+    To load bump images, use:
+
+    .. code-block:: python
+    
+         image = vrImageService.loadImage(filename, vrImageTypes.LoadType.Bump)
+    ..
+    
+
+    :param image: Bump image
+    :type image: vrdImage
+
+    
+    
+
+.. _vredvrdTireMaterial.setDiffuseColor(value):
+.. py:method:: vrdTireMaterial.setDiffuseColor(value)
+
+    Sets the diffuse reflection color of the material.
+
+
+
+    :param value: New diffuse color.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdTireMaterial.setDiffuseColorSpectrum(value):
+.. py:method:: vrdTireMaterial.setDiffuseColorSpectrum(value)
+
+    Sets the diffuse color spectrum.
+
+
+
+    :param value: New spectrum for diffuse color
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdTireMaterial.setDiffuseInputGamma(gamma):
+.. py:method:: vrdTireMaterial.setDiffuseInputGamma(gamma)
+
+    Sets the diffuse input gamma value.
+
+
+
+    :param gamma: The gamma value.
+    :type gamma: float
+
+    
+    
+
+.. _vredvrdTireMaterial.setDiffuseMarkings(image):
+.. py:method:: vrdTireMaterial.setDiffuseMarkings(image)
+
+    Sets diffuse markings image.
+
+
+
+    :param image: Diffuse image
+    :type image: vrdImage
+
+    
+    
+
+.. _vredvrdTireMaterial.setDiffuseProfile(image):
+.. py:method:: vrdTireMaterial.setDiffuseProfile(image)
+
+    Sets diffuse profile image.
+
+
+
+    :param image: Diffuse image
+    :type image: vrdImage
+
+    
+    
+
+.. _vredvrdTireMaterial.setGlossyColor(value):
+.. py:method:: vrdTireMaterial.setGlossyColor(value)
+
+    Sets the glossy reflection color of the material.
+
+
+
+    :param value: New glossy reflection color
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdTireMaterial.setGlossyColorSpectrum(value):
+.. py:method:: vrdTireMaterial.setGlossyColorSpectrum(value)
+
+    Sets the material's color spectrum for glossy reflections.
+
+
+
+    :param value: New color spectrum
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdTireMaterial.setGlossyInputGamma(gamma):
+.. py:method:: vrdTireMaterial.setGlossyInputGamma(gamma)
+
+    Sets glossy input gamma value.
+
+
+
+    :param gamma: The gamma value.
+    :type gamma: float
+
+    
+    
+
+.. _vredvrdTireMaterial.setGlossyMarkings(image):
+.. py:method:: vrdTireMaterial.setGlossyMarkings(image)
+
+    Sets glossy markings image.
+
+
+
+    :param image: Glossy image
+    :type image: vrdImage
+
+    
+    
+
+.. _vredvrdTireMaterial.setGlossyProfile(image):
+.. py:method:: vrdTireMaterial.setGlossyProfile(image)
+
+    Sets glossy profile image.
+
+
+
+    :param image: Glossy image
+    :type image: vrdImage
+
+    
+    
+
+.. _vredvrdTireMaterial.setParallaxIntensity(parallaxIntensity):
+.. py:method:: vrdTireMaterial.setParallaxIntensity(parallaxIntensity)
+
+    Sets the parallax intensity value.
+
+
+
+    :param parallaxIntensity: The parallax intensity value.
+    :type parallaxIntensity: float
+
+    
+    
+
+.. _vredvrdTireMaterial.setReflectivity(v):
+.. py:method:: vrdTireMaterial.setReflectivity(v)
+
+    Controls the intensity of the reflection on the surface. The higher the value, the more the influence from the environment and objects around.
+
+
+
+    :param v: New intensity of the reflection on the surface.
+    :type v: float
+
+    
+    
+
+.. _vredvrdTireMaterial.setRoughness(roughness):
+.. py:method:: vrdTireMaterial.setRoughness(roughness)
+
+    Controls the sharpness of the glossy reflections. The higher the value, the rougher the microscopic structure on top of the surface and more diffuse the reflections.
+
+
+
+    :param roughness: New value of roughness for this material.
+    :type roughness: float
+
+    
+    
+
+.. _vredvrdTireMaterial.setUseBumpMarkings(use):
+.. py:method:: vrdTireMaterial.setUseBumpMarkings(use)
+
+    Sets whether a bump markings texture should be used.
+
+
+
+    :param use: True if a bump markings texture should be used, False otherwise.
+    :type use: bool
+
+    
+    
+
+.. _vredvrdTireMaterial.setUseBumpProfile(use):
+.. py:method:: vrdTireMaterial.setUseBumpProfile(use)
+
+    Set whether a bump profile should be used.
+
+
+
+    :param use: True to use a bump profile, False otherwise.
+    :type use: bool
+
+    
+    
+
+.. _vredvrdTireMaterial.setUseDiffuseMarkings(use):
+.. py:method:: vrdTireMaterial.setUseDiffuseMarkings(use)
+
+    Sets whether a diffuse markings texture should be used.
+
+
+
+    :param use: True to use a diffuse markings texture, False otherwise.
+    :type use: bool
+
+    
+    
+
+.. _vredvrdTireMaterial.setUseDiffuseProfile(use):
+.. py:method:: vrdTireMaterial.setUseDiffuseProfile(use)
+
+    Sets whether a diffuse profile texture should be used.
+
+
+
+    :param use: True to use a diffuse profile texture, False otherwise.
+    :type use: bool
+
+    
+    
+
+.. _vredvrdTireMaterial.setUseGlossyMarkings(use):
+.. py:method:: vrdTireMaterial.setUseGlossyMarkings(use)
+
+    Sets whether a glossy markings texture should be used.
+
+
+
+    :param use: True to use a glossy markings texture, False otherwise.
+    :type use: bool
+
+    
+    
+
+.. _vredvrdTireMaterial.setUseGlossyProfile(use):
+.. py:method:: vrdTireMaterial.setUseGlossyProfile(use)
+
+    Sets whether a glossy profile texture used.
+
+
+
+    :param use: True if a glossy profile texture is used, False otherwise.
+    :type use: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

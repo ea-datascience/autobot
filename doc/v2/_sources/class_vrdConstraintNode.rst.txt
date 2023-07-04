@@ -1,0 +1,170 @@
+-----------------
+vrdConstraintNode
+-----------------
+
+
+.. _vredvrdConstraintNode:
+.. py:class:: vrdConstraintNode
+
+(Inherits :py:class:`vrdNode`)
+
+This class serves as a base class for     :any:`vrdParentConstraintNode <vredvrdParentConstraintNode>`, :any:`vrdPositionConstraintNode <vredvrdPositionConstraintNode>`, :any:`vrdOrientationConstraintNode <vredvrdOrientationConstraintNode>` and :any:`vrdAimConstraintNode <vredvrdAimConstraintNode>`. It gives base access to a constraint object in VRED.
+
+For managing constraints and code examples see     :any:`vrConstraintService <vredvrConstraintService>`.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`clearConstrainedNode() <vredvrdConstraintNode.clearConstrainedNode()>`
+    * :ref:`clearTargetNodes() <vredvrdConstraintNode.clearTargetNodes()>`
+    * :ref:`getConstrainedNode() → vrdNode<vredvrdConstraintNode.getConstrainedNode()>`
+    * :ref:`getTargetNodes() → List[vrdNode]<vredvrdConstraintNode.getTargetNodes()>`
+    * :ref:`getTargetNodeWeight(node) → float<vredvrdConstraintNode.getTargetNodeWeight(node)>`
+    * :ref:`isActive() → bool<vredvrdConstraintNode.isActive()>`
+    * :ref:`setActive(value) <vredvrdConstraintNode.setActive(value)>`
+    * :ref:`setConstrainedNode(node) <vredvrdConstraintNode.setConstrainedNode(node)>`
+    * :ref:`setTargetNodes(nodes) <vredvrdConstraintNode.setTargetNodes(nodes)>`
+    * :ref:`setTargetNodeWeight(node, weight) <vredvrdConstraintNode.setTargetNodeWeight(node, weight)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdConstraintNode.clearConstrainedNode():
+.. py:method:: vrdConstraintNode.clearConstrainedNode()
+
+    Clears the constrained object node.
+
+
+
+
+    
+    
+
+.. _vredvrdConstraintNode.clearTargetNodes():
+.. py:method:: vrdConstraintNode.clearTargetNodes()
+
+    Clears the set target nodes of the constraint.
+
+
+
+
+    
+    
+
+.. _vredvrdConstraintNode.getConstrainedNode():
+.. py:method:: vrdConstraintNode.getConstrainedNode()
+
+    Returns the node set as the constrained object.
+
+
+
+
+    :return: The constrained object node.
+    :rtype: vrdNode
+
+.. _vredvrdConstraintNode.getTargetNodes():
+.. py:method:: vrdConstraintNode.getTargetNodes()
+
+    Returns the list of nodes set as targets for the constraint.
+
+
+
+
+    :return: The list of constraint target nodes.
+    :rtype: List[vrdNode]
+
+.. _vredvrdConstraintNode.getTargetNodeWeight(node):
+.. py:method:: vrdConstraintNode.getTargetNodeWeight(node)
+
+    Gets the weight for a target node of the constraint. The node must be referenced in the target nodes list of the constraint.
+
+
+
+    :param node: The target node to get the weight for.
+    :type node: vrdNode
+
+    :return: The weight for the target node. If the node is not found, 0.0 is returned.
+    :rtype: float
+
+.. _vredvrdConstraintNode.isActive():
+.. py:method:: vrdConstraintNode.isActive()
+
+    Returns if the constraint is active.
+
+
+
+
+    :return: True if constraint is active, False otherwise.
+    :rtype: bool
+
+.. _vredvrdConstraintNode.setActive(value):
+.. py:method:: vrdConstraintNode.setActive(value)
+
+    Sets the constraint active/deactive.
+
+
+
+    :param value: True if active, False otherwise.
+    :type value: bool
+
+    
+    
+
+.. _vredvrdConstraintNode.setConstrainedNode(node):
+.. py:method:: vrdConstraintNode.setConstrainedNode(node)
+
+    Sets a node as the constrained object.
+
+
+
+    :param node: The node to set as the constrained object.
+    :type node: vrdNode
+
+    
+    
+
+.. _vredvrdConstraintNode.setTargetNodes(nodes):
+.. py:method:: vrdConstraintNode.setTargetNodes(nodes)
+
+    Sets a list of nodes as targets for the constraint.
+
+
+
+    :param nodes: The nodes to set as constraint targets.
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrdConstraintNode.setTargetNodeWeight(node, weight):
+.. py:method:: vrdConstraintNode.setTargetNodeWeight(node, weight)
+
+    Sets the weight for a target node of the constraint. The node must be referenced in the target nodes list of the constraint.
+
+
+
+    :param node: The target node to set the weight for.
+    :type node: vrdNode
+
+    :param weight: The weight for the target node.
+    :type weight: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

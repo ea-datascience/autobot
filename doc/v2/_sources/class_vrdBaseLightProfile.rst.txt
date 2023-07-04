@@ -1,0 +1,49 @@
+-------------------
+vrdBaseLightProfile
+-------------------
+
+
+.. _vredvrdBaseLightProfile:
+.. py:class:: vrdBaseLightProfile
+
+(Inherits :py:class:`vrdSceneObject`)
+
+Class that gives access to MDL's Light profile.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAbsolutePath() → string<vredvrdBaseLightProfile.getAbsolutePath()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdBaseLightProfile.getAbsolutePath():
+.. py:method:: vrdBaseLightProfile.getAbsolutePath()
+
+    Returns the absolute path of the light profile.
+
+    This returns the absolute path of the light profile including the file name.
+
+
+    :return: The absolute path.
+    :rtype: string
+
+
+
+
+
+
+
+
+
+

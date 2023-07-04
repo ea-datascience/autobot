@@ -1,0 +1,7 @@
+Attach callback to the event loop
+=================================
+
+.. literalinclude:: ../python_examples/node.py
+   :language: python
+   :linenos:
+   :caption: node.py

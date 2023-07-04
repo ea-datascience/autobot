@@ -1,0 +1,270 @@
+--------------
+vrdMetadataSet
+--------------
+
+
+.. _vredvrdMetadataSet:
+.. py:class:: vrdMetadataSet
+
+(Inherits :py:class:`vrdObject`)
+
+This class gives access to the metadata set and metadata entries of an object.
+
+Metadata sets contain a list of key value pairs as     :any:`vrdMetadataEntry <vredvrdMetadataEntry>` objects.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`createEntry(valueType) → vrdMetadataEntry<vredvrdMetadataSet.createEntry(valueType)>`
+    * :ref:`getColor() → QColor<vredvrdMetadataSet.getColor()>`
+    * :ref:`getEntries() → vrdMetadataEntryList<vredvrdMetadataSet.getEntries()>`
+    * :ref:`getIcon() → QIcon<vredvrdMetadataSet.getIcon()>`
+    * :ref:`getName() → string<vredvrdMetadataSet.getName()>`
+    * :ref:`getObjects() → List[vrdSceneObject]<vredvrdMetadataSet.getObjects()>`
+    * :ref:`getUniqueKey(key) → string<vredvrdMetadataSet.getUniqueKey(key)>`
+    * :ref:`getValue(key) → QVariant<vredvrdMetadataSet.getValue(key)>`
+    * :ref:`isAsset() → bool<vredvrdMetadataSet.isAsset()>`
+    * :ref:`isAssigned() → bool<vredvrdMetadataSet.isAssigned()>`
+    * :ref:`isEditable() → bool<vredvrdMetadataSet.isEditable()>`
+    * :ref:`isEditedAsset() → bool<vredvrdMetadataSet.isEditedAsset()>`
+    * :ref:`isLocked() → bool<vredvrdMetadataSet.isLocked()>`
+    * :ref:`isObjectSet() → bool<vredvrdMetadataSet.isObjectSet()>`
+    * :ref:`setColor(color) <vredvrdMetadataSet.setColor(color)>`
+    * :ref:`setLocked(value) <vredvrdMetadataSet.setLocked(value)>`
+    * :ref:`setName(name) <vredvrdMetadataSet.setName(name)>`
+    * :ref:`setValue(key, value) <vredvrdMetadataSet.setValue(key, value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdMetadataSet.createEntry(valueType):
+.. py:method:: vrdMetadataSet.createEntry(valueType)
+
+    Create a new entry and add this new entry to this set.
+
+
+
+    :param valueType: The value type of the new entry.
+    :type valueType: :ref:`vrMetadataTypes.ValueType <vredvrMetadataTypes.ValueType>`
+
+    :return: The created :any:`vrdMetadataEntry <vredvrdMetadataEntry>` object.
+    :rtype: vrdMetadataEntry
+
+.. _vredvrdMetadataSet.getColor():
+.. py:method:: vrdMetadataSet.getColor()
+
+    
+
+
+
+
+    :return: Color of this set.
+    :rtype: QColor
+
+.. _vredvrdMetadataSet.getEntries():
+.. py:method:: vrdMetadataSet.getEntries()
+
+    Gets all         :any:`vrdMetadataEntry <vredvrdMetadataEntry>` entries of this set.
+
+
+
+
+    :return: A :any:`vrdMetadataEntryList <vredvrdMetadataEntryList>` which contains all :any:`vrdMetadataEntry <vredvrdMetadataEntry>` entries of this set.
+    :rtype: vrdMetadataEntryList
+
+.. _vredvrdMetadataSet.getIcon():
+.. py:method:: vrdMetadataSet.getIcon()
+
+    
+
+
+
+
+    :return: The icon of this set. The icon will be set internally and can't be changed.
+    :rtype: QIcon
+
+.. _vredvrdMetadataSet.getName():
+.. py:method:: vrdMetadataSet.getName()
+
+    
+
+
+
+
+    :return: The name of the set.
+    :rtype: string
+
+.. _vredvrdMetadataSet.getObjects():
+.. py:method:: vrdMetadataSet.getObjects()
+
+    
+
+
+
+
+    :return: All scene objects this set is assigned to.
+    :rtype: List[vrdSceneObject]
+
+.. _vredvrdMetadataSet.getUniqueKey(key):
+.. py:method:: vrdMetadataSet.getUniqueKey(key)
+
+    Gets a unique key within the metadata set.
+
+
+
+    :param key: The key candidate.
+    :type key: string
+
+    :return: A unique key based on the key candidate.
+    :rtype: string
+
+.. _vredvrdMetadataSet.getValue(key):
+.. py:method:: vrdMetadataSet.getValue(key)
+
+    Gets a value for an entry with a given key.
+
+
+
+    :param key: 
+    :type key: string
+
+    :return: The value for this key as QVariant. If no entry with the given key exists, an empty QVariant will be returned.
+    :rtype: QVariant
+
+.. _vredvrdMetadataSet.isAsset():
+.. py:method:: vrdMetadataSet.isAsset()
+
+    Gets the asset state of this set.
+
+
+
+
+    :return: True, if this set is an imported asset.
+    :rtype: bool
+
+.. _vredvrdMetadataSet.isAssigned():
+.. py:method:: vrdMetadataSet.isAssigned()
+
+    
+
+
+
+
+    :return: True, if the set is assigned to at least one object.
+    :rtype: bool
+
+.. _vredvrdMetadataSet.isEditable():
+.. py:method:: vrdMetadataSet.isEditable()
+
+    Gets the edit state of this set.
+
+
+
+
+    :return: True, if the set can be changed.
+    :rtype: bool
+
+.. _vredvrdMetadataSet.isEditedAsset():
+.. py:method:: vrdMetadataSet.isEditedAsset()
+
+    Gets the asset state of this set.
+
+
+
+
+    :return: True, if this set is an imported asset and can be edited.
+    :rtype: bool
+
+.. _vredvrdMetadataSet.isLocked():
+.. py:method:: vrdMetadataSet.isLocked()
+
+    Gets lock state of the set.
+
+
+
+
+    :return: True, if the set is locked.
+    :rtype: bool
+
+.. _vredvrdMetadataSet.isObjectSet():
+.. py:method:: vrdMetadataSet.isObjectSet()
+
+    
+
+
+
+
+    :return: True, if this set is an object set. See :any:`vrdMetadata.getObjectSet() <vredvrdMetadata.getObjectSet()>`.
+    :rtype: bool
+
+.. _vredvrdMetadataSet.setColor(color):
+.. py:method:: vrdMetadataSet.setColor(color)
+
+    Each metadata set has a color.
+
+
+
+    :param color: New color for this set.
+    :type color: QColor
+
+    
+    
+
+.. _vredvrdMetadataSet.setLocked(value):
+.. py:method:: vrdMetadataSet.setLocked(value)
+
+    Lock or unlock a metadata set.
+
+
+
+    :param value: New lock state.
+    :type value: bool
+
+    
+    
+
+.. _vredvrdMetadataSet.setName(name):
+.. py:method:: vrdMetadataSet.setName(name)
+
+    Sets the name of the metadata set.
+
+
+
+    :param name: A name for the set.
+    :type name: string
+
+    
+    
+
+.. _vredvrdMetadataSet.setValue(key, value):
+.. py:method:: vrdMetadataSet.setValue(key, value)
+
+    Sets a value for an entry with a given key. If no entry with the given key exists, a new entry with this key and with this value will be created.
+
+
+
+    :param key: The key.
+    :type key: string
+
+    :param value: The new value for this key.
+    :type value: QVariant
+
+    
+    
+
+
+
+
+
+
+
+
+
+

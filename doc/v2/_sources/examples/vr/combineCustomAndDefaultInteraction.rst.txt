@@ -1,0 +1,34 @@
+.. _combine-default-custom-interaction:
+
+Combine a custom and a default device interaction
+=================================================
+
+This example is based on the ":ref:`custom-interaction`" example, which should be reviewed first.
+Here, the same functionality is provided with the addition of using a default interaction in the same interaction group. 
+This is achieved by getting the default interaction object and adding support for the same interaction group.
+
+.. code-block:: python
+  :linenos:
+  :lineno-start: 19  
+
+  teleport = vrDeviceService.getInteraction("Teleport")
+  teleport.addSupportedInteractionGroup("CustomGroup")
+
+In addition the actions of the teleport are remapped. In this case, the custom trigger is used, which
+is an extended trigger that supports touch and untouched events.
+
+.. code-block:: python
+  :linenos:
+  :lineno-start: 21  
+
+  teleport.setControllerActionMapping("prepare", "right-customtrigger-touched")
+  teleport.setControllerActionMapping("abort", "right-customtrigger-untouched")
+  teleport.setControllerActionMapping("execute", "right-customtrigger-pressed")
+
+In addition to the printouts triggered by the left controller, it is also possible to teleport with the right controller
+using the trigger.
+
+.. literalinclude:: ../../python_examples/vr/combineCustomAndDefaultInteraction.py
+   :language: python
+   :linenos:
+   :caption: vr/combineCustomAndDefaultInteraction.py

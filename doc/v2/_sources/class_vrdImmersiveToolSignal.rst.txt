@@ -1,0 +1,107 @@
+----------------------
+vrdImmersiveToolSignal
+----------------------
+
+
+.. _vredvrdImmersiveToolSignal:
+.. py:class:: vrdImmersiveToolSignal
+
+(Inherits :py:class:`vrdObjectSignal`)
+
+Signal object containing actual signals that are sent by the     :any:`vrdImmersiveTool <vredvrdImmersiveTool>`.
+
+
+
+
+
+
+
+Summary
+=======
+
+Signals:
+    * :ref:`checked(tool) <vredvrdImmersiveToolSignal.checked(tool)>`
+    * :ref:`clicked(tool) <vredvrdImmersiveToolSignal.clicked(tool)>`
+    * :ref:`unchecked(tool) <vredvrdImmersiveToolSignal.unchecked(tool)>`
+    * :ref:`viewClosed(tool) <vredvrdImmersiveToolSignal.viewClosed(tool)>`
+    * :ref:`viewOpened(tool) <vredvrdImmersiveToolSignal.viewOpened(tool)>`
+
+
+
+
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrdImmersiveToolSignal.checked(tool):
+.. py:method:: vrdImmersiveToolSignal.checked(tool)
+
+    Signal emitted when the tool button is switched on.
+
+
+
+    :param tool: The :any:`vrdImmersiveTool <vredvrdImmersiveTool>` that triggered the signal
+    :type tool: vrdImmersiveTool
+
+    
+    
+
+.. _vredvrdImmersiveToolSignal.clicked(tool):
+.. py:method:: vrdImmersiveToolSignal.clicked(tool)
+
+    Signal is emitted when the tool button is clicked.
+
+
+
+    :param tool: The :any:`vrdImmersiveTool <vredvrdImmersiveTool>` that triggered the signal
+    :type tool: vrdImmersiveTool
+
+    
+    
+
+.. _vredvrdImmersiveToolSignal.unchecked(tool):
+.. py:method:: vrdImmersiveToolSignal.unchecked(tool)
+
+    Signal emitted when the tool button is switched off.
+
+
+
+    :param tool: The :any:`vrdImmersiveTool <vredvrdImmersiveTool>` that triggered the signal
+    :type tool: vrdImmersiveTool
+
+    
+    
+
+.. _vredvrdImmersiveToolSignal.viewClosed(tool):
+.. py:method:: vrdImmersiveToolSignal.viewClosed(tool)
+
+    Signal emitted when the tool view is closed.
+
+
+
+    :param tool: The :any:`vrdImmersiveTool <vredvrdImmersiveTool>` that triggered the signal
+    :type tool: vrdImmersiveTool
+
+    
+    
+
+.. _vredvrdImmersiveToolSignal.viewOpened(tool):
+.. py:method:: vrdImmersiveToolSignal.viewOpened(tool)
+
+    Signal emitted when the tool view is opened.
+
+
+
+    :param tool: The :any:`vrdImmersiveTool <vredvrdImmersiveTool>` that triggered the signal
+    :type tool: vrdImmersiveTool
+
+    
+    
+
+

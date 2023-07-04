@@ -1,0 +1,57 @@
+----------------
+vrSubstanceTypes
+----------------
+
+
+.. _vredvrSubstanceTypes:
+.. py:class:: vrSubstanceTypes
+
+
+
+
+
+
+
+    .. _vredvrSubstanceTypes.PresetApplyMode:
+    .. py:class:: PresetApplyMode
+
+        Defines the mode with which a preset is applied to the graph.
+
+
+            Applies the stored values of the preset and resets all graph inputs which are not included in the preset.
+
+            .. _vredvrSubstanceTypes.PresetApplyMode.ApplyAndReset:
+            .. py:data:: ApplyAndReset
+
+
+            Applies the stored values of the preset and leaves all other graph inputs unchanged.
+
+            .. _vredvrSubstanceTypes.PresetApplyMode.ApplyAndMerge:
+            .. py:data:: ApplyAndMerge
+
+
+            Use the entry from the preferences which is either Apply and Reset or Apply and Merge.
+
+            .. _vredvrSubstanceTypes.PresetApplyMode.UsePreference:
+            .. py:data:: UsePreference
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

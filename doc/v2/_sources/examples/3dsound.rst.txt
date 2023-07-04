@@ -1,0 +1,13 @@
+3D sound examples
+=================
+
+.. literalinclude:: ../python_examples/3DSound.py
+   :language: python
+   :linenos:
+   :caption: 3DSound.py
+
+
+.. literalinclude:: ../python_examples/3DSound2.py
+   :language: python
+   :linenos:
+   :caption: 3DSound2.py

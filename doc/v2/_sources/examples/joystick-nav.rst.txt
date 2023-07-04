@@ -1,0 +1,7 @@
+Move camera with joystick
+=========================
+
+.. literalinclude:: ../python_examples/joystick-nav.py
+   :language: python
+   :linenos:
+   :caption: joystick-nav.py

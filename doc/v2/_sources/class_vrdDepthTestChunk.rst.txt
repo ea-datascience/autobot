@@ -1,0 +1,116 @@
+-----------------
+vrdDepthTestChunk
+-----------------
+
+
+.. _vredvrdDepthTestChunk:
+.. py:class:: vrdDepthTestChunk
+
+(Inherits :py:class:`vrdMaterialChunk`)
+
+This class represents a depth test chunk.
+
+
+
+    .. _vredvrdDepthTestChunk.DepthFunc:
+    .. py:class:: DepthFunc
+
+
+
+
+            
+
+            .. _vredvrdDepthTestChunk.DepthFunc.Never:
+            .. py:data:: Never
+
+
+            
+
+            .. _vredvrdDepthTestChunk.DepthFunc.Less:
+            .. py:data:: Less
+
+
+            
+
+            .. _vredvrdDepthTestChunk.DepthFunc.Equal:
+            .. py:data:: Equal
+
+
+            
+
+            .. _vredvrdDepthTestChunk.DepthFunc.LEqual:
+            .. py:data:: LEqual
+
+
+            
+
+            .. _vredvrdDepthTestChunk.DepthFunc.Greater:
+            .. py:data:: Greater
+
+
+            
+
+            .. _vredvrdDepthTestChunk.DepthFunc.NotEqual:
+            .. py:data:: NotEqual
+
+
+            
+
+            .. _vredvrdDepthTestChunk.DepthFunc.GEqual:
+            .. py:data:: GEqual
+
+
+            
+
+            .. _vredvrdDepthTestChunk.DepthFunc.Always:
+            .. py:data:: Always
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getDepthFunc() → vrdDepthTestChunk.DepthFunc<vredvrdDepthTestChunk.getDepthFunc()>`
+    * :ref:`setDepthFunc(depthFunc) <vredvrdDepthTestChunk.setDepthFunc(depthFunc)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdDepthTestChunk.getDepthFunc():
+.. py:method:: vrdDepthTestChunk.getDepthFunc()
+
+    Returns the depth comparison function.
+
+
+
+
+    :return: The depth function.
+    :rtype: :ref:`vrdDepthTestChunk.DepthFunc <vredvrdDepthTestChunk.DepthFunc>`
+
+.. _vredvrdDepthTestChunk.setDepthFunc(depthFunc):
+.. py:method:: vrdDepthTestChunk.setDepthFunc(depthFunc)
+
+    Sets the depth comparison function.
+
+
+
+    :param depthFunc: The depth function
+    :type depthFunc: :ref:`vrdDepthTestChunk.DepthFunc <vredvrdDepthTestChunk.DepthFunc>`
+
+    
+    
+
+
+
+
+
+
+
+
+
+

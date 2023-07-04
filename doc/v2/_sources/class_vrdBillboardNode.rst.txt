@@ -1,0 +1,167 @@
+----------------
+vrdBillboardNode
+----------------
+
+
+.. _vredvrdBillboardNode:
+.. py:class:: vrdBillboardNode
+
+(Inherits :py:class:`vrdNode`)
+
+This class provides access to a billboard node.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAlignToScreen() → bool<vredvrdBillboardNode.getAlignToScreen()>`
+    * :ref:`getAxisOfRotation() → QVector3D<vredvrdBillboardNode.getAxisOfRotation()>`
+    * :ref:`getFocusOnCamera() → bool<vredvrdBillboardNode.getFocusOnCamera()>`
+    * :ref:`getMaxAngle() → float<vredvrdBillboardNode.getMaxAngle()>`
+    * :ref:`getMinAngle() → float<vredvrdBillboardNode.getMinAngle()>`
+    * :ref:`setAlignToScreen(value) <vredvrdBillboardNode.setAlignToScreen(value)>`
+    * :ref:`setAxisOfRotation(value) <vredvrdBillboardNode.setAxisOfRotation(value)>`
+    * :ref:`setFocusOnCamera(value) <vredvrdBillboardNode.setFocusOnCamera(value)>`
+    * :ref:`setMaxAngle(value) <vredvrdBillboardNode.setMaxAngle(value)>`
+    * :ref:`setMinAngle(value) <vredvrdBillboardNode.setMinAngle(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdBillboardNode.getAlignToScreen():
+.. py:method:: vrdBillboardNode.getAlignToScreen()
+
+    
+
+
+
+
+    :return: True, if screen alignment is enabled
+    :rtype: bool
+
+.. _vredvrdBillboardNode.getAxisOfRotation():
+.. py:method:: vrdBillboardNode.getAxisOfRotation()
+
+    
+
+
+
+
+    :return: The axis of rotation
+    :rtype: QVector3D
+
+.. _vredvrdBillboardNode.getFocusOnCamera():
+.. py:method:: vrdBillboardNode.getFocusOnCamera()
+
+    
+
+
+
+
+    :return: True, if focus on camera is enabled
+    :rtype: bool
+
+.. _vredvrdBillboardNode.getMaxAngle():
+.. py:method:: vrdBillboardNode.getMaxAngle()
+
+    
+
+
+
+
+    :return: The maximum rotation angle
+    :rtype: float
+
+.. _vredvrdBillboardNode.getMinAngle():
+.. py:method:: vrdBillboardNode.getMinAngle()
+
+    
+
+
+
+
+    :return: The minimum rotation angle
+    :rtype: float
+
+.. _vredvrdBillboardNode.setAlignToScreen(value):
+.. py:method:: vrdBillboardNode.setAlignToScreen(value)
+
+    Enable or disabled screen alignment.
+
+
+
+    :param value: True, if screen alignment should be enabled
+    :type value: bool
+
+    
+    
+
+.. _vredvrdBillboardNode.setAxisOfRotation(value):
+.. py:method:: vrdBillboardNode.setAxisOfRotation(value)
+
+    Changes the axis of rotation.
+
+
+
+    :param value: A vector describing the rotation axis
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdBillboardNode.setFocusOnCamera(value):
+.. py:method:: vrdBillboardNode.setFocusOnCamera(value)
+
+    Enable or disabled focus on camera.
+
+
+
+    :param value: True, if focus on camera should be enabled
+    :type value: bool
+
+    
+    
+
+.. _vredvrdBillboardNode.setMaxAngle(value):
+.. py:method:: vrdBillboardNode.setMaxAngle(value)
+
+    Restrict rotation to a maximum angle.
+
+
+
+    :param value: The new maximum angle
+    :type value: float
+
+    
+    
+
+.. _vredvrdBillboardNode.setMinAngle(value):
+.. py:method:: vrdBillboardNode.setMinAngle(value)
+
+    Restrict rotation to a minimum angle.
+
+
+
+    :param value: The new minimum angle
+    :type value: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

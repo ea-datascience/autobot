@@ -1,0 +1,147 @@
+----------------
+vrCameraFromAtUp
+----------------
+
+
+.. _vredvrCameraFromAtUp:
+.. py:class:: vrCameraFromAtUp
+
+
+
+Class that contains from, at and up vector for use with the camera nodes.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAt() → QVector3D<vredvrCameraFromAtUp.getAt()>`
+    * :ref:`getFrom() → QVector3D<vredvrCameraFromAtUp.getFrom()>`
+    * :ref:`getUp() → QVector3D<vredvrCameraFromAtUp.getUp()>`
+    * :ref:`setAt(at) <vredvrCameraFromAtUp.setAt(at)>`
+    * :ref:`setFrom(from) <vredvrCameraFromAtUp.setFrom(from)>`
+    * :ref:`setUp(up) <vredvrCameraFromAtUp.setUp(up)>`
+    * :ref:`vrCameraFromAtUp() <vredvrCameraFromAtUp.vrCameraFromAtUp()>`
+    * :ref:`vrCameraFromAtUp(from, at, up) <vredvrCameraFromAtUp.vrCameraFromAtUp(from, at, up)>`
+
+
+Functions
+=========
+
+
+.. _vredvrCameraFromAtUp.getAt():
+.. py:method:: vrCameraFromAtUp.getAt()
+
+    Gets the at vector.
+
+
+
+
+    :return: The at vector.
+    :rtype: QVector3D
+
+.. _vredvrCameraFromAtUp.getFrom():
+.. py:method:: vrCameraFromAtUp.getFrom()
+
+    Gets the from vector.
+
+
+
+
+    :return: The from vector.
+    :rtype: QVector3D
+
+.. _vredvrCameraFromAtUp.getUp():
+.. py:method:: vrCameraFromAtUp.getUp()
+
+    Gets the up vector.
+
+
+
+
+    :return: The up vector.
+    :rtype: QVector3D
+
+.. _vredvrCameraFromAtUp.setAt(at):
+.. py:method:: vrCameraFromAtUp.setAt(at)
+
+    Sets the at vector.
+
+
+
+    :param at: The at vector.
+    :type at: QVector3D
+
+    
+    
+
+.. _vredvrCameraFromAtUp.setFrom(from):
+.. py:method:: vrCameraFromAtUp.setFrom(from)
+
+    Sets the from vector.
+
+
+
+    :param from: The from vector.
+    :type from: QVector3D
+
+    
+    
+
+.. _vredvrCameraFromAtUp.setUp(up):
+.. py:method:: vrCameraFromAtUp.setUp(up)
+
+    Sets the up vector.
+
+
+
+    :param up: The up vector.
+    :type up: QVector3D
+
+    
+    
+
+.. _vredvrCameraFromAtUp.vrCameraFromAtUp():
+.. py:method:: vrCameraFromAtUp.vrCameraFromAtUp()
+
+    Default constructor. Initializes from, at, up with zeros.
+
+
+
+
+    
+    
+
+.. _vredvrCameraFromAtUp.vrCameraFromAtUp(from, at, up):
+.. py:method:: vrCameraFromAtUp.vrCameraFromAtUp(from, at, up)
+
+    Constructor with from, at, up parameters.
+
+
+
+    :param from: The from vector.
+    :type from: QVector3D
+
+    :param at: The at vector.
+    :type at: QVector3D
+
+    :param up: The up vector.
+    :type up: QVector3D
+
+    
+    
+
+
+
+
+
+
+
+
+
+

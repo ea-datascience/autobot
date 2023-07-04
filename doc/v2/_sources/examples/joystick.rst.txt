@@ -1,0 +1,7 @@
+vrJoystick demo
+===============
+
+.. literalinclude:: ../python_examples/joystick.py
+   :language: python
+   :linenos:
+   :caption: joystick.py

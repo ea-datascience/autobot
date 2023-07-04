@@ -1,0 +1,14 @@
+Connecting to a signal that is executed, when the controller collides with a node
+=================================================================================
+
+This example shows, how to connect to the signals that are triggered when a collision of the controller
+starts or stops.
+Controllers are only capable of detecting a collision, when either in hand mode or when using a Stylus
+as input device. The tip of the index finger and the tip of the stylus contain the collision sensor.
+Collisions are only detected when the colliding node supports collisions, which is currently limited to 
+items in the VR menu, touch sensors and web engines.
+
+.. literalinclude:: ../../python_examples/vr/controllerCollision.py
+    :language: python
+    :linenos:
+    :caption: vr/controllerCollision.py

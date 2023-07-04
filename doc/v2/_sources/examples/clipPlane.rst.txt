@@ -1,0 +1,7 @@
+Creating a local clipping plane
+===============================
+
+.. literalinclude:: ../python_examples/clipPlane.py
+   :language: python
+   :linenos:
+   :caption: clipPlane.py

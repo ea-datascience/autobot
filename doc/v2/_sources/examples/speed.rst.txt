@@ -1,0 +1,7 @@
+vrTimer demo
+============
+
+.. literalinclude:: ../python_examples/speed.py
+   :language: python
+   :linenos:
+   :caption: speed.py

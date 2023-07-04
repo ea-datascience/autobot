@@ -1,0 +1,7 @@
+Query camera and tracking information
+=====================================
+
+.. literalinclude:: ../../python_examples/vr/showUserInfo.py
+   :language: python
+   :linenos:
+   :caption: vr/showUserInfo.py

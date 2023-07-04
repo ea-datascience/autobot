@@ -1,0 +1,18 @@
+Analog Clock example
+====================
+
+This example renders an analog clock with the current time. It shows an alternate way to update 
+an application continually through a QTimer, instead of having to derive from vrAEBase and attaching
+the script to VRED's application loop.
+The QTimer serves essentially the same purpose. Since we do not specify an update interval, the timer
+will trigger every time QT updates.
+
+Apart from this, the new decoupled interface is used for finding nodes and updating the rotation of
+vrdGeometryNodes.
+
+When the script is running, the clock can be stopped with 'clock.stop()'. It can be restarted again with 'clock.start()' and completely reset with 'clock.reset()'.
+
+.. literalinclude:: ../python_examples/analog_clock.py
+   :language: python
+   :linenos:
+   :caption: analog_clock.py

@@ -1,0 +1,34 @@
+----------------------------
+vrdOrientationConstraintNode
+----------------------------
+
+
+.. _vredvrdOrientationConstraintNode:
+.. py:class:: vrdOrientationConstraintNode
+
+(Inherits :py:class:`vrdConstraintNode`)
+
+This class gives access to an orientation constraint object in VRED. An orientation constraint will synchronize the orientation of a source and a target. If there are multiple sources, the orientation is calculated as the weighted average value of it.
+
+For managing constraints and code examples see     :any:`vrConstraintService <vredvrConstraintService>`.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

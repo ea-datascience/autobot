@@ -1,0 +1,9 @@
+(Deprecated) Add child nodes
+============================
+
+This example uses API v1. See :doc:`../addChildren` for example with API v2.
+
+.. literalinclude:: ../../python_examples/deprecated/addChildren.py
+   :language: python
+   :linenos:
+   :caption: deprecated/addChildren.py

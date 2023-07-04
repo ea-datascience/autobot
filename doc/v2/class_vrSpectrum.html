@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrSpectrum &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrStyleTypes" href="class_vrStyleTypes.html" />
+    <link rel="prev" title="vrSessionService" href="class_vrSessionService.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrspectrum">
+<h1>vrSpectrum<a class="headerlink" href="#vrspectrum" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrspectrum"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrSpectrum">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrSpectrum</span></code><a class="headerlink" href="#vrSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>This class represents a color spectrum.</p>
+<p>The <a class="reference internal" href="#vredvrspectrum"><span class="std std-ref">vrSpectrum</span></a> represents a color spectrum and provides various functions to construct a spectrum. A spectrum is represented as a list of wavelengths and a matching list of values for these wavelengths. From these wavelenghts and source values a sample spectrum is calculated for rendering which always uses the spectral range from 380nm to 780nm with 10nm wide sample buckets (40 samples in total). This class provides functions for loading and saving spectrum files as well as creating a reflection or D65 illumination spectrum from RGB values. Additional functions for creating and combining analytic spectra and setting fully custom spectra are also provided.</p>
+<p>A basic example on how to apply a spectrum and the corresponding color to a material:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a plastic material</span>
+<span class="n">plastic</span> <span class="o">=</span> <span class="n">vrMaterialService</span><span class="o">.</span><span class="n">createMaterial</span><span class="p">(</span><span class="s2">&quot;Plastic Material&quot;</span><span class="p">,</span> <span class="n">vrMaterialTypes</span><span class="o">.</span><span class="n">Plastic</span><span class="p">)</span>
+
+<span class="c1"># create a spectrum</span>
+<span class="n">spectrum</span> <span class="o">=</span> <span class="n">vrSpectrum</span><span class="p">()</span>
+<span class="n">spectrum</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="mi">380</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="p">[</span><span class="mf">0.6</span><span class="p">,</span><span class="mf">0.8</span><span class="p">,</span><span class="mf">0.4</span><span class="p">,</span><span class="mf">0.2</span><span class="p">,</span><span class="mf">0.15</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mf">0.0</span><span class="p">,</span><span class="mf">0.0</span><span class="p">])</span>
+<span class="n">spectrum</span><span class="o">.</span><span class="n">setUseSpectrum</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="c1"># apply the spectrum</span>
+<span class="n">plastic</span><span class="o">.</span><span class="n">setDiffuseColorSpectrum</span><span class="p">(</span><span class="n">spectrum</span><span class="p">)</span>
+
+<span class="c1"># apply the color that matches the spectrum</span>
+<span class="n">plastic</span><span class="o">.</span><span class="n">setDiffuseColor</span><span class="p">(</span><span class="n">spectrum</span><span class="o">.</span><span class="n">getRGB</span><span class="p">())</span>
+</pre></div>
+</div>
+<blockquote>
+<div><span class="target" id="vredvrspectrum-spectradefines"></span><dl class="py class">
+<dt class="sig sig-object py" id="SpectraDefines">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">SpectraDefines</span></code><a class="headerlink" href="#SpectraDefines" title="Permalink to this definition">¶</a></dt>
+<dd><span class="target" id="vredvrspectrum-spectradefines-spectrasamplecount"></span><dl class="py data">
+<dt class="sig sig-object py" id="SpectraDefines.SpectraSampleCount">
+<code class="sig-name descname"><span class="pre">SpectraSampleCount</span></code><a class="headerlink" href="#SpectraDefines.SpectraSampleCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-spectradefines-wavelengthstart"></span><dl class="py data">
+<dt class="sig sig-object py" id="SpectraDefines.WavelengthStart">
+<code class="sig-name descname"><span class="pre">WavelengthStart</span></code><a class="headerlink" href="#SpectraDefines.WavelengthStart" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-spectradefines-wavelengthend"></span><dl class="py data">
+<dt class="sig sig-object py" id="SpectraDefines.WavelengthEnd">
+<code class="sig-name descname"><span class="pre">WavelengthEnd</span></code><a class="headerlink" href="#SpectraDefines.WavelengthEnd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-spectradefines-wavelengthdelta"></span><dl class="py data">
+<dt class="sig sig-object py" id="SpectraDefines.WavelengthDelta">
+<code class="sig-name descname"><span class="pre">WavelengthDelta</span></code><a class="headerlink" href="#SpectraDefines.WavelengthDelta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-spectradefines-sourcewavelengthscount"></span><dl class="py data">
+<dt class="sig sig-object py" id="SpectraDefines.SourceWavelengthsCount">
+<code class="sig-name descname"><span class="pre">SourceWavelengthsCount</span></code><a class="headerlink" href="#SpectraDefines.SourceWavelengthsCount" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-spectradefines-sourcewavelengthdelta"></span><dl class="py data">
+<dt class="sig sig-object py" id="SpectraDefines.SourceWavelengthDelta">
+<code class="sig-name descname"><span class="pre">SourceWavelengthDelta</span></code><a class="headerlink" href="#SpectraDefines.SourceWavelengthDelta" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-analyticfunction"></span><dl class="py class">
+<dt class="sig sig-object py" id="AnalyticFunction">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">AnalyticFunction</span></code><a class="headerlink" href="#AnalyticFunction" title="Permalink to this definition">¶</a></dt>
+<dd><span class="target" id="vredvrspectrum-analyticfunction-blackbody"></span><dl class="py data">
+<dt class="sig sig-object py" id="AnalyticFunction.Blackbody">
+<code class="sig-name descname"><span class="pre">Blackbody</span></code><a class="headerlink" href="#AnalyticFunction.Blackbody" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-analyticfunction-cie-d"></span><dl class="py data">
+<dt class="sig sig-object py" id="AnalyticFunction.CIE_D">
+<code class="sig-name descname"><span class="pre">CIE_D</span></code><a class="headerlink" href="#AnalyticFunction.CIE_D" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-analyticfunction-gauss"></span><dl class="py data">
+<dt class="sig sig-object py" id="AnalyticFunction.Gauss">
+<code class="sig-name descname"><span class="pre">Gauss</span></code><a class="headerlink" href="#AnalyticFunction.Gauss" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-analyticfunction-cosine"></span><dl class="py data">
+<dt class="sig sig-object py" id="AnalyticFunction.Cosine">
+<code class="sig-name descname"><span class="pre">Cosine</span></code><a class="headerlink" href="#AnalyticFunction.Cosine" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-analyticfunction-bartlett"></span><dl class="py data">
+<dt class="sig sig-object py" id="AnalyticFunction.Bartlett">
+<code class="sig-name descname"><span class="pre">Bartlett</span></code><a class="headerlink" href="#AnalyticFunction.Bartlett" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-analyticfunction-blackman"></span><dl class="py data">
+<dt class="sig sig-object py" id="AnalyticFunction.Blackman">
+<code class="sig-name descname"><span class="pre">Blackman</span></code><a class="headerlink" href="#AnalyticFunction.Blackman" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-analyticfunction-connes"></span><dl class="py data">
+<dt class="sig sig-object py" id="AnalyticFunction.Connes">
+<code class="sig-name descname"><span class="pre">Connes</span></code><a class="headerlink" href="#AnalyticFunction.Connes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-analyticfunction-hamming"></span><dl class="py data">
+<dt class="sig sig-object py" id="AnalyticFunction.Hamming">
+<code class="sig-name descname"><span class="pre">Hamming</span></code><a class="headerlink" href="#AnalyticFunction.Hamming" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-analyticfunction-hanning"></span><dl class="py data">
+<dt class="sig sig-object py" id="AnalyticFunction.Hanning">
+<code class="sig-name descname"><span class="pre">Hanning</span></code><a class="headerlink" href="#AnalyticFunction.Hanning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-analyticfunction-lorentzian"></span><dl class="py data">
+<dt class="sig sig-object py" id="AnalyticFunction.Lorentzian">
+<code class="sig-name descname"><span class="pre">Lorentzian</span></code><a class="headerlink" href="#AnalyticFunction.Lorentzian" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrspectrum-analyticfunction-welch"></span><dl class="py data">
+<dt class="sig sig-object py" id="AnalyticFunction.Welch">
+<code class="sig-name descname"><span class="pre">Welch</span></code><a class="headerlink" href="#AnalyticFunction.Welch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div></blockquote>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrspectrum-add-spectrumb"><span class="std std-ref">add(spectrumB)</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-addanalyticfunction-function-peakwavelength-peakintensity-fwhm-kelvin-clear-wavelengthstart-wavelengthdelta-wavelengthcount"><span class="std std-ref">addAnalyticFunction(function, peakWavelength, peakIntensity, fwhm, kelvin, clear, wavelengthStart, wavelengthDelta, wavelengthCount)</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-copy-source"><span class="std std-ref">copy(source) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getmaxvalue"><span class="std std-ref">getMaxValue() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getphotometricvalue"><span class="std std-ref">getPhotometricValue() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getrgb"><span class="std std-ref">getRGB() → QVector3D</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getsample-i"><span class="std std-ref">getSample(i) → float</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getsamples"><span class="std std-ref">getSamples() → List[float]</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getsourcevalue-i"><span class="std std-ref">getSourceValue(i) → float</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getsourcevalues"><span class="std std-ref">getSourceValues() → List[float]</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getstartwavelength"><span class="std std-ref">getStartWavelength() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getsum"><span class="std std-ref">getSum() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getusespectrum"><span class="std std-ref">getUseSpectrum() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getwavelength-i"><span class="std std-ref">getWavelength(i) → float</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getwavelengthcount"><span class="std std-ref">getWavelengthCount() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getwavelengthdelta"><span class="std std-ref">getWavelengthDelta() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getwavelengths"><span class="std std-ref">getWavelengths() → List[float]</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-getxyz"><span class="std std-ref">getXYZ() → QVector3D</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-isactive"><span class="std std-ref">isActive() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-isinitialized"><span class="std std-ref">isInitialized() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-load-filename"><span class="std std-ref">load(filename) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-operator-other"><span class="std std-ref">operator=(other) → vrSpectrum</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-resamplesource-wavelengthstart-wavelengthdelta-wavelengthcount"><span class="std std-ref">resampleSource(wavelengthStart, wavelengthDelta, wavelengthCount)</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-save-filename"><span class="std std-ref">save(filename) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-scale-scalingfactor"><span class="std std-ref">scale(scalingFactor)</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-set-value-wavelengthstart-wavelengthdelta-wavelengthcount"><span class="std std-ref">set(value, wavelengthStart, wavelengthDelta, wavelengthCount)</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-set-wavelengthstart-wavelengthdelta-values"><span class="std std-ref">set(wavelengthStart, wavelengthDelta, values) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-set-wavelengths-values"><span class="std std-ref">set(wavelengths, values) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-setilluminationspectrumfromrgb-red-green-blue-wavelengthstart-wavelengthdelta-wavelengthcount"><span class="std std-ref">setIlluminationSpectrumFromRGB(red, green, blue, wavelengthStart, wavelengthDelta, wavelengthCount)</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-setone"><span class="std std-ref">setOne()</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-setphotometricvalue-value"><span class="std std-ref">setPhotometricValue(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-setrgb-red-green-blue-wavelengthstart-wavelengthdelta-wavelengthcount"><span class="std std-ref">setRGB(red, green, blue, wavelengthStart, wavelengthDelta, wavelengthCount)</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-setusespectrum-usespectrum"><span class="std std-ref">setUseSpectrum(useSpectrum)</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-vrspectrum"><span class="std std-ref">vrSpectrum()</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-vrspectrum-other"><span class="std std-ref">vrSpectrum(other)</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-vrspectrum-red-green-blue"><span class="std std-ref">vrSpectrum(red, green, blue)</span></a></li>
+<li><a class="reference internal" href="#vredvrspectrum-vrspectrum-rgb"><span class="std std-ref">vrSpectrum(rgb)</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrspectrum-add-spectrumb"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.add">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">add</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">spectrumB</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.add" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a spectrum to the current spectrum When the wavelengths of the two spectra do not overlap they will be concatenated. If the wavelengths do overlap the values of the provided spectrum will be added to the current spectrum. If both spectra were loaded from a .TXT file they are assumed to contain adjoining spectra and will be scaled to create a unified spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>spectrumB</strong> (<a class="reference internal" href="#vrSpectrum" title="vrSpectrum"><em>vrSpectrum</em></a>) – The spectrum to add to the current spectrum</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-addanalyticfunction-function-peakwavelength-peakintensity-fwhm-kelvin-clear-wavelengthstart-wavelengthdelta-wavelengthcount"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.addAnalyticFunction">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">addAnalyticFunction</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">function</span></span></em>, <em><span class="n"><span class="pre">peakWavelength</span></span></em>, <em><span class="n"><span class="pre">peakIntensity</span></span></em>, <em><span class="n"><span class="pre">fwhm</span></span></em>, <em><span class="n"><span class="pre">kelvin</span></span></em>, <em><span class="n"><span class="pre">clear</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em><span class="n"><span class="pre">wavelengthStart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">WavelengthStart</span></span></em>, <em><span class="n"><span class="pre">wavelengthDelta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SourceWavelengthDelta</span></span></em>, <em><span class="n"><span class="pre">wavelengthCount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SourceWavelengthsCount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.addAnalyticFunction" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates an analytic spectrum and adds it to the current spectrum.</p>
+<div class="line-block">
+<div class="line">The addAnalyticFunction calculates an analytic function with the given parameters and adds them to the current spectrum. Various types are available:</div>
+<div class="line-block">
+<div class="line">Blackbody</div>
+<div class="line">CIE_D</div>
+<div class="line">Gauss</div>
+<div class="line">Cosine</div>
+<div class="line">Bartlett</div>
+<div class="line">Blackman</div>
+<div class="line">Connes</div>
+<div class="line">Hamming</div>
+<div class="line">Hanning</div>
+<div class="line">Lorentzian</div>
+<div class="line">Welch</div>
+</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>function</strong> (<a class="reference internal" href="#AnalyticFunction" title="AnalyticFunction"><em>AnalyticFunction</em></a>) – The type of function to use</li>
+<li><strong>peakWavelength</strong> (<em>float</em>) – The center wavelength for the calculated spectrum except for the CIE_D type</li>
+<li><strong>peakIntensity</strong> (<em>float</em>) – The maximum intensity of the calculated spectrum</li>
+<li><strong>fwhm</strong> (<em>float</em>) – The full width at half maximum value. It describes the width of the analytic functions except for the CIE_D type</li>
+<li><strong>kelvin</strong> (<em>float</em>) – The correlated color temperature for the CIE_D function calculation</li>
+<li><strong>clear</strong> (<em>bool</em>) – If true the existing spectrum is replaced, otherwise the calculated spectrum is added to the existing spectrum</li>
+<li><strong>wavelengthStart</strong> (<em>integer</em>) – The start wavelength for the initialization. Default is 380nm</li>
+<li><strong>wavelengthDelta</strong> (<em>integer</em>) – The delta between two adjacent wavelengths. Default is 5nm</li>
+<li><strong>wavelengthCount</strong> (<em>integer</em>) – The number of wavelengths to use. Default is 81 samples. The end wavelength is calculated as startwavelength + wavelengthCount * wavelengthDelta</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-copy-source"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.copy">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">copy</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">source</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.copy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copies the given spectrum to the current spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>source</strong> (<a class="reference internal" href="#vrSpectrum" title="vrSpectrum"><em>vrSpectrum</em></a>) – The source spectrum to copy from</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the copy was successful, False otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getmaxvalue"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getMaxValue">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getMaxValue</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getMaxValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the maximum value of the spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The maximum value of the spectrum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getphotometricvalue"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getPhotometricValue">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getPhotometricValue</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getPhotometricValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the photometric value of the spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The photometric value of the spectrum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getrgb"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getRGB">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getRGB</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getRGB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the reflection spectrum to linear rgb with sRGB primaries and returns it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The linear rgb color with sRGB primaries of the spectrum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector3D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getsample-i"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getSample">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getSample</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getSample" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns sampled for the i-th sample in the spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>integer</em>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Value of i-th sample in the spectrum</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getsamples"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getSamples">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getSamples</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getSamples" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the sampled spectrum values.</p>
+<p>The returned values represent the spectrum used for rendering in the 380nm to 780nm range with 10nm wide sample buckets</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of sampled spectrum values in the spectrum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[float]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getsourcevalue-i"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getSourceValue">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getSourceValue</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getSourceValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns source spectrum value for the i-th sample in the spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>integer</em>) – The index of the source spectrum value to return</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Source spectrum value of the i-th sample in the spectrum</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getsourcevalues"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getSourceValues">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getSourceValues</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getSourceValues" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of source spectrum values used in the spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of source spectrum values in the spectrum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[float]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getstartwavelength"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getStartWavelength">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getStartWavelength</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getStartWavelength" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the first wavelength of the spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The first wavelength</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getsum"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getSum">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getSum</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getSum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the sum of all sample values of the spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The sum of all sample values of the spectrum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getusespectrum"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getUseSpectrum">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getUseSpectrum</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getUseSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the spectrum is set to active or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The state of the spectrum usage flag</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getwavelength-i"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getWavelength">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getWavelength</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">i</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getWavelength" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns wavelength for the i-th sample in the spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>i</strong> (<em>integer</em>) – The index of the wavelength to return</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Wavelength of i-th sample in the spectrum</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getwavelengthcount"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getWavelengthCount">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getWavelengthCount</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getWavelengthCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of wavelength/value pairs in the spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of wavelength/value pairs in the spectrum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getwavelengthdelta"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getWavelengthDelta">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getWavelengthDelta</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getWavelengthDelta" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the delta between wavelengths of the spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The delta between wavelengths in the spectrum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getwavelengths"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getWavelengths">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getWavelengths</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getWavelengths" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the list of wavelengths used in the spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of wavelengths in the spectrum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[float]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-getxyz"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.getXYZ">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">getXYZ</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.getXYZ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the spectrum to CIE XYZ and returns it.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The XYZ color of the spectrum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QVector3D</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-isactive"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.isActive">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">isActive</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.isActive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the spectrum is active or inactive.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The active state of the spectrum</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-isinitialized"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.isInitialized">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">isInitialized</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.isInitialized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the spectrum has been initialized.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The initialization state</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-load-filename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.load">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">load</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads the spectrum data from a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em>) – The filename of the spectrum file to load</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if loading the file was successful, False otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-operator-other"></span><dl class="py method">
+<dt class="sig sig-object py">
+<code class="sig-name descname"><span class="pre">vrSpectrum.operator=(other)</span></code></dt>
+<dd><p>Assigns another spectrum to the current spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#vrSpectrum" title="vrSpectrum"><em>vrSpectrum</em></a>) – The spectrum to set this spectrum to</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#vrSpectrum" title="vrSpectrum">vrSpectrum</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-resamplesource-wavelengthstart-wavelengthdelta-wavelengthcount"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.resampleSource">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">resampleSource</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">wavelengthStart</span></span></em>, <em><span class="n"><span class="pre">wavelengthDelta</span></span></em>, <em><span class="n"><span class="pre">wavelengthCount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.resampleSource" title="Permalink to this definition">¶</a></dt>
+<dd><p>Resamples the source spectrum according to the given settings.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>wavelengthStart</strong> (<em>integer</em>) – The start wavelength for the resampling</li>
+<li><strong>wavelengthDelta</strong> (<em>integer</em>) – The delta between two adjacent wavelengths</li>
+<li><strong>wavelengthCount</strong> (<em>integer</em>) – The number of wavelengths to use</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-save-filename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.save">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">save</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">filename</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves the spectrum data to a file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> (<em>string</em>) – The filename of the spectrum file to save</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if loading the file was successful, False otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-scale-scalingfactor"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.scale">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">scale</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">scalingFactor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.scale" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scales the current spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>scalingFactor</strong> (<em>float</em>) – The scaling factor</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-set-value-wavelengthstart-wavelengthdelta-wavelengthcount"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.set">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">set</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em>, <em><span class="n"><span class="pre">wavelengthStart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">WavelengthStart</span></span></em>, <em><span class="n"><span class="pre">wavelengthDelta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SourceWavelengthDelta</span></span></em>, <em><span class="n"><span class="pre">wavelengthCount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SourceWavelengthsCount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.set" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the spectrum to a given value for all wavelengths.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>value</strong> (<em>float</em>) – The value to set all wavelengths to</li>
+<li><strong>wavelengthStart</strong> (<em>integer</em>) – The start wavelength for the initialization. Default is 380nm</li>
+<li><strong>wavelengthDelta</strong> (<em>integer</em>) – The delta between two adjacent wavelengths. Default is 5nm</li>
+<li><strong>wavelengthCount</strong> (<em>integer</em>) – The number of wavelengths to use. Default is 81 samples. The end wavelength is calculated as startwavelength + wavelengthCount * wavelengthDelta</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-set-wavelengthstart-wavelengthdelta-values"></span><dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">set</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">wavelengthStart</span></span></em>, <em><span class="n"><span class="pre">wavelengthDelta</span></span></em>, <em><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the values of a spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wavelengthStart</strong> (<em>integer</em>) – The wavelength for the first value</li>
+<li><strong>wavelengthDelta</strong> (<em>integer</em>) – The delta between wavelengths</li>
+<li><strong>values</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – The values of the wavelengths</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if setting the spectrum was successful, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-set-wavelengths-values"></span><dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">set</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">wavelengths</span></span></em>, <em><span class="n"><span class="pre">values</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the values of a spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>wavelengths</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – The wavelengths of the spectrum. The number of wavelengths must match the number of values</li>
+<li><strong>values</strong> (<em>List</em><em>[</em><em>float</em><em>]</em>) – The values of the wavelengths. The number values of must match the number of wavelengths</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if setting the spectrum was successful, False otherwise</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-setilluminationspectrumfromrgb-red-green-blue-wavelengthstart-wavelengthdelta-wavelengthcount"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.setIlluminationSpectrumFromRGB">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">setIlluminationSpectrumFromRGB</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">red</span></span></em>, <em><span class="n"><span class="pre">green</span></span></em>, <em><span class="n"><span class="pre">blue</span></span></em>, <em><span class="n"><span class="pre">wavelengthStart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">WavelengthStart</span></span></em>, <em><span class="n"><span class="pre">wavelengthDelta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SourceWavelengthDelta</span></span></em>, <em><span class="n"><span class="pre">wavelengthCount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SourceWavelengthsCount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.setIlluminationSpectrumFromRGB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the spectrum to a D65 based illumination spectrum from linear rgb values with sRGB primaries.</p>
+<p>The setIlluminationSpectrumFromRGB function set the spectrum to a D65 based illumination spectrum from linear rgb values with sRGB primaries. Use this function to set a spectrum for a lightsource or the incandescence channel of a material when using the default D65 whitepoint.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>red</strong> (<em>float</em>) – Red color component</li>
+<li><strong>green</strong> (<em>float</em>) – Green color component</li>
+<li><strong>blue</strong> (<em>float</em>) – Blue color component</li>
+<li><strong>wavelengthStart</strong> (<em>integer</em>) – The start wavelength for the initialization. Default is 380nm</li>
+<li><strong>wavelengthDelta</strong> (<em>integer</em>) – The delta between two adjacent wavelengths. Default is 5nm</li>
+<li><strong>wavelengthCount</strong> (<em>integer</em>) – The number of wavelengths to use. Default is 81 samples. The end wavelength is calculated as startwavelength + wavelengthCount * wavelengthDelta</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-setone"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.setOne">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">setOne</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.setOne" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the spectrum to all 1 with the default range from 380nm to 780nm with a wavelength delta of 5nm.</p>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-setphotometricvalue-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.setPhotometricValue">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">setPhotometricValue</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.setPhotometricValue" title="Permalink to this definition">¶</a></dt>
+<dd><p>Scales the spectrum to match the given photometric value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>float</em>) – The photometric value to set</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-setrgb-red-green-blue-wavelengthstart-wavelengthdelta-wavelengthcount"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.setRGB">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">setRGB</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">red</span></span></em>, <em><span class="n"><span class="pre">green</span></span></em>, <em><span class="n"><span class="pre">blue</span></span></em>, <em><span class="n"><span class="pre">wavelengthStart</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">WavelengthStart</span></span></em>, <em><span class="n"><span class="pre">wavelengthDelta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SourceWavelengthDelta</span></span></em>, <em><span class="n"><span class="pre">wavelengthCount</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">SourceWavelengthsCount</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.setRGB" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the spectrum to a reflection spectrum from linear rgb values with sRGB primaries.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>red</strong> (<em>float</em>) – Red color component</li>
+<li><strong>green</strong> (<em>float</em>) – Green color component</li>
+<li><strong>blue</strong> (<em>float</em>) – Blue color component</li>
+<li><strong>wavelengthStart</strong> (<em>integer</em>) – The start wavelength for the initialization. Default is 380nm</li>
+<li><strong>wavelengthDelta</strong> (<em>integer</em>) – The delta between two adjacent wavelengths. Default is 5nm</li>
+<li><strong>wavelengthCount</strong> (<em>integer</em>) – The number of wavelengths to use. Default is 81 samples. The end wavelength is calculated as startwavelength + wavelengthCount * wavelengthDelta</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-setusespectrum-usespectrum"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.setUseSpectrum">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">setUseSpectrum</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">useSpectrum</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.setUseSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the spectrum to active or inactive.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>useSpectrum</strong> (<em>bool</em>) – Set to True to enable the use of the spectrum or to False otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-vrspectrum"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSpectrum.vrSpectrum">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">vrSpectrum</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSpectrum.vrSpectrum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates an empty spectrum.</p>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-vrspectrum-other"></span><dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">vrSpectrum</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a copy of another spectrum.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#vrSpectrum" title="vrSpectrum"><em>vrSpectrum</em></a>) – The spectrum to copy the data from</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-vrspectrum-red-green-blue"></span><dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">vrSpectrum</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">red</span></span></em>, <em><span class="n"><span class="pre">green</span></span></em>, <em><span class="n"><span class="pre">blue</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new spectrum initialized form linear rgb values with sRGB primaries. The range of the spectrum is from 380nm to 780nm with a wavelength delta of 5nm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>red</strong> (<em>float</em>) – Red color component</li>
+<li><strong>green</strong> (<em>float</em>) – Green color component</li>
+<li><strong>blue</strong> (<em>float</em>) – Blue color component</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrspectrum-vrspectrum-rgb"></span><dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<code class="sig-prename descclassname"><span class="pre">vrSpectrum.</span></code><code class="sig-name descname"><span class="pre">vrSpectrum</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">rgb</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new spectrum initialized form linear rgb values with sRGB primaries. The range of the spectrum is from 380nm to 780nm with a wavelength delta of 5nm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>rgb</strong> (<em>QVector3D</em>) – RGB color in linear space with sRGB primaries</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrSpectrum</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrSessionService.html"
+                        title="previous chapter">vrSessionService</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrStyleTypes.html"
+                        title="next chapter">vrStyleTypes</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrStyleTypes.html" title="vrStyleTypes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrSessionService.html" title="vrSessionService"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

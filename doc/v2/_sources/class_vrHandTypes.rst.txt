@@ -1,0 +1,189 @@
+-----------
+vrHandTypes
+-----------
+
+
+.. _vredvrHandTypes:
+.. py:class:: vrHandTypes
+
+
+
+
+
+
+
+    .. _vredvrHandTypes.HandRole:
+    .. py:class:: HandRole
+
+
+
+
+            
+
+            .. _vredvrHandTypes.HandRole.Undefined:
+            .. py:data:: Undefined
+
+
+            
+
+            .. _vredvrHandTypes.HandRole.LeftHand:
+            .. py:data:: LeftHand
+
+
+            
+
+            .. _vredvrHandTypes.HandRole.RightHand:
+            .. py:data:: RightHand
+
+
+    .. _vredvrHandTypes.FingerType:
+    .. py:class:: FingerType
+
+
+
+
+            
+
+            .. _vredvrHandTypes.FingerType.Thumb:
+            .. py:data:: Thumb
+
+
+            
+
+            .. _vredvrHandTypes.FingerType.Index:
+            .. py:data:: Index
+
+
+            
+
+            .. _vredvrHandTypes.FingerType.Middle:
+            .. py:data:: Middle
+
+
+            
+
+            .. _vredvrHandTypes.FingerType.Ring:
+            .. py:data:: Ring
+
+
+            
+
+            .. _vredvrHandTypes.FingerType.Pinky:
+            .. py:data:: Pinky
+
+
+    .. _vredvrHandTypes.HandTrackingGesture:
+    .. py:class:: HandTrackingGesture
+
+
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingGesture.NoGesture:
+            .. py:data:: NoGesture
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingGesture.TapPalmGesture:
+            .. py:data:: TapPalmGesture
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingGesture.TapToBackOfHandGesture:
+            .. py:data:: TapToBackOfHandGesture
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingGesture.TwoGesture:
+            .. py:data:: TwoGesture
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingGesture.ThreeGesture:
+            .. py:data:: ThreeGesture
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingGesture.RockGesture:
+            .. py:data:: RockGesture
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingGesture.PointingGesture:
+            .. py:data:: PointingGesture
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingGesture.OpenHandGesture:
+            .. py:data:: OpenHandGesture
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingGesture.FistGesture:
+            .. py:data:: FistGesture
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingGesture.PeaceGesture:
+            .. py:data:: PeaceGesture
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingGesture.ThumbsUpGesture:
+            .. py:data:: ThumbsUpGesture
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingGesture.PinchingGesture:
+            .. py:data:: PinchingGesture
+
+
+    .. _vredvrHandTypes.HandTrackingType:
+    .. py:class:: HandTrackingType
+
+
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingType.CustomHandTracking:
+            .. py:data:: CustomHandTracking
+
+
+            
+
+            .. _vredvrHandTypes.HandTrackingType.VarjoUltraleapHandTracking:
+            .. py:data:: VarjoUltraleapHandTracking
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

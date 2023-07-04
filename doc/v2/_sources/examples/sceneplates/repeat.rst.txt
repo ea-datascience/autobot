@@ -1,0 +1,7 @@
+Repeat
+======
+
+.. literalinclude:: ../../python_examples/sceneplates/repeat.py
+   :language: python
+   :linenos:
+   :caption: sceneplates/switch.py

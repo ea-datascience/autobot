@@ -1,0 +1,7 @@
+Fade
+====
+
+.. literalinclude:: ../../python_examples/sceneplates/fade.py
+   :language: python
+   :linenos:
+   :caption: sceneplates/fade.py

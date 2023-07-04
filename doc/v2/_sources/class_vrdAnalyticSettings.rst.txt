@@ -1,0 +1,193 @@
+-------------------
+vrdAnalyticSettings
+-------------------
+
+
+.. _vredvrdAnalyticSettings:
+.. py:class:: vrdAnalyticSettings
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This class gives access to material settings used in Analytic Rendering mode. See     :any:`vrdBRDFMaterial.getAnalytic() <vredvrdBRDFMaterial.getAnalytic()>`.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getDiffuseColor() → QVector3D<vredvrdAnalyticSettings.getDiffuseColor()>`
+    * :ref:`getEmissiveColor() → QVector3D<vredvrdAnalyticSettings.getEmissiveColor()>`
+    * :ref:`getGlossyColor() → QVector3D<vredvrdAnalyticSettings.getGlossyColor()>`
+    * :ref:`getShininess() → float<vredvrdAnalyticSettings.getShininess()>`
+    * :ref:`getTransparency() → float<vredvrdAnalyticSettings.getTransparency()>`
+    * :ref:`getUseRealisticSettings() → bool<vredvrdAnalyticSettings.getUseRealisticSettings()>`
+    * :ref:`setDiffuseColor(value) <vredvrdAnalyticSettings.setDiffuseColor(value)>`
+    * :ref:`setEmissiveColor(value) <vredvrdAnalyticSettings.setEmissiveColor(value)>`
+    * :ref:`setGlossyColor(value) <vredvrdAnalyticSettings.setGlossyColor(value)>`
+    * :ref:`setShininess(value) <vredvrdAnalyticSettings.setShininess(value)>`
+    * :ref:`setTransparency(value) <vredvrdAnalyticSettings.setTransparency(value)>`
+    * :ref:`setUseRealisticSettings(s) <vredvrdAnalyticSettings.setUseRealisticSettings(s)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdAnalyticSettings.getDiffuseColor():
+.. py:method:: vrdAnalyticSettings.getDiffuseColor()
+
+    
+
+
+
+
+    :return: Current diffuse color
+    :rtype: QVector3D
+
+.. _vredvrdAnalyticSettings.getEmissiveColor():
+.. py:method:: vrdAnalyticSettings.getEmissiveColor()
+
+    Gets emissive color.
+
+
+
+
+    :return: Current used emissive color.
+    :rtype: QVector3D
+
+.. _vredvrdAnalyticSettings.getGlossyColor():
+.. py:method:: vrdAnalyticSettings.getGlossyColor()
+
+    
+
+
+
+
+    :return: Current glossy reflection color.
+    :rtype: QVector3D
+
+.. _vredvrdAnalyticSettings.getShininess():
+.. py:method:: vrdAnalyticSettings.getShininess()
+
+    Gets how sharp or wide the glossy reflection is.
+
+
+
+
+    :return: Current value of the glossy reflection.
+    :rtype: float
+
+.. _vredvrdAnalyticSettings.getTransparency():
+.. py:method:: vrdAnalyticSettings.getTransparency()
+
+    Gets transparency.
+
+
+
+
+    :return: Current used value for transparency.
+    :rtype: float
+
+.. _vredvrdAnalyticSettings.getUseRealisticSettings():
+.. py:method:: vrdAnalyticSettings.getUseRealisticSettings()
+
+    
+
+
+
+
+    :return: If Analytic settings should be synchronized with realistic material settings.
+    :rtype: bool
+
+.. _vredvrdAnalyticSettings.setDiffuseColor(value):
+.. py:method:: vrdAnalyticSettings.setDiffuseColor(value)
+
+    Sets the diffuse reflection color.
+
+
+
+    :param value: New diffuse color.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdAnalyticSettings.setEmissiveColor(value):
+.. py:method:: vrdAnalyticSettings.setEmissiveColor(value)
+
+    Sets emissive color.
+
+
+
+    :param value: New emissive color.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdAnalyticSettings.setGlossyColor(value):
+.. py:method:: vrdAnalyticSettings.setGlossyColor(value)
+
+    Sets the glossy reflection color.
+
+
+
+    :param value: New color.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdAnalyticSettings.setShininess(value):
+.. py:method:: vrdAnalyticSettings.setShininess(value)
+
+    Sets how sharp or wide the glossy reflection is.
+
+
+
+    :param value: New value of the glossy reflection.
+    :type value: float
+
+    
+    
+
+.. _vredvrdAnalyticSettings.setTransparency(value):
+.. py:method:: vrdAnalyticSettings.setTransparency(value)
+
+    Sets transparency.
+
+
+
+    :param value: New value for transparency.
+    :type value: float
+
+    
+    
+
+.. _vredvrdAnalyticSettings.setUseRealisticSettings(s):
+.. py:method:: vrdAnalyticSettings.setUseRealisticSettings(s)
+
+    If enabled, synchronizes the Analytic material settings with the Realistic material settings, disabling all custom Analytic settings.
+
+
+
+    :param s: New state. Set to False to be able to set custom analytic color values and settings.
+    :type s: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

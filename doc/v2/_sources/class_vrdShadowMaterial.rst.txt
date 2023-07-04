@@ -1,0 +1,460 @@
+-----------------
+vrdShadowMaterial
+-----------------
+
+
+.. _vredvrdShadowMaterial:
+.. py:class:: vrdShadowMaterial
+
+(Inherits :py:class:`vrdMaterial`)
+
+This class is used to handle all shadow material properties.
+
+
+
+    .. _vredvrdShadowMaterial.OpacityMode:
+    .. py:class:: OpacityMode
+
+
+
+
+            
+
+            .. _vredvrdShadowMaterial.OpacityMode.Transparent:
+            .. py:data:: Transparent
+
+
+            
+
+            .. _vredvrdShadowMaterial.OpacityMode.Solid:
+            .. py:data:: Solid
+
+
+    .. _vredvrdShadowMaterial.ReflectionMode:
+    .. py:class:: ReflectionMode
+
+
+
+
+            
+
+            .. _vredvrdShadowMaterial.ReflectionMode.Off:
+            .. py:data:: Off
+
+
+            
+
+            .. _vredvrdShadowMaterial.ReflectionMode.DiffuseOnly:
+            .. py:data:: DiffuseOnly
+
+
+            
+
+            .. _vredvrdShadowMaterial.ReflectionMode.GlossyOnly:
+            .. py:data:: GlossyOnly
+
+
+            
+
+            .. _vredvrdShadowMaterial.ReflectionMode.DiffuseGlossy:
+            .. py:data:: DiffuseGlossy
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getDiffuseColor() → QVector3D<vredvrdShadowMaterial.getDiffuseColor()>`
+    * :ref:`getDiffuseColorSpectrum() → vrSpectrum<vredvrdShadowMaterial.getDiffuseColorSpectrum()>`
+    * :ref:`getGlossyColor() → QVector3D<vredvrdShadowMaterial.getGlossyColor()>`
+    * :ref:`getGlossyColorSpectrum() → vrSpectrum<vredvrdShadowMaterial.getGlossyColorSpectrum()>`
+    * :ref:`getOcclusionColor() → QVector3D<vredvrdShadowMaterial.getOcclusionColor()>`
+    * :ref:`getOcclusionColorSpectrum() → vrSpectrum<vredvrdShadowMaterial.getOcclusionColorSpectrum()>`
+    * :ref:`getOcclusionIntensity() → float<vredvrdShadowMaterial.getOcclusionIntensity()>`
+    * :ref:`getOpacityMode() → vrdShadowMaterial.OpacityMode<vredvrdShadowMaterial.getOpacityMode()>`
+    * :ref:`getRaytracing() → vrdMaterialRaytracingSettings<vredvrdShadowMaterial.getRaytracing()>`
+    * :ref:`getReflectionMode() → vrdShadowMaterial.ReflectionMode<vredvrdShadowMaterial.getReflectionMode()>`
+    * :ref:`getReflectivity() → float<vredvrdShadowMaterial.getReflectivity()>`
+    * :ref:`getRoughness() → float<vredvrdShadowMaterial.getRoughness()>`
+    * :ref:`getShadowColor() → QVector3D<vredvrdShadowMaterial.getShadowColor()>`
+    * :ref:`getShadowColorSpectrum() → vrSpectrum<vredvrdShadowMaterial.getShadowColorSpectrum()>`
+    * :ref:`getSortKey() → integer<vredvrdShadowMaterial.getSortKey()>`
+    * :ref:`setDiffuseColor(value) <vredvrdShadowMaterial.setDiffuseColor(value)>`
+    * :ref:`setDiffuseColorSpectrum(value) <vredvrdShadowMaterial.setDiffuseColorSpectrum(value)>`
+    * :ref:`setGlossyColor(value) <vredvrdShadowMaterial.setGlossyColor(value)>`
+    * :ref:`setGlossyColorSpectrum(value) <vredvrdShadowMaterial.setGlossyColorSpectrum(value)>`
+    * :ref:`setOcclusionColor(color) <vredvrdShadowMaterial.setOcclusionColor(color)>`
+    * :ref:`setOcclusionColorSpectrum(value) <vredvrdShadowMaterial.setOcclusionColorSpectrum(value)>`
+    * :ref:`setOcclusionIntensity(v) <vredvrdShadowMaterial.setOcclusionIntensity(v)>`
+    * :ref:`setOpacityMode(mode) <vredvrdShadowMaterial.setOpacityMode(mode)>`
+    * :ref:`setReflectionMode(mode) <vredvrdShadowMaterial.setReflectionMode(mode)>`
+    * :ref:`setReflectivity(v) <vredvrdShadowMaterial.setReflectivity(v)>`
+    * :ref:`setRoughness(roughness) <vredvrdShadowMaterial.setRoughness(roughness)>`
+    * :ref:`setShadowColor(color) <vredvrdShadowMaterial.setShadowColor(color)>`
+    * :ref:`setShadowColorSpectrum(value) <vredvrdShadowMaterial.setShadowColorSpectrum(value)>`
+    * :ref:`setSortKey(value) <vredvrdShadowMaterial.setSortKey(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdShadowMaterial.getDiffuseColor():
+.. py:method:: vrdShadowMaterial.getDiffuseColor()
+
+    
+
+
+
+
+    :return: Current diffuse reflection color
+    :rtype: QVector3D
+
+.. _vredvrdShadowMaterial.getDiffuseColorSpectrum():
+.. py:method:: vrdShadowMaterial.getDiffuseColorSpectrum()
+
+    Gets the diffuse color spectrum.
+
+
+
+
+    :return: The current spectrum for diffuse color
+    :rtype: vrSpectrum
+
+.. _vredvrdShadowMaterial.getGlossyColor():
+.. py:method:: vrdShadowMaterial.getGlossyColor()
+
+    Gets the current glossy reflection color.
+
+
+
+
+    :return: Value of current glossy reflection color
+    :rtype: QVector3D
+
+.. _vredvrdShadowMaterial.getGlossyColorSpectrum():
+.. py:method:: vrdShadowMaterial.getGlossyColorSpectrum()
+
+    Get the current material's color spectrum for glossy reflections.
+
+
+
+
+    :return: Current color spectrum
+    :rtype: vrSpectrum
+
+.. _vredvrdShadowMaterial.getOcclusionColor():
+.. py:method:: vrdShadowMaterial.getOcclusionColor()
+
+    Gets the color of the pre-calculated ambient occlusion or environment shadows.
+
+
+
+
+    :return: Current set value of the color of the pre-calculated ambient occlusion or environment shadows.
+    :rtype: QVector3D
+
+.. _vredvrdShadowMaterial.getOcclusionColorSpectrum():
+.. py:method:: vrdShadowMaterial.getOcclusionColorSpectrum()
+
+    Gets the color spectrum of the pre-calculated ambient occlusion or environment shadows.
+
+
+
+
+    :return: The current used color spectrum of the pre-calculated ambient occlusion or environment shadows
+    :rtype: vrSpectrum
+
+.. _vredvrdShadowMaterial.getOcclusionIntensity():
+.. py:method:: vrdShadowMaterial.getOcclusionIntensity()
+
+    Gets the intensity of shadowed areas.
+
+
+
+
+    :return: Current value of the intensity of shadowed areas.
+    :rtype: float
+
+.. _vredvrdShadowMaterial.getOpacityMode():
+.. py:method:: vrdShadowMaterial.getOpacityMode()
+
+    Gets the mode used for opacity. Choose from Transparent or Solid.
+
+
+
+
+    :return: Current used mode for opacity.
+    :rtype: :ref:`vrdShadowMaterial.OpacityMode <vredvrdShadowMaterial.OpacityMode>`
+
+.. _vredvrdShadowMaterial.getRaytracing():
+.. py:method:: vrdShadowMaterial.getRaytracing()
+
+    Gets access to raytracing settings of this material.
+
+
+
+
+    :return: A :any:`vrdMaterialRaytracingSettings <vredvrdMaterialRaytracingSettings>` object to read and write all properties.
+    :rtype: vrdMaterialRaytracingSettings
+
+.. _vredvrdShadowMaterial.getReflectionMode():
+.. py:method:: vrdShadowMaterial.getReflectionMode()
+
+    Gets the reflection mode.
+
+
+
+
+    :return: Current value of the used reflection mode.
+    :rtype: :ref:`vrdShadowMaterial.ReflectionMode <vredvrdShadowMaterial.ReflectionMode>`
+
+.. _vredvrdShadowMaterial.getReflectivity():
+.. py:method:: vrdShadowMaterial.getReflectivity()
+
+    Gets the intensity of the reflection on the surface.
+
+
+
+
+    :return: Current used intensity of the reflection on the surface.
+    :rtype: float
+
+.. _vredvrdShadowMaterial.getRoughness():
+.. py:method:: vrdShadowMaterial.getRoughness()
+
+    
+
+
+
+
+    :return: The current roughness value for glossy reflections on this material.
+    :rtype: float
+
+.. _vredvrdShadowMaterial.getShadowColor():
+.. py:method:: vrdShadowMaterial.getShadowColor()
+
+    Gets the color for shadows from light sources.
+
+
+
+
+    :return: Current used value of the color for shadows from light sources.
+    :rtype: QVector3D
+
+.. _vredvrdShadowMaterial.getShadowColorSpectrum():
+.. py:method:: vrdShadowMaterial.getShadowColorSpectrum()
+
+    Gets the color spectrum for shadows from light sources.
+
+
+
+
+    :return: The current used color spectrum for shadows from light sources.
+    :rtype: vrSpectrum
+
+.. _vredvrdShadowMaterial.getSortKey():
+.. py:method:: vrdShadowMaterial.getSortKey()
+
+    
+
+
+
+
+    :return: Current sort key of the shadow material for OpenGL.
+    :rtype: integer
+
+.. _vredvrdShadowMaterial.setDiffuseColor(value):
+.. py:method:: vrdShadowMaterial.setDiffuseColor(value)
+
+    Sets the diffuse reflection color. Only has an effect if current ReflectionMode is set to a mode supporting diffuse.
+
+
+
+    :param value: New diffuse color.
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdShadowMaterial.setDiffuseColorSpectrum(value):
+.. py:method:: vrdShadowMaterial.setDiffuseColorSpectrum(value)
+
+    Sets the diffuse color spectrum.
+
+
+
+    :param value: New spectrum for diffuse color
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdShadowMaterial.setGlossyColor(value):
+.. py:method:: vrdShadowMaterial.setGlossyColor(value)
+
+    Sets the color for glossy reflections. Only has an effect if current ReflectionMode is set to a mode supporting glossy.
+
+
+
+    :param value: New glossy reflection color
+    :type value: QVector3D
+
+    
+    
+
+.. _vredvrdShadowMaterial.setGlossyColorSpectrum(value):
+.. py:method:: vrdShadowMaterial.setGlossyColorSpectrum(value)
+
+    Sets the material's color spectrum for glossy reflections.
+
+
+
+    :param value: New glossy color spectrum
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdShadowMaterial.setOcclusionColor(color):
+.. py:method:: vrdShadowMaterial.setOcclusionColor(color)
+
+    Sets the color of the pre-calculated ambient occlusion or environment shadows.
+
+
+
+    :param color: New value of color of the pre-calculated ambient occlusion or environment shadows
+    :type color: QVector3D
+
+    
+    
+
+.. _vredvrdShadowMaterial.setOcclusionColorSpectrum(value):
+.. py:method:: vrdShadowMaterial.setOcclusionColorSpectrum(value)
+
+    Sets the color spectrum of the pre-calculated ambient occlusion or environment shadows.
+
+
+
+    :param value: New color spectrum of the pre-calculated ambient occlusion or environment shadows
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdShadowMaterial.setOcclusionIntensity(v):
+.. py:method:: vrdShadowMaterial.setOcclusionIntensity(v)
+
+    Sets the intensity of shadowed areas.
+
+
+
+    :param v: New value of the intensity of shadowed areas.
+    :type v: float
+
+    
+    
+
+.. _vredvrdShadowMaterial.setOpacityMode(mode):
+.. py:method:: vrdShadowMaterial.setOpacityMode(mode)
+
+    Sets the mode used for opacity. Choose from Transparent or Solid.
+
+
+
+    :param mode: New used mode for opacity.
+    :type mode: :ref:`vrdShadowMaterial.OpacityMode <vredvrdShadowMaterial.OpacityMode>`
+
+    
+    
+
+.. _vredvrdShadowMaterial.setReflectionMode(mode):
+.. py:method:: vrdShadowMaterial.setReflectionMode(mode)
+
+    Sets the reflection mode. Choose from glossy, diffuse, or a mix of both.
+
+
+
+    :param mode: New value of the used reflection mode.
+    :type mode: :ref:`vrdShadowMaterial.ReflectionMode <vredvrdShadowMaterial.ReflectionMode>`
+
+    
+    
+
+.. _vredvrdShadowMaterial.setReflectivity(v):
+.. py:method:: vrdShadowMaterial.setReflectivity(v)
+
+    Controls the intensity of the reflection on the surface. The higher the value, the more the influence from the environment and objects around.
+
+
+
+    :param v: New intensity of the reflection on the surface.
+    :type v: float
+
+    
+    
+
+.. _vredvrdShadowMaterial.setRoughness(roughness):
+.. py:method:: vrdShadowMaterial.setRoughness(roughness)
+
+    Controls the sharpness of the glossy reflections. The higher the value, the rougher the microscopic structure of the surface and more diffuse the reflections.
+
+
+
+    :param roughness: New value of roughness for this material.
+    :type roughness: float
+
+    
+    
+
+.. _vredvrdShadowMaterial.setShadowColor(color):
+.. py:method:: vrdShadowMaterial.setShadowColor(color)
+
+    Sets the color for shadows from light sources.
+
+
+
+    :param color: New value of the color for shadows from light sources.
+    :type color: QVector3D
+
+    
+    
+
+.. _vredvrdShadowMaterial.setShadowColorSpectrum(value):
+.. py:method:: vrdShadowMaterial.setShadowColorSpectrum(value)
+
+    Sets the color spectrum for shadows from light sources.
+
+
+
+    :param value: New color spectrum for shadows from light sources.
+    :type value: vrSpectrum
+
+    
+    
+
+.. _vredvrdShadowMaterial.setSortKey(value):
+.. py:method:: vrdShadowMaterial.setSortKey(value)
+
+    Changes the order in which transparent materials are rendered in OpenGL when the Transparency Mode is set to Object Sorting. Transparent surfaces with the same sort key are sorted back to front.
+
+
+
+    :param value: New sort key value.
+    :type value: integer
+
+    
+    
+
+
+
+
+
+
+
+
+
+

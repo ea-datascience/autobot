@@ -1,0 +1,7 @@
+Find nodes with caching
+=======================
+
+.. literalinclude:: ../python_examples/find2.py
+   :language: python
+   :linenos:
+   :caption: find2.py

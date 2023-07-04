@@ -1,0 +1,61 @@
+---------------
+vrdDeviceAction
+---------------
+
+
+.. _vredvrdDeviceAction:
+.. py:class:: vrdDeviceAction
+
+(Inherits :py:class:`vrdObject`)
+
+Represents an action that is part of an interaction.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getName() → string<vredvrdDeviceAction.getName()>`
+    * :ref:`signal() → Q_SLOTvrdDeviceActionSignal<vredvrdDeviceAction.signal()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdDeviceAction.getName():
+.. py:method:: vrdDeviceAction.getName()
+
+    Gets the name of the action.
+
+
+
+
+    :return: The name of the action.
+    :rtype: string
+
+.. _vredvrdDeviceAction.signal():
+.. py:method:: vrdDeviceAction.signal()
+
+    Gets the signal that is sent, when the action is triggered.
+
+
+
+
+    :return: The signal object.
+    :rtype: Q_SLOTvrdDeviceActionSignal
+
+
+
+
+
+
+
+
+
+

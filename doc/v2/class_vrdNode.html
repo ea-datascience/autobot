@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrdNode &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrdNodeInfo" href="class_vrdNodeInfo.html" />
+    <link rel="prev" title="vrdNPRSettings" href="class_vrdNPRSettings.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrdnode">
+<h1>vrdNode<a class="headerlink" href="#vrdnode" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrdnode"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrdNode">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrdNode</span></code><a class="headerlink" href="#vrdNode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <a class="reference internal" href="class_vrdSceneObject.html#vrdSceneObject" title="vrdSceneObject"><code class="xref py py-class docutils literal notranslate"><span class="pre">vrdSceneObject</span></code></a>)</p>
+<p>This is the base class for all nodes.</p>
+<p>A node instance gives access to all properties of a node such as its parent and its list of direct children. There are no functions however to modify the node’s hierarchy directly.</p>
+<div class="line-block">
+<div class="line">Hierarchy modifications have to be made by interacting with the <a class="reference internal" href="class_vrdNodeList.html"><span class="doc">vrdNodeList</span></a> instance obtained here <a class="reference internal" href="#vredvrdnode-children"><span class="std std-ref">children</span></a>.</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrdnode-applymaterial-material"><span class="std std-ref">applyMaterial(material)</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getboundingbox"><span class="std std-ref">getBoundingBox() → vrdBoundingBox</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getchild-index"><span class="std std-ref">getChild(index) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getchildcount"><span class="std std-ref">getChildCount() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getchildindex-child"><span class="std std-ref">getChildIndex(child) → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getchildren"><span class="std std-ref">getChildren() → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getchildrenrecursive"><span class="std std-ref">getChildrenRecursive() → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-geticon"><span class="std std-ref">getIcon() → QIcon</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getmaterial"><span class="std std-ref">getMaterial() → vrdMaterial</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getname"><span class="std std-ref">getName() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getorcreatetransformnode"><span class="std std-ref">getOrCreateTransformNode() → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getparent"><span class="std std-ref">getParent() → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getpath"><span class="std std-ref">getPath() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getselectableflag"><span class="std std-ref">getSelectableFlag() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getsharednodes"><span class="std std-ref">getSharedNodes() → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getsynchronizednodes"><span class="std std-ref">getSynchronizedNodes() → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getuniquepath"><span class="std std-ref">getUniquePath() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getvisibilityflag"><span class="std std-ref">getVisibilityFlag() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getworldboundingbox"><span class="std std-ref">getWorldBoundingBox() → vrdBoundingBox</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-getworldtransform"><span class="std std-ref">getWorldTransform() → QMatrix4x4</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-hasparent-parent"><span class="std std-ref">hasParent(parent) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-isgroup"><span class="std std-ref">isGroup() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-isimplicitshared"><span class="std std-ref">isImplicitShared() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-isshared"><span class="std std-ref">isShared() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-issharedwith-node"><span class="std std-ref">isSharedWith(node) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-issynchronized"><span class="std std-ref">isSynchronized() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-isvisible"><span class="std std-ref">isVisible() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-setname-name"><span class="std std-ref">setName(name)</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-setselectableflag-selectable"><span class="std std-ref">setSelectableFlag(selectable)</span></a></li>
+<li><a class="reference internal" href="#vredvrdnode-setvisibilityflag-visible"><span class="std std-ref">setVisibilityFlag(visible)</span></a></li>
+</ul>
+</dd>
+<dt>Instance Variables:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrdnode-children"><span class="std std-ref">children → vrdNodeList</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrdnode-applymaterial-material"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.applyMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">applyMaterial</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.applyMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the material for this node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>material</strong> (<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a>) – The new material</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getboundingbox"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getBoundingBox">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getBoundingBox</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getBoundingBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the local bounding box of the node including its children.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Bounding box of node</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdBoundingBox.html#vrdBoundingBox" title="vrdBoundingBox">vrdBoundingBox</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getchild-index"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getChild">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getChild</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">index</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getChild" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a child node by index.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>index</strong> (<em>integer</em>) – The index of the child node. The valid range is from 0 to <a class="reference internal" href="#vredvrdnode-getchildcount"><span class="std std-ref">vrdNode.getChildCount()</span></a> - 1.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The child node.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getchildcount"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getChildCount">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getChildCount</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getChildCount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the number of child nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of children.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getchildindex-child"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getChildIndex">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getChildIndex</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">child</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getChildIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the index of the child node in the list of children.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>child</strong> (<a class="reference internal" href="#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The child node.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The index of the child.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getchildren"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getChildren">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getChildren</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getChildren" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all child nodes.</p>
+<p>Note this is a copy of the node’s children list, changing the returned list does not change the children of the node.</p>
+<div class="line-block">
+<div class="line">To add or remove children from the node use the member <a class="reference internal" href="#vredvrdnode-children"><span class="std std-ref">children</span></a>.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The list of child nodes.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getchildrenrecursive"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getChildrenRecursive">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getChildrenRecursive</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getChildrenRecursive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all child nodes recursively (including children of children).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The list of child nodes.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-geticon"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getIcon">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getIcon</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getIcon" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the icon of the node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The icon of the node.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QIcon</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getmaterial"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getMaterial</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the material for this node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The material for this node, or an invalid material if no material was found</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getname"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getName">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getName</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the name of the node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The name of the node.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getorcreatetransformnode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getOrCreateTransformNode">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getOrCreateTransformNode</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getOrCreateTransformNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get a transformation node for this node. Create one if necessary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A transformable node</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getparent"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getParent">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getParent</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getParent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the parent node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The parent node.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getpath"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getPath">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getPath</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the path of the node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The path of the node.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getselectableflag"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getSelectableFlag">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getSelectableFlag</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getSelectableFlag" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Gets the local selectable flag. True, node is selectable in the render window</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getsharednodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getSharedNodes">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getSharedNodes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getSharedNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the nodes in the scene graph that share this node. The list does not include the node the method is called for. For cameras         <a class="reference internal" href="class_vrdCameraNode.html#vredvrdcameranode-getmodulenode"><span class="std std-ref">vrdCameraNode.getModuleNode()</span></a> can be used to get the corresponding camera graph node. For lights <a class="reference internal" href="class_vrdBaseLightNode.html#vredvrdbaselightnode-getmodulenode"><span class="std std-ref">vrdBaseLightNode.getModuleNode()</span></a> can be used to get the corresponding light graph node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of nodes</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getsynchronizednodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getSynchronizedNodes">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getSynchronizedNodes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getSynchronizedNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns scene nodes that are synchronized with this node.</p>
+<p>Synchronized nodes share and synchronize their children but the node properties of the synchronized nodes are independent. Synchronized transform nodes are called Transformable Clones or Transformable Clone Roots in the GUI.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of nodes</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getuniquepath"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getUniquePath">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getUniquePath</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getUniquePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the unique path of the node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The unique path of the node.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getvisibilityflag"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getVisibilityFlag">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getVisibilityFlag</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getVisibilityFlag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the local visibility flag.</p>
+<p>The local visibility flag indicates the visibility state of the node. It does not consider the visibility state of the parent node. For that case, use <a class="reference internal" href="#vredvrdnode-isvisible"><span class="std std-ref">vrdNode.isVisible()</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the visibility flag is set, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getworldboundingbox"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getWorldBoundingBox">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getWorldBoundingBox</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getWorldBoundingBox" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the world bounding box of the node including its children.</p>
+<p>Example of combining multiple bounding boxes:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">getWorldCenter</span><span class="p">(</span><span class="n">nodes</span><span class="p">):</span>
+    <span class="n">bb</span> <span class="o">=</span> <span class="n">vrdBoundingBox</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">node</span> <span class="ow">in</span> <span class="n">nodes</span><span class="p">:</span>
+        <span class="n">bb</span><span class="o">.</span><span class="n">extendBy</span><span class="p">(</span><span class="n">node</span><span class="o">.</span><span class="n">getWorldBoundingBox</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">bb</span><span class="o">.</span><span class="n">getCenter</span><span class="p">()</span>
+
+<span class="c1"># Find all nodes whose name starts with &quot;Box&quot;.</span>
+<span class="n">nodes</span> <span class="o">=</span> <span class="n">vrNodeService</span><span class="o">.</span><span class="n">findNodes</span><span class="p">(</span><span class="s2">&quot;Box*&quot;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
+<span class="c1"># Calculate the bounding box center of these nodes</span>
+<span class="n">center</span> <span class="o">=</span> <span class="n">getWorldCenter</span><span class="p">(</span><span class="n">nodes</span><span class="p">)</span>
+<span class="c1"># Print the result</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">center</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">World bounding box of node</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdBoundingBox.html#vrdBoundingBox" title="vrdBoundingBox">vrdBoundingBox</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-getworldtransform"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.getWorldTransform">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">getWorldTransform</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.getWorldTransform" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the world transformation matrix of this node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The 4x4 world transformation matrix</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">QMatrix4x4</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-hasparent-parent"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.hasParent">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">hasParent</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">parent</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.hasParent" title="Permalink to this definition">¶</a></dt>
+<dd><p>Traverses up the tree from this node to root to find given parent node. To check only direct parent, use         <a class="reference internal" href="#vredvrdnode-getparent"><span class="std std-ref">vrdNode.getParent()</span></a> == parent instead.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>parent</strong> (<a class="reference internal" href="#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The parent node to find. Must be a valid node.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if found.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-isgroup"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.isGroup">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">isGroup</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.isGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether the node is a group node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if the node is a group, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-isimplicitshared"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.isImplicitShared">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">isImplicitShared</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.isImplicitShared" title="Permalink to this definition">¶</a></dt>
+<dd><p>An implicit shared node is only shared because it is part of a shared graph. In the scenegraph view it is dotted underlined. A node that is shared but not implicit shared is solid underlined.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if all parents of shared instances are clones of each other</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-isshared"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.isShared">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">isShared</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.isShared" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true, if this node has shared instances in the scene. Shared instances are also called clones or cloned nodes. Shared nodes have the same properties, e.g. same geometry or same transformation, and also the same children.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if the node is shared.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-issharedwith-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.isSharedWith">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">isSharedWith</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.isSharedWith" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns if the given node is a shared instance of this node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – Node to check</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True, if given node is a shared instance of this node.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-issynchronized"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.isSynchronized">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">isSynchronized</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.isSynchronized" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns true, if this node shares its children with other nodes. See         <a class="reference internal" href="#vredvrdnode-getsynchronizednodes"><span class="std std-ref">vrdNode.getSynchronizedNodes()</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">true if the node is synchronized</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-isvisible"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.isVisible">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">isVisible</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.isVisible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns if the node is visible.</p>
+<p>Returns true if the node is visible, i.e. if the node itself and all parents are visible.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if visible, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-setname-name"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.setName">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">setName</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.setName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the name of the node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>string</em>) – The new name of the node.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-setselectableflag-selectable"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.setSelectableFlag">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">setSelectableFlag</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">selectable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.setSelectableFlag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the local selectable flag.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>selectable</strong> (<em>bool</em>) – True if the node should be selectable in the render window</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdnode-setvisibilityflag-visible"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdNode.setVisibilityFlag">
+<code class="sig-prename descclassname"><span class="pre">vrdNode.</span></code><code class="sig-name descname"><span class="pre">setVisibilityFlag</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">visible</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdNode.setVisibilityFlag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the local visibility flag.</p>
+<p>This flag enables / disables rendering of the node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>visible</strong> (<em>bool</em>) – True if the node should be visible, otherwise false.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="instance-variables">
+<h2>Instance Variables<a class="headerlink" href="#instance-variables" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrdnode-children"></span><dl class="py attribute">
+<dt class="sig sig-object py" id="children">
+<code class="sig-name descname"><span class="pre">children</span></code><em class="property"><span class="pre">:</span> <a class="reference internal" href="class_vrdNodeList.html#vrdNodeList" title="vrdNodeList"><span class="pre">vrdNodeList</span></a></em><a class="headerlink" href="#children" title="Permalink to this definition">¶</a></dt>
+<dd><p>Access to the children of this node. All changes made to this list object will immediately be executed on the node.</p>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrdNode</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instance-variables">Instance Variables</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrdNPRSettings.html"
+                        title="previous chapter">vrdNPRSettings</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrdNodeInfo.html"
+                        title="next chapter">vrdNodeInfo</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrdNodeInfo.html" title="vrdNodeInfo"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrdNPRSettings.html" title="vrdNPRSettings"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

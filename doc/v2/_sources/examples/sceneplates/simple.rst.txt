@@ -1,0 +1,7 @@
+Simple
+======
+
+.. literalinclude:: ../../python_examples/sceneplates/simple.py
+   :language: python
+   :linenos:
+   :caption: sceneplates/simple.py

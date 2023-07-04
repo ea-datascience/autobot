@@ -1,0 +1,19 @@
+(Deprecated) Change hand color
+==============================
+Deprecated classes vrOculusTouchController and vrOpenVRController. See :doc:`../../../class_vrDeviceService`, :doc:`../../../class_vrdVRDevice`, :doc:`../../../class_vrdDeviceInteraction` instead.
+
+Oculus Rift
+-----------
+
+.. literalinclude:: ../../python_examples/deprecated_VR_examples/VR-hands-color-oculus.py
+   :language: python
+   :linenos:
+   :caption: deprecated_VR_examples/VR-hands-color-oculus.py
+
+
+Open VR
+-------
+.. literalinclude:: ../../python_examples/deprecated_VR_examples/VR-hands-color-openvr.py
+   :language: python
+   :linenos:
+   :caption: deprecated_VR_examples/VR-hands-color-openvr.py

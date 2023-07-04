@@ -1,0 +1,121 @@
+---------------
+vrdBRDFMaterial
+---------------
+
+
+.. _vredvrdBRDFMaterial:
+.. py:class:: vrdBRDFMaterial
+
+(Inherits :py:class:`vrdMaterial`)
+
+This class is used to handle all BRDF based material properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAnalytic() → vrdAnalyticSettings<vredvrdBRDFMaterial.getAnalytic()>`
+    * :ref:`getCommon() → vrdBRDFCommonSettings<vredvrdBRDFMaterial.getCommon()>`
+    * :ref:`getNPR() → vrdNPRSettings<vredvrdBRDFMaterial.getNPR()>`
+    * :ref:`getRaytracing() → vrdMaterialRaytracingSettings<vredvrdBRDFMaterial.getRaytracing()>`
+    * :ref:`getRoundedEdges() → vrdRoundedEdges<vredvrdBRDFMaterial.getRoundedEdges()>`
+    * :ref:`getTransparency() → vrdTransparency<vredvrdBRDFMaterial.getTransparency()>`
+    * :ref:`isDisplacementActive() → bool<vredvrdBRDFMaterial.isDisplacementActive()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdBRDFMaterial.getAnalytic():
+.. py:method:: vrdBRDFMaterial.getAnalytic()
+
+    Gets access to all properties of         :any:`vrdAnalyticSettings <vredvrdAnalyticSettings>`.
+
+
+
+
+    :return: A vrdAnalytic object to read and write of all properties.
+    :rtype: vrdAnalyticSettings
+
+.. _vredvrdBRDFMaterial.getCommon():
+.. py:method:: vrdBRDFMaterial.getCommon()
+
+    Gets access to all properties of         :any:`vrdBRDFCommonSettings <vredvrdBRDFCommonSettings>`.
+
+
+
+
+    :return: A :any:`vrdBRDFCommonSettings <vredvrdBRDFCommonSettings>` object to read and write of all properties.
+    :rtype: vrdBRDFCommonSettings
+
+.. _vredvrdBRDFMaterial.getNPR():
+.. py:method:: vrdBRDFMaterial.getNPR()
+
+    Gets access to all properties of         :any:`vrdNPRSettings <vredvrdNPRSettings>`.
+
+
+
+
+    :return: An :any:`vrdNPRSettings <vredvrdNPRSettings>` object to read and write of all properties.
+    :rtype: vrdNPRSettings
+
+.. _vredvrdBRDFMaterial.getRaytracing():
+.. py:method:: vrdBRDFMaterial.getRaytracing()
+
+    Gets access to all raytracing settings of this material.
+
+
+
+
+    :return: A :any:`vrdMaterialRaytracingSettings <vredvrdMaterialRaytracingSettings>` object to read and write all properties.
+    :rtype: vrdMaterialRaytracingSettings
+
+.. _vredvrdBRDFMaterial.getRoundedEdges():
+.. py:method:: vrdBRDFMaterial.getRoundedEdges()
+
+    Gets access to all properties of         :any:`vrdRoundedEdges <vredvrdRoundedEdges>`.
+
+
+
+
+    :return: An :any:`vrdRoundedEdges <vredvrdRoundedEdges>` object to read and write of all properties.
+    :rtype: vrdRoundedEdges
+
+.. _vredvrdBRDFMaterial.getTransparency():
+.. py:method:: vrdBRDFMaterial.getTransparency()
+
+    Gets access to all properties of         :any:`vrdTransparency <vredvrdTransparency>`.
+
+
+
+
+    :return: An :any:`vrdTransparency <vredvrdTransparency>` object to read and write of all properties.
+    :rtype: vrdTransparency
+
+.. _vredvrdBRDFMaterial.isDisplacementActive():
+.. py:method:: vrdBRDFMaterial.isDisplacementActive()
+
+    
+
+
+
+
+    :return: If a :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>` is active on this material.
+    :rtype: bool
+
+
+
+
+
+
+
+
+
+

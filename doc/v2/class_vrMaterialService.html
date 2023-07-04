@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrMaterialService &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrMaterialTypes" href="class_vrMaterialTypes.html" />
+    <link rel="prev" title="vrMaterialEntryId" href="class_vrMaterialEntryId.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrmaterialservice">
+<h1>vrMaterialService<a class="headerlink" href="#vrmaterialservice" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrmaterialservice"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrMaterialService">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrMaterialService</span></code><a class="headerlink" href="#vrMaterialService" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <code class="xref py py-class docutils literal notranslate"><span class="pre">vrBaseService</span></code>)</p>
+<p>Interface to access materials in VRED.</p>
+<p>This is the basic interface to access, create or delete materials. It also provides functionality to access the material graph by using <a class="reference internal" href="#vredvrmaterialservice-getmaterialroot"><span class="std std-ref">vrMaterialService.getMaterialRoot()</span></a>.</p>
+<div class="line-block">
+<div class="line">See also: <a class="reference internal" href="scenegraphs.html"><span class="doc">Node graphs in VRED</span></a></div>
+</div>
+<p>Some examples how to work with materials:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># add a group node</span>
+<span class="n">groupNode</span> <span class="o">=</span> <span class="n">vrMaterialService</span><span class="o">.</span><span class="n">createMaterialGroup</span><span class="p">()</span>
+
+<span class="c1"># create a plastic material and add it to the group</span>
+<span class="n">mat</span> <span class="o">=</span> <span class="n">vrMaterialService</span><span class="o">.</span><span class="n">createMaterial</span><span class="p">(</span><span class="s2">&quot;plasticmat&quot;</span><span class="p">,</span> <span class="n">vrMaterialTypes</span><span class="o">.</span><span class="n">Plastic</span><span class="p">,</span> <span class="n">groupNode</span><span class="p">)</span>
+
+<span class="c1"># search for a material by name</span>
+<span class="n">mat</span> <span class="o">=</span> <span class="n">vrMaterialService</span><span class="o">.</span><span class="n">findMaterial</span><span class="p">(</span><span class="s2">&quot;plasticmat&quot;</span><span class="p">)</span>
+
+<span class="c1"># if there are multiple materials with the same name you can collect all of them</span>
+<span class="n">materials</span> <span class="o">=</span> <span class="n">vrMaterialService</span><span class="o">.</span><span class="n">findMaterials</span><span class="p">(</span><span class="s2">&quot;plasticmat&quot;</span><span class="p">)</span>
+
+<span class="c1"># to search for a group you can use the generic findNode / findNodes functions</span>
+<span class="n">group</span> <span class="o">=</span> <span class="n">vrNodeService</span><span class="o">.</span><span class="n">findNode</span><span class="p">(</span><span class="s2">&quot;Group&quot;</span><span class="p">,</span> <span class="n">root</span><span class="o">=</span><span class="n">vrMaterialService</span><span class="o">.</span><span class="n">getMaterialRoot</span><span class="p">())</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line">For more complex group operations, see also: <a class="reference internal" href="examples/materialgroups.html"><span class="doc">Material groups</span></a></div>
+<div class="line"><br /></div>
+<div class="line">Note:</div>
+<div class="line-block">
+<div class="line">Several functions take <a class="reference internal" href="class_vrMaterialEntryId.html"><span class="doc">vrdMaterialEntryIds</span></a> as parameter.</div>
+<div class="line">These ids are used to reference materials in the UI and should not be used when writing</div>
+<div class="line">scripts that run without UI. They are typically obtained by fetching the</div>
+<div class="line">the selected nodes with <a class="reference internal" href="#vredvrmaterialservice-getselection"><span class="std std-ref">getSelection()</span></a>.</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrmaterialservice-addtodefaultenvironmentswitch-environmentmaterial"><span class="std std-ref">addToDefaultEnvironmentSwitch(environmentMaterial)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-applyenvironmenttoallmaterials-environment-name"><span class="std std-ref">applyEnvironmentToAllMaterials(environment, name)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-applyenvironmenttonodes-material-nodes"><span class="std std-ref">applyEnvironmentToNodes(material, nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-applymaterialtonodes-material-nodes"><span class="std std-ref">applyMaterialToNodes(material, nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-convertmaterial-material-type"><span class="std std-ref">convertMaterial(material, type) → vrdMaterial</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-copymaterialattributes-source-targets"><span class="std std-ref">copyMaterialAttributes(source, targets)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-copymaterialchunks-chunks"><span class="std std-ref">copyMaterialChunks(chunks)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-copytexturesize-source-targets"><span class="std std-ref">copyTextureSize(source, targets)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-creatematerial-name-type-materialgroup"><span class="std std-ref">createMaterial(name, type, materialGroup) → vrdMaterial</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-creatematerialgroup-nodes-parent"><span class="std std-ref">createMaterialGroup(nodes, parent) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-createswitchmaterial-materials-parent"><span class="std std-ref">createSwitchMaterial(materials, parent) → vrdMaterial</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-deleteentries-entries-keepvariants"><span class="std std-ref">deleteEntries(entries, keepVariants)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-deletematerials-materials-keepvariants"><span class="std std-ref">deleteMaterials(materials, keepVariants)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-duplicateentries-entries"><span class="std std-ref">duplicateEntries(entries) → List[vrMaterialEntryId]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-duplicatematerials-materials"><span class="std std-ref">duplicateMaterials(materials) → List[vrdMaterial]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-findmaterial-name"><span class="std std-ref">findMaterial(name) → vrdMaterial</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-findmaterialnode-material-root"><span class="std std-ref">findMaterialNode(material, root) → vrdMaterialNode</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-findmaterials-name"><span class="std std-ref">findMaterials(name) → List[vrdMaterial]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-findmaterialsusedinvariants-root"><span class="std std-ref">findMaterialsUsedInVariants(root) → List[vrdMaterial]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-findnodeswithmaterial-material"><span class="std std-ref">findNodesWithMaterial(material) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-findunusedmaterials"><span class="std std-ref">findUnusedMaterials() → List[vrdMaterial]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getallmaterials"><span class="std std-ref">getAllMaterials() → List[vrdMaterial]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getallmaterialtags"><span class="std std-ref">getAllMaterialTags() → List[string]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getdefaultenvironment"><span class="std std-ref">getDefaultEnvironment() → vrdMaterial</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getdefaultenvironmentswitchmaterial"><span class="std std-ref">getDefaultEnvironmentSwitchMaterial() → vrdEnvironmentSwitchMaterial</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getentries-materials"><span class="std std-ref">getEntries(materials) → List[vrMaterialEntryId]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getgrouppath-node"><span class="std std-ref">getGroupPath(node) → List[string]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getimportmetadata-type"><span class="std std-ref">getImportMetadata(type) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getmaterialfromid-materialid"><span class="std std-ref">getMaterialFromId(materialId) → vrdMaterial</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getmaterialnodes-root"><span class="std std-ref">getMaterialNodes(root) → List[vrdMaterialNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getmaterialroot"><span class="std std-ref">getMaterialRoot() → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getmaterials-root"><span class="std std-ref">getMaterials(root) → List[vrdMaterial]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getmaterialselection"><span class="std std-ref">getMaterialSelection() → List[vrdMaterial]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getmaterialswithalltags-tags"><span class="std std-ref">getMaterialsWithAllTags(tags) → List[vrdMaterial]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getmaterialswithanytag-tags"><span class="std std-ref">getMaterialsWithAnyTag(tags) → List[vrdMaterial]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getnumberofmaterials"><span class="std std-ref">getNumberOfMaterials() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getnumberoftextures"><span class="std std-ref">getNumberOfTextures() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getplanarmanipulatortransparency"><span class="std std-ref">getPlanarManipulatorTransparency() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getpreviewscenes"><span class="std std-ref">getPreviewScenes() → List[string]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getselection"><span class="std std-ref">getSelection() → List[vrMaterialEntryId]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getsupportedmaterialtypes"><span class="std std-ref">getSupportedMaterialTypes() → List[vrMaterialTypes.MaterialType]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-gettiremanipulatortransparency"><span class="std std-ref">getTireManipulatorTransparency() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-gettreedepth-material"><span class="std std-ref">getTreeDepth(material) → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-gettreedepth-root"><span class="std std-ref">getTreeDepth(root) → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getuniquename-name-forcehighestindex"><span class="std std-ref">getUniqueName(name, forceHighestIndex) → string</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-getusedtexturememory"><span class="std std-ref">getUsedTextureMemory() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-loadanimationtomaterials-materials-animation"><span class="std std-ref">loadAnimationToMaterials(materials, animation)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-loadenvironmentassettodefaultswitch-uuid"><span class="std std-ref">loadEnvironmentAssetToDefaultSwitch(uuid)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-loadmaterialasset-uuid-parent"><span class="std std-ref">loadMaterialAsset(uuid, parent) → vrdMaterialNode</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-loadmaterials-filenames-materialgroup"><span class="std std-ref">loadMaterials(fileNames, materialGroup) → List[vrdMaterial]</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-mergeduplicatematerials-options"><span class="std std-ref">mergeDuplicateMaterials(options)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-optimizetextures"><span class="std std-ref">optimizeTextures()</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-pasteentries-sources-targets"><span class="std std-ref">pasteEntries(sources, targets)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-pastematerialchunks-chunkmaterial"><span class="std std-ref">pasteMaterialChunks(chunkMaterial)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-referenceunusedmaterials"><span class="std std-ref">referenceUnusedMaterials() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-removeallgroups"><span class="std std-ref">removeAllGroups()</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-removeunusedmaterials"><span class="std std-ref">removeUnusedMaterials()</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-rendermultipreview-materials-totalcount-size-text"><span class="std std-ref">renderMultiPreview(materials, totalCount, size, text) → QImage</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-savematerials-materials-path"><span class="std std-ref">saveMaterials(materials, path) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-selectnodes-materials-clearselection"><span class="std std-ref">selectNodes(materials, clearSelection)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-setimportmetadata-type-value"><span class="std std-ref">setImportMetadata(type, value)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-setmaterialselection-materials-scrollto"><span class="std std-ref">setMaterialSelection(materials, scrollTo)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-setplanarmanipulatortransparency-transparency"><span class="std std-ref">setPlanarManipulatorTransparency(transparency)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-setselection-ids-scrollto-edit"><span class="std std-ref">setSelection(ids, scrollTo, edit)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-setswitchchoicebyalltags-switchmaterial-tags"><span class="std std-ref">setSwitchChoiceByAllTags(switchMaterial, tags) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-setswitchchoicebyanytag-switchmaterial-tags"><span class="std std-ref">setSwitchChoiceByAnyTag(switchMaterial, tags) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-settiremanipulatortransparency-transparency"><span class="std std-ref">setTireManipulatorTransparency(transparency)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-updatepreviews-materials"><span class="std std-ref">updatePreviews(materials)</span></a></li>
+</ul>
+</dd>
+<dt>Signals:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrmaterialservice-materialschanged"><span class="std std-ref">materialsChanged()</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-planarmanipulatortransparencychanged-transparency"><span class="std std-ref">planarManipulatorTransparencyChanged(transparency)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-previewschanged"><span class="std std-ref">previewsChanged()</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-selectionchanged-ids-scrollto-edit"><span class="std std-ref">selectionChanged(ids, scrollTo, edit)</span></a></li>
+<li><a class="reference internal" href="#vredvrmaterialservice-tiremanipulatortransparencychanged-transparency"><span class="std std-ref">tireManipulatorTransparencyChanged(transparency)</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrmaterialservice-addtodefaultenvironmentswitch-environmentmaterial"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.addToDefaultEnvironmentSwitch">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">addToDefaultEnvironmentSwitch</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">environmentMaterial</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.addToDefaultEnvironmentSwitch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds the given environment material to the default environment switch.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>environmentMaterial</strong> (<a class="reference internal" href="class_vrdEnvironmentMaterial.html#vrdEnvironmentMaterial" title="vrdEnvironmentMaterial"><em>vrdEnvironmentMaterial</em></a>) – Environment material to add.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-applyenvironmenttoallmaterials-environment-name"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.applyEnvironmentToAllMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">applyEnvironmentToAllMaterials</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">environment</span></span></em>, <em><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.applyEnvironmentToAllMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the given environment or environment switch material to all materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>environment</strong> (<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a>) – The environment material to apply</li>
+<li><strong>name</strong> (<em>string</em>) – A name filter for the environment to replace. Empty string for no filter.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-applyenvironmenttonodes-material-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.applyEnvironmentToNodes">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">applyEnvironmentToNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">material</span></span></em>, <em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.applyEnvironmentToNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the given environment or environment switch material to the materials of the given nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>material</strong> (<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a>) – The environment material to apply</li>
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes where the environment should be applied to</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-applymaterialtonodes-material-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.applyMaterialToNodes">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">applyMaterialToNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">material</span></span></em>, <em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.applyMaterialToNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply a material to a list of nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>material</strong> (<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a>) – The material to be applied</li>
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes where the material should be applied to</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-convertmaterial-material-type"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.convertMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">convertMaterial</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">material</span></span></em>, <em><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.convertMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a material to another type.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>material</strong> (<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a>) – The material to be converted</li>
+<li><strong>type</strong> (<a class="reference internal" href="class_vrMaterialTypes.html#vredvrmaterialtypes-materialtype"><span class="std std-ref">vrMaterialTypes.MaterialType</span></a>) – Material type</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The converted material</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-copymaterialattributes-source-targets"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.copyMaterialAttributes">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">copyMaterialAttributes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">source</span></span></em>, <em><span class="n"><span class="pre">targets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.copyMaterialAttributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy material attributes from one material to other materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a>) – The source material</li>
+<li><strong>targets</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – A list of target materials</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-copymaterialchunks-chunks"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.copyMaterialChunks">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">copyMaterialChunks</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">chunks</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.copyMaterialChunks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy a list of material chunks to the clipboard.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chunks</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterialChunk.html#vrdMaterialChunk" title="vrdMaterialChunk"><em>vrdMaterialChunk</em></a><em>]</em>) – A list of material chunks</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-copytexturesize-source-targets"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.copyTextureSize">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">copyTextureSize</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">source</span></span></em>, <em><span class="n"><span class="pre">targets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.copyTextureSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy material texture size from one material to other materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>source</strong> (<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a>) – The source material</li>
+<li><strong>targets</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – A list of materials</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-creatematerial-name-type-materialgroup"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.createMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">createMaterial</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">name</span></span></em>, <em><span class="n"><span class="pre">type</span></span></em>, <em><span class="n"><span class="pre">materialGroup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.createMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>string</em>) – Name of the material</li>
+<li><strong>type</strong> (<a class="reference internal" href="class_vrMaterialTypes.html#vredvrmaterialtypes-materialtype"><span class="std std-ref">vrMaterialTypes.MaterialType</span></a>) – Material type</li>
+<li><strong>materialGroup</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – Material group to add the new created material (optional)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The created material</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-creatematerialgroup-nodes-parent"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.createMaterialGroup">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">createMaterialGroup</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">List[vrdNode]</span></span></em>, <em><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.createMaterialGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new material group.</p>
+<p>If called without parameters it will create a new group below the root node with a unique name. Optionally it takes a list of group nodes or material nodes and moves those directly under the new group.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The nodes to be added to the new group</li>
+<li><strong>parent</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – If empty, add group to common parent, otherwise add to existing group</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The created group node</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-createswitchmaterial-materials-parent"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.createSwitchMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">createSwitchMaterial</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">materials</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">List[vrdMaterial]</span></span></em>, <em><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.createSwitchMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a new switch material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>materials</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – The materials to be added to the new switch</li>
+<li><strong>parent</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – If empty, create a toplevel group otherwise add to an existing group</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The created material switch</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-deleteentries-entries-keepvariants"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.deleteEntries">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">deleteEntries</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">entries</span></span></em>, <em><span class="n"><span class="pre">keepVariants</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.deleteEntries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Removes the entries from the tree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>entries</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrMaterialEntryId.html#vrMaterialEntryId" title="vrMaterialEntryId"><em>vrMaterialEntryId</em></a><em>]</em>) – The material tree entries</li>
+<li><strong>keepVariants</strong> (<em>bool</em>) – If True, keep material variants of deleted switch materials. Set to False to delete corresponding material variants from Variants module and from variant sets using the material variant.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-deletematerials-materials-keepvariants"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.deleteMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">deleteMaterials</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">materials</span></span></em>, <em><span class="n"><span class="pre">keepVariants</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.deleteMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Delete materials.</p>
+<p>Only materials that are not referenced can be deleted. Referenced materials will be skipped by this function.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>materials</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – The materials to be deleted.</li>
+<li><strong>keepVariants</strong> (<em>bool</em>) – If True, keep material variants of deleted switch materials. Set to False to delete corresponding material variants from Variants module and from variant sets using the material variant.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-duplicateentries-entries"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.duplicateEntries">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">duplicateEntries</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">entries</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.duplicateEntries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicate the given material graph entries.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>entries</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrMaterialEntryId.html#vrMaterialEntryId" title="vrMaterialEntryId"><em>vrMaterialEntryId</em></a><em>]</em>) – The entries to be duplicated</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List of duplicated entries</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrMaterialEntryId.html#vrMaterialEntryId" title="vrMaterialEntryId">vrMaterialEntryId</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-duplicatematerials-materials"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.duplicateMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">duplicateMaterials</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">materials</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.duplicateMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicates the given materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>materials</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – The materials to be duplicated.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The list of duplicated materials</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-findmaterial-name"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.findMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">findMaterial</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.findMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a material by name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>string</em>) – Name of the material to be searched for</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The first material with the given name or an invalid object, if nothing is found</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-findmaterialnode-material-root"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.findMaterialNode">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">findMaterialNode</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">material</span></span></em>, <em><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.findMaterialNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find the         <a class="reference internal" href="class_vrdMaterialNode.html#vredvrdmaterialnode"><span class="std std-ref">vrdMaterialNode</span></a> for the given material.</p>
+<p>A <a class="reference internal" href="class_vrdMaterialNode.html#vredvrdmaterialnode"><span class="std std-ref">vrdMaterialNode</span></a> is a helper node to present vrdMaterials in a tree structure as materials itself are not derived from <a class="reference internal" href="class_vrdNode.html#vredvrdnode"><span class="std std-ref">vrdNode</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>material</strong> (<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a>) – Search for a node with this material</li>
+<li><strong>root</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – Search in the given sub graph. If root is missing, the whole material tree is searched.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The found node, otherwise an invalid node</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdMaterialNode.html#vrdMaterialNode" title="vrdMaterialNode">vrdMaterialNode</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-findmaterials-name"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.findMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">findMaterials</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.findMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all materials with the given name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>string</em>) – Name of the material to be searched</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of all materials with the given name</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-findmaterialsusedinvariants-root"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.findMaterialsUsedInVariants">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">findMaterialsUsedInVariants</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.findMaterialsUsedInVariants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find materials in the material tree that are used in variants.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>root</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The root node of the tree to search. If empty, all materials are searched.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of materials, that are referenced in variants</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-findnodeswithmaterial-material"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.findNodesWithMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">findNodesWithMaterial</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.findNodesWithMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Searches the scene for node with the given material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>material</strong> (<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The list of all found ndoes</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-findunusedmaterials"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.findUnusedMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">findUnusedMaterials</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.findUnusedMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find materials in the material tree that are not used in the scene graph, i.e. that are not assigned to any node or are not a sub material of an assigned material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of materials not used in the scene graph</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getallmaterials"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getAllMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getAllMaterials</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getAllMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a list of all materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of all materials</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getallmaterialtags"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getAllMaterialTags">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getAllMaterialTags</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getAllMaterialTags" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Gets a list of all material tags</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[string]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getdefaultenvironment"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getDefaultEnvironment">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getDefaultEnvironment</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getDefaultEnvironment" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The default environment material</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getdefaultenvironmentswitchmaterial"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getDefaultEnvironmentSwitchMaterial">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getDefaultEnvironmentSwitchMaterial</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getDefaultEnvironmentSwitchMaterial" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the default environment switch material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Default environment switch material</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html#vrdEnvironmentSwitchMaterial" title="vrdEnvironmentSwitchMaterial">vrdEnvironmentSwitchMaterial</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getentries-materials"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getEntries">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getEntries</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">materials</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getEntries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get material graph entries for given materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>materials</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – Material list</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List of material graph entries</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrMaterialEntryId.html#vrMaterialEntryId" title="vrMaterialEntryId">vrMaterialEntryId</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getgrouppath-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getGroupPath">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getGroupPath</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getGroupPath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the path of a node within the material tree.</p>
+<p>The path starts with the name of the group root.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The node which path should be retrieved.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The path of given node. If the node is not below the root group of the material tree, an empty path will be returned.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[string]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getimportmetadata-type"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getImportMetadata">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getImportMetadata</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getImportMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether metadata for the specified material type will be imported or not.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>type</strong> (<a class="reference internal" href="class_vrMaterialTypes.html#vredvrmaterialtypes-materialtype"><span class="std std-ref">vrMaterialTypes.MaterialType</span></a>) – The material type.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True, if metadata will be imported for the specified material type.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getmaterialfromid-materialid"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getMaterialFromId">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getMaterialFromId</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">materialId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getMaterialFromId" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets a material by its identifier.</p>
+<p>You can convert from an old vrMaterialPtr to a <a class="reference internal" href="class_vrdMaterial.html#vredvrdmaterial"><span class="std std-ref">vrdMaterial</span></a> by taking the ID from the old material like this: This returns a <a class="reference internal" href="class_vrdMaterial.html#vredvrdmaterial"><span class="std std-ref">vrdMaterial</span></a> for a given material identifier.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">newMat</span> <span class="o">=</span> <span class="n">vrMaterialService</span><span class="o">.</span><span class="n">getMaterialFromId</span><span class="p">(</span><span class="n">oldMat</span><span class="o">.</span><span class="n">getID</span><span class="p">())</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>materialId</strong> (<em>integer</em>) – The material identifier.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The material from identifier.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getmaterialnodes-root"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getMaterialNodes">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getMaterialNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">root</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getMaterialNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all material nodes in the given sub tree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>root</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – Root node, if missing search whole tree</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of all nodes in the subtree.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdMaterialNode.html#vrdMaterialNode" title="vrdMaterialNode">vrdMaterialNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getmaterialroot"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getMaterialRoot">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getMaterialRoot</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getMaterialRoot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the root for all materials in the material tree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The root node.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getmaterials-root"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getMaterials</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">root</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all materials used in the given tree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>root</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A list of materials found in the given tree</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getmaterialselection"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getMaterialSelection">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getMaterialSelection</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getMaterialSelection" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns a list of all currently selected materials</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getmaterialswithalltags-tags"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getMaterialsWithAllTags">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getMaterialsWithAllTags</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getMaterialsWithAllTags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the materials that have all the given tags.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tags</strong> (<em>List</em><em>[</em><em>string</em><em>]</em>) – The set of tags to search for.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The list of materials.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getmaterialswithanytag-tags"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getMaterialsWithAnyTag">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getMaterialsWithAnyTag</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getMaterialsWithAnyTag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the materials that have any of the given tags.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tags</strong> (<em>List</em><em>[</em><em>string</em><em>]</em>) – The set of tags to search for.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The list of materials.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getnumberofmaterials"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getNumberOfMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getNumberOfMaterials</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getNumberOfMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of materials used in the current scene.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of materials in scene.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getnumberoftextures"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getNumberOfTextures">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getNumberOfTextures</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getNumberOfTextures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the number of textures used in all materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of textures.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getplanarmanipulatortransparency"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getPlanarManipulatorTransparency">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getPlanarManipulatorTransparency</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getPlanarManipulatorTransparency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the transparency value [0.0 to 1.0] of the planar manipulator plane.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The transparency value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getpreviewscenes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getPreviewScenes">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getPreviewScenes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getPreviewScenes" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Get all available material preview scene names</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[string]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getselection"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getSelection">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getSelection</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getSelection" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The currently selected items in the material editor tree view</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrMaterialEntryId.html#vrMaterialEntryId" title="vrMaterialEntryId">vrMaterialEntryId</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getsupportedmaterialtypes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getSupportedMaterialTypes">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getSupportedMaterialTypes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getSupportedMaterialTypes" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of all supported material types</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrMaterialTypes.html#vredvrmaterialtypes-materialtype"><span class="std std-ref">vrMaterialTypes.MaterialType</span></a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-gettiremanipulatortransparency"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getTireManipulatorTransparency">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getTireManipulatorTransparency</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getTireManipulatorTransparency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the transparency value [0.0 to 1.0] of the tire manipulator cylinder geometry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The transparency value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-gettreedepth-material"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getTreeDepth">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getTreeDepth</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getTreeDepth" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the depth of a material subtree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>material</strong> (<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a>) – The root material of the subtree.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The depth of the subtree.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-gettreedepth-root"></span><dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getTreeDepth</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">root</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the depth of a material subtree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>root</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The root node of the subtree.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">The depth of the subtree.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getuniquename-name-forcehighestindex"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getUniqueName">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getUniqueName</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">name</span></span></em>, <em><span class="n"><span class="pre">forceHighestIndex</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getUniqueName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a unique name by appending an index.</p>
+<div class="line-block">
+<div class="line">Example: There are materials “Phong2” and “Phong9”.</div>
+<div class="line">Therefore the highest index is 9.</div>
+<div class="line"><br /></div>
+<div class="line">Calling this function with “Phong” or “Phong7” will</div>
+<div class="line">* return the given name, if forceHighestIndex is set to False.</div>
+<div class="line">* return “Phong10”, if forceHighestIndex is set to True.</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>string</em>) – If necessary, a suffix is added to the given name to make it unique</li>
+<li><strong>forceHighestIndex</strong> (<em>bool</em>) – If the given name is not used, but there is a node with the same base name, the name will be adapted to have a higher index than the given one.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The unique name.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-getusedtexturememory"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.getUsedTextureMemory">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">getUsedTextureMemory</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.getUsedTextureMemory" title="Permalink to this definition">¶</a></dt>
+<dd><p>The currently used texture memory in bytes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The used texture memory.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-loadanimationtomaterials-materials-animation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.loadAnimationToMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">loadAnimationToMaterials</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">materials</span></span></em>, <em><span class="n"><span class="pre">animation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.loadAnimationToMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply an animation from a file to a list of materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>materials</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – The materials</li>
+<li><strong>animation</strong> (<em>string</em>) – The animation (as .osb/.vpb file)</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-loadenvironmentassettodefaultswitch-uuid"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.loadEnvironmentAssetToDefaultSwitch">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">loadEnvironmentAssetToDefaultSwitch</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">uuid</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.loadEnvironmentAssetToDefaultSwitch" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads an environment asset by uuid into the default switch.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>uuid</strong> (<em>string</em>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-loadmaterialasset-uuid-parent"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.loadMaterialAsset">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">loadMaterialAsset</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">uuid</span></span></em>, <em><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.loadMaterialAsset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads a material asset by uuid into a given node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>uuid</strong> (<em>string</em>) – Unique asset identifier</li>
+<li><strong>parent</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – Parent node or if empty, add to top level group</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The created material node</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdMaterialNode.html#vrdMaterialNode" title="vrdMaterialNode">vrdMaterialNode</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-loadmaterials-filenames-materialgroup"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.loadMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">loadMaterials</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">fileNames</span></span></em>, <em><span class="n"><span class="pre">materialGroup</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.loadMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads materials from disk.</p>
+<div class="line-block">
+<div class="line">Suffixes for all supported file types:</div>
+<div class="line">- osb: OpenSG Binary Geometry</div>
+<div class="line">- vpb: VRED Project Binary</div>
+<div class="line">- vpe: VRED Essentials Project Binary</div>
+<div class="line">- pbrdf: Office Color Science BTF measurement</div>
+<div class="line">- axf, cpa, btf: X-Rite measurement</div>
+<div class="line">- mdl: Material Definition Language module</div>
+<div class="line">- mtlx, MaterialX Document</div>
+<div class="line">- sbsar: Substance Archive</div>
+<div class="line">- hdr, exr, mtd: Sphere Environment</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>fileNames</strong> (<em>List</em><em>[</em><em>string</em><em>]</em>) – The material file names to load</li>
+<li><strong>materialGroup</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – Material group to add the new created material to (optional)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The loaded materials</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">List[<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial">vrdMaterial</a>]</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-mergeduplicatematerials-options"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.mergeDuplicateMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">mergeDuplicateMaterials</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">options</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrMaterialTypes.MergeOptions.Default</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.mergeDuplicateMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Share materials with the same properties.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>options</strong> (<a class="reference internal" href="class_vrMaterialTypes.html#vredvrmaterialtypes-mergeoptions"><span class="std std-ref">vrMaterialTypes.MergeOptions</span></a>) – Options for merging</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-optimizetextures"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.optimizeTextures">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">optimizeTextures</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.optimizeTextures" title="Permalink to this definition">¶</a></dt>
+<dd><p>Shares image objects used by materials that have the same image data.</p>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-pasteentries-sources-targets"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.pasteEntries">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">pasteEntries</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">sources</span></span></em>, <em><span class="n"><span class="pre">targets</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.pasteEntries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pastes the given entries to the given target in the tree.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sources</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrMaterialEntryId.html#vrMaterialEntryId" title="vrMaterialEntryId"><em>vrMaterialEntryId</em></a><em>]</em>) – The source material tree entries</li>
+<li><strong>targets</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrMaterialEntryId.html#vrMaterialEntryId" title="vrMaterialEntryId"><em>vrMaterialEntryId</em></a><em>]</em>) – The targets for the paste operation</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-pastematerialchunks-chunkmaterial"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.pasteMaterialChunks">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">pasteMaterialChunks</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">chunkMaterial</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.pasteMaterialChunks" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paste the stored material chunks from the clipboard into a chunk material.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chunkMaterial</strong> (<a class="reference internal" href="class_vrdChunkMaterial.html#vrdChunkMaterial" title="vrdChunkMaterial"><em>vrdChunkMaterial</em></a>) – The chunk material which receives the chunks from the clipboard.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-referenceunusedmaterials"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.referenceUnusedMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">referenceUnusedMaterials</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.referenceUnusedMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Reference materials not used in the scene by adding material groups to the scene graph.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The number of new references created</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-removeallgroups"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.removeAllGroups">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">removeAllGroups</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.removeAllGroups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all material groups. Material nodes in groups will be moved to the root node.</p>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-removeunusedmaterials"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.removeUnusedMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">removeUnusedMaterials</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.removeUnusedMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove unused materials.</p>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-rendermultipreview-materials-totalcount-size-text"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.renderMultiPreview">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">renderMultiPreview</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">materials</span></span></em>, <em><span class="n"><span class="pre">totalCount</span></span></em>, <em><span class="n"><span class="pre">size</span></span></em>, <em><span class="n"><span class="pre">text</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.renderMultiPreview" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create an image with multiple material previews.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>materials</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – A list of materials that should be painted as a stack</li>
+<li><strong>totalCount</strong> (<em>integer</em>) – This number will be printed at top of the image</li>
+<li><strong>size</strong> (<em>QSize</em>) – The requested image size</li>
+<li><strong>text</strong> (<em>string</em>) – An optional prefix text for the painted image</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The painted image</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">QImage</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-savematerials-materials-path"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.saveMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">saveMaterials</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">materials</span></span></em>, <em><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.saveMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Saves materials to disk.</p>
+<p>The materials will be saved as individual .osb files to the folder specified as ‘path’.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>materials</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – The materials to save</li>
+<li><strong>path</strong> (<em>string</em>) – The path where to save the materials</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">False if either one of the materials could not be saved or the directory does not exist. Otherwise True is returned.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-selectnodes-materials-clearselection"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.selectNodes">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">selectNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">materials</span></span></em>, <em><span class="n"><span class="pre">clearSelection</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.selectNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select all nodes in the scene graph that reference the given materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>materials</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – A list of materials</li>
+<li><strong>clearSelection</strong> (<em>bool</em>) – If True, clear current selection</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-setimportmetadata-type-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.setImportMetadata">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">setImportMetadata</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">type</span></span></em>, <em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.setImportMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets whether to import metadata for the specified material type.</p>
+<p>Currently, only Substance and XRite material support metadata. Setting other material types will have no effect.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>type</strong> (<a class="reference internal" href="class_vrMaterialTypes.html#vredvrmaterialtypes-materialtype"><span class="std std-ref">vrMaterialTypes.MaterialType</span></a>) – The material type.</li>
+<li><strong>value</strong> (<em>bool</em>) – If True, metadata will be imported.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-setmaterialselection-materials-scrollto"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.setMaterialSelection">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">setMaterialSelection</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">materials</span></span></em>, <em><span class="n"><span class="pre">scrollTo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.setMaterialSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the material selection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>materials</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – A list of <a class="reference internal" href="class_vrdMaterial.html#vredvrdmaterial"><span class="std std-ref">vrdMaterial</span></a> objects to be selected</li>
+<li><strong>scrollTo</strong> (<em>bool</em>) – If true, scroll to the first selected material</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-setplanarmanipulatortransparency-transparency"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.setPlanarManipulatorTransparency">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">setPlanarManipulatorTransparency</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">transparency</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.setPlanarManipulatorTransparency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the transparency value of the planar manipulator plane.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>transparency</strong> (<em>float</em>) – Transparency value [0.0 to 1.0]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-setselection-ids-scrollto-edit"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.setSelection">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">setSelection</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">ids</span></span></em>, <em><span class="n"><span class="pre">scrollTo</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em><span class="n"><span class="pre">edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.setSelection" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the material selection.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ids</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrMaterialEntryId.html#vrMaterialEntryId" title="vrMaterialEntryId"><em>vrMaterialEntryId</em></a><em>]</em>) – A list of vrMaterialEntryIds that represents items in the material tree view</li>
+<li><strong>scrollTo</strong> (<em>bool</em>) – If true, scroll to the first selected item</li>
+<li><strong>edit</strong> (<em>bool</em>) – If true, starts editing the corresponding item</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-setswitchchoicebyalltags-switchmaterial-tags"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.setSwitchChoiceByAllTags">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">setSwitchChoiceByAllTags</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">switchMaterial</span></span></em>, <em><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.setSwitchChoiceByAllTags" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the choice of a switch material to the first child with all of the given tags. If not found the choice stays unchanged.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>switchMaterial</strong> (<a class="reference internal" href="class_vrdSwitchMaterial.html#vrdSwitchMaterial" title="vrdSwitchMaterial"><em>vrdSwitchMaterial</em></a>) – The switch material to modify.</li>
+<li><strong>tags</strong> (<em>List</em><em>[</em><em>string</em><em>]</em>) – The set of tags determining the child material to select.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if matching child material found.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-setswitchchoicebyanytag-switchmaterial-tags"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.setSwitchChoiceByAnyTag">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">setSwitchChoiceByAnyTag</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">switchMaterial</span></span></em>, <em><span class="n"><span class="pre">tags</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.setSwitchChoiceByAnyTag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the choice of a switch material to the first child with any of the given tags. If not found the choice stays unchanged.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>switchMaterial</strong> (<a class="reference internal" href="class_vrdSwitchMaterial.html#vrdSwitchMaterial" title="vrdSwitchMaterial"><em>vrdSwitchMaterial</em></a>) – The switch material to modify.</li>
+<li><strong>tags</strong> (<em>List</em><em>[</em><em>string</em><em>]</em>) – The set of tags determining the child material to select.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True if matching child material found.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-settiremanipulatortransparency-transparency"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.setTireManipulatorTransparency">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">setTireManipulatorTransparency</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">transparency</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.setTireManipulatorTransparency" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the transparency value of the tire manipulator cylinder geometry.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>transparency</strong> (<em>float</em>) – Transparency value [0.0 to 1.0]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-updatepreviews-materials"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.updatePreviews">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">updatePreviews</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">materials</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.updatePreviews" title="Permalink to this definition">¶</a></dt>
+<dd><p>Update the preview for the given materials, if necessary.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>materials</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a><em>]</em>) – List of materials</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrmaterialservice-materialschanged"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.materialsChanged">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">materialsChanged</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.materialsChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Notifies about changes in the material tree.</p>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-planarmanipulatortransparencychanged-transparency"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.planarManipulatorTransparencyChanged">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">planarManipulatorTransparencyChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">transparency</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.planarManipulatorTransparencyChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Notifies about changes of the manipulator transparency.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>transparency</strong> (<em>float</em>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-previewschanged"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.previewsChanged">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">previewsChanged</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.previewsChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Notifies about changes of the material preview images.</p>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-selectionchanged-ids-scrollto-edit"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.selectionChanged">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">selectionChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">ids</span></span></em>, <em><span class="n"><span class="pre">scrollTo</span></span></em>, <em><span class="n"><span class="pre">edit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.selectionChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is emitted, whenever the material selection changes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ids</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrMaterialEntryId.html#vrMaterialEntryId" title="vrMaterialEntryId"><em>vrMaterialEntryId</em></a><em>]</em>) – The list of selected vrMaterialEntryIds</li>
+<li><strong>scrollTo</strong> (<em>bool</em>) – If true, scroll to the first selected item is requested</li>
+<li><strong>edit</strong> (<em>bool</em>) – If true, starting to edit the corresponding item is requested</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrmaterialservice-tiremanipulatortransparencychanged-transparency"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrMaterialService.tireManipulatorTransparencyChanged">
+<code class="sig-prename descclassname"><span class="pre">vrMaterialService.</span></code><code class="sig-name descname"><span class="pre">tireManipulatorTransparencyChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">transparency</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrMaterialService.tireManipulatorTransparencyChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Notifies about changes of the manipulator transparency.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>transparency</strong> (<em>float</em>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrMaterialService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals">Signals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrMaterialEntryId.html"
+                        title="previous chapter">vrMaterialEntryId</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrMaterialTypes.html"
+                        title="next chapter">vrMaterialTypes</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrMaterialTypes.html" title="vrMaterialTypes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrMaterialEntryId.html" title="vrMaterialEntryId"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

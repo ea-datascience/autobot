@@ -1,0 +1,7 @@
+Measurement examples
+====================
+
+.. literalinclude:: ../python_examples/measurements.py
+   :language: python
+   :linenos:
+   :caption: measurements.py

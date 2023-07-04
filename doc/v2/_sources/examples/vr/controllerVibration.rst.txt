@@ -1,0 +1,12 @@
+Triggering the vibration functionality of a controller
+======================================================
+
+This example shows, how to call activate the vibration of a controller for a certain amount of time.
+Some controllers have different axes, which can vibrate, but some controllers support only a single axis.
+If this is the case the axis parameter will be ignored and can should be set to 0.
+
+
+.. literalinclude:: ../../python_examples/vr/controllerVibration.py
+    :language: python
+    :linenos:
+    :caption: vr/controllerVibration.py

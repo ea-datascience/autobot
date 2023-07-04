@@ -1,0 +1,7 @@
+virtual eye example
+===================
+
+.. literalinclude:: ../python_examples/virtualeye.py
+   :language: python
+   :linenos:
+   :caption: virtualeye.py

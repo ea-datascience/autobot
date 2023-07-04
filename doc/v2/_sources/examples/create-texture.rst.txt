@@ -1,0 +1,7 @@
+Create texture and add it to a material
+=======================================
+
+.. literalinclude:: ../python_examples/create-texture.py
+   :language: python
+   :linenos:
+   :caption: create-texture.py

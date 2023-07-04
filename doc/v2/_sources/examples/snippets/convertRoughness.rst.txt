@@ -1,0 +1,9 @@
+.. _convertRoughness:
+
+convertRoughness
+================
+
+.. literalinclude:: ../../python_examples/snippets/convertRoughness.py
+   :language: python
+   :linenos:
+   :caption: snippets/convertRoughness.py

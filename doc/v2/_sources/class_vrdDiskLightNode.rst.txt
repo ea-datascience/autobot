@@ -1,0 +1,49 @@
+----------------
+vrdDiskLightNode
+----------------
+
+
+.. _vredvrdDiskLightNode:
+.. py:class:: vrdDiskLightNode
+
+(Inherits :py:class:`vrdAreaLightNode`)
+
+This class gives access to the properties of a disk light source.
+
+A disk light is an area light that emits light from a flat circular surface.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAreaLightCone() → vrdAreaLightCone<vredvrdDiskLightNode.getAreaLightCone()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdDiskLightNode.getAreaLightCone():
+.. py:method:: vrdDiskLightNode.getAreaLightCone()
+
+    Returns the area light cone.
+
+
+
+
+    :return: The area light cone.
+    :rtype: vrdAreaLightCone
+
+
+
+
+
+
+
+
+
+

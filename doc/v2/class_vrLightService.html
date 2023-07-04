@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrLightService &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrLightTypes" href="class_vrLightTypes.html" />
+    <link rel="prev" title="vrLensFlareTypes" href="class_vrLensFlareTypes.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrlightservice">
+<h1>vrLightService<a class="headerlink" href="#vrlightservice" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrlightservice"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrLightService">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrLightService</span></code><a class="headerlink" href="#vrLightService" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <code class="xref py py-class docutils literal notranslate"><span class="pre">vrBaseService</span></code>)</p>
+<p>Interface to access lights, light sets and lens flares in VRED.</p>
+<p>This is the basic interface to access, create or delete lights, light sets and lens flares. It also provides functionality to access the light graph by using <a class="reference internal" href="#vredvrlightservice-getlightroot"><span class="std std-ref">vrLightService.getLightRoot()</span></a>.</p>
+<div class="line-block">
+<div class="line">See also: <a class="reference internal" href="scenegraphs.html"><span class="doc">Node graphs in VRED</span></a></div>
+</div>
+<p>Here a are some examples on how to work with lights:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># add a group node</span>
+<span class="n">groupNode</span> <span class="o">=</span> <span class="n">vrLightService</span><span class="o">.</span><span class="n">createLightGroup</span><span class="p">(</span><span class="s2">&quot;group node&quot;</span><span class="p">)</span>
+
+<span class="c1"># create a point light below the group</span>
+<span class="n">pointLight</span> <span class="o">=</span> <span class="n">vrLightService</span><span class="o">.</span><span class="n">createLight</span><span class="p">(</span><span class="s2">&quot;point light&quot;</span><span class="p">,</span> <span class="n">vrLightTypes</span><span class="o">.</span><span class="n">LightType</span><span class="o">.</span><span class="n">Point</span><span class="p">,</span> <span class="n">groupNode</span><span class="p">)</span>
+
+<span class="c1"># find a light node in the main scene graph</span>
+<span class="n">pointLight</span> <span class="o">=</span> <span class="n">vrNodeService</span><span class="o">.</span><span class="n">findNode</span><span class="p">(</span><span class="s2">&quot;point light&quot;</span><span class="p">)</span>
+
+<span class="c1"># find a light node in the light graph</span>
+<span class="n">pointLight</span> <span class="o">=</span> <span class="n">vrLightService</span><span class="o">.</span><span class="n">findLight</span><span class="p">(</span><span class="s2">&quot;point light&quot;</span><span class="p">)</span>
+
+<span class="c1"># copy lens flares from pointLightNode1 to pointLightNode2</span>
+<span class="c1"># this creates an actual copy of the vrdLensFlareEffect and stores it</span>
+<span class="n">vrLightService</span><span class="o">.</span><span class="n">copyLensFlare</span><span class="p">(</span><span class="n">pointLightNode1</span><span class="o">.</span><span class="n">getLensFlareEffect</span><span class="p">())</span>
+<span class="n">vrLightService</span><span class="o">.</span><span class="n">pasteLensFlare</span><span class="p">([</span><span class="n">pointLightNode2</span><span class="p">])</span>
+
+<span class="c1"># delete the pointlight and the group</span>
+<span class="n">vrNodeService</span><span class="o">.</span><span class="n">removeNode</span><span class="p">([</span><span class="n">pointLight</span><span class="p">,</span> <span class="n">groupNode</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrlightservice-convertlight-lightnode-lighttype"><span class="std std-ref">convertLight(lightNode, lightType)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-convertlights-nodes-lighttype"><span class="std std-ref">convertLights(nodes, lightType)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-copylensflare-effect"><span class="std std-ref">copyLensFlare(effect)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-copylensflareelements-elements"><span class="std std-ref">copyLensFlareElements(elements)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-copylensflareghosts-ghosts"><span class="std std-ref">copyLensFlareGhosts(ghosts)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-createlight-name-type-parent"><span class="std std-ref">createLight(name, type, parent) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-createlightgroup-name-parent"><span class="std std-ref">createLightGroup(name, parent) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-createlightgroup-name-nodes"><span class="std std-ref">createLightGroup(name, nodes) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-createlightlinkset-name"><span class="std std-ref">createLightLinkSet(name) → vrdLightLinkSetNode</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-duplicatelensflareelements-light-elements"><span class="std std-ref">duplicateLensFlareElements(light, elements)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-duplicatelensflareghosts-ghostline-ghosts"><span class="std std-ref">duplicateLensFlareGhosts(ghostLine, ghosts)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-duplicatelights-nodes"><span class="std std-ref">duplicateLights(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-findlight-name"><span class="std std-ref">findLight(name) → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-findlights-name"><span class="std std-ref">findLights(name) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-getalllights-scenegraph"><span class="std std-ref">getAllLights(sceneGraph) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-getheadlight"><span class="std std-ref">getHeadlight() → vrdBaseLightNode</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-getlightlinksroot"><span class="std std-ref">getLightLinksRoot() → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-getlightroot"><span class="std std-ref">getLightRoot() → vrdNode</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-getselectedlensflareelements"><span class="std std-ref">getSelectedLensFlareElements() → List[vrdLensFlareElement]</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-getselectedlensflareghosts"><span class="std std-ref">getSelectedLensFlareGhosts() → List[vrdLensFlareGhost]</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-getselectednodes"><span class="std std-ref">getSelectedNodes() → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-hascopiedghosts"><span class="std std-ref">hasCopiedGhosts() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-hascopiedlensflareeffect"><span class="std std-ref">hasCopiedLensFlareEffect() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-hascopiedlensflareelements"><span class="std std-ref">hasCopiedLensFlareElements() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-isheadlight-light"><span class="std std-ref">isHeadLight(light) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-loadlights-paths"><span class="std std-ref">loadLights(paths) → List[vrdNode]</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-pastelensflare-lights"><span class="std std-ref">pasteLensFlare(lights)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-pastelensflareelements-light"><span class="std std-ref">pasteLensFlareElements(light)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-pastelensflareghosts-ghostline"><span class="std std-ref">pasteLensFlareGhosts(ghostLine)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-removelightlinksets-nodes"><span class="std std-ref">removeLightLinkSets(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-removelights-nodes"><span class="std std-ref">removeLights(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-savelights-nodes-path"><span class="std std-ref">saveLights(nodes, path) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-setselectedlensflareelements-elements"><span class="std std-ref">setSelectedLensFlareElements(elements)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-setselectedlensflareghosts-ghosts"><span class="std std-ref">setSelectedLensFlareGhosts(ghosts)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-setselectednodes-nodes"><span class="std std-ref">setSelectedNodes(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-validatelights"><span class="std std-ref">validateLights()</span></a></li>
+</ul>
+</dd>
+<dt>Signals:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrlightservice-lensflareelementselectionchanged-elements"><span class="std std-ref">lensFlareElementSelectionChanged(elements)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-lensflareghostselectionchanged-ghosts"><span class="std std-ref">lensFlareGhostSelectionChanged(ghosts)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-lightlinksetschanged"><span class="std std-ref">lightLinkSetsChanged()</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-lightsconverted-lightids"><span class="std std-ref">lightsConverted(lightIds)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-lightsstatechanged"><span class="std std-ref">lightsStateChanged()</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-lightsvalidated"><span class="std std-ref">lightsValidated()</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-nodesadded-nodes"><span class="std std-ref">nodesAdded(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-nodeschanged-nodes"><span class="std std-ref">nodesChanged(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-nodeselectionchanged-nodes"><span class="std std-ref">nodeSelectionChanged(nodes)</span></a></li>
+<li><a class="reference internal" href="#vredvrlightservice-nodesremoved-nodes"><span class="std std-ref">nodesRemoved(nodes)</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrlightservice-convertlight-lightnode-lighttype"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.convertLight">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">convertLight</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">lightNode</span></span></em>, <em><span class="n"><span class="pre">lightType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.convertLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts a light node to a light of another type. Note: This will invalidate this node object.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>lightNode</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The light node that will be converted.</li>
+<li><strong>lightType</strong> (<a class="reference internal" href="class_vrLightTypes.html#vredvrlighttypes-lighttype"><span class="std std-ref">vrLightTypes.LightType</span></a>) – The type to which the node will be converted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-convertlights-nodes-lighttype"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.convertLights">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">convertLights</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">lightType</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.convertLights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts light nodes to lights of another type. Note: This will invalidate these node objects.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The light nodes that will be converted.</li>
+<li><strong>lightType</strong> (<a class="reference internal" href="class_vrLightTypes.html#vredvrlighttypes-lighttype"><span class="std std-ref">vrLightTypes.LightType</span></a>) – The type to which the nodes will be converted.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-copylensflare-effect"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.copyLensFlare">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">copyLensFlare</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">effect</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.copyLensFlare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adds a lens flare effect to the copy buffer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>effect</strong> (<a class="reference internal" href="class_vrdLensFlareEffect.html#vrdLensFlareEffect" title="vrdLensFlareEffect"><em>vrdLensFlareEffect</em></a>) – The lens flare effect that is added to the clipboard to be copied.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-copylensflareelements-elements"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.copyLensFlareElements">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">copyLensFlareElements</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">elements</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.copyLensFlareElements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add lens flares to the copy buffer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elements</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdLensFlareElement.html#vrdLensFlareElement" title="vrdLensFlareElement"><em>vrdLensFlareElement</em></a><em>]</em>) – All lens flares we wish to copy</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-copylensflareghosts-ghosts"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.copyLensFlareGhosts">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">copyLensFlareGhosts</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">ghosts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.copyLensFlareGhosts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Copy all ghosts to copy buffer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ghosts</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdLensFlareGhost.html#vrdLensFlareGhost" title="vrdLensFlareGhost"><em>vrdLensFlareGhost</em></a><em>]</em>) – List of all ghosts to copy</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-createlight-name-type-parent"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.createLight">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">createLight</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">name</span></span></em>, <em><span class="n"><span class="pre">type</span></span></em>, <em><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.createLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new light node in light graph.</p>
+<div class="line-block">
+<div class="line">Directional: Directional light type</div>
+<div class="line">Point: Point light type</div>
+<div class="line">Spot: Spot light type</div>
+<div class="line">Rectangular: Rectangular light type</div>
+<div class="line">Disk: Disk light type</div>
+<div class="line">Spherical: Spherical light type</div>
+<div class="line">Ray: Ray light type</div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>string</em>) – Name of the new light node</li>
+<li><strong>type</strong> (<a class="reference internal" href="class_vrLightTypes.html#vredvrlighttypes-lighttype"><span class="std std-ref">vrLightTypes.LightType</span></a>) – Light type</li>
+<li><strong>parent</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – This node contains the new create light node as a child. Parent node must be a group node in light graph. So it must be the light graph root or one descendant child group. If the parameter is omitted, the light root will be used.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The newly created and added light node from the light graph.</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-createlightgroup-name-parent"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.createLightGroup">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">createLightGroup</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">name</span></span></em>, <em><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">vrdNode()</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.createLightGroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new light group.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>string</em>) – Name of the new light group node</li>
+<li><strong>parent</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – The new group node will be attached to this node. The parent node must be a node in light graph. So it must be the light graph root or one of its child groups. If this parameter is omitted, the light graph root will be used.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The newly created group node</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-createlightgroup-name-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">createLightGroup</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">name</span></span></em>, <em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new light group out of some lights.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>name</strong> (<em>string</em>) – Name of the light group node</li>
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – The light nodes that will be part of the new group. The group will be a child of the common parent of the nodes in the light graph. If the nodes do not have a common parent, the group will be a child of the light graph root node.</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">The newly created and added light group node</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-createlightlinkset-name"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.createLightLinkSet">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">createLightLinkSet</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.createLightLinkSet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Create a new light link set.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>string</em>) – of the light link set. If the name is omitted, a new unique name will be automatically generated.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">New created light link set A <a class="reference internal" href="#vredvrlightservice-lightlinksetschanged"><span class="std std-ref">vrLightService.lightLinkSetsChanged()</span></a> signal will be emitted</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdLightLinkSetNode.html#vrdLightLinkSetNode" title="vrdLightLinkSetNode">vrdLightLinkSetNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-duplicatelensflareelements-light-elements"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.duplicateLensFlareElements">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">duplicateLensFlareElements</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">light</span></span></em>, <em><span class="n"><span class="pre">elements</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.duplicateLensFlareElements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicates lens flare elements of a light and adds them to the same light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>light</strong> (<a class="reference internal" href="class_vrdPointLightNode.html#vrdPointLightNode" title="vrdPointLightNode"><em>vrdPointLightNode</em></a>) – The light of which some lens flare elements are duplicated</li>
+<li><strong>elements</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdLensFlareElement.html#vrdLensFlareElement" title="vrdLensFlareElement"><em>vrdLensFlareElement</em></a><em>]</em>) – The elements that should be duplicated. Note that these elements need to be elements of the given light, otherwise they will be ignored.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-duplicatelensflareghosts-ghostline-ghosts"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.duplicateLensFlareGhosts">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">duplicateLensFlareGhosts</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">ghostLine</span></span></em>, <em><span class="n"><span class="pre">ghosts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.duplicateLensFlareGhosts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicates lens flare ghosts of a ghost line and adds them to the same ghost line.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>ghostLine</strong> (<a class="reference internal" href="class_vrdLensFlareGhostLine.html#vrdLensFlareGhostLine" title="vrdLensFlareGhostLine"><em>vrdLensFlareGhostLine</em></a>) – The ghost line of which some ghosts are duplicated</li>
+<li><strong>ghosts</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdLensFlareGhost.html#vrdLensFlareGhost" title="vrdLensFlareGhost"><em>vrdLensFlareGhost</em></a><em>]</em>) – The ghosts that should be duplicated. Note that these ghosts need to be ghosts of the given ghost line otherwise they will be ignored.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-duplicatelights-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.duplicateLights">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">duplicateLights</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.duplicateLights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duplicate all given light nodes from light graph. The duplicated nodes will be added under the same parent as the original node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – List of all light nodes to duplicate</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-findlight-name"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.findLight">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">findLight</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.findLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find a light node with a given name in the light graph.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>string</em>) – Name of the searched light node</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Light node. May be null, if no light node with this name can be found.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-findlights-name"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.findLights">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">findLights</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.findLights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find all light nodes with a given name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> (<em>string</em>) – Name of the searched light nodes The lights will be searched for in the light graph.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">List of light nodes. May be empty, if no light nodes with this name can be found.</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-getalllights-scenegraph"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.getAllLights">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">getAllLights</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">sceneGraph</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.getAllLights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return all light nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>sceneGraph</strong> (<em>bool</em>) – If true, collect the nodes from the scene graph if false use the light graph</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">All light nodes</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-getheadlight"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.getHeadlight">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">getHeadlight</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.getHeadlight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the head light node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">head light node</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdBaseLightNode.html#vrdBaseLightNode" title="vrdBaseLightNode">vrdBaseLightNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-getlightlinksroot"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.getLightLinksRoot">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">getLightLinksRoot</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.getLightLinksRoot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the root node of light sets, that contains all light sets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Root node of light sets tree</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-getlightroot"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.getLightRoot">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">getLightRoot</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.getLightRoot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the root node of lights, that contains all lights and lens flares.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Root node of light graph</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-getselectedlensflareelements"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.getSelectedLensFlareElements">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">getSelectedLensFlareElements</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.getSelectedLensFlareElements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the selected lens flare elements.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The selected lens flare elements</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdLensFlareElement.html#vrdLensFlareElement" title="vrdLensFlareElement">vrdLensFlareElement</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-getselectedlensflareghosts"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.getSelectedLensFlareGhosts">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">getSelectedLensFlareGhosts</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.getSelectedLensFlareGhosts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets currently selected ghosts.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The currently selected ghosts.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdLensFlareGhost.html#vrdLensFlareGhost" title="vrdLensFlareGhost">vrdLensFlareGhost</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-getselectednodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.getSelectedNodes">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">getSelectedNodes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.getSelectedNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns all current selected light nodes from internal buffer.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">List of all current selected light nodes</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-hascopiedghosts"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.hasCopiedGhosts">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">hasCopiedGhosts</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.hasCopiedGhosts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if ghost elements are available in clipboard.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if ghost elements are available in clipboard</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-hascopiedlensflareeffect"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.hasCopiedLensFlareEffect">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">hasCopiedLensFlareEffect</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.hasCopiedLensFlareEffect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks is a lens flare effect is available in the clipboard.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if a lens flare effect is available in the clipboard</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-hascopiedlensflareelements"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.hasCopiedLensFlareElements">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">hasCopiedLensFlareElements</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.hasCopiedLensFlareElements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if lens flare elements are available in clipboard.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if lens flare elements are available in clipboard</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-isheadlight-light"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.isHeadLight">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">isHeadLight</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">light</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.isHeadLight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if the given node is the head light node.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>light</strong> (<a class="reference internal" href="class_vrdBaseLightNode.html#vrdBaseLightNode" title="vrdBaseLightNode"><em>vrdBaseLightNode</em></a>) – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True, if the given node is the head light node</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-loadlights-paths"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.loadLights">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">loadLights</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">paths</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.loadLights" title="Permalink to this definition">¶</a></dt>
+<dd><p>load lights from OpenSG Binary Geometry or VRED Project Binary file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>paths</strong> (<em>List</em><em>[</em><em>string</em><em>]</em>) – Full file paths of binary files</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">all new added light nodes</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode">vrdNode</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-pastelensflare-lights"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.pasteLensFlare">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">pasteLensFlare</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">lights</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.pasteLensFlare" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pastes a lens flare effect from the copy buffer to one or more lights.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lights</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdPointLightNode.html#vrdPointLightNode" title="vrdPointLightNode"><em>vrdPointLightNode</em></a><em>]</em>) – The lights the lens flare effect should be copied to.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-pastelensflareelements-light"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.pasteLensFlareElements">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">pasteLensFlareElements</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">light</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.pasteLensFlareElements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pastes lens flare elements from the clipboard to a light.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>light</strong> (<a class="reference internal" href="class_vrdPointLightNode.html#vrdPointLightNode" title="vrdPointLightNode"><em>vrdPointLightNode</em></a>) – The light the lens flare elements should be copied to.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-pastelensflareghosts-ghostline"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.pasteLensFlareGhosts">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">pasteLensFlareGhosts</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">ghostLine</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.pasteLensFlareGhosts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Paste all ghosts from copy buffer to a ghost line.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ghostLine</strong> (<a class="reference internal" href="class_vrdLensFlareGhostLine.html#vrdLensFlareGhostLine" title="vrdLensFlareGhostLine"><em>vrdLensFlareGhostLine</em></a>) – Ghost line to which the ghosts will be pasted.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-removelightlinksets-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.removeLightLinkSets">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">removeLightLinkSets</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.removeLightLinkSets" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove light link sets.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdLightLinkSetNode.html#vrdLightLinkSetNode" title="vrdLightLinkSetNode"><em>vrdLightLinkSetNode</em></a><em>]</em>) – List of all light link sets to remove A <a class="reference internal" href="#vredvrlightservice-lightlinksetschanged"><span class="std std-ref">vrLightService.lightLinkSetsChanged()</span></a> signal will be emitted</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-removelights-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.removeLights">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">removeLights</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.removeLights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove all given light nodes from light graph.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – List of all light nodes to remove</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-savelights-nodes-path"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.saveLights">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">saveLights</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em>, <em><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.saveLights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collects all lights recursively in the given nodes and saves them as a OpenSG Binary Geometry file.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – List of light nodes to store</li>
+<li><strong>path</strong> (<em>string</em>) – Full file path of osg file, must containing osg suffix</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True, if file was successfully stored</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-setselectedlensflareelements-elements"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.setSelectedLensFlareElements">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">setSelectedLensFlareElements</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">elements</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.setSelectedLensFlareElements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set all selected lens flare elements.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elements</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdLensFlareElement.html#vrdLensFlareElement" title="vrdLensFlareElement"><em>vrdLensFlareElement</em></a><em>]</em>) – List of all lens flare elements that should be selected.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-setselectedlensflareghosts-ghosts"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.setSelectedLensFlareGhosts">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">setSelectedLensFlareGhosts</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">ghosts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.setSelectedLensFlareGhosts" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set selected ghosts. All currently selected ghosts will be reset to not select. A         <a class="reference internal" href="#vredvrlightservice-lensflareghostselectionchanged-ghosts"><span class="std std-ref">vrLightService.lensFlareGhostSelectionChanged(ghosts)</span></a> signal will be emitted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ghosts</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdLensFlareGhost.html#vrdLensFlareGhost" title="vrdLensFlareGhost"><em>vrdLensFlareGhost</em></a><em>]</em>) – List of ghosts that will be selected.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-setselectednodes-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.setSelectedNodes">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">setSelectedNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.setSelectedNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set all selected light nodes. All current selected nodes will be reset to not select. Almost all commands of light service works on selected nodes. A         <a class="reference internal" href="#vredvrlightservice-nodeselectionchanged-nodes"><span class="std std-ref">vrLightService.nodeSelectionChanged(nodes)</span></a> signal will be emitted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – List of all current selected light nodes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-validatelights"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.validateLights">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">validateLights</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.validateLights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Validates if all lights in the scene graph have a corresponding light in the light graph and vice versa. Lights without a valid parent will be removed. A         <a class="reference internal" href="#vredvrlightservice-lightsvalidated"><span class="std std-ref">vrLightService.lightsValidated()</span></a> signal will be emitted.</p>
+</dd></dl>
+
+</div>
+<div class="section" id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrlightservice-lensflareelementselectionchanged-elements"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.lensFlareElementSelectionChanged">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">lensFlareElementSelectionChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">elements</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.lensFlareElementSelectionChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal will be emitted if selection buffer of lens flare elements was changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>elements</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdLensFlareElement.html#vrdLensFlareElement" title="vrdLensFlareElement"><em>vrdLensFlareElement</em></a><em>]</em>) – All current selected lens flare elements</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-lensflareghostselectionchanged-ghosts"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.lensFlareGhostSelectionChanged">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">lensFlareGhostSelectionChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">ghosts</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.lensFlareGhostSelectionChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal will be emitted if the list of selected ghost was changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>ghosts</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdLensFlareGhost.html#vrdLensFlareGhost" title="vrdLensFlareGhost"><em>vrdLensFlareGhost</em></a><em>]</em>) – The new list of all selected ghosts</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-lightlinksetschanged"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.lightLinkSetsChanged">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">lightLinkSetsChanged</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.lightLinkSetsChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal will be emitted if light link set are added or removed.</p>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-lightsconverted-lightids"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.lightsConverted">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">lightsConverted</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">lightIds</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.lightsConverted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal that will be emitted when lights are converted to different light types.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lightIds</strong> (<em>List</em><em>[</em><em>integer</em><em>]</em>) – The object ids of the lights that have been converted.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-lightsstatechanged"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.lightsStateChanged">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">lightsStateChanged</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.lightsStateChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal is emitted when then on/off state of any light changes in either the light graph or the scene graph.</p>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-lightsvalidated"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.lightsValidated">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">lightsValidated</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.lightsValidated" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal that is send after lights have been validated.</p>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-nodesadded-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.nodesAdded">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">nodesAdded</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.nodesAdded" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal will be emitted if light nodes was added.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – New created light nodes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-nodeschanged-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.nodesChanged">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">nodesChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.nodesChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal will be emitted if light nodes was changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – All changed light nodes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-nodeselectionchanged-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.nodeSelectionChanged">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">nodeSelectionChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.nodeSelectionChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal will be emitted if selection buffer of light nodes was changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – All current selected light nodes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrlightservice-nodesremoved-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrLightService.nodesRemoved">
+<code class="sig-prename descclassname"><span class="pre">vrLightService.</span></code><code class="sig-name descname"><span class="pre">nodesRemoved</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrLightService.nodesRemoved" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signal will be emitted if light nodes was removed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – All removed light nodes</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrLightService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals">Signals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrLensFlareTypes.html"
+                        title="previous chapter">vrLensFlareTypes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrLightTypes.html"
+                        title="next chapter">vrLightTypes</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrLightTypes.html" title="vrLightTypes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrLensFlareTypes.html" title="vrLensFlareTypes"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

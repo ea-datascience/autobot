@@ -1,0 +1,173 @@
+------------------
+vrdFoveatedQuality
+------------------
+
+
+.. _vredvrdFoveatedQuality:
+.. py:class:: vrdFoveatedQuality
+
+(Inherits :py:class:`vrdData`)
+
+Holds shading quality settings for foveated rendering in VR. See     :any:`vrHMDService.setFoveatedRenderingCustomQuality(quality) <vredvrHMDService.setFoveatedRenderingCustomQuality(quality)>`.
+
+Set a higher quality for the innermost region, and lower qualities for middle and periphery.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getInner() → vrRenderTypes.ShadingQuality<vredvrdFoveatedQuality.getInner()>`
+    * :ref:`getMiddle() → vrRenderTypes.ShadingQuality<vredvrdFoveatedQuality.getMiddle()>`
+    * :ref:`getMinimumMultisamplingSamples() → integer<vredvrdFoveatedQuality.getMinimumMultisamplingSamples()>`
+    * :ref:`getPeriphery() → vrRenderTypes.ShadingQuality<vredvrdFoveatedQuality.getPeriphery()>`
+    * :ref:`setInner(inner) <vredvrdFoveatedQuality.setInner(inner)>`
+    * :ref:`setMiddle(middle) <vredvrdFoveatedQuality.setMiddle(middle)>`
+    * :ref:`setPeriphery(periphery) <vredvrdFoveatedQuality.setPeriphery(periphery)>`
+    * :ref:`vrdFoveatedQuality() <vredvrdFoveatedQuality.vrdFoveatedQuality()>`
+    * :ref:`vrdFoveatedQuality(state) <vredvrdFoveatedQuality.vrdFoveatedQuality(state)>`
+    * :ref:`vrdFoveatedQuality(inner, middle, periphery) <vredvrdFoveatedQuality.vrdFoveatedQuality(inner, middle, periphery)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdFoveatedQuality.getInner():
+.. py:method:: vrdFoveatedQuality.getInner()
+
+    Get shading quality for the inner foveal region.
+
+
+
+
+    :return: inner region shading quality
+    :rtype: :ref:`vrRenderTypes.ShadingQuality <vredvrRenderTypes.ShadingQuality>`
+
+.. _vredvrdFoveatedQuality.getMiddle():
+.. py:method:: vrdFoveatedQuality.getMiddle()
+
+    Get shading quality for the transition zone between foveal region and and periphery.
+
+
+
+
+    :return: middle region shading quality
+    :rtype: :ref:`vrRenderTypes.ShadingQuality <vredvrRenderTypes.ShadingQuality>`
+
+.. _vredvrdFoveatedQuality.getMinimumMultisamplingSamples():
+.. py:method:: vrdFoveatedQuality.getMinimumMultisamplingSamples()
+
+    Get minimum number of multisampling samples (Realtime Antialiasing) that is required for this set of shading qualities. Supersampling 2x, 4x, 8x require at least the same number of multisampling samples (2, 4, 8).
+
+
+
+
+    :return: minimum multisampling samples. 1 means multisampling is not needed.
+    :rtype: integer
+
+.. _vredvrdFoveatedQuality.getPeriphery():
+.. py:method:: vrdFoveatedQuality.getPeriphery()
+
+    Get shading quality for periphery.
+
+
+
+
+    :return: periphery region shading quality
+    :rtype: :ref:`vrRenderTypes.ShadingQuality <vredvrRenderTypes.ShadingQuality>`
+
+.. _vredvrdFoveatedQuality.setInner(inner):
+.. py:method:: vrdFoveatedQuality.setInner(inner)
+
+    Set shading quality for the inner foveal region.
+
+
+
+    :param inner: Inner region shading quality
+    :type inner: :ref:`vrRenderTypes.ShadingQuality <vredvrRenderTypes.ShadingQuality>`
+
+    
+    
+
+.. _vredvrdFoveatedQuality.setMiddle(middle):
+.. py:method:: vrdFoveatedQuality.setMiddle(middle)
+
+    Set shading quality for the transition zone between foveal region and and periphery.
+
+
+
+    :param middle: Middle region shading quality
+    :type middle: :ref:`vrRenderTypes.ShadingQuality <vredvrRenderTypes.ShadingQuality>`
+
+    
+    
+
+.. _vredvrdFoveatedQuality.setPeriphery(periphery):
+.. py:method:: vrdFoveatedQuality.setPeriphery(periphery)
+
+    Set shading quality for the periphery.
+
+
+
+    :param periphery: Periphery shading quality
+    :type periphery: :ref:`vrRenderTypes.ShadingQuality <vredvrRenderTypes.ShadingQuality>`
+
+    
+    
+
+.. _vredvrdFoveatedQuality.vrdFoveatedQuality():
+.. py:method:: vrdFoveatedQuality.vrdFoveatedQuality()
+
+    Default constructor.
+
+
+
+
+    
+    
+
+.. _vredvrdFoveatedQuality.vrdFoveatedQuality(state):
+.. py:method:: vrdFoveatedQuality.vrdFoveatedQuality(state)
+
+    Copy constructor.
+
+
+
+    :param state: 
+    :type state: vrdFoveatedQuality
+
+    
+    
+
+.. _vredvrdFoveatedQuality.vrdFoveatedQuality(inner, middle, periphery):
+.. py:method:: vrdFoveatedQuality.vrdFoveatedQuality(inner, middle, periphery)
+
+    Constructor.
+
+
+
+    :param inner: Shading quality for the innermost, foveal region
+    :type inner: :ref:`vrRenderTypes.ShadingQuality <vredvrRenderTypes.ShadingQuality>`
+
+    :param middle: Shading quality for the transition zone between foveal region and and periphery
+    :type middle: :ref:`vrRenderTypes.ShadingQuality <vredvrRenderTypes.ShadingQuality>`
+
+    :param periphery: Shading quality for the periphery
+    :type periphery: :ref:`vrRenderTypes.ShadingQuality <vredvrRenderTypes.ShadingQuality>`
+
+    
+    
+
+
+
+
+
+
+
+
+
+

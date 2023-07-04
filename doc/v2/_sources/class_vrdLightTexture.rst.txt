@@ -1,0 +1,349 @@
+---------------
+vrdLightTexture
+---------------
+
+
+.. _vredvrdLightTexture:
+.. py:class:: vrdLightTexture
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This class represents a texture that can be projected by a light source into the scene.
+
+This is not available for directional and ray lights.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAnisotropy() → float<vredvrdLightTexture.getAnisotropy()>`
+    * :ref:`getConnectRepeatModes() → bool<vredvrdLightTexture.getConnectRepeatModes()>`
+    * :ref:`getFrameOffset() → integer<vredvrdLightTexture.getFrameOffset()>`
+    * :ref:`getImage() → vrdImage<vredvrdLightTexture.getImage()>`
+    * :ref:`getInlineImageSequence() → bool<vredvrdLightTexture.getInlineImageSequence()>`
+    * :ref:`getOffset() → QVector2D<vredvrdLightTexture.getOffset()>`
+    * :ref:`getRepeat() → QVector2D<vredvrdLightTexture.getRepeat()>`
+    * :ref:`getRepeatModeU() → vrTextureTypes.RepeatMode<vredvrdLightTexture.getRepeatModeU()>`
+    * :ref:`getRepeatModeV() → vrTextureTypes.RepeatMode<vredvrdLightTexture.getRepeatModeV()>`
+    * :ref:`getRotate() → float<vredvrdLightTexture.getRotate()>`
+    * :ref:`getUseImageSequence() → bool<vredvrdLightTexture.getUseImageSequence()>`
+    * :ref:`getUseTexture() → bool<vredvrdLightTexture.getUseTexture()>`
+    * :ref:`setAnisotropy(anisotropy) <vredvrdLightTexture.setAnisotropy(anisotropy)>`
+    * :ref:`setConnectRepeatModes(connected) <vredvrdLightTexture.setConnectRepeatModes(connected)>`
+    * :ref:`setFrameOffset(offset) <vredvrdLightTexture.setFrameOffset(offset)>`
+    * :ref:`setImage(img) <vredvrdLightTexture.setImage(img)>`
+    * :ref:`setInlineImageSequence(use) <vredvrdLightTexture.setInlineImageSequence(use)>`
+    * :ref:`setOffset(offset) <vredvrdLightTexture.setOffset(offset)>`
+    * :ref:`setRepeat(repeat) <vredvrdLightTexture.setRepeat(repeat)>`
+    * :ref:`setRepeatModeU(mode) <vredvrdLightTexture.setRepeatModeU(mode)>`
+    * :ref:`setRepeatModeV(mode) <vredvrdLightTexture.setRepeatModeV(mode)>`
+    * :ref:`setRotate(rotate) <vredvrdLightTexture.setRotate(rotate)>`
+    * :ref:`setUseImageSequence(use) <vredvrdLightTexture.setUseImageSequence(use)>`
+    * :ref:`setUseTexture(s) <vredvrdLightTexture.setUseTexture(s)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdLightTexture.getAnisotropy():
+.. py:method:: vrdLightTexture.getAnisotropy()
+
+    Returns the anisotropy value of the texture.
+
+
+
+
+    :return: The anisotropy value.
+    :rtype: float
+
+.. _vredvrdLightTexture.getConnectRepeatModes():
+.. py:method:: vrdLightTexture.getConnectRepeatModes()
+
+    Returns whether the repeat modes for U and V are connected.
+
+
+
+
+    :return: True if connected, False otherwise.
+    :rtype: bool
+
+.. _vredvrdLightTexture.getFrameOffset():
+.. py:method:: vrdLightTexture.getFrameOffset()
+
+    Returns the offset to the image number when using an image sequence.
+
+
+
+
+    :return: Offset
+    :rtype: integer
+
+.. _vredvrdLightTexture.getImage():
+.. py:method:: vrdLightTexture.getImage()
+
+    Returns the image that is used as a texture.
+
+
+
+
+    :return: 
+    :rtype: vrdImage
+
+.. _vredvrdLightTexture.getInlineImageSequence():
+.. py:method:: vrdLightTexture.getInlineImageSequence()
+
+    Returns if the image sequence is inlined into the vpb file.
+
+
+
+
+    :return: True if inlined, False otherwise.
+    :rtype: bool
+
+.. _vredvrdLightTexture.getOffset():
+.. py:method:: vrdLightTexture.getOffset()
+
+    Returns the offset for the UVs.
+
+
+
+
+    :return: The offset for the Uvs.
+    :rtype: QVector2D
+
+.. _vredvrdLightTexture.getRepeat():
+.. py:method:: vrdLightTexture.getRepeat()
+
+    Returns the number of repetitions for the UVs.
+
+
+
+
+    :return: The number of repetitions.
+    :rtype: QVector2D
+
+.. _vredvrdLightTexture.getRepeatModeU():
+.. py:method:: vrdLightTexture.getRepeatModeU()
+
+    Returns the repeat mode of the texture.
+
+
+
+
+    :return: Repeat mode of the texture.
+    :rtype: :ref:`vrTextureTypes.RepeatMode <vredvrTextureTypes.RepeatMode>`
+
+.. _vredvrdLightTexture.getRepeatModeV():
+.. py:method:: vrdLightTexture.getRepeatModeV()
+
+    Returns the repeat mode of the texture.
+
+
+
+
+    :return: Repeat mode of the texture.
+    :rtype: :ref:`vrTextureTypes.RepeatMode <vredvrTextureTypes.RepeatMode>`
+
+.. _vredvrdLightTexture.getRotate():
+.. py:method:: vrdLightTexture.getRotate()
+
+    Returns the texture rotation.
+
+
+
+
+    :return: The rotation angle in degrees.
+    :rtype: float
+
+.. _vredvrdLightTexture.getUseImageSequence():
+.. py:method:: vrdLightTexture.getUseImageSequence()
+
+    Returns if image sequences is used.
+
+
+
+
+    :return: True if image sequence is use
+    :rtype: bool
+
+.. _vredvrdLightTexture.getUseTexture():
+.. py:method:: vrdLightTexture.getUseTexture()
+
+    Returns whether the light texture is enabled.
+
+
+
+
+    :return: True if enabled, False if disabled.
+    :rtype: bool
+
+.. _vredvrdLightTexture.setAnisotropy(anisotropy):
+.. py:method:: vrdLightTexture.setAnisotropy(anisotropy)
+
+    Sets the anisotropy value of the texture.
+
+
+
+    :param anisotropy: The anisotropy value.
+    :type anisotropy: float
+
+    
+    
+
+.. _vredvrdLightTexture.setConnectRepeatModes(connected):
+.. py:method:: vrdLightTexture.setConnectRepeatModes(connected)
+
+    Connects the repeat modes for U and V.
+
+
+
+    :param connected: True to connect the repeat modes, False to disconnect.
+    :type connected: bool
+
+    
+    
+
+.. _vredvrdLightTexture.setFrameOffset(offset):
+.. py:method:: vrdLightTexture.setFrameOffset(offset)
+
+    Sets an offset to the image number when using an image sequence.
+
+
+
+    :param offset: Offset
+    :type offset: integer
+
+    
+    
+
+.. _vredvrdLightTexture.setImage(img):
+.. py:method:: vrdLightTexture.setImage(img)
+
+    Sets the image that should be used as a texture.
+
+
+
+    :param img: Image
+    :type img: vrdImage
+
+    
+    
+
+.. _vredvrdLightTexture.setInlineImageSequence(use):
+.. py:method:: vrdLightTexture.setInlineImageSequence(use)
+
+    Inlines the image sequence into the vpb file.
+
+
+
+    :param use: If set to true, the image sequence will be inlined
+    :type use: bool
+
+    
+    
+
+.. _vredvrdLightTexture.setOffset(offset):
+.. py:method:: vrdLightTexture.setOffset(offset)
+
+    Sets the offset for the UVs.
+
+
+
+    :param offset: The offset for the UVs.
+    :type offset: QVector2D
+
+    
+    
+
+.. _vredvrdLightTexture.setRepeat(repeat):
+.. py:method:: vrdLightTexture.setRepeat(repeat)
+
+    Sets the number of repetitions for the UVs.
+
+
+
+    :param repeat: The number of repetitions.
+    :type repeat: QVector2D
+
+    
+    
+
+.. _vredvrdLightTexture.setRepeatModeU(mode):
+.. py:method:: vrdLightTexture.setRepeatModeU(mode)
+
+    Sets the repeat mode of the texture.
+
+
+
+    :param mode: Repeat mode of the texture.
+    :type mode: :ref:`vrTextureTypes.RepeatMode <vredvrTextureTypes.RepeatMode>`
+
+    
+    
+
+.. _vredvrdLightTexture.setRepeatModeV(mode):
+.. py:method:: vrdLightTexture.setRepeatModeV(mode)
+
+    Sets the repeat mode of the texture.
+
+
+
+    :param mode: Repeat mode of the texture.
+    :type mode: :ref:`vrTextureTypes.RepeatMode <vredvrTextureTypes.RepeatMode>`
+
+    
+    
+
+.. _vredvrdLightTexture.setRotate(rotate):
+.. py:method:: vrdLightTexture.setRotate(rotate)
+
+    Rotate the texture.
+
+
+
+    :param rotate: The rotation angle in degrees.
+    :type rotate: float
+
+    
+    
+
+.. _vredvrdLightTexture.setUseImageSequence(use):
+.. py:method:: vrdLightTexture.setUseImageSequence(use)
+
+    Use an image sequence.
+
+    Uses an image sequence as a texture. The image name for the sequence will be generated based on the filename and the image number. Use the CurveEditor to animate the image number.
+
+    :param use: True to use image sequence
+    :type use: bool
+
+    
+    
+
+.. _vredvrdLightTexture.setUseTexture(s):
+.. py:method:: vrdLightTexture.setUseTexture(s)
+
+    Enables / disables the usage of the texture.
+
+
+
+    :param s: True to enable, False to disable the texture.
+    :type s: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

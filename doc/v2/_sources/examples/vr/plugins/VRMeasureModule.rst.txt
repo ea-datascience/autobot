@@ -1,0 +1,7 @@
+Measure distances in VR
+=======================
+
+.. literalinclude:: ../../../python_script_plugins/VRMenu/VRMeasureModule.py
+   :language: python
+   :linenos:
+   :caption: VRMeasureModule.py

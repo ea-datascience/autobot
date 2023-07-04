@@ -1,0 +1,17 @@
+Metadata example
+=====================
+
+VRED 2023.3 introduced support for managing metadata. 
+However, previous versions already extracted metadata during CAD import for supported file types. 
+It was added to the nodes as OpenSG ValuePair attachments. 
+
+Also, API v1 allowed adding custom ValuePair attachments to nodes in the Scenegraph
+with vrNodePtr.setAttribute.
+
+This example demonstrates how to search for ValuePair attachments and how to convert them into metadata using the :class:`.vrMetadataService`.
+
+
+.. literalinclude:: ../python_examples/metadata/metadata-import.py
+   :language: python
+   :linenos:
+   :caption: metadata/metadata-import.py

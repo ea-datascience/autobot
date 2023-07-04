@@ -1,0 +1,123 @@
+-----------------
+vrdSVBRDFMaterial
+-----------------
+
+
+.. _vredvrdSVBRDFMaterial:
+.. py:class:: vrdSVBRDFMaterial
+
+(Inherits :py:class:`vrdBRDFMaterial`)
+
+this class is used for measured materials of type SVBRDF (spatially varying BRDF).
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBumpTexture() → vrdBumpTexture<vredvrdSVBRDFMaterial.getBumpTexture()>`
+    * :ref:`getColorCorrection() → vrdColorCorrection<vredvrdSVBRDFMaterial.getColorCorrection()>`
+    * :ref:`getDisplacementTexture() → vrdDisplacementTexture<vredvrdSVBRDFMaterial.getDisplacementTexture()>`
+    * :ref:`getExposure() → float<vredvrdSVBRDFMaterial.getExposure()>`
+    * :ref:`getIncandescence() → vrdIncandescence<vredvrdSVBRDFMaterial.getIncandescence()>`
+    * :ref:`getSubsurfaceScattering() → vrdSubsurfaceScattering<vredvrdSVBRDFMaterial.getSubsurfaceScattering()>`
+    * :ref:`setExposure(exposure) <vredvrdSVBRDFMaterial.setExposure(exposure)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdSVBRDFMaterial.getBumpTexture():
+.. py:method:: vrdSVBRDFMaterial.getBumpTexture()
+
+    Gets access to all properties of         :any:`vrdBumpTexture <vredvrdBumpTexture>`.
+
+
+
+
+    :return: An :any:`vrdBumpTexture <vredvrdBumpTexture>` object, to read and write access of alls properties.
+    :rtype: vrdBumpTexture
+
+.. _vredvrdSVBRDFMaterial.getColorCorrection():
+.. py:method:: vrdSVBRDFMaterial.getColorCorrection()
+
+    Gets access to all properties of         :any:`vrdColorCorrection <vredvrdColorCorrection>`.
+
+
+
+
+    :return: An :any:`vrdColorCorrection <vredvrdColorCorrection>` object, to read and write access of alls properties.
+    :rtype: vrdColorCorrection
+
+.. _vredvrdSVBRDFMaterial.getDisplacementTexture():
+.. py:method:: vrdSVBRDFMaterial.getDisplacementTexture()
+
+    Gets access to all properties of         :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>`.
+
+
+
+
+    :return: An :any:`vrdDisplacementTexture <vredvrdDisplacementTexture>` object, to read and write access of alls properties.
+    :rtype: vrdDisplacementTexture
+
+.. _vredvrdSVBRDFMaterial.getExposure():
+.. py:method:: vrdSVBRDFMaterial.getExposure()
+
+    
+
+
+
+
+    :return: Current exposure value.
+    :rtype: float
+
+.. _vredvrdSVBRDFMaterial.getIncandescence():
+.. py:method:: vrdSVBRDFMaterial.getIncandescence()
+
+    Gets access to all properties of         :any:`vrdIncandescence <vredvrdIncandescence>`.
+
+
+
+
+    :return: An :any:`vrdIncandescence <vredvrdIncandescence>` object, to read and write access of alls properties.
+    :rtype: vrdIncandescence
+
+.. _vredvrdSVBRDFMaterial.getSubsurfaceScattering():
+.. py:method:: vrdSVBRDFMaterial.getSubsurfaceScattering()
+
+    Gets access to all properties of         :any:`vrdSubsurfaceScattering <vredvrdSubsurfaceScattering>`.
+
+
+
+
+    :return: An :any:`vrdSubsurfaceScattering <vredvrdSubsurfaceScattering>` object, to read and write access of alls properties.
+    :rtype: vrdSubsurfaceScattering
+
+.. _vredvrdSVBRDFMaterial.setExposure(exposure):
+.. py:method:: vrdSVBRDFMaterial.setExposure(exposure)
+
+    Controls the intensity of the material colors. The default value 1.0 keeps colors unchanged.
+
+
+
+    :param exposure: The new value for exposure.
+    :type exposure: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1463 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>vrOpenVR.vrOpenVRFrameTimings</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >VRED Python API v1</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="vrOpenVR-module.html">Module&nbsp;vrOpenVR</a> ::
+        Class&nbsp;vrOpenVRFrameTimings
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="vrOpenVR.vrOpenVRFrameTimings-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class vrOpenVRFrameTimings</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+ <a href="object-class.html">object</a> --+    
+          |    
+??.instance --+
+              |
+             <strong class="uidshort">vrOpenVRFrameTimings</strong>
+</pre>
+
+<hr />
+<p>The vrOpenVRFrameTimings class stores timing information from the 
+  OpenVR library that can be queried by calling getOpenVRFrameTimings(). 
+  The timing information always refers to the last rendered frame.</p>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">source</span>)</span><br />
+      The constructor of the vrOpenVRFrameTimings class.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#__reduce__" class="summary-sig-name">__reduce__</a>()</span></td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getClientFrameInterval" class="summary-sig-name">getClientFrameInterval</a>()</span><br />
+      Returns the time between calls to WaitGetPoses</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getCompositorIdleCpu" class="summary-sig-name">getCompositorIdleCpu</a>()</span><br />
+      Returns the time spent waiting for running start (application could 
+      have used this much more time)</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getCompositorRenderCpu" class="summary-sig-name">getCompositorRenderCpu</a>()</span><br />
+      Returns the time spent on cpu submitting the above work for this 
+      frame</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getCompositorRenderGpu" class="summary-sig-name">getCompositorRenderGpu</a>()</span><br />
+      Returns the  time spend performing distortion correction, rendering 
+      chaperone, overlays, etc</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getCompositorRenderStart" class="summary-sig-name">getCompositorRenderStart</a>()</span><br />
+      Returns the timestamp when the compositor started rendering relative 
+      to the global system time</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getCompositorUpdateEnd" class="summary-sig-name">getCompositorUpdateEnd</a>()</span><br />
+      Returns the timestamp when the compositor update was finished 
+      relative to the global system time</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getCompositorUpdateStart" class="summary-sig-name">getCompositorUpdateStart</a>()</span><br />
+      Returns the timestamp when a the compositor update was started 
+      relative to the global system times</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">UInt32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getFrameId" class="summary-sig-name">getFrameId</a>()</span><br />
+      Returns index of the current frame.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">UInt32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getFrameIndex" class="summary-sig-name">getFrameIndex</a>()</span><br />
+      Returns the current frame index.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getMulticastCopyTimeCpu" class="summary-sig-name">getMulticastCopyTimeCpu</a>()</span><br />
+      Returns the cpu time required to copy buffers from one GPU to the 
+      other if multicast SLI is enabled.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getNewFrameReady" class="summary-sig-name">getNewFrameReady</a>()</span><br />
+      Returns the timestamp when a new frame was ready relative to the 
+      global system time</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getNewPosesReady" class="summary-sig-name">getNewPosesReady</a>()</span><br />
+      Returns the timestamp when a new pose was ready relative to the 
+      global system time</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">UInt32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getNumDroppedFrames" class="summary-sig-name">getNumDroppedFrames</a>()</span><br />
+      Returns the number of additional times previous frame was scanned 
+      out.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">UInt32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getNumFramePresents" class="summary-sig-name">getNumFramePresents</a>()</span><br />
+      Returns the number of times this frame was presented.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">UInt32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getNumMisPresented" class="summary-sig-name">getNumMisPresented</a>()</span><br />
+      Returns the number of times this frame was presented on a vsync other
+      than it was originally predicted to.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getPostSubmitCpu" class="summary-sig-name">getPostSubmitCpu</a>()</span><br />
+      Returns the cpu time from completing the submit calls</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getPostSubmitGpu" class="summary-sig-name">getPostSubmitGpu</a>()</span><br />
+      Returns the additional time spent rendering by application (e.g.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getPreSubmitGpu" class="summary-sig-name">getPreSubmitGpu</a>()</span><br />
+      Returns the time spent rendering the scene</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getPresentCallCpu" class="summary-sig-name">getPresentCallCpu</a>()</span><br />
+      Returns the time blocked on call to present (usually 0.0, but can go 
+      long)</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getRenderTimeCpu" class="summary-sig-name">getRenderTimeCpu</a>()</span><br />
+      Returns the complete cpu rendertime measured from binding the first 
+      eye buffer to completing the second eye and creating the mirror 
+      texture.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">UInt32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getReprojectionFlag" class="summary-sig-name">getReprojectionFlag</a>()</span><br />
+      Returns whether the frame was reprojected or not.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getSubmitCpu" class="summary-sig-name">getSubmitCpu</a>()</span><br />
+      Returns the cpu time for doing the submit calls for both eyes</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getSubmitFrameTime" class="summary-sig-name">getSubmitFrameTime</a>()</span><br />
+      Returns the time spent in IVRCompositor::Submit (not near-zero 
+      indicates driver issue)</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real64</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getSystemTimeInSeconds" class="summary-sig-name">getSystemTimeInSeconds</a>()</span><br />
+      Returns the absolute time reference for comparing frames.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getTimeBetweenRenderCpu" class="summary-sig-name">getTimeBetweenRenderCpu</a>()</span><br />
+      Returns the cpu time passed between the rendering of two frames.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getTimeBetweenSubmitCpu" class="summary-sig-name">getTimeBetweenSubmitCpu</a>()</span><br />
+      Returns the cpu time passed between two calls to submit.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getTimeBetweenWaitGetPosesCpu" class="summary-sig-name">getTimeBetweenWaitGetPosesCpu</a>()</span><br />
+      Returns the cpu time passed between two calls to WaitGetPoses.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getTotalRenderGpu" class="summary-sig-name">getTotalRenderGpu</a>()</span><br />
+      Returns the time between work submitted immediately after present 
+      (ideally vsync) until the end of compositor submitted work</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getWaitForPresentCpu" class="summary-sig-name">getWaitForPresentCpu</a>()</span><br />
+      Returns the time spent spin-waiting for frame index to change (not 
+      near-zero indicates wait object failure)</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getWaitGetPosesCalled" class="summary-sig-name">getWaitGetPosesCalled</a>()</span><br />
+      Returns the timestamp when WaitGetPoses was called relative to the 
+      global system time</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Real32</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrOpenVR.vrOpenVRFrameTimings-class.html#getWaitGetPosesCpu" class="summary-sig-name">getWaitGetPosesCpu</a>()</span><br />
+      Returns the cpu time for WaitGetPoses.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><i>unreachable</i>.instance</code></b>:
+      <code>__new__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__instance_size__"></a><span class="summary-name">__instance_size__</span> = <code title="304">304</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">source</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The constructor of the vrOpenVRFrameTimings class.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>source</code></strong> (vrOpenVRFrameTimings) - The source.</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="object-class.html#__init__">object.__init__</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="__reduce__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__reduce__</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  
+  <dl class="fields">
+    <dt>Overrides:
+        <a href="object-class.html#__reduce__">object.__reduce__</a>
+        <dd><em class="note">(inherited documentation)</em></dd>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getClientFrameInterval"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getClientFrameInterval</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the time between calls to WaitGetPoses</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time between calls to WaitGetPoses in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getCompositorIdleCpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getCompositorIdleCpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the time spent waiting for running start (application could 
+  have used this much more time)</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time spent waiting for running start in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getCompositorRenderCpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getCompositorRenderCpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the time spent on cpu submitting the above work for this 
+  frame</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time spent on cpu submitting the above work for this frame in
+          milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getCompositorRenderGpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getCompositorRenderGpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the  time spend performing distortion correction, rendering 
+  chaperone, overlays, etc</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The compositor rendering time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getCompositorRenderStart"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getCompositorRenderStart</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the timestamp when the compositor started rendering relative 
+  to the global system time</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The timestamp in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getCompositorUpdateEnd"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getCompositorUpdateEnd</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the timestamp when the compositor update was finished relative
+  to the global system time</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The timestamp in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getCompositorUpdateStart"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getCompositorUpdateStart</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the timestamp when a the compositor update was started 
+  relative to the global system times</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The timestamp in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getFrameId"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getFrameId</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns index of the current frame.</p>
+  <dl class="fields">
+    <dt>Returns: UInt32</dt>
+        <dd>The current frame id.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getFrameIndex"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getFrameIndex</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the current frame index.</p>
+  <dl class="fields">
+    <dt>Returns: UInt32</dt>
+        <dd>The current frame index.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMulticastCopyTimeCpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMulticastCopyTimeCpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the cpu time required to copy buffers from one GPU to the 
+  other if multicast SLI is enabled. The time is undefined otherwise.</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getNewFrameReady"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getNewFrameReady</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the timestamp when a new frame was ready relative to the 
+  global system time</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The timestamp in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getNewPosesReady"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getNewPosesReady</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the timestamp when a new pose was ready relative to the global
+  system time</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The timestamp in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getNumDroppedFrames"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getNumDroppedFrames</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the number of additional times previous frame was scanned 
+  out.</p>
+  <dl class="fields">
+    <dt>Returns: UInt32</dt>
+        <dd>The number of additional times previous frame was scanned out.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getNumFramePresents"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getNumFramePresents</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the number of times this frame was presented.</p>
+  <dl class="fields">
+    <dt>Returns: UInt32</dt>
+        <dd>The number of times this frame was presented.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getNumMisPresented"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getNumMisPresented</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the number of times this frame was presented on a vsync other 
+  than it was originally predicted to.</p>
+  <dl class="fields">
+    <dt>Returns: UInt32</dt>
+        <dd>The number of times this frame was presented on a vsync other 
+          than it was originally predicted to.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getPostSubmitCpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getPostSubmitCpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the cpu time from completing the submit calls</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getPostSubmitGpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getPostSubmitGpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the additional time spent rendering by application (e.g. 
+  companion window)</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The additional rendering time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getPreSubmitGpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getPreSubmitGpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the time spent rendering the scene</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The the time spent rendering the scene in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getPresentCallCpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getPresentCallCpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the time blocked on call to present (usually 0.0, but can go 
+  long)</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The present call time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getRenderTimeCpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getRenderTimeCpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the complete cpu rendertime measured from binding the first 
+  eye buffer to completing the second eye and creating the mirror 
+  texture.</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getReprojectionFlag"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getReprojectionFlag</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns whether the frame was reprojected or not.</p>
+  <dl class="fields">
+    <dt>Returns: UInt32</dt>
+        <dd>The reprojection state.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getSubmitCpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getSubmitCpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the cpu time for doing the submit calls for both eyes</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getSubmitFrameTime"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getSubmitFrameTime</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the time spent in IVRCompositor::Submit (not near-zero 
+  indicates driver issue)</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time spent in submitting the current frame in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getSystemTimeInSeconds"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getSystemTimeInSeconds</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the absolute time reference for comparing frames. This aligns 
+  with the vsync that running start is relative to</p>
+  <dl class="fields">
+    <dt>Returns: Real64</dt>
+        <dd>The absolute system time reference in seconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTimeBetweenRenderCpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTimeBetweenRenderCpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the cpu time passed between the rendering of two frames.</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTimeBetweenSubmitCpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTimeBetweenSubmitCpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the cpu time passed between two calls to submit.</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTimeBetweenWaitGetPosesCpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTimeBetweenWaitGetPosesCpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the cpu time passed between two calls to WaitGetPoses.</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTotalRenderGpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTotalRenderGpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the time between work submitted immediately after present 
+  (ideally vsync) until the end of compositor submitted work</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The total gpu render time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getWaitForPresentCpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getWaitForPresentCpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the time spent spin-waiting for frame index to change (not 
+  near-zero indicates wait object failure)</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time waiting for next frame in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getWaitGetPosesCalled"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getWaitGetPosesCalled</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the timestamp when WaitGetPoses was called relative to the 
+  global system time</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The timestamp in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getWaitGetPosesCpu"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getWaitGetPosesCpu</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the cpu time for WaitGetPoses.</p>
+  <dl class="fields">
+    <dt>Returns: Real32</dt>
+        <dd>The time in milliseconds.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >VRED Python API v1</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Tue Jun 20 01:13:00 2023
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

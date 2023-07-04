@@ -1,0 +1,73 @@
+---------------------------
+vrImmersiveInteractionTypes
+---------------------------
+
+
+.. _vredvrImmersiveInteractionTypes:
+.. py:class:: vrImmersiveInteractionTypes
+
+
+
+
+
+
+
+    .. _vredvrImmersiveInteractionTypes.TeleportGroundMode:
+    .. py:class:: TeleportGroundMode
+
+        Enum for teleport modes.
+
+        This defines where the user can teleport to.
+
+
+            Teleport onto a geometry.
+
+            .. _vredvrImmersiveInteractionTypes.TeleportGroundMode.OnGeometry:
+            .. py:data:: OnGeometry
+
+
+            Teleport onto the virtual ground plane.
+
+            .. _vredvrImmersiveInteractionTypes.TeleportGroundMode.OnGroundPlane:
+            .. py:data:: OnGroundPlane
+
+
+    .. _vredvrImmersiveInteractionTypes.ControlMode:
+    .. py:class:: ControlMode
+
+        Enum for pointer tool / teleport control mode.
+
+        Using these with the command         :any:`vrImmersiveInteractionService.setControlMode(mode) <vredvrImmersiveInteractionService.setControlMode(mode)>` will allow you to switch between having the pointer tool on the trigger and the teleport on the button/touchpad of the VR controller or having the pointer tool on the button/touchpad and the teleport on the trigger of the VR controller.
+
+
+            Use the trigger for the pointer tool.
+
+            .. _vredvrImmersiveInteractionTypes.ControlMode.TriggerPointer:
+            .. py:data:: TriggerPointer
+
+
+            Use the button / touchpad for the pointer tool.
+
+            .. _vredvrImmersiveInteractionTypes.ControlMode.ButtonPointer:
+            .. py:data:: ButtonPointer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

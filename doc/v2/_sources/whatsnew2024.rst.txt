@@ -1,0 +1,89 @@
+.. _whatsnew2024:
+
+What's new in API v2 2024
+=========================
+
+This page shows what was added to and changed in the Python API v2 in VRED 2024, compared to 2023.4.
+
+
+Python version
+--------------
+
+The Python version was updated to **3.11.3**.
+
+VRED's Python version can be printed from within VRED with:
+
+.. code-block:: python
+
+   print(sys.version)
+
+
+Qt version
+----------
+
+The Qt version was updated from Qt 5 to **6.2**. 
+
+This includes that the PySide module name changes from PySide2 to **PySide6**,
+and shiboken2 to **shiboken6**.
+
+.. note::
+
+   When option "Preferences > Script > Translate script to current Python version" is enabled, 
+   the names PySide2 and shiboken2 are automatically replaced by PySide6 and shiboken6 on the fly before executing 
+   Python scripts in VRED.
+
+   `Porting Applications from PySide2 to PySide6 <https://doc.qt.io/qtforpython-6/gettingstarted/porting_from2.html>`_
+
+
+VRED's Qt version can be printed from within VRED with:
+
+.. code-block:: python
+
+   print(PySide6.QtCore.qVersion())
+
+
+
+API
+---
+
+New functions and classes
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+* :ref:`vrGUIService.getViewCubeOpacity() → float<vredvrGUIService.getViewCubeOpacity()>`
+* :ref:`vrGUIService.getViewCubePosition() → vrGUIService.ViewCubePosition<vredvrGUIService.getViewCubePosition()>`
+* :ref:`vrGUIService.getViewCubeSize() → vrGUIService.ViewCubeSize<vredvrGUIService.getViewCubeSize()>`
+* :ref:`vrGUIService.isNavBarVisible() → bool<vredvrGUIService.isNavBarVisible()>`
+* :ref:`vrGUIService.isViewCubeVisible() → bool<vredvrGUIService.isViewCubeVisible()>`
+* :ref:`vrGUIService.setNavBarVisible(value) <vredvrGUIService.setNavBarVisible(value)>`
+* :ref:`vrGUIService.setViewCubeOpacity(value) <vredvrGUIService.setViewCubeOpacity(value)>`
+* :ref:`vrGUIService.setViewCubePosition(value) <vredvrGUIService.setViewCubePosition(value)>`
+* :ref:`vrGUIService.setViewCubeSize(value) <vredvrGUIService.setViewCubeSize(value)>`
+* :ref:`vrGUIService.setViewCubeVisible(value) <vredvrGUIService.setViewCubeVisible(value)>`
+* :ref:`vrHMDService.getActiveOpenXRRuntimeName() → string<vredvrHMDService.getActiveOpenXRRuntimeName()>`
+* :ref:`vrHMDService.getActiveOpenXRSystemName() → string<vredvrHMDService.getActiveOpenXRSystemName()>`
+* :ref:`vrHMDService.getOpenXRDepthLayerCompositionEnabled <vredvrHMDService.getOpenXRDepthLayerCompositionEnabled()>`
+* :ref:`vrHMDService.setOpenXRDepthLayerCompositionEnabled(enable) <vredvrHMDService.setOpenXRDepthLayerCompositionEnabled(enable)>`
+* :ref:`vrMaterialTypes.MDL<vredvrMaterialTypes.MaterialType.MDL>`
+* :ref:`vrMaterialTypes.MaterialX<vredvrMaterialTypes.MaterialType.MaterialX>`
+* :doc:`class_vrRoughnessTextureTypes`
+* :doc:`class_vrdMDLMaterial`
+* :doc:`class_vrdMaterialXMaterial`
+* :ref:`vrdRoughnessTexture.getRoughnessMapType() → vrRoughnessTextureTypes.ValueMapping<vredvrdRoughnessTexture.getRoughnessMapType()>`
+* :ref:`vrdRoughnessTexture.setRoughnessMapType(mapping) <vredvrdRoughnessTexture.setRoughnessMapType(mapping)>`
+
+
+New material roughness
+~~~~~~~~~~~~~~~~~~~~~~
+
+In VRED 2024 the material roughness is changed to a perceptually linear behavior 
+and a new value range between 0 and 1.
+In older VRED versions the behavior was non linear and the maximum value was 40.
+
+When importing older files into VRED, material roughness values are automatically adjusted to the new behavior.
+
+In case you set specific roughness values explicitly via script, for example with 
+:ref:`vrdPlasticmaterial.setRoughness(roughness) <vredvrdPlasticMaterial.setRoughness(roughness)>`,
+you must adjust the value in the script. 
+
+See this snippet for the conversion: :ref:`snippets/convertRoughness.py<convertRoughness>`
+

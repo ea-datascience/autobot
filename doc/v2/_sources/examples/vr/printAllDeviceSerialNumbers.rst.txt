@@ -1,0 +1,9 @@
+Print the serial number of all connected devices
+================================================
+
+Shows how to print out the internal serial numbers of all connected vr devices (controllers and trackers).
+
+.. literalinclude:: ../../python_examples/vr/printAllDeviceSerialNumbers.py
+   :language: python
+   :linenos:
+   :caption: vr/printAllDeviceSerialNumbers.py

@@ -1,0 +1,121 @@
+---------
+vrdMarker
+---------
+
+
+.. _vredvrdMarker:
+.. py:class:: vrdMarker
+
+(Inherits :py:class:`vrdObject`)
+
+Marker.
+
+A marker that is tracked in mixed reality. A marker can be used to place objects in a mixed reality scene.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getConfidence() → float<vredvrdMarker.getConfidence()>`
+    * :ref:`getName() → string<vredvrdMarker.getName()>`
+    * :ref:`getNode() → vrdNode<vredvrdMarker.getNode()>`
+    * :ref:`getSize() → QVector3D<vredvrdMarker.getSize()>`
+    * :ref:`getTimestamp() → QDateTime<vredvrdMarker.getTimestamp()>`
+    * :ref:`getType() → vrXRealityTypes.MarkerTypes<vredvrdMarker.getType()>`
+    * :ref:`isTracked() → bool<vredvrdMarker.isTracked()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdMarker.getConfidence():
+.. py:method:: vrdMarker.getConfidence()
+
+    
+
+
+
+
+    :return: The current confidence value of the marker
+    :rtype: float
+
+.. _vredvrdMarker.getName():
+.. py:method:: vrdMarker.getName()
+
+    
+
+
+
+
+    :return: The name of the marker
+    :rtype: string
+
+.. _vredvrdMarker.getNode():
+.. py:method:: vrdMarker.getNode()
+
+    
+
+
+
+
+    :return: The node that can be used to attach objects to the marker
+    :rtype: vrdNode
+
+.. _vredvrdMarker.getSize():
+.. py:method:: vrdMarker.getSize()
+
+    
+
+
+
+
+    :return: The physical marker size
+    :rtype: QVector3D
+
+.. _vredvrdMarker.getTimestamp():
+.. py:method:: vrdMarker.getTimestamp()
+
+    
+
+
+
+
+    :return: The timestamp of the last marker update
+    :rtype: QDateTime
+
+.. _vredvrdMarker.getType():
+.. py:method:: vrdMarker.getType()
+
+    
+
+
+
+
+    :return: The type of the marker
+    :rtype: :ref:`vrXRealityTypes.MarkerTypes <vredvrXRealityTypes.MarkerTypes>`
+
+.. _vredvrdMarker.isTracked():
+.. py:method:: vrdMarker.isTracked()
+
+    
+
+
+
+
+    :return: True if the marker is tracked, false otherwise
+    :rtype: bool
+
+
+
+
+
+
+
+
+
+

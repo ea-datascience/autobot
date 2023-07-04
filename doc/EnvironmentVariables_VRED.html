@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>VRED-Environment Variables</title>
+<link rel="icon" type="image/x-icon" href="v2/_static/favicon.png">
+</head>
+
+<body>
+	<h1 id="environmentvariablesforvred">Environment Variables for VRED</h1>
+
+<p>Here is a list of the VRED-specific and external environment variables and explanations and/or values for them in VRED.</p>
+
+<h2 id="wheretoenterenvironmentvariablesbeginners">Where To Enter Environment Variables (Beginners)</h2>
+
+<p>If this is the first time setting an environment variable, here is where to do it.</p>
+
+<ol>
+<li>
+  <p>Right-click your <strong>This PC</strong> icon and select <strong>Properties</strong>.</p>
+</li>
+
+<li>
+  <p>Click <strong>Advanced system settings</strong>.</p>
+</li>
+
+<li>
+  <p>Click the <strong>Advanced</strong> tab, then the <strong>Environment Variables</strong> button.</p>
+</li>
+
+<li>
+  <p>In the <strong>System variables</strong> section (at the bottom), click <strong>New</strong>. This open the <strong>New System Variable</strong> dialog.</p>
+</li>
+
+<li><p>Enter the environment variable name and a value, then click <strong>OK</strong>.</p>
+</li>
+</ol>
+
+<h2 id="vredspecificvariables">VRED-specific Variables</h2>
+
+<p>These environment variables are VRED-specific.</p>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-0pky"><h3>VRED-specific Variable</h3></th>
+    <th class="tg-0pky"><h3>Value/Explanation</h3></th>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_ALLOW_STANDBY_MODE</code>&nbsp;&nbsp;<code> ADSK_VRED_ALLOW_STANDBY_MODE</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Allows the machine to enter sleep mode. By default, VRED prevents sleep mode.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_CLUSTERMANAGER_PATH</code></td>
+    <td class="tg-0lax">Provides the path to a user-defined storage location for cluster manager data (database, encrypted project files, and images).</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_COLLABORATION_NO_AUDIO</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Prevents the use of VRED native audio in Collaboration mode.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_COLLABORATION_NO_UPLOAD</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Prevents the uupload of scenes in Collaboration mode.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_CURRENT_PROJECT _DIR</code></td>
+    <td class="tg-0lax"><strong>Read-only</strong>: Returns the current directory of loaded VPB file.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_CUSTOM_HANDS</code></td>
+    <td class="tg-0lax">Provides the path to a user-defined directory for custom VR hand geometry.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_DATA</code></td>
+    <td class="tg-0lax"><strong>Read-only</strong>: Returns the path to the VRED data directory.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_DEBUG_IDLE_LICENSE</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Enables the debug output for License Idle mode.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_DISABLE_ADP</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Disables the Autodesk data collection feature.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_DISABLE_CASCADING</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Disables license cascading.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_DISABLE_CLIC_IPM</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Hides the license UI in VRED.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_DISABLE_CLIC_USER_LICENSE</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Disables the user license feature.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_DISABLE_CUDA_MEMORY_POOL_SUPPORT</code></td>
+    <td class="tg-0lax"><strong>0</strong>: Use CUDA Memory Pool on suppporting devices. <br>
+        <strong>Other value</strong>:  Disables CUDA Memory Pool Support.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_DISABLE_IDLE_LICENSE</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Disables the license release on idle.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_DISABLE_ONLINE_STORES</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Disables the use of online stores in main window. No UI will be shown.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_DISABLE_SHARED_VIEWS</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Disables the shared views feature.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_DISABLE_WEB_ACCESS</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Disables access to web content. It will hide the Community menu and online stores.</td>
+  </tr>
+  <tr>  
+  <tr>
+    <td class="tg-0lax"><code>VRED_DISABLE_WEBINTERFACE</code> | <code>ADSK_VRED_DISABLE_WEBINTERFACE</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Disables the VRED web interface. No UI will be shown.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_EXAMPLES</code></td>
+    <td class="tg-0lax"><strong>Read-only</strong>: Returns the path to VRED examples directory.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_FILEIO_TMP_DIR</code></td>
+    <td class="tg-0lax">Provides the path to a user-defined file IO tmp dir for VRED.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_FORCE_EGL</code></td>
+    <td class="tg-0lax"><strong>Any value</strong>: Forces the use of EGL (<code>https://www.khronos.org/egl/</code>) under Linux.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_IDLE_LICENSE_TIME</code></td>
+    <td class="tg-0lax">Provides the time, in seconds, after which VRED will release the license when on idle. The value is clamped to range [60, 900].</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_IGNORE_INVISIBLE</code></td>
+    <td class="tg-0lax"><strong>1</strong>: Ignores the invisible geometry of non-wire files on import. <br>
+    <strong>Other value</strong>: Import invisible geometry.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_PREFERENCES_OVERRIDE</code></td>
+    <td class="tg-0lax">Provides the path to a config file (xml) containing a subset of preferences to overwrite the local preferences for the session upon startup.</td>
+  </tr>  
+  <tr>
+    <td class="tg-0lax"><code>VRED_ROOT</code></td>
+    <td class="tg-0lax"><strong>Read-only</strong>: Returns the path to VRED root directory.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_SCRIPT_PLUGINS</code></td>
+    <td class="tg-0lax">Provides the path to a user-defined directory for script plugins. <br>
+    The subfolder structure of that folder must match the following constraint: <code>Autodesk/VRED-&lt;Version&gt;/ScriptPlugins</code> where <code>&lt;Version&gt;</code> is the number of the VRED release (e.g., 13.0).</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_SERVICE_PAGE</code></td>
+    <td class="tg-0lax"><strong>0</strong>: Completely blocks the web interface.<br>
+      <strong>1</strong>: Blocks the web interface http site, but requests are enabled. <br>
+    <strong>2</strong>: Completely enables the web interface.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_TMP_DIR</code></td>
+    <td class="tg-0lax">Provides the path to a user-defined tmp directory for VRED.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_TRANSLATION_DIR</code></td>
+    <td class="tg-0lax">Provides the path to a user-defined directory for translations.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_USE_ALL_TRACKING</code></td>
+    <td class="tg-0lax"><strong>0 or not set</strong>: Uses a specific tracking module, instead of loading all. <br>
+    <strong>Other value</strong>: Loads all tracking module plugins.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_USE_CUSTOM_CUDA_MEMORY_POOL</code></td>
+    <td class="tg-0lax"><strong>0</strong>: Uses CUDA Default Memory Pool. <br>
+        <strong>Other value</strong>:  Uses a custom CUDA Memory Pool on suppporting devices.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_USE_OLD_MATERIAL_SORTING</code></td>
+    <td class="tg-0lax"><strong>Any Value</strong>: Enables the old sorting algorithm for materials in the Material Editor that was used before VRED 2023</td>
+  </tr>  <tr>
+    <td class="tg-0lax"><code>VRED_USE_OLD_TRACKING</code></td>
+    <td class="tg-0lax"><strong>1</strong>: Ignores the new VRPN tracking module and only loads old tracking module. <strong><br>
+    Other value or not set</strong>: Loads the new VRPN tracking module. Requires <code>VRED_USE_ALL_TRACKING = 1</code> or not set.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_WORKSPACES_PATH</code></td>
+    <td class="tg-0lax">Provides the path from which workspace .ini files are loaded on startup.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_WRITE_IMPORT_DEBUG_FILE</code></td>
+    <td class="tg-0lax"><strong>1</strong>: Writes the ATF import debug file. <br>
+    <strong>Other value</strong>: No debug file.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED_WRITABLE_DATA</code></td>
+    <td class="tg-0lax"><strong>Read-only</strong>: Returns the path to VRED writable data directory.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>VRED&lt;VersionYear&gt;_SCRIPT_PLUGINS</code> (e.g., <code>VRED2020_2_SCRIPT_PLUGINS</code>)</td>
+    <td class="tg-0lax">Provides the path to a user-defined directory for script plugins.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>&lt;AppName&gt;_LOG_DIR</code> (e.g., <code>VREDPRO_LOG_DIR</code>)</td>
+    <td class="tg-0lax">Provides the path to a user-defined log directory.</td>
+  </tr>
+</table>
+
+<h2 id="externalvariables">External Variables</h2>
+
+<p>These environment variables are external.</p>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-0pky">
+		<h3>External Variable</h3></th>
+    <th class="tg-0pky"><h3>Value/Explanation</h3></th>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>ADLSDK_DARK_SITE</code></td>
+    <td class="tg-0lax">In dark site mode, CLIC will avoid sending HTTP requests and disable user license model. This special mode is desired for customers with restricted Internet connectivity. Set to "TRUE" to turn it on (case sensitive), any other value to turn it off.</td>
+  </tr>  
+  <tr>
+    <td class="tg-0lax"><code>HDRLS_HOME_V4</code></td>
+    <td class="tg-0lax">Provides the path to HDR LightStudio V4 libraries.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>HDRLS_HOME_V5</code></td>
+    <td class="tg-0lax">Provides the path to HDR LightStudio V5 libraries.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>MAYA_LOCATION</code></td>
+    <td class="tg-0lax">Provides the path to the Maya location.</td>
+  </tr>
+  <tr>
+    <td class="tg-0lax"><code>STARVR_SDK</code></td>
+    <td class="tg-0lax">Provides the path to the StarVR SDK. This variable should be created in the StarVR SDK installer.</td>
+  </tr>
+</table>
+
+</body>
+</html>

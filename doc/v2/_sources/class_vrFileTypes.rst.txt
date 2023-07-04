@@ -1,0 +1,63 @@
+-----------
+vrFileTypes
+-----------
+
+
+.. _vredvrFileTypes:
+.. py:class:: vrFileTypes
+
+
+
+
+
+
+
+    .. _vredvrFileTypes.FileExtensionFilterMode:
+    .. py:class:: FileExtensionFilterMode
+
+
+
+
+            
+
+            .. _vredvrFileTypes.FileExtensionFilterMode.NativeFileTypes:
+            .. py:data:: NativeFileTypes
+
+
+            
+
+            .. _vredvrFileTypes.FileExtensionFilterMode.ExternalFileTypes:
+            .. py:data:: ExternalFileTypes
+
+
+            
+
+            .. _vredvrFileTypes.FileExtensionFilterMode.PythonFileType:
+            .. py:data:: PythonFileType
+
+
+            
+
+            .. _vredvrFileTypes.FileExtensionFilterMode.AllFileTypes:
+            .. py:data:: AllFileTypes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,125 @@
+---------------------------
+vrdMeasuredCarpaintMaterial
+---------------------------
+
+
+.. _vredvrdMeasuredCarpaintMaterial:
+.. py:class:: vrdMeasuredCarpaintMaterial
+
+(Inherits :py:class:`vrdBRDFMaterial`)
+
+This class is used to handle all measured carpaint material properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getColorCorrection() → vrdColorCorrection<vredvrdMeasuredCarpaintMaterial.getColorCorrection()>`
+    * :ref:`getExposure() → float<vredvrdMeasuredCarpaintMaterial.getExposure()>`
+    * :ref:`getIncandescence() → vrdIncandescence<vredvrdMeasuredCarpaintMaterial.getIncandescence()>`
+    * :ref:`getRefractionIndex() → float<vredvrdMeasuredCarpaintMaterial.getRefractionIndex()>`
+    * :ref:`getTextureSettings() → vrdTextureSettings<vredvrdMeasuredCarpaintMaterial.getTextureSettings()>`
+    * :ref:`setExposure(exposure) <vredvrdMeasuredCarpaintMaterial.setExposure(exposure)>`
+    * :ref:`setRefractionIndex(value) <vredvrdMeasuredCarpaintMaterial.setRefractionIndex(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdMeasuredCarpaintMaterial.getColorCorrection():
+.. py:method:: vrdMeasuredCarpaintMaterial.getColorCorrection()
+
+    Gets access to all properties of         :any:`vrdColorCorrection <vredvrdColorCorrection>`.
+
+
+
+
+    :return: An :any:`vrdColorCorrection <vredvrdColorCorrection>` object, to read and write access of alls properties.
+    :rtype: vrdColorCorrection
+
+.. _vredvrdMeasuredCarpaintMaterial.getExposure():
+.. py:method:: vrdMeasuredCarpaintMaterial.getExposure()
+
+    Get the current value for exposure.
+
+
+
+
+    :return: The current value for exposure.
+    :rtype: float
+
+.. _vredvrdMeasuredCarpaintMaterial.getIncandescence():
+.. py:method:: vrdMeasuredCarpaintMaterial.getIncandescence()
+
+    Gets access to all properties of         :any:`vrdIncandescence <vredvrdIncandescence>`.
+
+
+
+
+    :return: An :any:`vrdIncandescence <vredvrdIncandescence>` object, to read and write access of alls properties.
+    :rtype: vrdIncandescence
+
+.. _vredvrdMeasuredCarpaintMaterial.getRefractionIndex():
+.. py:method:: vrdMeasuredCarpaintMaterial.getRefractionIndex()
+
+    Sets the clearcoat reflective intensity. The higher the value, the more reflective the surface.
+
+
+
+
+    :return: The current index of refraction
+    :rtype: float
+
+.. _vredvrdMeasuredCarpaintMaterial.getTextureSettings():
+.. py:method:: vrdMeasuredCarpaintMaterial.getTextureSettings()
+
+    Gets access to all properties of         :any:`vrdTextureSettings <vredvrdTextureSettings>`.
+
+
+
+
+    :return: An :any:`vrdTextureSettings <vredvrdTextureSettings>` object, to read and write access of alls properties.
+    :rtype: vrdTextureSettings
+
+.. _vredvrdMeasuredCarpaintMaterial.setExposure(exposure):
+.. py:method:: vrdMeasuredCarpaintMaterial.setExposure(exposure)
+
+    Controls the representation intensity of the measured material. A threshold about 1.0 gives the optimal result.
+
+
+
+    :param exposure: The new used value for exposure.
+    :type exposure: float
+
+    
+    
+
+.. _vredvrdMeasuredCarpaintMaterial.setRefractionIndex(value):
+.. py:method:: vrdMeasuredCarpaintMaterial.setRefractionIndex(value)
+
+    Sets the index of refraction for the material by showing the amount the rays are reflected off the surface versus absorbed.
+
+
+
+    :param value: New value for clearcoat reflective intensity.
+    :type value: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,7 @@
+Rotate
+======
+
+.. literalinclude:: ../../python_examples/sceneplates/rotate.py
+   :language: python
+   :linenos:
+   :caption: sceneplates/rotate.py

@@ -1,0 +1,399 @@
+---------------
+vrDeviceService
+---------------
+
+
+.. _vredvrDeviceService:
+.. py:class:: vrDeviceService
+
+(Inherits :py:class:`vrBaseService`)
+
+This service allows the management of VR devices and interactions that are triggered by those devices. It gives access to interaction as well as device objects and also allows their creation.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`activateInteraction(interaction) <vredvrDeviceService.activateInteraction(interaction)>`
+    * :ref:`addBlockedDeviceModelOrSerial(modelOrSerial) <vredvrDeviceService.addBlockedDeviceModelOrSerial(modelOrSerial)>`
+    * :ref:`createInteraction(name) → vrdDeviceInteraction<vredvrDeviceService.createInteraction(name)>`
+    * :ref:`createVRDevice(name) → vrdVRDevice<vredvrDeviceService.createVRDevice(name)>`
+    * :ref:`deactivateInteraction(interaction) <vredvrDeviceService.deactivateInteraction(interaction)>`
+    * :ref:`deleteVRDevice(device) <vredvrDeviceService.deleteVRDevice(device)>`
+    * :ref:`getActiveInteractionGroup() → string<vredvrDeviceService.getActiveInteractionGroup()>`
+    * :ref:`getBlockedDeviceModelsOrSerials() → List[string]<vredvrDeviceService.getBlockedDeviceModelsOrSerials()>`
+    * :ref:`getConnectedVRDevices() → List[vrdVRDevice]<vredvrDeviceService.getConnectedVRDevices()>`
+    * :ref:`getInteraction(name) → vrdDeviceInteraction<vredvrDeviceService.getInteraction(name)>`
+    * :ref:`getInteractions() → List[vrdDeviceInteraction]<vredvrDeviceService.getInteractions()>`
+    * :ref:`getLeftTrackedHand() → vrdTrackedHand<vredvrDeviceService.getLeftTrackedHand()>`
+    * :ref:`getRightTrackedHand() → vrdTrackedHand<vredvrDeviceService.getRightTrackedHand()>`
+    * :ref:`getTrackingOrigin() → QVector3D<vredvrDeviceService.getTrackingOrigin()>`
+    * :ref:`getVRDevice(name) → vrdVRDevice<vredvrDeviceService.getVRDevice(name)>`
+    * :ref:`getVRDeviceBySerialNumber(serialNumber) → vrdVRDevice<vredvrDeviceService.getVRDeviceBySerialNumber(serialNumber)>`
+    * :ref:`isBlockedDeviceModelOrSerial(modelOrSerial) → bool<vredvrDeviceService.isBlockedDeviceModelOrSerial(modelOrSerial)>`
+    * :ref:`removeBlockedDeviceModelOrSerial(modelOrSerial) <vredvrDeviceService.removeBlockedDeviceModelOrSerial(modelOrSerial)>`
+    * :ref:`removeInteraction(interaction) <vredvrDeviceService.removeInteraction(interaction)>`
+    * :ref:`setActiveInteractionGroup(interactionGroup) <vredvrDeviceService.setActiveInteractionGroup(interactionGroup)>`
+    * :ref:`setBlockedDeviceModelsOrSerials(modelsOrSerials) <vredvrDeviceService.setBlockedDeviceModelsOrSerials(modelsOrSerials)>`
+    * :ref:`setTrackingOrigin(position) <vredvrDeviceService.setTrackingOrigin(position)>`
+
+Signals:
+    * :ref:`deviceActionTriggered(action, device) <vredvrDeviceService.deviceActionTriggered(action, device)>`
+    * :ref:`deviceCollisionStarted(otherNode, device) <vredvrDeviceService.deviceCollisionStarted(otherNode, device)>`
+    * :ref:`deviceCollisionStopped(otherNode, device) <vredvrDeviceService.deviceCollisionStopped(otherNode, device)>`
+    * :ref:`deviceMoved(device) <vredvrDeviceService.deviceMoved(device)>`
+
+
+Functions
+=========
+
+
+.. _vredvrDeviceService.activateInteraction(interaction):
+.. py:method:: vrDeviceService.activateInteraction(interaction)
+
+    Activates an interaction. This allows an interaction to resume receiving input signals, if the interaction is in the active interaction group.
+
+
+
+    :param interaction: The name of the interaction. If it is not known, nothing will happen.
+    :type interaction: string
+
+    
+    
+
+.. _vredvrDeviceService.addBlockedDeviceModelOrSerial(modelOrSerial):
+.. py:method:: vrDeviceService.addBlockedDeviceModelOrSerial(modelOrSerial)
+
+    Adds an input device model or serial name to the blocked devices list.
+
+
+
+    :param modelOrSerial: The model or serial name
+    :type modelOrSerial: string
+
+    
+    
+
+.. _vredvrDeviceService.createInteraction(name):
+.. py:method:: vrDeviceService.createInteraction(name)
+
+    Creates a new device interaction and makes it available for mapping inputs to its actions.
+
+
+
+    :param name: The name of the new interaction. If an interaction with this name already exists, the new interaction will overwrite the old one.
+    :type name: string
+
+    :return: The new device interaction.
+    :rtype: vrdDeviceInteraction
+
+.. _vredvrDeviceService.createVRDevice(name):
+.. py:method:: vrDeviceService.createVRDevice(name)
+
+    Creates a virtual device. This can be used to integrate custom hand tracking wtih python.
+
+
+
+    :param name: The name of the VR device e.g. left-controller, right-controller or tracker-1
+    :type name: string
+
+    :return: 
+    :rtype: vrdVRDevice
+
+.. _vredvrDeviceService.deactivateInteraction(interaction):
+.. py:method:: vrDeviceService.deactivateInteraction(interaction)
+
+    Deactivates an interaction. The interaction will not receive input signals anymore.
+
+
+
+    :param interaction: The name of the interaction. If it is not known, nothing will happen.
+    :type interaction: string
+
+    
+    
+
+.. _vredvrDeviceService.deleteVRDevice(device):
+.. py:method:: vrDeviceService.deleteVRDevice(device)
+
+    Removes a virtual device.
+
+
+
+    :param device: The device to be removed
+    :type device: vrdVRDevice
+
+    
+    
+
+.. _vredvrDeviceService.getActiveInteractionGroup():
+.. py:method:: vrDeviceService.getActiveInteractionGroup()
+
+    Gets the currently active interaction group.
+
+
+
+
+    :return: The name of the currently active interaction group.
+    :rtype: string
+
+.. _vredvrDeviceService.getBlockedDeviceModelsOrSerials():
+.. py:method:: vrDeviceService.getBlockedDeviceModelsOrSerials()
+
+    
+
+
+
+
+    :return: A list of blocked input device model or serial names
+    :rtype: List[string]
+
+.. _vredvrDeviceService.getConnectedVRDevices():
+.. py:method:: vrDeviceService.getConnectedVRDevices()
+
+    Gets the connected VR devices like controllers or trackers.
+
+
+
+
+    :return: List of connected devices
+    :rtype: List[vrdVRDevice]
+
+.. _vredvrDeviceService.getInteraction(name):
+.. py:method:: vrDeviceService.getInteraction(name)
+
+    Gets an interactions that is already known to the service.
+
+
+
+    :param name: The name of the interaction.
+    :type name: string
+
+    :return: The interaction object, if the name is known to the service, otherwise an invalid interaction object.
+    :rtype: vrdDeviceInteraction
+
+.. _vredvrDeviceService.getInteractions():
+.. py:method:: vrDeviceService.getInteractions()
+
+    Gets all interactions that are known to the service.
+
+
+
+
+    :return: A list of interactions that are available for mapping inputs to their actions.
+    :rtype: List[vrdDeviceInteraction]
+
+.. _vredvrDeviceService.getLeftTrackedHand():
+.. py:method:: vrDeviceService.getLeftTrackedHand()
+
+    Get the left hand from hand tracker.
+
+
+
+
+    :return: The left hand
+    :rtype: vrdTrackedHand
+
+.. _vredvrDeviceService.getRightTrackedHand():
+.. py:method:: vrDeviceService.getRightTrackedHand()
+
+    Get the right hand from hand tracker.
+
+
+
+
+    :return: The right hand
+    :rtype: vrdTrackedHand
+
+.. _vredvrDeviceService.getTrackingOrigin():
+.. py:method:: vrDeviceService.getTrackingOrigin()
+
+    Returns the tracking reference origin. Default is (0, 0, 0). Can be changed with setTrackingOrigin.
+
+
+
+
+    :return: the tracking reference origin
+    :rtype: QVector3D
+
+.. _vredvrDeviceService.getVRDevice(name):
+.. py:method:: vrDeviceService.getVRDevice(name)
+
+    Gets an VR device, which can be a controllers or a trackers by its name.
+
+    Note: Please also read the note in the class description of :any:`vrdVRDevice <vredvrdVRDevice>` about device node comparison.
+
+    :param name: The name of the VR device e.g. left-controller, right-controller or tracker-0, tracker 1, ...
+    :type name: string
+
+    :return: The VR device object or an invalid VR device object if the name does not follow the allowed pattern.
+    :rtype: vrdVRDevice
+
+.. _vredvrDeviceService.getVRDeviceBySerialNumber(serialNumber):
+.. py:method:: vrDeviceService.getVRDeviceBySerialNumber(serialNumber)
+
+    Gets an VR device, which can be a controllers or a trackers by its serial number.
+
+    Note: Please also read the note in the class description of :any:`vrdVRDevice <vredvrdVRDevice>` about device node comparison.
+
+    :param serialNumber: The serial number of the device. This might not be the serial number printed on a device. Some devices use an internal serial number.
+    :type serialNumber: string
+
+    :return: The VR device object.
+    :rtype: vrdVRDevice
+
+.. _vredvrDeviceService.isBlockedDeviceModelOrSerial(modelOrSerial):
+.. py:method:: vrDeviceService.isBlockedDeviceModelOrSerial(modelOrSerial)
+
+    
+
+
+
+    :param modelOrSerial: 
+    :type modelOrSerial: string
+
+    :return: Returns True if the passed model or serial name is blocked, False otherwise
+    :rtype: bool
+
+.. _vredvrDeviceService.removeBlockedDeviceModelOrSerial(modelOrSerial):
+.. py:method:: vrDeviceService.removeBlockedDeviceModelOrSerial(modelOrSerial)
+
+    Removes an input device model or serial name from the blocked devices list.
+
+
+
+    :param modelOrSerial: The model or serial name
+    :type modelOrSerial: string
+
+    
+    
+
+.. _vredvrDeviceService.removeInteraction(interaction):
+.. py:method:: vrDeviceService.removeInteraction(interaction)
+
+    Removes an interaction from the input mapping.
+
+
+
+    :param interaction: The interaction that will be removed from the button mapping.
+    :type interaction: vrdDeviceInteraction
+
+    
+    
+
+.. _vredvrDeviceService.setActiveInteractionGroup(interactionGroup):
+.. py:method:: vrDeviceService.setActiveInteractionGroup(interactionGroup)
+
+    Activates a group of interactions which will from now on receive all the input signals. This will also deactivate all other interaction groups as only one interaction group can be active.
+
+
+
+    :param interactionGroup: The name of the interaction group
+    :type interactionGroup: string
+
+    
+    
+
+.. _vredvrDeviceService.setBlockedDeviceModelsOrSerials(modelsOrSerials):
+.. py:method:: vrDeviceService.setBlockedDeviceModelsOrSerials(modelsOrSerials)
+
+    Sets a list of input device models or serial names which creation should be prevented.
+
+
+
+    :param modelsOrSerials: A list of model or serial names
+    :type modelsOrSerials: List[string]
+
+    
+    
+
+.. _vredvrDeviceService.setTrackingOrigin(position):
+.. py:method:: vrDeviceService.setTrackingOrigin(position)
+
+    Sets the tracking reference origin for tracking. Use it to correct any offsets in the scene This function always assumes Y-Up, even if Z-up is set in the scene. If the tracking origin should be at pos = (x_scene, y_scene, z_scene) in the VRED scene, call setTrackingOrigin(QVector3D(-x_scene, -z_scene, y_scene))
+
+
+
+    :param position: Position offset for the tracking.
+    :type position: QVector3D
+
+    
+    
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrDeviceService.deviceActionTriggered(action, device):
+.. py:method:: vrDeviceService.deviceActionTriggered(action, device)
+
+    The signal that is send, when the corresponding device action is triggered.
+
+
+
+    :param action: The action the signal belongs too and which is triggered.
+    :type action: vrdDeviceAction
+
+    :param device: The device that triggered the action with an input.
+    :type device: vrdVRDevice
+
+    
+    
+
+.. _vredvrDeviceService.deviceCollisionStarted(otherNode, device):
+.. py:method:: vrDeviceService.deviceCollisionStarted(otherNode, device)
+
+    Signal is emitted when the collision sensor of a device touches a collision sensitive node.
+
+
+
+    :param otherNode: The node with which the device collides
+    :type otherNode: vrdNode
+
+    :param device: The device that is colliding
+    :type device: vrdVRDevice
+
+    
+    
+
+.. _vredvrDeviceService.deviceCollisionStopped(otherNode, device):
+.. py:method:: vrDeviceService.deviceCollisionStopped(otherNode, device)
+
+    Signal is emitted when the collision sensor of a device stops touching a collision sensitive node.
+
+
+
+    :param otherNode: The node with which the device stops colliding
+    :type otherNode: vrdNode
+
+    :param device: The device that stops colliding
+    :type device: vrdVRDevice
+
+    
+    
+
+.. _vredvrDeviceService.deviceMoved(device):
+.. py:method:: vrDeviceService.deviceMoved(device)
+
+    Signal that is triggered, when a VR device moved.
+
+
+
+    :param device: The device that triggered this signal.
+    :type device: vrdVRDevice
+
+    
+    
+
+

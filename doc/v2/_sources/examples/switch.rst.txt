@@ -1,0 +1,7 @@
+vrSwitch example
+================
+
+.. literalinclude:: ../python_examples/switch.py
+   :language: python
+   :linenos:
+   :caption: switch.py

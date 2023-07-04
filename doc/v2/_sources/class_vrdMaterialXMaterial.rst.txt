@@ -1,0 +1,181 @@
+--------------------
+vrdMaterialXMaterial
+--------------------
+
+
+.. _vredvrdMaterialXMaterial:
+.. py:class:: vrdMaterialXMaterial
+
+(Inherits :py:class:`vrdBRDFMaterial`)
+
+This class is used to handle all MaterialX based material properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getActiveAttributeGroups() → List[vrdAttributeGroup]<vredvrdMaterialXMaterial.getActiveAttributeGroups()>`
+    * :ref:`getActiveMaterialName() → string<vredvrdMaterialXMaterial.getActiveMaterialName()>`
+    * :ref:`getActiveMaterialProperty(parameterId) → QVariant<vredvrdMaterialXMaterial.getActiveMaterialProperty(parameterId)>`
+    * :ref:`getMaterialIndex() → integer<vredvrdMaterialXMaterial.getMaterialIndex()>`
+    * :ref:`getPath() → string<vredvrdMaterialXMaterial.getPath()>`
+    * :ref:`getProperties() → vrdMaterialXProperties<vredvrdMaterialXMaterial.getProperties()>`
+    * :ref:`hasData() → bool<vredvrdMaterialXMaterial.hasData()>`
+    * :ref:`isDataValid() → bool<vredvrdMaterialXMaterial.isDataValid()>`
+    * :ref:`loadMaterial(path, index) → bool<vredvrdMaterialXMaterial.loadMaterial(path, index)>`
+    * :ref:`resetMaterial() <vredvrdMaterialXMaterial.resetMaterial()>`
+    * :ref:`setActiveMaterialProperty(parameterId, value) <vredvrdMaterialXMaterial.setActiveMaterialProperty(parameterId, value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdMaterialXMaterial.getActiveAttributeGroups():
+.. py:method:: vrdMaterialXMaterial.getActiveAttributeGroups()
+
+    Gets access to all vrdAttributeGroup objects.
+
+
+
+
+    :return: All vrdAttributeGroup objects
+    :rtype: List[vrdAttributeGroup]
+
+.. _vredvrdMaterialXMaterial.getActiveMaterialName():
+.. py:method:: vrdMaterialXMaterial.getActiveMaterialName()
+
+    Gets the name of the active material.
+
+
+
+
+    :return: The name of the material.
+    :rtype: string
+
+.. _vredvrdMaterialXMaterial.getActiveMaterialProperty(parameterId):
+.. py:method:: vrdMaterialXMaterial.getActiveMaterialProperty(parameterId)
+
+    Query the value of a MaterialX property in the active material.
+
+
+
+    :param parameterId: Property ID
+    :type parameterId: string
+
+    :return: The value for this property
+    :rtype: QVariant
+
+.. _vredvrdMaterialXMaterial.getMaterialIndex():
+.. py:method:: vrdMaterialXMaterial.getMaterialIndex()
+
+    Gets the index of the material in the MaterialX Document. For the first material it is zero.
+
+
+
+
+    :return: The index of the loaded material.
+    :rtype: integer
+
+.. _vredvrdMaterialXMaterial.getPath():
+.. py:method:: vrdMaterialXMaterial.getPath()
+
+    Get the path of the underlying MaterialX Document.
+
+
+
+
+    :return: The path of the underlying MaterialX Document.
+    :rtype: string
+
+.. _vredvrdMaterialXMaterial.getProperties():
+.. py:method:: vrdMaterialXMaterial.getProperties()
+
+    Returns a list of all properties.
+
+
+
+
+    :return: The list of all properties.
+    :rtype: vrdMaterialXProperties
+
+.. _vredvrdMaterialXMaterial.hasData():
+.. py:method:: vrdMaterialXMaterial.hasData()
+
+    Check if a MaterialX Document was successfully loaded.
+
+
+
+
+    :return: True, if MaterialX data is available.
+    :rtype: bool
+
+.. _vredvrdMaterialXMaterial.isDataValid():
+.. py:method:: vrdMaterialXMaterial.isDataValid()
+
+    Check if a MaterialX Document is valid.
+
+
+
+
+    :return: True, if MaterialX data is valid.
+    :rtype: bool
+
+.. _vredvrdMaterialXMaterial.loadMaterial(path, index):
+.. py:method:: vrdMaterialXMaterial.loadMaterial(path, index)
+
+    Load a MaterialX to this material.
+
+
+
+    :param path: The path for the MaterialX Document.
+    :type path: string
+
+    :param index: The index of the material in the MaterialX Document to load.
+    :type index: integer
+
+    :return: True, if the MaterialX was successfully loaded.
+    :rtype: bool
+
+.. _vredvrdMaterialXMaterial.resetMaterial():
+.. py:method:: vrdMaterialXMaterial.resetMaterial()
+
+    Resets a material to its default state.
+
+
+
+
+    
+    
+
+.. _vredvrdMaterialXMaterial.setActiveMaterialProperty(parameterId, value):
+.. py:method:: vrdMaterialXMaterial.setActiveMaterialProperty(parameterId, value)
+
+    Sets a MaterialX property for the active material.
+
+
+
+    :param parameterId: Property ID
+    :type parameterId: string
+
+    :param value: New value for the property
+    :type value: QVariant
+
+    
+    
+
+
+
+
+
+
+
+
+
+

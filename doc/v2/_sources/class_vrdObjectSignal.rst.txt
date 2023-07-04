@@ -1,0 +1,34 @@
+---------------
+vrdObjectSignal
+---------------
+
+
+.. _vredvrdObjectSignal:
+.. py:class:: vrdObjectSignal
+
+(Inherits :py:class:`QObject`)
+
+Base class for all signal objects.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

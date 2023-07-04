@@ -1,0 +1,63 @@
+------------------
+vrdCarbonPattern2D
+------------------
+
+
+.. _vredvrdCarbonPattern2D:
+.. py:class:: vrdCarbonPattern2D
+
+(Inherits :py:class:`vrdCarbonPattern`)
+
+This class is used for all 2D carbon pattern properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getRotation() → float<vredvrdCarbonPattern2D.getRotation()>`
+    * :ref:`setRotation(value) <vredvrdCarbonPattern2D.setRotation(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdCarbonPattern2D.getRotation():
+.. py:method:: vrdCarbonPattern2D.getRotation()
+
+    Gets the pattern direction on projection direction.
+
+
+
+
+    :return: Current used direction angle.
+    :rtype: float
+
+.. _vredvrdCarbonPattern2D.setRotation(value):
+.. py:method:: vrdCarbonPattern2D.setRotation(value)
+
+    Sets the pattern direction on projection direction.
+
+
+
+    :param value: New direction angle.
+    :type value: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

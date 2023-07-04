@@ -1,0 +1,233 @@
+---------------
+vrdLightProfile
+---------------
+
+
+.. _vredvrdLightProfile:
+.. py:class:: vrdLightProfile
+
+(Inherits :py:class:`vrdSceneObject`)
+
+
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getAbsolutePath() → string<vredvrdLightProfile.getAbsolutePath()>`
+    * :ref:`getBallastFactor() → float<vredvrdLightProfile.getBallastFactor()>`
+    * :ref:`getBallastLampPhotometricFactor() → float<vredvrdLightProfile.getBallastLampPhotometricFactor()>`
+    * :ref:`getCandelaMultiplier() → float<vredvrdLightProfile.getCandelaMultiplier()>`
+    * :ref:`getInputWatts() → float<vredvrdLightProfile.getInputWatts()>`
+    * :ref:`getLumensPerLamp() → float<vredvrdLightProfile.getLumensPerLamp()>`
+    * :ref:`getNumHorizontalAngles() → integer<vredvrdLightProfile.getNumHorizontalAngles()>`
+    * :ref:`getNumLuminaires() → integer<vredvrdLightProfile.getNumLuminaires()>`
+    * :ref:`getNumVerticalAngles() → integer<vredvrdLightProfile.getNumVerticalAngles()>`
+    * :ref:`getPhotometricType() → integer<vredvrdLightProfile.getPhotometricType()>`
+    * :ref:`getSize() → QVector3D<vredvrdLightProfile.getSize()>`
+    * :ref:`getUnitsType() → integer<vredvrdLightProfile.getUnitsType()>`
+    * :ref:`getUseLightProfile() → bool<vredvrdLightProfile.getUseLightProfile()>`
+    * :ref:`load(filename) <vredvrdLightProfile.load(filename)>`
+    * :ref:`setLightProfileShape() <vredvrdLightProfile.setLightProfileShape()>`
+    * :ref:`setUseLightProfile(use) <vredvrdLightProfile.setUseLightProfile(use)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdLightProfile.getAbsolutePath():
+.. py:method:: vrdLightProfile.getAbsolutePath()
+
+    Returns where the light profile is located.
+
+
+
+
+    :return: Absolute path to the.ies file
+    :rtype: string
+
+.. _vredvrdLightProfile.getBallastFactor():
+.. py:method:: vrdLightProfile.getBallastFactor()
+
+    Returns the ballast factor.
+
+
+
+
+    :return: 
+    :rtype: float
+
+.. _vredvrdLightProfile.getBallastLampPhotometricFactor():
+.. py:method:: vrdLightProfile.getBallastLampPhotometricFactor()
+
+    Returns the ballast lamp photometric factor.
+
+
+
+
+    :return: 
+    :rtype: float
+
+.. _vredvrdLightProfile.getCandelaMultiplier():
+.. py:method:: vrdLightProfile.getCandelaMultiplier()
+
+    Returns the candela multiplier.
+
+
+
+
+    :return: 
+    :rtype: float
+
+.. _vredvrdLightProfile.getInputWatts():
+.. py:method:: vrdLightProfile.getInputWatts()
+
+    Returns the input watts.
+
+
+
+
+    :return: 
+    :rtype: float
+
+.. _vredvrdLightProfile.getLumensPerLamp():
+.. py:method:: vrdLightProfile.getLumensPerLamp()
+
+    Returns the lumens per lamp.
+
+
+
+
+    :return: 
+    :rtype: float
+
+.. _vredvrdLightProfile.getNumHorizontalAngles():
+.. py:method:: vrdLightProfile.getNumHorizontalAngles()
+
+    Returns the number of horizontal angles.
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdLightProfile.getNumLuminaires():
+.. py:method:: vrdLightProfile.getNumLuminaires()
+
+    Returns the number of luminaires.
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdLightProfile.getNumVerticalAngles():
+.. py:method:: vrdLightProfile.getNumVerticalAngles()
+
+    Returns the number of vertical angles.
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdLightProfile.getPhotometricType():
+.. py:method:: vrdLightProfile.getPhotometricType()
+
+    Returns the photometric type.
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdLightProfile.getSize():
+.. py:method:: vrdLightProfile.getSize()
+
+    Returns the size.
+
+
+
+
+    :return: 
+    :rtype: QVector3D
+
+.. _vredvrdLightProfile.getUnitsType():
+.. py:method:: vrdLightProfile.getUnitsType()
+
+    Returns the units type.
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdLightProfile.getUseLightProfile():
+.. py:method:: vrdLightProfile.getUseLightProfile()
+
+    Returns true if the light profile is used.
+
+
+
+
+    :return: True if used, False otherwise.
+    :rtype: bool
+
+.. _vredvrdLightProfile.load(filename):
+.. py:method:: vrdLightProfile.load(filename)
+
+    
+
+
+
+    :param filename: 
+    :type filename: string
+
+    
+    
+
+.. _vredvrdLightProfile.setLightProfileShape():
+.. py:method:: vrdLightProfile.setLightProfileShape()
+
+    Uses the shape information from the .ies file for the selected light.
+
+
+
+
+    
+    
+
+.. _vredvrdLightProfile.setUseLightProfile(use):
+.. py:method:: vrdLightProfile.setUseLightProfile(use)
+
+    Enables a light profile from an imported file to be used.
+
+
+
+    :param use: 
+    :type use: bool
+
+    
+    
+
+
+
+
+
+
+
+
+
+

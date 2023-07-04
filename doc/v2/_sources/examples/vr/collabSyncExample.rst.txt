@@ -1,0 +1,11 @@
+.. _collab-sync-example:
+
+Synchronization during a collaboration session
+==============================================
+
+Here you can see how to send Python commands and how objects can be synchronized automatically. A sphere is created and animated. Half of the animation is synchronized, the other half is not.
+
+.. literalinclude:: ../../python_examples/vr/collabSyncExample.py
+   :language: python
+   :linenos:
+   :caption: vr/collabSyncExample.py

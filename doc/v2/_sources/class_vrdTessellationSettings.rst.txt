@@ -1,0 +1,191 @@
+-----------------------
+vrdTessellationSettings
+-----------------------
+
+
+.. _vredvrdTessellationSettings:
+.. py:class:: vrdTessellationSettings
+
+(Inherits :py:class:`vrdData`)
+
+
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getChordDeviation() → float<vredvrdTessellationSettings.getChordDeviation()>`
+    * :ref:`getMaxChordLength() → float<vredvrdTessellationSettings.getMaxChordLength()>`
+    * :ref:`getNormalTolerance() → float<vredvrdTessellationSettings.getNormalTolerance()>`
+    * :ref:`getStitchingTolerance() → float<vredvrdTessellationSettings.getStitchingTolerance()>`
+    * :ref:`getUseStitching() → bool<vredvrdTessellationSettings.getUseStitching()>`
+    * :ref:`setChordDeviation(value) <vredvrdTessellationSettings.setChordDeviation(value)>`
+    * :ref:`setMaxChordLength(value) <vredvrdTessellationSettings.setMaxChordLength(value)>`
+    * :ref:`setNormalTolerance(value) <vredvrdTessellationSettings.setNormalTolerance(value)>`
+    * :ref:`setStitchingTolerance(value) <vredvrdTessellationSettings.setStitchingTolerance(value)>`
+    * :ref:`setUseStitching(value) <vredvrdTessellationSettings.setUseStitching(value)>`
+    * :ref:`vrdTessellationSettings() <vredvrdTessellationSettings.vrdTessellationSettings()>`
+    * :ref:`~vrdTessellationSettings() <vredvrdTessellationSettings.~vrdTessellationSettings()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdTessellationSettings.getChordDeviation():
+.. py:method:: vrdTessellationSettings.getChordDeviation()
+
+    Returns the chord deviation.
+
+
+
+
+    :return: The chord deviation.
+    :rtype: float
+
+.. _vredvrdTessellationSettings.getMaxChordLength():
+.. py:method:: vrdTessellationSettings.getMaxChordLength()
+
+    Returns the maximum chord length.
+
+
+
+
+    :return: The maximum chord length.
+    :rtype: float
+
+.. _vredvrdTessellationSettings.getNormalTolerance():
+.. py:method:: vrdTessellationSettings.getNormalTolerance()
+
+    Returns the normal tolerance.
+
+
+
+
+    :return: The normal tolerance.
+    :rtype: float
+
+.. _vredvrdTessellationSettings.getStitchingTolerance():
+.. py:method:: vrdTessellationSettings.getStitchingTolerance()
+
+    Returns the stitching tolerance.
+
+
+
+
+    :return: The stitching tolerance.
+    :rtype: float
+
+.. _vredvrdTessellationSettings.getUseStitching():
+.. py:method:: vrdTessellationSettings.getUseStitching()
+
+    Returns whether stitching is enabled or disabled.
+
+
+
+
+    :return: True, if stitching is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdTessellationSettings.setChordDeviation(value):
+.. py:method:: vrdTessellationSettings.setChordDeviation(value)
+
+    Sets the maximum deviation between the NURBS surface and the tessellated surface. A low value results in a more accurate polygon model but also increases the number of triangles.
+
+
+
+    :param value: The new value for the chord deviation.
+    :type value: float
+
+    
+    
+
+.. _vredvrdTessellationSettings.setMaxChordLength(value):
+.. py:method:: vrdTessellationSettings.setMaxChordLength(value)
+
+    Sets the maximum edge length of the generated polygons. A low value results in a more accurate polygon model but also increases the number of triangles.
+
+
+
+    :param value: The new value for the maximum chord length.
+    :type value: float
+
+    
+    
+
+.. _vredvrdTessellationSettings.setNormalTolerance(value):
+.. py:method:: vrdTessellationSettings.setNormalTolerance(value)
+
+    Sets the the allowed normal deviation between the normals on the ends of a tessellated edge. A low value results in a more accurate polygon model but also increases the number of triangles.
+
+
+
+    :param value: The new value for the normal tolerance.
+    :type value: float
+
+    
+    
+
+.. _vredvrdTessellationSettings.setStitchingTolerance(value):
+.. py:method:: vrdTessellationSettings.setStitchingTolerance(value)
+
+    Sets the tolerance where two adjacent edges are considered to be touching and where they should be stitched together.
+
+
+
+    :param value: The new value for the stitching tolerance.
+    :type value: float
+
+    
+    
+
+.. _vredvrdTessellationSettings.setUseStitching(value):
+.. py:method:: vrdTessellationSettings.setUseStitching(value)
+
+    Enables or disables stitching of adjacent edges.
+
+
+
+    :param value: If True, stitching of adjacent edges is enabled.
+    :type value: bool
+
+    
+    
+
+.. _vredvrdTessellationSettings.vrdTessellationSettings():
+.. py:method:: vrdTessellationSettings.vrdTessellationSettings()
+
+    
+
+
+
+
+    
+    
+
+.. _vredvrdTessellationSettings.~vrdTessellationSettings():
+.. py:method:: vrdTessellationSettings.~vrdTessellationSettings()
+
+    
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+

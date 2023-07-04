@@ -1,0 +1,335 @@
+-----------
+vrdNodeInfo
+-----------
+
+
+.. _vredvrdNodeInfo:
+.. py:class:: vrdNodeInfo
+
+(Inherits :py:class:`vrdData`)
+
+Holds statistical information of a node returned by     :any:`vrScenegraphService.getNodeInfo(nodes) <vredvrScenegraphService.getNodeInfo(nodes)>`.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBoundingBox() → vrdBoundingBox<vredvrdNodeInfo.getBoundingBox()>`
+    * :ref:`getLines() → integer<vredvrdNodeInfo.getLines()>`
+    * :ref:`getName() → string<vredvrdNodeInfo.getName()>`
+    * :ref:`getNodes() → integer<vredvrdNodeInfo.getNodes()>`
+    * :ref:`getPoints() → integer<vredvrdNodeInfo.getPoints()>`
+    * :ref:`getSmartReferences() → integer<vredvrdNodeInfo.getSmartReferences()>`
+    * :ref:`getSourceReferences() → integer<vredvrdNodeInfo.getSourceReferences()>`
+    * :ref:`getSurfaces() → integer<vredvrdNodeInfo.getSurfaces()>`
+    * :ref:`getTextureMemory() → integer<vredvrdNodeInfo.getTextureMemory()>`
+    * :ref:`getTriangles() → integer<vredvrdNodeInfo.getTriangles()>`
+    * :ref:`getVertices() → integer<vredvrdNodeInfo.getVertices()>`
+    * :ref:`setBoundingBox(value) <vredvrdNodeInfo.setBoundingBox(value)>`
+    * :ref:`setLines(value) <vredvrdNodeInfo.setLines(value)>`
+    * :ref:`setName(name) <vredvrdNodeInfo.setName(name)>`
+    * :ref:`setNodes(value) <vredvrdNodeInfo.setNodes(value)>`
+    * :ref:`setPoints(value) <vredvrdNodeInfo.setPoints(value)>`
+    * :ref:`setSmartReferences(value) <vredvrdNodeInfo.setSmartReferences(value)>`
+    * :ref:`setSourceReferences(value) <vredvrdNodeInfo.setSourceReferences(value)>`
+    * :ref:`setSurfaces(value) <vredvrdNodeInfo.setSurfaces(value)>`
+    * :ref:`setTextureMemory(value) <vredvrdNodeInfo.setTextureMemory(value)>`
+    * :ref:`setTriangles(value) <vredvrdNodeInfo.setTriangles(value)>`
+    * :ref:`setVertices(value) <vredvrdNodeInfo.setVertices(value)>`
+    * :ref:`vrdNodeInfo() <vredvrdNodeInfo.vrdNodeInfo()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdNodeInfo.getBoundingBox():
+.. py:method:: vrdNodeInfo.getBoundingBox()
+
+    
+
+
+
+
+    :return: The combined world bounding box of the input nodes
+    :rtype: vrdBoundingBox
+
+.. _vredvrdNodeInfo.getLines():
+.. py:method:: vrdNodeInfo.getLines()
+
+    
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdNodeInfo.getName():
+.. py:method:: vrdNodeInfo.getName()
+
+    
+
+
+
+
+    :return: 
+    :rtype: string
+
+.. _vredvrdNodeInfo.getNodes():
+.. py:method:: vrdNodeInfo.getNodes()
+
+    
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdNodeInfo.getPoints():
+.. py:method:: vrdNodeInfo.getPoints()
+
+    
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdNodeInfo.getSmartReferences():
+.. py:method:: vrdNodeInfo.getSmartReferences()
+
+    
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdNodeInfo.getSourceReferences():
+.. py:method:: vrdNodeInfo.getSourceReferences()
+
+    
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdNodeInfo.getSurfaces():
+.. py:method:: vrdNodeInfo.getSurfaces()
+
+    
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdNodeInfo.getTextureMemory():
+.. py:method:: vrdNodeInfo.getTextureMemory()
+
+    
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdNodeInfo.getTriangles():
+.. py:method:: vrdNodeInfo.getTriangles()
+
+    
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdNodeInfo.getVertices():
+.. py:method:: vrdNodeInfo.getVertices()
+
+    
+
+
+
+
+    :return: 
+    :rtype: integer
+
+.. _vredvrdNodeInfo.setBoundingBox(value):
+.. py:method:: vrdNodeInfo.setBoundingBox(value)
+
+    
+
+
+
+    :param value: 
+    :type value: vrdBoundingBox
+
+    
+    
+
+.. _vredvrdNodeInfo.setLines(value):
+.. py:method:: vrdNodeInfo.setLines(value)
+
+    
+
+
+
+    :param value: 
+    :type value: integer
+
+    
+    
+
+.. _vredvrdNodeInfo.setName(name):
+.. py:method:: vrdNodeInfo.setName(name)
+
+    
+
+
+
+    :param name: 
+    :type name: string
+
+    
+    
+
+.. _vredvrdNodeInfo.setNodes(value):
+.. py:method:: vrdNodeInfo.setNodes(value)
+
+    
+
+
+
+    :param value: 
+    :type value: integer
+
+    
+    
+
+.. _vredvrdNodeInfo.setPoints(value):
+.. py:method:: vrdNodeInfo.setPoints(value)
+
+    
+
+
+
+    :param value: 
+    :type value: integer
+
+    
+    
+
+.. _vredvrdNodeInfo.setSmartReferences(value):
+.. py:method:: vrdNodeInfo.setSmartReferences(value)
+
+    
+
+
+
+    :param value: 
+    :type value: integer
+
+    
+    
+
+.. _vredvrdNodeInfo.setSourceReferences(value):
+.. py:method:: vrdNodeInfo.setSourceReferences(value)
+
+    
+
+
+
+    :param value: 
+    :type value: integer
+
+    
+    
+
+.. _vredvrdNodeInfo.setSurfaces(value):
+.. py:method:: vrdNodeInfo.setSurfaces(value)
+
+    
+
+
+
+    :param value: 
+    :type value: integer
+
+    
+    
+
+.. _vredvrdNodeInfo.setTextureMemory(value):
+.. py:method:: vrdNodeInfo.setTextureMemory(value)
+
+    
+
+
+
+    :param value: 
+    :type value: integer
+
+    
+    
+
+.. _vredvrdNodeInfo.setTriangles(value):
+.. py:method:: vrdNodeInfo.setTriangles(value)
+
+    
+
+
+
+    :param value: 
+    :type value: integer
+
+    
+    
+
+.. _vredvrdNodeInfo.setVertices(value):
+.. py:method:: vrdNodeInfo.setVertices(value)
+
+    
+
+
+
+    :param value: 
+    :type value: integer
+
+    
+    
+
+.. _vredvrdNodeInfo.vrdNodeInfo():
+.. py:method:: vrdNodeInfo.vrdNodeInfo()
+
+    
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+

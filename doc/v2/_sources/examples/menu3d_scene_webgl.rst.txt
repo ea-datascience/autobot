@@ -1,0 +1,7 @@
+Menu mapped on a cube showing WebGL
+===================================
+
+.. literalinclude:: ../python_examples/menu3d_scene_webgl.py
+   :language: python
+   :linenos:
+   :caption: menu3d_scene_webgl.py

@@ -1,0 +1,7 @@
+accessAttachments
+=================
+
+.. literalinclude:: ../../python_examples/snippets/accessAttachments.py
+   :language: python
+   :linenos:
+   :caption: snippets/accessAttachments.py

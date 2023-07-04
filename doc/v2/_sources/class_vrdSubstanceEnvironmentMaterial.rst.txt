@@ -1,0 +1,49 @@
+-------------------------------
+vrdSubstanceEnvironmentMaterial
+-------------------------------
+
+
+.. _vredvrdSubstanceEnvironmentMaterial:
+.. py:class:: vrdSubstanceEnvironmentMaterial
+
+(Inherits :py:class:`vrdEnvironmentMaterial`)
+
+This class is used to handle all substance archive based environment material properties.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getTextureGeneratorMaterial() → vrdSubstanceMaterial<vredvrdSubstanceEnvironmentMaterial.getTextureGeneratorMaterial()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdSubstanceEnvironmentMaterial.getTextureGeneratorMaterial():
+.. py:method:: vrdSubstanceEnvironmentMaterial.getTextureGeneratorMaterial()
+
+    Gets access to all properties of the substance material used to generate the environment image.
+
+
+
+
+    :return: An :any:`vrdSubstanceMaterial <vredvrdSubstanceMaterial>` object, to read and write access of alls properties.
+    :rtype: vrdSubstanceMaterial
+
+
+
+
+
+
+
+
+
+

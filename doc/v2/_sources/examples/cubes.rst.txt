@@ -1,0 +1,7 @@
+Create cube demo
+================
+
+.. literalinclude:: ../python_examples/cubes.py
+   :language: python
+   :linenos:
+   :caption: cubes.py

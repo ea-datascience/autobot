@@ -1,0 +1,201 @@
+-----------------------
+vrClusterManagerService
+-----------------------
+
+
+.. _vredvrClusterManagerService:
+.. py:class:: vrClusterManagerService
+
+(Inherits :py:class:`vrBaseService`)
+
+A service to control cluster manager functions.
+
+A cluster manager allows to manage cluster resources for multple users. The cluster service provides functions to send the currently loaded project to a cluster manager for rendering.
+
+Sending the current project to a cluster manager for offline rendering
+
+.. code-block:: python
+
+     vrClusterManagerService.login("pc1","tom","XXX")
+     vrClusterManagerService.sendToJobQueue(vrClusterTypes.JobType.Images,"batchQueue")
+     vrClusterManagerService.logoff();
+..
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getJobQueuesNames() → List[string]<vredvrClusterManagerService.getJobQueuesNames()>`
+    * :ref:`getSessionBookingId() → string<vredvrClusterManagerService.getSessionBookingId()>`
+    * :ref:`isManagerConnected() → bool<vredvrClusterManagerService.isManagerConnected()>`
+    * :ref:`login(server, user, passwd) → bool<vredvrClusterManagerService.login(server, user, passwd)>`
+    * :ref:`logoff() <vredvrClusterManagerService.logoff()>`
+    * :ref:`sendToJobQueue(type, jobQueue) → bool<vredvrClusterManagerService.sendToJobQueue(type, jobQueue)>`
+    * :ref:`startSession(bookingId) → bool<vredvrClusterManagerService.startSession(bookingId)>`
+
+Signals:
+    * :ref:`disconnected() <vredvrClusterManagerService.disconnected()>`
+    * :ref:`sessionEnded() <vredvrClusterManagerService.sessionEnded()>`
+    * :ref:`sessionEndWarning(seconds) <vredvrClusterManagerService.sessionEndWarning(seconds)>`
+    * :ref:`sessionStarting(seconds) <vredvrClusterManagerService.sessionStarting(seconds)>`
+
+
+Functions
+=========
+
+
+.. _vredvrClusterManagerService.getJobQueuesNames():
+.. py:method:: vrClusterManagerService.getJobQueuesNames()
+
+    
+
+
+
+
+    :return: Returns a list cluster manager queues
+    :rtype: List[string]
+
+.. _vredvrClusterManagerService.getSessionBookingId():
+.. py:method:: vrClusterManagerService.getSessionBookingId()
+
+    
+
+
+
+
+    :return: Returns the current cluster session booking id
+    :rtype: string
+
+.. _vredvrClusterManagerService.isManagerConnected():
+.. py:method:: vrClusterManagerService.isManagerConnected()
+
+    
+
+
+
+
+    :return: Returns true, if the user has logged in to a cluster manager
+    :rtype: bool
+
+.. _vredvrClusterManagerService.login(server, user, passwd):
+.. py:method:: vrClusterManagerService.login(server, user, passwd)
+
+    Try to login to a cluster manager.
+
+
+
+    :param server: Server name or IP address
+    :type server: string
+
+    :param user: User name
+    :type user: string
+
+    :param passwd: Password
+    :type passwd: string
+
+    :return: True, if login was successful
+    :rtype: bool
+
+.. _vredvrClusterManagerService.logoff():
+.. py:method:: vrClusterManagerService.logoff()
+
+    Logoff from cluster manager.
+
+
+
+
+    
+    
+
+.. _vredvrClusterManagerService.sendToJobQueue(type, jobQueue):
+.. py:method:: vrClusterManagerService.sendToJobQueue(type, jobQueue)
+
+    Send the current project to a cluster manager queue.
+
+
+
+    :param type: Type of job to add
+    :type type: :ref:`vrClusterTypes.JobType <vredvrClusterTypes.JobType>`
+
+    :param jobQueue: The name of the target queue
+    :type jobQueue: string
+
+    :return: True on success
+    :rtype: bool
+
+.. _vredvrClusterManagerService.startSession(bookingId):
+.. py:method:: vrClusterManagerService.startSession(bookingId)
+
+    Starts a new session booked in the cluster manager module.
+
+
+
+    :param bookingId: The booking id managed by the cluster manager
+    :type bookingId: string
+
+    :return: True, if session started successfully
+    :rtype: bool
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrClusterManagerService.disconnected():
+.. py:method:: vrClusterManagerService.disconnected()
+
+    Signal emitted when a user has signed off from the cluster manager.
+
+
+
+
+    
+    
+
+.. _vredvrClusterManagerService.sessionEnded():
+.. py:method:: vrClusterManagerService.sessionEnded()
+
+    Signal indicates a cluster manager session end.
+
+
+
+
+    
+    
+
+.. _vredvrClusterManagerService.sessionEndWarning(seconds):
+.. py:method:: vrClusterManagerService.sessionEndWarning(seconds)
+
+    Signal indicates a cluster manager session ends soon.
+
+
+
+    :param seconds: Number of seconds until session end
+    :type seconds: float
+
+    
+    
+
+.. _vredvrClusterManagerService.sessionStarting(seconds):
+.. py:method:: vrClusterManagerService.sessionStarting(seconds)
+
+    Signal indicates a cluster manager session starts soon.
+
+
+
+    :param seconds: Number of seconds until session start
+    :type seconds: float
+
+    
+    
+
+

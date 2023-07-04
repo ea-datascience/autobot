@@ -1,0 +1,1494 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrSessionService &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrSpectrum" href="class_vrSpectrum.html" />
+    <link rel="prev" title="vrSceneplateTypes" href="class_vrSceneplateTypes.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrsessionservice">
+<h1>vrSessionService<a class="headerlink" href="#vrsessionservice" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrsessionservice"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrSessionService">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrSessionService</span></code><a class="headerlink" href="#vrSessionService" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <code class="xref py py-class docutils literal notranslate"><span class="pre">vrBaseService</span></code>)</p>
+<p>Interface to work with collaboration sessions.</p>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrsessionservice-abortprogress"><span class="std std-ref">abortProgress()</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-addnodesync-node"><span class="std std-ref">addNodeSync(node)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-blocksync-commandtypename"><span class="std std-ref">blockSync(commandTypeName)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-checksessionlink-passwd-sessionlink"><span class="std std-ref">checkSessionLink(passwd, sessionLink) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-createsessionlink-server-passwd"><span class="std std-ref">createSessionLink(server, passwd) → string</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-getdefaultcolors"><span class="std std-ref">getDefaultColors() → Dict[string,QColor]</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-getpausesync"><span class="std std-ref">getPauseSync() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-getremoteusers"><span class="std std-ref">getRemoteUsers() → List[vrdSessionUser]</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-getsessionlink"><span class="std std-ref">getSessionLink() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-getshowscenedownloadwarning"><span class="std std-ref">getShowSceneDownloadWarning() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-getshowsceneuploadwarning"><span class="std std-ref">getShowSceneUploadWarning() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-getsynccommandnames"><span class="std std-ref">getSyncCommandNames() → List[string]</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-getuser"><span class="std std-ref">getUser() → vrdSessionUser</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-getusers"><span class="std std-ref">getUsers() → List[vrdSessionUser]</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-isconnected"><span class="std std-ref">isConnected() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-isjoincompleted"><span class="std std-ref">isJoinCompleted() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-ismicrophonemute"><span class="std std-ref">isMicrophoneMute() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-isspatialaudio"><span class="std std-ref">isSpatialAudio() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-isspeakermute"><span class="std std-ref">isSpeakerMute() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-isuserautocolor"><span class="std std-ref">isUserAutoColor() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-join-sessionlink-username-color-roomname-passwd-forceversion"><span class="std std-ref">join(sessionLink, userName, color, roomName, passwd, forceVersion)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-leave"><span class="std std-ref">leave()</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-removenodesync-node"><span class="std std-ref">removeNodeSync(node)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-sendpython-command-commandid"><span class="std std-ref">sendPython(command, commandId)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setaudioenabled-value"><span class="std std-ref">setAudioEnabled(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setavatarproximityopaquedistance-value"><span class="std std-ref">setAvatarProximityOpaqueDistance(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setavatarproximitytransparentdistance-value"><span class="std std-ref">setAvatarProximityTransparentDistance(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setavatarsafetyopaquedistance-value"><span class="std std-ref">setAvatarSafetyOpaqueDistance(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setavatarsafetytransparentdistance-value"><span class="std std-ref">setAvatarSafetyTransparentDistance(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setmicrophonelevel-value"><span class="std std-ref">setMicrophoneLevel(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setmicrophonemute-value"><span class="std std-ref">setMicrophoneMute(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setpausesync-value"><span class="std std-ref">setPauseSync(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setpointertoolactive-on"><span class="std std-ref">setPointerToolActive(on)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setpointervisible-value"><span class="std std-ref">setPointerVisible(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setroom-room"><span class="std std-ref">setRoom(room)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setshowscenedownloadwarning-value"><span class="std std-ref">setShowSceneDownloadWarning(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setshowsceneuploadwarning-value"><span class="std std-ref">setShowSceneUploadWarning(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setspatialaudio-value"><span class="std std-ref">setSpatialAudio(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setspeakerlevel-value"><span class="std std-ref">setSpeakerLevel(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setspeakermute-value"><span class="std std-ref">setSpeakerMute(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setusercolor-usercolor"><span class="std std-ref">setUserColor(userColor)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-setusername-username"><span class="std std-ref">setUserName(userName)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-showdesktopavatar-on"><span class="std std-ref">showDesktopAvatar(on)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-spectate-on-userid"><span class="std std-ref">spectate(on, userId)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-stopforall"><span class="std std-ref">stopForAll()</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-syncnode-node"><span class="std std-ref">syncNode(node)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-topythonstring-matrix"><span class="std std-ref">toPythonString(matrix) → string</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-topythonstring-vector2d"><span class="std std-ref">toPythonString(vector2d) → string</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-topythonstring-vector3d"><span class="std std-ref">toPythonString(vector3d) → string</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-topythonstring-node"><span class="std std-ref">toPythonString(node) → string</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-topythonstring-material"><span class="std std-ref">toPythonString(material) → string</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-topythonstring-nodes"><span class="std std-ref">toPythonString(nodes) → string</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-unblocksync-commandtypename"><span class="std std-ref">unblockSync(commandTypeName)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-uploadscene"><span class="std std-ref">uploadScene()</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-uploadscenepath-path"><span class="std std-ref">uploadScenePath(path)</span></a></li>
+</ul>
+</dd>
+<dt>Signals:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrsessionservice-joinfailed-message-wrongversion"><span class="std std-ref">joinFailed(message, wrongVersion)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-microphonemuted-value"><span class="std std-ref">microphoneMuted(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-pointertoolactivechanged-on"><span class="std std-ref">pointerToolActiveChanged(on)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-progresschanged-action-progress"><span class="std std-ref">progressChanged(action, progress)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-progressfinished"><span class="std std-ref">progressFinished()</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-receivedsessionconfig-config"><span class="std std-ref">receivedSessionConfig(config)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-requestscenedownload-reject"><span class="std std-ref">requestSceneDownload(reject)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-sessionjoined"><span class="std std-ref">sessionJoined()</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-sessionleft"><span class="std std-ref">sessionLeft()</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-speakermuted-value"><span class="std std-ref">speakerMuted(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-spectatechanged-on-userid"><span class="std std-ref">spectateChanged(on, userId)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-statuschanged"><span class="std std-ref">statusChanged()</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-userarrives-user"><span class="std std-ref">userArrives(user)</span></a></li>
+<li><a class="reference internal" href="#vredvrsessionservice-userleaves-user"><span class="std std-ref">userLeaves(user)</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrsessionservice-abortprogress"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.abortProgress">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">abortProgress</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.abortProgress" title="Permalink to this definition">¶</a></dt>
+<dd><p>Aborts a running project file upload or download.</p>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-addnodesync-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.addNodeSync">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">addNodeSync</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.addNodeSync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Transformation and visibility changes will by synchronized for all registered nodes This node sync is only used in python and does not affect transformations that are triggered by the transformation module or variant sets. By default functions like setTransformNodeXXXX are not synced automatically. Adding a node sync will send all changes, independent from the source of the change, to all connected users.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – to be synchronized</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-blocksync-commandtypename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.blockSync">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">blockSync</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">commandTypeName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.blockSync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calling blockSync, blocks all synchronizations to other users.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vrSessionService</span><span class="o">.</span><span class="n">blockSync</span><span class="p">()</span>
+<span class="c1"># nothing will be synchronized here</span>
+<span class="n">vrSessionService</span><span class="o">.</span><span class="n">unblockSync</span><span class="p">()</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>commandTypeName</strong> (<em>string</em>) – command to be blocked or empty to block all. This can be used for example to switch on a variant or variant set in python without synchronizing this with other users. To get a list of all currently available commands, use <a class="reference internal" href="#vredvrsessionservice-getsynccommandnames"><span class="std std-ref">vrSessionService.getSyncCommandNames()</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-checksessionlink-passwd-sessionlink"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.checkSessionLink">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">checkSessionLink</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">passwd</span></span></em>, <em><span class="n"><span class="pre">sessionLink</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.checkSessionLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the password is valid.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>passwd</strong> (<em>string</em>) – Password to check</li>
+<li><strong>sessionLink</strong> (<em>string</em>) – Session connection string</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">True, if password is correct</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">bool</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-createsessionlink-server-passwd"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.createSessionLink">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">createSessionLink</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">server</span></span></em>, <em><span class="n"><span class="pre">passwd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.createSessionLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates a connection string from the hostname and a password.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>server</strong> (<em>string</em>) – Host name or IP address</li>
+<li><strong>passwd</strong> (<em>string</em>) – Password that should be used to secure the session</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first">A string that can be used to join a session</p>
+</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><p class="first last">string</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-getdefaultcolors"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.getDefaultColors">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">getDefaultColors</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.getDefaultColors" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns a map of default avatar color names and colors</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">Dict[string,QColor]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-getpausesync"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.getPauseSync">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">getPauseSync</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.getPauseSync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the current pause state</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if synchronization is paused</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-getremoteusers"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.getRemoteUsers">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">getRemoteUsers</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.getRemoteUsers" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of all other users without the local user</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdSessionUser.html#vrdSessionUser" title="vrdSessionUser">vrdSessionUser</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-getsessionlink"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.getSessionLink">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">getSessionLink</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.getSessionLink" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the connection string of the collaboration session.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The hostname/id session string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-getshowscenedownloadwarning"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.getShowSceneDownloadWarning">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">getShowSceneDownloadWarning</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.getShowSceneDownloadWarning" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, a massage box on scene download will be displayed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-getshowsceneuploadwarning"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.getShowSceneUploadWarning">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">getShowSceneUploadWarning</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.getShowSceneUploadWarning" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, a massage box on scene upload will be displayed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-getsynccommandnames"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.getSyncCommandNames">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">getSyncCommandNames</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.getSyncCommandNames" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get all known command type names. These names can be used in blockSync and unblockSync.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of all known command type names</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[string]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-getuser"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.getUser">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">getUser</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.getUser" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Information about the local user</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdSessionUser.html#vrdSessionUser" title="vrdSessionUser">vrdSessionUser</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-getusers"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.getUsers">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">getUsers</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.getUsers" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">A list of all connected users</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">List[<a class="reference internal" href="class_vrdSessionUser.html#vrdSessionUser" title="vrdSessionUser">vrdSessionUser</a>]</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-isconnected"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.isConnected">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">isConnected</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.isConnected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether vred is connected to a collaboration session.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if connected</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-isjoincompleted"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.isJoinCompleted">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">isJoinCompleted</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.isJoinCompleted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks whether the connection has been established.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if join operation completed</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-ismicrophonemute"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.isMicrophoneMute">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">isMicrophoneMute</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.isMicrophoneMute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get microphone muted state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">true, if microphone is muted</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-isspatialaudio"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.isSpatialAudio">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">isSpatialAudio</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.isSpatialAudio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get spatioal audio setting.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">true, if spatial audio is enabled</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-isspeakermute"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.isSpeakerMute">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">isSpeakerMute</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.isSpeakerMute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get speaker muted state.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">true, if speaker is muted</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-isuserautocolor"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.isUserAutoColor">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">isUserAutoColor</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.isUserAutoColor" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if auto color was selected or transparent passed to setUsetColor</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-join-sessionlink-username-color-roomname-passwd-forceversion"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.join">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">join</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">sessionLink</span></span></em>, <em><span class="n"><span class="pre">userName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em><span class="n"><span class="pre">color</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">Qt.transparent</span></span></em>, <em><span class="n"><span class="pre">roomName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em><span class="n"><span class="pre">passwd</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em>, <em><span class="n"><span class="pre">forceVersion</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Joins an existing or creates a new vr collaboration sesson.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># example function call</span>
+<span class="n">vrSessionService</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">userName</span><span class="o">=</span><span class="s2">&quot;user1&quot;</span><span class="p">,</span>
+    <span class="n">color</span><span class="o">=</span><span class="n">PySide6</span><span class="o">.</span><span class="n">QtGui</span><span class="o">.</span><span class="n">Qt</span><span class="o">.</span><span class="n">transparent</span><span class="p">,</span>  <span class="n">roomName</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
+    <span class="n">passwd</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="n">forceVersion</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sessionLink</strong> (<em>string</em>) – Session connection string</li>
+<li><strong>userName</strong> (<em>string</em>) – Name used for the Avatar</li>
+<li><strong>color</strong> (<em>QColor</em>) – Avatar color. If transparent (0,0,0,0), use automatic default color</li>
+<li><strong>roomName</strong> (<em>string</em>) – Safety avatars are displayed for users in the same physical room</li>
+<li><strong>passwd</strong> (<em>string</em>) – Password for secured sessions</li>
+<li><strong>forceVersion</strong> (<em>bool</em>) – If true, stops the session and creates a new session for the current vred version.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-leave"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.leave">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">leave</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.leave" title="Permalink to this definition">¶</a></dt>
+<dd><p>Leaves the collaboration session.</p>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-removenodesync-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.removeNodeSync">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">removeNodeSync</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.removeNodeSync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Remove node from synchronization. Like addNodeSync, this does not have an effect on changes triggered by variant sets and other interactively triggered transformations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – stop synchronizing this node</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-sendpython-command-commandid"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.sendPython">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">sendPython</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">command</span></span></em>, <em><span class="n"><span class="pre">commandId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.sendPython" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends a python command to all other users.</p>
+<p>The given python command is sent to all connected users. This is done asynchronously. All commands will arrive in the same order on all connected clients. Commands should not contain references to local python variables. If nodes should be referenced, getUniquePath and findUniquePath can be used. For example, to move a node that is assigned to a local python variable n, the following command can be.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cmd</span> <span class="o">=</span> <span class="s2">&quot;setTransformNodeTranslation(</span><span class="si">{}</span><span class="s2">,20,0,1600,True)&quot;</span>
+    <span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">vrSessionService</span><span class="o">.</span><span class="n">toPythonString</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<span class="n">vrSessionService</span><span class="o">.</span><span class="n">sendPython</span><span class="p">(</span><span class="n">cmd</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The command ID is used to merge multiple changes to the same target. If a user connects a session later, the last command for each commandID is executed on connect. For example if the above command should merge all transformaton changes to the node n:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">stateId</span> <span class="o">=</span> <span class="s2">&quot;Transform/&quot;</span> <span class="o">+</span> <span class="n">getUniquePath</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
+<span class="n">vrSessionService</span><span class="o">.</span><span class="n">sendPython</span><span class="p">(</span><span class="n">cmd</span><span class="p">,</span><span class="n">stateId</span><span class="p">)</span>
+</pre></div>
+</div>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>command</strong> (<em>string</em>) – The python command to send</li>
+<li><strong>commandId</strong> (<em>string</em>) – For the same commandId, only the last command is synchronized</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setaudioenabled-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setAudioEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setAudioEnabled</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setAudioEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables audio communication.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – If true, audio communication is enabled</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setavatarproximityopaquedistance-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setAvatarProximityOpaqueDistance">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setAvatarProximityOpaqueDistance</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setAvatarProximityOpaqueDistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the distance from which avatars are opaque.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>float</em>) – Distance in mm</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setavatarproximitytransparentdistance-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setAvatarProximityTransparentDistance">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setAvatarProximityTransparentDistance</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setAvatarProximityTransparentDistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the distance from which avatars become fully transparent.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>float</em>) – Distance in mm</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setavatarsafetyopaquedistance-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setAvatarSafetyOpaqueDistance">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setAvatarSafetyOpaqueDistance</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setAvatarSafetyOpaqueDistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the distance to fade safety avatars.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>float</em>) – Distance in mm</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setavatarsafetytransparentdistance-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setAvatarSafetyTransparentDistance">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setAvatarSafetyTransparentDistance</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setAvatarSafetyTransparentDistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes distance to hide safety avatars.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>float</em>) – Distance in mm</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setmicrophonelevel-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setMicrophoneLevel">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setMicrophoneLevel</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setMicrophoneLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjusts microphone level.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>float</em>) – Amplificaton 0 - 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setmicrophonemute-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setMicrophoneMute">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setMicrophoneMute</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setMicrophoneMute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutes the microphone.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – If true, microphone is disabled</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setpausesync-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setPauseSync">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setPauseSync</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setPauseSync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pause synchronizaiton.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – It True, synchronization is paused</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setpointertoolactive-on"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setPointerToolActive">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setPointerToolActive</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">on</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setPointerToolActive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Activates the pointing tool.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>on</strong> (<em>bool</em>) – If True, tool is active</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setpointervisible-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setPointerVisible">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setPointerVisible</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setPointerVisible" title="Permalink to this definition">¶</a></dt>
+<dd><p>Makes the pointing tool visible for all other users.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – If True, tool is visible</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setroom-room"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setRoom">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setRoom</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">room</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setRoom" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the room name, used for safety avatar visualization.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>room</strong> (<em>string</em>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setshowscenedownloadwarning-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setShowSceneDownloadWarning">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setShowSceneDownloadWarning</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setShowSceneDownloadWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable massage box on scene download.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – True, show the message box</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setshowsceneuploadwarning-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setShowSceneUploadWarning">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setShowSceneUploadWarning</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setShowSceneUploadWarning" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable or disable massage box on scene upload.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – True, show the message box</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setspatialaudio-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setSpatialAudio">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setSpatialAudio</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setSpatialAudio" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables 3D sound for collaboration audio communications.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – True, enables 3D audio</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setspeakerlevel-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setSpeakerLevel">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setSpeakerLevel</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setSpeakerLevel" title="Permalink to this definition">¶</a></dt>
+<dd><p>Adjusts speaker volume.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>float</em>) – Amplificaton 0 - 1</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setspeakermute-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setSpeakerMute">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setSpeakerMute</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setSpeakerMute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Mutes the speaker.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – If true, speaker is disabled</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setusercolor-usercolor"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setUserColor">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setUserColor</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">userColor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setUserColor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change the user color.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>userColor</strong> (<em>QColor</em>) – Avatar color. If transparent (0,0,0,0), use automatic default color</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-setusername-username"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.setUserName">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">setUserName</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">userName</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.setUserName" title="Permalink to this definition">¶</a></dt>
+<dd><p>Changes the user name.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>userName</strong> (<em>string</em>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-showdesktopavatar-on"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.showDesktopAvatar">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">showDesktopAvatar</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">on</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.showDesktopAvatar" title="Permalink to this definition">¶</a></dt>
+<dd><p>Toggles how the local user is shown in desktop mode to the other users, either as tablet (default) or as avatar.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>on</strong> (<em>bool</em>) – True, show as avatar. False, show as tablet</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-spectate-on-userid"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.spectate">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">spectate</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">on</span></span></em>, <em><span class="n"><span class="pre">userId</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.spectate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turns spectator mode on or off.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>on</strong> (<em>bool</em>) – If True, enables spectator mode</li>
+<li><strong>userId</strong> (<em>integer</em>) – The spectator mode is enabled for the user with this id</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-stopforall"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.stopForAll">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">stopForAll</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.stopForAll" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops the collaboration session for all connected users.</p>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-syncnode-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.syncNode">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">syncNode</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.syncNode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Synchronize position and visibility with all other users.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – synchronize this node</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-topythonstring-matrix"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.toPythonString">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">toPythonString</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">matrix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.toPythonString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert matrix to a python string that can used in sendPython.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>matrix</strong> (<em>QMatrix4x4</em>) – the value to be encoded</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A string representaton of the given matrix</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-topythonstring-vector2d"></span><dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">toPythonString</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">vector2d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert vector to a python string that can used in sendPython.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vector2d</strong> (<em>QVector2D</em>) – the value to be encoded</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A string representation of the given vector</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-topythonstring-vector3d"></span><dl class="py method">
+<dt class="sig sig-object py" id="id1">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">toPythonString</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">vector3d</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id1" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert vector to a python string that can used in sendPython.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>vector3d</strong> (<em>QVector3D</em>) – the value to be encoded</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A string representation of the given vector</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-topythonstring-node"></span><dl class="py method">
+<dt class="sig sig-object py" id="id2">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">toPythonString</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">node</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a node to a python string that can used in sendPython.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>node</strong> (<a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a>) – to be encoded</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A string encoded reference to the node</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-topythonstring-material"></span><dl class="py method">
+<dt class="sig sig-object py" id="id3">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">toPythonString</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">material</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id3" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a material to a python string that can used in sendPython.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>material</strong> (<a class="reference internal" href="class_vrdMaterial.html#vrdMaterial" title="vrdMaterial"><em>vrdMaterial</em></a>) – to be encoded</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A string encoded reference to the material</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-topythonstring-nodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="id4">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">toPythonString</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">nodes</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id4" title="Permalink to this definition">¶</a></dt>
+<dd><p>Convert a list of nodes to a python string that can used in sendPython.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>nodes</strong> (<em>List</em><em>[</em><a class="reference internal" href="class_vrdNode.html#vrdNode" title="vrdNode"><em>vrdNode</em></a><em>]</em>) – a list of nodes to be encoded</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">A string encoded reference to all nodes</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-unblocksync-commandtypename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.unblockSync">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">unblockSync</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">commandTypeName</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">''</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.unblockSync" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calling unblockSync resumes synchronizations to other users.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>commandTypeName</strong> (<em>string</em>) – command to be blocked or empty to block all</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-uploadscene"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.uploadScene">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">uploadScene</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.uploadScene" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends the current project in the memory to all connected users.</p>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-uploadscenepath-path"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.uploadScenePath">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">uploadScenePath</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">path</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.uploadScenePath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sends the path of the project to be loaded to all users.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> (<em>string</em>) – The filename of the project to be uploaded</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrsessionservice-joinfailed-message-wrongversion"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.joinFailed">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">joinFailed</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">message</span></span></em>, <em><span class="n"><span class="pre">wrongVersion</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.joinFailed" title="Permalink to this definition">¶</a></dt>
+<dd><p>The join operation has failed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>message</strong> (<em>string</em>) – An error message</li>
+<li><strong>wrongVersion</strong> (<em>bool</em>) – If True, the connection failed because the VRED version does not match</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-microphonemuted-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.microphoneMuted">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">microphoneMuted</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.microphoneMuted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Microphone has been muted or unmuted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – If true, microphone has been muted</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-pointertoolactivechanged-on"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.pointerToolActiveChanged">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">pointerToolActiveChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">on</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.pointerToolActiveChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>The pointing tool has been activated.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>on</strong> (<em>bool</em>) – If True, tool is active</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-progresschanged-action-progress"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.progressChanged">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">progressChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">action</span></span></em>, <em><span class="n"><span class="pre">progress</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.progressChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project upload or download progress has changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>action</strong> (<em>string</em>) – Description of the current activity</li>
+<li><strong>progress</strong> (<em>integer</em>) – Progress in the range 0 - 100</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-progressfinished"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.progressFinished">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">progressFinished</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.progressFinished" title="Permalink to this definition">¶</a></dt>
+<dd><p>Project upload or download operatrion has been completed.</p>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-receivedsessionconfig-config"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.receivedSessionConfig">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">receivedSessionConfig</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">config</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.receivedSessionConfig" title="Permalink to this definition">¶</a></dt>
+<dd><p>A session configuration has been double clicked or dropped to the VRED window.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>config</strong> (<em>string</em>) – Configuration file</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-requestscenedownload-reject"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.requestSceneDownload">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">requestSceneDownload</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">reject</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.requestSceneDownload" title="Permalink to this definition">¶</a></dt>
+<dd><p>A collaboration session has been left.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reject</strong> (<em>bool</em>) – If set to True, the download is aborted</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-sessionjoined"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.sessionJoined">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">sessionJoined</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.sessionJoined" title="Permalink to this definition">¶</a></dt>
+<dd><p>A collaboration session has been joined.</p>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-sessionleft"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.sessionLeft">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">sessionLeft</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.sessionLeft" title="Permalink to this definition">¶</a></dt>
+<dd><p>A collaboration session has been left.</p>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-speakermuted-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.speakerMuted">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">speakerMuted</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.speakerMuted" title="Permalink to this definition">¶</a></dt>
+<dd><p>Speaker has been muted or unmuted.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – If true, speaker has been muted</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-spectatechanged-on-userid"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.spectateChanged">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">spectateChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">on</span></span></em>, <em><span class="n"><span class="pre">userId</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.spectateChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Spectator mode has been changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>on</strong> (<em>bool</em>) – If True, spectator mode has been enabled</li>
+<li><strong>userId</strong> (<em>integer</em>) – ID of the user to look at</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-statuschanged"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.statusChanged">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">statusChanged</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.statusChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connection status or other user properties have been changed.</p>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-userarrives-user"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.userArrives">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">userArrives</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">user</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.userArrives" title="Permalink to this definition">¶</a></dt>
+<dd><p>A new user has joined the session.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user</strong> (<a class="reference internal" href="class_vrdSessionUser.html#vrdSessionUser" title="vrdSessionUser"><em>vrdSessionUser</em></a>) – Arrived user</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrsessionservice-userleaves-user"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrSessionService.userLeaves">
+<code class="sig-prename descclassname"><span class="pre">vrSessionService.</span></code><code class="sig-name descname"><span class="pre">userLeaves</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">user</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrSessionService.userLeaves" title="Permalink to this definition">¶</a></dt>
+<dd><p>A user has left the session.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>user</strong> (<a class="reference internal" href="class_vrdSessionUser.html#vrdSessionUser" title="vrdSessionUser"><em>vrdSessionUser</em></a>) – User that has left</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrSessionService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals">Signals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrSceneplateTypes.html"
+                        title="previous chapter">vrSceneplateTypes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrSpectrum.html"
+                        title="next chapter">vrSpectrum</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrSpectrum.html" title="vrSpectrum"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrSceneplateTypes.html" title="vrSceneplateTypes"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

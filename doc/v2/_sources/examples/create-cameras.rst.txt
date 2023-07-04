@@ -1,0 +1,9 @@
+Create cameras
+==============
+
+Create different kinds of cameras with :py:meth:`vrCameraService.createCamera`.
+
+.. literalinclude:: ../python_examples/create-cameras.py
+   :language: python
+   :linenos:
+   :caption: create-cameras.py

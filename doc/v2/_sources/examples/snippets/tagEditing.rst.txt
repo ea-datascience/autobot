@@ -1,0 +1,10 @@
+tagEditing
+==========
+
+Example use of tag functions from :class:`.vrScenegraphService` and :class:`.vrMetadataService`.
+
+
+.. literalinclude:: ../../python_examples/snippets/tagEditing.py
+   :language: python
+   :linenos:
+   :caption: snippets/tagEditing.py

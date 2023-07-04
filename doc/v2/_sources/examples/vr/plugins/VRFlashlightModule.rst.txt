@@ -1,0 +1,7 @@
+Showing a flash light in VR
+===========================
+
+.. literalinclude:: ../../../python_script_plugins/VRMenu/VRFlashlightModule.py
+   :language: python
+   :linenos:
+   :caption: VRFlashlightModule.py

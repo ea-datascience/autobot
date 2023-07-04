@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrHMDService &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrHandTypes" href="class_vrHandTypes.html" />
+    <link rel="prev" title="vrGeometryTypes" href="class_vrGeometryTypes.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrhmdservice">
+<h1>vrHMDService<a class="headerlink" href="#vrhmdservice" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrhmdservice"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrHMDService">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrHMDService</span></code><a class="headerlink" href="#vrHMDService" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <code class="xref py py-class docutils literal notranslate"><span class="pre">vrBaseService</span></code>)</p>
+<p>Gives access to a Virtual Reality HMD (Head-mounted display) like the HTC Vive or Oculus.</p>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrhmdservice-getactiveopenxrruntimename"><span class="std std-ref">getActiveOpenXRRuntimeName() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getactiveopenxrsystemname"><span class="std std-ref">getActiveOpenXRSystemName() → string</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getdefaultrendermode"><span class="std std-ref">getDefaultRenderMode() → vrXRealityTypes.XRRenderMode</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getdepthtextureenabled"><span class="std std-ref">getDepthTextureEnabled() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-geteyegaze"><span class="std std-ref">getEyeGaze() → vrdEyeGaze</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-geteyetrackingenabled"><span class="std std-ref">getEyeTrackingEnabled() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getfovealregionsize"><span class="std std-ref">getFovealRegionSize() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getfoveatedrenderingenabled"><span class="std std-ref">getFoveatedRenderingEnabled() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getfoveatedrenderingquality-preset"><span class="std std-ref">getFoveatedRenderingQuality(preset) → vrdFoveatedQuality</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getfoveatedrenderingqualitypreset"><span class="std std-ref">getFoveatedRenderingQualityPreset() → vrRenderTypes.FoveatedQualityPreset</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getmixedrealityeyeoffsetpercentage"><span class="std std-ref">getMixedRealityEyeOffsetPercentage() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getmixedrealityhanddepthestimationenabled"><span class="std std-ref">getMixedRealityHandDepthEstimationEnabled() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getopenxrdepthlayercompositionenabled"><span class="std std-ref">getOpenXRDepthLayerCompositionEnabled() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getstarvrrendersettings"><span class="std std-ref">getStarVRRenderSettings() → vrdStarVRRenderSettings</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getvarjorendersettings"><span class="std std-ref">getVarjoRenderSettings() → vrdVarjoRenderSettings</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-getxrrendermode"><span class="std std-ref">getXRRenderMode() → vrXRealityTypes.XRRenderMode</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-iseyetrackingactive"><span class="std std-ref">isEyeTrackingActive() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-ishmdactive"><span class="std std-ref">isHmdActive() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-ismixedrealitysupported"><span class="std std-ref">isMixedRealitySupported() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-isxrrendermodesupported-mode"><span class="std std-ref">isXRRenderModeSupported(mode) → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-setdefaultrendermode-mode"><span class="std std-ref">setDefaultRenderMode(mode)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-setdepthtextureenabled-enabled"><span class="std std-ref">setDepthTextureEnabled(enabled)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-seteyetrackingenabled-enabled"><span class="std std-ref">setEyeTrackingEnabled(enabled)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-setfovealregionsize-size"><span class="std std-ref">setFovealRegionSize(size)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-setfoveatedrenderingcustomquality-quality"><span class="std std-ref">setFoveatedRenderingCustomQuality(quality)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-setfoveatedrenderingenabled-enabled"><span class="std std-ref">setFoveatedRenderingEnabled(enabled)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-setfoveatedrenderingqualitypreset-preset"><span class="std std-ref">setFoveatedRenderingQualityPreset(preset)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-setmixedrealityeyeoffsetpercentage-offset"><span class="std std-ref">setMixedRealityEyeOffsetPercentage(offset)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-setmixedrealityhanddepthestimationenabled-enabled"><span class="std std-ref">setMixedRealityHandDepthEstimationEnabled(enabled)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-setopenxrdepthlayercompositionenabled-enable"><span class="std std-ref">setOpenXRDepthLayerCompositionEnabled(enable)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-setstarvrrendersettings-settings"><span class="std std-ref">setStarVRRenderSettings(settings)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-setvarjorendersettings-settings"><span class="std std-ref">setVarjoRenderSettings(settings)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-setxrrendermode-mode"><span class="std std-ref">setXRRenderMode(mode)</span></a></li>
+</ul>
+</dd>
+<dt>Signals:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrhmdservice-eyegazechanged"><span class="std std-ref">eyeGazeChanged()</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-foveatedrenderingstatechanged-enabled"><span class="std std-ref">foveatedRenderingStateChanged(enabled)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-handdepthestimationchanged-enabled"><span class="std std-ref">handDepthEstimationChanged(enabled)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-hmdstatuschanged-active"><span class="std std-ref">hmdStatusChanged(active)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-hmdstatuswillchange-active"><span class="std std-ref">hmdStatusWillChange(active)</span></a></li>
+<li><a class="reference internal" href="#vredvrhmdservice-xrrendermodechanged-mode"><span class="std std-ref">XRRenderModeChanged(mode)</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrhmdservice-getactiveopenxrruntimename"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getActiveOpenXRRuntimeName">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getActiveOpenXRRuntimeName</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getActiveOpenXRRuntimeName" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns the active OpenXR runtime’s name as a string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getactiveopenxrsystemname"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getActiveOpenXRSystemName">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getActiveOpenXRSystemName</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getActiveOpenXRSystemName" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns the active OpenXR system’s name as a string</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">string</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getdefaultrendermode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getDefaultRenderMode">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getDefaultRenderMode</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getDefaultRenderMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the render mode that will be used on HMD activation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The render mode</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrXRealityTypes.html#vredvrxrealitytypes-xrrendermode"><span class="std std-ref">vrXRealityTypes.XRRenderMode</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getdepthtextureenabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getDepthTextureEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getDepthTextureEnabled</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getDepthTextureEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if depth textures for positional timewarp are enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if enables, False if disabled</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-geteyegaze"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getEyeGaze">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getEyeGaze</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getEyeGaze" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns tracked eye gaze data while eye tracking is active. Without eye tracking returns the forward looking ray of the HMD user. The gaze ray is in world coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Gaze data</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdEyeGaze.html#vrdEyeGaze" title="vrdEyeGaze">vrdEyeGaze</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-geteyetrackingenabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getEyeTrackingEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getEyeTrackingEnabled</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getEyeTrackingEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether eye tracking should be enabled in VR. Please note this does not tell whether the HMD actually supports eye tracking or whether eye tracking is currently running. For the latter, use         <a class="reference internal" href="#vredvrhmdservice-iseyetrackingactive"><span class="std std-ref">vrHMDService.isEyeTrackingActive()</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if enabled</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getfovealregionsize"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getFovealRegionSize">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getFovealRegionSize</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getFovealRegionSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the size of the foveal region in foveated rendering mode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The foveal region size</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getfoveatedrenderingenabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getFoveatedRenderingEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getFoveatedRenderingEnabled</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getFoveatedRenderingEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether foveated rendering should be enabled in VR. Please note this does not tell whether the graphics card actually supports foveated rendering.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if enabled</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getfoveatedrenderingquality-preset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getFoveatedRenderingQuality">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getFoveatedRenderingQuality</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">preset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getFoveatedRenderingQuality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the quality settings for a given preset.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>preset</strong> (<a class="reference internal" href="class_vrRenderTypes.html#vredvrrendertypes-foveatedqualitypreset"><span class="std std-ref">vrRenderTypes.FoveatedQualityPreset</span></a>) – Preset for shading qualities used in foveated rendering mode.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Quality settings</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdFoveatedQuality.html#vrdFoveatedQuality" title="vrdFoveatedQuality">vrdFoveatedQuality</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getfoveatedrenderingqualitypreset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getFoveatedRenderingQualityPreset">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getFoveatedRenderingQualityPreset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getFoveatedRenderingQualityPreset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the quality preset that is used for foveated rendering. Get the individual settings for the preset with getFoveatedRenderingQuality(vrRenderTypes::FoveatedQualityPreset).</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Current preset</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrRenderTypes.html#vredvrrendertypes-foveatedqualitypreset"><span class="std std-ref">vrRenderTypes.FoveatedQualityPreset</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getmixedrealityeyeoffsetpercentage"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getMixedRealityEyeOffsetPercentage">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getMixedRealityEyeOffsetPercentage</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getMixedRealityEyeOffsetPercentage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the offset between the camera and the eye for mixed reality in percentage.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The offset between the eye and camera in range 0.0 to 1.0</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getmixedrealityhanddepthestimationenabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getMixedRealityHandDepthEstimationEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getMixedRealityHandDepthEstimationEnabled</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getMixedRealityHandDepthEstimationEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the depth testing for mixed reality is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if enabled (even if not available), false otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getopenxrdepthlayercompositionenabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getOpenXRDepthLayerCompositionEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getOpenXRDepthLayerCompositionEnabled</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getOpenXRDepthLayerCompositionEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Returns if the depth composition layers should be submitted to OpenXR runtimes.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getstarvrrendersettings"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getStarVRRenderSettings">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getStarVRRenderSettings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getStarVRRenderSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get current render settings that are specific for the StarVR HMD.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Render settings for StarVR HMD</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdStarVRRenderSettings.html#vrdStarVRRenderSettings" title="vrdStarVRRenderSettings">vrdStarVRRenderSettings</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getvarjorendersettings"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getVarjoRenderSettings">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getVarjoRenderSettings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getVarjoRenderSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get current render settings that are specific for the Varjo HMD.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Render settings for Varjo HMD</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrdVarjoRenderSettings.html#vrdVarjoRenderSettings" title="vrdVarjoRenderSettings">vrdVarjoRenderSettings</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-getxrrendermode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.getXRRenderMode">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">getXRRenderMode</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.getXRRenderMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Gets the currently set XR rendering mode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The currently set rendering mode, will return FullScene, if no seethrough capable HMD is attached</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="class_vrXRealityTypes.html#vredvrxrealitytypes-xrrendermode"><span class="std std-ref">vrXRealityTypes.XRRenderMode</span></a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-iseyetrackingactive"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.isEyeTrackingActive">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">isEyeTrackingActive</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.isEyeTrackingActive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns whether eye tracking is currently active. It can only be active if enabled, while in VR and if the HMD has an eye tracker supported by VRED.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if active</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-ishmdactive"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.isHmdActive">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">isHmdActive</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.isHmdActive" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if an HMD (VR) display mode is active.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True, if in HMD mode</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-ismixedrealitysupported"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.isMixedRealitySupported">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">isMixedRealitySupported</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.isMixedRealitySupported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if the currently activated HMD supports mixed reality.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">False if mixed reality is not supported or if no HMD is currently active, True otherwise</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-isxrrendermodesupported-mode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.isXRRenderModeSupported">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">isXRRenderModeSupported</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.isXRRenderModeSupported" title="Permalink to this definition">¶</a></dt>
+<dd><p>Checks if a XR render mode is supported by the currently active HMD.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<a class="reference internal" href="class_vrXRealityTypes.html#vredvrxrealitytypes-xrrendermode"><span class="std std-ref">vrXRealityTypes.XRRenderMode</span></a>) – The render mode</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">True if the render mode is supported, false otherwise</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-setdefaultrendermode-mode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setDefaultRenderMode">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setDefaultRenderMode</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setDefaultRenderMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the render mode that will be used on HMD activation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<a class="reference internal" href="class_vrXRealityTypes.html#vredvrxrealitytypes-xrrendermode"><span class="std std-ref">vrXRealityTypes.XRRenderMode</span></a>) – The render mode that is set on activation. If the mode is not FullScene and the HMD does not support Mixed Reality, it will activate FullScene mode on activation</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-setdepthtextureenabled-enabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setDepthTextureEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setDepthTextureEnabled</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">enabled</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setDepthTextureEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables/Disables depth textures for positional timewarp if available.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enabled</strong> (<em>bool</em>) – True to enable, False to disable</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-seteyetrackingenabled-enabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setEyeTrackingEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setEyeTrackingEnabled</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">enabled</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setEyeTrackingEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables or disables eye tracking in VR if supported by the connected HMD. If the option is set before VR mode is enabled, it is applied when entering VR. Enable eye tracking for foveated rendering.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enabled</strong> (<em>bool</em>) – True to enable Eye tracking, False to disable Eye tracking</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-setfovealregionsize-size"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setFovealRegionSize">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setFovealRegionSize</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">size</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setFovealRegionSize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the size of the foveal region in foveated rendering mode. See         <a class="reference internal" href="#vredvrhmdservice-setfoveatedrenderingenabled-enabled"><span class="std std-ref">vrHMDService.setFoveatedRenderingEnabled(enabled)</span></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>size</strong> (<em>float</em>) – Foveal region size.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-setfoveatedrenderingcustomquality-quality"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setFoveatedRenderingCustomQuality">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setFoveatedRenderingCustomQuality</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">quality</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setFoveatedRenderingCustomQuality" title="Permalink to this definition">¶</a></dt>
+<dd><p>Allows to set a custom configuration for the shading qualities used in foveated rendering mode. Enable the custom quality by setting         <a class="reference internal" href="#vredvrhmdservice-setfoveatedrenderingqualitypreset-preset"><span class="std std-ref">vrHMDService.setFoveatedRenderingQualityPreset(preset)</span></a> to Custom.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>quality</strong> (<a class="reference internal" href="class_vrdFoveatedQuality.html#vrdFoveatedQuality" title="vrdFoveatedQuality"><em>vrdFoveatedQuality</em></a>) – Foveated shading qualities settings.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-setfoveatedrenderingenabled-enabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setFoveatedRenderingEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setFoveatedRenderingEnabled</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">enabled</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setFoveatedRenderingEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables or disables foveated rendering in VR. This requires the OpenGL Shading Rate Image extension which is supported by NVIDIA Turing graphics cards. If the option is set before VR mode is enabled, it is applied when entering VR.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enabled</strong> (<em>bool</em>) – True to enable, False to disable Foveated rendering.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-setfoveatedrenderingqualitypreset-preset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setFoveatedRenderingQualityPreset">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setFoveatedRenderingQualityPreset</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">preset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setFoveatedRenderingQualityPreset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the quality preset used for foveated rendering.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>preset</strong> (<a class="reference internal" href="class_vrRenderTypes.html#vredvrrendertypes-foveatedqualitypreset"><span class="std std-ref">vrRenderTypes.FoveatedQualityPreset</span></a>) – Preset for shading qualities used in foveated rendering mode.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-setmixedrealityeyeoffsetpercentage-offset"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setMixedRealityEyeOffsetPercentage">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setMixedRealityEyeOffsetPercentage</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">offset</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setMixedRealityEyeOffsetPercentage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the offset between the camera and the eye for mixed reality in percentage. This is needed to match the mr videos point of view to the renderings point of view.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>offset</strong> (<em>float</em>) – The offset between eye and camera in range 0.0 to 1.0</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-setmixedrealityhanddepthestimationenabled-enabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setMixedRealityHandDepthEstimationEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setMixedRealityHandDepthEstimationEnabled</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">enabled</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setMixedRealityHandDepthEstimationEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables/Disables depth testing for mixed reality if supported. Depth testing allows the real world hands to occlude parts of the rendered image.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enabled</strong> (<em>bool</em>) – True to enable, False to disable</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-setopenxrdepthlayercompositionenabled-enable"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setOpenXRDepthLayerCompositionEnabled">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setOpenXRDepthLayerCompositionEnabled</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">enable</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setOpenXRDepthLayerCompositionEnabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enables or disables the submission of depth composition layers to provide depth information to OpenXR runtimes, which can be used for positional time warp or mixed reality for example. Note this might not be supported for all runtimes or HMDs.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enable</strong> (<em>bool</em>) – True to enable, False to disable</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-setstarvrrendersettings-settings"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setStarVRRenderSettings">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setStarVRRenderSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setStarVRRenderSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply specific render settings for the StarVR HMD. Changes to these settings take effect on next activation of StarVR HMD mode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>settings</strong> (<a class="reference internal" href="class_vrdStarVRRenderSettings.html#vrdStarVRRenderSettings" title="vrdStarVRRenderSettings"><em>vrdStarVRRenderSettings</em></a>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-setvarjorendersettings-settings"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setVarjoRenderSettings">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setVarjoRenderSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">settings</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setVarjoRenderSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply specific render settings for the Varjo HMD. Changes to these settings take effect on next activation of Varjo HMD mode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>settings</strong> (<a class="reference internal" href="class_vrdVarjoRenderSettings.html#vrdVarjoRenderSettings" title="vrdVarjoRenderSettings"><em>vrdVarjoRenderSettings</em></a>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-setxrrendermode-mode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.setXRRenderMode">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">setXRRenderMode</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.setXRRenderMode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sets the XR rendering mode of the HMD if available.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<a class="reference internal" href="class_vrXRealityTypes.html#vredvrxrealitytypes-xrrendermode"><span class="std std-ref">vrXRealityTypes.XRRenderMode</span></a>) – The rendering mode</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+<div class="section" id="signals">
+<h2>Signals<a class="headerlink" href="#signals" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrhmdservice-eyegazechanged"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.eyeGazeChanged">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">eyeGazeChanged</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.eyeGazeChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is triggered every frame while eye tracking is active.</p>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-foveatedrenderingstatechanged-enabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.foveatedRenderingStateChanged">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">foveatedRenderingStateChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">enabled</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.foveatedRenderingStateChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is triggered when the state of foveated rendering changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enabled</strong> (<em>bool</em>) – True, if foveated rendering is enabled.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-handdepthestimationchanged-enabled"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.handDepthEstimationChanged">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">handDepthEstimationChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">enabled</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.handDepthEstimationChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is triggered when the depth testing in MR has been enabled or disabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>enabled</strong> (<em>bool</em>) – True, if depth testing has been enabled, false otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-hmdstatuschanged-active"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.hmdStatusChanged">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">hmdStatusChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">active</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.hmdStatusChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is triggered when HMD (VR) display mode is switched on or off.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>active</strong> (<em>bool</em>) – True, if HMD mode has been switched on</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-hmdstatuswillchange-active"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.hmdStatusWillChange">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">hmdStatusWillChange</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">active</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.hmdStatusWillChange" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is triggered just before the HMD (VR) display mode is switched on or off.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>active</strong> (<em>bool</em>) – True, if HMD mode will be switched on, False otherwise</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrhmdservice-xrrendermodechanged-mode"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrHMDService.XRRenderModeChanged">
+<code class="sig-prename descclassname"><span class="pre">vrHMDService.</span></code><code class="sig-name descname"><span class="pre">XRRenderModeChanged</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">mode</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrHMDService.XRRenderModeChanged" title="Permalink to this definition">¶</a></dt>
+<dd><p>This signal is triggered when the XR render mode has changed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>mode</strong> (<a class="reference internal" href="class_vrXRealityTypes.html#vredvrxrealitytypes-xrrendermode"><span class="std std-ref">vrXRealityTypes.XRRenderMode</span></a>) – The mode to which rendering has been switched.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrHMDService</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#signals">Signals</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAtfSettings.html">vrdAtfSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrGeometryTypes.html"
+                        title="previous chapter">vrGeometryTypes</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrHandTypes.html"
+                        title="next chapter">vrHandTypes</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrHandTypes.html" title="vrHandTypes"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrGeometryTypes.html" title="vrGeometryTypes"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

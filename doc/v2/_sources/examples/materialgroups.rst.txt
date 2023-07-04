@@ -1,0 +1,44 @@
+Material groups
+===============
+
+When working with materials in the V2 API, it is important to understand the
+difference between a material and a material node. A :doc:`/class_vrdMaterial` is not
+derived from :doc:`/class_vrdNode`; therefore, it cannot appear in a :doc:`scenegraph</scenegraphs>`.
+
+This is different from lights or cameras, which both derive from :doc:`/class_vrdNode`. This
+difference is not directly visible in the UI. The Material Editor presents
+materials in a hierarchical graph structure. But, this visual
+representation does not reflect the true structure.
+
+The Material Editor graph
+holds :doc:`vrdMaterialNodes</class_vrdMaterialNode>`. These nodes hold the
+real material.
+
+To illustrate this, the next example creates a group and a :doc:`plastic
+material </class_vrdPlasticMaterial>`, then moves the material under the
+group. We could also create the group first and use it as the materialGroup
+parameter in :ref:`createMaterial() <vredvrMaterialService.createMaterial(name, type, materialGroup)>`.
+
+
+.. code-block:: python
+  :linenos:
+  :caption: Move a material under group
+
+  # Create the material
+  mat1 = vrMaterialService.createMaterial("plastic1", vrMaterialTypes.Plastic)
+
+  # Create the group (it will automatically get a unique name, but we rename it afterwards)
+  group1 = vrMaterialService.createMaterialGroup()
+  group1.setName("matgroup")
+
+  # Access the vrdMaterialNode that has been automatically created for the plastic material
+  mat1Node = vrMaterialService.findMaterialNode(mat1)
+
+  # Hierarchy modifications on vrdNodes are done by manipulating it's children class member
+  group1.children.append(mat1Node)
+
+  # Now the material will appear under the group. We can also move it back out to the top level
+  vrMaterialService.getMaterialRoot().children.append(mat1Node)
+
+
+Hierarchy operations on a group node can be performed by manipulating its :ref:`children<vredvrdNode.children>` class member. See also :doc:`vrdNodeList</class_vrdNodeList>` for further documentation.

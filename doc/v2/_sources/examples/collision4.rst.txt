@@ -1,0 +1,7 @@
+Collision Example 4
+===================
+
+.. literalinclude:: ../python_examples/collision4.py
+   :language: python
+   :linenos:
+   :caption: collision4.py

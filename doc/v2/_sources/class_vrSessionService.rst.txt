@@ -1,0 +1,1026 @@
+----------------
+vrSessionService
+----------------
+
+
+.. _vredvrSessionService:
+.. py:class:: vrSessionService
+
+(Inherits :py:class:`vrBaseService`)
+
+Interface to work with collaboration sessions.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`abortProgress() <vredvrSessionService.abortProgress()>`
+    * :ref:`addNodeSync(node) <vredvrSessionService.addNodeSync(node)>`
+    * :ref:`blockSync(commandTypeName) <vredvrSessionService.blockSync(commandTypeName)>`
+    * :ref:`checkSessionLink(passwd, sessionLink) → bool<vredvrSessionService.checkSessionLink(passwd, sessionLink)>`
+    * :ref:`createSessionLink(server, passwd) → string<vredvrSessionService.createSessionLink(server, passwd)>`
+    * :ref:`getDefaultColors() → Dict[string,QColor]<vredvrSessionService.getDefaultColors()>`
+    * :ref:`getPauseSync() → bool<vredvrSessionService.getPauseSync()>`
+    * :ref:`getRemoteUsers() → List[vrdSessionUser]<vredvrSessionService.getRemoteUsers()>`
+    * :ref:`getSessionLink() → string<vredvrSessionService.getSessionLink()>`
+    * :ref:`getShowSceneDownloadWarning() → bool<vredvrSessionService.getShowSceneDownloadWarning()>`
+    * :ref:`getShowSceneUploadWarning() → bool<vredvrSessionService.getShowSceneUploadWarning()>`
+    * :ref:`getSyncCommandNames() → List[string]<vredvrSessionService.getSyncCommandNames()>`
+    * :ref:`getUser() → vrdSessionUser<vredvrSessionService.getUser()>`
+    * :ref:`getUsers() → List[vrdSessionUser]<vredvrSessionService.getUsers()>`
+    * :ref:`isConnected() → bool<vredvrSessionService.isConnected()>`
+    * :ref:`isJoinCompleted() → bool<vredvrSessionService.isJoinCompleted()>`
+    * :ref:`isMicrophoneMute() → bool<vredvrSessionService.isMicrophoneMute()>`
+    * :ref:`isSpatialAudio() → bool<vredvrSessionService.isSpatialAudio()>`
+    * :ref:`isSpeakerMute() → bool<vredvrSessionService.isSpeakerMute()>`
+    * :ref:`isUserAutoColor() → bool<vredvrSessionService.isUserAutoColor()>`
+    * :ref:`join(sessionLink, userName, color, roomName, passwd, forceVersion) <vredvrSessionService.join(sessionLink, userName, color, roomName, passwd, forceVersion)>`
+    * :ref:`leave() <vredvrSessionService.leave()>`
+    * :ref:`removeNodeSync(node) <vredvrSessionService.removeNodeSync(node)>`
+    * :ref:`sendPython(command, commandId) <vredvrSessionService.sendPython(command, commandId)>`
+    * :ref:`setAudioEnabled(value) <vredvrSessionService.setAudioEnabled(value)>`
+    * :ref:`setAvatarProximityOpaqueDistance(value) <vredvrSessionService.setAvatarProximityOpaqueDistance(value)>`
+    * :ref:`setAvatarProximityTransparentDistance(value) <vredvrSessionService.setAvatarProximityTransparentDistance(value)>`
+    * :ref:`setAvatarSafetyOpaqueDistance(value) <vredvrSessionService.setAvatarSafetyOpaqueDistance(value)>`
+    * :ref:`setAvatarSafetyTransparentDistance(value) <vredvrSessionService.setAvatarSafetyTransparentDistance(value)>`
+    * :ref:`setMicrophoneLevel(value) <vredvrSessionService.setMicrophoneLevel(value)>`
+    * :ref:`setMicrophoneMute(value) <vredvrSessionService.setMicrophoneMute(value)>`
+    * :ref:`setPauseSync(value) <vredvrSessionService.setPauseSync(value)>`
+    * :ref:`setPointerToolActive(on) <vredvrSessionService.setPointerToolActive(on)>`
+    * :ref:`setPointerVisible(value) <vredvrSessionService.setPointerVisible(value)>`
+    * :ref:`setRoom(room) <vredvrSessionService.setRoom(room)>`
+    * :ref:`setShowSceneDownloadWarning(value) <vredvrSessionService.setShowSceneDownloadWarning(value)>`
+    * :ref:`setShowSceneUploadWarning(value) <vredvrSessionService.setShowSceneUploadWarning(value)>`
+    * :ref:`setSpatialAudio(value) <vredvrSessionService.setSpatialAudio(value)>`
+    * :ref:`setSpeakerLevel(value) <vredvrSessionService.setSpeakerLevel(value)>`
+    * :ref:`setSpeakerMute(value) <vredvrSessionService.setSpeakerMute(value)>`
+    * :ref:`setUserColor(userColor) <vredvrSessionService.setUserColor(userColor)>`
+    * :ref:`setUserName(userName) <vredvrSessionService.setUserName(userName)>`
+    * :ref:`showDesktopAvatar(on) <vredvrSessionService.showDesktopAvatar(on)>`
+    * :ref:`spectate(on, userId) <vredvrSessionService.spectate(on, userId)>`
+    * :ref:`stopForAll() <vredvrSessionService.stopForAll()>`
+    * :ref:`syncNode(node) <vredvrSessionService.syncNode(node)>`
+    * :ref:`toPythonString(matrix) → string<vredvrSessionService.toPythonString(matrix)>`
+    * :ref:`toPythonString(vector2d) → string<vredvrSessionService.toPythonString(vector2d)>`
+    * :ref:`toPythonString(vector3d) → string<vredvrSessionService.toPythonString(vector3d)>`
+    * :ref:`toPythonString(node) → string<vredvrSessionService.toPythonString(node)>`
+    * :ref:`toPythonString(material) → string<vredvrSessionService.toPythonString(material)>`
+    * :ref:`toPythonString(nodes) → string<vredvrSessionService.toPythonString(nodes)>`
+    * :ref:`unblockSync(commandTypeName) <vredvrSessionService.unblockSync(commandTypeName)>`
+    * :ref:`uploadScene() <vredvrSessionService.uploadScene()>`
+    * :ref:`uploadScenePath(path) <vredvrSessionService.uploadScenePath(path)>`
+
+Signals:
+    * :ref:`joinFailed(message, wrongVersion) <vredvrSessionService.joinFailed(message, wrongVersion)>`
+    * :ref:`microphoneMuted(value) <vredvrSessionService.microphoneMuted(value)>`
+    * :ref:`pointerToolActiveChanged(on) <vredvrSessionService.pointerToolActiveChanged(on)>`
+    * :ref:`progressChanged(action, progress) <vredvrSessionService.progressChanged(action, progress)>`
+    * :ref:`progressFinished() <vredvrSessionService.progressFinished()>`
+    * :ref:`receivedSessionConfig(config) <vredvrSessionService.receivedSessionConfig(config)>`
+    * :ref:`requestSceneDownload(reject) <vredvrSessionService.requestSceneDownload(reject)>`
+    * :ref:`sessionJoined() <vredvrSessionService.sessionJoined()>`
+    * :ref:`sessionLeft() <vredvrSessionService.sessionLeft()>`
+    * :ref:`speakerMuted(value) <vredvrSessionService.speakerMuted(value)>`
+    * :ref:`spectateChanged(on, userId) <vredvrSessionService.spectateChanged(on, userId)>`
+    * :ref:`statusChanged() <vredvrSessionService.statusChanged()>`
+    * :ref:`userArrives(user) <vredvrSessionService.userArrives(user)>`
+    * :ref:`userLeaves(user) <vredvrSessionService.userLeaves(user)>`
+
+
+Functions
+=========
+
+
+.. _vredvrSessionService.abortProgress():
+.. py:method:: vrSessionService.abortProgress()
+
+    Aborts a running project file upload or download.
+
+
+
+
+    
+    
+
+.. _vredvrSessionService.addNodeSync(node):
+.. py:method:: vrSessionService.addNodeSync(node)
+
+    Transformation and visibility changes will by synchronized for all registered nodes This node sync is only used in python and does not affect transformations that are triggered by the transformation module or variant sets. By default functions like setTransformNodeXXXX are not synced automatically. Adding a node sync will send all changes, independent from the source of the change, to all connected users.
+
+
+
+    :param node: to be synchronized
+    :type node: vrdNode
+
+    
+    
+
+.. _vredvrSessionService.blockSync(commandTypeName):
+.. py:method:: vrSessionService.blockSync(commandTypeName="")
+
+    Calling blockSync, blocks all synchronizations to other users.
+
+    .. code-block:: python
+    
+         vrSessionService.blockSync()
+         # nothing will be synchronized here
+         vrSessionService.unblockSync()
+    ..
+    
+
+    :param commandTypeName: command to be blocked or empty to block all. This can be used for example to switch on a variant or variant set in python without synchronizing this with other users. To get a list of all currently available commands, use :any:`vrSessionService.getSyncCommandNames() <vredvrSessionService.getSyncCommandNames()>`
+    :type commandTypeName: string
+
+    
+    
+
+.. _vredvrSessionService.checkSessionLink(passwd, sessionLink):
+.. py:method:: vrSessionService.checkSessionLink(passwd, sessionLink)
+
+    Checks if the password is valid.
+
+
+
+    :param passwd: Password to check
+    :type passwd: string
+
+    :param sessionLink: Session connection string
+    :type sessionLink: string
+
+    :return: True, if password is correct
+    :rtype: bool
+
+.. _vredvrSessionService.createSessionLink(server, passwd):
+.. py:method:: vrSessionService.createSessionLink(server, passwd)
+
+    Creates a connection string from the hostname and a password.
+
+
+
+    :param server: Host name or IP address
+    :type server: string
+
+    :param passwd: Password that should be used to secure the session
+    :type passwd: string
+
+    :return: A string that can be used to join a session
+    :rtype: string
+
+.. _vredvrSessionService.getDefaultColors():
+.. py:method:: vrSessionService.getDefaultColors()
+
+    
+
+
+
+
+    :return: Returns a map of default avatar color names and colors
+    :rtype: Dict[string,QColor]
+
+.. _vredvrSessionService.getPauseSync():
+.. py:method:: vrSessionService.getPauseSync()
+
+    Get the current pause state
+
+
+
+
+    :return: True, if synchronization is paused
+    :rtype: bool
+
+.. _vredvrSessionService.getRemoteUsers():
+.. py:method:: vrSessionService.getRemoteUsers()
+
+    
+
+
+
+
+    :return: A list of all other users without the local user
+    :rtype: List[vrdSessionUser]
+
+.. _vredvrSessionService.getSessionLink():
+.. py:method:: vrSessionService.getSessionLink()
+
+    Returns the connection string of the collaboration session.
+
+
+
+
+    :return: The hostname/id session string
+    :rtype: string
+
+.. _vredvrSessionService.getShowSceneDownloadWarning():
+.. py:method:: vrSessionService.getShowSceneDownloadWarning()
+
+    
+
+
+
+
+    :return: True, a massage box on scene download will be displayed
+    :rtype: bool
+
+.. _vredvrSessionService.getShowSceneUploadWarning():
+.. py:method:: vrSessionService.getShowSceneUploadWarning()
+
+    
+
+
+
+
+    :return: True, a massage box on scene upload will be displayed
+    :rtype: bool
+
+.. _vredvrSessionService.getSyncCommandNames():
+.. py:method:: vrSessionService.getSyncCommandNames()
+
+    Get all known command type names. These names can be used in blockSync and unblockSync.
+
+
+
+
+    :return: A list of all known command type names
+    :rtype: List[string]
+
+.. _vredvrSessionService.getUser():
+.. py:method:: vrSessionService.getUser()
+
+    
+
+
+
+
+    :return: Information about the local user
+    :rtype: vrdSessionUser
+
+.. _vredvrSessionService.getUsers():
+.. py:method:: vrSessionService.getUsers()
+
+    
+
+
+
+
+    :return: A list of all connected users
+    :rtype: List[vrdSessionUser]
+
+.. _vredvrSessionService.isConnected():
+.. py:method:: vrSessionService.isConnected()
+
+    Checks whether vred is connected to a collaboration session.
+
+
+
+
+    :return: True, if connected
+    :rtype: bool
+
+.. _vredvrSessionService.isJoinCompleted():
+.. py:method:: vrSessionService.isJoinCompleted()
+
+    Checks whether the connection has been established.
+
+
+
+
+    :return: True, if join operation completed
+    :rtype: bool
+
+.. _vredvrSessionService.isMicrophoneMute():
+.. py:method:: vrSessionService.isMicrophoneMute()
+
+    Get microphone muted state.
+
+
+
+
+    :return: true, if microphone is muted
+    :rtype: bool
+
+.. _vredvrSessionService.isSpatialAudio():
+.. py:method:: vrSessionService.isSpatialAudio()
+
+    Get spatioal audio setting.
+
+
+
+
+    :return: true, if spatial audio is enabled
+    :rtype: bool
+
+.. _vredvrSessionService.isSpeakerMute():
+.. py:method:: vrSessionService.isSpeakerMute()
+
+    Get speaker muted state.
+
+
+
+
+    :return: true, if speaker is muted
+    :rtype: bool
+
+.. _vredvrSessionService.isUserAutoColor():
+.. py:method:: vrSessionService.isUserAutoColor()
+
+    
+
+
+
+
+    :return: True, if auto color was selected or transparent passed to setUsetColor
+    :rtype: bool
+
+.. _vredvrSessionService.join(sessionLink, userName, color, roomName, passwd, forceVersion):
+.. py:method:: vrSessionService.join(sessionLink, userName="", color=Qt.transparent, roomName="", passwd="", forceVersion=False)
+
+    Joins an existing or creates a new vr collaboration sesson.
+
+    .. code-block:: python
+    
+         # example function call
+         vrSessionService.join("localhost", userName="user1",
+             color=PySide6.QtGui.Qt.transparent,  roomName="",
+             passwd="", forceVersion=False)
+    ..
+    
+
+    :param sessionLink: Session connection string
+    :type sessionLink: string
+
+    :param userName: Name used for the Avatar
+    :type userName: string
+
+    :param color: Avatar color. If transparent (0,0,0,0), use automatic default color
+    :type color: QColor
+
+    :param roomName: Safety avatars are displayed for users in the same physical room
+    :type roomName: string
+
+    :param passwd: Password for secured sessions
+    :type passwd: string
+
+    :param forceVersion: If true, stops the session and creates a new session for the current vred version.
+    :type forceVersion: bool
+
+    
+    
+
+.. _vredvrSessionService.leave():
+.. py:method:: vrSessionService.leave()
+
+    Leaves the collaboration session.
+
+
+
+
+    
+    
+
+.. _vredvrSessionService.removeNodeSync(node):
+.. py:method:: vrSessionService.removeNodeSync(node)
+
+    Remove node from synchronization. Like addNodeSync, this does not have an effect on changes triggered by variant sets and other interactively triggered transformations.
+
+
+
+    :param node: stop synchronizing this node
+    :type node: vrdNode
+
+    
+    
+
+.. _vredvrSessionService.sendPython(command, commandId):
+.. py:method:: vrSessionService.sendPython(command, commandId="")
+
+    Sends a python command to all other users.
+
+    The given python command is sent to all connected users. This is done asynchronously. All commands will arrive in the same order on all connected clients. Commands should not contain references to local python variables. If nodes should be referenced, getUniquePath and findUniquePath can be used. For example, to move a node that is assigned to a local python variable n, the following command can be.
+
+    .. code-block:: python
+    
+         cmd = "setTransformNodeTranslation({},20,0,1600,True)"
+             .format(vrSessionService.toPythonString(n))
+         vrSessionService.sendPython(cmd)
+    ..
+    
+
+    The command ID is used to merge multiple changes to the same target. If a user connects a session later, the last command for each commandID is executed on connect. For example if the above command should merge all transformaton changes to the node n:
+
+    .. code-block:: python
+    
+         stateId = "Transform/" + getUniquePath(n)
+         vrSessionService.sendPython(cmd,stateId)
+    ..
+    
+
+    :param command: The python command to send
+    :type command: string
+
+    :param commandId: For the same commandId, only the last command is synchronized
+    :type commandId: string
+
+    
+    
+
+.. _vredvrSessionService.setAudioEnabled(value):
+.. py:method:: vrSessionService.setAudioEnabled(value)
+
+    Enables audio communication.
+
+
+
+    :param value: If true, audio communication is enabled
+    :type value: bool
+
+    
+    
+
+.. _vredvrSessionService.setAvatarProximityOpaqueDistance(value):
+.. py:method:: vrSessionService.setAvatarProximityOpaqueDistance(value)
+
+    Changes the distance from which avatars are opaque.
+
+
+
+    :param value: Distance in mm
+    :type value: float
+
+    
+    
+
+.. _vredvrSessionService.setAvatarProximityTransparentDistance(value):
+.. py:method:: vrSessionService.setAvatarProximityTransparentDistance(value)
+
+    Changes the distance from which avatars become fully transparent.
+
+
+
+    :param value: Distance in mm
+    :type value: float
+
+    
+    
+
+.. _vredvrSessionService.setAvatarSafetyOpaqueDistance(value):
+.. py:method:: vrSessionService.setAvatarSafetyOpaqueDistance(value)
+
+    Changes the distance to fade safety avatars.
+
+
+
+    :param value: Distance in mm
+    :type value: float
+
+    
+    
+
+.. _vredvrSessionService.setAvatarSafetyTransparentDistance(value):
+.. py:method:: vrSessionService.setAvatarSafetyTransparentDistance(value)
+
+    Changes distance to hide safety avatars.
+
+
+
+    :param value: Distance in mm
+    :type value: float
+
+    
+    
+
+.. _vredvrSessionService.setMicrophoneLevel(value):
+.. py:method:: vrSessionService.setMicrophoneLevel(value)
+
+    Adjusts microphone level.
+
+
+
+    :param value: Amplificaton 0 - 1
+    :type value: float
+
+    
+    
+
+.. _vredvrSessionService.setMicrophoneMute(value):
+.. py:method:: vrSessionService.setMicrophoneMute(value)
+
+    Mutes the microphone.
+
+
+
+    :param value: If true, microphone is disabled
+    :type value: bool
+
+    
+    
+
+.. _vredvrSessionService.setPauseSync(value):
+.. py:method:: vrSessionService.setPauseSync(value)
+
+    Pause synchronizaiton.
+
+
+
+    :param value: It True, synchronization is paused
+    :type value: bool
+
+    
+    
+
+.. _vredvrSessionService.setPointerToolActive(on):
+.. py:method:: vrSessionService.setPointerToolActive(on)
+
+    Activates the pointing tool.
+
+
+
+    :param on: If True, tool is active
+    :type on: bool
+
+    
+    
+
+.. _vredvrSessionService.setPointerVisible(value):
+.. py:method:: vrSessionService.setPointerVisible(value)
+
+    Makes the pointing tool visible for all other users.
+
+
+
+    :param value: If True, tool is visible
+    :type value: bool
+
+    
+    
+
+.. _vredvrSessionService.setRoom(room):
+.. py:method:: vrSessionService.setRoom(room)
+
+    Changes the room name, used for safety avatar visualization.
+
+
+
+    :param room: 
+    :type room: string
+
+    
+    
+
+.. _vredvrSessionService.setShowSceneDownloadWarning(value):
+.. py:method:: vrSessionService.setShowSceneDownloadWarning(value)
+
+    Enable or disable massage box on scene download.
+
+
+
+    :param value: True, show the message box
+    :type value: bool
+
+    
+    
+
+.. _vredvrSessionService.setShowSceneUploadWarning(value):
+.. py:method:: vrSessionService.setShowSceneUploadWarning(value)
+
+    Enable or disable massage box on scene upload.
+
+
+
+    :param value: True, show the message box
+    :type value: bool
+
+    
+    
+
+.. _vredvrSessionService.setSpatialAudio(value):
+.. py:method:: vrSessionService.setSpatialAudio(value)
+
+    Enables 3D sound for collaboration audio communications.
+
+
+
+    :param value: True, enables 3D audio
+    :type value: bool
+
+    
+    
+
+.. _vredvrSessionService.setSpeakerLevel(value):
+.. py:method:: vrSessionService.setSpeakerLevel(value)
+
+    Adjusts speaker volume.
+
+
+
+    :param value: Amplificaton 0 - 1
+    :type value: float
+
+    
+    
+
+.. _vredvrSessionService.setSpeakerMute(value):
+.. py:method:: vrSessionService.setSpeakerMute(value)
+
+    Mutes the speaker.
+
+
+
+    :param value: If true, speaker is disabled
+    :type value: bool
+
+    
+    
+
+.. _vredvrSessionService.setUserColor(userColor):
+.. py:method:: vrSessionService.setUserColor(userColor)
+
+    Change the user color.
+
+
+
+    :param userColor: Avatar color. If transparent (0,0,0,0), use automatic default color
+    :type userColor: QColor
+
+    
+    
+
+.. _vredvrSessionService.setUserName(userName):
+.. py:method:: vrSessionService.setUserName(userName)
+
+    Changes the user name.
+
+
+
+    :param userName: 
+    :type userName: string
+
+    
+    
+
+.. _vredvrSessionService.showDesktopAvatar(on):
+.. py:method:: vrSessionService.showDesktopAvatar(on)
+
+    Toggles how the local user is shown in desktop mode to the other users, either as tablet (default) or as avatar.
+
+
+
+    :param on: True, show as avatar. False, show as tablet
+    :type on: bool
+
+    
+    
+
+.. _vredvrSessionService.spectate(on, userId):
+.. py:method:: vrSessionService.spectate(on, userId=0)
+
+    Turns spectator mode on or off.
+
+
+
+    :param on: If True, enables spectator mode
+    :type on: bool
+
+    :param userId: The spectator mode is enabled for the user with this id
+    :type userId: integer
+
+    
+    
+
+.. _vredvrSessionService.stopForAll():
+.. py:method:: vrSessionService.stopForAll()
+
+    Stops the collaboration session for all connected users.
+
+
+
+
+    
+    
+
+.. _vredvrSessionService.syncNode(node):
+.. py:method:: vrSessionService.syncNode(node)
+
+    Synchronize position and visibility with all other users.
+
+
+
+    :param node: synchronize this node
+    :type node: vrdNode
+
+    
+    
+
+.. _vredvrSessionService.toPythonString(matrix):
+.. py:method:: vrSessionService.toPythonString(matrix)
+
+    Convert matrix to a python string that can used in sendPython.
+
+
+
+    :param matrix: the value to be encoded
+    :type matrix: QMatrix4x4
+
+    :return: A string representaton of the given matrix
+    :rtype: string
+
+.. _vredvrSessionService.toPythonString(vector2d):
+.. py:method:: vrSessionService.toPythonString(vector2d)
+
+    Convert vector to a python string that can used in sendPython.
+
+
+
+    :param vector2d: the value to be encoded
+    :type vector2d: QVector2D
+
+    :return: A string representation of the given vector
+    :rtype: string
+
+.. _vredvrSessionService.toPythonString(vector3d):
+.. py:method:: vrSessionService.toPythonString(vector3d)
+
+    Convert vector to a python string that can used in sendPython.
+
+
+
+    :param vector3d: the value to be encoded
+    :type vector3d: QVector3D
+
+    :return: A string representation of the given vector
+    :rtype: string
+
+.. _vredvrSessionService.toPythonString(node):
+.. py:method:: vrSessionService.toPythonString(node)
+
+    Convert a node to a python string that can used in sendPython.
+
+
+
+    :param node: to be encoded
+    :type node: vrdNode
+
+    :return: A string encoded reference to the node
+    :rtype: string
+
+.. _vredvrSessionService.toPythonString(material):
+.. py:method:: vrSessionService.toPythonString(material)
+
+    Convert a material to a python string that can used in sendPython.
+
+
+
+    :param material: to be encoded
+    :type material: vrdMaterial
+
+    :return: A string encoded reference to the material
+    :rtype: string
+
+.. _vredvrSessionService.toPythonString(nodes):
+.. py:method:: vrSessionService.toPythonString(nodes)
+
+    Convert a list of nodes to a python string that can used in sendPython.
+
+
+
+    :param nodes: a list of nodes to be encoded
+    :type nodes: List[vrdNode]
+
+    :return: A string encoded reference to all nodes
+    :rtype: string
+
+.. _vredvrSessionService.unblockSync(commandTypeName):
+.. py:method:: vrSessionService.unblockSync(commandTypeName="")
+
+    Calling unblockSync resumes synchronizations to other users.
+
+
+
+    :param commandTypeName: command to be blocked or empty to block all
+    :type commandTypeName: string
+
+    
+    
+
+.. _vredvrSessionService.uploadScene():
+.. py:method:: vrSessionService.uploadScene()
+
+    Sends the current project in the memory to all connected users.
+
+
+
+
+    
+    
+
+.. _vredvrSessionService.uploadScenePath(path):
+.. py:method:: vrSessionService.uploadScenePath(path)
+
+    Sends the path of the project to be loaded to all users.
+
+
+
+    :param path: The filename of the project to be uploaded
+    :type path: string
+
+    
+    
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrSessionService.joinFailed(message, wrongVersion):
+.. py:method:: vrSessionService.joinFailed(message, wrongVersion)
+
+    The join operation has failed.
+
+
+
+    :param message: An error message
+    :type message: string
+
+    :param wrongVersion: If True, the connection failed because the VRED version does not match
+    :type wrongVersion: bool
+
+    
+    
+
+.. _vredvrSessionService.microphoneMuted(value):
+.. py:method:: vrSessionService.microphoneMuted(value)
+
+    Microphone has been muted or unmuted.
+
+
+
+    :param value: If true, microphone has been muted
+    :type value: bool
+
+    
+    
+
+.. _vredvrSessionService.pointerToolActiveChanged(on):
+.. py:method:: vrSessionService.pointerToolActiveChanged(on)
+
+    The pointing tool has been activated.
+
+
+
+    :param on: If True, tool is active
+    :type on: bool
+
+    
+    
+
+.. _vredvrSessionService.progressChanged(action, progress):
+.. py:method:: vrSessionService.progressChanged(action, progress)
+
+    Project upload or download progress has changed.
+
+
+
+    :param action: Description of the current activity
+    :type action: string
+
+    :param progress: Progress in the range 0 - 100
+    :type progress: integer
+
+    
+    
+
+.. _vredvrSessionService.progressFinished():
+.. py:method:: vrSessionService.progressFinished()
+
+    Project upload or download operatrion has been completed.
+
+
+
+
+    
+    
+
+.. _vredvrSessionService.receivedSessionConfig(config):
+.. py:method:: vrSessionService.receivedSessionConfig(config)
+
+    A session configuration has been double clicked or dropped to the VRED window.
+
+
+
+    :param config: Configuration file
+    :type config: string
+
+    
+    
+
+.. _vredvrSessionService.requestSceneDownload(reject):
+.. py:method:: vrSessionService.requestSceneDownload(reject)
+
+    A collaboration session has been left.
+
+
+
+    :param reject: If set to True, the download is aborted
+    :type reject: bool
+
+    
+    
+
+.. _vredvrSessionService.sessionJoined():
+.. py:method:: vrSessionService.sessionJoined()
+
+    A collaboration session has been joined.
+
+
+
+
+    
+    
+
+.. _vredvrSessionService.sessionLeft():
+.. py:method:: vrSessionService.sessionLeft()
+
+    A collaboration session has been left.
+
+
+
+
+    
+    
+
+.. _vredvrSessionService.speakerMuted(value):
+.. py:method:: vrSessionService.speakerMuted(value)
+
+    Speaker has been muted or unmuted.
+
+
+
+    :param value: If true, speaker has been muted
+    :type value: bool
+
+    
+    
+
+.. _vredvrSessionService.spectateChanged(on, userId):
+.. py:method:: vrSessionService.spectateChanged(on, userId)
+
+    Spectator mode has been changed.
+
+
+
+    :param on: If True, spectator mode has been enabled
+    :type on: bool
+
+    :param userId: ID of the user to look at
+    :type userId: integer
+
+    
+    
+
+.. _vredvrSessionService.statusChanged():
+.. py:method:: vrSessionService.statusChanged()
+
+    Connection status or other user properties have been changed.
+
+
+
+
+    
+    
+
+.. _vredvrSessionService.userArrives(user):
+.. py:method:: vrSessionService.userArrives(user)
+
+    A new user has joined the session.
+
+
+
+    :param user: Arrived user
+    :type user: vrdSessionUser
+
+    
+    
+
+.. _vredvrSessionService.userLeaves(user):
+.. py:method:: vrSessionService.userLeaves(user)
+
+    A user has left the session.
+
+
+
+    :param user: User that has left
+    :type user: vrdSessionUser
+
+    
+    
+
+

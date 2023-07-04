@@ -1,0 +1,255 @@
+--------------
+vrdMDLMaterial
+--------------
+
+
+.. _vredvrdMDLMaterial:
+.. py:class:: vrdMDLMaterial
+
+(Inherits :py:class:`vrdBRDFMaterial`)
+
+This class is used to handle all MDL module based material properties.
+
+An MDL material represents a module and can contain multiple materials.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getActiveAttributeGroups() → List[vrdAttributeGroup]<vredvrdMDLMaterial.getActiveAttributeGroups()>`
+    * :ref:`getActiveMaterialIndex() → integer<vredvrdMDLMaterial.getActiveMaterialIndex()>`
+    * :ref:`getActiveMaterialName() → string<vredvrdMDLMaterial.getActiveMaterialName()>`
+    * :ref:`getActiveMaterialProperty(parameterId) → QVariant<vredvrdMDLMaterial.getActiveMaterialProperty(parameterId)>`
+    * :ref:`getMaterialCount() → integer<vredvrdMDLMaterial.getMaterialCount()>`
+    * :ref:`getMaterialName(index) → string<vredvrdMDLMaterial.getMaterialName(index)>`
+    * :ref:`getModulePath() → string<vredvrdMDLMaterial.getModulePath()>`
+    * :ref:`getProperties() → vrdMDLProperties<vredvrdMDLMaterial.getProperties()>`
+    * :ref:`getProperty(materialName, parameterId) → QVariant<vredvrdMDLMaterial.getProperty(materialName, parameterId)>`
+    * :ref:`hasModuleData() → bool<vredvrdMDLMaterial.hasModuleData()>`
+    * :ref:`isModuleValid() → bool<vredvrdMDLMaterial.isModuleValid()>`
+    * :ref:`loadModule(path) → bool<vredvrdMDLMaterial.loadModule(path)>`
+    * :ref:`resetMaterial() <vredvrdMDLMaterial.resetMaterial()>`
+    * :ref:`setActiveMaterialIndex(index) <vredvrdMDLMaterial.setActiveMaterialIndex(index)>`
+    * :ref:`setActiveMaterialProperty(parameterId, value) <vredvrdMDLMaterial.setActiveMaterialProperty(parameterId, value)>`
+    * :ref:`setProperty(materialName, parameterId, value) <vredvrdMDLMaterial.setProperty(materialName, parameterId, value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdMDLMaterial.getActiveAttributeGroups():
+.. py:method:: vrdMDLMaterial.getActiveAttributeGroups()
+
+    Gets access to all vrdAttributeGroup objects.
+
+
+
+
+    :return: All vrdAttributeGroup objects
+    :rtype: List[vrdAttributeGroup]
+
+.. _vredvrdMDLMaterial.getActiveMaterialIndex():
+.. py:method:: vrdMDLMaterial.getActiveMaterialIndex()
+
+    Gets the index of the active material. For the first material it is zero.
+
+
+
+
+    :return: The index of the active material.
+    :rtype: integer
+
+.. _vredvrdMDLMaterial.getActiveMaterialName():
+.. py:method:: vrdMDLMaterial.getActiveMaterialName()
+
+    Gets the name of the active material.
+
+
+
+
+    :return: The name of the material.
+    :rtype: string
+
+.. _vredvrdMDLMaterial.getActiveMaterialProperty(parameterId):
+.. py:method:: vrdMDLMaterial.getActiveMaterialProperty(parameterId)
+
+    Query the value of a MDL property in the active material.
+
+
+
+    :param parameterId: Property ID
+    :type parameterId: string
+
+    :return: The value for this property
+    :rtype: QVariant
+
+.. _vredvrdMDLMaterial.getMaterialCount():
+.. py:method:: vrdMDLMaterial.getMaterialCount()
+
+    Gets the number of all materials.
+
+
+
+
+    :return: The number of all materials.
+    :rtype: integer
+
+.. _vredvrdMDLMaterial.getMaterialName(index):
+.. py:method:: vrdMDLMaterial.getMaterialName(index)
+
+    Gets the name of a material.
+
+
+
+    :param index: The index of the material.
+    :type index: integer
+
+    :return: The name of the material.
+    :rtype: string
+
+.. _vredvrdMDLMaterial.getModulePath():
+.. py:method:: vrdMDLMaterial.getModulePath()
+
+    Get the path of the underlying MDL module file.
+
+
+
+
+    :return: The path of the underlying MDL module file.
+    :rtype: string
+
+.. _vredvrdMDLMaterial.getProperties():
+.. py:method:: vrdMDLMaterial.getProperties()
+
+    Returns a list of all properties.
+
+
+
+
+    :return: The list of all properties.
+    :rtype: vrdMDLProperties
+
+.. _vredvrdMDLMaterial.getProperty(materialName, parameterId):
+.. py:method:: vrdMDLMaterial.getProperty(materialName, parameterId)
+
+    Query the value of a MDL property.
+
+
+
+    :param materialName: Name of a MDL material
+    :type materialName: string
+
+    :param parameterId: Property ID
+    :type parameterId: string
+
+    :return: The value for this property
+    :rtype: QVariant
+
+.. _vredvrdMDLMaterial.hasModuleData():
+.. py:method:: vrdMDLMaterial.hasModuleData()
+
+    Check if a MDL module file was successfully loaded.
+
+
+
+
+    :return: True, if MDL module data are available.
+    :rtype: bool
+
+.. _vredvrdMDLMaterial.isModuleValid():
+.. py:method:: vrdMDLMaterial.isModuleValid()
+
+    Check if a MDL module file is valid.
+
+
+
+
+    :return: True, if MDL module data is valid.
+    :rtype: bool
+
+.. _vredvrdMDLMaterial.loadModule(path):
+.. py:method:: vrdMDLMaterial.loadModule(path)
+
+    Load a MDL module to this material.
+
+
+
+    :param path: The path for the MDL module file.
+    :type path: string
+
+    :return: True, if the MDL module was successfully loaded.
+    :rtype: bool
+
+.. _vredvrdMDLMaterial.resetMaterial():
+.. py:method:: vrdMDLMaterial.resetMaterial()
+
+    Resets a material to its default state.
+
+
+
+
+    
+    
+
+.. _vredvrdMDLMaterial.setActiveMaterialIndex(index):
+.. py:method:: vrdMDLMaterial.setActiveMaterialIndex(index)
+
+    Gets the index of the active material.
+
+
+
+    :param index: 
+    :type index: integer
+
+    
+    
+
+.. _vredvrdMDLMaterial.setActiveMaterialProperty(parameterId, value):
+.. py:method:: vrdMDLMaterial.setActiveMaterialProperty(parameterId, value)
+
+    Sets a MDL property for the active material.
+
+
+
+    :param parameterId: Property ID
+    :type parameterId: string
+
+    :param value: New value for the property
+    :type value: QVariant
+
+    
+    
+
+.. _vredvrdMDLMaterial.setProperty(materialName, parameterId, value):
+.. py:method:: vrdMDLMaterial.setProperty(materialName, parameterId, value)
+
+    Sets a MDL property.
+
+
+
+    :param materialName: Name of the material
+    :type materialName: string
+
+    :param parameterId: Property ID
+    :type parameterId: string
+
+    :param value: New value for the property
+    :type value: QVariant
+
+    
+    
+
+
+
+
+
+
+
+
+
+

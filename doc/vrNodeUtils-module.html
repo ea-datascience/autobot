@@ -1,0 +1,3132 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>vrNodeUtils</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >VRED Python API v1</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        Module&nbsp;vrNodeUtils
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="vrNodeUtils-module.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== MODULE DESCRIPTION ==================== -->
+<h1 class="epydoc">Module vrNodeUtils</h1><p class="nomargin-top"></p>
+<p>The get/set TransformNode functions are <b>deprecated</b>; use 
+  vrdTransformNode instead.</p>
+
+<!-- ==================== FUNCTIONS ==================== -->
+<a name="section-Functions"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Functions</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#addFaceNormals" class="summary-sig-name">addFaceNormals</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      See calcFaceNormals with the exception that the calculation is only 
+      performed for geometries without normals.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#cacheVBO" class="summary-sig-name">cacheVBO</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Deprecated and not functional anymore! Rebuilds all vertex buffer 
+      objects for the whole scene or the given subtree node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#calcFaceNormalRepresentation" class="summary-sig-name">calcFaceNormalRepresentation</a>(<span class="summary-sig-arg">length</span>)</span><br />
+      Creates visualization geometry for face normals.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#calcFaceNormals" class="summary-sig-name">calcFaceNormals</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Calculates new vertex normals based on face normals.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#calcNormalAndBitangent" class="summary-sig-name">calcNormalAndBitangent</a>(<span class="summary-sig-arg">root_node</span>,
+        <span class="summary-sig-arg">textureUnit</span>,
+        <span class="summary-sig-arg">tangentTarget</span>,
+        <span class="summary-sig-arg">binormalTarget</span>)</span><br />
+      Calculates tangents and binormals depending on vertex normals and 
+      texture coordinates.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#calcSecondaryColorRepresentation" class="summary-sig-name">calcSecondaryColorRepresentation</a>(<span class="summary-sig-arg">length</span>)</span><br />
+      Creates visualization geometry for secondary vertex colors.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#calcVertexColorRepresentation" class="summary-sig-name">calcVertexColorRepresentation</a>(<span class="summary-sig-arg">length</span>)</span><br />
+      Creates visualization geometry for vertex colors.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#calcVertexNormalRepresentation" class="summary-sig-name">calcVertexNormalRepresentation</a>(<span class="summary-sig-arg">length</span>)</span><br />
+      Creates visualization geometry for vertex normals.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#calcVertexNormals" class="summary-sig-name">calcVertexNormals</a>(<span class="summary-sig-arg">root_node</span>,
+        <span class="summary-sig-arg">angle</span>)</span><br />
+      Calculates new and smooth vertex normals.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#convertAllToComponentTransform" class="summary-sig-name">convertAllToComponentTransform</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Converts all Transform nodes of a given subgraph to 
+      VRML-ComponentTransform nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#convertAllToTransform" class="summary-sig-name">convertAllToTransform</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Converts all Component transform nodes of a given subgraph to normal 
+      transform nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">FieldContainerPtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#createAttachment" class="summary-sig-name">createAttachment</a>(<span class="summary-sig-arg">type</span>)</span><br />
+      Creates a new attachment of a given type</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">vrNodePtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#createBox" class="summary-sig-name">createBox</a>(<span class="summary-sig-arg">size_x</span>,
+        <span class="summary-sig-arg">size_y</span>,
+        <span class="summary-sig-arg">size_z</span>,
+        <span class="summary-sig-arg">res_x</span>,
+        <span class="summary-sig-arg">res_y</span>,
+        <span class="summary-sig-arg">res_z</span>,
+        <span class="summary-sig-arg">red</span>,
+        <span class="summary-sig-arg">green</span>,
+        <span class="summary-sig-arg">blue</span>,
+        <span class="summary-sig-arg">alpha</span>)</span><br />
+      Creates a box object of size x/y/z in a given rgb color.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">vrNodePtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#createCone" class="summary-sig-name">createCone</a>(<span class="summary-sig-arg">height</span>,
+        <span class="summary-sig-arg">radius</span>,
+        <span class="summary-sig-arg">sides</span>,
+        <span class="summary-sig-arg">create_side</span>,
+        <span class="summary-sig-arg">create_bottom</span>,
+        <span class="summary-sig-arg">red</span>,
+        <span class="summary-sig-arg">green</span>,
+        <span class="summary-sig-arg">blue</span>)</span><br />
+      Creates a cone, or parts of it, in a given size and color.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">vrNodePtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#createCylinder" class="summary-sig-name">createCylinder</a>(<span class="summary-sig-arg">height</span>,
+        <span class="summary-sig-arg">radius</span>,
+        <span class="summary-sig-arg">sides</span>,
+        <span class="summary-sig-arg">create_side</span>,
+        <span class="summary-sig-arg">create_top</span>,
+        <span class="summary-sig-arg">create_bottom</span>,
+        <span class="summary-sig-arg">red</span>,
+        <span class="summary-sig-arg">green</span>,
+        <span class="summary-sig-arg">blue</span>)</span><br />
+      Creates a cylinder, or parts of it, in a given size and color.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">vrNodePtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#createEnvBox" class="summary-sig-name">createEnvBox</a>(<span class="summary-sig-arg">size</span>,
+        <span class="summary-sig-arg">res_x</span>,
+        <span class="summary-sig-arg">res_y</span>,
+        <span class="summary-sig-arg">res_z</span>,
+        <span class="summary-sig-arg">red</span>,
+        <span class="summary-sig-arg">green</span>,
+        <span class="summary-sig-arg">blue</span>,
+        <span class="summary-sig-arg">transparency</span>,
+        <span class="summary-sig-arg">texture</span>)</span><br />
+      Creates a box with an environment texture.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">vrNodePtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#createLatLongSphere" class="summary-sig-name">createLatLongSphere</a>(<span class="summary-sig-arg">latres</span>,
+        <span class="summary-sig-arg">longres</span>,
+        <span class="summary-sig-arg">radius</span>,
+        <span class="summary-sig-arg">red</span>,
+        <span class="summary-sig-arg">green</span>,
+        <span class="summary-sig-arg">blue</span>)</span><br />
+      Creates a sphere in a given size and color, with two different 
+      resolutions.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">vrNodePtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#createLine" class="summary-sig-name">createLine</a>(<span class="summary-sig-arg">ax</span>,
+        <span class="summary-sig-arg">ay</span>,
+        <span class="summary-sig-arg">az</span>,
+        <span class="summary-sig-arg">bx</span>,
+        <span class="summary-sig-arg">by</span>,
+        <span class="summary-sig-arg">bz</span>,
+        <span class="summary-sig-arg">red</span>,
+        <span class="summary-sig-arg">green</span>,
+        <span class="summary-sig-arg">blue</span>)</span><br />
+      Creates a line from point a to point b in a given rgb color.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a name="createMipmaps"></a><span class="summary-sig-name">createMipmaps</span>()</span><br />
+      Creates mipmaps for all textures.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">vrNodePtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#createPlane" class="summary-sig-name">createPlane</a>(<span class="summary-sig-arg">size_x</span>,
+        <span class="summary-sig-arg">size_y</span>,
+        <span class="summary-sig-arg">res_x</span>,
+        <span class="summary-sig-arg">res_y</span>,
+        <span class="summary-sig-arg">red</span>,
+        <span class="summary-sig-arg">green</span>,
+        <span class="summary-sig-arg">blue</span>)</span><br />
+      Creates a plane object of size x/y in a given rgb color.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#createShellNodes" class="summary-sig-name">createShellNodes</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Converts groups to shell nodes if all children are surfaces.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">vrNodePtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#createSphere" class="summary-sig-name">createSphere</a>(<span class="summary-sig-arg">resolution</span>,
+        <span class="summary-sig-arg">radius</span>,
+        <span class="summary-sig-arg">red</span>,
+        <span class="summary-sig-arg">green</span>,
+        <span class="summary-sig-arg">blue</span>)</span><br />
+      Creates a sphere in a give size and color.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">float (32bit)</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#degToRad" class="summary-sig-name">degToRad</a>(<span class="summary-sig-arg">degrees</span>)</span><br />
+      Converts degrees to radians.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#downscaleTextures" class="summary-sig-name">downscaleTextures</a>(<span class="summary-sig-arg">factor</span>)</span><br />
+      Downscale all textures within the scene.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">NodePtr</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#findLargestGeometry" class="summary-sig-name">findLargestGeometry</a>(<span class="summary-sig-arg">max_tris_limit</span>)</span><br />
+      Returns the largest geometry with the number of triangles smaller 
+      than max_tris_limit.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Vec3f</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#getBoundingBoxCenter" class="summary-sig-name">getBoundingBoxCenter</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">worldSpace</span>)</span><br />
+      Gets the center of the object bounding volume.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">list of vrNodePtrs</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#getMirroredNodes" class="summary-sig-name">getMirroredNodes</a>(<span class="summary-sig-arg">root_node</span>,
+        <span class="summary-sig-arg">invert</span>)</span><br />
+      Returns all mirrored geometry nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">string</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#getTransformNodeEulerRotationOrder" class="summary-sig-name">getTransformNodeEulerRotationOrder</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Gets the rotation order of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Vec3f</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#getTransformNodeRotatePivot" class="summary-sig-name">getTransformNodeRotatePivot</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">worldSpace</span>)</span><br />
+      Gets the rotate pivot of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Vec3f</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#getTransformNodeRotatePivotTranslation" class="summary-sig-name">getTransformNodeRotatePivotTranslation</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Gets the rotate pivot translation value of a transform node (This 
+      translation has been introduced to prevent an object from moving when
+      the pivot is moved).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Vec3f</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#getTransformNodeRotation" class="summary-sig-name">getTransformNodeRotation</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Gets the rotation value of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Vec3f</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#getTransformNodeRotationOrientation" class="summary-sig-name">getTransformNodeRotationOrientation</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Gets the rotation orientation value of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Vec3f</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#getTransformNodeScale" class="summary-sig-name">getTransformNodeScale</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Gets the scale value of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Vec3f</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#getTransformNodeScalePivot" class="summary-sig-name">getTransformNodeScalePivot</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">worldSpace</span>)</span><br />
+      Gets the scale pivot of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Vec3f</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#getTransformNodeScalePivotTranslation" class="summary-sig-name">getTransformNodeScalePivotTranslation</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Gets the scale pivot translation value of a transform node (This 
+      translation has been introduced to prevent an object from moving when
+      the pivot is moved)</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Vec3f</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#getTransformNodeShear" class="summary-sig-name">getTransformNodeShear</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Gets the shear value of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">Vec3f</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#getTransformNodeTranslation" class="summary-sig-name">getTransformNodeTranslation</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">worldSpace</span>)</span><br />
+      Gets the translation value of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#isBSide" class="summary-sig-name">isBSide</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Queries the B-Side flag of a node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#normalizeNormals" class="summary-sig-name">normalizeNormals</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Recalculates the vertex normals to have unit length.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#normalizeSurfaces" class="summary-sig-name">normalizeSurfaces</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Normalizes the knot vector of a surfaces.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#offsetAlongNormal" class="summary-sig-name">offsetAlongNormal</a>(<span class="summary-sig-arg">root_node</span>,
+        <span class="summary-sig-arg">offset</span>)</span><br />
+      Offsets the geometries vertices along the vertex normal.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#optimizeShellSurfaces" class="summary-sig-name">optimizeShellSurfaces</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Reduces memory consumption of Shell Surfaces by removing their names 
+      and optimizing some additional data.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#optimizeTextures" class="summary-sig-name">optimizeTextures</a>()</span><br />
+      Optimizes memory usage of textures.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#removeUnreferencedNodes" class="summary-sig-name">removeUnreferencedNodes</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Removes unreferenced nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setDisplayList" class="summary-sig-name">setDisplayList</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">enable</span>)</span><br />
+      Enables(true)/disables(false) usage of display lists for rendering 
+      for the whole scene or a given subgraph.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setGeometryType" class="summary-sig-name">setGeometryType</a>(<span class="summary-sig-arg">nodes</span>,
+        <span class="summary-sig-arg">geoTypes</span>)</span><br />
+      Sets the geometry types for a list of nodes.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setTexturesPriority" class="summary-sig-name">setTexturesPriority</a>(<span class="summary-sig-arg">priority</span>)</span><br />
+      Deprecated: Changes the priority of all textures.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setToBSide" class="summary-sig-name">setToBSide</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">isBSide</span>,
+        <span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">isBSide</span>)</span><br />
+      Sets the B-Side flag of a node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setTransformNodeEulerRotationOrder" class="summary-sig-name">setTransformNodeEulerRotationOrder</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">rotationOrder</span>)</span><br />
+      Sets the rotation order of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setTransformNodeRotatePivot" class="summary-sig-name">setTransformNodeRotatePivot</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">z</span>,
+        <span class="summary-sig-arg">worldSpace</span>)</span><br />
+      Sets the rotate pivot of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setTransformNodeRotatePivotTranslation" class="summary-sig-name">setTransformNodeRotatePivotTranslation</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">z</span>)</span><br />
+      Sets the rotate pivot translation value of a transform node (This 
+      translation has been introduced to prevent an object from moving when
+      the pivot is moved).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setTransformNodeRotation" class="summary-sig-name">setTransformNodeRotation</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">z</span>)</span><br />
+      Sets the rotation value of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setTransformNodeRotationOrientation" class="summary-sig-name">setTransformNodeRotationOrientation</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">z</span>)</span><br />
+      Sets the rotation orientation value of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setTransformNodeScale" class="summary-sig-name">setTransformNodeScale</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">z</span>)</span><br />
+      Sets the scale value of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setTransformNodeScalePivot" class="summary-sig-name">setTransformNodeScalePivot</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">z</span>,
+        <span class="summary-sig-arg">worldSpace</span>)</span><br />
+      Sets the scale pn of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setTransformNodeScalePivotTranslation" class="summary-sig-name">setTransformNodeScalePivotTranslation</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">z</span>)</span><br />
+      Sets the scale pivot translation value of a transform node (This 
+      translation has been introduced to prevent an object from moving when
+      the pivot is moved).</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setTransformNodeShear" class="summary-sig-name">setTransformNodeShear</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">xy</span>,
+        <span class="summary-sig-arg">xz</span>,
+        <span class="summary-sig-arg">yz</span>)</span><br />
+      Sets the shear value of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setTransformNodeTranslation" class="summary-sig-name">setTransformNodeTranslation</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">x</span>,
+        <span class="summary-sig-arg">y</span>,
+        <span class="summary-sig-arg">z</span>,
+        <span class="summary-sig-arg">worldSpace</span>)</span><br />
+      Sets the translation value of a transform node.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#setVBO" class="summary-sig-name">setVBO</a>(<span class="summary-sig-arg">node</span>,
+        <span class="summary-sig-arg">enable</span>)</span><br />
+      Deprecated: Enables(true)/disables(false) usage of vertex buffer 
+      objects for rendering for the whole scene or a given subgraph.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#swapFaceNormals" class="summary-sig-name">swapFaceNormals</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Swaps the orientation of face normals.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#swapNormals" class="summary-sig-name">swapNormals</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Swaps the orientation of face and vertex normals.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#swapVertexNormals" class="summary-sig-name">swapVertexNormals</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Swaps the orientation of vertex normals.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#unshareCores" class="summary-sig-name">unshareCores</a>(<span class="summary-sig-arg">node</span>)</span><br />
+      Removes core sharing.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrNodeUtils-module.html#updateAmbientOcclusionData" class="summary-sig-name">updateAmbientOcclusionData</a>(<span class="summary-sig-arg">root_node</span>)</span><br />
+      Fixes ambient occlusion calculations from old vred versions:</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+</table>
+<!-- ==================== FUNCTION DETAILS ==================== -->
+<a name="section-FunctionDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Function Details</span></td>
+</tr>
+</table>
+<a name="addFaceNormals"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">addFaceNormals</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>See calcFaceNormals with the exception that the calculation is only 
+  performed for geometries without normals. There are two functions to 
+  generate them:</p>
+  <p>addFaceNormals() Adds face normals for the complete scene.</p>
+  <p>addFaceNormals(root_node) Adds face normals for a given subgraph.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph (Optional).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="cacheVBO"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">cacheVBO</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Deprecated and not functional anymore! Rebuilds all vertex buffer 
+  objects for the whole scene or the given subtree node. There are two 
+  valid sets of parameters:</p>
+  <p>cacheVBO(node) or</p>
+  <p>cacheVBO()</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The root node of the subgraph (Optional).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="calcFaceNormalRepresentation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">calcFaceNormalRepresentation</span>(<span class="sig-arg">length</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates visualization geometry for face normals. Useful for debugging 
+  purposes. The created geometry will be added to the root node of the 
+  scene.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>length</code></strong> (float) - The length of the created lines.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="calcFaceNormals"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">calcFaceNormals</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculates new vertex normals based on face normals. There are two 
+  functions to generate them:</p>
+  <p>calcVertexNormals() Calculates new face normals for the complete 
+  scene.</p>
+  <p>calcVertexNormals(root_node) Calculates new face normals for a given 
+  subgraph.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph (Optional).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="calcNormalAndBitangent"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">calcNormalAndBitangent</span>(<span class="sig-arg">root_node</span>,
+        <span class="sig-arg">textureUnit</span>,
+        <span class="sig-arg">tangentTarget</span>,
+        <span class="sig-arg">binormalTarget</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculates tangents and binormals depending on vertex normals and 
+  texture coordinates. Tangents and Binormals are needed for advanced 
+  shading materials.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (vrNodePtr) - The root node of the subgraph.</li>
+        <li><strong class="pname"><code>textureUnit</code></strong> (integer) - Texture unit.</li>
+        <li><strong class="pname"><code>tangentTarget</code></strong> (integer) - Tangent target.</li>
+        <li><strong class="pname"><code>binormalTarget</code></strong> (integer) - Binormal target.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="calcSecondaryColorRepresentation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">calcSecondaryColorRepresentation</span>(<span class="sig-arg">length</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates visualization geometry for secondary vertex colors. Useful for
+  debugging purposes. The created geometry will be added to the root node 
+  of the scene.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>length</code></strong> (float) - The length of the created lines.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="calcVertexColorRepresentation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">calcVertexColorRepresentation</span>(<span class="sig-arg">length</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates visualization geometry for vertex colors. Useful for debugging
+  purposes. The created geometry will be added to the root node of the 
+  scene.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>length</code></strong> (float) - The length of the created lines.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="calcVertexNormalRepresentation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">calcVertexNormalRepresentation</span>(<span class="sig-arg">length</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates visualization geometry for vertex normals. Useful for 
+  debugging purposes. The created geometry will be added to the root node 
+  of the scene.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>length</code></strong> (float) - The length of the created lines.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="calcVertexNormals"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">calcVertexNormals</span>(<span class="sig-arg">root_node</span>,
+        <span class="sig-arg">angle</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Calculates new and smooth vertex normals. There are three functions to
+  generate vertex normals:</p>
+  <p>calcVertexNormals() Calculates new vertex normals for the complete 
+  scene.</p>
+  <p>calcVertexNormals(angle) Calculates new vertex normals for the 
+  complete scene with respect to dihedral angle.</p>
+  <p>calcVertexNormals(root_node,angle) Calculates new vertex normals for a
+  given subgraph with respect to dihedral angle.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph (Optional).</li>
+        <li><strong class="pname"><code>angle</code></strong> (float (32bit)) - The angle in degrees (Optional).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="convertAllToComponentTransform"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">convertAllToComponentTransform</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts all Transform nodes of a given subgraph to 
+  VRML-ComponentTransform nodes.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="convertAllToTransform"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">convertAllToTransform</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts all Component transform nodes of a given subgraph to normal 
+  transform nodes.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node of the subgraph.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createAttachment"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createAttachment</span>(<span class="sig-arg">type</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates a new attachment of a given type</p>
+  <p>Types can be:</p>
+  <ul>
+    <li>
+      Name
+    </li>
+    <li>
+      ValuePair
+    </li>
+    <li>
+      TagAttachment
+    </li>
+    <li>
+      any attachment type that is supported by VRED
+    </li>
+  </ul>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>type</code></strong> (string) - The type of the attachment.</li>
+    </ul></dd>
+    <dt>Returns: FieldContainerPtr</dt>
+        <dd>The created attachment.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createBox"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createBox</span>(<span class="sig-arg">size_x</span>,
+        <span class="sig-arg">size_y</span>,
+        <span class="sig-arg">size_z</span>,
+        <span class="sig-arg">res_x</span>,
+        <span class="sig-arg">res_y</span>,
+        <span class="sig-arg">res_z</span>,
+        <span class="sig-arg">red</span>,
+        <span class="sig-arg">green</span>,
+        <span class="sig-arg">blue</span>,
+        <span class="sig-arg">alpha</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates a box object of size x/y/z in a given rgb color.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>size_x</code></strong> (float (32bit)) - The size in dimension x.</li>
+        <li><strong class="pname"><code>size_y</code></strong> (float (32bit)) - The size in dimension y.</li>
+        <li><strong class="pname"><code>size_z</code></strong> (float (32bit)) - The size in dimension z.</li>
+        <li><strong class="pname"><code>res_x</code></strong> (short unsigned (16bit)) - The resolution in dimension x for the subdivision.</li>
+        <li><strong class="pname"><code>res_y</code></strong> (short unsigned (16bit)) - The resolution in dimension y for the subdivision.</li>
+        <li><strong class="pname"><code>res_z</code></strong> (short unsigned (16bit)) - The resolution in dimension z for the subdivision.</li>
+        <li><strong class="pname"><code>red</code></strong> (float (32bit)) - The red component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>green</code></strong> (float (32bit)) - The green component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>blue</code></strong> (float (32bit)) - The blue component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>alpha</code></strong> (float (32bit)) - The alpha value in [0.0, 1.0] (Optional).</li>
+    </ul></dd>
+    <dt>Returns: vrNodePtr</dt>
+        <dd>A pointer to the box.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createCone"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createCone</span>(<span class="sig-arg">height</span>,
+        <span class="sig-arg">radius</span>,
+        <span class="sig-arg">sides</span>,
+        <span class="sig-arg">create_side</span>,
+        <span class="sig-arg">create_bottom</span>,
+        <span class="sig-arg">red</span>,
+        <span class="sig-arg">green</span>,
+        <span class="sig-arg">blue</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates a cone, or parts of it, in a given size and color.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>height</code></strong> (float (32bit)) - The height of the cone.</li>
+        <li><strong class="pname"><code>radius</code></strong> (float (32bit)) - The bottom radius of the cone.</li>
+        <li><strong class="pname"><code>sides</code></strong> (short unsigned (16bit)) - The number of elements the side consists of.</li>
+        <li><strong class="pname"><code>create_side</code></strong> (bool) - Creation of side geometry: On/Off.</li>
+        <li><strong class="pname"><code>create_bottom</code></strong> (bool) - Creation of bottom geometry: On/Off.</li>
+        <li><strong class="pname"><code>red</code></strong> (float (32bit)) - The red component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>green</code></strong> (float (32bit)) - The green component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>blue</code></strong> (float (32bit)) - The blue component of color in [0.0, 1.0].</li>
+    </ul></dd>
+    <dt>Returns: vrNodePtr</dt>
+        <dd>A pointer to the cone.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createCylinder"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createCylinder</span>(<span class="sig-arg">height</span>,
+        <span class="sig-arg">radius</span>,
+        <span class="sig-arg">sides</span>,
+        <span class="sig-arg">create_side</span>,
+        <span class="sig-arg">create_top</span>,
+        <span class="sig-arg">create_bottom</span>,
+        <span class="sig-arg">red</span>,
+        <span class="sig-arg">green</span>,
+        <span class="sig-arg">blue</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates a cylinder, or parts of it, in a given size and color.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>height</code></strong> (float (32bit)) - The height of the cylinder.</li>
+        <li><strong class="pname"><code>radius</code></strong> (float (32bit)) - The radius of the cylinder.</li>
+        <li><strong class="pname"><code>sides</code></strong> (short unsigned (16bit)) - The number of elements the side consists of.</li>
+        <li><strong class="pname"><code>create_side</code></strong> (bool) - Creation of side geometry: On/Off.</li>
+        <li><strong class="pname"><code>create_top</code></strong> (bool) - Creation of top geometry: On/Off.</li>
+        <li><strong class="pname"><code>create_bottom</code></strong> (bool) - Creation of bottom geometry: On/Off.</li>
+        <li><strong class="pname"><code>red</code></strong> (float (32bit)) - The red component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>green</code></strong> (float (32bit)) - The green component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>blue</code></strong> (float (32bit)) - The blue component of color in [0.0, 1.0].</li>
+    </ul></dd>
+    <dt>Returns: vrNodePtr</dt>
+        <dd>A pointer to the cylinder.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createEnvBox"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createEnvBox</span>(<span class="sig-arg">size</span>,
+        <span class="sig-arg">res_x</span>,
+        <span class="sig-arg">res_y</span>,
+        <span class="sig-arg">res_z</span>,
+        <span class="sig-arg">red</span>,
+        <span class="sig-arg">green</span>,
+        <span class="sig-arg">blue</span>,
+        <span class="sig-arg">transparency</span>,
+        <span class="sig-arg">texture</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates a box with an environment texture.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>size</code></strong> (float (32bit)) - The size of the box.</li>
+        <li><strong class="pname"><code>res_x</code></strong> (short unsigned (16bit)) - The resolution in dimension x for the subdivision.</li>
+        <li><strong class="pname"><code>res_y</code></strong> (short unsigned (16bit)) - The resolution in dimension y for the subdivision.</li>
+        <li><strong class="pname"><code>res_z</code></strong> (short unsigned (16bit)) - The resolution in dimension z for the subdivision.</li>
+        <li><strong class="pname"><code>red</code></strong> (float (32bit)) - The red component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>green</code></strong> (float (32bit)) - The green component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>blue</code></strong> (float (32bit)) - The blue component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>transparency</code></strong> (float (32bit)) - The transparency of the material in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>texture</code></strong> (string) - The name of the texture file.</li>
+    </ul></dd>
+    <dt>Returns: vrNodePtr</dt>
+        <dd>A pointer to the box.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createLatLongSphere"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createLatLongSphere</span>(<span class="sig-arg">latres</span>,
+        <span class="sig-arg">longres</span>,
+        <span class="sig-arg">radius</span>,
+        <span class="sig-arg">red</span>,
+        <span class="sig-arg">green</span>,
+        <span class="sig-arg">blue</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates a sphere in a given size and color, with two different 
+  resolutions.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>latres</code></strong> (short unsigned (16bit)) - The latitudinal resolution.</li>
+        <li><strong class="pname"><code>longres</code></strong> (short unsigned (16bit)) - The longitudinal resolution.</li>
+        <li><strong class="pname"><code>radius</code></strong> (float (32bit)) - The radius.</li>
+        <li><strong class="pname"><code>red</code></strong> (float (32bit)) - The red component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>green</code></strong> (float (32bit)) - The green component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>blue</code></strong> (float (32bit)) - The blue component of color in [0.0, 1.0].</li>
+    </ul></dd>
+    <dt>Returns: vrNodePtr</dt>
+        <dd>A pointer to the sphere.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createLine"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createLine</span>(<span class="sig-arg">ax</span>,
+        <span class="sig-arg">ay</span>,
+        <span class="sig-arg">az</span>,
+        <span class="sig-arg">bx</span>,
+        <span class="sig-arg">by</span>,
+        <span class="sig-arg">bz</span>,
+        <span class="sig-arg">red</span>,
+        <span class="sig-arg">green</span>,
+        <span class="sig-arg">blue</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates a line from point a to point b in a given rgb color.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>ax</code></strong> (float (32bit)) - The x component of point a.</li>
+        <li><strong class="pname"><code>ay</code></strong> (float (32bit)) - The y component of point a.</li>
+        <li><strong class="pname"><code>az</code></strong> (float (32bit)) - The z component of point a.</li>
+        <li><strong class="pname"><code>bx</code></strong> (float (32bit)) - The x component of point b.</li>
+        <li><strong class="pname"><code>by</code></strong> (float (32bit)) - The y component of point b.</li>
+        <li><strong class="pname"><code>bz</code></strong> (float (32bit)) - The z component of point b.</li>
+        <li><strong class="pname"><code>red</code></strong> (float (32bit)) - The red component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>green</code></strong> (float (32bit)) - The green component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>blue</code></strong> (float (32bit)) - The blue component of color in [0.0, 1.0].</li>
+    </ul></dd>
+    <dt>Returns: vrNodePtr</dt>
+        <dd>A pointer to the line.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createPlane"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createPlane</span>(<span class="sig-arg">size_x</span>,
+        <span class="sig-arg">size_y</span>,
+        <span class="sig-arg">res_x</span>,
+        <span class="sig-arg">res_y</span>,
+        <span class="sig-arg">red</span>,
+        <span class="sig-arg">green</span>,
+        <span class="sig-arg">blue</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates a plane object of size x/y in a given rgb color.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>size_x</code></strong> (float (32bit)) - The size in dimension x.</li>
+        <li><strong class="pname"><code>size_y</code></strong> (float (32bit)) - The size in dimension y.</li>
+        <li><strong class="pname"><code>res_x</code></strong> (short unsigned (16bit)) - The resolution in dimension x for the subdivision.</li>
+        <li><strong class="pname"><code>res_y</code></strong> (short unsigned (16bit)) - The resolution in dimension y for the subdivision.</li>
+        <li><strong class="pname"><code>red</code></strong> (float (32bit)) - The red component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>green</code></strong> (float (32bit)) - The green component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>blue</code></strong> (float (32bit)) - The blue component of color in [0.0, 1.0].</li>
+    </ul></dd>
+    <dt>Returns: vrNodePtr</dt>
+        <dd>A pointer to the plane.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createShellNodes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createShellNodes</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts groups to shell nodes if all children are surfaces.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node to start conversion</li>
+    </ul></dd>
+    <dt>Returns: bool</dt>
+        <dd>true: A shell node was created.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="createSphere"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">createSphere</span>(<span class="sig-arg">resolution</span>,
+        <span class="sig-arg">radius</span>,
+        <span class="sig-arg">red</span>,
+        <span class="sig-arg">green</span>,
+        <span class="sig-arg">blue</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Creates a sphere in a give size and color.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>resolution</code></strong> (short unsigned (16bit)) - The resolution (subdivision) of the sphere.</li>
+        <li><strong class="pname"><code>radius</code></strong> (float (32bit)) - The radius of the sphere.</li>
+        <li><strong class="pname"><code>red</code></strong> (float (32bit)) - The red component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>green</code></strong> (float (32bit)) - The green component of color in [0.0, 1.0].</li>
+        <li><strong class="pname"><code>blue</code></strong> (float (32bit)) - The blue component of color in [0.0, 1.0].</li>
+    </ul></dd>
+    <dt>Returns: vrNodePtr</dt>
+        <dd>A pointer to the sphere.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="degToRad"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">degToRad</span>(<span class="sig-arg">degrees</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts degrees to radians.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>degrees</code></strong> - The value in degrees.</li>
+        <li><strong class="pname"><code>degree</code></strong> (float (32bit))</li>
+    </ul></dd>
+    <dt>Returns: float (32bit)</dt>
+        <dd>The value in radians.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="downscaleTextures"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">downscaleTextures</span>(<span class="sig-arg">factor</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Downscale all textures within the scene. The memory usage for each 
+  texture will reduce of quadratic amount of the factor due to their 
+  two-dimensional nature.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>factor</code></strong> (integer (32bit)) - The factor to downscale textures with.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="findLargestGeometry"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">findLargestGeometry</span>(<span class="sig-arg">max_tris_limit</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns the largest geometry with the number of triangles smaller than
+  max_tris_limit.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>max_tris_limit</code></strong> (unsigned integer) - The maximum number of triangles.</li>
+    </ul></dd>
+    <dt>Returns: NodePtr</dt>
+        <dd>The node pointer to the largest geometry.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getBoundingBoxCenter"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getBoundingBoxCenter</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">worldSpace</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets the center of the object bounding volume.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node from which to get the center.</li>
+        <li><strong class="pname"><code>worldSpace</code></strong> (bool) - Gets the center in world space (true) or local space (false).</li>
+    </ul></dd>
+    <dt>Returns: Vec3f</dt>
+        <dd>A vector with x, y and z coordinates.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getMirroredNodes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getMirroredNodes</span>(<span class="sig-arg">root_node</span>,
+        <span class="sig-arg">invert</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns all mirrored geometry nodes.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (NodePtr) - The root node.</li>
+        <li><strong class="pname"><code>invert</code></strong> (bool) - Inversion: Enable/Disable (Optional). Default is false.</li>
+    </ul></dd>
+    <dt>Returns: list of vrNodePtrs</dt>
+        <dd>The nodes.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTransformNodeEulerRotationOrder"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTransformNodeEulerRotationOrder</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets the rotation order of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node from which to retrieve the rotation order.</li>
+    </ul></dd>
+    <dt>Returns: string</dt>
+        <dd>Euler rotation order</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTransformNodeRotatePivot"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTransformNodeRotatePivot</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">worldSpace</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets the rotate pivot of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node from which to retrieve the rotate pivot.</li>
+        <li><strong class="pname"><code>worldSpace</code></strong> (bool) - Get the rotate pivot in world space (true) or local space 
+          (false).</li>
+    </ul></dd>
+    <dt>Returns: Vec3f</dt>
+        <dd>A vector with x, y and z coordinates.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTransformNodeRotatePivotTranslation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTransformNodeRotatePivotTranslation</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets the rotate pivot translation value of a transform node (This 
+  translation has been introduced to prevent an object from moving when the
+  pivot is moved).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node from which to retrieve the translation.</li>
+    </ul></dd>
+    <dt>Returns: Vec3f</dt>
+        <dd>A vector with x, y and z coordinates.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTransformNodeRotation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTransformNodeRotation</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets the rotation value of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node from which to retrieve the rotation.</li>
+    </ul></dd>
+    <dt>Returns: Vec3f</dt>
+        <dd>A vector with x, y and z coordinates.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTransformNodeRotationOrientation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTransformNodeRotationOrientation</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets the rotation orientation value of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node from which to retrieve the rotation orientation.</li>
+    </ul></dd>
+    <dt>Returns: Vec3f</dt>
+        <dd>A vector with x, y and z coordinates.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTransformNodeScale"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTransformNodeScale</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets the scale value of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node  which to retrieve the scaling.</li>
+    </ul></dd>
+    <dt>Returns: Vec3f</dt>
+        <dd>A vector with x, y and z coordinates.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTransformNodeScalePivot"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTransformNodeScalePivot</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">worldSpace</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets the scale pivot of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node from which to get the scale pivot.</li>
+        <li><strong class="pname"><code>worldSpace</code></strong> (bool) - Get scale pivot in world space (true) or local space (false).</li>
+    </ul></dd>
+    <dt>Returns: Vec3f</dt>
+        <dd>A vector with x, y and z coordinates.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTransformNodeScalePivotTranslation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTransformNodeScalePivotTranslation</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets the scale pivot translation value of a transform node (This 
+  translation has been introduced to prevent an object from moving when the
+  pivot is moved)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node from which to retrieve the translation.</li>
+    </ul></dd>
+    <dt>Returns: Vec3f</dt>
+        <dd>A vector with x, y and z coordinates.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTransformNodeShear"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTransformNodeShear</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets the shear value of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node from which to get the shear value.</li>
+    </ul></dd>
+    <dt>Returns: Vec3f</dt>
+        <dd>A vector with x, y and z coordinates.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getTransformNodeTranslation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getTransformNodeTranslation</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">worldSpace</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Gets the translation value of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node from which to retrieve the translation.</li>
+        <li><strong class="pname"><code>worldSpace</code></strong> (bool) - gets the translation in world space (true) or local space 
+          (false).</li>
+    </ul></dd>
+    <dt>Returns: Vec3f</dt>
+        <dd>A vector with x, y and z coordinates.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="isBSide"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">isBSide</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Queries the B-Side flag of a node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node to check the B-Side flag.</li>
+    </ul></dd>
+    <dt>Returns: bool</dt>
+        <dd>true: Node is B-Side, false: Node is A-Side.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="normalizeNormals"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">normalizeNormals</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Recalculates the vertex normals to have unit length. There are two 
+  functions to calculate them:</p>
+  <p>normalizeNormals(root_node) normalize the normals for the complete 
+  scene.</p>
+  <p>normalizeNormals(root_nodes) normalize the normals for a given 
+  subgraph.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (vrNodePtr or list of vrNodePtrs) - The root node of the subgraph or a list of nodes.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="normalizeSurfaces"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">normalizeSurfaces</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Normalizes the knot vector of a surfaces. This is required for NURBS 
+  raytracing and should be usually done on import.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (vrNodePtr) - The root node of the subgraph.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="offsetAlongNormal"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">offsetAlongNormal</span>(<span class="sig-arg">root_node</span>,
+        <span class="sig-arg">offset</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Offsets the geometries vertices along the vertex normal.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (vrNodePtr) - The root_node to offset.</li>
+        <li><strong class="pname"><code>offset</code></strong> - The offset amount.</li>
+        <li><strong class="pname"><code>float</code></strong> (float)</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="optimizeShellSurfaces"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">optimizeShellSurfaces</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Reduces memory consumption of Shell Surfaces by removing their names 
+  and optimizing some additional data.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The root node.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="optimizeTextures"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">optimizeTextures</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Optimizes memory usage of textures. Will often lead to significant 
+  savings. Does maintain the quality.</p>
+  <dl class="fields">
+  </dl>
+</td></tr></table>
+</div>
+<a name="removeUnreferencedNodes"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">removeUnreferencedNodes</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes unreferenced nodes.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The root node.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setDisplayList"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setDisplayList</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">enable</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Enables(true)/disables(false) usage of display lists for rendering for
+  the whole scene or a given subgraph. Rendering static geometry with 
+  display list is typically much faster. There are two valid sets of 
+  parameters:</p>
+  <p>setDisplayList(node,enable) or</p>
+  <p>setDisplayList(enable)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The root node of the subgraph (Optional).</li>
+        <li><strong class="pname"><code>enable</code></strong> (bool) - Enable or disable display lists.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setGeometryType"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setGeometryType</span>(<span class="sig-arg">nodes</span>,
+        <span class="sig-arg">geoTypes</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the geometry types for a list of nodes.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>nodes</code></strong> (list of vrNodePtrs) - The nodes.</li>
+        <li><strong class="pname"><code>geoTypes</code></strong> (list of integers (unsigned 32bit)) - The list of geometry types.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTexturesPriority"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTexturesPriority</span>(<span class="sig-arg">priority</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Deprecated: Changes the priority of all textures.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>priority</code></strong> (float (32bit)) - The priority value in [0.0, 1.0].</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setToBSide"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setToBSide</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">isBSide</span>,
+        <span class="sig-arg">node</span>,
+        <span class="sig-arg">isBSide</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the B-Side flag of a node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node to set the B-Side flag.</li>
+        <li><strong class="pname"><code>isBSide</code></strong> (bool
+          <p>Sets the B-side flags for a list of nodes.</p>) - The B-Side on/off flag.</li>
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The nodes.</li>
+        <li><strong class="pname"><code>isBSide</code></strong> (bool
+          <p>Sets the B-side flags for a list of nodes.</p>) - The B-Side on/off flag.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTransformNodeEulerRotationOrder"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTransformNodeEulerRotationOrder</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">rotationOrder</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the rotation order of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node to set the rotation order.</li>
+        <li><strong class="pname"><code>rotationOrder</code></strong> (string) - The rotation order, e.g. &quot;xyz&quot; or &quot;zyx&quot;</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTransformNodeRotatePivot"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTransformNodeRotatePivot</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">z</span>,
+        <span class="sig-arg">worldSpace</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the rotate pivot of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node for which to set the rotate pivot.</li>
+        <li><strong class="pname"><code>x</code></strong> (float) - The x axis rotate pivot.</li>
+        <li><strong class="pname"><code>y</code></strong> (float) - The y axis rotate pivot.</li>
+        <li><strong class="pname"><code>z</code></strong> (float) - The z axis rotate pivot.</li>
+        <li><strong class="pname"><code>worldSpace</code></strong> (bool) - Set the rotate pivot in world space (true) or local space 
+          (false).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTransformNodeRotatePivotTranslation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTransformNodeRotatePivotTranslation</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">z</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the rotate pivot translation value of a transform node (This 
+  translation has been introduced to prevent an object from moving when the
+  pivot is moved).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node to translate.</li>
+        <li><strong class="pname"><code>x</code></strong> (float) - The x axis translation.</li>
+        <li><strong class="pname"><code>y</code></strong> (float) - The y axis translation.</li>
+        <li><strong class="pname"><code>z</code></strong> (float) - The z axis translation.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTransformNodeRotation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTransformNodeRotation</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">z</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the rotation value of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node to rotate.</li>
+        <li><strong class="pname"><code>x</code></strong> (float) - The x axis rotation.</li>
+        <li><strong class="pname"><code>y</code></strong> (float) - The y axis rotation.</li>
+        <li><strong class="pname"><code>z</code></strong> (float) - The z axis rotation.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTransformNodeRotationOrientation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTransformNodeRotationOrientation</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">z</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the rotation orientation value of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node to orientate.</li>
+        <li><strong class="pname"><code>x</code></strong> (float) - The x axis rotation orientation.</li>
+        <li><strong class="pname"><code>y</code></strong> (float) - The y axis rotation orientation.</li>
+        <li><strong class="pname"><code>z</code></strong> (float) - The z axis rotation orientation.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTransformNodeScale"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTransformNodeScale</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">z</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the scale value of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node to scale.</li>
+        <li><strong class="pname"><code>x</code></strong> (float) - The x axis scale.</li>
+        <li><strong class="pname"><code>y</code></strong> (float) - The y axis scale.</li>
+        <li><strong class="pname"><code>z</code></strong> (float) - The z axis scale.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTransformNodeScalePivot"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTransformNodeScalePivot</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">z</span>,
+        <span class="sig-arg">worldSpace</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the scale pn of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node for which to set the scale pivot.</li>
+        <li><strong class="pname"><code>x</code></strong> (float) - The x axis scale pivot.</li>
+        <li><strong class="pname"><code>y</code></strong> (float) - The y axis scale pivot.</li>
+        <li><strong class="pname"><code>z</code></strong> (float) - The z axis scale pivot.</li>
+        <li><strong class="pname"><code>worldSpace</code></strong> (bool) - Set the scale pivot in world space (true) or local space (false).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTransformNodeScalePivotTranslation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTransformNodeScalePivotTranslation</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">z</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the scale pivot translation value of a transform node (This 
+  translation has been introduced to prevent an object from moving when the
+  pivot is moved).</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node to translate.</li>
+        <li><strong class="pname"><code>x</code></strong> (float) - The x axis translation.</li>
+        <li><strong class="pname"><code>y</code></strong> (float) - The y axis translation.</li>
+        <li><strong class="pname"><code>z</code></strong> (float) - The z axis translation.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTransformNodeShear"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTransformNodeShear</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">xy</span>,
+        <span class="sig-arg">xz</span>,
+        <span class="sig-arg">yz</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the shear value of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node to shear.</li>
+        <li><strong class="pname"><code>xy</code></strong> (float) - The xy shear.</li>
+        <li><strong class="pname"><code>xz</code></strong> (float) - The xz shear.</li>
+        <li><strong class="pname"><code>yz</code></strong> (float) - The yz shear.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setTransformNodeTranslation"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setTransformNodeTranslation</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">x</span>,
+        <span class="sig-arg">y</span>,
+        <span class="sig-arg">z</span>,
+        <span class="sig-arg">worldSpace</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Sets the translation value of a transform node.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The node to translate.</li>
+        <li><strong class="pname"><code>x</code></strong> (float) - The x axis translation.</li>
+        <li><strong class="pname"><code>y</code></strong> (float) - The y axis translation.</li>
+        <li><strong class="pname"><code>z</code></strong> (float) - The z axis translation.</li>
+        <li><strong class="pname"><code>worldSpace</code></strong> (bool) - Sets the translation in world space (true) or local space 
+          (false).</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setVBO"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setVBO</span>(<span class="sig-arg">node</span>,
+        <span class="sig-arg">enable</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Deprecated: Enables(true)/disables(false) usage of vertex buffer 
+  objects for rendering for the whole scene or a given subgraph. There are 
+  two valid sets of parameters:</p>
+  <p>setVBO(node,enable) or</p>
+  <p>setVBO(enable)</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The root node of the subgraph (Optional).</li>
+        <li><strong class="pname"><code>enable</code></strong> (bool) - Enable or disable vbos.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="swapFaceNormals"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">swapFaceNormals</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Swaps the orientation of face normals. There are two functions to swap
+  them:</p>
+  <p>swapFaceNormals(root_node) swaps the normals for the complete 
+  scene.</p>
+  <p>swapFaceNormals(root_nodes) swaps the normals for a given 
+  subgraph.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (vrNodePtr or list of vrNodePtrs) - The root node of the subgraph or a list of nodes.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="swapNormals"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">swapNormals</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Swaps the orientation of face and vertex normals. There are two 
+  functions to swap them:</p>
+  <p>swapNormals(root_node) swaps the normals for the complete scene.</p>
+  <p>swapNormals(root_nodes) swaps the normals for a given subgraph.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (vrNodePtr or list of vrNodePtrs) - The root node of the subgraph or a list of nodes.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="swapVertexNormals"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">swapVertexNormals</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Swaps the orientation of vertex normals. There are two functions to 
+  swap them:</p>
+  <p>swapVertexNormals(root_node) swaps the normals for the complete 
+  scene.</p>
+  <p>swapVertexNormals(root_nodes) swaps the normals for a given 
+  subgraph.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> (vrNodePtr or list of vrNodePtrs) - The root node of the subgraph or a list of nodes.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="unshareCores"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">unshareCores</span>(<span class="sig-arg">node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Removes core sharing.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>node</code></strong> (NodePtr) - The root node.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="updateAmbientOcclusionData"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">updateAmbientOcclusionData</span>(<span class="sig-arg">root_node</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Fixes ambient occlusion calculations from old vred versions:</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>root_node</code></strong> - The root node of the subgraph.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >VRED Python API v1</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Tue Jun 20 01:12:59 2023
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

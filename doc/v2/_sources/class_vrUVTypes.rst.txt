@@ -1,0 +1,267 @@
+---------
+vrUVTypes
+---------
+
+
+.. _vredvrUVTypes:
+.. py:class:: vrUVTypes
+
+
+
+
+
+
+
+    .. _vredvrUVTypes.PreRotateMode:
+    .. py:class:: PreRotateMode
+
+        Pre-layout rotate mode. Before packing, the islands can be reoriented in a pre-process phase.
+
+
+            Disabled (Leave the current island's orientation)
+
+            .. _vredvrUVTypes.PreRotateMode.RotateOff:
+            .. py:data:: RotateOff
+
+
+            Pre-orient the island horizontally before packing (using its minimal bounding box as reference)
+
+            .. _vredvrUVTypes.PreRotateMode.Horizontal:
+            .. py:data:: Horizontal
+
+
+            Pre-orient the island vertically before packing (using its minimal bounding box as reference)
+
+            .. _vredvrUVTypes.PreRotateMode.Vertical:
+            .. py:data:: Vertical
+
+
+            Pre-orient the island so that its X axis in 3D space is aligned to the V axis in UV Space.
+
+            .. _vredvrUVTypes.PreRotateMode.XAxisToV:
+            .. py:data:: XAxisToV
+
+
+            Pre-orient the island so that its Y axis in 3D space is aligned to the V axis in UV Space.
+
+            .. _vredvrUVTypes.PreRotateMode.YAxisToV:
+            .. py:data:: YAxisToV
+
+
+            Pre-orient the island so that its Z axis in 3D space is aligned to the V axis in UV Space.
+
+            .. _vredvrUVTypes.PreRotateMode.ZAxisToV:
+            .. py:data:: ZAxisToV
+
+
+    .. _vredvrUVTypes.PreScaleMode:
+    .. py:class:: PreScaleMode
+
+        Pre-layout scaling mode. Before packing, the islands can be rescaled in a pre-process phase.
+
+
+            Disabled. Do not rescale the islands during pre-process (can still be scaled during post-process)
+
+            .. _vredvrUVTypes.PreScaleMode.ScaleOff:
+            .. py:data:: ScaleOff
+
+
+            Scale the island so that it will have the same UV area as it has in 3D space.
+
+            .. _vredvrUVTypes.PreScaleMode.Keep3DArea:
+            .. py:data:: Keep3DArea
+
+
+            Scale the island so that the total UV area will be kept. The purpose is to give a coherent scale ratio between 3D space and UV space for all islands.
+
+            .. _vredvrUVTypes.PreScaleMode.KeepTotalUVArea:
+            .. py:data:: KeepTotalUVArea
+
+
+    .. _vredvrUVTypes.PostScaleMode:
+    .. py:class:: PostScaleMode
+
+        Post-layout scaling mode. A universal scale operation is applied to all involved islands, after packing.
+
+
+            No post scaling, however the bounding box of the involved islands will be translated so that it is at the left corner of the specified box/tile.
+
+            .. _vredvrUVTypes.PostScaleMode.TranslateOnly:
+            .. py:data:: TranslateOnly
+
+
+            Scale all islands so that their global bbox fits best the given box. The scaling will be uniform: same scaling for U and V axis.
+
+            .. _vredvrUVTypes.PostScaleMode.Uniform:
+            .. py:data:: Uniform
+
+
+            Scale all islands so that their global bbox fits completely the given box. The scaling will be non uniform: Scaling in U and V axis can be different.
+
+            .. _vredvrUVTypes.PostScaleMode.NonUniform:
+            .. py:data:: NonUniform
+
+
+    .. _vredvrUVTypes.TileAssignMode:
+    .. py:class:: TileAssignMode
+
+        Determines how islands are associated to the available tiles. The tiles are specified with         :any:`vrdUVLayoutSettings.setTilesU(tilesU) <vredvrdUVLayoutSettings.setTilesU(tilesU)>` and :any:`vrdUVLayoutSettings.setTilesV(tilesV) <vredvrdUVLayoutSettings.setTilesV(tilesV)>`. The geometry of the tile (that will be used for all tiles) must be specified using parameter :any:`vrdUVLayoutSettings.setBox(box) <vredvrdUVLayoutSettings.setBox(box)>`.
+
+
+            Each island is assigned to the tile that contains the island's bounding box center.
+
+            .. _vredvrUVTypes.TileAssignMode.BBoxCenter:
+            .. py:data:: BBoxCenter
+
+
+            The selected islands are automatically distributed into the available tiles.
+
+            .. _vredvrUVTypes.TileAssignMode.Distribute:
+            .. py:data:: Distribute
+
+
+    .. _vredvrUVTypes.UVProjectionMode:
+    .. py:class:: UVProjectionMode
+
+        Lists different kinds of projections to create UVs.
+
+
+            No projection.
+
+            .. _vredvrUVTypes.UVProjectionMode.None_:
+            .. py:data:: None_
+
+
+            Calculate UV coordinates by planar mapping.
+
+            .. _vredvrUVTypes.UVProjectionMode.PlanarMapping:
+            .. py:data:: PlanarMapping
+
+
+            Calculate UV coordinates by triplanar mapping.
+
+            .. _vredvrUVTypes.UVProjectionMode.TriplanarMapping:
+            .. py:data:: TriplanarMapping
+
+
+            Calculate UV coordinates by cylindrical mapping.
+
+            .. _vredvrUVTypes.UVProjectionMode.CylindricalMapping:
+            .. py:data:: CylindricalMapping
+
+
+    .. _vredvrUVTypes.UVSet:
+    .. py:class:: UVSet
+
+        Lists UV sets available in UV Editor and         :any:`vrUVService <vredvrUVService>`.
+
+
+            UV set for material textures.
+
+            .. _vredvrUVTypes.UVSet.MaterialUVSet:
+            .. py:data:: MaterialUVSet
+
+
+            UV set for lightmap textures.
+
+            .. _vredvrUVTypes.UVSet.LightmapUVSet:
+            .. py:data:: LightmapUVSet
+
+
+    .. _vredvrUVTypes.SnapshotStyle:
+    .. py:class:: SnapshotStyle
+
+        Flags for snapshot style.
+
+
+            Show wireframe rendering.
+
+            .. _vredvrUVTypes.SnapshotStyle.ShowWireframe:
+            .. py:data:: ShowWireframe
+
+
+            Show borders on UV islands.
+
+            .. _vredvrUVTypes.SnapshotStyle.ShowBorders:
+            .. py:data:: ShowBorders
+
+
+            Show shaded filling of UV islands.
+
+            .. _vredvrUVTypes.SnapshotStyle.ShowShading:
+            .. py:data:: ShowShading
+
+
+            Show all vertices.
+
+            .. _vredvrUVTypes.SnapshotStyle.ShowAllVertices:
+            .. py:data:: ShowAllVertices
+
+
+    .. _vredvrUVTypes.SnapshotMode:
+    .. py:class:: SnapshotMode
+
+
+
+
+            
+
+            .. _vredvrUVTypes.SnapshotMode.ZeroToOneSpace:
+            .. py:data:: ZeroToOneSpace
+
+
+            
+
+            .. _vredvrUVTypes.SnapshotMode.Boundingbox:
+            .. py:data:: Boundingbox
+
+
+            
+
+            .. _vredvrUVTypes.SnapshotMode.CustomSpace:
+            .. py:data:: CustomSpace
+
+
+    .. _vredvrUVTypes.SeamMode:
+    .. py:class:: SeamMode
+
+
+
+
+            Selects a generated edges set to open an organic mesh. It tries to detect feature points of the mesh, such as finger tips or toes, links them together, and segments the mesh, if the Segmentation Amount is greater than 0.0. Use the Use Pipecutter option to force linking of all holes, to suppress all pipes of mesh.
+
+            .. _vredvrUVTypes.SeamMode.Organic:
+            .. py:data:: Organic
+
+
+            Selects a generated edges set to open a manufactured mesh. Use Angle to define the angle between two consecutive polygons and Area Ratio to define the ratio between the smaller and larger patch area.
+
+            .. _vredvrUVTypes.SeamMode.Manufactured:
+            .. py:data:: Manufactured
+
+
+            Selects a generated edges set to open a mesh for baking. It makes patches, according to a defined angle between polygons, and defines the size of the smallest patch by merging the smaller patches until the minimum size is reached.
+
+            .. _vredvrUVTypes.SeamMode.Baking:
+            .. py:data:: Baking
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

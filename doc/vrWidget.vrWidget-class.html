@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="ascii"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>vrWidget.vrWidget</title>
+  <link rel="stylesheet" href="epydoc.css" type="text/css" />
+  <script type="text/javascript" src="epydoc.js"></script>
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="#204080"
+      alink="#204080">
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >VRED Python API v1</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table width="100%" cellpadding="0" cellspacing="0">
+  <tr valign="top">
+    <td width="100%">
+      <span class="breadcrumbs">
+        <a href="vrWidget-module.html">Module&nbsp;vrWidget</a> ::
+        Class&nbsp;vrWidget
+      </span>
+    </td>
+    <td>
+      <table cellpadding="0" cellspacing="0">
+        <!-- hide/show private -->
+        <tr><td align="right"><span class="options"
+            >[<a href="frames.html" target="_top">frames</a
+            >]&nbsp;|&nbsp;<a href="vrWidget.vrWidget-class.html"
+            target="_top">no&nbsp;frames</a>]</span></td></tr>
+      </table>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS DESCRIPTION ==================== -->
+<h1 class="epydoc">Class vrWidget</h1><p class="nomargin-top"></p>
+<pre class="base-tree">
+   <a href="object-class.html">object</a> --+        
+            |        
+  ??.instance --+    
+                |    
+<a href="vrAEBase.vrAEBase-class.html">vrAEBase.vrAEBase</a> --+
+                    |
+                   <strong class="uidshort">vrWidget</strong>
+</pre>
+
+<hr />
+<p>Create a qt gui from a type or an ui xml file.</p>
+  <p>Examples:</p>
+<pre class="literalblock">
+       Example widget.py
+       
+       def returnPressed():
+           print 'Pressed return in linedit!'
+       
+       def textChanged(text):
+           print 'Changed lineedit test to', text
+       
+       def toggledCheckBox(s):
+           print 'Toggled checkbox to', s
+       
+       def clickedButton():
+           print 'Clicked button1!'
+       
+       def valueChanged1(v):
+           print 'Changed spinbox value to', v
+       
+       def valueChanged2(v):
+           print 'Changed slider value to', v
+       
+       widget = vrWidget(&quot;gui/test.ui&quot;)
+       widget.connect(&quot;_lineedit&quot;, &quot;returnPressed()&quot;, returnPressed)
+       widget.connect(&quot;_lineedit&quot;, &quot;textChanged(const QString &amp;)&quot;, textChanged)
+       #widget.connect(&quot;_checkbox&quot;, &quot;toggled(bool)&quot;, toggledCheckBox)
+       widget.connect(&quot;_button&quot;, &quot;clicked()&quot;, clickedButton)
+       widget.connect(&quot;_button&quot;, &quot;clicked()&quot;, &quot;print 'Clicked button2!'&quot;)
+       widget.connect(&quot;_spinbox&quot;, &quot;valueChanged(int)&quot;, valueChanged1)
+       widget.connect(&quot;_slider&quot;, &quot;valueChanged(int)&quot;, valueChanged2)
+       
+       # creates a new widget2 instance from checkbox, just a test ...
+       checkbox = findQObject(widget.getQObject(), &quot;_checkbox&quot;)
+       widget2 = vrWidget(checkbox)
+       widget2.connect(&quot;_checkbox&quot;, &quot;toggled(bool)&quot;, toggledCheckBox)
+       
+       lineedit = findQObject(widget.getQObject(), &quot;_lineedit&quot;)
+       lineedit.setProperty(&quot;text&quot;, &quot;Hallo&quot;)
+       print &quot;lineedit enabled = &quot;, lineedit.getProperty(&quot;enabled&quot;)
+       print &quot;lineedit text = &quot;, lineedit.getProperty(&quot;text&quot;)
+       
+       # create a qtext widget
+       text = vrWidget(&quot;QTextEdit&quot;, vrQObject(), &quot;text edit&quot;)
+       text.getQObject().setProperty(&quot;caption&quot;, &quot;TextEditor Test&quot;)
+       text.getQObject().setProperty(&quot;text&quot;, &quot;Hi!&quot;)
+</pre>
+
+<!-- ==================== INSTANCE METHODS ==================== -->
+<a name="section-InstanceMethods"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Instance Methods</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrWidget.vrWidget-class.html#__init__" class="summary-sig-name">__init__</a>(<span class="summary-sig-arg">object</span>,
+        <span class="summary-sig-arg">uifile</span>,
+        <span class="summary-sig-arg">className</span>,
+        <span class="summary-sig-arg">parent</span>,
+        <span class="summary-sig-arg">name</span>)</span><br />
+      The constructor of the vrVideoGrab class.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">bool</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrWidget.vrWidget-class.html#connect" class="summary-sig-name">connect</a>(<span class="summary-sig-arg">sender</span>,
+        <span class="summary-sig-arg">signal</span>,
+        <span class="summary-sig-arg">function</span>)</span><br />
+      Connects widget signals with python functions.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">vrQObject</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrWidget.vrWidget-class.html#getQObject" class="summary-sig-name">getQObject</a>()</span><br />
+      Returns a vrQObject.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrWidget.vrWidget-class.html#setToolWindow" class="summary-sig-name">setToolWindow</a>(<span class="summary-sig-arg">state</span>)</span><br />
+      Converts it to a floating tool window.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+      <table width="100%" cellpadding="0" cellspacing="0" border="0">
+        <tr>
+          <td><span class="summary-sig"><a href="vrWidget.vrWidget-class.html#show" class="summary-sig-name">show</a>(<span class="summary-sig-arg">state</span>)</span><br />
+      Shows the widget.</td>
+          <td align="right" valign="top">
+            
+            
+          </td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+  <tr>
+    <td colspan="2" class="summary">
+    <p class="indent-wrapped-lines"><b>Inherited from <code><a href="vrAEBase.vrAEBase-class.html">vrAEBase.vrAEBase</a></code></b>:
+      <code><a href="vrAEBase.vrAEBase-class.html#__reduce__">__reduce__</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#addLoop">addLoop</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#callAllConnected">callAllConnected</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#connectSignal">connectSignal</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#emitSignal">emitSignal</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#getModuleName">getModuleName</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#isActive">isActive</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#loop">loop</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#recEvent">recEvent</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#removeConnections">removeConnections</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#setActive">setActive</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#setUpdateGUIEnabled">setUpdateGUIEnabled</a></code>,
+      <code><a href="vrAEBase.vrAEBase-class.html#subLoop">subLoop</a></code>
+      </p>
+    <p class="indent-wrapped-lines"><b>Inherited from <code><i>unreachable</i>.instance</code></b>:
+      <code>__new__</code>
+      </p>
+    </td>
+  </tr>
+</table>
+<!-- ==================== CLASS VARIABLES ==================== -->
+<a name="section-ClassVariables"></a>
+<table class="summary" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Class Variables</span></td>
+</tr>
+<tr>
+    <td width="15%" align="right" valign="top" class="summary">
+      <span class="summary-type">&nbsp;</span>
+    </td><td class="summary">
+        <a name="__instance_size__"></a><span class="summary-name">__instance_size__</span> = <code title="152">152</code>
+    </td>
+  </tr>
+</table>
+<!-- ==================== METHOD DETAILS ==================== -->
+<a name="section-MethodDetails"></a>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr bgcolor="#70b0f0" class="table-header">
+  <td align="left" colspan="2" class="table-header">
+    <span class="table-header">Method Details</span></td>
+</tr>
+</table>
+<a name="__init__"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">__init__</span>(<span class="sig-arg">object</span>,
+        <span class="sig-arg">uifile</span>,
+        <span class="sig-arg">className</span>,
+        <span class="sig-arg">parent</span>,
+        <span class="sig-arg">name</span>)</span>
+    <br /><em class="fname">(Constructor)</em>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>The constructor of the vrVideoGrab class. There are three valid sets 
+  of parameters:</p>
+  <p>vrWidget(object) Creates a vrWidget object from a vrQObject.</p>
+  <p>vrWidget(uifile) Creates a vrWidget object from a ui xml file, created
+  with QDesigner.</p>
+  <p>vrWidget(className, parent, name) Creates a vrWidget from a qt 
+  classname.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>object</code></strong> (vrQObject) - The QObject.</li>
+        <li><strong class="pname"><code>uifile</code></strong> (string) - The name of the ui xml file.</li>
+        <li><strong class="pname"><code>className</code></strong> (string) - The name of the QT class.</li>
+        <li><strong class="pname"><code>parent</code></strong> (vrQObject) - The parent QObject.</li>
+        <li><strong class="pname"><code>name</code></strong> (string) - The name of the newly created widget.</li>
+    </ul></dd>
+    <dt>Overrides:
+        <a href="vrAEBase.vrAEBase-class.html#__init__">vrAEBase.vrAEBase.__init__</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="connect"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">connect</span>(<span class="sig-arg">sender</span>,
+        <span class="sig-arg">signal</span>,
+        <span class="sig-arg">function</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Connects widget signals with python functions.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>sender</code></strong> (string) - The name of the sender.</li>
+        <li><strong class="pname"><code>signal</code></strong> (string) - The name of the signal.</li>
+        <li><strong class="pname"><code>function</code></strong> (boost::python::object) - The python function.</li>
+    </ul></dd>
+    <dt>Returns: bool</dt>
+        <dd>Success/Failure.</dd>
+    <dt>Overrides:
+        <a href="vrAEBase.vrAEBase-class.html#connect">vrAEBase.vrAEBase.connect</a>
+    </dt>
+  </dl>
+</td></tr></table>
+</div>
+<a name="getQObject"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">getQObject</span>()</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Returns a vrQObject.</p>
+  <dl class="fields">
+    <dt>Returns: vrQObject</dt>
+        <dd>The QObject.</dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="setToolWindow"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">setToolWindow</span>(<span class="sig-arg">state</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Converts it to a floating tool window.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>state</code></strong> (bool) - true tool windows - false normal window.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<a name="show"></a>
+<div>
+<table class="details" border="1" cellpadding="3"
+       cellspacing="0" width="100%" bgcolor="white">
+<tr><td>
+  <table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tr valign="top"><td>
+  <h3 class="epydoc"><span class="sig"><span class="sig-name">show</span>(<span class="sig-arg">state</span>)</span>
+  </h3>
+  </td><td align="right" valign="top"
+    >&nbsp;
+    </td>
+  </tr></table>
+  
+  <p>Shows the widget.</p>
+  <dl class="fields">
+    <dt>Parameters:</dt>
+    <dd><ul class="nomargin-top">
+        <li><strong class="pname"><code>state</code></strong> (integer) - The state: 1 = Show, 0 = Hide, -1 = Toggle.</li>
+    </ul></dd>
+  </dl>
+</td></tr></table>
+</div>
+<br />
+<!-- ==================== NAVIGATION BAR ==================== -->
+<table class="navbar" border="0" width="100%" cellpadding="0"
+       bgcolor="#a0c0ff" cellspacing="0">
+  <tr valign="middle">
+
+  <!-- Tree link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="module-tree.html">Trees</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Index link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="identifier-index.html">Indices</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Help link -->
+      <th>&nbsp;&nbsp;&nbsp;<a
+        href="help.html">Help</a>&nbsp;&nbsp;&nbsp;</th>
+
+  <!-- Project homepage -->
+      <th class="navbar" align="right" width="100%">
+        <table border="0" cellpadding="0" cellspacing="0">
+          <tr><th class="navbar" align="center"
+            >VRED Python API v1</th>
+          </tr></table></th>
+  </tr>
+</table>
+<table border="0" cellpadding="0" cellspacing="0" width="100%%">
+  <tr>
+    <td align="left" class="footer">
+    Generated by Epydoc 3.0.1
+    on Tue Jun 20 01:13:00 2023
+    </td>
+    <td align="right" class="footer">
+      <a target="mainFrame" href="http://epydoc.sourceforge.net"
+        >http://epydoc.sourceforge.net</a>
+    </td>
+  </tr>
+</table>
+
+<script type="text/javascript">
+  <!--
+  // Private objects are initially displayed (because if
+  // javascript is turned off then we want them to be
+  // visible); but by default, we want to hide them.  So hide
+  // them unless we have a cookie that says to show them.
+  checkCookie();
+  // -->
+</script>
+</body>
+</html>

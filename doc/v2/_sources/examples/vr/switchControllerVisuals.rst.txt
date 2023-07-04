@@ -1,0 +1,10 @@
+Switch the visualization mode of a VR device 
+============================================
+
+Shows how to set the three different visualization modes of a VR device: hand + controller,
+hand only and controller only.
+
+.. literalinclude:: ../../python_examples/vr/switchControllerVisuals.py
+   :language: python
+   :linenos:
+   :caption: vr/switchControllerVisuals.py

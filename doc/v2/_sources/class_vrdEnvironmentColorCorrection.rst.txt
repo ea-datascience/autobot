@@ -1,0 +1,89 @@
+-----------------------------
+vrdEnvironmentColorCorrection
+-----------------------------
+
+
+.. _vredvrdEnvironmentColorCorrection:
+.. py:class:: vrdEnvironmentColorCorrection
+
+(Inherits :py:class:`vrdColorCorrection`)
+
+This class is used for color correction properties of     :any:`vrdEnvironmentMaterial <vredvrdEnvironmentMaterial>`.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getReflectedSaturation() → float<vredvrdEnvironmentColorCorrection.getReflectedSaturation()>`
+    * :ref:`getWhiteBalance() → integer<vredvrdEnvironmentColorCorrection.getWhiteBalance()>`
+    * :ref:`setReflectedSaturation(value) <vredvrdEnvironmentColorCorrection.setReflectedSaturation(value)>`
+    * :ref:`setWhiteBalance(value) <vredvrdEnvironmentColorCorrection.setWhiteBalance(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdEnvironmentColorCorrection.getReflectedSaturation():
+.. py:method:: vrdEnvironmentColorCorrection.getReflectedSaturation()
+
+    Gets reflection saturation.
+
+
+
+
+    :return: Current value of reflection saturation
+    :rtype: float
+
+.. _vredvrdEnvironmentColorCorrection.getWhiteBalance():
+.. py:method:: vrdEnvironmentColorCorrection.getWhiteBalance()
+
+    Gets the white balance.
+
+
+
+
+    :return: Current value of the white balance
+    :rtype: integer
+
+.. _vredvrdEnvironmentColorCorrection.setReflectedSaturation(value):
+.. py:method:: vrdEnvironmentColorCorrection.setReflectedSaturation(value)
+
+    Sets reflection saturation.
+
+
+
+    :param value: New value of reflection saturation
+    :type value: float
+
+    
+    
+
+.. _vredvrdEnvironmentColorCorrection.setWhiteBalance(value):
+.. py:method:: vrdEnvironmentColorCorrection.setWhiteBalance(value)
+
+    Sets the white balance.
+
+
+
+    :param value: New value of the white balance
+    :type value: integer
+
+    
+    
+
+
+
+
+
+
+
+
+
+

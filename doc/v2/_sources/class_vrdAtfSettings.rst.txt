@@ -1,0 +1,1168 @@
+--------------
+vrdAtfSettings
+--------------
+
+
+.. _vredvrdAtfSettings:
+.. py:class:: vrdAtfSettings
+
+(Inherits :py:class:`vrdData`)
+
+Encapsulates the configuration properties for a particular     :any:`vrCADFileTypes.FileType <vredvrCADFileTypes.FileType>`. Some of the properties only have an effect on certain file formats. Please have a look at the import dialog that changes its content with respect to the :any:`vrCADFileTypes.FileType <vredvrCADFileTypes.FileType>` of the imported files.
+
+
+
+    .. _vredvrdAtfSettings.SourceReferenceBehavior:
+    .. py:class:: SourceReferenceBehavior
+
+
+
+
+            
+
+            .. _vredvrdAtfSettings.SourceReferenceBehavior.CreateNoReference:
+            .. py:data:: CreateNoReference
+
+
+            
+
+            .. _vredvrdAtfSettings.SourceReferenceBehavior.CreateSourceReference:
+            .. py:data:: CreateSourceReference
+
+
+    .. _vredvrdAtfSettings.SmartReferenceBehavior:
+    .. py:class:: SmartReferenceBehavior
+
+
+
+
+            
+
+            .. _vredvrdAtfSettings.SmartReferenceBehavior.KeepSmartReference:
+            .. py:data:: KeepSmartReference
+
+
+            
+
+            .. _vredvrdAtfSettings.SmartReferenceBehavior.RemoveSmartReference:
+            .. py:data:: RemoveSmartReference
+
+
+    .. _vredvrdAtfSettings.ImporterVersion:
+    .. py:class:: ImporterVersion
+
+
+
+
+            
+
+            .. _vredvrdAtfSettings.ImporterVersion.Lightweight:
+            .. py:data:: Lightweight
+
+
+            
+
+            .. _vredvrdAtfSettings.ImporterVersion.Legacy:
+            .. py:data:: Legacy
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getChordDeviation() → float<vredvrdAtfSettings.getChordDeviation()>`
+    * :ref:`getCreateLayerGroups() → bool<vredvrdAtfSettings.getCreateLayerGroups()>`
+    * :ref:`getFixSurfaceOrientation() → bool<vredvrdAtfSettings.getFixSurfaceOrientation()>`
+    * :ref:`getFlushTransformations() → bool<vredvrdAtfSettings.getFlushTransformations()>`
+    * :ref:`getImportAsSmartReference() → bool<vredvrdAtfSettings.getImportAsSmartReference()>`
+    * :ref:`getImportAssociativeMeshes() → bool<vredvrdAtfSettings.getImportAssociativeMeshes()>`
+    * :ref:`getImportCameras() → bool<vredvrdAtfSettings.getImportCameras()>`
+    * :ref:`getImportCoordSystems() → bool<vredvrdAtfSettings.getImportCoordSystems()>`
+    * :ref:`getImportCurves() → bool<vredvrdAtfSettings.getImportCurves()>`
+    * :ref:`getImportEmptyLayers() → bool<vredvrdAtfSettings.getImportEmptyLayers()>`
+    * :ref:`getImporterVersion() → ImporterVersion<vredvrdAtfSettings.getImporterVersion()>`
+    * :ref:`getImportGroupMaterials() → bool<vredvrdAtfSettings.getImportGroupMaterials()>`
+    * :ref:`getImportInvisibleCurves() → bool<vredvrdAtfSettings.getImportInvisibleCurves()>`
+    * :ref:`getImportInvisibleInstances() → bool<vredvrdAtfSettings.getImportInvisibleInstances()>`
+    * :ref:`getImportInvisibleMeshes() → bool<vredvrdAtfSettings.getImportInvisibleMeshes()>`
+    * :ref:`getImportInvisibleSurfaces() → bool<vredvrdAtfSettings.getImportInvisibleSurfaces()>`
+    * :ref:`getImportLayerFolders() → bool<vredvrdAtfSettings.getImportLayerFolders()>`
+    * :ref:`getImportLights() → bool<vredvrdAtfSettings.getImportLights()>`
+    * :ref:`getImportMeshes() → bool<vredvrdAtfSettings.getImportMeshes()>`
+    * :ref:`getImportMeshLODs() → integer<vredvrdAtfSettings.getImportMeshLODs()>`
+    * :ref:`getImportMetadata() → bool<vredvrdAtfSettings.getImportMetadata()>`
+    * :ref:`getImportReferencedFiles() → bool<vredvrdAtfSettings.getImportReferencedFiles()>`
+    * :ref:`getImportSurfaces() → bool<vredvrdAtfSettings.getImportSurfaces()>`
+    * :ref:`getImportTemplateGeometries() → bool<vredvrdAtfSettings.getImportTemplateGeometries()>`
+    * :ref:`getImportVariants() → bool<vredvrdAtfSettings.getImportVariants()>`
+    * :ref:`getJtToolkit() → integer<vredvrdAtfSettings.getJtToolkit()>`
+    * :ref:`getKeepNurbs() → bool<vredvrdAtfSettings.getKeepNurbs()>`
+    * :ref:`getMaxChordLength() → float<vredvrdAtfSettings.getMaxChordLength()>`
+    * :ref:`getMergeGeometries() → bool<vredvrdAtfSettings.getMergeGeometries()>`
+    * :ref:`getMergeSubReferenceMaterials() → bool<vredvrdAtfSettings.getMergeSubReferenceMaterials()>`
+    * :ref:`getNormalTolerance() → float<vredvrdAtfSettings.getNormalTolerance()>`
+    * :ref:`getReduceKeyframes() → bool<vredvrdAtfSettings.getReduceKeyframes()>`
+    * :ref:`getRemoveEmptyGroups() → bool<vredvrdAtfSettings.getRemoveEmptyGroups()>`
+    * :ref:`getSmartReferenceBehavior() → SmartReferenceBehavior<vredvrdAtfSettings.getSmartReferenceBehavior()>`
+    * :ref:`getSourceReferenceBehavior() → SourceReferenceBehavior<vredvrdAtfSettings.getSourceReferenceBehavior()>`
+    * :ref:`getStitchingTolerance() → float<vredvrdAtfSettings.getStitchingTolerance()>`
+    * :ref:`getUnshareNodes() → bool<vredvrdAtfSettings.getUnshareNodes()>`
+    * :ref:`getUseHealStitch() → bool<vredvrdAtfSettings.getUseHealStitch()>`
+    * :ref:`getUseLegacyLoader() → bool<vredvrdAtfSettings.getUseLegacyLoader()>`
+    * :ref:`getUseStitching() → bool<vredvrdAtfSettings.getUseStitching()>`
+    * :ref:`setChordDeviation(chordDeviation) <vredvrdAtfSettings.setChordDeviation(chordDeviation)>`
+    * :ref:`setCreateLayerGroups(create) <vredvrdAtfSettings.setCreateLayerGroups(create)>`
+    * :ref:`setFixSurfaceOrientation(fix) <vredvrdAtfSettings.setFixSurfaceOrientation(fix)>`
+    * :ref:`setFlushTransformations(flush) <vredvrdAtfSettings.setFlushTransformations(flush)>`
+    * :ref:`setImportAsSmartReference(create) <vredvrdAtfSettings.setImportAsSmartReference(create)>`
+    * :ref:`setImportAssociativeMeshes(import) <vredvrdAtfSettings.setImportAssociativeMeshes(import)>`
+    * :ref:`setImportCameras(import) <vredvrdAtfSettings.setImportCameras(import)>`
+    * :ref:`setImportCoordSystems(import) <vredvrdAtfSettings.setImportCoordSystems(import)>`
+    * :ref:`setImportCurves(import) <vredvrdAtfSettings.setImportCurves(import)>`
+    * :ref:`setImportEmptyLayers(import) <vredvrdAtfSettings.setImportEmptyLayers(import)>`
+    * :ref:`setImporterVersion(version) <vredvrdAtfSettings.setImporterVersion(version)>`
+    * :ref:`setImportGroupMaterials(import) <vredvrdAtfSettings.setImportGroupMaterials(import)>`
+    * :ref:`setImportInvisibleCurves(import) <vredvrdAtfSettings.setImportInvisibleCurves(import)>`
+    * :ref:`setImportInvisibleInstances(import) <vredvrdAtfSettings.setImportInvisibleInstances(import)>`
+    * :ref:`setImportInvisibleMeshes(import) <vredvrdAtfSettings.setImportInvisibleMeshes(import)>`
+    * :ref:`setImportInvisibleSurfaces(import) <vredvrdAtfSettings.setImportInvisibleSurfaces(import)>`
+    * :ref:`setImportLayerFolders(import) <vredvrdAtfSettings.setImportLayerFolders(import)>`
+    * :ref:`setImportLights(import) <vredvrdAtfSettings.setImportLights(import)>`
+    * :ref:`setImportMeshes(import) <vredvrdAtfSettings.setImportMeshes(import)>`
+    * :ref:`setImportMeshLODs(lodOption) <vredvrdAtfSettings.setImportMeshLODs(lodOption)>`
+    * :ref:`setImportMetadata(import) <vredvrdAtfSettings.setImportMetadata(import)>`
+    * :ref:`setImportReferencedFiles(import) <vredvrdAtfSettings.setImportReferencedFiles(import)>`
+    * :ref:`setImportSurfaces(import) <vredvrdAtfSettings.setImportSurfaces(import)>`
+    * :ref:`setImportTemplateGeometries(import) <vredvrdAtfSettings.setImportTemplateGeometries(import)>`
+    * :ref:`setImportVariants(import) <vredvrdAtfSettings.setImportVariants(import)>`
+    * :ref:`setJtToolkit(toolkit) <vredvrdAtfSettings.setJtToolkit(toolkit)>`
+    * :ref:`setKeepNurbs(keep) <vredvrdAtfSettings.setKeepNurbs(keep)>`
+    * :ref:`setMaxChordLength(chordLength) <vredvrdAtfSettings.setMaxChordLength(chordLength)>`
+    * :ref:`setMergeGeometries(merge) <vredvrdAtfSettings.setMergeGeometries(merge)>`
+    * :ref:`setMergeSubReferenceMaterials(optimize) <vredvrdAtfSettings.setMergeSubReferenceMaterials(optimize)>`
+    * :ref:`setNormalTolerance(tolerance) <vredvrdAtfSettings.setNormalTolerance(tolerance)>`
+    * :ref:`setReduceKeyframes(reduce) <vredvrdAtfSettings.setReduceKeyframes(reduce)>`
+    * :ref:`setRemoveEmptyGroups(remove) <vredvrdAtfSettings.setRemoveEmptyGroups(remove)>`
+    * :ref:`setSmartReferenceBehavior(behavior) <vredvrdAtfSettings.setSmartReferenceBehavior(behavior)>`
+    * :ref:`setSourceReferenceBehavior(behavior) <vredvrdAtfSettings.setSourceReferenceBehavior(behavior)>`
+    * :ref:`setStitchingTolerance(tolerance) <vredvrdAtfSettings.setStitchingTolerance(tolerance)>`
+    * :ref:`setUnshareNodes(unshare) <vredvrdAtfSettings.setUnshareNodes(unshare)>`
+    * :ref:`setUseHealStitch(value) <vredvrdAtfSettings.setUseHealStitch(value)>`
+    * :ref:`setUseLegacyLoader(useLegacy) <vredvrdAtfSettings.setUseLegacyLoader(useLegacy)>`
+    * :ref:`setUseStitching(stitch) <vredvrdAtfSettings.setUseStitching(stitch)>`
+    * :ref:`vrdAtfSettings() <vredvrdAtfSettings.vrdAtfSettings()>`
+    * :ref:`vrdAtfSettings(other) <vredvrdAtfSettings.vrdAtfSettings(other)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdAtfSettings.getChordDeviation():
+.. py:method:: vrdAtfSettings.getChordDeviation()
+
+    Get maximum deviation of tessellated mesh to the NURBS surface in mm.
+
+
+
+
+    :return: Maximum chord deviation in mm.
+    :rtype: float
+
+.. _vredvrdAtfSettings.getCreateLayerGroups():
+.. py:method:: vrdAtfSettings.getCreateLayerGroups()
+
+    Query if creating group nodes from layer information is enabled..
+
+
+
+
+    :return: True if creating group nodes from layer information is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getFixSurfaceOrientation():
+.. py:method:: vrdAtfSettings.getFixSurfaceOrientation()
+
+    Query if orienting surface normals is enabled.
+
+
+
+
+    :return: True if fixing of surface orientation is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getFlushTransformations():
+.. py:method:: vrdAtfSettings.getFlushTransformations()
+
+    Query if transformations should be flushed into the vertex coordinates.
+
+
+
+
+    :return: True if flushing of transformations is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportAsSmartReference():
+.. py:method:: vrdAtfSettings.getImportAsSmartReference()
+
+    Query if smart references should be created for imported vpb files.
+
+
+
+
+    :return: True if smart references should be created for vpb files otherwise False.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportAssociativeMeshes():
+.. py:method:: vrdAtfSettings.getImportAssociativeMeshes()
+
+    Query if import of associative meshes is enabled.
+
+
+
+
+    :return: True if import of associative meshes is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportCameras():
+.. py:method:: vrdAtfSettings.getImportCameras()
+
+    Query if import of cameras is enabled.
+
+
+
+
+    :return: True if import of cameras is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportCoordSystems():
+.. py:method:: vrdAtfSettings.getImportCoordSystems()
+
+    Query if import of coordinate system nodes is enabled.
+
+
+
+
+    :return: True if import of coordinate systems is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportCurves():
+.. py:method:: vrdAtfSettings.getImportCurves()
+
+    Query if import of curves and poly lines is enabled.
+
+
+
+
+    :return: True if import of curves and poly lines is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportEmptyLayers():
+.. py:method:: vrdAtfSettings.getImportEmptyLayers()
+
+    Query if import of empty layers is enabled.
+
+
+
+
+    :return: True if import of empty layers is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImporterVersion():
+.. py:method:: vrdAtfSettings.getImporterVersion()
+
+    Query which importer is used. Currently only available for Catia V5.
+
+
+
+
+    :return: Enum specifying which importer version to use. Currently only affects Catia V5 import. Lightweight selects optimized geometry and topology translation. Legacy should only be selected if issues like corrupted geometry should arise.
+    :rtype: ImporterVersion
+
+.. _vredvrdAtfSettings.getImportGroupMaterials():
+.. py:method:: vrdAtfSettings.getImportGroupMaterials()
+
+    Query if import of materials applied to group nodes like part, assembly or instance is enabled.
+
+
+
+
+    :return: True if import of materials applied to group nodes is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportInvisibleCurves():
+.. py:method:: vrdAtfSettings.getImportInvisibleCurves()
+
+    Query if import of curves and poly lines, that are invisible in CAD data, is enabled.
+
+    Note: Only has an effect if import of surfaces is enabled.
+
+
+    :return: True if import of invisible curves and poly lines is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportInvisibleInstances():
+.. py:method:: vrdAtfSettings.getImportInvisibleInstances()
+
+    Query if import of invisible instance nodes is enabled.
+
+
+
+
+    :return: True if import of invisible instance nodes is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportInvisibleMeshes():
+.. py:method:: vrdAtfSettings.getImportInvisibleMeshes()
+
+    Query if import of polygon meshes, that are invisible in the CAD file, is enabled.
+
+    Note: Only has an effect if import of surfaces is enabled.
+
+
+    :return: True if import of invisible polygon meshes is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportInvisibleSurfaces():
+.. py:method:: vrdAtfSettings.getImportInvisibleSurfaces()
+
+    Query if import of surfaces, that are invisible in the CAD file, is enabled.
+
+    Note: Only has an effect if import of surfaces is enabled.
+
+
+    :return: True if import of invisible surfaces is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportLayerFolders():
+.. py:method:: vrdAtfSettings.getImportLayerFolders()
+
+    Query if import of layer hierarchies is enabled.
+
+
+
+
+    :return: True if import of layer folders is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportLights():
+.. py:method:: vrdAtfSettings.getImportLights()
+
+    Query if import of light sources is enabled.
+
+
+
+
+    :return: True if import of lights is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportMeshes():
+.. py:method:: vrdAtfSettings.getImportMeshes()
+
+    Query if import of polygon meshes is enabled.
+
+
+
+
+    :return: True if import of polygon meshes is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportMeshLODs():
+.. py:method:: vrdAtfSettings.getImportMeshLODs()
+
+    Query which mesh LODs should be imported.
+
+    0 - Import all mesh LODs
+
+    1 - Import only mesh with lowest LOD
+
+    2 - Import only mesh with highest LOD
+
+
+    :return: The selected LOD option
+    :rtype: integer
+
+.. _vredvrdAtfSettings.getImportMetadata():
+.. py:method:: vrdAtfSettings.getImportMetadata()
+
+    Query if import of metadata is enabled.
+
+
+
+
+    :return: True if import of metadata is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportReferencedFiles():
+.. py:method:: vrdAtfSettings.getImportReferencedFiles()
+
+    Query if import of part files referenced by an assembly is enabled.
+
+
+
+
+    :return: True if import of part files is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportSurfaces():
+.. py:method:: vrdAtfSettings.getImportSurfaces()
+
+    Query if import of surfaces is enabled.
+
+
+
+
+    :return: True if import of surfaces is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportTemplateGeometries():
+.. py:method:: vrdAtfSettings.getImportTemplateGeometries()
+
+    Query if import of template geometries is enabled.
+
+
+
+
+    :return: True if import of template geometries is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getImportVariants():
+.. py:method:: vrdAtfSettings.getImportVariants()
+
+    Query if import of variants is enabled.
+
+
+
+
+    :return: True if import of variants is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getJtToolkit():
+.. py:method:: vrdAtfSettings.getJtToolkit()
+
+    Query which Jt toolkit is used for import.
+
+    0 - Parasolid
+
+    1 - Jt Open (Experimental)
+
+
+    :return: The selected Jt toolkit option
+    :rtype: integer
+
+.. _vredvrdAtfSettings.getKeepNurbs():
+.. py:method:: vrdAtfSettings.getKeepNurbs()
+
+    Query if NURBS data should be kept alongside with tessellation result.
+
+
+
+
+    :return: True if NURBS data should be kept, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getMaxChordLength():
+.. py:method:: vrdAtfSettings.getMaxChordLength()
+
+    Get maximum length of a triangle edge in mm.
+
+
+
+
+    :return: Maximum chord length in mm.
+    :rtype: float
+
+.. _vredvrdAtfSettings.getMergeGeometries():
+.. py:method:: vrdAtfSettings.getMergeGeometries()
+
+    Query if tessellated meshes of adjacent NURBS surfaces with same material should be merged.
+
+
+
+
+    :return: True if merging of surfaces is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getMergeSubReferenceMaterials():
+.. py:method:: vrdAtfSettings.getMergeSubReferenceMaterials()
+
+    Query if duplicate materials, referenced in different files, should be merged into one single material. Materials with same name and identical properties are regarded as duplicates.
+
+
+
+
+    :return: True if duplicate referenced materials shouild be merged otherwise False.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getNormalTolerance():
+.. py:method:: vrdAtfSettings.getNormalTolerance()
+
+    Get the normal tolerance of adjacent triangles in degrees.
+
+
+
+
+    :return: Normal tolerance in degrees.
+    :rtype: float
+
+.. _vredvrdAtfSettings.getReduceKeyframes():
+.. py:method:: vrdAtfSettings.getReduceKeyframes()
+
+    Query if reducing the number of keyframes is enabled.
+
+
+
+
+    :return: True if reducing the number of keyframes is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getRemoveEmptyGroups():
+.. py:method:: vrdAtfSettings.getRemoveEmptyGroups()
+
+    Query if groups without children should be removed.
+
+
+
+
+    :return: True if removing empty groups is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getSmartReferenceBehavior():
+.. py:method:: vrdAtfSettings.getSmartReferenceBehavior()
+
+    Query how references to VRED native files are treated in import.
+
+
+
+
+    :return: Enum specifying if smart references found in an imported file should be kept or removed.
+    :rtype: SmartReferenceBehavior
+
+.. _vredvrdAtfSettings.getSourceReferenceBehavior():
+.. py:method:: vrdAtfSettings.getSourceReferenceBehavior()
+
+    Query how references to files of import file types are treated in import.
+
+
+
+
+    :return: Enum specifying if source references should be created for file references found in the imported files or if no reference nodes at all should be created.
+    :rtype: SourceReferenceBehavior
+
+.. _vredvrdAtfSettings.getStitchingTolerance():
+.. py:method:: vrdAtfSettings.getStitchingTolerance()
+
+    Get the stitching tolerance of adjacent edges in mm.
+
+
+
+
+    :return: Stitiching tolerance in mm
+    :rtype: float
+
+.. _vredvrdAtfSettings.getUnshareNodes():
+.. py:method:: vrdAtfSettings.getUnshareNodes()
+
+    Query if shared node instances should be converted to independent nodes.
+
+
+
+
+    :return: True if conversion of instances is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getUseHealStitch():
+.. py:method:: vrdAtfSettings.getUseHealStitch()
+
+    
+
+
+
+
+    :return: 
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getUseLegacyLoader():
+.. py:method:: vrdAtfSettings.getUseLegacyLoader()
+
+    Query if using legacy importer is enabled.
+
+
+
+
+    :return: True if legacy importer is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.getUseStitching():
+.. py:method:: vrdAtfSettings.getUseStitching()
+
+    Query if stitching is enabled.
+
+
+
+
+    :return: True if stitching is enabled, False otherwise.
+    :rtype: bool
+
+.. _vredvrdAtfSettings.setChordDeviation(chordDeviation):
+.. py:method:: vrdAtfSettings.setChordDeviation(chordDeviation)
+
+    Set maximum allowed distance from the NURBS surface to the tessellated surface in mm. Lower values result in more accurate polygon models but also increase the number of triangles.
+
+
+
+    :param chordDeviation: Maximum chord deviation in mm.
+    :type chordDeviation: float
+
+    
+    
+
+.. _vredvrdAtfSettings.setCreateLayerGroups(create):
+.. py:method:: vrdAtfSettings.setCreateLayerGroups(create)
+
+    Enable / Disable creation of group nodes for objects organized in layers. In case the parents of the objects in one layer have different transformations this might cause an unexpected scenegraph structure since it is required to preserve the transformations.
+
+
+
+    :param create: True if creation of layer groups should be enabled, False otherwise.
+    :type create: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setFixSurfaceOrientation(fix):
+.. py:method:: vrdAtfSettings.setFixSurfaceOrientation(fix)
+
+    Enable orienting the normals of all surfaces, so they point in the same general direction.
+
+
+
+    :param fix: True if fixing of surface orientation should be enabled, False otherwise.
+    :type fix: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setFlushTransformations(flush):
+.. py:method:: vrdAtfSettings.setFlushTransformations(flush)
+
+    Enable / Disable moving transformation data of the scene graph hierarchy to the vertices. This means, that every transformation node will contain only a unit matrix.
+
+
+
+    :param flush: True if flushing of transformations should be enabled, False otherwise.
+    :type flush: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportAsSmartReference(create):
+.. py:method:: vrdAtfSettings.setImportAsSmartReference(create)
+
+    Determine if smart references should be created for imported vpb files.
+
+
+
+    :param create: True if smart references should be created for vpb files otherwise False.
+    :type create: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportAssociativeMeshes(import):
+.. py:method:: vrdAtfSettings.setImportAssociativeMeshes(import)
+
+    Enable import of meshes associated with the surfaces.
+
+
+
+    :param import: True to enable import of associative meshes, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportCameras(import):
+.. py:method:: vrdAtfSettings.setImportCameras(import)
+
+    Enable import of cameras from CAD data. (Only Alias wire files)
+
+
+
+    :param import: True to enable import of cameras, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportCoordSystems(import):
+.. py:method:: vrdAtfSettings.setImportCoordSystems(import)
+
+    Enable import of coordinate system nodes from CAD data.
+
+
+
+    :param import: True to enable import of coordinate systems, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportCurves(import):
+.. py:method:: vrdAtfSettings.setImportCurves(import)
+
+    Enable import of curves and poly lines from CAD files.
+
+
+
+    :param import: True to enable import of curves and poly lines, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportEmptyLayers(import):
+.. py:method:: vrdAtfSettings.setImportEmptyLayers(import)
+
+    Enable import of empty layers. (Only Alias wire files)
+
+
+
+    :param import: True to enable import of empty layers, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImporterVersion(version):
+.. py:method:: vrdAtfSettings.setImporterVersion(version)
+
+    Select which importer to use. Currently only available for Catia V5.
+
+
+
+    :param version: Enum specifying which importer version to use. Currently only affects Catia V5 import. Lightweight selects optimized geometry and topology translation. Legacy should only be selected if issues like corrupted geometry should arise.
+    :type version: ImporterVersion
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportGroupMaterials(import):
+.. py:method:: vrdAtfSettings.setImportGroupMaterials(import)
+
+    Enable import of materials applied to group nodes like part, assembly or instance. If enabled, an additional MaterialGroup node is created for each of these materials. If disabled, simply discard these materials.
+
+
+
+    :param import: True to enable import of materials applied to group nodes, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportInvisibleCurves(import):
+.. py:method:: vrdAtfSettings.setImportInvisibleCurves(import)
+
+    Enable import of curves and poly lines, that are invisible in the CAD data.
+
+    Note: Only has an effect if import of curves and poly lines is enabled.
+
+    :param import: True to enable import of invisible curves and poly lines, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportInvisibleInstances(import):
+.. py:method:: vrdAtfSettings.setImportInvisibleInstances(import)
+
+    Enable import of invisible instance nodes instead of excluding them.
+
+
+
+    :param import: True to enable import of invisible instance nodes, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportInvisibleMeshes(import):
+.. py:method:: vrdAtfSettings.setImportInvisibleMeshes(import)
+
+    Enable import of polygon meshes, that are invisible in the CAD file.
+
+    Note: Only has an effect if import of polygon meshes is enabled.
+
+    :param import: True to import invisible polygon meshes, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportInvisibleSurfaces(import):
+.. py:method:: vrdAtfSettings.setImportInvisibleSurfaces(import)
+
+    Enable import of NURBS surfaces, that are invisible in the CAD file.
+
+    Note: Only has an effect if import of surfaces is enabled.
+
+    :param import: True to enable import of invisible surfaces, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportLayerFolders(import):
+.. py:method:: vrdAtfSettings.setImportLayerFolders(import)
+
+    Enable import of layer hierarchies. (Only Alias wire files)
+
+
+
+    :param import: True to enable import of layer folders, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportLights(import):
+.. py:method:: vrdAtfSettings.setImportLights(import)
+
+    Enable import of light sources from CAD data. (Only Alias wire files)
+
+
+
+    :param import: True to enable import of lights, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportMeshes(import):
+.. py:method:: vrdAtfSettings.setImportMeshes(import)
+
+    Enable import of polygon meshes.
+
+
+
+    :param import: True to enable import of polygon meshes, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportMeshLODs(lodOption):
+.. py:method:: vrdAtfSettings.setImportMeshLODs(lodOption)
+
+    Select which mesh LODs should be imported.
+
+    0 - Import all mesh LODs
+
+    1 - Import only mesh with lowest LOD
+
+    2 - Import only mesh with highest LOD
+
+    :param lodOption: 
+    :type lodOption: integer
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportMetadata(import):
+.. py:method:: vrdAtfSettings.setImportMetadata(import)
+
+    Enable import of metadata from CAD data.
+
+
+
+    :param import: True to enable import of metadata, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportReferencedFiles(import):
+.. py:method:: vrdAtfSettings.setImportReferencedFiles(import)
+
+    Enable import of part files referenced by an assembly. If option is disabled a file reference node is created that can be used to import the referenced part later.
+
+
+
+    :param import: True to enable import of part files, False to only create file reference nodes.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportSurfaces(import):
+.. py:method:: vrdAtfSettings.setImportSurfaces(import)
+
+    Enable import of NURBS surfaces.
+
+
+
+    :param import: True to enable import of surfaces, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportTemplateGeometries(import):
+.. py:method:: vrdAtfSettings.setImportTemplateGeometries(import)
+
+    Enable import of template geometries instead of excluding them. (Only Alias wire files)
+
+
+
+    :param import: True to enable import of template geometries, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setImportVariants(import):
+.. py:method:: vrdAtfSettings.setImportVariants(import)
+
+    Enable import of variants from CAD data. (Only Alias wire files)
+
+
+
+    :param import: True to enable import of variants, False to disable.
+    :type import: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setJtToolkit(toolkit):
+.. py:method:: vrdAtfSettings.setJtToolkit(toolkit)
+
+    Select which Jt toolkit should be used for import.
+
+    0 - Parasolid
+
+    1 - Jt Open (Experimental)
+
+    :param toolkit: 
+    :type toolkit: integer
+
+    
+    
+
+.. _vredvrdAtfSettings.setKeepNurbs(keep):
+.. py:method:: vrdAtfSettings.setKeepNurbs(keep)
+
+    Enable / disable keeping NURBS data instead of deleting it. This option will increase memory usage.
+
+
+
+    :param keep: True if empty groups should be removed.
+    :type keep: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setMaxChordLength(chordLength):
+.. py:method:: vrdAtfSettings.setMaxChordLength(chordLength)
+
+    Set maximum length of a triangle edge in mm. Lower values result in more accurate polygon models but also increase the number of triangles.
+
+
+
+    :param chordLength: Maximum chord length in mm.
+    :type chordLength: float
+
+    
+    
+
+.. _vredvrdAtfSettings.setMergeGeometries(merge):
+.. py:method:: vrdAtfSettings.setMergeGeometries(merge)
+
+    Enable / disable merging adjacent surfaces with same material into shells.
+
+
+
+    :param merge: True if surfaces should be merged.
+    :type merge: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setMergeSubReferenceMaterials(optimize):
+.. py:method:: vrdAtfSettings.setMergeSubReferenceMaterials(optimize)
+
+    Determine if duplicate materials, referenced in different files, should be merged into one single material. Materials with same name and identical properties are regarded as duplicates.
+
+
+
+    :param optimize: True if duplicate referenced materials shouild be merged otherwise False.
+    :type optimize: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setNormalTolerance(tolerance):
+.. py:method:: vrdAtfSettings.setNormalTolerance(tolerance)
+
+    Set the normal tolerance of adjacent triangles in degrees. Lower values result in more accurate polygon models but also increase the number of triangles.
+
+
+
+    :param tolerance: Stitiching tolerance in mm.
+    :type tolerance: float
+
+    
+    
+
+.. _vredvrdAtfSettings.setReduceKeyframes(reduce):
+.. py:method:: vrdAtfSettings.setReduceKeyframes(reduce)
+
+    Enable reducing the number of keyframes by removing adjacent keyframes with identical value.
+
+
+
+    :param reduce: True if number of keyframes should be reduced, False otherwise.
+    :type reduce: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setRemoveEmptyGroups(remove):
+.. py:method:: vrdAtfSettings.setRemoveEmptyGroups(remove)
+
+    Enable / disable removing of groups without children.
+
+
+
+    :param remove: True if empty groups should be removed.
+    :type remove: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setSmartReferenceBehavior(behavior):
+.. py:method:: vrdAtfSettings.setSmartReferenceBehavior(behavior)
+
+    Determine how references to VRED native files are treated in import.
+
+
+
+    :param behavior: Enum specifying if smart references found in imported file should be kept or removed
+    :type behavior: SmartReferenceBehavior
+
+    
+    
+
+.. _vredvrdAtfSettings.setSourceReferenceBehavior(behavior):
+.. py:method:: vrdAtfSettings.setSourceReferenceBehavior(behavior)
+
+    Determine how references to files of import file types are treated in import.
+
+
+
+    :param behavior: Enum specifying if source references should be created for file references found in the imported files or if no reference nodes at all should be created.
+    :type behavior: SourceReferenceBehavior
+
+    
+    
+
+.. _vredvrdAtfSettings.setStitchingTolerance(tolerance):
+.. py:method:: vrdAtfSettings.setStitchingTolerance(tolerance)
+
+    Set tolerance in mm where two adjacent edges are considered to be touching and where they should be stitched together.
+
+
+
+    :param tolerance: Stitiching tolerance in mm.
+    :type tolerance: float
+
+    
+    
+
+.. _vredvrdAtfSettings.setUnshareNodes(unshare):
+.. py:method:: vrdAtfSettings.setUnshareNodes(unshare)
+
+    Enable / Disable conversion of shared node instances to independent nodes.
+
+
+
+    :param unshare: True if unsharing nodes should be enabled, False otherwise.
+    :type unshare: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setUseHealStitch(value):
+.. py:method:: vrdAtfSettings.setUseHealStitch(value)
+
+    
+
+
+
+    :param value: 
+    :type value: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setUseLegacyLoader(useLegacy):
+.. py:method:: vrdAtfSettings.setUseLegacyLoader(useLegacy)
+
+    Use legacy importer. Enabling this option is not recommended since the legacy importers only support quite old file versions and a reduced feature set. Legacy importer are only available for JT and Rhino files.
+
+
+
+    :param useLegacy: True if legacy importer should be used, False ATF importer will be used.
+    :type useLegacy: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.setUseStitching(stitch):
+.. py:method:: vrdAtfSettings.setUseStitching(stitch)
+
+    Enable / disable stitching of adjacent edges.
+
+
+
+    :param stitch: True to enable stitching, False to disable.
+    :type stitch: bool
+
+    
+    
+
+.. _vredvrdAtfSettings.vrdAtfSettings():
+.. py:method:: vrdAtfSettings.vrdAtfSettings()
+
+    Default constructor.
+
+
+
+
+    
+    
+
+.. _vredvrdAtfSettings.vrdAtfSettings(other):
+.. py:method:: vrdAtfSettings.vrdAtfSettings(other)
+
+    
+
+
+
+    :param other: 
+    :type other: vrdAtfSettings
+
+    
+    
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,34 @@
+----------------------
+vrdSoundObstructorNode
+----------------------
+
+
+.. _vredvrdSoundObstructorNode:
+.. py:class:: vrdSoundObstructorNode
+
+(Inherits :py:class:`vrdNode`)
+
+This class provides access a sound obstructor node.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,331 @@
+--------------------
+vrdDeviceMessageData
+--------------------
+
+
+.. _vredvrdDeviceMessageData:
+.. py:class:: vrdDeviceMessageData
+
+(Inherits :py:class:`vrdData`)
+
+Defines message content for     :any:`vrImmersiveInteractionService.showControllerMessage(data, rightHand) <vredvrImmersiveInteractionService.showControllerMessage(data, rightHand)>`. You can display either a text message or an image message for a VR controller.
+
+Use it like this:
+
+.. code-block:: python
+
+     md = vrdDeviceMessageData()
+     md.setText("Message text")
+     vrImmersiveInteractionService.showControllerMessage(md, True)
+..
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBackgroundColor() → QVector3D<vredvrdDeviceMessageData.getBackgroundColor()>`
+    * :ref:`getFontSize() → integer<vredvrdDeviceMessageData.getFontSize()>`
+    * :ref:`getForegroundColor() → QVector3D<vredvrdDeviceMessageData.getForegroundColor()>`
+    * :ref:`getFrameSize() → float<vredvrdDeviceMessageData.getFrameSize()>`
+    * :ref:`getImageDpi() → integer<vredvrdDeviceMessageData.getImageDpi()>`
+    * :ref:`getImagePath() → string<vredvrdDeviceMessageData.getImagePath()>`
+    * :ref:`getPosition() → QVector3D<vredvrdDeviceMessageData.getPosition()>`
+    * :ref:`getRotation() → QVector3D<vredvrdDeviceMessageData.getRotation()>`
+    * :ref:`getText() → string<vredvrdDeviceMessageData.getText()>`
+    * :ref:`getUseImage() → bool<vredvrdDeviceMessageData.getUseImage()>`
+    * :ref:`setBackgroundColor(color) <vredvrdDeviceMessageData.setBackgroundColor(color)>`
+    * :ref:`setFontSize(value) <vredvrdDeviceMessageData.setFontSize(value)>`
+    * :ref:`setForegroundColor(color) <vredvrdDeviceMessageData.setForegroundColor(color)>`
+    * :ref:`setFrameSize(value) <vredvrdDeviceMessageData.setFrameSize(value)>`
+    * :ref:`setImageDpi(dpi) <vredvrdDeviceMessageData.setImageDpi(dpi)>`
+    * :ref:`setImagePath(path) <vredvrdDeviceMessageData.setImagePath(path)>`
+    * :ref:`setPosition(position) <vredvrdDeviceMessageData.setPosition(position)>`
+    * :ref:`setRotation(eulerRotation) <vredvrdDeviceMessageData.setRotation(eulerRotation)>`
+    * :ref:`setText(text) <vredvrdDeviceMessageData.setText(text)>`
+    * :ref:`setUseImage(value) <vredvrdDeviceMessageData.setUseImage(value)>`
+    * :ref:`vrdDeviceMessageData() <vredvrdDeviceMessageData.vrdDeviceMessageData()>`
+    * :ref:`vrdDeviceMessageData(data) <vredvrdDeviceMessageData.vrdDeviceMessageData(data)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdDeviceMessageData.getBackgroundColor():
+.. py:method:: vrdDeviceMessageData.getBackgroundColor()
+
+    
+
+
+
+
+    :return: The background color in RGB
+    :rtype: QVector3D
+
+.. _vredvrdDeviceMessageData.getFontSize():
+.. py:method:: vrdDeviceMessageData.getFontSize()
+
+    
+
+
+
+
+    :return: The font size
+    :rtype: integer
+
+.. _vredvrdDeviceMessageData.getForegroundColor():
+.. py:method:: vrdDeviceMessageData.getForegroundColor()
+
+    
+
+
+
+
+    :return: The foreground color in RGB
+    :rtype: QVector3D
+
+.. _vredvrdDeviceMessageData.getFrameSize():
+.. py:method:: vrdDeviceMessageData.getFrameSize()
+
+    
+
+
+
+
+    :return: The frame size
+    :rtype: float
+
+.. _vredvrdDeviceMessageData.getImageDpi():
+.. py:method:: vrdDeviceMessageData.getImageDpi()
+
+    
+
+
+
+
+    :return: The dots per inch
+    :rtype: integer
+
+.. _vredvrdDeviceMessageData.getImagePath():
+.. py:method:: vrdDeviceMessageData.getImagePath()
+
+    
+
+
+
+
+    :return: The image file path
+    :rtype: string
+
+.. _vredvrdDeviceMessageData.getPosition():
+.. py:method:: vrdDeviceMessageData.getPosition()
+
+    
+
+
+
+
+    :return: The position of the message
+    :rtype: QVector3D
+
+.. _vredvrdDeviceMessageData.getRotation():
+.. py:method:: vrdDeviceMessageData.getRotation()
+
+    
+
+
+
+
+    :return: The orientation of the message in euler angles in degrees
+    :rtype: QVector3D
+
+.. _vredvrdDeviceMessageData.getText():
+.. py:method:: vrdDeviceMessageData.getText()
+
+    
+
+
+
+
+    :return: The message text
+    :rtype: string
+
+.. _vredvrdDeviceMessageData.getUseImage():
+.. py:method:: vrdDeviceMessageData.getUseImage()
+
+    
+
+
+
+
+    :return: True, if an image is used
+    :rtype: bool
+
+.. _vredvrdDeviceMessageData.setBackgroundColor(color):
+.. py:method:: vrdDeviceMessageData.setBackgroundColor(color)
+
+    Set the background color for the message.
+
+
+
+    :param color: Color in RGB [0..255]
+    :type color: QVector3D
+
+    
+    
+
+.. _vredvrdDeviceMessageData.setFontSize(value):
+.. py:method:: vrdDeviceMessageData.setFontSize(value)
+
+    Set the font size for the message text.
+
+
+
+    :param value: Size of the font
+    :type value: integer
+
+    
+    
+
+.. _vredvrdDeviceMessageData.setForegroundColor(color):
+.. py:method:: vrdDeviceMessageData.setForegroundColor(color)
+
+    Set the foreground color (e.g. text) for the message.
+
+
+
+    :param color: Color in RGB [0..255]
+    :type color: QVector3D
+
+    
+    
+
+.. _vredvrdDeviceMessageData.setFrameSize(value):
+.. py:method:: vrdDeviceMessageData.setFrameSize(value)
+
+    Set the frame size (outline width) of the message rectangle.
+
+
+
+    :param value: Frame size
+    :type value: float
+
+    
+    
+
+.. _vredvrdDeviceMessageData.setImageDpi(dpi):
+.. py:method:: vrdDeviceMessageData.setImageDpi(dpi)
+
+    Set the dpi for the image.
+
+
+
+    :param dpi: Dots per inch
+    :type dpi: integer
+
+    
+    
+
+.. _vredvrdDeviceMessageData.setImagePath(path):
+.. py:method:: vrdDeviceMessageData.setImagePath(path)
+
+    Set a path to an image file. See         :any:`vrdDeviceMessageData.setUseImage(value) <vredvrdDeviceMessageData.setUseImage(value)>`.
+
+
+
+    :param path: File path to an image
+    :type path: string
+
+    
+    
+
+.. _vredvrdDeviceMessageData.setPosition(position):
+.. py:method:: vrdDeviceMessageData.setPosition(position)
+
+    Set the position of the message.
+
+
+
+    :param position: 3D position in local device space
+    :type position: QVector3D
+
+    
+    
+
+.. _vredvrdDeviceMessageData.setRotation(eulerRotation):
+.. py:method:: vrdDeviceMessageData.setRotation(eulerRotation)
+
+    Set the orientation of the message.
+
+
+
+    :param eulerRotation: Rotation in euler angles in degrees
+    :type eulerRotation: QVector3D
+
+    
+    
+
+.. _vredvrdDeviceMessageData.setText(text):
+.. py:method:: vrdDeviceMessageData.setText(text)
+
+    Set the message text.
+
+
+
+    :param text: Text of the message
+    :type text: string
+
+    
+    
+
+.. _vredvrdDeviceMessageData.setUseImage(value):
+.. py:method:: vrdDeviceMessageData.setUseImage(value)
+
+    Set if an image instead of text is used.
+
+
+
+    :param value: If True, an image is used
+    :type value: bool
+
+    
+    
+
+.. _vredvrdDeviceMessageData.vrdDeviceMessageData():
+.. py:method:: vrdDeviceMessageData.vrdDeviceMessageData()
+
+    
+
+
+
+
+    
+    
+
+.. _vredvrdDeviceMessageData.vrdDeviceMessageData(data):
+.. py:method:: vrdDeviceMessageData.vrdDeviceMessageData(data)
+
+    
+
+
+
+    :param data: 
+    :type data: vrdDeviceMessageData
+
+    
+    
+
+
+
+
+
+
+
+
+
+

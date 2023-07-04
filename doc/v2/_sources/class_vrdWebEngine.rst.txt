@@ -1,0 +1,153 @@
+------------
+vrdWebEngine
+------------
+
+
+.. _vredvrdWebEngine:
+.. py:class:: vrdWebEngine
+
+(Inherits :py:class:`vrdUiEngine`)
+
+This class represents a web engine. Web engines are used to displpay HTML 5 content on textures.
+
+
+
+    .. _vredvrdWebEngine.TextureSlotType:
+    .. py:class:: TextureSlotType
+
+
+
+
+            
+
+            .. _vredvrdWebEngine.TextureSlotType.Diffuse:
+            .. py:data:: Diffuse
+
+
+            
+
+            .. _vredvrdWebEngine.TextureSlotType.Incandescence:
+            .. py:data:: Incandescence
+
+
+            
+
+            .. _vredvrdWebEngine.TextureSlotType.DiffuseAndIncandescence:
+            .. py:data:: DiffuseAndIncandescence
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getTexture() → vrdWebEngine.TextureSlotType<vredvrdWebEngine.getTexture()>`
+    * :ref:`getUrl() → string<vredvrdWebEngine.getUrl()>`
+    * :ref:`getUsedInSceneplate() → bool<vredvrdWebEngine.getUsedInSceneplate()>`
+    * :ref:`isValid() → bool<vredvrdWebEngine.isValid()>`
+    * :ref:`sendEvent(event, data) <vredvrdWebEngine.sendEvent(event, data)>`
+    * :ref:`setTexture(textureSlot) <vredvrdWebEngine.setTexture(textureSlot)>`
+    * :ref:`setUrl(url) <vredvrdWebEngine.setUrl(url)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdWebEngine.getTexture():
+.. py:method:: vrdWebEngine.getTexture()
+
+    Returns the texture slot where the web engine renders to.
+
+
+
+
+    :return: The texture slot.
+    :rtype: :ref:`vrdWebEngine.TextureSlotType <vredvrdWebEngine.TextureSlotType>`
+
+.. _vredvrdWebEngine.getUrl():
+.. py:method:: vrdWebEngine.getUrl()
+
+    Returns the current URL.
+
+
+
+
+    :return: The current URL.
+    :rtype: string
+
+.. _vredvrdWebEngine.getUsedInSceneplate():
+.. py:method:: vrdWebEngine.getUsedInSceneplate()
+
+    Returns if this web engine is used in a sceneplate.
+
+
+
+
+    :return: True if used in a sceneplate, False otherwise.
+    :rtype: bool
+
+.. _vredvrdWebEngine.isValid():
+.. py:method:: vrdWebEngine.isValid()
+
+    Checks if the web engine object is valid.
+
+    This function checks if the core instance of the web engine is present. This should always be the case.
+
+
+    :return: True if valid, False otherwise.
+    :rtype: bool
+
+.. _vredvrdWebEngine.sendEvent(event, data):
+.. py:method:: vrdWebEngine.sendEvent(event, data)
+
+    Sends a custom Javascript event to a webpage.
+
+    This function creates a Javascript custom event and executes it on the DOM document.             See also: :doc:`examples/webengine-customevents`
+
+    :param event: The custom event name
+    :type event: string
+
+    :param data: Event dependent data. Can be an empty string.
+    :type data: string
+
+    
+    
+
+.. _vredvrdWebEngine.setTexture(textureSlot):
+.. py:method:: vrdWebEngine.setTexture(textureSlot)
+
+    Sets the texture slot where the web content should be rendered to.
+
+
+
+    :param textureSlot: The texture slot
+    :type textureSlot: :ref:`vrdWebEngine.TextureSlotType <vredvrdWebEngine.TextureSlotType>`
+
+    
+    
+
+.. _vredvrdWebEngine.setUrl(url):
+.. py:method:: vrdWebEngine.setUrl(url)
+
+    Sets the URL to display.
+
+
+
+    :param url: The new URL
+    :type url: string
+
+    
+    
+
+
+
+
+
+
+
+
+
+

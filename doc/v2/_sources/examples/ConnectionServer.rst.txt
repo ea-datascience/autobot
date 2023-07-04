@@ -1,0 +1,7 @@
+Connect two VRED instances (server script)
+==========================================
+
+.. literalinclude:: ../python_examples/ConnectionServer.py
+   :language: python
+   :linenos:
+   :caption: ConnectionServer.py

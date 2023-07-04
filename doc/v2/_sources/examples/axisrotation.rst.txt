@@ -1,0 +1,7 @@
+Axis rotation example
+=====================
+
+.. literalinclude:: ../python_examples/axisrotation.py
+   :language: python
+   :linenos:
+   :caption: axisrotation.py

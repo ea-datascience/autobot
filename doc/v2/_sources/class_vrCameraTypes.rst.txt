@@ -1,0 +1,663 @@
+-------------
+vrCameraTypes
+-------------
+
+
+.. _vredvrCameraTypes:
+.. py:class:: vrCameraTypes
+
+
+
+
+
+
+
+    .. _vredvrCameraTypes.VanishingLinesType:
+    .. py:class:: VanishingLinesType
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.VanishingLinesType.XYZ:
+            .. py:data:: XYZ
+
+
+            
+
+            .. _vredvrCameraTypes.VanishingLinesType.XY:
+            .. py:data:: XY
+
+
+            
+
+            .. _vredvrCameraTypes.VanishingLinesType.XZ:
+            .. py:data:: XZ
+
+
+            
+
+            .. _vredvrCameraTypes.VanishingLinesType.YZ:
+            .. py:data:: YZ
+
+
+    .. _vredvrCameraTypes.ViewpointCreationMode:
+    .. py:class:: ViewpointCreationMode
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.ViewpointCreationMode.IgnoreTrackingMatrix:
+            .. py:data:: IgnoreTrackingMatrix
+
+
+            
+
+            .. _vredvrCameraTypes.ViewpointCreationMode.IncludeTrackingMatrix:
+            .. py:data:: IncludeTrackingMatrix
+
+
+    .. _vredvrCameraTypes.CameraTrackType:
+    .. py:class:: CameraTrackType
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CameraTrackType.InvalidCameraTrack:
+            .. py:data:: InvalidCameraTrack
+
+
+            
+
+            .. _vredvrCameraTypes.CameraTrackType.RegularCameraTrack:
+            .. py:data:: RegularCameraTrack
+
+
+            
+
+            .. _vredvrCameraTypes.CameraTrackType.RenderQueueCameraTrack:
+            .. py:data:: RenderQueueCameraTrack
+
+
+            
+
+            .. _vredvrCameraTypes.CameraTrackType.VariantSetCameraTrack:
+            .. py:data:: VariantSetCameraTrack
+
+
+    .. _vredvrCameraTypes.CameraProjectionMode:
+    .. py:class:: CameraProjectionMode
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CameraProjectionMode.ProjectionPerspective:
+            .. py:data:: ProjectionPerspective
+
+
+            
+
+            .. _vredvrCameraTypes.CameraProjectionMode.ProjectionOrthographic:
+            .. py:data:: ProjectionOrthographic
+
+
+            
+
+            .. _vredvrCameraTypes.CameraProjectionMode.ProjectionSphericalMap:
+            .. py:data:: ProjectionSphericalMap
+
+
+            
+
+            .. _vredvrCameraTypes.CameraProjectionMode.ProjectionPetersMap:
+            .. py:data:: ProjectionPetersMap
+
+
+            
+
+            .. _vredvrCameraTypes.CameraProjectionMode.ProjectionVerticalCross:
+            .. py:data:: ProjectionVerticalCross
+
+
+            
+
+            .. _vredvrCameraTypes.CameraProjectionMode.ProjectionHorizontalCross:
+            .. py:data:: ProjectionHorizontalCross
+
+
+            
+
+            .. _vredvrCameraTypes.CameraProjectionMode.ProjectionOmnidirectional:
+            .. py:data:: ProjectionOmnidirectional
+
+
+            
+
+            .. _vredvrCameraTypes.CameraProjectionMode.ProjectionCustomMatrix:
+            .. py:data:: ProjectionCustomMatrix
+
+
+    .. _vredvrCameraTypes.CameraConstraint:
+    .. py:class:: CameraConstraint
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CameraConstraint.ConstraintNone:
+            .. py:data:: ConstraintNone
+
+
+            
+
+            .. _vredvrCameraTypes.CameraConstraint.ConstraintAim:
+            .. py:data:: ConstraintAim
+
+
+            
+
+            .. _vredvrCameraTypes.CameraConstraint.ConstraintAimUp:
+            .. py:data:: ConstraintAimUp
+
+
+    .. _vredvrCameraTypes.CameraTonemapper:
+    .. py:class:: CameraTonemapper
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CameraTonemapper.TonemapperReinhardLuminance:
+            .. py:data:: TonemapperReinhardLuminance
+
+
+            
+
+            .. _vredvrCameraTypes.CameraTonemapper.TonemapperReinhardRGB:
+            .. py:data:: TonemapperReinhardRGB
+
+
+            
+
+            .. _vredvrCameraTypes.CameraTonemapper.TonemapperLogarithmicLuminance:
+            .. py:data:: TonemapperLogarithmicLuminance
+
+
+            
+
+            .. _vredvrCameraTypes.CameraTonemapper.TonemapperLogarithmicRGB:
+            .. py:data:: TonemapperLogarithmicRGB
+
+
+            
+
+            .. _vredvrCameraTypes.CameraTonemapper.TonemapperFilmic:
+            .. py:data:: TonemapperFilmic
+
+
+            
+
+            .. _vredvrCameraTypes.CameraTonemapper.TonemapperPhysicalCamera:
+            .. py:data:: TonemapperPhysicalCamera
+
+
+            
+
+            .. _vredvrCameraTypes.CameraTonemapper.TonemapperLuminance:
+            .. py:data:: TonemapperLuminance
+
+
+            
+
+            .. _vredvrCameraTypes.CameraTonemapper.TonemapperIlluminance:
+            .. py:data:: TonemapperIlluminance
+
+
+    .. _vredvrCameraTypes.CameraStereoLayout:
+    .. py:class:: CameraStereoLayout
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CameraStereoLayout.StereoLayoutTopBottom:
+            .. py:data:: StereoLayoutTopBottom
+
+
+            
+
+            .. _vredvrCameraTypes.CameraStereoLayout.StereoLayoutLeftRight:
+            .. py:data:: StereoLayoutLeftRight
+
+
+            
+
+            .. _vredvrCameraTypes.CameraStereoLayout.StereoLayoutLeftEye:
+            .. py:data:: StereoLayoutLeftEye
+
+
+            
+
+            .. _vredvrCameraTypes.CameraStereoLayout.StereoLayoutRightEye:
+            .. py:data:: StereoLayoutRightEye
+
+
+    .. _vredvrCameraTypes.CameraCandelaMapping:
+    .. py:class:: CameraCandelaMapping
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CameraCandelaMapping.CandelaMappingLogarithmicRGB:
+            .. py:data:: CandelaMappingLogarithmicRGB
+
+
+            
+
+            .. _vredvrCameraTypes.CameraCandelaMapping.CandelaMappingLogarithmicHSV:
+            .. py:data:: CandelaMappingLogarithmicHSV
+
+
+            
+
+            .. _vredvrCameraTypes.CameraCandelaMapping.CandelaMappingLinearRGB:
+            .. py:data:: CandelaMappingLinearRGB
+
+
+            
+
+            .. _vredvrCameraTypes.CameraCandelaMapping.CandelaMappingLinearHSV:
+            .. py:data:: CandelaMappingLinearHSV
+
+
+    .. _vredvrCameraTypes.CameraResponseCurveMode:
+    .. py:class:: CameraResponseCurveMode
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CameraResponseCurveMode.CameraResponseCurveLuminance:
+            .. py:data:: CameraResponseCurveLuminance
+
+
+            
+
+            .. _vredvrCameraTypes.CameraResponseCurveMode.CameraResponseCurveRed:
+            .. py:data:: CameraResponseCurveRed
+
+
+            
+
+            .. _vredvrCameraTypes.CameraResponseCurveMode.CameraResponseCurveGreen:
+            .. py:data:: CameraResponseCurveGreen
+
+
+            
+
+            .. _vredvrCameraTypes.CameraResponseCurveMode.CameraResponseCurveBlue:
+            .. py:data:: CameraResponseCurveBlue
+
+
+            
+
+            .. _vredvrCameraTypes.CameraResponseCurveMode.CameraResponseCurveRGB:
+            .. py:data:: CameraResponseCurveRGB
+
+
+    .. _vredvrCameraTypes.CameraSensorResponse:
+    .. py:class:: CameraSensorResponse
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CameraSensorResponse.CustomCurve:
+            .. py:data:: CustomCurve
+
+
+            
+
+            .. _vredvrCameraTypes.CameraSensorResponse.SyncolorAces10:
+            .. py:data:: SyncolorAces10
+
+
+            
+
+            .. _vredvrCameraTypes.CameraSensorResponse.SyncolorAces07:
+            .. py:data:: SyncolorAces07
+
+
+    .. _vredvrCameraTypes.CameraColorspace:
+    .. py:class:: CameraColorspace
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CameraColorspace.SRGBColorspace:
+            .. py:data:: SRGBColorspace
+
+
+            
+
+            .. _vredvrCameraTypes.CameraColorspace.Aces10Colorspace:
+            .. py:data:: Aces10Colorspace
+
+
+    .. _vredvrCameraTypes.BlendMode:
+    .. py:class:: BlendMode
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.BlendMode.BlendOff:
+            .. py:data:: BlendOff
+
+
+            
+
+            .. _vredvrCameraTypes.BlendMode.BlendVignette:
+            .. py:data:: BlendVignette
+
+
+            
+
+            .. _vredvrCameraTypes.BlendMode.BlendImage:
+            .. py:data:: BlendImage
+
+
+    .. _vredvrCameraTypes.CameraEye:
+    .. py:class:: CameraEye
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CameraEye.CameraLeftEye:
+            .. py:data:: CameraLeftEye
+
+
+            
+
+            .. _vredvrCameraTypes.CameraEye.CameraRightEye:
+            .. py:data:: CameraRightEye
+
+
+    .. _vredvrCameraTypes.CameraAxis:
+    .. py:class:: CameraAxis
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CameraAxis.X:
+            .. py:data:: X
+
+
+            
+
+            .. _vredvrCameraTypes.CameraAxis.Y:
+            .. py:data:: Y
+
+
+            
+
+            .. _vredvrCameraTypes.CameraAxis.Z:
+            .. py:data:: Z
+
+
+    .. _vredvrCameraTypes.CollisionStructureBuildMethod:
+    .. py:class:: CollisionStructureBuildMethod
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CollisionStructureBuildMethod.CollisionTriangleBased:
+            .. py:data:: CollisionTriangleBased
+
+
+            
+
+            .. _vredvrCameraTypes.CollisionStructureBuildMethod.CollisionBoundingBoxBased:
+            .. py:data:: CollisionBoundingBoxBased
+
+
+    .. _vredvrCameraTypes.TurntableDirection:
+    .. py:class:: TurntableDirection
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.TurntableDirection.TurntableCounterClockwise:
+            .. py:data:: TurntableCounterClockwise
+
+
+            
+
+            .. _vredvrCameraTypes.TurntableDirection.TurntableClockwise:
+            .. py:data:: TurntableClockwise
+
+
+    .. _vredvrCameraTypes.PasteOption:
+    .. py:class:: PasteOption
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.PasteOption.PasteAllAttributes:
+            .. py:data:: PasteAllAttributes
+
+
+            
+
+            .. _vredvrCameraTypes.PasteOption.PasteViewingAttributes:
+            .. py:data:: PasteViewingAttributes
+
+
+            
+
+            .. _vredvrCameraTypes.PasteOption.PasteCameraAttributes:
+            .. py:data:: PasteCameraAttributes
+
+
+            
+
+            .. _vredvrCameraTypes.PasteOption.PasteTonemappingAttributes:
+            .. py:data:: PasteTonemappingAttributes
+
+
+            
+
+            .. _vredvrCameraTypes.PasteOption.PasteColorCorrectionAttributes:
+            .. py:data:: PasteColorCorrectionAttributes
+
+
+            
+
+            .. _vredvrCameraTypes.PasteOption.PasteGlowAttributes:
+            .. py:data:: PasteGlowAttributes
+
+
+            
+
+            .. _vredvrCameraTypes.PasteOption.PasteGlareAttributes:
+            .. py:data:: PasteGlareAttributes
+
+
+            
+
+            .. _vredvrCameraTypes.PasteOption.PasteBlendingAttributes:
+            .. py:data:: PasteBlendingAttributes
+
+
+            
+
+            .. _vredvrCameraTypes.PasteOption.PasteFogAttributes:
+            .. py:data:: PasteFogAttributes
+
+
+            
+
+            .. _vredvrCameraTypes.PasteOption.PastePerspectiveMatchAttributes:
+            .. py:data:: PastePerspectiveMatchAttributes
+
+
+    .. _vredvrCameraTypes.CameraSpace:
+    .. py:class:: CameraSpace
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.CameraSpace.LocalSpace:
+            .. py:data:: LocalSpace
+
+
+            
+
+            .. _vredvrCameraTypes.CameraSpace.GlobalSpace:
+            .. py:data:: GlobalSpace
+
+
+    .. _vredvrCameraTypes.FovMode:
+    .. py:class:: FovMode
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.FovMode.Vertical:
+            .. py:data:: Vertical
+
+
+            
+
+            .. _vredvrCameraTypes.FovMode.Horizontal:
+            .. py:data:: Horizontal
+
+
+    .. _vredvrCameraTypes.FogFalloffMode:
+    .. py:class:: FogFalloffMode
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.FogFalloffMode.Realistic:
+            .. py:data:: Realistic
+
+
+            
+
+            .. _vredvrCameraTypes.FogFalloffMode.Linear:
+            .. py:data:: Linear
+
+
+    .. _vredvrCameraTypes.InteractiveDofQuality:
+    .. py:class:: InteractiveDofQuality
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.InteractiveDofQuality.UltraLow:
+            .. py:data:: UltraLow
+
+
+            
+
+            .. _vredvrCameraTypes.InteractiveDofQuality.Low:
+            .. py:data:: Low
+
+
+            
+
+            .. _vredvrCameraTypes.InteractiveDofQuality.Medium:
+            .. py:data:: Medium
+
+
+            
+
+            .. _vredvrCameraTypes.InteractiveDofQuality.High:
+            .. py:data:: High
+
+
+            
+
+            .. _vredvrCameraTypes.InteractiveDofQuality.UltraHigh:
+            .. py:data:: UltraHigh
+
+
+    .. _vredvrCameraTypes.DepthOfFieldMode:
+    .. py:class:: DepthOfFieldMode
+
+
+
+
+            
+
+            .. _vredvrCameraTypes.DepthOfFieldMode.Off:
+            .. py:data:: Off
+
+
+            
+
+            .. _vredvrCameraTypes.DepthOfFieldMode.Stillframe:
+            .. py:data:: Stillframe
+
+
+            
+
+            .. _vredvrCameraTypes.DepthOfFieldMode.Always:
+            .. py:data:: Always
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

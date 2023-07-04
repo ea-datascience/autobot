@@ -1,0 +1,15 @@
+Create texture coordinates for line geometries
+==============================================
+
+This script shows 
+
+* how to use :class:`.vrdGeometryNode` for low level access to geometry data.
+  See ``GeometryAccess`` class and ``createLineTexCoords`` method below.
+
+* how to find :class:`.vrdGeometryNode` nodes in the Scenegraph based on a filter predicate, in this case to find only line geometries.
+  See method ``findLineGeos``.
+
+.. literalinclude:: ../python_examples/lineGeometry-texCoords.py
+   :language: python
+   :linenos:
+   :caption: lineGeometry-texCoords.py

@@ -1,0 +1,189 @@
+----------------
+vrTransformTypes
+----------------
+
+
+.. _vredvrTransformTypes:
+.. py:class:: vrTransformTypes
+
+
+
+
+
+
+
+    .. _vredvrTransformTypes.EulerRotationOrder:
+    .. py:class:: EulerRotationOrder
+
+
+
+
+            
+
+            .. _vredvrTransformTypes.EulerRotationOrder.XYZ:
+            .. py:data:: XYZ
+
+
+            
+
+            .. _vredvrTransformTypes.EulerRotationOrder.XZY:
+            .. py:data:: XZY
+
+
+            
+
+            .. _vredvrTransformTypes.EulerRotationOrder.YXZ:
+            .. py:data:: YXZ
+
+
+            
+
+            .. _vredvrTransformTypes.EulerRotationOrder.YZX:
+            .. py:data:: YZX
+
+
+            
+
+            .. _vredvrTransformTypes.EulerRotationOrder.ZXY:
+            .. py:data:: ZXY
+
+
+            
+
+            .. _vredvrTransformTypes.EulerRotationOrder.ZYX:
+            .. py:data:: ZYX
+
+
+    .. _vredvrTransformTypes.VariantValueBitMask:
+    .. py:class:: VariantValueBitMask
+
+
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.NoTransValue:
+            .. py:data:: NoTransValue
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.TransXValue:
+            .. py:data:: TransXValue
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.TransYValue:
+            .. py:data:: TransYValue
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.TransZValue:
+            .. py:data:: TransZValue
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.AllTransValues:
+            .. py:data:: AllTransValues
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.RotXValue:
+            .. py:data:: RotXValue
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.RotYValue:
+            .. py:data:: RotYValue
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.RotZValue:
+            .. py:data:: RotZValue
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.RotXYZValue:
+            .. py:data:: RotXYZValue
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.RotOrderValue:
+            .. py:data:: RotOrderValue
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.AllRotValues:
+            .. py:data:: AllRotValues
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.ScaleXValue:
+            .. py:data:: ScaleXValue
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.ScaleYValue:
+            .. py:data:: ScaleYValue
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.ScaleZValue:
+            .. py:data:: ScaleZValue
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.AllScaleValues:
+            .. py:data:: AllScaleValues
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.ScalePivotValues:
+            .. py:data:: ScalePivotValues
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.RotPivotValues:
+            .. py:data:: RotPivotValues
+
+
+            
+
+            .. _vredvrTransformTypes.VariantValueBitMask.AllTransormationValues:
+            .. py:data:: AllTransormationValues
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

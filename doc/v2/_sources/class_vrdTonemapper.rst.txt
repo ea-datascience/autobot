@@ -1,0 +1,543 @@
+-------------
+vrdTonemapper
+-------------
+
+
+.. _vredvrdTonemapper:
+.. py:class:: vrdTonemapper
+
+(Inherits :py:class:`vrdSceneObject`)
+
+Class to access tonemapping functionality.
+
+Not all properties of this class are active all the time. Some of them depend on the type of tonemapper currently selected via :any:`vrdTonemapper.setTonemapperType(mapper) <vredvrdTonemapper.setTonemapperType(mapper)>`.
+
+The default tonemapper is 'Reinhard Luminance' which has the properties 'exposure', 'white point' and 'contrast'.
+
+To access the tonemapper of a camera or viewpoint, use :any:`vrdCameraBaseNode.getTonemapper() <vredvrdCameraBaseNode.getTonemapper()>`:
+
+.. code-block:: python
+
+     cam = vrCameraService.getActiveCamera()
+     tm = cam.getTonemapper()
+     tm.setExposure(2.0)
+..
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBlueResponseCurve() → List[QVector2D]<vredvrdTonemapper.getBlueResponseCurve()>`
+    * :ref:`getCandelaMappingMode() → vrCameraTypes.CameraCandelaMapping<vredvrdTonemapper.getCandelaMappingMode()>`
+    * :ref:`getCandelaRange() → QVector2D<vredvrdTonemapper.getCandelaRange()>`
+    * :ref:`getColorspace() → vrCameraTypes.CameraColorspace<vredvrdTonemapper.getColorspace()>`
+    * :ref:`getContrast() → float<vredvrdTonemapper.getContrast()>`
+    * :ref:`getExposure() → float<vredvrdTonemapper.getExposure()>`
+    * :ref:`getGreenResponseCurve() → List[QVector2D]<vredvrdTonemapper.getGreenResponseCurve()>`
+    * :ref:`getISO() → float<vredvrdTonemapper.getISO()>`
+    * :ref:`getLuminanceResponseCurve() → List[QVector2D]<vredvrdTonemapper.getLuminanceResponseCurve()>`
+    * :ref:`getLuminousExposure() → float<vredvrdTonemapper.getLuminousExposure()>`
+    * :ref:`getRedResponseCurve() → List[QVector2D]<vredvrdTonemapper.getRedResponseCurve()>`
+    * :ref:`getResponseCurveFilename() → string<vredvrdTonemapper.getResponseCurveFilename()>`
+    * :ref:`getResponseCurveMode() → vrCameraTypes.CameraResponseCurveMode<vredvrdTonemapper.getResponseCurveMode()>`
+    * :ref:`getSensorResponse() → vrCameraTypes.CameraSensorResponse<vredvrdTonemapper.getSensorResponse()>`
+    * :ref:`getShoulderStrength() → float<vredvrdTonemapper.getShoulderStrength()>`
+    * :ref:`getToeStrength() → float<vredvrdTonemapper.getToeStrength()>`
+    * :ref:`getTonemapperType() → vrCameraTypes.CameraTonemapper<vredvrdTonemapper.getTonemapperType()>`
+    * :ref:`getWhiteBalance() → float<vredvrdTonemapper.getWhiteBalance()>`
+    * :ref:`getWhitePoint() → float<vredvrdTonemapper.getWhitePoint()>`
+    * :ref:`loadResponseCurve(fileName) → bool<vredvrdTonemapper.loadResponseCurve(fileName)>`
+    * :ref:`saveResponseCurve(fileName) → bool<vredvrdTonemapper.saveResponseCurve(fileName)>`
+    * :ref:`setBlueResponseCurve(values) <vredvrdTonemapper.setBlueResponseCurve(values)>`
+    * :ref:`setCandelaMappingMode(mapping) <vredvrdTonemapper.setCandelaMappingMode(mapping)>`
+    * :ref:`setCandelaRange(rangeMinMax) <vredvrdTonemapper.setCandelaRange(rangeMinMax)>`
+    * :ref:`setColorspace(value) <vredvrdTonemapper.setColorspace(value)>`
+    * :ref:`setContrast(value) <vredvrdTonemapper.setContrast(value)>`
+    * :ref:`setExposure(value) <vredvrdTonemapper.setExposure(value)>`
+    * :ref:`setGreenResponseCurve(values) <vredvrdTonemapper.setGreenResponseCurve(values)>`
+    * :ref:`setISO(value) <vredvrdTonemapper.setISO(value)>`
+    * :ref:`setLuminanceResponseCurve(values) <vredvrdTonemapper.setLuminanceResponseCurve(values)>`
+    * :ref:`setRedResponseCurve(values) <vredvrdTonemapper.setRedResponseCurve(values)>`
+    * :ref:`setResponseCurveMode(mode) <vredvrdTonemapper.setResponseCurveMode(mode)>`
+    * :ref:`setSensorResponse(value) <vredvrdTonemapper.setSensorResponse(value)>`
+    * :ref:`setShoulderStrength(value) <vredvrdTonemapper.setShoulderStrength(value)>`
+    * :ref:`setToeStrength(value) <vredvrdTonemapper.setToeStrength(value)>`
+    * :ref:`setTonemapperType(mapper) <vredvrdTonemapper.setTonemapperType(mapper)>`
+    * :ref:`setWhiteBalance(value) <vredvrdTonemapper.setWhiteBalance(value)>`
+    * :ref:`setWhitePoint(value) <vredvrdTonemapper.setWhitePoint(value)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdTonemapper.getBlueResponseCurve():
+.. py:method:: vrdTonemapper.getBlueResponseCurve()
+
+    Returns the blue response curve.
+
+
+
+
+    :return: The blue response curve as a list of x/y values.
+    :rtype: List[QVector2D]
+
+.. _vredvrdTonemapper.getCandelaMappingMode():
+.. py:method:: vrdTonemapper.getCandelaMappingMode()
+
+    Returns the candela mapping mode.
+
+
+
+
+    :return: The candela mapping mode.
+    :rtype: :ref:`vrCameraTypes.CameraCandelaMapping <vredvrCameraTypes.CameraCandelaMapping>`
+
+.. _vredvrdTonemapper.getCandelaRange():
+.. py:method:: vrdTonemapper.getCandelaRange()
+
+    Returns the candela range.
+
+
+
+
+    :return: The candela range minimum and maximum value.
+    :rtype: QVector2D
+
+.. _vredvrdTonemapper.getColorspace():
+.. py:method:: vrdTonemapper.getColorspace()
+
+    Returns the colorspace.
+
+
+
+
+    :return: The colorspace (sRGB / ACES).
+    :rtype: :ref:`vrCameraTypes.CameraColorspace <vredvrCameraTypes.CameraColorspace>`
+
+.. _vredvrdTonemapper.getContrast():
+.. py:method:: vrdTonemapper.getContrast()
+
+    Returns the contrast.
+
+
+
+
+    :return: The contrast.
+    :rtype: float
+
+.. _vredvrdTonemapper.getExposure():
+.. py:method:: vrdTonemapper.getExposure()
+
+    Returns the exposure of the camera.
+
+
+
+
+    :return: The exposure.
+    :rtype: float
+
+.. _vredvrdTonemapper.getGreenResponseCurve():
+.. py:method:: vrdTonemapper.getGreenResponseCurve()
+
+    Returns the green response curve.
+
+
+
+
+    :return: The green response curve as a list of x/y values.
+    :rtype: List[QVector2D]
+
+.. _vredvrdTonemapper.getISO():
+.. py:method:: vrdTonemapper.getISO()
+
+    Returns the ISO of the camera.
+
+
+
+
+    :return: The ISO of the camera.
+    :rtype: float
+
+.. _vredvrdTonemapper.getLuminanceResponseCurve():
+.. py:method:: vrdTonemapper.getLuminanceResponseCurve()
+
+    Returns the luminance response curve.
+
+
+
+
+    :return: The luminance response curve as a list of x/y values.
+    :rtype: List[QVector2D]
+
+.. _vredvrdTonemapper.getLuminousExposure():
+.. py:method:: vrdTonemapper.getLuminousExposure()
+
+    Returns the calculated luminous exposure of the physical camera tonemapper.
+
+
+
+
+    :return: The calculated luminous exposure of physical camera tonemapper.
+    :rtype: float
+
+.. _vredvrdTonemapper.getRedResponseCurve():
+.. py:method:: vrdTonemapper.getRedResponseCurve()
+
+    Returns the red response curve.
+
+
+
+
+    :return: The red response curve as a list of x/y values.
+    :rtype: List[QVector2D]
+
+.. _vredvrdTonemapper.getResponseCurveFilename():
+.. py:method:: vrdTonemapper.getResponseCurveFilename()
+
+    Returns the response curve file name.
+
+
+
+
+    :return: Name of response curve file
+    :rtype: string
+
+.. _vredvrdTonemapper.getResponseCurveMode():
+.. py:method:: vrdTonemapper.getResponseCurveMode()
+
+    Returns the active response curve mode.
+
+
+
+
+    :return: The response curve mode.
+    :rtype: :ref:`vrCameraTypes.CameraResponseCurveMode <vredvrCameraTypes.CameraResponseCurveMode>`
+
+.. _vredvrdTonemapper.getSensorResponse():
+.. py:method:: vrdTonemapper.getSensorResponse()
+
+    Returns the sensor response of the camera.
+
+
+
+
+    :return: The sensor response of the camera.
+    :rtype: :ref:`vrCameraTypes.CameraSensorResponse <vredvrCameraTypes.CameraSensorResponse>`
+
+.. _vredvrdTonemapper.getShoulderStrength():
+.. py:method:: vrdTonemapper.getShoulderStrength()
+
+    Returns the shoulder strength.
+
+
+
+
+    :return: The shoulder strength.
+    :rtype: float
+
+.. _vredvrdTonemapper.getToeStrength():
+.. py:method:: vrdTonemapper.getToeStrength()
+
+    Returns the toe strength.
+
+
+
+
+    :return: The toe strength.
+    :rtype: float
+
+.. _vredvrdTonemapper.getTonemapperType():
+.. py:method:: vrdTonemapper.getTonemapperType()
+
+    Returns the active tonemapper type.
+
+
+
+
+    :return: The tonemapper type.
+    :rtype: :ref:`vrCameraTypes.CameraTonemapper <vredvrCameraTypes.CameraTonemapper>`
+
+.. _vredvrdTonemapper.getWhiteBalance():
+.. py:method:: vrdTonemapper.getWhiteBalance()
+
+    Returns the white balance of the camera.
+
+
+
+
+    :return: The white balance.
+    :rtype: float
+
+.. _vredvrdTonemapper.getWhitePoint():
+.. py:method:: vrdTonemapper.getWhitePoint()
+
+    Returns the white point of the camera.
+
+
+
+
+    :return: The white point of the camera.
+    :rtype: float
+
+.. _vredvrdTonemapper.loadResponseCurve(fileName):
+.. py:method:: vrdTonemapper.loadResponseCurve(fileName)
+
+    Loads a saved response curve from a file.
+
+
+
+    :param fileName: The file name containing a saved response curve.
+    :type fileName: string
+
+    :return: True if loading was successful, False otherwise.
+    :rtype: bool
+
+.. _vredvrdTonemapper.saveResponseCurve(fileName):
+.. py:method:: vrdTonemapper.saveResponseCurve(fileName)
+
+    Saves the response curve to a file.
+
+
+
+    :param fileName: The file name to use (ending: .crv).
+    :type fileName: string
+
+    :return: True if saving was successful, False otherwise.
+    :rtype: bool
+
+.. _vredvrdTonemapper.setBlueResponseCurve(values):
+.. py:method:: vrdTonemapper.setBlueResponseCurve(values)
+
+    Sets the blue response curve.
+
+
+
+    :param values: The blue response curve as a list of x/y values.
+    :type values: List[QVector2D]
+
+    
+    
+
+.. _vredvrdTonemapper.setCandelaMappingMode(mapping):
+.. py:method:: vrdTonemapper.setCandelaMappingMode(mapping)
+
+    Sets the candela mapping mode.
+
+
+
+    :param mapping: The candela mapping mode.
+    :type mapping: :ref:`vrCameraTypes.CameraCandelaMapping <vredvrCameraTypes.CameraCandelaMapping>`
+
+    
+    
+
+.. _vredvrdTonemapper.setCandelaRange(rangeMinMax):
+.. py:method:: vrdTonemapper.setCandelaRange(rangeMinMax)
+
+    Sets the candela range.
+
+
+
+    :param rangeMinMax: The candela range minimum and maximum value.
+    :type rangeMinMax: QVector2D
+
+    
+    
+
+.. _vredvrdTonemapper.setColorspace(value):
+.. py:method:: vrdTonemapper.setColorspace(value)
+
+    Sets the colorspace.
+
+
+
+    :param value: The colorspace (sRGB / ACES).
+    :type value: :ref:`vrCameraTypes.CameraColorspace <vredvrCameraTypes.CameraColorspace>`
+
+    
+    
+
+.. _vredvrdTonemapper.setContrast(value):
+.. py:method:: vrdTonemapper.setContrast(value)
+
+    Sets the contrast.
+
+
+
+    :param value: The contrast.
+    :type value: float
+
+    
+    
+
+.. _vredvrdTonemapper.setExposure(value):
+.. py:method:: vrdTonemapper.setExposure(value)
+
+    Sets the exposure of the camera.
+
+
+
+    :param value: The exposure value.
+    :type value: float
+
+    
+    
+
+.. _vredvrdTonemapper.setGreenResponseCurve(values):
+.. py:method:: vrdTonemapper.setGreenResponseCurve(values)
+
+    Sets the green response curve.
+
+
+
+    :param values: The green response curve as a list of x/y values.
+    :type values: List[QVector2D]
+
+    
+    
+
+.. _vredvrdTonemapper.setISO(value):
+.. py:method:: vrdTonemapper.setISO(value)
+
+    Sets the ISO of the camera.
+
+
+
+    :param value: The ISO value
+    :type value: float
+
+    
+    
+
+.. _vredvrdTonemapper.setLuminanceResponseCurve(values):
+.. py:method:: vrdTonemapper.setLuminanceResponseCurve(values)
+
+    Sets the luminance response curve.
+
+
+
+    :param values: The luminance response curve as a list of x/y values.
+    :type values: List[QVector2D]
+
+    
+    
+
+.. _vredvrdTonemapper.setRedResponseCurve(values):
+.. py:method:: vrdTonemapper.setRedResponseCurve(values)
+
+    Sets the red response curve.
+
+
+
+    :param values: The red response curve as a list of x/y values.
+    :type values: List[QVector2D]
+
+    
+    
+
+.. _vredvrdTonemapper.setResponseCurveMode(mode):
+.. py:method:: vrdTonemapper.setResponseCurveMode(mode)
+
+    Sets the response curve mode.
+
+
+
+    :param mode: The response curve mode.
+    :type mode: :ref:`vrCameraTypes.CameraResponseCurveMode <vredvrCameraTypes.CameraResponseCurveMode>`
+
+    
+    
+
+.. _vredvrdTonemapper.setSensorResponse(value):
+.. py:method:: vrdTonemapper.setSensorResponse(value)
+
+    Sets the sensor response of the camera.
+
+
+
+    :param value: The sensor response of the camera.
+    :type value: :ref:`vrCameraTypes.CameraSensorResponse <vredvrCameraTypes.CameraSensorResponse>`
+
+    
+    
+
+.. _vredvrdTonemapper.setShoulderStrength(value):
+.. py:method:: vrdTonemapper.setShoulderStrength(value)
+
+    Sets the shoulder strength.
+
+
+
+    :param value: The shoulder strength.
+    :type value: float
+
+    
+    
+
+.. _vredvrdTonemapper.setToeStrength(value):
+.. py:method:: vrdTonemapper.setToeStrength(value)
+
+    Sets the toe strength.
+
+
+
+    :param value: The toe strength.
+    :type value: float
+
+    
+    
+
+.. _vredvrdTonemapper.setTonemapperType(mapper):
+.. py:method:: vrdTonemapper.setTonemapperType(mapper)
+
+    Sets the tonemapper type.
+
+    Some properties of this class are only in effect depending on the type of tonemapper in use. If unsure, check VRED's tonemapping user interface.
+
+    :param mapper: The type of tonemapper to use.
+    :type mapper: :ref:`vrCameraTypes.CameraTonemapper <vredvrCameraTypes.CameraTonemapper>`
+
+    
+    
+
+.. _vredvrdTonemapper.setWhiteBalance(value):
+.. py:method:: vrdTonemapper.setWhiteBalance(value)
+
+    Sets the white balance of the camera.
+
+
+
+    :param value: The white balance.
+    :type value: float
+
+    
+    
+
+.. _vredvrdTonemapper.setWhitePoint(value):
+.. py:method:: vrdTonemapper.setWhitePoint(value)
+
+    Sets the white point of the camera.
+
+
+
+    :param value: The white point.
+    :type value: float
+
+    
+    
+
+
+
+
+
+
+
+
+
+

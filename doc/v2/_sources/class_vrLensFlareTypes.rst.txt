@@ -1,0 +1,225 @@
+----------------
+vrLensFlareTypes
+----------------
+
+
+.. _vredvrLensFlareTypes:
+.. py:class:: vrLensFlareTypes
+
+
+
+
+
+
+
+    .. _vredvrLensFlareTypes.ElementType:
+    .. py:class:: ElementType
+
+
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementType.Ghost:
+            .. py:data:: Ghost
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementType.GhostLine:
+            .. py:data:: GhostLine
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementType.Glow:
+            .. py:data:: Glow
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementType.Ring:
+            .. py:data:: Ring
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementType.Starburst:
+            .. py:data:: Starburst
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementType.Streak:
+            .. py:data:: Streak
+
+
+    .. _vredvrLensFlareTypes.ElementShape:
+    .. py:class:: ElementShape
+
+
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementShape.Circle:
+            .. py:data:: Circle
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementShape.Triangle:
+            .. py:data:: Triangle
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementShape.Quad:
+            .. py:data:: Quad
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementShape.Pentagon:
+            .. py:data:: Pentagon
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementShape.Hexagon:
+            .. py:data:: Hexagon
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementShape.Heptagon:
+            .. py:data:: Heptagon
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementShape.Octagon:
+            .. py:data:: Octagon
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementShape.Nonagon:
+            .. py:data:: Nonagon
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementShape.Decagon:
+            .. py:data:: Decagon
+
+
+            
+
+            .. _vredvrLensFlareTypes.ElementShape.Texture:
+            .. py:data:: Texture
+
+
+    .. _vredvrLensFlareTypes.StarShape:
+    .. py:class:: StarShape
+
+
+
+
+            
+
+            .. _vredvrLensFlareTypes.StarShape.Fan:
+            .. py:data:: Fan
+
+
+            
+
+            .. _vredvrLensFlareTypes.StarShape.Spike:
+            .. py:data:: Spike
+
+
+            
+
+            .. _vredvrLensFlareTypes.StarShape.Blade:
+            .. py:data:: Blade
+
+
+            
+
+            .. _vredvrLensFlareTypes.StarShape.Texture:
+            .. py:data:: Texture
+
+
+    .. _vredvrLensFlareTypes.PresetType:
+    .. py:class:: PresetType
+
+
+
+
+            
+
+            .. _vredvrLensFlareTypes.PresetType.Custom:
+            .. py:data:: Custom
+
+
+            
+
+            .. _vredvrLensFlareTypes.PresetType.HeadLampBlueSteel:
+            .. py:data:: HeadLampBlueSteel
+
+
+            
+
+            .. _vredvrLensFlareTypes.PresetType.HeadLampRingBurst:
+            .. py:data:: HeadLampRingBurst
+
+
+            
+
+            .. _vredvrLensFlareTypes.PresetType.TailLampRadicalRed:
+            .. py:data:: TailLampRadicalRed
+
+
+            
+
+            .. _vredvrLensFlareTypes.PresetType.TailLampRubyRed:
+            .. py:data:: TailLampRubyRed
+
+
+            
+
+            .. _vredvrLensFlareTypes.PresetType.SunWarm:
+            .. py:data:: SunWarm
+
+
+            
+
+            .. _vredvrLensFlareTypes.PresetType.SunCool:
+            .. py:data:: SunCool
+
+
+            
+
+            .. _vredvrLensFlareTypes.PresetType.StreetLamp:
+            .. py:data:: StreetLamp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

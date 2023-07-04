@@ -1,0 +1,34 @@
+----------------
+vrdMaterialChunk
+----------------
+
+
+.. _vredvrdMaterialChunk:
+.. py:class:: vrdMaterialChunk
+
+(Inherits :py:class:`vrdSceneObject`)
+
+This is the base class for all material chunks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

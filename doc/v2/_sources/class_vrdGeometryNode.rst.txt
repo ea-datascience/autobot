@@ -1,0 +1,419 @@
+---------------
+vrdGeometryNode
+---------------
+
+
+.. _vredvrdGeometryNode:
+.. py:class:: vrdGeometryNode
+
+(Inherits :py:class:`vrdTransformNode`)
+
+This class gives low level access to geometry data. It allows to make changes to vertices, normals and texture coordinates.
+
+A short introduction how geometries work: A geometry consists of primitives, for example triangles or lines. The 3D coordinates of those primitives are stored in the 'positions' list. Note that the positions list is a flat list of float values, not points. That means, the position (x/y/z coordinates) of a vertex is represented by three consecutive float values in the list.
+
+The indices list defines which vertices form a primitive, for example a triangle. An entry of the indices list is a vertex index that points to the vertex data. This way you can use the vertex in multiple primitives. A triangle has three vertices, so it has three indices, one for each vertex. Each triangle has three consecutive vertex indices in the indices list.
+
+You can use the value from the index list to calculate which three floats from the position list are the position of a vertex. If for example the index list contains the value '7', then the floats from the position list would be '7*3=21', '7*3+1=22' and '7*3+2=23'. So index 21, 22, and 23 of the positions list are the three consecutive floats for value 7 from the index list.
+
+
+
+.. code-block:: python
+     :caption: lineGeometry-texCoords.py
+
+         def getPosition(self, vertexIndex):
+             """
+                 Args:
+                     vertexIndex (int): The vertex index in range from 0 to N-1
+                                        where N is the vertex count.
+                 Returns:
+                     3d vertex position.
+             """
+             return QVector3D(self.__positions[3*vertexIndex],
+                              self.__positions[3*vertexIndex+1],
+                              self.__positions[3*vertexIndex+2])
+..
+
+
+The values for the normals are calculated in the same way. You just need to do the lookup in the 'normals' list instead.
+
+The supported primitive types are triangle, lines, line strips, and points. The indices list for those primitives must be built as follows:
+
+|              - for triangles, 3 vertex indices per triangle.
+|              - for lines, 2 vertex indices per line
+|              - for line strips, a line is build from the first and second index, second and third, and so on. 
+|              - for points, 1 vertex index per point.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`createTextureBake() → vrdTextureBake<vredvrdGeometryNode.createTextureBake()>`
+    * :ref:`getActiveBakeType() → vrBakeTypes.BakeType<vredvrdGeometryNode.getActiveBakeType()>`
+    * :ref:`getIndices() → List[integer]<vredvrdGeometryNode.getIndices()>`
+    * :ref:`getNormals() → List[float]<vredvrdGeometryNode.getNormals()>`
+    * :ref:`getPositions() → List[float]<vredvrdGeometryNode.getPositions()>`
+    * :ref:`getPrimitiveCount() → integer<vredvrdGeometryNode.getPrimitiveCount()>`
+    * :ref:`getPrimitiveType() → vrGeometryTypes.PrimitiveType<vredvrdGeometryNode.getPrimitiveType()>`
+    * :ref:`getTexCoords(texSlot) → List[float]<vredvrdGeometryNode.getTexCoords(texSlot)>`
+    * :ref:`getTexCoordsDimension(texSlot) → integer<vredvrdGeometryNode.getTexCoordsDimension(texSlot)>`
+    * :ref:`getTextureBake() → vrdTextureBake<vredvrdGeometryNode.getTextureBake()>`
+    * :ref:`getTextureBakeState() → vrBakeTypes.BakeState<vredvrdGeometryNode.getTextureBakeState()>`
+    * :ref:`getVertexBake() → vrdVertexBake<vredvrdGeometryNode.getVertexBake()>`
+    * :ref:`getVertexBakeState() → vrBakeTypes.BakeState<vredvrdGeometryNode.getVertexBakeState()>`
+    * :ref:`getVertexCount() → integer<vredvrdGeometryNode.getVertexCount()>`
+    * :ref:`hasUVSet(set) → bool<vredvrdGeometryNode.hasUVSet(set)>`
+    * :ref:`isBSide() → bool<vredvrdGeometryNode.isBSide()>`
+    * :ref:`isComponent() → bool<vredvrdGeometryNode.isComponent()>`
+    * :ref:`isMesh() → bool<vredvrdGeometryNode.isMesh()>`
+    * :ref:`isShell() → bool<vredvrdGeometryNode.isShell()>`
+    * :ref:`isSurface() → bool<vredvrdGeometryNode.isSurface()>`
+    * :ref:`setActiveBakeType(type) <vredvrdGeometryNode.setActiveBakeType(type)>`
+    * :ref:`setBSide(isBSide) <vredvrdGeometryNode.setBSide(isBSide)>`
+    * :ref:`setIndices(indices) <vredvrdGeometryNode.setIndices(indices)>`
+    * :ref:`setNormals(normals) <vredvrdGeometryNode.setNormals(normals)>`
+    * :ref:`setPositions(positions) <vredvrdGeometryNode.setPositions(positions)>`
+    * :ref:`setPrimitiveType(primitiveType) <vredvrdGeometryNode.setPrimitiveType(primitiveType)>`
+    * :ref:`setTexCoords(coordinates, texSlot, dimension) <vredvrdGeometryNode.setTexCoords(coordinates, texSlot, dimension)>`
+
+
+Functions
+=========
+
+
+.. _vredvrdGeometryNode.createTextureBake():
+.. py:method:: vrdGeometryNode.createTextureBake()
+
+    Creates an empty texture bake object.
+
+    The function will create an empty texture bake object. This object can e.g. be used to set a new lightmap image.
+
+
+    :return: The texture bake object.
+    :rtype: vrdTextureBake
+
+.. _vredvrdGeometryNode.getActiveBakeType():
+.. py:method:: vrdGeometryNode.getActiveBakeType()
+
+    
+
+
+
+
+    :return: The active bake type.
+    :rtype: :ref:`vrBakeTypes.BakeType <vredvrBakeTypes.BakeType>`
+
+.. _vredvrdGeometryNode.getIndices():
+.. py:method:: vrdGeometryNode.getIndices()
+
+    Gets the list of indices.
+
+    The indices define how the vertices of the geometry data are connected.
+
+
+    :return: The list of indices.
+    :rtype: List[integer]
+
+.. _vredvrdGeometryNode.getNormals():
+.. py:method:: vrdGeometryNode.getNormals()
+
+    Gets the normals.
+
+    Returns the normals as a list of floating point values.
+
+
+    :return: The normals as a list of floating point values.
+    :rtype: List[float]
+
+.. _vredvrdGeometryNode.getPositions():
+.. py:method:: vrdGeometryNode.getPositions()
+
+    Gets the positions of the geometry.
+
+    This provides access to the vertices as a list of floats. These are 3d coordinates (x,y,z) so every three consecutive floats represent a vertex of the geometry.
+
+
+    :return: The positions of the geometry as a list of floating point values.
+    :rtype: List[float]
+
+.. _vredvrdGeometryNode.getPrimitiveCount():
+.. py:method:: vrdGeometryNode.getPrimitiveCount()
+
+    Gets the primitive count (number of triangles, lines, or points in this geometry).
+
+
+
+
+    :return: The primitive count.
+    :rtype: integer
+
+.. _vredvrdGeometryNode.getPrimitiveType():
+.. py:method:: vrdGeometryNode.getPrimitiveType()
+
+    Gets the primitive type.
+
+
+
+
+    :return: The primitive type used to render the geometry.
+    :rtype: :ref:`vrGeometryTypes.PrimitiveType <vredvrGeometryTypes.PrimitiveType>`
+
+.. _vredvrdGeometryNode.getTexCoords(texSlot):
+.. py:method:: vrdGeometryNode.getTexCoords(texSlot=0)
+
+    Access the texture coordinates.
+
+
+
+    :param texSlot: The texture slot (0 to 7, default: slot 0)
+    :type texSlot: integer
+
+    :return: The texture coordinates as a list of floating point values.
+    :rtype: List[float]
+
+.. _vredvrdGeometryNode.getTexCoordsDimension(texSlot):
+.. py:method:: vrdGeometryNode.getTexCoordsDimension(texSlot=0)
+
+    Returns the dimension of the texture coordinates.
+
+    Depending of the dimension of the texture coordinates, valid values are 2, 3 or 4.
+
+    :param texSlot: The texture slot (0 to 7, default: 0)
+    :type texSlot: integer
+
+    :return: The texture coordinates dimension.
+    :rtype: integer
+
+.. _vredvrdGeometryNode.getTextureBake():
+.. py:method:: vrdGeometryNode.getTextureBake()
+
+    Gets the texture bake object.
+
+    The function will return a null object, if the geometry node doesn't contain any texture baking.
+
+
+    :return: The texture bake object.
+    :rtype: vrdTextureBake
+
+.. _vredvrdGeometryNode.getTextureBakeState():
+.. py:method:: vrdGeometryNode.getTextureBakeState()
+
+    
+
+
+
+
+    :return: The texture bake state.
+    :rtype: :ref:`vrBakeTypes.BakeState <vredvrBakeTypes.BakeState>`
+
+.. _vredvrdGeometryNode.getVertexBake():
+.. py:method:: vrdGeometryNode.getVertexBake()
+
+    Gets the vertex bake object.
+
+    The function will return a null object, if the geometry node doesn't contain any vertex baking.
+
+
+    :return: The vertex bake object.
+    :rtype: vrdVertexBake
+
+.. _vredvrdGeometryNode.getVertexBakeState():
+.. py:method:: vrdGeometryNode.getVertexBakeState()
+
+    
+
+
+
+
+    :return: The vertex bake state.
+    :rtype: :ref:`vrBakeTypes.BakeState <vredvrBakeTypes.BakeState>`
+
+.. _vredvrdGeometryNode.getVertexCount():
+.. py:method:: vrdGeometryNode.getVertexCount()
+
+    
+
+
+
+
+    :return: The number of vertices.
+    :rtype: integer
+
+.. _vredvrdGeometryNode.hasUVSet(set):
+.. py:method:: vrdGeometryNode.hasUVSet(set)
+
+    Checks the existance of a specific UV set.
+
+
+
+    :param set: The UV set to check for.
+    :type set: :ref:`vrUVTypes.UVSet <vredvrUVTypes.UVSet>`
+
+    :return: True if the UV set exists, False otherwise.
+    :rtype: bool
+
+.. _vredvrdGeometryNode.isBSide():
+.. py:method:: vrdGeometryNode.isBSide()
+
+    Determines if the geometry is classified as a B-Side.
+
+
+
+
+    :return: True if B-Side, False if it is classified as an A-Side.
+    :rtype: bool
+
+.. _vredvrdGeometryNode.isComponent():
+.. py:method:: vrdGeometryNode.isComponent()
+
+    Returns whether the geometry node is a surface within a shell.
+
+
+
+
+    :return: True if geometry node is a component, False otherwise.
+    :rtype: bool
+
+.. _vredvrdGeometryNode.isMesh():
+.. py:method:: vrdGeometryNode.isMesh()
+
+    Returns whether the geometry node is a mesh of polygons or lines.
+
+
+
+
+    :return: True if geometry node is a mesh, False otherwise.
+    :rtype: bool
+
+.. _vredvrdGeometryNode.isShell():
+.. py:method:: vrdGeometryNode.isShell()
+
+    Returns whether the geometry node is a shell. A shell holds multiple surfaces and has no primitive data itself.
+
+
+
+
+    :return: True if geometry node is a shell, False otherwise.
+    :rtype: bool
+
+.. _vredvrdGeometryNode.isSurface():
+.. py:method:: vrdGeometryNode.isSurface()
+
+    Returns whether the geometry node is a surface with nurbs data.
+
+
+
+
+    :return: True if geometry node is a surface, False otherwise.
+    :rtype: bool
+
+.. _vredvrdGeometryNode.setActiveBakeType(type):
+.. py:method:: vrdGeometryNode.setActiveBakeType(type)
+
+    Sets the active bake type.
+
+    This determines which bake data will be used for rendering.
+
+    :param type: The bake type.
+    :type type: :ref:`vrBakeTypes.BakeType <vredvrBakeTypes.BakeType>`
+
+    
+    
+
+.. _vredvrdGeometryNode.setBSide(isBSide):
+.. py:method:: vrdGeometryNode.setBSide(isBSide)
+
+    Sets the geometry to B-Side.
+
+
+
+    :param isBSide: True if the geometry is classified as a B-Side, False if it is classified as an A-Side.
+    :type isBSide: bool
+
+    
+    
+
+.. _vredvrdGeometryNode.setIndices(indices):
+.. py:method:: vrdGeometryNode.setIndices(indices)
+
+    Sets the list of indices.
+
+    The indices in the index list refere to values of the positions list.
+
+    :param indices: The list of indices
+    :type indices: List[integer]
+
+    
+    
+
+.. _vredvrdGeometryNode.setNormals(normals):
+.. py:method:: vrdGeometryNode.setNormals(normals)
+
+    Sets the normals.
+
+    The size of the normal buffer should be the same as the positions buffer.
+
+    :param normals: The normals as a list of floating point values.
+    :type normals: List[float]
+
+    
+    
+
+.. _vredvrdGeometryNode.setPositions(positions):
+.. py:method:: vrdGeometryNode.setPositions(positions)
+
+    Sets the positions of the geometry.
+
+    Sets the vertex data as a list of floating point values. Three consecutive values represent a vertex. The number of positions in the list must be divisible by three with no remainder.
+
+    :param positions: The positions of the geometry as a list of floating point values.
+    :type positions: List[float]
+
+    
+    
+
+.. _vredvrdGeometryNode.setPrimitiveType(primitiveType):
+.. py:method:: vrdGeometryNode.setPrimitiveType(primitiveType)
+
+    Sets the primitive type.
+
+    This determines which primitive type will be used to render the geometry (triangles / points / lines).
+
+    :param primitiveType: The primitive type.
+    :type primitiveType: :ref:`vrGeometryTypes.PrimitiveType <vredvrGeometryTypes.PrimitiveType>`
+
+    
+    
+
+.. _vredvrdGeometryNode.setTexCoords(coordinates, texSlot, dimension):
+.. py:method:: vrdGeometryNode.setTexCoords(coordinates, texSlot=0, dimension=2)
+
+    Sets the texture coordinates.
+
+    Sets the texture coordinates as a list of floating point values. The range of available slots is 0 to 7. Valid dimensions are 2, 3 and 4. Note: VRED currently uses 2d coordinates in slot 0 for material and slot 1 for lightmap textures. Slot 5 is internally used to store vertex ambient occlusion data while slot 7 is used for vertex light baking data. Setting an empty list will remove the corresponding texture coordinates.
+
+    :param coordinates: The list of texture coordinates as floating point values.
+    :type coordinates: List[float]
+
+    :param texSlot: The texture slot (0 to 7)
+    :type texSlot: integer
+
+    :param dimension: The dimension (2, 3 or 4)
+    :type dimension: integer
+
+    
+    
+
+
+
+
+
+
+
+
+
+

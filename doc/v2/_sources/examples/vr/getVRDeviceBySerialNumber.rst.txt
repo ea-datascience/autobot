@@ -1,0 +1,11 @@
+Get a VR device by its serial number
+====================================
+
+Shows how to get a VR device (e.g. a controller or a tracker) by its internal serial number.
+The serial number in the script has to be replaced by one of a connected device. This example
+also adds a box as child node to the corresponding device for visualization purposes.
+
+.. literalinclude:: ../../python_examples/vr/getVRDeviceBySerialNumber.py
+   :language: python
+   :linenos:
+   :caption: vr/getVRDeviceBySerialNumber.py

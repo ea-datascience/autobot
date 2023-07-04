@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>vrdAtfSettings &#8212; VRED Python API v2  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/pydoctheme.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <script src="_static/sidebar.js"></script>
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="vrdBRDFCommonSettings" href="class_vrdBRDFCommonSettings.html" />
+    <link rel="prev" title="vrdAreaLightNode" href="class_vrdAreaLightNode.html" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <link rel="shortcut icon" type="image/png" href="_static/favicon.png" />
+    <meta name="viewport" content="width=device-width,initial-scale=0.8">
+    
+    
+
+  </head><body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="responsive-menu"><a href="#sidebar-anchor" title="Navigation">&#9776;</a></li>
+        <li><a href="index.html">VRED Python API v2  documentation</a> &#187;</li> 
+      </ul>
+    </div>
+    
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="vrdatfsettings">
+<h1>vrdAtfSettings<a class="headerlink" href="#vrdatfsettings" title="Permalink to this headline">¶</a></h1>
+<span class="target" id="vredvrdatfsettings"></span><dl class="py class">
+<dt class="sig sig-object py" id="vrdAtfSettings">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">vrdAtfSettings</span></code><a class="headerlink" href="#vrdAtfSettings" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p>(Inherits <code class="xref py py-class docutils literal notranslate"><span class="pre">vrdData</span></code>)</p>
+<p>Encapsulates the configuration properties for a particular     <a class="reference internal" href="class_vrCADFileTypes.html#vredvrcadfiletypes-filetype"><span class="std std-ref">vrCADFileTypes.FileType</span></a>. Some of the properties only have an effect on certain file formats. Please have a look at the import dialog that changes its content with respect to the <a class="reference internal" href="class_vrCADFileTypes.html#vredvrcadfiletypes-filetype"><span class="std std-ref">vrCADFileTypes.FileType</span></a> of the imported files.</p>
+<blockquote>
+<div><span class="target" id="vredvrdatfsettings-sourcereferencebehavior"></span><dl class="py class">
+<dt class="sig sig-object py" id="SourceReferenceBehavior">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">SourceReferenceBehavior</span></code><a class="headerlink" href="#SourceReferenceBehavior" title="Permalink to this definition">¶</a></dt>
+<dd><span class="target" id="vredvrdatfsettings-sourcereferencebehavior-createnoreference"></span><dl class="py data">
+<dt class="sig sig-object py" id="SourceReferenceBehavior.CreateNoReference">
+<code class="sig-name descname"><span class="pre">CreateNoReference</span></code><a class="headerlink" href="#SourceReferenceBehavior.CreateNoReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdatfsettings-sourcereferencebehavior-createsourcereference"></span><dl class="py data">
+<dt class="sig sig-object py" id="SourceReferenceBehavior.CreateSourceReference">
+<code class="sig-name descname"><span class="pre">CreateSourceReference</span></code><a class="headerlink" href="#SourceReferenceBehavior.CreateSourceReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-smartreferencebehavior"></span><dl class="py class">
+<dt class="sig sig-object py" id="SmartReferenceBehavior">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">SmartReferenceBehavior</span></code><a class="headerlink" href="#SmartReferenceBehavior" title="Permalink to this definition">¶</a></dt>
+<dd><span class="target" id="vredvrdatfsettings-smartreferencebehavior-keepsmartreference"></span><dl class="py data">
+<dt class="sig sig-object py" id="SmartReferenceBehavior.KeepSmartReference">
+<code class="sig-name descname"><span class="pre">KeepSmartReference</span></code><a class="headerlink" href="#SmartReferenceBehavior.KeepSmartReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdatfsettings-smartreferencebehavior-removesmartreference"></span><dl class="py data">
+<dt class="sig sig-object py" id="SmartReferenceBehavior.RemoveSmartReference">
+<code class="sig-name descname"><span class="pre">RemoveSmartReference</span></code><a class="headerlink" href="#SmartReferenceBehavior.RemoveSmartReference" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-importerversion"></span><dl class="py class">
+<dt class="sig sig-object py" id="ImporterVersion">
+<em class="property"><span class="pre">class</span> </em><code class="sig-name descname"><span class="pre">ImporterVersion</span></code><a class="headerlink" href="#ImporterVersion" title="Permalink to this definition">¶</a></dt>
+<dd><span class="target" id="vredvrdatfsettings-importerversion-lightweight"></span><dl class="py data">
+<dt class="sig sig-object py" id="ImporterVersion.Lightweight">
+<code class="sig-name descname"><span class="pre">Lightweight</span></code><a class="headerlink" href="#ImporterVersion.Lightweight" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<span class="target" id="vredvrdatfsettings-importerversion-legacy"></span><dl class="py data">
+<dt class="sig sig-object py" id="ImporterVersion.Legacy">
+<code class="sig-name descname"><span class="pre">Legacy</span></code><a class="headerlink" href="#ImporterVersion.Legacy" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</div></blockquote>
+<div class="section" id="summary">
+<h2>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<dl class="docutils">
+<dt>Functions:</dt><dd><ul class="simple">
+<li><a class="reference internal" href="#vredvrdatfsettings-getchorddeviation"><span class="std std-ref">getChordDeviation() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getcreatelayergroups"><span class="std std-ref">getCreateLayerGroups() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getfixsurfaceorientation"><span class="std std-ref">getFixSurfaceOrientation() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getflushtransformations"><span class="std std-ref">getFlushTransformations() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportassmartreference"><span class="std std-ref">getImportAsSmartReference() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportassociativemeshes"><span class="std std-ref">getImportAssociativeMeshes() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportcameras"><span class="std std-ref">getImportCameras() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportcoordsystems"><span class="std std-ref">getImportCoordSystems() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportcurves"><span class="std std-ref">getImportCurves() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportemptylayers"><span class="std std-ref">getImportEmptyLayers() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimporterversion"><span class="std std-ref">getImporterVersion() → ImporterVersion</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportgroupmaterials"><span class="std std-ref">getImportGroupMaterials() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportinvisiblecurves"><span class="std std-ref">getImportInvisibleCurves() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportinvisibleinstances"><span class="std std-ref">getImportInvisibleInstances() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportinvisiblemeshes"><span class="std std-ref">getImportInvisibleMeshes() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportinvisiblesurfaces"><span class="std std-ref">getImportInvisibleSurfaces() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportlayerfolders"><span class="std std-ref">getImportLayerFolders() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportlights"><span class="std std-ref">getImportLights() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportmeshes"><span class="std std-ref">getImportMeshes() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportmeshlods"><span class="std std-ref">getImportMeshLODs() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportmetadata"><span class="std std-ref">getImportMetadata() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportreferencedfiles"><span class="std std-ref">getImportReferencedFiles() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportsurfaces"><span class="std std-ref">getImportSurfaces() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimporttemplategeometries"><span class="std std-ref">getImportTemplateGeometries() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getimportvariants"><span class="std std-ref">getImportVariants() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getjttoolkit"><span class="std std-ref">getJtToolkit() → integer</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getkeepnurbs"><span class="std std-ref">getKeepNurbs() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getmaxchordlength"><span class="std std-ref">getMaxChordLength() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getmergegeometries"><span class="std std-ref">getMergeGeometries() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getmergesubreferencematerials"><span class="std std-ref">getMergeSubReferenceMaterials() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getnormaltolerance"><span class="std std-ref">getNormalTolerance() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getreducekeyframes"><span class="std std-ref">getReduceKeyframes() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getremoveemptygroups"><span class="std std-ref">getRemoveEmptyGroups() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getsmartreferencebehavior"><span class="std std-ref">getSmartReferenceBehavior() → SmartReferenceBehavior</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getsourcereferencebehavior"><span class="std std-ref">getSourceReferenceBehavior() → SourceReferenceBehavior</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getstitchingtolerance"><span class="std std-ref">getStitchingTolerance() → float</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getunsharenodes"><span class="std std-ref">getUnshareNodes() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getusehealstitch"><span class="std std-ref">getUseHealStitch() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getuselegacyloader"><span class="std std-ref">getUseLegacyLoader() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-getusestitching"><span class="std std-ref">getUseStitching() → bool</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setchorddeviation-chorddeviation"><span class="std std-ref">setChordDeviation(chordDeviation)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setcreatelayergroups-create"><span class="std std-ref">setCreateLayerGroups(create)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setfixsurfaceorientation-fix"><span class="std std-ref">setFixSurfaceOrientation(fix)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setflushtransformations-flush"><span class="std std-ref">setFlushTransformations(flush)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportassmartreference-create"><span class="std std-ref">setImportAsSmartReference(create)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportassociativemeshes-import"><span class="std std-ref">setImportAssociativeMeshes(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportcameras-import"><span class="std std-ref">setImportCameras(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportcoordsystems-import"><span class="std std-ref">setImportCoordSystems(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportcurves-import"><span class="std std-ref">setImportCurves(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportemptylayers-import"><span class="std std-ref">setImportEmptyLayers(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimporterversion-version"><span class="std std-ref">setImporterVersion(version)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportgroupmaterials-import"><span class="std std-ref">setImportGroupMaterials(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportinvisiblecurves-import"><span class="std std-ref">setImportInvisibleCurves(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportinvisibleinstances-import"><span class="std std-ref">setImportInvisibleInstances(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportinvisiblemeshes-import"><span class="std std-ref">setImportInvisibleMeshes(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportinvisiblesurfaces-import"><span class="std std-ref">setImportInvisibleSurfaces(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportlayerfolders-import"><span class="std std-ref">setImportLayerFolders(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportlights-import"><span class="std std-ref">setImportLights(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportmeshes-import"><span class="std std-ref">setImportMeshes(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportmeshlods-lodoption"><span class="std std-ref">setImportMeshLODs(lodOption)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportmetadata-import"><span class="std std-ref">setImportMetadata(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportreferencedfiles-import"><span class="std std-ref">setImportReferencedFiles(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportsurfaces-import"><span class="std std-ref">setImportSurfaces(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimporttemplategeometries-import"><span class="std std-ref">setImportTemplateGeometries(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setimportvariants-import"><span class="std std-ref">setImportVariants(import)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setjttoolkit-toolkit"><span class="std std-ref">setJtToolkit(toolkit)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setkeepnurbs-keep"><span class="std std-ref">setKeepNurbs(keep)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setmaxchordlength-chordlength"><span class="std std-ref">setMaxChordLength(chordLength)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setmergegeometries-merge"><span class="std std-ref">setMergeGeometries(merge)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setmergesubreferencematerials-optimize"><span class="std std-ref">setMergeSubReferenceMaterials(optimize)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setnormaltolerance-tolerance"><span class="std std-ref">setNormalTolerance(tolerance)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setreducekeyframes-reduce"><span class="std std-ref">setReduceKeyframes(reduce)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setremoveemptygroups-remove"><span class="std std-ref">setRemoveEmptyGroups(remove)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setsmartreferencebehavior-behavior"><span class="std std-ref">setSmartReferenceBehavior(behavior)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setsourcereferencebehavior-behavior"><span class="std std-ref">setSourceReferenceBehavior(behavior)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setstitchingtolerance-tolerance"><span class="std std-ref">setStitchingTolerance(tolerance)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setunsharenodes-unshare"><span class="std std-ref">setUnshareNodes(unshare)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setusehealstitch-value"><span class="std std-ref">setUseHealStitch(value)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setuselegacyloader-uselegacy"><span class="std std-ref">setUseLegacyLoader(useLegacy)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-setusestitching-stitch"><span class="std std-ref">setUseStitching(stitch)</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-vrdatfsettings"><span class="std std-ref">vrdAtfSettings()</span></a></li>
+<li><a class="reference internal" href="#vredvrdatfsettings-vrdatfsettings-other"><span class="std std-ref">vrdAtfSettings(other)</span></a></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<span class="target" id="vredvrdatfsettings-getchorddeviation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getChordDeviation">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getChordDeviation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getChordDeviation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get maximum deviation of tessellated mesh to the NURBS surface in mm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Maximum chord deviation in mm.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getcreatelayergroups"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getCreateLayerGroups">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getCreateLayerGroups</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getCreateLayerGroups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if creating group nodes from layer information is enabled..</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if creating group nodes from layer information is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getfixsurfaceorientation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getFixSurfaceOrientation">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getFixSurfaceOrientation</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getFixSurfaceOrientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if orienting surface normals is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if fixing of surface orientation is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getflushtransformations"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getFlushTransformations">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getFlushTransformations</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getFlushTransformations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if transformations should be flushed into the vertex coordinates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if flushing of transformations is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportassmartreference"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportAsSmartReference">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportAsSmartReference</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportAsSmartReference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if smart references should be created for imported vpb files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if smart references should be created for vpb files otherwise False.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportassociativemeshes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportAssociativeMeshes">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportAssociativeMeshes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportAssociativeMeshes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of associative meshes is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of associative meshes is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportcameras"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportCameras">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportCameras</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportCameras" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of cameras is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of cameras is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportcoordsystems"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportCoordSystems">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportCoordSystems</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportCoordSystems" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of coordinate system nodes is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of coordinate systems is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportcurves"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportCurves">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportCurves</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportCurves" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of curves and poly lines is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of curves and poly lines is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportemptylayers"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportEmptyLayers">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportEmptyLayers</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportEmptyLayers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of empty layers is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of empty layers is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimporterversion"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImporterVersion">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImporterVersion</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImporterVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query which importer is used. Currently only available for Catia V5.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Enum specifying which importer version to use. Currently only affects Catia V5 import. Lightweight selects optimized geometry and topology translation. Legacy should only be selected if issues like corrupted geometry should arise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#ImporterVersion" title="ImporterVersion">ImporterVersion</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportgroupmaterials"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportGroupMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportGroupMaterials</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportGroupMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of materials applied to group nodes like part, assembly or instance is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of materials applied to group nodes is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportinvisiblecurves"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportInvisibleCurves">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportInvisibleCurves</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportInvisibleCurves" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of curves and poly lines, that are invisible in CAD data, is enabled.</p>
+<p>Note: Only has an effect if import of surfaces is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of invisible curves and poly lines is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportinvisibleinstances"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportInvisibleInstances">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportInvisibleInstances</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportInvisibleInstances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of invisible instance nodes is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of invisible instance nodes is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportinvisiblemeshes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportInvisibleMeshes">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportInvisibleMeshes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportInvisibleMeshes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of polygon meshes, that are invisible in the CAD file, is enabled.</p>
+<p>Note: Only has an effect if import of surfaces is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of invisible polygon meshes is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportinvisiblesurfaces"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportInvisibleSurfaces">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportInvisibleSurfaces</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportInvisibleSurfaces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of surfaces, that are invisible in the CAD file, is enabled.</p>
+<p>Note: Only has an effect if import of surfaces is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of invisible surfaces is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportlayerfolders"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportLayerFolders">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportLayerFolders</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportLayerFolders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of layer hierarchies is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of layer folders is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportlights"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportLights">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportLights</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportLights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of light sources is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of lights is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportmeshes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportMeshes">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportMeshes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportMeshes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of polygon meshes is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of polygon meshes is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportmeshlods"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportMeshLODs">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportMeshLODs</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportMeshLODs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query which mesh LODs should be imported.</p>
+<p>0 - Import all mesh LODs</p>
+<p>1 - Import only mesh with lowest LOD</p>
+<p>2 - Import only mesh with highest LOD</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The selected LOD option</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportmetadata"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportMetadata">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportMetadata</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of metadata is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of metadata is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportreferencedfiles"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportReferencedFiles">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportReferencedFiles</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportReferencedFiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of part files referenced by an assembly is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of part files is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportsurfaces"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportSurfaces">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportSurfaces</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportSurfaces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of surfaces is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of surfaces is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimporttemplategeometries"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportTemplateGeometries">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportTemplateGeometries</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportTemplateGeometries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of template geometries is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of template geometries is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getimportvariants"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getImportVariants">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getImportVariants</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getImportVariants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if import of variants is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if import of variants is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getjttoolkit"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getJtToolkit">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getJtToolkit</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getJtToolkit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query which Jt toolkit is used for import.</p>
+<p>0 - Parasolid</p>
+<p>1 - Jt Open (Experimental)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">The selected Jt toolkit option</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">integer</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getkeepnurbs"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getKeepNurbs">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getKeepNurbs</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getKeepNurbs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if NURBS data should be kept alongside with tessellation result.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if NURBS data should be kept, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getmaxchordlength"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getMaxChordLength">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getMaxChordLength</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getMaxChordLength" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get maximum length of a triangle edge in mm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Maximum chord length in mm.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getmergegeometries"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getMergeGeometries">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getMergeGeometries</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getMergeGeometries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if tessellated meshes of adjacent NURBS surfaces with same material should be merged.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if merging of surfaces is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getmergesubreferencematerials"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getMergeSubReferenceMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getMergeSubReferenceMaterials</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getMergeSubReferenceMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if duplicate materials, referenced in different files, should be merged into one single material. Materials with same name and identical properties are regarded as duplicates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if duplicate referenced materials shouild be merged otherwise False.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getnormaltolerance"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getNormalTolerance">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getNormalTolerance</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getNormalTolerance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the normal tolerance of adjacent triangles in degrees.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Normal tolerance in degrees.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getreducekeyframes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getReduceKeyframes">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getReduceKeyframes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getReduceKeyframes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if reducing the number of keyframes is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if reducing the number of keyframes is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getremoveemptygroups"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getRemoveEmptyGroups">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getRemoveEmptyGroups</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getRemoveEmptyGroups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if groups without children should be removed.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if removing empty groups is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getsmartreferencebehavior"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getSmartReferenceBehavior">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getSmartReferenceBehavior</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getSmartReferenceBehavior" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query how references to VRED native files are treated in import.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Enum specifying if smart references found in an imported file should be kept or removed.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#SmartReferenceBehavior" title="SmartReferenceBehavior">SmartReferenceBehavior</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getsourcereferencebehavior"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getSourceReferenceBehavior">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getSourceReferenceBehavior</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getSourceReferenceBehavior" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query how references to files of import file types are treated in import.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Enum specifying if source references should be created for file references found in the imported files or if no reference nodes at all should be created.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body"><a class="reference internal" href="#SourceReferenceBehavior" title="SourceReferenceBehavior">SourceReferenceBehavior</a></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getstitchingtolerance"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getStitchingTolerance">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getStitchingTolerance</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getStitchingTolerance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the stitching tolerance of adjacent edges in mm.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">Stitiching tolerance in mm</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">float</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getunsharenodes"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getUnshareNodes">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getUnshareNodes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getUnshareNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if shared node instances should be converted to independent nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if conversion of instances is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getusehealstitch"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getUseHealStitch">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getUseHealStitch</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getUseHealStitch" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getuselegacyloader"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getUseLegacyLoader">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getUseLegacyLoader</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getUseLegacyLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if using legacy importer is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if legacy importer is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-getusestitching"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.getUseStitching">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">getUseStitching</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.getUseStitching" title="Permalink to this definition">¶</a></dt>
+<dd><p>Query if stitching is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">True if stitching is enabled, False otherwise.</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Return type:</th><td class="field-body">bool</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setchorddeviation-chorddeviation"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setChordDeviation">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setChordDeviation</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">chordDeviation</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setChordDeviation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set maximum allowed distance from the NURBS surface to the tessellated surface in mm. Lower values result in more accurate polygon models but also increase the number of triangles.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chordDeviation</strong> (<em>float</em>) – Maximum chord deviation in mm.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setcreatelayergroups-create"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setCreateLayerGroups">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setCreateLayerGroups</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">create</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setCreateLayerGroups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable / Disable creation of group nodes for objects organized in layers. In case the parents of the objects in one layer have different transformations this might cause an unexpected scenegraph structure since it is required to preserve the transformations.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>create</strong> (<em>bool</em>) – True if creation of layer groups should be enabled, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setfixsurfaceorientation-fix"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setFixSurfaceOrientation">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setFixSurfaceOrientation</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">fix</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setFixSurfaceOrientation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable orienting the normals of all surfaces, so they point in the same general direction.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>fix</strong> (<em>bool</em>) – True if fixing of surface orientation should be enabled, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setflushtransformations-flush"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setFlushTransformations">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setFlushTransformations</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">flush</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setFlushTransformations" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable / Disable moving transformation data of the scene graph hierarchy to the vertices. This means, that every transformation node will contain only a unit matrix.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>flush</strong> (<em>bool</em>) – True if flushing of transformations should be enabled, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportassmartreference-create"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportAsSmartReference">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportAsSmartReference</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">create</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportAsSmartReference" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if smart references should be created for imported vpb files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>create</strong> (<em>bool</em>) – True if smart references should be created for vpb files otherwise False.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportassociativemeshes-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportAssociativeMeshes">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportAssociativeMeshes</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportAssociativeMeshes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of meshes associated with the surfaces.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of associative meshes, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportcameras-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportCameras">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportCameras</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportCameras" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of cameras from CAD data. (Only Alias wire files)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of cameras, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportcoordsystems-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportCoordSystems">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportCoordSystems</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportCoordSystems" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of coordinate system nodes from CAD data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of coordinate systems, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportcurves-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportCurves">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportCurves</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportCurves" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of curves and poly lines from CAD files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of curves and poly lines, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportemptylayers-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportEmptyLayers">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportEmptyLayers</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportEmptyLayers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of empty layers. (Only Alias wire files)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of empty layers, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimporterversion-version"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImporterVersion">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImporterVersion</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">version</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImporterVersion" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select which importer to use. Currently only available for Catia V5.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>version</strong> (<a class="reference internal" href="#ImporterVersion" title="ImporterVersion"><em>ImporterVersion</em></a>) – Enum specifying which importer version to use. Currently only affects Catia V5 import. Lightweight selects optimized geometry and topology translation. Legacy should only be selected if issues like corrupted geometry should arise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportgroupmaterials-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportGroupMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportGroupMaterials</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportGroupMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of materials applied to group nodes like part, assembly or instance. If enabled, an additional MaterialGroup node is created for each of these materials. If disabled, simply discard these materials.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of materials applied to group nodes, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportinvisiblecurves-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportInvisibleCurves">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportInvisibleCurves</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportInvisibleCurves" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of curves and poly lines, that are invisible in the CAD data.</p>
+<p>Note: Only has an effect if import of curves and poly lines is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of invisible curves and poly lines, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportinvisibleinstances-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportInvisibleInstances">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportInvisibleInstances</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportInvisibleInstances" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of invisible instance nodes instead of excluding them.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of invisible instance nodes, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportinvisiblemeshes-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportInvisibleMeshes">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportInvisibleMeshes</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportInvisibleMeshes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of polygon meshes, that are invisible in the CAD file.</p>
+<p>Note: Only has an effect if import of polygon meshes is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to import invisible polygon meshes, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportinvisiblesurfaces-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportInvisibleSurfaces">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportInvisibleSurfaces</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportInvisibleSurfaces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of NURBS surfaces, that are invisible in the CAD file.</p>
+<p>Note: Only has an effect if import of surfaces is enabled.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of invisible surfaces, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportlayerfolders-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportLayerFolders">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportLayerFolders</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportLayerFolders" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of layer hierarchies. (Only Alias wire files)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of layer folders, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportlights-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportLights">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportLights</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportLights" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of light sources from CAD data. (Only Alias wire files)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of lights, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportmeshes-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportMeshes">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportMeshes</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportMeshes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of polygon meshes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of polygon meshes, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportmeshlods-lodoption"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportMeshLODs">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportMeshLODs</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">lodOption</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportMeshLODs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select which mesh LODs should be imported.</p>
+<p>0 - Import all mesh LODs</p>
+<p>1 - Import only mesh with lowest LOD</p>
+<p>2 - Import only mesh with highest LOD</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>lodOption</strong> (<em>integer</em>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportmetadata-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportMetadata">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportMetadata</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportMetadata" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of metadata from CAD data.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of metadata, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportreferencedfiles-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportReferencedFiles">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportReferencedFiles</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportReferencedFiles" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of part files referenced by an assembly. If option is disabled a file reference node is created that can be used to import the referenced part later.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of part files, False to only create file reference nodes.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportsurfaces-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportSurfaces">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportSurfaces</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportSurfaces" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of NURBS surfaces.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of surfaces, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimporttemplategeometries-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportTemplateGeometries">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportTemplateGeometries</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportTemplateGeometries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of template geometries instead of excluding them. (Only Alias wire files)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of template geometries, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setimportvariants-import"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setImportVariants">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setImportVariants</span></code><span class="sig-paren">(</span><em><span class="pre">import</span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setImportVariants" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable import of variants from CAD data. (Only Alias wire files)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>import</strong> (<em>bool</em>) – True to enable import of variants, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setjttoolkit-toolkit"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setJtToolkit">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setJtToolkit</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">toolkit</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setJtToolkit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Select which Jt toolkit should be used for import.</p>
+<p>0 - Parasolid</p>
+<p>1 - Jt Open (Experimental)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>toolkit</strong> (<em>integer</em>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setkeepnurbs-keep"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setKeepNurbs">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setKeepNurbs</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">keep</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setKeepNurbs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable / disable keeping NURBS data instead of deleting it. This option will increase memory usage.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>keep</strong> (<em>bool</em>) – True if empty groups should be removed.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setmaxchordlength-chordlength"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setMaxChordLength">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setMaxChordLength</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">chordLength</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setMaxChordLength" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set maximum length of a triangle edge in mm. Lower values result in more accurate polygon models but also increase the number of triangles.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>chordLength</strong> (<em>float</em>) – Maximum chord length in mm.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setmergegeometries-merge"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setMergeGeometries">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setMergeGeometries</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">merge</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setMergeGeometries" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable / disable merging adjacent surfaces with same material into shells.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>merge</strong> (<em>bool</em>) – True if surfaces should be merged.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setmergesubreferencematerials-optimize"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setMergeSubReferenceMaterials">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setMergeSubReferenceMaterials</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">optimize</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setMergeSubReferenceMaterials" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine if duplicate materials, referenced in different files, should be merged into one single material. Materials with same name and identical properties are regarded as duplicates.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>optimize</strong> (<em>bool</em>) – True if duplicate referenced materials shouild be merged otherwise False.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setnormaltolerance-tolerance"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setNormalTolerance">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setNormalTolerance</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">tolerance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setNormalTolerance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the normal tolerance of adjacent triangles in degrees. Lower values result in more accurate polygon models but also increase the number of triangles.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tolerance</strong> (<em>float</em>) – Stitiching tolerance in mm.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setreducekeyframes-reduce"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setReduceKeyframes">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setReduceKeyframes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">reduce</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setReduceKeyframes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable reducing the number of keyframes by removing adjacent keyframes with identical value.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>reduce</strong> (<em>bool</em>) – True if number of keyframes should be reduced, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setremoveemptygroups-remove"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setRemoveEmptyGroups">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setRemoveEmptyGroups</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">remove</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setRemoveEmptyGroups" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable / disable removing of groups without children.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>remove</strong> (<em>bool</em>) – True if empty groups should be removed.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setsmartreferencebehavior-behavior"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setSmartReferenceBehavior">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setSmartReferenceBehavior</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">behavior</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setSmartReferenceBehavior" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine how references to VRED native files are treated in import.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>behavior</strong> (<a class="reference internal" href="#SmartReferenceBehavior" title="SmartReferenceBehavior"><em>SmartReferenceBehavior</em></a>) – Enum specifying if smart references found in imported file should be kept or removed</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setsourcereferencebehavior-behavior"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setSourceReferenceBehavior">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setSourceReferenceBehavior</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">behavior</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setSourceReferenceBehavior" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determine how references to files of import file types are treated in import.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>behavior</strong> (<a class="reference internal" href="#SourceReferenceBehavior" title="SourceReferenceBehavior"><em>SourceReferenceBehavior</em></a>) – Enum specifying if source references should be created for file references found in the imported files or if no reference nodes at all should be created.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setstitchingtolerance-tolerance"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setStitchingTolerance">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setStitchingTolerance</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">tolerance</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setStitchingTolerance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set tolerance in mm where two adjacent edges are considered to be touching and where they should be stitched together.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>tolerance</strong> (<em>float</em>) – Stitiching tolerance in mm.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setunsharenodes-unshare"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setUnshareNodes">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setUnshareNodes</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">unshare</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setUnshareNodes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable / Disable conversion of shared node instances to independent nodes.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>unshare</strong> (<em>bool</em>) – True if unsharing nodes should be enabled, False otherwise.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setusehealstitch-value"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setUseHealStitch">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setUseHealStitch</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setUseHealStitch" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>value</strong> (<em>bool</em>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setuselegacyloader-uselegacy"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setUseLegacyLoader">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setUseLegacyLoader</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">useLegacy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setUseLegacyLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Use legacy importer. Enabling this option is not recommended since the legacy importers only support quite old file versions and a reduced feature set. Legacy importer are only available for JT and Rhino files.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>useLegacy</strong> (<em>bool</em>) – True if legacy importer should be used, False ATF importer will be used.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-setusestitching-stitch"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.setUseStitching">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">setUseStitching</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">stitch</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.setUseStitching" title="Permalink to this definition">¶</a></dt>
+<dd><p>Enable / disable stitching of adjacent edges.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>stitch</strong> (<em>bool</em>) – True to enable stitching, False to disable.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-vrdatfsettings"></span><dl class="py method">
+<dt class="sig sig-object py" id="vrdAtfSettings.vrdAtfSettings">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">vrdAtfSettings</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#vrdAtfSettings.vrdAtfSettings" title="Permalink to this definition">¶</a></dt>
+<dd><p>Default constructor.</p>
+</dd></dl>
+
+<span class="target" id="vredvrdatfsettings-vrdatfsettings-other"></span><dl class="py method">
+<dt class="sig sig-object py" id="id0">
+<code class="sig-prename descclassname"><span class="pre">vrdAtfSettings.</span></code><code class="sig-name descname"><span class="pre">vrdAtfSettings</span></code><span class="sig-paren">(</span><em><span class="n"><span class="pre">other</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#id0" title="Permalink to this definition">¶</a></dt>
+<dd><table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>other</strong> (<a class="reference internal" href="#vrdAtfSettings" title="vrdAtfSettings"><em>vrdAtfSettings</em></a>) – </td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+    <a id="sidebar-anchor"></a>
+    
+
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script><h3><a href="index.html">Table Of Contents</a></h3>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="examples/examples.html">VRED Python examples</a></li>
+<li class="toctree-l1"><a class="reference internal" href="scenegraphs.html">Node graphs in VRED</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whatsnew2024.html">What’s new in API v2 2024</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationService.html">vrAnnotationService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAnnotationTypes.html">vrAnnotationTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrAssetsService.html">vrAssetsService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeService.html">vrBakeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrBakeTypes.html">vrBakeTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCADFileTypes.html">vrCADFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraFromAtUp.html">vrCameraFromAtUp</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraService.html">vrCameraService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrCameraTypes.html">vrCameraTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterManagerService.html">vrClusterManagerService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterService.html">vrClusterService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrClusterTypes.html">vrClusterTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrConstraintService.html">vrConstraintService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDecoreService.html">vrDecoreService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrDeviceService.html">vrDeviceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileIOService.html">vrFileIOService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrFileTypes.html">vrFileTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUService.html">vrGPUService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGPUTypes.html">vrGPUTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGUIService.html">vrGUIService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryService.html">vrGeometryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrGeometryTypes.html">vrGeometryTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHMDService.html">vrHMDService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrHandTypes.html">vrHandTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageService.html">vrImageService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImageTypes.html">vrImageTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionService.html">vrImmersiveInteractionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveInteractionTypes.html">vrImmersiveInteractionTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrImmersiveUiService.html">vrImmersiveUiService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLensFlareTypes.html">vrLensFlareTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightService.html">vrLightService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrLightTypes.html">vrLightTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialEntryId.html">vrMaterialEntryId</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialService.html">vrMaterialService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMaterialTypes.html">vrMaterialTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMathService.html">vrMathService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataService.html">vrMetadataService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrMetadataTypes.html">vrMetadataTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrNodeService.html">vrNodeService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrObjectService.html">vrObjectService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrProgressService.html">vrProgressService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrQueryService.html">vrQueryService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceService.html">vrReferenceService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrReferenceTypes.html">vrReferenceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRenderTypes.html">vrRenderTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrRoughnessTextureTypes.html">vrRoughnessTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphService.html">vrScenegraphService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrScenegraphTypes.html">vrScenegraphTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateService.html">vrSceneplateService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSceneplateTypes.html">vrSceneplateTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSessionService.html">vrSessionService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSpectrum.html">vrSpectrum</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrStyleTypes.html">vrStyleTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrSubstanceTypes.html">vrSubstanceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTextureTypes.html">vrTextureTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrTransformTypes.html">vrTransformTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVService.html">vrUVService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUVTypes.html">vrUVTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrUndoService.html">vrUndoService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrVRInputDeviceTypes.html">vrVRInputDeviceTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrWebEngineService.html">vrWebEngineService</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrXRealityTypes.html">vrXRealityTypes</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAimConstraintNode.html">vrdAimConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnalyticSettings.html">vrdAnalyticSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAnnotationNode.html">vrdAnnotationNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightCone.html">vrdAreaLightCone</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdAreaLightNode.html">vrdAreaLightNode</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">vrdAtfSettings</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#summary">Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#functions">Functions</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFCommonSettings.html">vrdBRDFCommonSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBRDFMaterial.html">vrdBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightNode.html">vrdBaseLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBaseLightProfile.html">vrdBaseLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBillboardNode.html">vrdBillboardNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBlendChunk.html">vrdBlendChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBoundingBox.html">vrdBoundingBox</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushOrientation.html">vrdBrushOrientation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBrushedMetalMaterial.html">vrdBrushedMetalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBsdfMeasurement.html">vrdBsdfMeasurement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdBumpTexture.html">vrdBumpTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdButtonState.html">vrdButtonState</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraBaseNode.html">vrdCameraBaseNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraCollider.html">vrdCameraCollider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraNode.html">vrdCameraNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCameraTrackNode.html">vrdCameraTrackNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbon2DMaterial.html">vrdCarbon2DMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonMaterial.html">vrdCarbonMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern.html">vrdCarbonPattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern2D.html">vrdCarbonPattern2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCarbonPattern3D.html">vrdCarbonPattern3D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChromeMaterial.html">vrdChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdChunkMaterial.html">vrdChunkMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClearcoat.html">vrdClearcoat</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdClipPlaneNode.html">vrdClipPlaneNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdColorCorrection.html">vrdColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdConstraintNode.html">vrdConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdCubeTextureChunk.html">vrdCubeTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDecoreSettings.html">vrdDecoreSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeltaLightNode.html">vrdDeltaLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDepthTestChunk.html">vrdDepthTestChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceAction.html">vrdDeviceAction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceActionSignal.html">vrdDeviceActionSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceInteraction.html">vrdDeviceInteraction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDeviceMessageData.html">vrdDeviceMessageData</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDirectionalLightNode.html">vrdDirectionalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDiskLightNode.html">vrdDiskLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDisplacementTexture.html">vrdDisplacementTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdDistanceLODNode.html">vrdDistanceLODNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentColorCorrection.html">vrdEnvironmentColorCorrection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentMaterial.html">vrdEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentNode.html">vrdEnvironmentNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentRaytracingSettings.html">vrdEnvironmentRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentShadowsAndIllumination.html">vrdEnvironmentShadowsAndIllumination</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentSwitchMaterial.html">vrdEnvironmentSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEnvironmentTransformation.html">vrdEnvironmentTransformation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdEyeGaze.html">vrdEyeGaze</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFindOptions.html">vrdFindOptions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlakeLayer.html">vrdFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopCarpaintMaterial.html">vrdFlipflopCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFlipflopFlakeLayer.html">vrdFlipflopFlakeLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdFoveatedQuality.html">vrdFoveatedQuality</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderChunk.html">vrdGLSLShaderChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameter.html">vrdGLSLShaderParameter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterInt.html">vrdGLSLShaderParameterInt</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterList.html">vrdGLSLShaderParameterList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterMatrix.html">vrdGLSLShaderParameterMatrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterReal.html">vrdGLSLShaderParameterReal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec2f.html">vrdGLSLShaderParameterVec2f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec3f.html">vrdGLSLShaderParameterVec3f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGLSLShaderParameterVec4f.html">vrdGLSLShaderParameterVec4f</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGeometryNode.html">vrdGeometryNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdGlassMaterial.html">vrdGlassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHDRLightStudio.html">vrdHDRLightStudio</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdHostSwitchNode.html">vrdHostSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIlluminationBakeSettings.html">vrdIlluminationBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImage.html">vrdImage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveMenu.html">vrdImmersiveMenu</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveTool.html">vrdImmersiveTool</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdImmersiveToolSignal.html">vrdImmersiveToolSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdIncandescence.html">vrdIncandescence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLayeredMaterial.html">vrdLayeredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareEffect.html">vrdLensFlareEffect</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareElement.html">vrdLensFlareElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareFxElement.html">vrdLensFlareFxElement</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhost.html">vrdLensFlareGhost</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGhostLine.html">vrdLensFlareGhostLine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareGlow.html">vrdLensFlareGlow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareRing.html">vrdLensFlareRing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStar.html">vrdLensFlareStar</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLensFlareStreak.html">vrdLensFlareStreak</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightLinkSetNode.html">vrdLightLinkSetNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightPortalMaterial.html">vrdLightPortalMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightProfile.html">vrdLightProfile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTexture.html">vrdLightTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightTransform.html">vrdLightTransform</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLightmap.html">vrdLightmap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChromeMaterial.html">vrdLineChromeMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdLineChunk.html">vrdLineChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLMaterial.html">vrdMDLMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMDLProperties.html">vrdMDLProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMarker.html">vrdMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterial.html">vrdMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunk.html">vrdMaterialChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialChunkList.html">vrdMaterialChunkList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialList.html">vrdMaterialList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialNode.html">vrdMaterialNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialPoolNode.html">vrdMaterialPoolNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialRaytracingSettings.html">vrdMaterialRaytracingSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXMaterial.html">vrdMaterialXMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMaterialXProperties.html">vrdMaterialXProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMatrixTransformNode.html">vrdMatrixTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredCarpaintMaterial.html">vrdMeasuredCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMeasuredMaterial.html">vrdMeasuredMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadata.html">vrdMetadata</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntry.html">vrdMetadataEntry</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataEntryList.html">vrdMetadataEntryList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetadataSet.html">vrdMetadataSet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMetallicCarpaintMaterial.html">vrdMetallicCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMarker.html">vrdMultiMarker</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiMaterial.html">vrdMultiMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdMultiPassMaterial.html">vrdMultiPassMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNPRSettings.html">vrdNPRSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNode.html">vrdNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeInfo.html">vrdNodeInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdNodeList.html">vrdNodeList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOCSMaterial.html">vrdOCSMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObject.html">vrdObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectList.html">vrdObjectList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdObjectSignal.html">vrdObjectSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOpenGLInfo.html">vrdOpenGLInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdOrientationConstraintNode.html">vrdOrientationConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdParentConstraintNode.html">vrdParentConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPerspectiveMatch.html">vrdPerspectiveMatch</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPhongMaterial.html">vrdPhongMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPlasticMaterial.html">vrdPlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPointLightNode.html">vrdPointLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPolygonChunk.html">vrdPolygonChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdPositionConstraintNode.html">vrdPositionConstraintNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdProjectMergeSettings.html">vrdProjectMergeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFile.html">vrdRayFile</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayFileInfo.html">vrdRayFileInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayIntersection.html">vrdRayIntersection</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRayLightNode.html">vrdRayLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRaytracingInfo.html">vrdRaytracingInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRectangularLightNode.html">vrdRectangularLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReferenceNode.html">vrdReferenceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdReflectivePlasticMaterial.html">vrdReflectivePlasticMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoughnessTexture.html">vrdRoughnessTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdRoundedEdges.html">vrdRoundedEdges</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSVBRDFMaterial.html">vrdSVBRDFMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneImportSettings.html">vrdSceneImportSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneItemInfo.html">vrdSceneItemInfo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneObject.html">vrdSceneObject</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSceneplateNode.html">vrdSceneplateNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSessionUser.html">vrdSessionUser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMap.html">vrdShadowMap</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdShadowMaterial.html">vrdShadowMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightLocation.html">vrdSkylightLocation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightMaterial.html">vrdSkylightMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSkylightSkyAndSun.html">vrdSkylightSkyAndSun</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundNode.html">vrdSoundNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSoundObstructorNode.html">vrdSoundObstructorNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphereEnvironmentMaterial.html">vrdSphereEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSphericalLightNode.html">vrdSphericalLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSpotLightNode.html">vrdSpotLightNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStarVRRenderSettings.html">vrdStarVRRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdStereoSwitchNode.html">vrdStereoSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceEnvironmentMaterial.html">vrdSubstanceEnvironmentMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceMaterial.html">vrdSubstanceMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstancePreset.html">vrdSubstancePreset</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubstanceProperties.html">vrdSubstanceProperties</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSubsurfaceScattering.html">vrdSubsurfaceScattering</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSurfaceNode.html">vrdSurfaceNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchMaterial.html">vrdSwitchMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdSwitchNode.html">vrdSwitchNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTessellationSettings.html">vrdTessellationSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTexture.html">vrdTexture</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBake.html">vrdTextureBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureBakeSettings.html">vrdTextureBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureChunk.html">vrdTextureChunk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTextureSettings.html">vrdTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireMaterial.html">vrdTireMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTireTextureSettings.html">vrdTireTextureSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTonemapper.html">vrdTonemapper</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTrackedHand.html">vrdTrackedHand</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNode.html">vrdTransformNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransformNodeVariant.html">vrdTransformNodeVariant</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTransparency.html">vrdTransparency</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdTurntable.html">vrdTurntable</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVBaseProjectionSettings.html">vrdUVBaseProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVCylindricalProjectionSettings.html">vrdUVCylindricalProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVLayoutSettings.html">vrdUVLayoutSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVOptimizeSettings.html">vrdUVOptimizeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVPlanarProjectionSettings.html">vrdUVPlanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVSeamSettings.html">vrdUVSeamSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVTriplanarProjectionSettings.html">vrdUVTriplanarProjectionSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUVUnfoldSettings.html">vrdUVUnfoldSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUiEngine.html">vrdUiEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdUnicolorCarpaintMaterial.html">vrdUnicolorCarpaintMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDevice.html">vrdVRDevice</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVRDeviceSignal.html">vrdVRDeviceSignal</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVarjoRenderSettings.html">vrdVarjoRenderSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVelvetMaterial.html">vrdVelvetMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBake.html">vrdVertexBake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVertexBakeSettings.html">vrdVertexBakeSettings</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdViewpointNode.html">vrdViewpointNode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdVirtualTouchpadButton.html">vrdVirtualTouchpadButton</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWebEngine.html">vrdWebEngine</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdWovenClothMaterial.html">vrdWovenClothMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRayMaterial.html">vrdXRayMaterial</a></li>
+<li class="toctree-l1"><a class="reference internal" href="class_vrdXRiteMeasuredMaterial.html">vrdXRiteMeasuredMaterial</a></li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="class_vrdAreaLightNode.html"
+                        title="previous chapter">vrdAreaLightNode</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="class_vrdBRDFCommonSettings.html"
+                        title="next chapter">vrdBRDFCommonSettings</a></p>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="class_vrdBRDFCommonSettings.html" title="vrdBRDFCommonSettings"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="class_vrdAreaLightNode.html" title="vrdAreaLightNode"
+             accesskey="P">previous</a> |</li>
+      </ul>
+    </div>
+
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023, Autodesk Inc..
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.2.
+    </div>
+  </body>
+</html>

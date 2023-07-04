@@ -1,0 +1,1164 @@
+-----------------
+vrMaterialService
+-----------------
+
+
+.. _vredvrMaterialService:
+.. py:class:: vrMaterialService
+
+(Inherits :py:class:`vrBaseService`)
+
+Interface to access materials in VRED.
+
+This is the basic interface to access, create or delete materials. It also provides functionality to access the material graph by using :any:`vrMaterialService.getMaterialRoot() <vredvrMaterialService.getMaterialRoot()>`.
+
+|             See also: :doc:`/scenegraphs`
+
+Some examples how to work with materials:
+
+.. code-block:: python
+
+     # add a group node
+     groupNode = vrMaterialService.createMaterialGroup()
+     
+     # create a plastic material and add it to the group
+     mat = vrMaterialService.createMaterial("plasticmat", vrMaterialTypes.Plastic, groupNode)
+     
+     # search for a material by name
+     mat = vrMaterialService.findMaterial("plasticmat")
+     
+     # if there are multiple materials with the same name you can collect all of them
+     materials = vrMaterialService.findMaterials("plasticmat")
+     
+     # to search for a group you can use the generic findNode / findNodes functions
+     group = vrNodeService.findNode("Group", root=vrMaterialService.getMaterialRoot())
+..
+
+
+|             For more complex group operations, see also: :doc:`/examples/materialgroups`
+|             
+|             Note: 
+|                   Several functions take :doc:`vrdMaterialEntryIds</class_vrMaterialEntryId>` as parameter.
+|                   These ids are used to reference materials in the UI and should not be used when writing
+|                   scripts that run without UI. They are typically obtained by fetching the 
+|                   the selected nodes with :ref:`getSelection()<vredvrMaterialService.getSelection()>`.
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`addToDefaultEnvironmentSwitch(environmentMaterial) <vredvrMaterialService.addToDefaultEnvironmentSwitch(environmentMaterial)>`
+    * :ref:`applyEnvironmentToAllMaterials(environment, name) <vredvrMaterialService.applyEnvironmentToAllMaterials(environment, name)>`
+    * :ref:`applyEnvironmentToNodes(material, nodes) <vredvrMaterialService.applyEnvironmentToNodes(material, nodes)>`
+    * :ref:`applyMaterialToNodes(material, nodes) <vredvrMaterialService.applyMaterialToNodes(material, nodes)>`
+    * :ref:`convertMaterial(material, type) → vrdMaterial<vredvrMaterialService.convertMaterial(material, type)>`
+    * :ref:`copyMaterialAttributes(source, targets) <vredvrMaterialService.copyMaterialAttributes(source, targets)>`
+    * :ref:`copyMaterialChunks(chunks) <vredvrMaterialService.copyMaterialChunks(chunks)>`
+    * :ref:`copyTextureSize(source, targets) <vredvrMaterialService.copyTextureSize(source, targets)>`
+    * :ref:`createMaterial(name, type, materialGroup) → vrdMaterial<vredvrMaterialService.createMaterial(name, type, materialGroup)>`
+    * :ref:`createMaterialGroup(nodes, parent) → vrdNode<vredvrMaterialService.createMaterialGroup(nodes, parent)>`
+    * :ref:`createSwitchMaterial(materials, parent) → vrdMaterial<vredvrMaterialService.createSwitchMaterial(materials, parent)>`
+    * :ref:`deleteEntries(entries, keepVariants) <vredvrMaterialService.deleteEntries(entries, keepVariants)>`
+    * :ref:`deleteMaterials(materials, keepVariants) <vredvrMaterialService.deleteMaterials(materials, keepVariants)>`
+    * :ref:`duplicateEntries(entries) → List[vrMaterialEntryId]<vredvrMaterialService.duplicateEntries(entries)>`
+    * :ref:`duplicateMaterials(materials) → List[vrdMaterial]<vredvrMaterialService.duplicateMaterials(materials)>`
+    * :ref:`findMaterial(name) → vrdMaterial<vredvrMaterialService.findMaterial(name)>`
+    * :ref:`findMaterialNode(material, root) → vrdMaterialNode<vredvrMaterialService.findMaterialNode(material, root)>`
+    * :ref:`findMaterials(name) → List[vrdMaterial]<vredvrMaterialService.findMaterials(name)>`
+    * :ref:`findMaterialsUsedInVariants(root) → List[vrdMaterial]<vredvrMaterialService.findMaterialsUsedInVariants(root)>`
+    * :ref:`findNodesWithMaterial(material) → List[vrdNode]<vredvrMaterialService.findNodesWithMaterial(material)>`
+    * :ref:`findUnusedMaterials() → List[vrdMaterial]<vredvrMaterialService.findUnusedMaterials()>`
+    * :ref:`getAllMaterials() → List[vrdMaterial]<vredvrMaterialService.getAllMaterials()>`
+    * :ref:`getAllMaterialTags() → List[string]<vredvrMaterialService.getAllMaterialTags()>`
+    * :ref:`getDefaultEnvironment() → vrdMaterial<vredvrMaterialService.getDefaultEnvironment()>`
+    * :ref:`getDefaultEnvironmentSwitchMaterial() → vrdEnvironmentSwitchMaterial<vredvrMaterialService.getDefaultEnvironmentSwitchMaterial()>`
+    * :ref:`getEntries(materials) → List[vrMaterialEntryId]<vredvrMaterialService.getEntries(materials)>`
+    * :ref:`getGroupPath(node) → List[string]<vredvrMaterialService.getGroupPath(node)>`
+    * :ref:`getImportMetadata(type) → bool<vredvrMaterialService.getImportMetadata(type)>`
+    * :ref:`getMaterialFromId(materialId) → vrdMaterial<vredvrMaterialService.getMaterialFromId(materialId)>`
+    * :ref:`getMaterialNodes(root) → List[vrdMaterialNode]<vredvrMaterialService.getMaterialNodes(root)>`
+    * :ref:`getMaterialRoot() → vrdNode<vredvrMaterialService.getMaterialRoot()>`
+    * :ref:`getMaterials(root) → List[vrdMaterial]<vredvrMaterialService.getMaterials(root)>`
+    * :ref:`getMaterialSelection() → List[vrdMaterial]<vredvrMaterialService.getMaterialSelection()>`
+    * :ref:`getMaterialsWithAllTags(tags) → List[vrdMaterial]<vredvrMaterialService.getMaterialsWithAllTags(tags)>`
+    * :ref:`getMaterialsWithAnyTag(tags) → List[vrdMaterial]<vredvrMaterialService.getMaterialsWithAnyTag(tags)>`
+    * :ref:`getNumberOfMaterials() → integer<vredvrMaterialService.getNumberOfMaterials()>`
+    * :ref:`getNumberOfTextures() → integer<vredvrMaterialService.getNumberOfTextures()>`
+    * :ref:`getPlanarManipulatorTransparency() → float<vredvrMaterialService.getPlanarManipulatorTransparency()>`
+    * :ref:`getPreviewScenes() → List[string]<vredvrMaterialService.getPreviewScenes()>`
+    * :ref:`getSelection() → List[vrMaterialEntryId]<vredvrMaterialService.getSelection()>`
+    * :ref:`getSupportedMaterialTypes() → List[vrMaterialTypes.MaterialType]<vredvrMaterialService.getSupportedMaterialTypes()>`
+    * :ref:`getTireManipulatorTransparency() → float<vredvrMaterialService.getTireManipulatorTransparency()>`
+    * :ref:`getTreeDepth(material) → integer<vredvrMaterialService.getTreeDepth(material)>`
+    * :ref:`getTreeDepth(root) → integer<vredvrMaterialService.getTreeDepth(root)>`
+    * :ref:`getUniqueName(name, forceHighestIndex) → string<vredvrMaterialService.getUniqueName(name, forceHighestIndex)>`
+    * :ref:`getUsedTextureMemory() → integer<vredvrMaterialService.getUsedTextureMemory()>`
+    * :ref:`loadAnimationToMaterials(materials, animation) <vredvrMaterialService.loadAnimationToMaterials(materials, animation)>`
+    * :ref:`loadEnvironmentAssetToDefaultSwitch(uuid) <vredvrMaterialService.loadEnvironmentAssetToDefaultSwitch(uuid)>`
+    * :ref:`loadMaterialAsset(uuid, parent) → vrdMaterialNode<vredvrMaterialService.loadMaterialAsset(uuid, parent)>`
+    * :ref:`loadMaterials(fileNames, materialGroup) → List[vrdMaterial]<vredvrMaterialService.loadMaterials(fileNames, materialGroup)>`
+    * :ref:`mergeDuplicateMaterials(options) <vredvrMaterialService.mergeDuplicateMaterials(options)>`
+    * :ref:`optimizeTextures() <vredvrMaterialService.optimizeTextures()>`
+    * :ref:`pasteEntries(sources, targets) <vredvrMaterialService.pasteEntries(sources, targets)>`
+    * :ref:`pasteMaterialChunks(chunkMaterial) <vredvrMaterialService.pasteMaterialChunks(chunkMaterial)>`
+    * :ref:`referenceUnusedMaterials() → integer<vredvrMaterialService.referenceUnusedMaterials()>`
+    * :ref:`removeAllGroups() <vredvrMaterialService.removeAllGroups()>`
+    * :ref:`removeUnusedMaterials() <vredvrMaterialService.removeUnusedMaterials()>`
+    * :ref:`renderMultiPreview(materials, totalCount, size, text) → QImage<vredvrMaterialService.renderMultiPreview(materials, totalCount, size, text)>`
+    * :ref:`saveMaterials(materials, path) → bool<vredvrMaterialService.saveMaterials(materials, path)>`
+    * :ref:`selectNodes(materials, clearSelection) <vredvrMaterialService.selectNodes(materials, clearSelection)>`
+    * :ref:`setImportMetadata(type, value) <vredvrMaterialService.setImportMetadata(type, value)>`
+    * :ref:`setMaterialSelection(materials, scrollTo) <vredvrMaterialService.setMaterialSelection(materials, scrollTo)>`
+    * :ref:`setPlanarManipulatorTransparency(transparency) <vredvrMaterialService.setPlanarManipulatorTransparency(transparency)>`
+    * :ref:`setSelection(ids, scrollTo, edit) <vredvrMaterialService.setSelection(ids, scrollTo, edit)>`
+    * :ref:`setSwitchChoiceByAllTags(switchMaterial, tags) → bool<vredvrMaterialService.setSwitchChoiceByAllTags(switchMaterial, tags)>`
+    * :ref:`setSwitchChoiceByAnyTag(switchMaterial, tags) → bool<vredvrMaterialService.setSwitchChoiceByAnyTag(switchMaterial, tags)>`
+    * :ref:`setTireManipulatorTransparency(transparency) <vredvrMaterialService.setTireManipulatorTransparency(transparency)>`
+    * :ref:`updatePreviews(materials) <vredvrMaterialService.updatePreviews(materials)>`
+
+Signals:
+    * :ref:`materialsChanged() <vredvrMaterialService.materialsChanged()>`
+    * :ref:`planarManipulatorTransparencyChanged(transparency) <vredvrMaterialService.planarManipulatorTransparencyChanged(transparency)>`
+    * :ref:`previewsChanged() <vredvrMaterialService.previewsChanged()>`
+    * :ref:`selectionChanged(ids, scrollTo, edit) <vredvrMaterialService.selectionChanged(ids, scrollTo, edit)>`
+    * :ref:`tireManipulatorTransparencyChanged(transparency) <vredvrMaterialService.tireManipulatorTransparencyChanged(transparency)>`
+
+
+Functions
+=========
+
+
+.. _vredvrMaterialService.addToDefaultEnvironmentSwitch(environmentMaterial):
+.. py:method:: vrMaterialService.addToDefaultEnvironmentSwitch(environmentMaterial)
+
+    Adds the given environment material to the default environment switch.
+
+
+
+    :param environmentMaterial: Environment material to add.
+    :type environmentMaterial: vrdEnvironmentMaterial
+
+    
+    
+
+.. _vredvrMaterialService.applyEnvironmentToAllMaterials(environment, name):
+.. py:method:: vrMaterialService.applyEnvironmentToAllMaterials(environment, name)
+
+    Apply the given environment or environment switch material to all materials.
+
+
+
+    :param environment: The environment material to apply
+    :type environment: vrdMaterial
+
+    :param name: A name filter for the environment to replace. Empty string for no filter.
+    :type name: string
+
+    
+    
+
+.. _vredvrMaterialService.applyEnvironmentToNodes(material, nodes):
+.. py:method:: vrMaterialService.applyEnvironmentToNodes(material, nodes)
+
+    Apply the given environment or environment switch material to the materials of the given nodes.
+
+
+
+    :param material: The environment material to apply
+    :type material: vrdMaterial
+
+    :param nodes: The nodes where the environment should be applied to
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrMaterialService.applyMaterialToNodes(material, nodes):
+.. py:method:: vrMaterialService.applyMaterialToNodes(material, nodes)
+
+    Apply a material to a list of nodes.
+
+
+
+    :param material: The material to be applied
+    :type material: vrdMaterial
+
+    :param nodes: The nodes where the material should be applied to
+    :type nodes: List[vrdNode]
+
+    
+    
+
+.. _vredvrMaterialService.convertMaterial(material, type):
+.. py:method:: vrMaterialService.convertMaterial(material, type)
+
+    Converts a material to another type.
+
+
+
+    :param material: The material to be converted
+    :type material: vrdMaterial
+
+    :param type: Material type
+    :type type: :ref:`vrMaterialTypes.MaterialType <vredvrMaterialTypes.MaterialType>`
+
+    :return: The converted material
+    :rtype: vrdMaterial
+
+.. _vredvrMaterialService.copyMaterialAttributes(source, targets):
+.. py:method:: vrMaterialService.copyMaterialAttributes(source, targets)
+
+    Copy material attributes from one material to other materials.
+
+
+
+    :param source: The source material
+    :type source: vrdMaterial
+
+    :param targets: A list of target materials
+    :type targets: List[vrdMaterial]
+
+    
+    
+
+.. _vredvrMaterialService.copyMaterialChunks(chunks):
+.. py:method:: vrMaterialService.copyMaterialChunks(chunks)
+
+    Copy a list of material chunks to the clipboard.
+
+
+
+    :param chunks: A list of material chunks
+    :type chunks: List[vrdMaterialChunk]
+
+    
+    
+
+.. _vredvrMaterialService.copyTextureSize(source, targets):
+.. py:method:: vrMaterialService.copyTextureSize(source, targets)
+
+    Copy material texture size from one material to other materials.
+
+
+
+    :param source: The source material
+    :type source: vrdMaterial
+
+    :param targets: A list of materials
+    :type targets: List[vrdMaterial]
+
+    
+    
+
+.. _vredvrMaterialService.createMaterial(name, type, materialGroup):
+.. py:method:: vrMaterialService.createMaterial(name, type, materialGroup=vrdNode())
+
+    Creates a material.
+
+
+
+    :param name: Name of the material
+    :type name: string
+
+    :param type: Material type
+    :type type: :ref:`vrMaterialTypes.MaterialType <vredvrMaterialTypes.MaterialType>`
+
+    :param materialGroup: Material group to add the new created material (optional)
+    :type materialGroup: vrdNode
+
+    :return: The created material
+    :rtype: vrdMaterial
+
+.. _vredvrMaterialService.createMaterialGroup(nodes, parent):
+.. py:method:: vrMaterialService.createMaterialGroup(nodes=List[vrdNode], parent=vrdNode())
+
+    Creates a new material group.
+
+    If called without parameters it will create a new group below the root node with a unique name. Optionally it takes a list of group nodes or material nodes and moves those directly under the new group.
+
+    :param nodes: The nodes to be added to the new group
+    :type nodes: List[vrdNode]
+
+    :param parent: If empty, add group to common parent, otherwise add to existing group
+    :type parent: vrdNode
+
+    :return: The created group node
+    :rtype: vrdNode
+
+.. _vredvrMaterialService.createSwitchMaterial(materials, parent):
+.. py:method:: vrMaterialService.createSwitchMaterial(materials=List[vrdMaterial], parent=vrdNode())
+
+    Creates a new switch material.
+
+
+
+    :param materials: The materials to be added to the new switch
+    :type materials: List[vrdMaterial]
+
+    :param parent: If empty, create a toplevel group otherwise add to an existing group
+    :type parent: vrdNode
+
+    :return: The created material switch
+    :rtype: vrdMaterial
+
+.. _vredvrMaterialService.deleteEntries(entries, keepVariants):
+.. py:method:: vrMaterialService.deleteEntries(entries, keepVariants=False)
+
+    Removes the entries from the tree.
+
+
+
+    :param entries: The material tree entries
+    :type entries: List[vrMaterialEntryId]
+
+    :param keepVariants: If True, keep material variants of deleted switch materials. Set to False to delete corresponding material variants from Variants module and from variant sets using the material variant.
+    :type keepVariants: bool
+
+    
+    
+
+.. _vredvrMaterialService.deleteMaterials(materials, keepVariants):
+.. py:method:: vrMaterialService.deleteMaterials(materials, keepVariants=False)
+
+    Delete materials.
+
+    Only materials that are not referenced can be deleted. Referenced materials will be skipped by this function.
+
+    :param materials: The materials to be deleted.
+    :type materials: List[vrdMaterial]
+
+    :param keepVariants: If True, keep material variants of deleted switch materials. Set to False to delete corresponding material variants from Variants module and from variant sets using the material variant.
+    :type keepVariants: bool
+
+    
+    
+
+.. _vredvrMaterialService.duplicateEntries(entries):
+.. py:method:: vrMaterialService.duplicateEntries(entries)
+
+    Duplicate the given material graph entries.
+
+
+
+    :param entries: The entries to be duplicated
+    :type entries: List[vrMaterialEntryId]
+
+    :return: List of duplicated entries
+    :rtype: List[vrMaterialEntryId]
+
+.. _vredvrMaterialService.duplicateMaterials(materials):
+.. py:method:: vrMaterialService.duplicateMaterials(materials)
+
+    Duplicates the given materials.
+
+
+
+    :param materials: The materials to be duplicated.
+    :type materials: List[vrdMaterial]
+
+    :return: The list of duplicated materials
+    :rtype: List[vrdMaterial]
+
+.. _vredvrMaterialService.findMaterial(name):
+.. py:method:: vrMaterialService.findMaterial(name)
+
+    Find a material by name.
+
+
+
+    :param name: Name of the material to be searched for
+    :type name: string
+
+    :return: The first material with the given name or an invalid object, if nothing is found
+    :rtype: vrdMaterial
+
+.. _vredvrMaterialService.findMaterialNode(material, root):
+.. py:method:: vrMaterialService.findMaterialNode(material, root=vrdNode())
+
+    Find the         :any:`vrdMaterialNode <vredvrdMaterialNode>` for the given material.
+
+    A :any:`vrdMaterialNode <vredvrdMaterialNode>` is a helper node to present vrdMaterials in a tree structure as materials itself are not derived from :any:`vrdNode <vredvrdNode>`.
+
+    :param material: Search for a node with this material
+    :type material: vrdMaterial
+
+    :param root: Search in the given sub graph. If root is missing, the whole material tree is searched.
+    :type root: vrdNode
+
+    :return: The found node, otherwise an invalid node
+    :rtype: vrdMaterialNode
+
+.. _vredvrMaterialService.findMaterials(name):
+.. py:method:: vrMaterialService.findMaterials(name)
+
+    Find all materials with the given name.
+
+
+
+    :param name: Name of the material to be searched
+    :type name: string
+
+    :return: A list of all materials with the given name
+    :rtype: List[vrdMaterial]
+
+.. _vredvrMaterialService.findMaterialsUsedInVariants(root):
+.. py:method:: vrMaterialService.findMaterialsUsedInVariants(root=vrdNode())
+
+    Find materials in the material tree that are used in variants.
+
+
+
+    :param root: The root node of the tree to search. If empty, all materials are searched.
+    :type root: vrdNode
+
+    :return: A list of materials, that are referenced in variants
+    :rtype: List[vrdMaterial]
+
+.. _vredvrMaterialService.findNodesWithMaterial(material):
+.. py:method:: vrMaterialService.findNodesWithMaterial(material)
+
+    Searches the scene for node with the given material.
+
+
+
+    :param material: 
+    :type material: vrdMaterial
+
+    :return: The list of all found ndoes
+    :rtype: List[vrdNode]
+
+.. _vredvrMaterialService.findUnusedMaterials():
+.. py:method:: vrMaterialService.findUnusedMaterials()
+
+    Find materials in the material tree that are not used in the scene graph, i.e. that are not assigned to any node or are not a sub material of an assigned material.
+
+
+
+
+    :return: A list of materials not used in the scene graph
+    :rtype: List[vrdMaterial]
+
+.. _vredvrMaterialService.getAllMaterials():
+.. py:method:: vrMaterialService.getAllMaterials()
+
+    Returns a list of all materials.
+
+
+
+
+    :return: A list of all materials
+    :rtype: List[vrdMaterial]
+
+.. _vredvrMaterialService.getAllMaterialTags():
+.. py:method:: vrMaterialService.getAllMaterialTags()
+
+    
+
+
+
+
+    :return: Gets a list of all material tags
+    :rtype: List[string]
+
+.. _vredvrMaterialService.getDefaultEnvironment():
+.. py:method:: vrMaterialService.getDefaultEnvironment()
+
+    
+
+
+
+
+    :return: The default environment material
+    :rtype: vrdMaterial
+
+.. _vredvrMaterialService.getDefaultEnvironmentSwitchMaterial():
+.. py:method:: vrMaterialService.getDefaultEnvironmentSwitchMaterial()
+
+    Returns the default environment switch material.
+
+
+
+
+    :return: Default environment switch material
+    :rtype: vrdEnvironmentSwitchMaterial
+
+.. _vredvrMaterialService.getEntries(materials):
+.. py:method:: vrMaterialService.getEntries(materials)
+
+    Get material graph entries for given materials.
+
+
+
+    :param materials: Material list
+    :type materials: List[vrdMaterial]
+
+    :return: List of material graph entries
+    :rtype: List[vrMaterialEntryId]
+
+.. _vredvrMaterialService.getGroupPath(node):
+.. py:method:: vrMaterialService.getGroupPath(node)
+
+    Returns the path of a node within the material tree.
+
+    The path starts with the name of the group root. 
+
+    :param node: The node which path should be retrieved.
+    :type node: vrdNode
+
+    :return: The path of given node. If the node is not below the root group of the material tree, an empty path will be returned.
+    :rtype: List[string]
+
+.. _vredvrMaterialService.getImportMetadata(type):
+.. py:method:: vrMaterialService.getImportMetadata(type)
+
+    Returns whether metadata for the specified material type will be imported or not.
+
+
+
+    :param type: The material type.
+    :type type: :ref:`vrMaterialTypes.MaterialType <vredvrMaterialTypes.MaterialType>`
+
+    :return: True, if metadata will be imported for the specified material type.
+    :rtype: bool
+
+.. _vredvrMaterialService.getMaterialFromId(materialId):
+.. py:method:: vrMaterialService.getMaterialFromId(materialId)
+
+    Gets a material by its identifier.
+
+    You can convert from an old vrMaterialPtr to a :any:`vrdMaterial <vredvrdMaterial>` by taking the ID from the old material like this: This returns a :any:`vrdMaterial <vredvrdMaterial>` for a given material identifier.
+
+    .. code-block:: python
+    
+         newMat = vrMaterialService.getMaterialFromId(oldMat.getID())
+    ..
+    
+
+    :param materialId: The material identifier.
+    :type materialId: integer
+
+    :return: The material from identifier.
+    :rtype: vrdMaterial
+
+.. _vredvrMaterialService.getMaterialNodes(root):
+.. py:method:: vrMaterialService.getMaterialNodes(root=vrdNode())
+
+    Returns all material nodes in the given sub tree.
+
+
+
+    :param root: Root node, if missing search whole tree
+    :type root: vrdNode
+
+    :return: A list of all nodes in the subtree.
+    :rtype: List[vrdMaterialNode]
+
+.. _vredvrMaterialService.getMaterialRoot():
+.. py:method:: vrMaterialService.getMaterialRoot()
+
+    Returns the root for all materials in the material tree.
+
+
+
+
+    :return: The root node.
+    :rtype: vrdNode
+
+.. _vredvrMaterialService.getMaterials(root):
+.. py:method:: vrMaterialService.getMaterials(root)
+
+    Get all materials used in the given tree.
+
+
+
+    :param root: 
+    :type root: vrdNode
+
+    :return: A list of materials found in the given tree
+    :rtype: List[vrdMaterial]
+
+.. _vredvrMaterialService.getMaterialSelection():
+.. py:method:: vrMaterialService.getMaterialSelection()
+
+    
+
+
+
+
+    :return: Returns a list of all currently selected materials
+    :rtype: List[vrdMaterial]
+
+.. _vredvrMaterialService.getMaterialsWithAllTags(tags):
+.. py:method:: vrMaterialService.getMaterialsWithAllTags(tags)
+
+    Get the materials that have all the given tags.
+
+
+
+    :param tags: The set of tags to search for.
+    :type tags: List[string]
+
+    :return: The list of materials.
+    :rtype: List[vrdMaterial]
+
+.. _vredvrMaterialService.getMaterialsWithAnyTag(tags):
+.. py:method:: vrMaterialService.getMaterialsWithAnyTag(tags)
+
+    Get the materials that have any of the given tags.
+
+
+
+    :param tags: The set of tags to search for.
+    :type tags: List[string]
+
+    :return: The list of materials.
+    :rtype: List[vrdMaterial]
+
+.. _vredvrMaterialService.getNumberOfMaterials():
+.. py:method:: vrMaterialService.getNumberOfMaterials()
+
+    Returns the number of materials used in the current scene.
+
+
+
+
+    :return: The number of materials in scene.
+    :rtype: integer
+
+.. _vredvrMaterialService.getNumberOfTextures():
+.. py:method:: vrMaterialService.getNumberOfTextures()
+
+    Returns the number of textures used in all materials.
+
+
+
+
+    :return: The number of textures.
+    :rtype: integer
+
+.. _vredvrMaterialService.getPlanarManipulatorTransparency():
+.. py:method:: vrMaterialService.getPlanarManipulatorTransparency()
+
+    Returns the transparency value [0.0 to 1.0] of the planar manipulator plane.
+
+
+
+
+    :return: The transparency value
+    :rtype: float
+
+.. _vredvrMaterialService.getPreviewScenes():
+.. py:method:: vrMaterialService.getPreviewScenes()
+
+    
+
+
+
+
+    :return: Get all available material preview scene names
+    :rtype: List[string]
+
+.. _vredvrMaterialService.getSelection():
+.. py:method:: vrMaterialService.getSelection()
+
+    
+
+
+
+
+    :return: The currently selected items in the material editor tree view
+    :rtype: List[vrMaterialEntryId]
+
+.. _vredvrMaterialService.getSupportedMaterialTypes():
+.. py:method:: vrMaterialService.getSupportedMaterialTypes()
+
+    
+
+
+
+
+    :return: A list of all supported material types
+    :rtype: List[:ref:`vrMaterialTypes.MaterialType <vredvrMaterialTypes.MaterialType>`]
+
+.. _vredvrMaterialService.getTireManipulatorTransparency():
+.. py:method:: vrMaterialService.getTireManipulatorTransparency()
+
+    Returns the transparency value [0.0 to 1.0] of the tire manipulator cylinder geometry.
+
+
+
+
+    :return: The transparency value
+    :rtype: float
+
+.. _vredvrMaterialService.getTreeDepth(material):
+.. py:method:: vrMaterialService.getTreeDepth(material)
+
+    Returns the depth of a material subtree.
+
+
+
+    :param material: The root material of the subtree.
+    :type material: vrdMaterial
+
+    :return: The depth of the subtree.
+    :rtype: integer
+
+.. _vredvrMaterialService.getTreeDepth(root):
+.. py:method:: vrMaterialService.getTreeDepth(root)
+
+    Returns the depth of a material subtree.
+
+
+
+    :param root: The root node of the subtree.
+    :type root: vrdNode
+
+    :return: The depth of the subtree.
+    :rtype: integer
+
+.. _vredvrMaterialService.getUniqueName(name, forceHighestIndex):
+.. py:method:: vrMaterialService.getUniqueName(name, forceHighestIndex=True)
+
+    Creates a unique name by appending an index.
+
+    | Example: There are materials "Phong2" and "Phong9".
+    | Therefore the highest index is 9.
+    | 
+    | Calling this function with "Phong" or "Phong7" will
+    | * return the given name, if forceHighestIndex is set to False.
+    | * return "Phong10", if forceHighestIndex is set to True.
+
+    :param name: If necessary, a suffix is added to the given name to make it unique
+    :type name: string
+
+    :param forceHighestIndex: If the given name is not used, but there is a node with the same base name, the name will be adapted to have a higher index than the given one.
+    :type forceHighestIndex: bool
+
+    :return: The unique name.
+    :rtype: string
+
+.. _vredvrMaterialService.getUsedTextureMemory():
+.. py:method:: vrMaterialService.getUsedTextureMemory()
+
+    The currently used texture memory in bytes.
+
+
+
+
+    :return: The used texture memory.
+    :rtype: integer
+
+.. _vredvrMaterialService.loadAnimationToMaterials(materials, animation):
+.. py:method:: vrMaterialService.loadAnimationToMaterials(materials, animation)
+
+    Apply an animation from a file to a list of materials.
+
+
+
+    :param materials: The materials
+    :type materials: List[vrdMaterial]
+
+    :param animation: The animation (as .osb/.vpb file)
+    :type animation: string
+
+    
+    
+
+.. _vredvrMaterialService.loadEnvironmentAssetToDefaultSwitch(uuid):
+.. py:method:: vrMaterialService.loadEnvironmentAssetToDefaultSwitch(uuid)
+
+    Loads an environment asset by uuid into the default switch.
+
+
+
+    :param uuid: 
+    :type uuid: string
+
+    
+    
+
+.. _vredvrMaterialService.loadMaterialAsset(uuid, parent):
+.. py:method:: vrMaterialService.loadMaterialAsset(uuid, parent=vrdNode())
+
+    Loads a material asset by uuid into a given node.
+
+
+
+    :param uuid: Unique asset identifier
+    :type uuid: string
+
+    :param parent: Parent node or if empty, add to top level group
+    :type parent: vrdNode
+
+    :return: The created material node
+    :rtype: vrdMaterialNode
+
+.. _vredvrMaterialService.loadMaterials(fileNames, materialGroup):
+.. py:method:: vrMaterialService.loadMaterials(fileNames, materialGroup=vrdNode())
+
+    Loads materials from disk.
+
+    | Suffixes for all supported file types:
+    | - osb: OpenSG Binary Geometry
+    | - vpb: VRED Project Binary
+    | - vpe: VRED Essentials Project Binary
+    | - pbrdf: Office Color Science BTF measurement
+    | - axf, cpa, btf: X-Rite measurement
+    | - mdl: Material Definition Language module
+    | - mtlx, MaterialX Document
+    | - sbsar: Substance Archive
+    | - hdr, exr, mtd: Sphere Environment
+
+    :param fileNames: The material file names to load
+    :type fileNames: List[string]
+
+    :param materialGroup: Material group to add the new created material to (optional)
+    :type materialGroup: vrdNode
+
+    :return: The loaded materials
+    :rtype: List[vrdMaterial]
+
+.. _vredvrMaterialService.mergeDuplicateMaterials(options):
+.. py:method:: vrMaterialService.mergeDuplicateMaterials(options=vrMaterialTypes.MergeOptions.Default)
+
+    Share materials with the same properties.
+
+
+
+    :param options: Options for merging
+    :type options: :ref:`vrMaterialTypes.MergeOptions <vredvrMaterialTypes.MergeOptions>`
+
+    
+    
+
+.. _vredvrMaterialService.optimizeTextures():
+.. py:method:: vrMaterialService.optimizeTextures()
+
+    Shares image objects used by materials that have the same image data.
+
+
+
+
+    
+    
+
+.. _vredvrMaterialService.pasteEntries(sources, targets):
+.. py:method:: vrMaterialService.pasteEntries(sources, targets)
+
+    Pastes the given entries to the given target in the tree.
+
+
+
+    :param sources: The source material tree entries
+    :type sources: List[vrMaterialEntryId]
+
+    :param targets: The targets for the paste operation
+    :type targets: List[vrMaterialEntryId]
+
+    
+    
+
+.. _vredvrMaterialService.pasteMaterialChunks(chunkMaterial):
+.. py:method:: vrMaterialService.pasteMaterialChunks(chunkMaterial)
+
+    Paste the stored material chunks from the clipboard into a chunk material.
+
+
+
+    :param chunkMaterial: The chunk material which receives the chunks from the clipboard.
+    :type chunkMaterial: vrdChunkMaterial
+
+    
+    
+
+.. _vredvrMaterialService.referenceUnusedMaterials():
+.. py:method:: vrMaterialService.referenceUnusedMaterials()
+
+    Reference materials not used in the scene by adding material groups to the scene graph.
+
+
+
+
+    :return: The number of new references created
+    :rtype: integer
+
+.. _vredvrMaterialService.removeAllGroups():
+.. py:method:: vrMaterialService.removeAllGroups()
+
+    Remove all material groups. Material nodes in groups will be moved to the root node.
+
+
+
+
+    
+    
+
+.. _vredvrMaterialService.removeUnusedMaterials():
+.. py:method:: vrMaterialService.removeUnusedMaterials()
+
+    Remove unused materials.
+
+
+
+
+    
+    
+
+.. _vredvrMaterialService.renderMultiPreview(materials, totalCount, size, text):
+.. py:method:: vrMaterialService.renderMultiPreview(materials, totalCount, size, text="")
+
+    Create an image with multiple material previews.
+
+
+
+    :param materials: A list of materials that should be painted as a stack
+    :type materials: List[vrdMaterial]
+
+    :param totalCount: This number will be printed at top of the image
+    :type totalCount: integer
+
+    :param size: The requested image size
+    :type size: QSize
+
+    :param text: An optional prefix text for the painted image
+    :type text: string
+
+    :return: The painted image
+    :rtype: QImage
+
+.. _vredvrMaterialService.saveMaterials(materials, path):
+.. py:method:: vrMaterialService.saveMaterials(materials, path)
+
+    Saves materials to disk.
+
+    The materials will be saved as individual .osb files to the folder specified as 'path'.
+
+    :param materials: The materials to save
+    :type materials: List[vrdMaterial]
+
+    :param path: The path where to save the materials
+    :type path: string
+
+    :return: False if either one of the materials could not be saved or the directory does not exist. Otherwise True is returned.
+    :rtype: bool
+
+.. _vredvrMaterialService.selectNodes(materials, clearSelection):
+.. py:method:: vrMaterialService.selectNodes(materials, clearSelection)
+
+    Select all nodes in the scene graph that reference the given materials.
+
+
+
+    :param materials: A list of materials
+    :type materials: List[vrdMaterial]
+
+    :param clearSelection: If True, clear current selection
+    :type clearSelection: bool
+
+    
+    
+
+.. _vredvrMaterialService.setImportMetadata(type, value):
+.. py:method:: vrMaterialService.setImportMetadata(type, value)
+
+    Sets whether to import metadata for the specified material type.
+
+    Currently, only Substance and XRite material support metadata. Setting other material types will have no effect.
+
+    :param type: The material type.
+    :type type: :ref:`vrMaterialTypes.MaterialType <vredvrMaterialTypes.MaterialType>`
+
+    :param value: If True, metadata will be imported.
+    :type value: bool
+
+    
+    
+
+.. _vredvrMaterialService.setMaterialSelection(materials, scrollTo):
+.. py:method:: vrMaterialService.setMaterialSelection(materials, scrollTo=False)
+
+    Changes the material selection.
+
+
+
+    :param materials: A list of :any:`vrdMaterial <vredvrdMaterial>` objects to be selected
+    :type materials: List[vrdMaterial]
+
+    :param scrollTo: If true, scroll to the first selected material
+    :type scrollTo: bool
+
+    
+    
+
+.. _vredvrMaterialService.setPlanarManipulatorTransparency(transparency):
+.. py:method:: vrMaterialService.setPlanarManipulatorTransparency(transparency)
+
+    Sets the transparency value of the planar manipulator plane.
+
+
+
+    :param transparency: Transparency value [0.0 to 1.0]
+    :type transparency: float
+
+    
+    
+
+.. _vredvrMaterialService.setSelection(ids, scrollTo, edit):
+.. py:method:: vrMaterialService.setSelection(ids, scrollTo=False, edit=False)
+
+    Changes the material selection.
+
+
+
+    :param ids: A list of vrMaterialEntryIds that represents items in the material tree view
+    :type ids: List[vrMaterialEntryId]
+
+    :param scrollTo: If true, scroll to the first selected item
+    :type scrollTo: bool
+
+    :param edit: If true, starts editing the corresponding item
+    :type edit: bool
+
+    
+    
+
+.. _vredvrMaterialService.setSwitchChoiceByAllTags(switchMaterial, tags):
+.. py:method:: vrMaterialService.setSwitchChoiceByAllTags(switchMaterial, tags)
+
+    Sets the choice of a switch material to the first child with all of the given tags. If not found the choice stays unchanged.
+
+
+
+    :param switchMaterial: The switch material to modify.
+    :type switchMaterial: vrdSwitchMaterial
+
+    :param tags: The set of tags determining the child material to select.
+    :type tags: List[string]
+
+    :return: True if matching child material found.
+    :rtype: bool
+
+.. _vredvrMaterialService.setSwitchChoiceByAnyTag(switchMaterial, tags):
+.. py:method:: vrMaterialService.setSwitchChoiceByAnyTag(switchMaterial, tags)
+
+    Sets the choice of a switch material to the first child with any of the given tags. If not found the choice stays unchanged.
+
+
+
+    :param switchMaterial: The switch material to modify.
+    :type switchMaterial: vrdSwitchMaterial
+
+    :param tags: The set of tags determining the child material to select.
+    :type tags: List[string]
+
+    :return: True if matching child material found.
+    :rtype: bool
+
+.. _vredvrMaterialService.setTireManipulatorTransparency(transparency):
+.. py:method:: vrMaterialService.setTireManipulatorTransparency(transparency)
+
+    Sets the transparency value of the tire manipulator cylinder geometry.
+
+
+
+    :param transparency: Transparency value [0.0 to 1.0]
+    :type transparency: float
+
+    
+    
+
+.. _vredvrMaterialService.updatePreviews(materials):
+.. py:method:: vrMaterialService.updatePreviews(materials)
+
+    Update the preview for the given materials, if necessary.
+
+
+
+    :param materials: List of materials
+    :type materials: List[vrdMaterial]
+
+    
+    
+
+
+
+
+
+
+Signals
+=======
+
+
+.. _vredvrMaterialService.materialsChanged():
+.. py:method:: vrMaterialService.materialsChanged()
+
+    Notifies about changes in the material tree.
+
+
+
+
+    
+    
+
+.. _vredvrMaterialService.planarManipulatorTransparencyChanged(transparency):
+.. py:method:: vrMaterialService.planarManipulatorTransparencyChanged(transparency)
+
+    Notifies about changes of the manipulator transparency.
+
+
+
+    :param transparency: 
+    :type transparency: float
+
+    
+    
+
+.. _vredvrMaterialService.previewsChanged():
+.. py:method:: vrMaterialService.previewsChanged()
+
+    Notifies about changes of the material preview images.
+
+
+
+
+    
+    
+
+.. _vredvrMaterialService.selectionChanged(ids, scrollTo, edit):
+.. py:method:: vrMaterialService.selectionChanged(ids, scrollTo, edit)
+
+    This signal is emitted, whenever the material selection changes.
+
+
+
+    :param ids: The list of selected vrMaterialEntryIds
+    :type ids: List[vrMaterialEntryId]
+
+    :param scrollTo: If true, scroll to the first selected item is requested
+    :type scrollTo: bool
+
+    :param edit: If true, starting to edit the corresponding item is requested
+    :type edit: bool
+
+    
+    
+
+.. _vredvrMaterialService.tireManipulatorTransparencyChanged(transparency):
+.. py:method:: vrMaterialService.tireManipulatorTransparencyChanged(transparency)
+
+    Notifies about changes of the manipulator transparency.
+
+
+
+    :param transparency: 
+    :type transparency: float
+
+    
+    
+
+

@@ -1,0 +1,7 @@
+Create
+======
+
+.. literalinclude:: ../../python_examples/sceneplates/create.py
+   :language: python
+   :linenos:
+   :caption: sceneplates/create.py

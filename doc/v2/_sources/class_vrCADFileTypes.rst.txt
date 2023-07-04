@@ -1,0 +1,255 @@
+--------------
+vrCADFileTypes
+--------------
+
+
+.. _vredvrCADFileTypes:
+.. py:class:: vrCADFileTypes
+
+
+
+
+
+
+
+    .. _vredvrCADFileTypes.FileType:
+    .. py:class:: FileType
+
+        Enum for import file types.
+
+
+            Maxon Cinema 4D file format.
+
+            .. _vredvrCADFileTypes.FileType.Cinema4D:
+            .. py:data:: Cinema4D
+
+
+            Cosmo 3D binary format.
+
+            .. _vredvrCADFileTypes.FileType.Cosmo:
+            .. py:data:: Cosmo
+
+
+            Autodesk Design Web Format.
+
+            .. _vredvrCADFileTypes.FileType.DesignWeb:
+            .. py:data:: DesignWeb
+
+
+            Autodesk FBX exchange file format.
+
+            .. _vredvrCADFileTypes.FileType.FBX:
+            .. py:data:: FBX
+
+
+            Autodesk Maya file format.
+
+            .. _vredvrCADFileTypes.FileType.Maya:
+            .. py:data:: Maya
+
+
+            Wavefront obj file format.
+
+            .. _vredvrCADFileTypes.FileType.Obj:
+            .. py:data:: Obj
+
+
+            OpenSG file format.
+
+            .. _vredvrCADFileTypes.FileType.OpenSG:
+            .. py:data:: OpenSG
+
+
+            PLM XML file format.
+
+            .. _vredvrCADFileTypes.FileType.PLMXML:
+            .. py:data:: PLMXML
+
+
+            Python script file format.
+
+            .. _vredvrCADFileTypes.FileType.Python:
+            .. py:data:: Python
+
+
+            Autodesk 3DS Max file format.
+
+            .. _vredvrCADFileTypes.FileType.ThreeDS:
+            .. py:data:: ThreeDS
+
+
+            Native VRED project file format.
+
+            .. _vredvrCADFileTypes.FileType.VRED:
+            .. py:data:: VRED
+
+
+            VRML world format.
+
+            .. _vredvrCADFileTypes.FileType.VRML:
+            .. py:data:: VRML
+
+
+            ACIS file format.
+
+            .. _vredvrCADFileTypes.FileType.ACIS:
+            .. py:data:: ACIS
+
+
+            Autodesk Alias file format.
+
+            .. _vredvrCADFileTypes.FileType.Alias:
+            .. py:data:: Alias
+
+
+            Autodesk AutoCAD.
+
+            .. _vredvrCADFileTypes.FileType.AutoCAD:
+            .. py:data:: AutoCAD
+
+
+            Dassault Catia V4 format.
+
+            .. _vredvrCADFileTypes.FileType.CatiaV4:
+            .. py:data:: CatiaV4
+
+
+            Dassault Catia V4 format.
+
+            .. _vredvrCADFileTypes.FileType.CatiaV5:
+            .. py:data:: CatiaV5
+
+
+            Bentley Microstation format.
+
+            .. _vredvrCADFileTypes.FileType.DGN:
+            .. py:data:: DGN
+
+
+            Autodesk Inventor file format.
+
+            .. _vredvrCADFileTypes.FileType.Inventor:
+            .. py:data:: Inventor
+
+
+            JT file format.
+
+            .. _vredvrCADFileTypes.FileType.JT:
+            .. py:data:: JT
+
+
+            Siemens NX file format.
+
+            .. _vredvrCADFileTypes.FileType.NX:
+            .. py:data:: NX
+
+
+            IGES file format.
+
+            .. _vredvrCADFileTypes.FileType.IGES:
+            .. py:data:: IGES
+
+
+            Pro Engineer file format.
+
+            .. _vredvrCADFileTypes.FileType.ProE:
+            .. py:data:: ProE
+
+
+            Rhino file format.
+
+            .. _vredvrCADFileTypes.FileType.Rhino:
+            .. py:data:: Rhino
+
+
+            Solidedge file format.
+
+            .. _vredvrCADFileTypes.FileType.SolidEdge:
+            .. py:data:: SolidEdge
+
+
+            Solidworks file format.
+
+            .. _vredvrCADFileTypes.FileType.SolidWorks:
+            .. py:data:: SolidWorks
+
+
+            Step file format.
+
+            .. _vredvrCADFileTypes.FileType.Step:
+            .. py:data:: Step
+
+
+            STL file format.
+
+            .. _vredvrCADFileTypes.FileType.STL:
+            .. py:data:: STL
+
+
+            CAD file formats that don't have dedicated import settings (Parasolid, Sketchup)
+
+            .. _vredvrCADFileTypes.FileType.Generic:
+            .. py:data:: Generic
+
+
+    .. _vredvrCADFileTypes.JobState:
+    .. py:class:: JobState
+
+        Enum of states a job can have.
+
+
+            Job finished succesful.
+
+            .. _vredvrCADFileTypes.JobState.kSucceeded:
+            .. py:data:: kSucceeded
+
+
+            Job failed.
+
+            .. _vredvrCADFileTypes.JobState.kFailed:
+            .. py:data:: kFailed
+
+
+            Job was aborted by user.
+
+            .. _vredvrCADFileTypes.JobState.kAborted:
+            .. py:data:: kAborted
+
+
+            Job finished, but not all parts of an assembly were imported succesfully.
+
+            .. _vredvrCADFileTypes.JobState.kIncomplete:
+            .. py:data:: kIncomplete
+
+
+            Job is still running.
+
+            .. _vredvrCADFileTypes.JobState.kRunning:
+            .. py:data:: kRunning
+
+
+            state of Job can't be determined
+
+            .. _vredvrCADFileTypes.JobState.kUnknown:
+            .. py:data:: kUnknown
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

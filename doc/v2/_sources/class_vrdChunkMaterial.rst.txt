@@ -1,0 +1,123 @@
+----------------
+vrdChunkMaterial
+----------------
+
+
+.. _vredvrdChunkMaterial:
+.. py:class:: vrdChunkMaterial
+
+(Inherits :py:class:`vrdMaterial`)
+
+This class is used to handle all chunk material properties.
+
+
+
+    .. _vredvrdChunkMaterial.TransparencyMode:
+    .. py:class:: TransparencyMode
+
+
+
+
+            
+
+            .. _vredvrdChunkMaterial.TransparencyMode.AutoDetection:
+            .. py:data:: AutoDetection
+
+
+            
+
+            .. _vredvrdChunkMaterial.TransparencyMode.ForceTransparent:
+            .. py:data:: ForceTransparent
+
+
+            
+
+            .. _vredvrdChunkMaterial.TransparencyMode.ForceOpaque:
+            .. py:data:: ForceOpaque
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getSortKey() → integer<vredvrdChunkMaterial.getSortKey()>`
+    * :ref:`getTransparencyMode() → vrdChunkMaterial.TransparencyMode<vredvrdChunkMaterial.getTransparencyMode()>`
+    * :ref:`setSortKey(value) <vredvrdChunkMaterial.setSortKey(value)>`
+    * :ref:`setTransparencyMode(mode) <vredvrdChunkMaterial.setTransparencyMode(mode)>`
+
+Instance Variables:
+    * :ref:`chunks → vrdMaterialChunkList<vredvrdChunkMaterial.chunks>`
+
+
+Functions
+=========
+
+
+.. _vredvrdChunkMaterial.getSortKey():
+.. py:method:: vrdChunkMaterial.getSortKey()
+
+    
+
+
+
+
+    :return: Current sort key value of the material for OpenGL
+    :rtype: integer
+
+.. _vredvrdChunkMaterial.getTransparencyMode():
+.. py:method:: vrdChunkMaterial.getTransparencyMode()
+
+    Returns the transparency mode.
+
+
+
+
+    :return: Current used transparency mode
+    :rtype: :ref:`vrdChunkMaterial.TransparencyMode <vredvrdChunkMaterial.TransparencyMode>`
+
+.. _vredvrdChunkMaterial.setSortKey(value):
+.. py:method:: vrdChunkMaterial.setSortKey(value)
+
+    Changes the order in which transparent materials are rendered in OpenGL when the Transparency Mode is set to Object Sorting. Transparent surfaces with the same sort key are sorted back to front.
+
+
+
+    :param value: New sort key value.
+    :type value: integer
+
+    
+    
+
+.. _vredvrdChunkMaterial.setTransparencyMode(mode):
+.. py:method:: vrdChunkMaterial.setTransparencyMode(mode)
+
+    Sets the mode used for the transparency of the Chunk material.
+
+
+
+    :param mode: New used transparency mode
+    :type mode: :ref:`vrdChunkMaterial.TransparencyMode <vredvrdChunkMaterial.TransparencyMode>`
+
+    
+    
+
+
+Instance Variables
+==================
+
+
+.. _vredvrdChunkMaterial.chunks:
+.. py:attribute:: chunks
+    :type: vrdMaterialChunkList
+
+    
+    Access the list of chunks.
+
+
+
+
+
+

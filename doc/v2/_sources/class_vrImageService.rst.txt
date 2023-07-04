@@ -1,0 +1,173 @@
+--------------
+vrImageService
+--------------
+
+
+.. _vredvrImageService:
+.. py:class:: vrImageService
+
+(Inherits :py:class:`vrBaseService`)
+
+Service for     :any:`vrdImage <vredvrdImage>` related functions.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`createImage(source) → vrdImage<vredvrImageService.createImage(source)>`
+    * :ref:`getShareMode() → vrImageTypes.ShareMode<vredvrImageService.getShareMode()>`
+    * :ref:`loadImage(filename, loadType, loadOptions) → vrdImage<vredvrImageService.loadImage(filename, loadType, loadOptions)>`
+    * :ref:`readImageInformation(filename) → string<vredvrImageService.readImageInformation(filename)>`
+    * :ref:`releaseImage(image) <vredvrImageService.releaseImage(image)>`
+    * :ref:`reuseImage(source) → vrdImage<vredvrImageService.reuseImage(source)>`
+    * :ref:`saveImage(image, filename) → bool<vredvrImageService.saveImage(image, filename)>`
+    * :ref:`saveImageSequence(image, directory) → bool<vredvrImageService.saveImageSequence(image, directory)>`
+    * :ref:`setShareMode(mode) <vredvrImageService.setShareMode(mode)>`
+
+
+Functions
+=========
+
+
+.. _vredvrImageService.createImage(source):
+.. py:method:: vrImageService.createImage(source=vrdImage())
+
+    Creates an empty image.
+
+
+
+    :param source: An optional source to copy from
+    :type source: vrdImage
+
+    :return: The created image.
+    :rtype: vrdImage
+
+.. _vredvrImageService.getShareMode():
+.. py:method:: vrImageService.getShareMode()
+
+    Returns the current share mode for images.
+
+
+
+
+    :return: The current share mode.
+    :rtype: :ref:`vrImageTypes.ShareMode <vredvrImageTypes.ShareMode>`
+
+.. _vredvrImageService.loadImage(filename, loadType, loadOptions):
+.. py:method:: vrImageService.loadImage(filename, loadType=vrImageTypes.LoadType.Default, loadOptions=0)
+
+    Loads an image.
+
+
+
+    :param filename: The filename of the image.
+    :type filename: string
+
+    :param loadType: (Optional) The type of image to load.
+    :type loadType: :ref:`vrImageTypes.LoadType <vredvrImageTypes.LoadType>`
+
+    :param loadOptions: (Optional) Bitmask created from :any:`vrImageTypes.LoadOptionsBitmask <vredvrImageTypes.LoadOptionsBitmask>`.
+    :type loadOptions: integer
+
+    :return: The image. By default, existing images from the scene are reused and returned by this function if they have the same data as the loaded image.
+    :rtype: vrdImage
+
+.. _vredvrImageService.readImageInformation(filename):
+.. py:method:: vrImageService.readImageInformation(filename)
+
+    Reads an image information.
+
+    This function reads metadata (e.g. Exif data) from an image and outputs it as as string.
+
+    :param filename: The filename of an image.
+    :type filename: string
+
+    :return: The meta information.
+    :rtype: string
+
+.. _vredvrImageService.releaseImage(image):
+.. py:method:: vrImageService.releaseImage(image)
+
+    In case a loaded image is not needed, this method can be used to release (remove) it. Images only need to be released if they are never passed to VRED, as soon as it is passed to VRED, VRED will remove it if it is no longer needed. This method will not delete images that are still in use.
+
+
+
+    :param image: Image to be released
+    :type image: vrdImage
+
+    
+    
+
+.. _vredvrImageService.reuseImage(source):
+.. py:method:: vrImageService.reuseImage(source)
+
+    Re-use an image from scene instead of source.
+
+    Looks for an existing image in the scene that has the same data as source and return it. If found, source is released and the file path of the equal image is set to the path of source. If not found, source is returned. 
+
+    :param source: Source image
+    :type source: vrdImage
+
+    :return: The equal image if found, source image if not found.
+    :rtype: vrdImage
+
+.. _vredvrImageService.saveImage(image, filename):
+.. py:method:: vrImageService.saveImage(image, filename)
+
+    Saves an image.
+
+
+
+    :param image: The image to be saved.
+    :type image: vrdImage
+
+    :param filename: The filename where the image should be saved.
+    :type filename: string
+
+    :return: True if saving was successful, false otherwise.
+    :rtype: bool
+
+.. _vredvrImageService.saveImageSequence(image, directory):
+.. py:method:: vrImageService.saveImageSequence(image, directory)
+
+    Saves an image sequence.
+
+    This writes an image sequence stored inside a :any:`vrdImage <vredvrdImage>` to a directory.
+
+    :param image: The image containing the sequence.
+    :type image: vrdImage
+
+    :param directory: The directory where the images should be saved.
+    :type directory: string
+
+    :return: True if saving was successful, false otherwise.
+    :rtype: bool
+
+.. _vredvrImageService.setShareMode(mode):
+.. py:method:: vrImageService.setShareMode(mode)
+
+    Sets the current share mode for images.
+
+
+
+    :param mode: The share mode to set.
+    :type mode: :ref:`vrImageTypes.ShareMode <vredvrImageTypes.ShareMode>`
+
+    
+    
+
+
+
+
+
+
+
+
+
+

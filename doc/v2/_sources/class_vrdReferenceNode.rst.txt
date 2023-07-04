@@ -1,0 +1,501 @@
+----------------
+vrdReferenceNode
+----------------
+
+
+.. _vredvrdReferenceNode:
+.. py:class:: vrdReferenceNode
+
+(Inherits :py:class:`vrdTransformNode`)
+
+Reference node.
+
+
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`createSmartPath(location, customPath) → string<vredvrdReferenceNode.createSmartPath(location, customPath)>`
+    * :ref:`createSmartReference(useSourcePath) <vredvrdReferenceNode.createSmartReference(useSourcePath)>`
+    * :ref:`createSourceReference() <vredvrdReferenceNode.createSourceReference()>`
+    * :ref:`getSmartCreationDate() → QDateTime<vredvrdReferenceNode.getSmartCreationDate()>`
+    * :ref:`getSmartFileState() → vrReferenceTypes.FileState<vredvrdReferenceNode.getSmartFileState()>`
+    * :ref:`getSmartLastModified() → QDateTime<vredvrdReferenceNode.getSmartLastModified()>`
+    * :ref:`getSmartOwner() → string<vredvrdReferenceNode.getSmartOwner()>`
+    * :ref:`getSmartPath() → string<vredvrdReferenceNode.getSmartPath()>`
+    * :ref:`getSmartRevision() → string<vredvrdReferenceNode.getSmartRevision()>`
+    * :ref:`getSmartRevisionPath(revision) → string<vredvrdReferenceNode.getSmartRevisionPath(revision)>`
+    * :ref:`getSmartRevisions() → List[string]<vredvrdReferenceNode.getSmartRevisions()>`
+    * :ref:`getSourceFileState() → vrReferenceTypes.FileState<vredvrdReferenceNode.getSourceFileState()>`
+    * :ref:`getSourceImportDate() → QDateTime<vredvrdReferenceNode.getSourceImportDate()>`
+    * :ref:`getSourceLastModified() → QDateTime<vredvrdReferenceNode.getSourceLastModified()>`
+    * :ref:`getSourceOwner() → string<vredvrdReferenceNode.getSourceOwner()>`
+    * :ref:`getSourcePath() → string<vredvrdReferenceNode.getSourcePath()>`
+    * :ref:`getSourceRevision() → string<vredvrdReferenceNode.getSourceRevision()>`
+    * :ref:`getSourceRevisionPath(revision) → string<vredvrdReferenceNode.getSourceRevisionPath(revision)>`
+    * :ref:`getSourceRevisions() → List[string]<vredvrdReferenceNode.getSourceRevisions()>`
+    * :ref:`getState() → vrReferenceTypes.State<vredvrdReferenceNode.getState()>`
+    * :ref:`hasSmartReference() → bool<vredvrdReferenceNode.hasSmartReference()>`
+    * :ref:`hasSourceReference() → bool<vredvrdReferenceNode.hasSourceReference()>`
+    * :ref:`isChanged() → bool<vredvrdReferenceNode.isChanged()>`
+    * :ref:`isLoaded() → bool<vredvrdReferenceNode.isLoaded()>`
+    * :ref:`isRootNode() → bool<vredvrdReferenceNode.isRootNode()>`
+    * :ref:`isSelfOrSubReferenceChanged() → bool<vredvrdReferenceNode.isSelfOrSubReferenceChanged()>`
+    * :ref:`isSubReferenceChanged() → bool<vredvrdReferenceNode.isSubReferenceChanged()>`
+    * :ref:`load() <vredvrdReferenceNode.load()>`
+    * :ref:`loadSmartReference() <vredvrdReferenceNode.loadSmartReference()>`
+    * :ref:`loadSourceReference() <vredvrdReferenceNode.loadSourceReference()>`
+    * :ref:`removeSmartReference() <vredvrdReferenceNode.removeSmartReference()>`
+    * :ref:`removeSourceReference() <vredvrdReferenceNode.removeSourceReference()>`
+    * :ref:`saveSmartReference() <vredvrdReferenceNode.saveSmartReference()>`
+    * :ref:`saveSmartReferenceAs(path, unshare) <vredvrdReferenceNode.saveSmartReferenceAs(path, unshare)>`
+    * :ref:`setSmartPath(path) <vredvrdReferenceNode.setSmartPath(path)>`
+    * :ref:`setSourcePath(path) <vredvrdReferenceNode.setSourcePath(path)>`
+    * :ref:`unload() <vredvrdReferenceNode.unload()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdReferenceNode.createSmartPath(location, customPath):
+.. py:method:: vrdReferenceNode.createSmartPath(location, customPath="")
+
+    Constructs the path to the smart file.
+
+
+
+    :param location: The type of locaton
+    :type location: :ref:`vrReferenceTypes.ExportLocation <vredvrReferenceTypes.ExportLocation>`
+
+    :param customPath: If the type is custom, this parameter conteins the custom path
+    :type customPath: string
+
+    :return: Path to the smart file
+    :rtype: string
+
+.. _vredvrdReferenceNode.createSmartReference(useSourcePath):
+.. py:method:: vrdReferenceNode.createSmartReference(useSourcePath=False)
+
+    Creates a smart file reference for this reference.
+
+
+
+    :param useSourcePath: 
+    :type useSourcePath: bool
+
+    
+    
+
+.. _vredvrdReferenceNode.createSourceReference():
+.. py:method:: vrdReferenceNode.createSourceReference()
+
+    Creates a source file reference for this reference.
+
+
+
+
+    
+    
+
+.. _vredvrdReferenceNode.getSmartCreationDate():
+.. py:method:: vrdReferenceNode.getSmartCreationDate()
+
+    
+
+
+
+
+    :return: The creation date of the smart file on disk
+    :rtype: QDateTime
+
+.. _vredvrdReferenceNode.getSmartFileState():
+.. py:method:: vrdReferenceNode.getSmartFileState()
+
+    
+
+
+
+
+    :return: The status of the smart file
+    :rtype: :ref:`vrReferenceTypes.FileState <vredvrReferenceTypes.FileState>`
+
+.. _vredvrdReferenceNode.getSmartLastModified():
+.. py:method:: vrdReferenceNode.getSmartLastModified()
+
+    
+
+
+
+
+    :return: The modification time of the smart file
+    :rtype: QDateTime
+
+.. _vredvrdReferenceNode.getSmartOwner():
+.. py:method:: vrdReferenceNode.getSmartOwner()
+
+    
+
+
+
+
+    :return: The file owner of the smart file
+    :rtype: string
+
+.. _vredvrdReferenceNode.getSmartPath():
+.. py:method:: vrdReferenceNode.getSmartPath()
+
+    
+
+
+
+
+    :return: Path to the smart file
+    :rtype: string
+
+.. _vredvrdReferenceNode.getSmartRevision():
+.. py:method:: vrdReferenceNode.getSmartRevision()
+
+    
+
+
+
+
+    :return: The current smart revision.
+    :rtype: string
+
+.. _vredvrdReferenceNode.getSmartRevisionPath(revision):
+.. py:method:: vrdReferenceNode.getSmartRevisionPath(revision)
+
+    
+
+
+
+    :param revision: 
+    :type revision: string
+
+    :return: The path to the smart file with the given revision
+    :rtype: string
+
+.. _vredvrdReferenceNode.getSmartRevisions():
+.. py:method:: vrdReferenceNode.getSmartRevisions()
+
+    
+
+
+
+
+    :return: A list of available smart revisions
+    :rtype: List[string]
+
+.. _vredvrdReferenceNode.getSourceFileState():
+.. py:method:: vrdReferenceNode.getSourceFileState()
+
+    
+
+
+
+
+    :return: The status of the sources file
+    :rtype: :ref:`vrReferenceTypes.FileState <vredvrReferenceTypes.FileState>`
+
+.. _vredvrdReferenceNode.getSourceImportDate():
+.. py:method:: vrdReferenceNode.getSourceImportDate()
+
+    
+
+
+
+
+    :return: The time at which the file was imported
+    :rtype: QDateTime
+
+.. _vredvrdReferenceNode.getSourceLastModified():
+.. py:method:: vrdReferenceNode.getSourceLastModified()
+
+    
+
+
+
+
+    :return: The modification date of the sources file
+    :rtype: QDateTime
+
+.. _vredvrdReferenceNode.getSourceOwner():
+.. py:method:: vrdReferenceNode.getSourceOwner()
+
+    
+
+
+
+
+    :return: The file owner of the sources file
+    :rtype: string
+
+.. _vredvrdReferenceNode.getSourcePath():
+.. py:method:: vrdReferenceNode.getSourcePath()
+
+    
+
+
+
+
+    :return: Path to the source file
+    :rtype: string
+
+.. _vredvrdReferenceNode.getSourceRevision():
+.. py:method:: vrdReferenceNode.getSourceRevision()
+
+    
+
+
+
+
+    :return: The current source revision.
+    :rtype: string
+
+.. _vredvrdReferenceNode.getSourceRevisionPath(revision):
+.. py:method:: vrdReferenceNode.getSourceRevisionPath(revision)
+
+    
+
+
+
+    :param revision: 
+    :type revision: string
+
+    :return: The path to the source file with the given revision
+    :rtype: string
+
+.. _vredvrdReferenceNode.getSourceRevisions():
+.. py:method:: vrdReferenceNode.getSourceRevisions()
+
+    
+
+
+
+
+    :return: A list of available source revisions
+    :rtype: List[string]
+
+.. _vredvrdReferenceNode.getState():
+.. py:method:: vrdReferenceNode.getState()
+
+    Get the current status of the reference node.
+
+
+
+
+    :return: Loaded, Unloaded or New
+    :rtype: :ref:`vrReferenceTypes.State <vredvrReferenceTypes.State>`
+
+.. _vredvrdReferenceNode.hasSmartReference():
+.. py:method:: vrdReferenceNode.hasSmartReference()
+
+    
+
+
+
+
+    :return: True if this reference is dynamically loaded from a project file
+    :rtype: bool
+
+.. _vredvrdReferenceNode.hasSourceReference():
+.. py:method:: vrdReferenceNode.hasSourceReference()
+
+    
+
+
+
+
+    :return: True if this reference points to a source file.
+    :rtype: bool
+
+.. _vredvrdReferenceNode.isChanged():
+.. py:method:: vrdReferenceNode.isChanged()
+
+    
+
+
+
+
+    :return: True if the content of the reference has been modified without saving
+    :rtype: bool
+
+.. _vredvrdReferenceNode.isLoaded():
+.. py:method:: vrdReferenceNode.isLoaded()
+
+    
+
+
+
+
+    :return: True if this reference is loaded
+    :rtype: bool
+
+.. _vredvrdReferenceNode.isRootNode():
+.. py:method:: vrdReferenceNode.isRootNode()
+
+    
+
+
+
+
+    :return: True if this reference is the scene root node
+    :rtype: bool
+
+.. _vredvrdReferenceNode.isSelfOrSubReferenceChanged():
+.. py:method:: vrdReferenceNode.isSelfOrSubReferenceChanged()
+
+    
+
+
+
+
+    :return: True if :any:`vrdReferenceNode.isChanged() <vredvrdReferenceNode.isChanged()>` is true and :any:`vrdReferenceNode.isSubReferenceChanged() <vredvrdReferenceNode.isSubReferenceChanged()>` is true
+    :rtype: bool
+
+.. _vredvrdReferenceNode.isSubReferenceChanged():
+.. py:method:: vrdReferenceNode.isSubReferenceChanged()
+
+    
+
+
+
+
+    :return: True if one of the sub references has unsaved changes
+    :rtype: bool
+
+.. _vredvrdReferenceNode.load():
+.. py:method:: vrdReferenceNode.load()
+
+    Loads the reference content.
+
+
+
+
+    
+    
+
+.. _vredvrdReferenceNode.loadSmartReference():
+.. py:method:: vrdReferenceNode.loadSmartReference()
+
+    Loads the reference content, if this reference contains a source reference.
+
+
+
+
+    
+    
+
+.. _vredvrdReferenceNode.loadSourceReference():
+.. py:method:: vrdReferenceNode.loadSourceReference()
+
+    Loads the reference content, if this reference contains a smart reference.
+
+
+
+
+    
+    
+
+.. _vredvrdReferenceNode.removeSmartReference():
+.. py:method:: vrdReferenceNode.removeSmartReference()
+
+    Removes the smart reference information from this reference.
+
+
+
+
+    
+    
+
+.. _vredvrdReferenceNode.removeSourceReference():
+.. py:method:: vrdReferenceNode.removeSourceReference()
+
+    Removes the source reference information from this reference.
+
+
+
+
+    
+    
+
+.. _vredvrdReferenceNode.saveSmartReference():
+.. py:method:: vrdReferenceNode.saveSmartReference()
+
+    Save changes to the referenced project file.
+
+
+
+
+    
+    
+
+.. _vredvrdReferenceNode.saveSmartReferenceAs(path, unshare):
+.. py:method:: vrdReferenceNode.saveSmartReferenceAs(path, unshare)
+
+    Save content of the reference to a new project file.
+
+
+
+    :param path: The project file name
+    :type path: string
+
+    :param unshare: If true, unshare and only linke this instance to the new project
+    :type unshare: bool
+
+    
+    
+
+.. _vredvrdReferenceNode.setSmartPath(path):
+.. py:method:: vrdReferenceNode.setSmartPath(path)
+
+    Change the path to the smart reference file.
+
+
+
+    :param path: The new path to the file
+    :type path: string
+
+    
+    
+
+.. _vredvrdReferenceNode.setSourcePath(path):
+.. py:method:: vrdReferenceNode.setSourcePath(path)
+
+    Change the path to the source file.
+
+
+
+    :param path: The new path of the source file
+    :type path: string
+
+    
+    
+
+.. _vredvrdReferenceNode.unload():
+.. py:method:: vrdReferenceNode.unload()
+
+    Remove all children of this node and mark as not loaded.
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+
+
+

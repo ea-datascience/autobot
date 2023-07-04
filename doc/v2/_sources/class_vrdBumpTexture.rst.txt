@@ -1,0 +1,348 @@
+--------------
+vrdBumpTexture
+--------------
+
+
+.. _vredvrdBumpTexture:
+.. py:class:: vrdBumpTexture
+
+(Inherits :py:class:`vrdTexture`)
+
+This class is used for all bump texture and bump structure properties.
+
+To load an image for a bump texture, use:
+
+.. code-block:: python
+
+     image = vrImageService.loadImage(filename, vrImageTypes.LoadType.Bump)
+     # Set as bump texture for a material
+     plastic = vrMaterialService.findMaterial("Plastic")
+     plastic.getBumpTexture().setImage(image)
+     plastic.getBumpTexture().setUseTexture(True)
+..
+
+
+    .. _vredvrdBumpTexture.BumpType:
+    .. py:class:: BumpType
+
+        Parallax mapping method.
+
+
+            Simple parallax mapping.
+
+            .. _vredvrdBumpTexture.BumpType.BumpMapping:
+            .. py:data:: BumpMapping
+
+
+            Parallax occlusion mapping.
+
+            .. _vredvrdBumpTexture.BumpType.DisplacementMapping:
+            .. py:data:: DisplacementMapping
+
+
+
+
+
+Summary
+=======
+
+Functions:
+    * :ref:`getBumpAffectsSpecular() → bool<vredvrdBumpTexture.getBumpAffectsSpecular()>`
+    * :ref:`getBumpIntensity() → float<vredvrdBumpTexture.getBumpIntensity()>`
+    * :ref:`getBumpType() → vrdBumpTexture.BumpType<vredvrdBumpTexture.getBumpType()>`
+    * :ref:`getFlipU() → bool<vredvrdBumpTexture.getFlipU()>`
+    * :ref:`getFlipV() → bool<vredvrdBumpTexture.getFlipV()>`
+    * :ref:`getGlossyWeight() → float<vredvrdBumpTexture.getGlossyWeight()>`
+    * :ref:`getNormalmapEncodesHeight() → bool<vredvrdBumpTexture.getNormalmapEncodesHeight()>`
+    * :ref:`getParallaxIntensity() → float<vredvrdBumpTexture.getParallaxIntensity()>`
+    * :ref:`getStructureSize() → float<vredvrdBumpTexture.getStructureSize()>`
+    * :ref:`getUseStructure() → bool<vredvrdBumpTexture.getUseStructure()>`
+    * :ref:`setBumpAffectsSpecular(s) <vredvrdBumpTexture.setBumpAffectsSpecular(s)>`
+    * :ref:`setBumpIntensity(intensity) <vredvrdBumpTexture.setBumpIntensity(intensity)>`
+    * :ref:`setBumpType(type) <vredvrdBumpTexture.setBumpType(type)>`
+    * :ref:`setFlipU(s) <vredvrdBumpTexture.setFlipU(s)>`
+    * :ref:`setFlipV(s) <vredvrdBumpTexture.setFlipV(s)>`
+    * :ref:`setGlossyWeight(value) <vredvrdBumpTexture.setGlossyWeight(value)>`
+    * :ref:`setNormalmapEncodesHeight(normalmapEncodesHeight) <vredvrdBumpTexture.setNormalmapEncodesHeight(normalmapEncodesHeight)>`
+    * :ref:`setParallaxIntensity(intensity) <vredvrdBumpTexture.setParallaxIntensity(intensity)>`
+    * :ref:`setStructureSize(size) <vredvrdBumpTexture.setStructureSize(size)>`
+    * :ref:`setUseStructure(useStructure) <vredvrdBumpTexture.setUseStructure(useStructure)>`
+    * :ref:`supportsGlossyWeight() → bool<vredvrdBumpTexture.supportsGlossyWeight()>`
+    * :ref:`supportsTexture() → bool<vredvrdBumpTexture.supportsTexture()>`
+
+
+Functions
+=========
+
+
+.. _vredvrdBumpTexture.getBumpAffectsSpecular():
+.. py:method:: vrdBumpTexture.getBumpAffectsSpecular()
+
+    Gets the enable state of bump affects specular reflections.
+
+
+
+
+    :return: Current enable state of bump affects specular reflections
+    :rtype: bool
+
+.. _vredvrdBumpTexture.getBumpIntensity():
+.. py:method:: vrdBumpTexture.getBumpIntensity()
+
+    Gets the prominence of the bumps.
+
+
+
+
+    :return: Current intensity value.
+    :rtype: float
+
+.. _vredvrdBumpTexture.getBumpType():
+.. py:method:: vrdBumpTexture.getBumpType()
+
+    Gets the parallax mapping method.
+
+
+
+
+    :return: Current type
+    :rtype: :ref:`vrdBumpTexture.BumpType <vredvrdBumpTexture.BumpType>`
+
+.. _vredvrdBumpTexture.getFlipU():
+.. py:method:: vrdBumpTexture.getFlipU()
+
+    Gets flip U tangent direction state.
+
+
+
+
+    :return: Current flip U tangent direction state
+    :rtype: bool
+
+.. _vredvrdBumpTexture.getFlipV():
+.. py:method:: vrdBumpTexture.getFlipV()
+
+    Gets flip V tangent direction state.
+
+
+
+
+    :return: Current flip V tangent direction state
+    :rtype: bool
+
+.. _vredvrdBumpTexture.getGlossyWeight():
+.. py:method:: vrdBumpTexture.getGlossyWeight()
+
+    Gets how much the structure affects the glossy color.
+
+
+
+
+    :return: The current glossy weight
+    :rtype: float
+
+.. _vredvrdBumpTexture.getNormalmapEncodesHeight():
+.. py:method:: vrdBumpTexture.getNormalmapEncodesHeight()
+
+    
+
+
+
+
+    :return: The current state. See :any:`vrdBumpTexture.setNormalmapEncodesHeight(normalmapEncodesHeight) <vredvrdBumpTexture.setNormalmapEncodesHeight(normalmapEncodesHeight)>` for an explanation of this flag.
+    :rtype: bool
+
+.. _vredvrdBumpTexture.getParallaxIntensity():
+.. py:method:: vrdBumpTexture.getParallaxIntensity()
+
+    Gets the amount of parallax shift of the bump image texture.
+
+
+
+
+    :return: Current parallax intensity
+    :rtype: float
+
+.. _vredvrdBumpTexture.getStructureSize():
+.. py:method:: vrdBumpTexture.getStructureSize()
+
+    Gets structure size of the 3D noise.
+
+
+
+
+    :return: Current structure size
+    :rtype: float
+
+.. _vredvrdBumpTexture.getUseStructure():
+.. py:method:: vrdBumpTexture.getUseStructure()
+
+    Query if procedural surface structure is enabled.
+
+
+
+
+    :return: Current state
+    :rtype: bool
+
+.. _vredvrdBumpTexture.setBumpAffectsSpecular(s):
+.. py:method:: vrdBumpTexture.setBumpAffectsSpecular(s)
+
+    Enable bump affects specular reflections.
+
+
+
+    :param s: New enable state of bump affects specular reflections
+    :type s: bool
+
+    
+    
+
+.. _vredvrdBumpTexture.setBumpIntensity(intensity):
+.. py:method:: vrdBumpTexture.setBumpIntensity(intensity)
+
+    Controls how high the bumps display on a surface. Higher values make the surface appear bumpier. Negative values will invert the bump effect.
+
+
+
+    :param intensity: New intensity value
+    :type intensity: float
+
+    
+    
+
+.. _vredvrdBumpTexture.setBumpType(type):
+.. py:method:: vrdBumpTexture.setBumpType(type)
+
+    Sets the parallax mapping method.
+
+
+
+    :param type: New type
+    :type type: :ref:`vrdBumpTexture.BumpType <vredvrdBumpTexture.BumpType>`
+
+    
+    
+
+.. _vredvrdBumpTexture.setFlipU(s):
+.. py:method:: vrdBumpTexture.setFlipU(s)
+
+    Flips U tangent direction of the normal or bump map.
+
+
+
+    :param s: Flips U tangent direction state
+    :type s: bool
+
+    
+    
+
+.. _vredvrdBumpTexture.setFlipV(s):
+.. py:method:: vrdBumpTexture.setFlipV(s)
+
+    Flips V tangent direction of the normal or bump map.
+
+
+
+    :param s: Flips V tangent direction state
+    :type s: bool
+
+    
+    
+
+.. _vredvrdBumpTexture.setGlossyWeight(value):
+.. py:method:: vrdBumpTexture.setGlossyWeight(value)
+
+    Controls how much the structure affects the glossy color. Call         :any:`vrdBumpTexture.supportsGlossyWeight() <vredvrdBumpTexture.supportsGlossyWeight()>` to query if this material supports the glossy weight setting.
+
+
+
+    :param value: The new weight
+    :type value: float
+
+    
+    
+
+.. _vredvrdBumpTexture.setNormalmapEncodesHeight(normalmapEncodesHeight):
+.. py:method:: vrdBumpTexture.setNormalmapEncodesHeight(normalmapEncodesHeight)
+
+    Sets whether the normal map already contains the normals of the displaced surface when using a displacement texture at the same time. This option is currently only available for measured materials of type         :any:`vrdSVBRDFMaterial <vredvrdSVBRDFMaterial>`.
+
+
+
+    :param normalmapEncodesHeight: True to indicate the normal map includes displaced surface normals.
+    :type normalmapEncodesHeight: bool
+
+    
+    
+
+.. _vredvrdBumpTexture.setParallaxIntensity(intensity):
+.. py:method:: vrdBumpTexture.setParallaxIntensity(intensity)
+
+    Sets the amount of parallax shift of the bump image texture.
+
+
+
+    :param intensity: New parallax intensity
+    :type intensity: float
+
+    
+    
+
+.. _vredvrdBumpTexture.setStructureSize(size):
+.. py:method:: vrdBumpTexture.setStructureSize(size)
+
+    Sets structure size of the 3D noise when the procedural bump structure is activated.
+
+
+
+    :param size: Structure size
+    :type size: float
+
+    
+    
+
+.. _vredvrdBumpTexture.setUseStructure(useStructure):
+.. py:method:: vrdBumpTexture.setUseStructure(useStructure)
+
+    If enabled a procedural 3D noise is used to perturb the normal to simulate an uneven surface structure.
+
+
+
+    :param useStructure: New state to simulate an uneven surface structure
+    :type useStructure: bool
+
+    
+    
+
+.. _vredvrdBumpTexture.supportsGlossyWeight():
+.. py:method:: vrdBumpTexture.supportsGlossyWeight()
+
+    
+
+
+
+
+    :return: True, if glossy weight is supported
+    :rtype: bool
+
+.. _vredvrdBumpTexture.supportsTexture():
+.. py:method:: vrdBumpTexture.supportsTexture()
+
+    
+
+
+
+
+    :return: False, if only structured bump mapping is supported
+    :rtype: bool
+
+
+
+
+
+
+
+
+
+

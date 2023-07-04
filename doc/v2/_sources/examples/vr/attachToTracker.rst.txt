@@ -1,0 +1,9 @@
+Add a child node to the node of a VR Tracker
+============================================
+
+In this script a box is added as child to the node of a VR tracker.
+
+.. literalinclude:: ../../python_examples/vr/attachToTracker.py
+   :language: python
+   :linenos:
+   :caption: vr/attachToTracker.py

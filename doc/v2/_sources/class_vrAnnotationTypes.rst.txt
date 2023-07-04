@@ -1,0 +1,57 @@
+-----------------
+vrAnnotationTypes
+-----------------
+
+
+.. _vredvrAnnotationTypes:
+.. py:class:: vrAnnotationTypes
+
+
+
+
+
+
+
+    .. _vredvrAnnotationTypes.ScalingMode:
+    .. py:class:: ScalingMode
+
+
+
+
+            
+
+            .. _vredvrAnnotationTypes.ScalingMode.Off:
+            .. py:data:: Off
+
+
+            
+
+            .. _vredvrAnnotationTypes.ScalingMode.Near:
+            .. py:data:: Near
+
+
+            
+
+            .. _vredvrAnnotationTypes.ScalingMode.Far:
+            .. py:data:: Far
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
